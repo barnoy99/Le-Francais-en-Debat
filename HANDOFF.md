@@ -10,13 +10,13 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
-## Status: Phase 2 done (2026-09-30, Opus) — next is Phase 3 (core app, no STT)
+## Status: Phase 3 built (2026-09-30, Sonnet) — not deployed yet; next is Phase 4 (STT + matcher)
 
 | Phase | State | Model |
 |---|---|---|
 | 1 — six texts | **done**; all six approved on register (dialogues and monologues, 2026-09-30) | Opus |
 | 2 — frames + prompts, `data.js` | **done** — 36 frames, 252 prompts, all accepted by the user as listed | Opus |
-| 3 — core app, no STT | not started | Sonnet (volume of conventional code, pattern set by Quotidien) |
+| 3 — core app, no STT | **built**; tested in node and in the Chrome pane; **not deployed, not on his phone yet** | Sonnet |
 | 4 — STT + matcher + tests | not started | Opus (French normaliser + matcher is the subtle part) |
 | 5 — « Au calme » + ingest | not started | Sonnet for the UI; Opus if ingest needs frame-mining logic |
 
@@ -27,7 +27,7 @@ French). **Lui** lines are the cue for Compréhension: played at speed, answered
 French only. **Moi** lines are a model answer to shadow, never a script to match — any
 answer using the target frame counts. Lui lines also serve as content for Enchaînement.
 
-No app code exists yet. No git commit, no remote, no deploy.
+Phase 3 is uncommitted in the working tree (Phase 1–2 is the only commit). No remote, no GitHub Pages yet.
 
 ## What exists
 
@@ -94,7 +94,7 @@ Left out on purpose because he already masters them in Quotidien: *n'empêche* (
 
 ### For Phase 3 — things this phase learned
 
-- **Compréhension material is thin**: 18 Lui lines + 4 monologue cues = 22 items. It will
+- **Compréhension material is thin**: 19 Lui lines + 4 monologue cues = 23 items. It will
   repeat within days. Don't pad it with invented lines in Phase 3; flag it to the user —
   the fix is more texts (from real use) or ingest.
 - A frame's `form` slots are free text (`{N / que P}`, `{il / elle}`): display only, don't
@@ -102,10 +102,97 @@ Left out on purpose because he already masters them in Quotidien: *n'empêche* (
 - Read-only Quotidien GET works (`progress/user1.json`, ~57 KB); `phrases` came back as an
   **array** and `hfPass` as an **object** this time — handle both shapes for each.
 
+## Phase 3 — what was built
+
+**Versions:** `style.css?v=1`, `core.js?v=1`, `data.js?v=1`, `app.js?v=1`, `firebase-config.js?v=1`,
+`CACHE_VERSION = 'v1'` (cache `debat-v1`). Same triple-bump rule as Quotidien on every asset change:
+`?v=N` in `index.html` + the same URL in `SHELL` in `sw.js` + `CACHE_VERSION`.
+
+```
+core.js             pure logic, no DOM: scheduler, mastery, sync merge, Quotidien parsing (global `Core`)
+app.js              one IIFE: state/Firebase, TTS, beeps, wake-lock, the step runner, home, Progrès
+index.html style.css sw.js manifest.json firebase-config.js icon-192/512.png
+test/core-test.js   node test/core-test.js   (74k checks; simulates 2/5/20/30-min sessions × 40 days)
+.claude/launch.json preview server `debat` on :8098 (gitignored)
+```
+
+**`core.js` is a deliberate deviation** from "one IIFE in app.js": a separate pure file means the
+scheduler is tested directly instead of being extracted from `app.js`.
+
+**State** — localStorage `debat_state`, Firebase **`progress/debat`**. His rules only allow
+`progress/*` (root and `debat/` are `Permission denied`; `progress/` also holds other apps' keys).
+Never `progress/user1`. Verified writable. Merge = last write wins by `updatedAt`, `sessionCount`
+breaks ties, local-only if the cloud read fails (Quotidien's rule). `Core.normalize` restores what
+Firebase strips (empty arrays/objects). Shape: `frames{id:{m,r,s,n,due,last,reps[[day,topic,promptId,verdict]],md}}`,
+`pu` (prompt use), `lui` (Compréhension last heard), `hist` (last 12 served — constraints hold across
+sessions), `since`, `current` (item in flight), day counters, cycle counters.
+**`?local` in the URL turns Firebase and the Quotidien read off — use it for every preview.**
+(The Browser pane's first auto-open is at `/`, without `?local`, and does write.)
+
+**Queue + cursor:** items are pulled one at a time (`Core.next`), not pre-built. `state.current` is the
+item in flight, saved when it starts and cleared on commit; reopening replays it from the top
+(button reads « Reprendre »). Every item is atomic; `save()` runs after every commit and every skip.
+"Cycle" (home line) = every frame touched once, then it rolls and banks `dernier : N j`.
+
+**Scheduler** (`Core.next`): one score ranks all frames — `0.15·yield + days overdue`, new frames
++0.6; not-yet-due frames go negative, so when nothing is due the nearest-to-due wins (no second
+path). Rules: a frame never twice within 10 min; never two items from the same `textId` in a row;
+never the same prompt topic twice in a row; ≤ 2 mises in a row; ≤ 5 new frames/day and ≤ 8 still
+learning; Enchaînement only after ≥ 4 items **and** ≥ 3 min, at most every 7 items, needs two
+« solid » frames (2 reps on 2 days) from different texts; Compréhension every ~5 items. When a rule
+leaves nothing it relaxes in order (comp filler → lift new caps → mise runs → gap 10→3 min →
+same-text → gap), so a 30-minute session never runs dry; `item.relaxed` records the level. Prompt
+choice: fresh before repeated, then a topic this frame hasn't been proven on (so the mastery reps
+land on three topics). Intervals after each substitution: 1, 3, 7, 14, 30, 60 days × `1.4 − 0.1·yield`;
+mastered frames floor at 30 days.
+
+**Mastery** (`Core.mastery`) = three counted substitution reps on three **different days AND three
+different topics** (a system of distinct representatives — tested). Mise/recon/chain/comp never count.
+**Phase 3 cannot grade anything**, so a rep counts once the 15-second window has run to its end
+(Passer / Accueil count nothing). « Maîtrisée » therefore currently means *showed up*; the simulation
+masters all 36 frames within ~3 weeks. Phase 4 must set `verdict` (`'fail'` already withdraws a rep) —
+this is the single most important thing it changes.
+
+**Five activity types** (`buildSteps` in `app.js`, windows in `Core.WINDOW`): Mise en bouche (hear the
+exemplar, 8 s shadow) · Reconstruction (spoken English `gist` in en-GB, 12 s, then the model, 4 s
+repeat) · Substitution (exemplar → French prompt → 15 s) · Enchaînement (both exemplars, « du coup /
+n'empêche / cela dit », prompt, 30 s) · Compréhension (Lui line at rate 1.1, 15 s answer, then the Moi
+line as model; text hidden until after the window so it stays listening). All driven by ear; the screen
+only mirrors. One tap anywhere pauses/resumes; ↺ Répéter and Passer ⏭ are optional buttons. A silent
+TTS engine cannot stall a run (fallback timer per utterance). Screen off pauses the run.
+
+**Quotidien link (read-only, plain `fetch` GETs — cannot write):** `progress/user1.json` → mastered ids
+(`Core.masteredIds` handles array and object shapes, nulls, `deletedIds`), then Quotidien's `data.js`
+from GitHub Pages (CORS open) → his mastered sentences of 4–14 words, cached in localStorage
+`debat_qcache` for 6 h. Verified live: 330 mastered, 615 usable sentences. Used for ~1 in 5
+substitutions (« Redis cette phrase avec la structure », chip « Tes phrases », topic `quotidien`).
+Hook (a) « never drill a frame he owns as a phrase there » exists as an optional `quotidienIds: []`
+on a frame, but **no frame sets it** (f27 vs Quotidien #123 was kept on purpose).
+
+## Phase 3 — not done / open
+
+- **No « Au calme » toggle** on the launch screen: it has nothing to hold until Phase 5. Add it then.
+- No STT, no `attempts` / `calques` logs, no override (Phase 4).
+- **Quotidien recombination fits unevenly**: a random mastered sentence poured into a random frame is
+  sometimes awkward (« Je vais lui dire, quitte à le vexer » into *Je dis pas que… je dis juste que*).
+  `Q_SHARE = 0.2` in `core.js`; lower it, or tag frames it suits, after he has tried it.
+- **Compréhension is 23 items**, each resting a week: it runs dry after about a week of daily use and
+  the scheduler then serves frames only. More texts or ingest is the fix.
+- Icons are generated placeholders (two speech bubbles, bordeaux/gold).
+- **Not checked on a real phone:** the fr-FR / en-GB voices on his Android, wake-lock, behaviour with
+  the screen off, the installed-PWA look. The Browser pane has one voice and no wake-lock.
+- Deploy: create the GitHub repo, enable Pages from `master`, then confirm the live URL serves
+  `app.js?v=1` (Quotidien's Pages once sat « building » after a 503; `gh run list` shows the truth).
+
 ## Next session — do this first
 
-1. Read the brief (§4, Phase 3) and Quotidien's `HANDOFF.md` (architecture, SW, sync).
-2. Build Phase 3 only. Run both tests after any content touch.
+1. Read the brief (§4, Phase 4) and this file. Phase 4 = `webkitSpeechRecognition`, the French
+   normaliser, the frame-integrity matcher (needs a per-frame invariant-token list), the three
+   verdict tiers, `calques`, deferred overrides, matcher tests. Follow the `core.js` /
+   `test/core-test.js` pattern (`match.js` + its own test).
+2. Run `node test/core-test.js`, `data-test.js`, `register-test.js` after any touch.
+3. Ask how the first days of real use went (prompt register, window lengths, Compréhension
+   repetition) before building on assumptions.
 
 ## Facts — checked on the web 2026-09-30
 

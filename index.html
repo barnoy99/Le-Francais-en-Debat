@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#FAF6F0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <title>Le Français en Débat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+  <div id="app">
+
+    <!-- HOME -->
+    <section id="screen-home" class="screen screen--active">
+      <div class="splash-content">
+        <button id="btn-home-progress" class="btn-corner" title="Progrès" aria-label="Progrès">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </button>
+        <h1 class="splash-title">Le Français<br><span class="splash-accent">en Débat</span></h1>
+        <p class="splash-flourish">― ✦ ―</p>
+        <p class="splash-subtitle" id="home-stats"></p>
+        <button id="btn-start" class="btn-start">
+          <span id="btn-start-label">Commencer</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+        </button>
+        <p class="home-hint">Tout se fait à l'oreille et à voix haute.<br>Touche l'écran pour mettre en pause.</p>
+      </div>
+    </section>
+
+    <!-- RUN: one item at a time, driven by ear -->
+    <section id="screen-run" class="screen">
+      <header class="run-header">
+        <button id="btn-run-home" class="btn-text">Accueil</button>
+        <span id="run-counter" class="run-counter"></span>
+      </header>
+      <div id="run-tap" class="run-tap">
+        <div class="run-top">
+          <span id="run-label" class="run-label"></span>
+          <span id="run-chip" class="run-chip"></span>
+        </div>
+        <p id="run-main" class="run-main"></p>
+        <p id="run-sub" class="run-sub"></p>
+        <div id="run-ring" class="ring hidden">
+          <svg viewBox="0 0 80 80" aria-hidden="true"><circle class="ring-bg" cx="40" cy="40" r="35"/><circle id="ring-fg" class="ring-fg" cx="40" cy="40" r="35"/></svg>
+          <span id="ring-num" class="ring-num"></span>
+        </div>
+        <p id="run-caption" class="run-caption"></p>
+        <p id="run-paused" class="run-paused hidden">En pause — touche pour reprendre</p>
+      </div>
+      <div class="run-bar">
+        <button id="btn-repeat" class="btn-bar" aria-label="Répéter">↺ Répéter</button>
+        <button id="btn-skip" class="btn-bar" aria-label="Passer">Passer ⏭</button>
+      </div>
+    </section>
+
+    <!-- PROGRESS -->
+    <div id="overlay-progress" class="overlay hidden">
+      <div class="overlay-content">
+        <div class="overlay-header">
+          <h2>Progrès</h2>
+          <button id="btn-progress-close" class="btn-text">× Fermer</button>
+        </div>
+        <div id="progress-summary" class="progress-summary"></div>
+        <p id="progress-quotidien" class="progress-note"></p>
+        <ul id="progress-list" class="progress-list"></ul>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="firebase-config.js?v=1"></script>
+  <script src="data.js?v=1"></script>
+  <script src="core.js?v=1"></script>
+  <script src="app.js?v=1"></script>
+</body>
+</html>
