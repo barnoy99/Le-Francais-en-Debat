@@ -131,13 +131,13 @@ var FRAMES = [
             { name: 'P', pos: 'proposition', note: "ce qui relativise" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f01-1', topic: 'couple',    fr: "Ta femme dit que les enfants se disputent tout le temps. Toi, tu trouves qu'ils s'adorent." },
-      { id: 'f01-2', topic: 'cours',     fr: "Un élève se plaint que tu donnes trop de devoirs. Toi, tu trouves que c'est ce qui le fait progresser." },
-      { id: 'f01-3', topic: 'films',     fr: "Un ami dit que le film était plein d'invraisemblances. Toi, tu l'as adoré quand même." },
-      { id: 'f01-4', topic: 'collegues', fr: "Un collègue dit que la nouvelle direction fait n'importe quoi. Toi, tu vois surtout des changements utiles." },
-      { id: 'f01-5', topic: 'voisins',   fr: "Ta femme trouve que le quartier est devenu bruyant. Toi, tu penses qu'on est quand même bien ici." },
-      { id: 'f01-6', topic: 'sante',     fr: "Ton médecin dit que courir, c'est mauvais pour les genoux. Toi, tu penses que les blessures sont rares." },
-      { id: 'f01-7', topic: 'dieu',      fr: "Un ami croyant dit que la religion a construit des hôpitaux et des écoles. Toi, tu penses que ça prouve rien sur Dieu." }
+      { id: 'f01-1', topic: 'couple',    fr: "Ta femme dit que les enfants se disputent tout le temps. Toi, tu trouves qu'ils s'adorent.", model: "Des disputes, oui, y en a. Mais franchement, ils s'adorent." },
+      { id: 'f01-2', topic: 'cours',     fr: "Un élève se plaint que tu donnes trop de devoirs. Toi, tu trouves que c'est ce qui le fait progresser.", model: "Des devoirs, oui, y en a beaucoup. Mais c'est ça qui le fait progresser." },
+      { id: 'f01-3', topic: 'films',     fr: "Un ami dit que le film était plein d'invraisemblances. Toi, tu l'as adoré quand même.", model: "Des invraisemblances, oui, y en a. Mais je l'ai adoré quand même." },
+      { id: 'f01-4', topic: 'collegues', fr: "Un collègue dit que la nouvelle direction fait n'importe quoi. Toi, tu vois surtout des changements utiles.", model: "Des changements ratés, oui, y en a. Mais je vois surtout des changements utiles." },
+      { id: 'f01-5', topic: 'voisins',   fr: "Ta femme trouve que le quartier est devenu bruyant. Toi, tu penses qu'on est quand même bien ici.", model: "Du bruit, oui, y en a. Mais on est quand même bien ici." },
+      { id: 'f01-6', topic: 'sante',     fr: "Ton médecin dit que courir, c'est mauvais pour les genoux. Toi, tu penses que les blessures sont rares.", model: "Des blessures, oui, y en a. Mais elles sont rares." },
+      { id: 'f01-7', topic: 'dieu',      fr: "Un ami croyant dit que la religion a construit des hôpitaux et des écoles. Toi, tu penses que ça prouve rien sur Dieu.", model: "Des hôpitaux et des écoles, oui, y en a. Mais ça prouve rien sur Dieu." }
     ] },
 
   { id: 'f02', textId: 10, sources: [10, 2, 6, 8],
@@ -151,13 +151,13 @@ var FRAMES = [
             { name: 'P', pos: 'proposition', note: "le retournement" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f02-1', topic: 'cours',     fr: "Un collègue dit que les cours en ligne, c'est plus pratique. Toi, tu trouves que les élèves décrochent." },
-      { id: 'f02-2', topic: 'sante',     fr: "Ta femme dit que t'as arrêté de courir à cause de ton genou. Toi, tu sais que c'était surtout la flemme." },
-      { id: 'f02-3', topic: 'enfants',   fr: "Ta femme dit que la grande est trop jeune pour un téléphone. Toi, tu penses qu'elle en a besoin pour rentrer seule de l'école." },
-      { id: 'f02-4', topic: 'films',     fr: "Un ami dit que la série est trop lente. Toi, tu trouves que la fin vaut le coup." },
-      { id: 'f02-5', topic: 'argent',    fr: "Ta femme dit que la nouvelle voiture coûte trop cher. Toi, tu penses qu'elle va durer dix ans." },
-      { id: 'f02-6', topic: 'voisins',   fr: "Le voisin dit que ses travaux vont durer longtemps. Toi, tu veux au moins qu'il commence pas à sept heures." },
-      { id: 'f02-7', topic: 'dieu',      fr: "Un ami croyant dit que la foi aide les gens à tenir dans les moments durs. Toi, tu penses que ça la rend pas vraie pour autant." }
+      { id: 'f02-1', topic: 'cours',     fr: "Un collègue dit que les cours en ligne, c'est plus pratique. Toi, tu trouves que les élèves décrochent.", model: "C'est plus pratique, je te l'accorde. Mais les élèves décrochent." },
+      { id: 'f02-2', topic: 'sante',     fr: "Ta femme dit que t'as arrêté de courir à cause de ton genou. Toi, tu sais que c'était surtout la flemme.", model: "Mon genou m'a gêné, je te l'accorde. Mais c'était surtout la flemme." },
+      { id: 'f02-3', topic: 'enfants',   fr: "Ta femme dit que la grande est trop jeune pour un téléphone. Toi, tu penses qu'elle en a besoin pour rentrer seule de l'école.", model: "Elle est jeune, je te l'accorde. Mais elle en a besoin pour rentrer seule de l'école." },
+      { id: 'f02-4', topic: 'films',     fr: "Un ami dit que la série est trop lente. Toi, tu trouves que la fin vaut le coup.", model: "Elle est lente, je te l'accorde. Mais la fin vaut le coup." },
+      { id: 'f02-5', topic: 'argent',    fr: "Ta femme dit que la nouvelle voiture coûte trop cher. Toi, tu penses qu'elle va durer dix ans.", model: "Elle coûte cher, je te l'accorde. Mais elle va durer dix ans." },
+      { id: 'f02-6', topic: 'voisins',   fr: "Le voisin dit que ses travaux vont durer longtemps. Toi, tu veux au moins qu'il commence pas à sept heures.", model: "Ses travaux vont durer, je te l'accorde. Mais qu'il commence pas à sept heures." },
+      { id: 'f02-7', topic: 'dieu',      fr: "Un ami croyant dit que la foi aide les gens à tenir dans les moments durs. Toi, tu penses que ça la rend pas vraie pour autant.", model: "La foi aide les gens, je te l'accorde. Mais ça la rend pas vraie pour autant." }
     ] },
 
   { id: 'f03', textId: 17, sources: [17, 8],
@@ -171,13 +171,13 @@ var FRAMES = [
             { name: 'P', pos: 'proposition', note: "le hic" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f03-1', topic: 'couple',    fr: "Ta femme veut partir en vacances en août. Le problème : tout est deux fois plus cher." },
-      { id: 'f03-2', topic: 'collegues', fr: "Un collègue propose une réunion chaque lundi. Le problème : personne ne lit jamais le compte rendu." },
-      { id: 'f03-3', topic: 'enfants',   fr: "Les enfants promettent de s'occuper du chien si vous en prenez un. Le problème : ils ont déjà oublié le poisson rouge." },
-      { id: 'f03-4', topic: 'tech',      fr: "On te dit que la nouvelle appli fait gagner du temps. Le problème : il faut une heure pour la configurer." },
-      { id: 'f03-5', topic: 'sante',     fr: "Ton ami dit qu'il va courir tous les matins. Le problème : il se lève à huit heures." },
-      { id: 'f03-6', topic: 'cours',     fr: "Un parent veut que son fils passe l'examen en juin. Le problème : il a pas encore fini le programme." },
-      { id: 'f03-7', topic: 'dieu',      fr: "Un ami dit que la Bible donne une morale à tout le monde. Le problème : elle dit aussi de lapider des gens." }
+      { id: 'f03-1', topic: 'couple',    fr: "Ta femme veut partir en vacances en août. Le problème : tout est deux fois plus cher.", model: "Oui, partir en août, ce serait bien. Sauf que tout est deux fois plus cher." },
+      { id: 'f03-2', topic: 'collegues', fr: "Un collègue propose une réunion chaque lundi. Le problème : personne ne lit jamais le compte rendu.", model: "Une réunion le lundi, pourquoi pas. Sauf que personne ne lit le compte rendu." },
+      { id: 'f03-3', topic: 'enfants',   fr: "Les enfants promettent de s'occuper du chien si vous en prenez un. Le problème : ils ont déjà oublié le poisson rouge.", model: "Ils sont très motivés, c'est vrai. Sauf qu'ils ont déjà oublié le poisson rouge." },
+      { id: 'f03-4', topic: 'tech',      fr: "On te dit que la nouvelle appli fait gagner du temps. Le problème : il faut une heure pour la configurer.", model: "Elle fait gagner du temps, c'est vrai. Sauf qu'il faut une heure pour la configurer." },
+      { id: 'f03-5', topic: 'sante',     fr: "Ton ami dit qu'il va courir tous les matins. Le problème : il se lève à huit heures.", model: "C'est une bonne idée. Sauf qu'il se lève à huit heures." },
+      { id: 'f03-6', topic: 'cours',     fr: "Un parent veut que son fils passe l'examen en juin. Le problème : il a pas encore fini le programme.", model: "Juin, c'est un bon objectif. Sauf qu'il a pas encore fini le programme." },
+      { id: 'f03-7', topic: 'dieu',      fr: "Un ami dit que la Bible donne une morale à tout le monde. Le problème : elle dit aussi de lapider des gens.", model: "Elle donne une morale, c'est vrai. Sauf qu'elle dit aussi de lapider des gens." }
     ] },
 
   { id: 'f04', textId: 2, sources: [2],
@@ -191,13 +191,13 @@ var FRAMES = [
             { name: 'Q', pos: 'proposition', note: "la version modeste" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f04-1', topic: 'enfants',   fr: "Ta femme croit que tu veux interdire les écrans. Toi, tu veux juste pas d'écran pendant le dîner." },
-      { id: 'f04-2', topic: 'cours',     fr: "Un élève croit que tu le trouves nul. Toi, tu penses juste qu'il doit revoir les bases." },
-      { id: 'f04-3', topic: 'collegues', fr: "Un collègue croit que tu l'accuses d'être paresseux. Toi, tu trouves juste qu'il parle beaucoup en réunion." },
-      { id: 'f04-4', topic: 'films',     fr: "Un ami croit que tu détestes tous les films de super-héros. Toi, tu trouves juste que le dernier était trop long." },
-      { id: 'f04-5', topic: 'politique', fr: "Un ami croit que tu soutiens le gouvernement. Toi, tu penses juste que l'opposition a pas de programme." },
-      { id: 'f04-6', topic: 'argent',    fr: "Ta femme croit que tu veux plus jamais partir en vacances. Toi, tu veux juste attendre l'année prochaine." },
-      { id: 'f04-7', topic: 'israel',    fr: "Un ami français croit que tu dis que l'armée fait jamais d'erreurs. Toi, tu dis juste qu'une erreur, c'est pas une politique." }
+      { id: 'f04-1', topic: 'enfants',   fr: "Ta femme croit que tu veux interdire les écrans. Toi, tu veux juste pas d'écran pendant le dîner.", model: "Je dis pas qu'il faut interdire les écrans. Je dis juste qu'on en veut pas pendant le dîner." },
+      { id: 'f04-2', topic: 'cours',     fr: "Un élève croit que tu le trouves nul. Toi, tu penses juste qu'il doit revoir les bases.", model: "Je dis pas que t'es nul. Je dis juste que tu dois revoir les bases." },
+      { id: 'f04-3', topic: 'collegues', fr: "Un collègue croit que tu l'accuses d'être paresseux. Toi, tu trouves juste qu'il parle beaucoup en réunion.", model: "Je dis pas que t'es paresseux. Je dis juste que tu parles beaucoup en réunion." },
+      { id: 'f04-4', topic: 'films',     fr: "Un ami croit que tu détestes tous les films de super-héros. Toi, tu trouves juste que le dernier était trop long.", model: "Je dis pas que je déteste les films de super-héros. Je dis juste que le dernier était trop long." },
+      { id: 'f04-5', topic: 'politique', fr: "Un ami croit que tu soutiens le gouvernement. Toi, tu penses juste que l'opposition a pas de programme.", model: "Je dis pas que je soutiens le gouvernement. Je dis juste que l'opposition a pas de programme." },
+      { id: 'f04-6', topic: 'argent',    fr: "Ta femme croit que tu veux plus jamais partir en vacances. Toi, tu veux juste attendre l'année prochaine.", model: "Je dis pas qu'on part plus jamais en vacances. Je dis juste qu'on attend l'année prochaine." },
+      { id: 'f04-7', topic: 'israel',    fr: "Un ami français croit que tu dis que l'armée fait jamais d'erreurs. Toi, tu dis juste qu'une erreur, c'est pas une politique.", model: "Je dis pas que l'armée fait jamais d'erreurs. Je dis juste qu'une erreur, c'est pas une politique." }
     ] },
 
   { id: 'f05', textId: 8, sources: [8],
@@ -211,13 +211,13 @@ var FRAMES = [
             { name: 'Q', pos: 'proposition', note: "la conclusion refusée" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f05-1', topic: 'couple',    fr: "Ta femme dit que le restaurant doit être bon, puisqu'il est cher. Toi, t'es pas convaincu." },
-      { id: 'f05-2', topic: 'films',     fr: "Un ami dit que le film est forcément bien, puisqu'il a eu un Oscar." },
-      { id: 'f05-3', topic: 'cours',     fr: "Un parent dit que son fils a compris, puisqu'il a eu une bonne note. Toi, t'en doutes." },
-      { id: 'f05-4', topic: 'enfants',   fr: "Le grand dit qu'il a le droit, puisque tous ses copains le font." },
-      { id: 'f05-5', topic: 'tech',      fr: "Un collègue dit que l'appli est sûre, puisque tout le monde l'utilise." },
-      { id: 'f05-6', topic: 'sante',     fr: "Un ami dit qu'il est en forme, puisqu'il a pas mal au dos." },
-      { id: 'f05-7', topic: 'israel',    fr: "Un ami dit qu'une info sur la guerre est vraie, puisque tous les journaux la reprennent." }
+      { id: 'f05-1', topic: 'couple',    fr: "Ta femme dit que le restaurant doit être bon, puisqu'il est cher. Toi, t'es pas convaincu.", model: "C'est pas parce que c'est cher que c'est bon." },
+      { id: 'f05-2', topic: 'films',     fr: "Un ami dit que le film est forcément bien, puisqu'il a eu un Oscar.", model: "C'est pas parce qu'il a eu un Oscar que c'est un bon film." },
+      { id: 'f05-3', topic: 'cours',     fr: "Un parent dit que son fils a compris, puisqu'il a eu une bonne note. Toi, t'en doutes.", model: "C'est pas parce qu'il a eu une bonne note qu'il a compris." },
+      { id: 'f05-4', topic: 'enfants',   fr: "Le grand dit qu'il a le droit, puisque tous ses copains le font.", model: "C'est pas parce que tous ses copains le font qu'il a le droit." },
+      { id: 'f05-5', topic: 'tech',      fr: "Un collègue dit que l'appli est sûre, puisque tout le monde l'utilise.", model: "C'est pas parce que tout le monde l'utilise qu'elle est sûre." },
+      { id: 'f05-6', topic: 'sante',     fr: "Un ami dit qu'il est en forme, puisqu'il a pas mal au dos.", model: "C'est pas parce qu'on a pas mal au dos qu'on est en forme." },
+      { id: 'f05-7', topic: 'israel',    fr: "Un ami dit qu'une info sur la guerre est vraie, puisque tous les journaux la reprennent.", model: "C'est pas parce que tous les journaux la reprennent qu'elle est vraie." }
     ] },
 
   { id: 'f06', textId: 6, sources: [6, 14],
@@ -230,13 +230,13 @@ var FRAMES = [
     slots: [{ name: 'P', pos: 'discours direct', note: "l'objection, dans sa voix à lui" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f06-1', topic: 'couple',    fr: "Tu veux acheter un vélo cher. Tu sais que ta femme va dire que t'en as déjà un." },
-      { id: 'f06-2', topic: 'enfants',   fr: "Tu proposes une randonnée en famille. Tu sais que ta femme va dire que les enfants vont râler." },
-      { id: 'f06-3', topic: 'cours',     fr: "Tu proposes plus de devoirs à un élève. Tu sais qu'il va dire qu'il a pas le temps." },
-      { id: 'f06-4', topic: 'collegues', fr: "Tu proposes une nouvelle méthode. Tu sais qu'un collègue va dire qu'on a toujours fait autrement." },
-      { id: 'f06-5', topic: 'argent',    fr: "Tu veux changer de banque. Tu sais que ton ami va dire que c'est trop compliqué." },
-      { id: 'f06-6', topic: 'sante',     fr: "Tu annonces que tu reprends la course. Tu sais que ta femme va dire que ça va pas durer." },
-      { id: 'f06-7', topic: 'israel',    fr: "Tu parles des tunnels à un ami français. Tu sais qu'il va dire que c'est la propagande de l'armée." }
+      { id: 'f06-1', topic: 'couple',    fr: "Tu veux acheter un vélo cher. Tu sais que ta femme va dire que t'en as déjà un.", model: "Je vois venir ta réponse : « T'en as déjà un. »" },
+      { id: 'f06-2', topic: 'enfants',   fr: "Tu proposes une randonnée en famille. Tu sais que ta femme va dire que les enfants vont râler.", model: "Je vois venir ta réponse : « Les enfants vont râler. »" },
+      { id: 'f06-3', topic: 'cours',     fr: "Tu proposes plus de devoirs à un élève. Tu sais qu'il va dire qu'il a pas le temps.", model: "Je vois venir ta réponse : « J'ai pas le temps. »" },
+      { id: 'f06-4', topic: 'collegues', fr: "Tu proposes une nouvelle méthode. Tu sais qu'un collègue va dire qu'on a toujours fait autrement.", model: "Je vois venir ta réponse : « On a toujours fait autrement. »" },
+      { id: 'f06-5', topic: 'argent',    fr: "Tu veux changer de banque. Tu sais que ton ami va dire que c'est trop compliqué.", model: "Je vois venir ta réponse : « C'est trop compliqué. »" },
+      { id: 'f06-6', topic: 'sante',     fr: "Tu annonces que tu reprends la course. Tu sais que ta femme va dire que ça va pas durer.", model: "Je vois venir ta réponse : « Ça va pas durer. »" },
+      { id: 'f06-7', topic: 'israel',    fr: "Tu parles des tunnels à un ami français. Tu sais qu'il va dire que c'est la propagande de l'armée.", model: "Je vois venir ta réponse : « C'est la propagande de l'armée. »" }
     ] },
 
   // ── B. Changer la question ──────────────────────────────
@@ -251,13 +251,13 @@ var FRAMES = [
             { name: 'B', pos: 'question', note: "celle qui compte" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f07-1', topic: 'enfants',   fr: "Tout le monde se demande si le grand doit avoir un téléphone. Pour toi, ce qui compte, c'est ce qu'il va en faire." },
-      { id: 'f07-2', topic: 'cours',     fr: "Un parent demande si son fils a assez d'heures de cours. Pour toi, ce qui compte, c'est s'il travaille entre les cours." },
-      { id: 'f07-3', topic: 'argent',    fr: "Ta femme demande si on peut se payer une nouvelle cuisine. Pour toi, ce qui compte, c'est si on en a besoin." },
-      { id: 'f07-4', topic: 'politique', fr: "Tout le monde se demande qui va gagner les élections. Pour toi, ce qui compte, c'est qui peut former une coalition." },
-      { id: 'f07-5', topic: 'sante',     fr: "Un ami se demande quel régime suivre. Pour toi, ce qui compte, c'est s'il va tenir plus d'un mois." },
-      { id: 'f07-6', topic: 'collegues', fr: "En réunion, on cherche qui a fait l'erreur. Pour toi, ce qui compte, c'est comment éviter qu'elle recommence." },
-      { id: 'f07-7', topic: 'dieu',      fr: "Un ami demande si la religion rend les gens meilleurs. Pour toi, ce qui compte, c'est si elle est vraie." }
+      { id: 'f07-1', topic: 'enfants',   fr: "Tout le monde se demande si le grand doit avoir un téléphone. Pour toi, ce qui compte, c'est ce qu'il va en faire.", model: "La vraie question, c'est pas « est-ce que le grand doit avoir un téléphone ? ». C'est : « qu'est-ce qu'il va en faire ? »" },
+      { id: 'f07-2', topic: 'cours',     fr: "Un parent demande si son fils a assez d'heures de cours. Pour toi, ce qui compte, c'est s'il travaille entre les cours.", model: "La vraie question, c'est pas « est-ce qu'il a assez d'heures de cours ? ». C'est : « est-ce qu'il travaille entre les cours ? »" },
+      { id: 'f07-3', topic: 'argent',    fr: "Ta femme demande si on peut se payer une nouvelle cuisine. Pour toi, ce qui compte, c'est si on en a besoin.", model: "La vraie question, c'est pas « est-ce qu'on peut se la payer ? ». C'est : « est-ce qu'on en a besoin ? »" },
+      { id: 'f07-4', topic: 'politique', fr: "Tout le monde se demande qui va gagner les élections. Pour toi, ce qui compte, c'est qui peut former une coalition.", model: "La vraie question, c'est pas « qui va gagner ? ». C'est : « qui peut former une coalition ? »" },
+      { id: 'f07-5', topic: 'sante',     fr: "Un ami se demande quel régime suivre. Pour toi, ce qui compte, c'est s'il va tenir plus d'un mois.", model: "La vraie question, c'est pas « quel régime suivre ? ». C'est : « est-ce que tu vas tenir plus d'un mois ? »" },
+      { id: 'f07-6', topic: 'collegues', fr: "En réunion, on cherche qui a fait l'erreur. Pour toi, ce qui compte, c'est comment éviter qu'elle recommence.", model: "La vraie question, c'est pas « qui a fait l'erreur ? ». C'est : « comment éviter qu'elle recommence ? »" },
+      { id: 'f07-7', topic: 'dieu',      fr: "Un ami demande si la religion rend les gens meilleurs. Pour toi, ce qui compte, c'est si elle est vraie.", model: "La vraie question, c'est pas « est-ce que la religion rend meilleur ? ». C'est : « est-ce qu'elle est vraie ? »" }
     ] },
 
   { id: 'f08', textId: 10, sources: [10],
@@ -271,13 +271,13 @@ var FRAMES = [
             { name: 'B', pos: 'nom', note: "la vraie chose" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f08-1', topic: 'enfants',   fr: "Ta femme dit que la crise de la petite, c'est un caprice. Pour toi, elle est vraiment épuisée." },
-      { id: 'f08-2', topic: 'cours',     fr: "Un parent parle d'un « petit retard ». Pour toi, son fils a trois ans de lacunes." },
-      { id: 'f08-3', topic: 'sante',     fr: "Un ami dit que t'as « un petit mal de dos ». Toi, t'as une hernie." },
-      { id: 'f08-4', topic: 'collegues', fr: "Ton chef appelle ça « un petit dépassement ». Pour toi, le projet a six mois de retard." },
-      { id: 'f08-5', topic: 'voisins',   fr: "Le voisin parle d'« un peu de musique ». Toi, t'appelles ça une fête jusqu'à trois heures du matin." },
-      { id: 'f08-6', topic: 'argent',    fr: "Un ami dit que t'as fait « une petite dépense ». Toi, t'as remplacé toute la chaudière." },
-      { id: 'f08-7', topic: 'dieu',      fr: "Un croyant dit que l'athéisme, c'est une religion comme une autre. Pour toi, c'est juste l'absence de croyance." }
+      { id: 'f08-1', topic: 'enfants',   fr: "Ta femme dit que la crise de la petite, c'est un caprice. Pour toi, elle est vraiment épuisée.", model: "On parle pas d'un caprice. On parle d'une petite qui est épuisée." },
+      { id: 'f08-2', topic: 'cours',     fr: "Un parent parle d'un « petit retard ». Pour toi, son fils a trois ans de lacunes.", model: "On parle pas d'un petit retard. On parle de trois ans de lacunes." },
+      { id: 'f08-3', topic: 'sante',     fr: "Un ami dit que t'as « un petit mal de dos ». Toi, t'as une hernie.", model: "On parle pas d'un petit mal de dos. On parle d'une hernie." },
+      { id: 'f08-4', topic: 'collegues', fr: "Ton chef appelle ça « un petit dépassement ». Pour toi, le projet a six mois de retard.", model: "On parle pas d'un petit dépassement. On parle de six mois de retard." },
+      { id: 'f08-5', topic: 'voisins',   fr: "Le voisin parle d'« un peu de musique ». Toi, t'appelles ça une fête jusqu'à trois heures du matin.", model: "On parle pas d'un peu de musique. On parle d'une fête jusqu'à trois heures du matin." },
+      { id: 'f08-6', topic: 'argent',    fr: "Un ami dit que t'as fait « une petite dépense ». Toi, t'as remplacé toute la chaudière.", model: "On parle pas d'une petite dépense. On parle d'une chaudière entière." },
+      { id: 'f08-7', topic: 'dieu',      fr: "Un croyant dit que l'athéisme, c'est une religion comme une autre. Pour toi, c'est juste l'absence de croyance.", model: "On parle pas d'une religion. On parle de l'absence de croyance." }
     ] },
 
   { id: 'f09', textId: 6, sources: [6],
@@ -291,13 +291,13 @@ var FRAMES = [
             { name: 'B', pos: 'nom', note: "le facteur réel" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f09-1', topic: 'enfants',   fr: "La petite lit pas encore bien. Toi, tu penses que c'est une affaire d'envie, pas de niveau." },
-      { id: 'f09-2', topic: 'cours',     fr: "Un élève rate ses examens. Pour toi, c'est son organisation, pas son intelligence." },
-      { id: 'f09-3', topic: 'sante',     fr: "Un ami arrive pas à maigrir. Pour toi, c'est son sommeil, pas son régime." },
-      { id: 'f09-4', topic: 'couple',    fr: "Vous vous disputez sur la vaisselle. Pour toi, c'est une affaire d'organisation, pas de bonne volonté." },
-      { id: 'f09-5', topic: 'films',     fr: "Tout le monde dit que le film a raté à cause des acteurs. Pour toi, c'est le scénario." },
-      { id: 'f09-6', topic: 'argent',    fr: "Un ami dit qu'il gagne pas assez. Pour toi, le souci, c'est ce qu'il dépense." },
-      { id: 'f09-7', topic: 'israel',    fr: "Un ami dit que le conflit, c'est une affaire de territoire. Pour toi, c'est surtout une affaire de reconnaissance." }
+      { id: 'f09-1', topic: 'enfants',   fr: "La petite lit pas encore bien. Toi, tu penses que c'est une affaire d'envie, pas de niveau.", model: "Pour la petite, c'est moins une question de niveau qu'une question d'envie." },
+      { id: 'f09-2', topic: 'cours',     fr: "Un élève rate ses examens. Pour toi, c'est son organisation, pas son intelligence.", model: "C'est moins une question d'intelligence qu'une question d'organisation." },
+      { id: 'f09-3', topic: 'sante',     fr: "Un ami arrive pas à maigrir. Pour toi, c'est son sommeil, pas son régime.", model: "C'est moins une question de régime qu'une question de sommeil." },
+      { id: 'f09-4', topic: 'couple',    fr: "Vous vous disputez sur la vaisselle. Pour toi, c'est une affaire d'organisation, pas de bonne volonté.", model: "C'est moins une question de bonne volonté qu'une question d'organisation." },
+      { id: 'f09-5', topic: 'films',     fr: "Tout le monde dit que le film a raté à cause des acteurs. Pour toi, c'est le scénario.", model: "C'est moins une question d'acteurs qu'une question de scénario." },
+      { id: 'f09-6', topic: 'argent',    fr: "Un ami dit qu'il gagne pas assez. Pour toi, le souci, c'est ce qu'il dépense.", model: "C'est moins une question de salaire qu'une question de dépenses." },
+      { id: 'f09-7', topic: 'israel',    fr: "Un ami dit que le conflit, c'est une affaire de territoire. Pour toi, c'est surtout une affaire de reconnaissance.", model: "C'est moins une question de territoire qu'une question de reconnaissance." }
     ] },
 
   { id: 'f10', textId: 14, sources: [14],
@@ -311,13 +311,13 @@ var FRAMES = [
             { name: 'B', pos: 'nom / infinitif', note: "" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f10-1', topic: 'enfants',   fr: "Ta femme mélange deux choses : est-ce que le grand a le droit de sortir, et à quelle heure il rentre." },
-      { id: 'f10-2', topic: 'cours',     fr: "Un parent mélange deux choses : est-ce que son fils est intelligent, et est-ce qu'il travaille." },
-      { id: 'f10-3', topic: 'collegues', fr: "Ton chef mélange deux choses : est-ce que l'idée est bonne, et qui l'a proposée." },
-      { id: 'f10-4', topic: 'argent',    fr: "Un ami mélange deux choses : est-ce qu'il peut payer, et est-ce que ça vaut le prix." },
-      { id: 'f10-5', topic: 'films',     fr: "Un ami mélange deux choses : est-ce que l'acteur est sympa, et est-ce qu'il joue bien." },
-      { id: 'f10-6', topic: 'politique', fr: "Un ami mélange deux choses : est-ce qu'une réforme est nécessaire, et est-ce que celle-là est la bonne." },
-      { id: 'f10-7', topic: 'dieu',      fr: "Un croyant mélange deux choses : est-ce que la religion est utile, et est-ce qu'elle est vraie." }
+      { id: 'f10-1', topic: 'enfants',   fr: "Ta femme mélange deux choses : est-ce que le grand a le droit de sortir, et à quelle heure il rentre.", model: "Le droit de sortir et l'heure de rentrer, c'est deux questions différentes." },
+      { id: 'f10-2', topic: 'cours',     fr: "Un parent mélange deux choses : est-ce que son fils est intelligent, et est-ce qu'il travaille.", model: "Être intelligent et travailler, c'est deux questions différentes." },
+      { id: 'f10-3', topic: 'collegues', fr: "Ton chef mélange deux choses : est-ce que l'idée est bonne, et qui l'a proposée.", model: "Une bonne idée et la personne qui la propose, c'est deux questions différentes." },
+      { id: 'f10-4', topic: 'argent',    fr: "Un ami mélange deux choses : est-ce qu'il peut payer, et est-ce que ça vaut le prix.", model: "Pouvoir payer et savoir si ça vaut le prix, c'est deux questions différentes." },
+      { id: 'f10-5', topic: 'films',     fr: "Un ami mélange deux choses : est-ce que l'acteur est sympa, et est-ce qu'il joue bien.", model: "Être sympa et bien jouer, c'est deux questions différentes." },
+      { id: 'f10-6', topic: 'politique', fr: "Un ami mélange deux choses : est-ce qu'une réforme est nécessaire, et est-ce que celle-là est la bonne.", model: "Une réforme nécessaire et la bonne réforme, c'est deux questions différentes." },
+      { id: 'f10-7', topic: 'dieu',      fr: "Un croyant mélange deux choses : est-ce que la religion est utile, et est-ce qu'elle est vraie.", model: "Une religion utile et une religion vraie, c'est deux questions différentes." }
     ] },
 
   { id: 'f11', textId: 17, sources: [17],
@@ -331,13 +331,13 @@ var FRAMES = [
             { name: 'INF B', pos: 'infinitif', note: "l'acte qui passe la ligne" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f11-1', topic: 'enfants',   fr: "Le grand a le droit d'être fâché. Mais claquer la porte, pour toi, ça va trop loin." },
-      { id: 'f11-2', topic: 'collegues', fr: "Un collègue donne son avis, très bien. Mais couper la parole à tout le monde, pour toi, ça va trop loin." },
-      { id: 'f11-3', topic: 'cours',     fr: "Un élève peut oublier ses devoirs une fois. Mais mentir là-dessus, pour toi, ça va trop loin." },
-      { id: 'f11-4', topic: 'couple',    fr: "Ta femme peut critiquer ta cuisine. Mais la raconter à tous ses amis, pour toi, ça va trop loin." },
-      { id: 'f11-5', topic: 'voisins',   fr: "Le voisin peut faire des travaux. Mais commencer à sept heures le samedi, pour toi, ça va trop loin." },
-      { id: 'f11-6', topic: 'films',     fr: "Un film peut être violent. Mais montrer la violence comme un jeu, pour toi, ça va trop loin." },
-      { id: 'f11-7', topic: 'dieu',      fr: "Croire en Dieu, pour toi, c'est pas un problème. Mais l'enseigner comme de la science à l'école, si." }
+      { id: 'f11-1', topic: 'enfants',   fr: "Le grand a le droit d'être fâché. Mais claquer la porte, pour toi, ça va trop loin.", model: "Être fâché, c'est une chose. Claquer la porte, c'en est une autre." },
+      { id: 'f11-2', topic: 'collegues', fr: "Un collègue donne son avis, très bien. Mais couper la parole à tout le monde, pour toi, ça va trop loin.", model: "Donner son avis, c'est une chose. Couper la parole à tout le monde, c'en est une autre." },
+      { id: 'f11-3', topic: 'cours',     fr: "Un élève peut oublier ses devoirs une fois. Mais mentir là-dessus, pour toi, ça va trop loin.", model: "Oublier ses devoirs, c'est une chose. Mentir là-dessus, c'en est une autre." },
+      { id: 'f11-4', topic: 'couple',    fr: "Ta femme peut critiquer ta cuisine. Mais la raconter à tous ses amis, pour toi, ça va trop loin.", model: "Critiquer ma cuisine, c'est une chose. La raconter à tous tes amis, c'en est une autre." },
+      { id: 'f11-5', topic: 'voisins',   fr: "Le voisin peut faire des travaux. Mais commencer à sept heures le samedi, pour toi, ça va trop loin.", model: "Faire des travaux, c'est une chose. Commencer à sept heures le samedi, c'en est une autre." },
+      { id: 'f11-6', topic: 'films',     fr: "Un film peut être violent. Mais montrer la violence comme un jeu, pour toi, ça va trop loin.", model: "Montrer de la violence, c'est une chose. La montrer comme un jeu, c'en est une autre." },
+      { id: 'f11-7', topic: 'dieu',      fr: "Croire en Dieu, pour toi, c'est pas un problème. Mais l'enseigner comme de la science à l'école, si.", model: "Croire en Dieu, c'est une chose. L'enseigner comme de la science, c'en est une autre." }
     ] },
 
   { id: 'f12', textId: 14, sources: [14],
@@ -350,13 +350,13 @@ var FRAMES = [
     slots: [{ name: 'A', pos: 'nom', note: "" }, { name: 'B', pos: 'nom', note: "" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f12-1', topic: 'enfants',   fr: "Ta femme pense qu'il faut choisir entre des enfants libres et des enfants sages. Pour toi, c'est un faux choix." },
-      { id: 'f12-2', topic: 'cours',     fr: "Un parent pense qu'il faut choisir entre de bonnes notes et un enfant heureux." },
-      { id: 'f12-3', topic: 'sante',     fr: "Un ami croit qu'il doit choisir entre le sport et sa famille. Pour toi, dix minutes le matin suffisent." },
-      { id: 'f12-4', topic: 'argent',    fr: "Un ami croit qu'il doit choisir entre acheter tout de suite et payer un loyer toute sa vie." },
-      { id: 'f12-5', topic: 'collegues', fr: "Ton chef présente ça comme un choix entre travailler le week-end et perdre le client." },
-      { id: 'f12-6', topic: 'tech',      fr: "On te présente ça comme un choix entre tout accepter et pas utiliser l'appli du tout." },
-      { id: 'f12-7', topic: 'dieu',      fr: "Un croyant pense qu'il faut choisir entre la foi et une vie sans aucun sens." }
+      { id: 'f12-1', topic: 'enfants',   fr: "Ta femme pense qu'il faut choisir entre des enfants libres et des enfants sages. Pour toi, c'est un faux choix.", model: "Le choix, il a jamais été entre des enfants libres et des enfants sages." },
+      { id: 'f12-2', topic: 'cours',     fr: "Un parent pense qu'il faut choisir entre de bonnes notes et un enfant heureux.", model: "Le choix, il a jamais été entre de bonnes notes et un enfant heureux." },
+      { id: 'f12-3', topic: 'sante',     fr: "Un ami croit qu'il doit choisir entre le sport et sa famille. Pour toi, dix minutes le matin suffisent.", model: "Le choix, il a jamais été entre le sport et la famille. Dix minutes le matin suffisent." },
+      { id: 'f12-4', topic: 'argent',    fr: "Un ami croit qu'il doit choisir entre acheter tout de suite et payer un loyer toute sa vie.", model: "Le choix, il a jamais été entre acheter tout de suite et payer un loyer toute sa vie." },
+      { id: 'f12-5', topic: 'collegues', fr: "Ton chef présente ça comme un choix entre travailler le week-end et perdre le client.", model: "Le choix, il a jamais été entre travailler le week-end et perdre le client." },
+      { id: 'f12-6', topic: 'tech',      fr: "On te présente ça comme un choix entre tout accepter et pas utiliser l'appli du tout.", model: "Le choix, il a jamais été entre tout accepter et pas utiliser l'appli du tout." },
+      { id: 'f12-7', topic: 'dieu',      fr: "Un croyant pense qu'il faut choisir entre la foi et une vie sans aucun sens.", model: "Le choix, il a jamais été entre la foi et une vie sans aucun sens." }
     ] },
 
   { id: 'f13', textId: 14, sources: [14],
@@ -370,13 +370,13 @@ var FRAMES = [
             { name: 'Q', pos: 'nom', note: "ce qui reste ouvert" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f13-1', topic: 'cours',     fr: "Un élève a eu vingt sur vingt. D'après toi, ça prouve qu'il a travaillé, pas qu'il a compris." },
-      { id: 'f13-2', topic: 'enfants',   fr: "La grande a rangé sa chambre une fois. Elle sait le faire, d'accord. Qu'elle continue, c'est autre chose." },
-      { id: 'f13-3', topic: 'films',     fr: "Le film a battu un record d'entrées. D'après toi, la pub était bonne, mais le film, on sait pas." },
-      { id: 'f13-4', topic: 'collegues', fr: "Un collègue reste tard tous les soirs. D'après toi, il est présent, mais pas forcément efficace." },
-      { id: 'f13-5', topic: 'sante',     fr: "Ta prise de sang est parfaite. Mais ton dos, lui, te fait toujours mal." },
-      { id: 'f13-6', topic: 'politique', fr: "Un sondage donne un parti gagnant. D'après toi, il est populaire, mais est-ce qu'il saura gouverner ?" },
-      { id: 'f13-7', topic: 'dieu',      fr: "Un ami a guéri après avoir prié. D'après toi, il a guéri, c'est sûr. Mais pourquoi, c'est une autre histoire." }
+      { id: 'f13-1', topic: 'cours',     fr: "Un élève a eu vingt sur vingt. D'après toi, ça prouve qu'il a travaillé, pas qu'il a compris.", model: "Ça montre qu'il a travaillé. Ça dit rien sur ce qu'il a compris." },
+      { id: 'f13-2', topic: 'enfants',   fr: "La grande a rangé sa chambre une fois. Elle sait le faire, d'accord. Qu'elle continue, c'est autre chose.", model: "Ça montre qu'elle sait le faire. Ça dit rien sur la suite." },
+      { id: 'f13-3', topic: 'films',     fr: "Le film a battu un record d'entrées. D'après toi, la pub était bonne, mais le film, on sait pas.", model: "Ça montre que la pub était bonne. Ça dit rien sur le film." },
+      { id: 'f13-4', topic: 'collegues', fr: "Un collègue reste tard tous les soirs. D'après toi, il est présent, mais pas forcément efficace.", model: "Ça montre qu'il est présent. Ça dit rien sur son efficacité." },
+      { id: 'f13-5', topic: 'sante',     fr: "Ta prise de sang est parfaite. Mais ton dos, lui, te fait toujours mal.", model: "Ça montre que ma prise de sang est bonne. Ça dit rien sur mon dos." },
+      { id: 'f13-6', topic: 'politique', fr: "Un sondage donne un parti gagnant. D'après toi, il est populaire, mais est-ce qu'il saura gouverner ?", model: "Ça montre qu'il est populaire. Ça dit rien sur sa façon de gouverner." },
+      { id: 'f13-7', topic: 'dieu',      fr: "Un ami a guéri après avoir prié. D'après toi, il a guéri, c'est sûr. Mais pourquoi, c'est une autre histoire.", model: "Ça montre qu'il a guéri. Ça dit rien sur la raison." }
     ] },
 
   { id: 'f14', textId: 17, sources: [17],
@@ -390,13 +390,13 @@ var FRAMES = [
             { name: 'DÉF', pos: 'nom', note: "sa définition stricte" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f14-1', topic: 'enfants',   fr: "Ta femme dit que la petite est « hyperactive ». Pour toi, c'est un mot médical, pas une enfant qui bouge beaucoup." },
-      { id: 'f14-2', topic: 'collegues', fr: "Un collègue dit qu'il fait un « burn-out ». Pour toi, c'est un épuisement qui dure des mois, pas une grosse semaine." },
-      { id: 'f14-3', topic: 'cours',     fr: "Un parent dit que son fils est « dyslexique ». Pour toi, il faut un diagnostic, pas juste des fautes d'orthographe." },
-      { id: 'f14-4', topic: 'sante',     fr: "Un ami dit qu'il est « allergique » au gluten. Toi, tu penses qu'il le digère mal, c'est tout." },
-      { id: 'f14-5', topic: 'films',     fr: "Un ami dit qu'un film sorti le mois dernier est déjà « culte ». Pour toi, un film culte, on le revoit encore trente ans après." },
-      { id: 'f14-6', topic: 'politique', fr: "Un ami dit que le gouvernement est « illégitime ». Pour toi, il a été élu, même si tu l'aimes pas." },
-      { id: 'f14-7', topic: 'dieu',      fr: "Un ami parle d'un « miracle » parce qu'il a trouvé une place de parking. Pour toi, un miracle, c'est les lois de la nature qui s'arrêtent." }
+      { id: 'f14-1', topic: 'enfants',   fr: "Ta femme dit que la petite est « hyperactive ». Pour toi, c'est un mot médical, pas une enfant qui bouge beaucoup.", model: "« Hyperactive », ça veut dire une chose précise : un trouble médical, pas une enfant qui bouge beaucoup." },
+      { id: 'f14-2', topic: 'collegues', fr: "Un collègue dit qu'il fait un « burn-out ». Pour toi, c'est un épuisement qui dure des mois, pas une grosse semaine.", model: "« Burn-out », ça veut dire une chose précise : un épuisement qui dure des mois, pas une grosse semaine." },
+      { id: 'f14-3', topic: 'cours',     fr: "Un parent dit que son fils est « dyslexique ». Pour toi, il faut un diagnostic, pas juste des fautes d'orthographe.", model: "« Dyslexique », ça veut dire une chose précise : un diagnostic, pas juste des fautes d'orthographe." },
+      { id: 'f14-4', topic: 'sante',     fr: "Un ami dit qu'il est « allergique » au gluten. Toi, tu penses qu'il le digère mal, c'est tout.", model: "« Allergique », ça veut dire une chose précise : une réaction du corps, pas juste digérer mal." },
+      { id: 'f14-5', topic: 'films',     fr: "Un ami dit qu'un film sorti le mois dernier est déjà « culte ». Pour toi, un film culte, on le revoit encore trente ans après.", model: "« Culte », ça veut dire une chose précise : un film qu'on revoit encore trente ans après." },
+      { id: 'f14-6', topic: 'politique', fr: "Un ami dit que le gouvernement est « illégitime ». Pour toi, il a été élu, même si tu l'aimes pas.", model: "« Illégitime », ça veut dire une chose précise : un gouvernement qui n'a pas été élu." },
+      { id: 'f14-7', topic: 'dieu',      fr: "Un ami parle d'un « miracle » parce qu'il a trouvé une place de parking. Pour toi, un miracle, c'est les lois de la nature qui s'arrêtent.", model: "« Miracle », ça veut dire une chose précise : les lois de la nature qui s'arrêtent." }
     ] },
 
   // ── C. Démonter la logique ──────────────────────────────
@@ -411,13 +411,13 @@ var FRAMES = [
             { name: 'P2', pos: 'proposition', note: "sujet + verbe" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f15-1', topic: 'enfants',   fr: "Les écrans : le soir, les enfants sont de plus en plus énervés." },
-      { id: 'f15-2', topic: 'sante',     fr: "La course : tu t'arrêtes une semaine, et c'est encore plus dur de reprendre." },
-      { id: 'f15-3', topic: 'cours',     fr: "Un élève révise la veille de l'examen : il stresse, et il oublie tout." },
-      { id: 'f15-4', topic: 'collegues', fr: "Un collègue parle longtemps en réunion, et personne n'écoute." },
-      { id: 'f15-5', topic: 'argent',    fr: "Un ami gagne mieux sa vie, mais il dépense aussi davantage." },
-      { id: 'f15-6', topic: 'couple',    fr: "Tu repousses le rangement du garage, et c'est de pire en pire." },
-      { id: 'f15-7', topic: 'israel',    fr: "Un ami français lit des articles sur le conflit, et il y comprend de moins en moins." }
+      { id: 'f15-1', topic: 'enfants',   fr: "Les écrans : le soir, les enfants sont de plus en plus énervés.", model: "Plus ils regardent d'écrans, plus ils sont énervés le soir." },
+      { id: 'f15-2', topic: 'sante',     fr: "La course : tu t'arrêtes une semaine, et c'est encore plus dur de reprendre.", model: "Plus je m'arrête longtemps, plus c'est dur de reprendre." },
+      { id: 'f15-3', topic: 'cours',     fr: "Un élève révise la veille de l'examen : il stresse, et il oublie tout.", model: "Plus il révise tard, moins il retient." },
+      { id: 'f15-4', topic: 'collegues', fr: "Un collègue parle longtemps en réunion, et personne n'écoute.", model: "Plus il parle longtemps, moins les gens l'écoutent." },
+      { id: 'f15-5', topic: 'argent',    fr: "Un ami gagne mieux sa vie, mais il dépense aussi davantage.", model: "Plus il gagne, plus il dépense." },
+      { id: 'f15-6', topic: 'couple',    fr: "Tu repousses le rangement du garage, et c'est de pire en pire.", model: "Plus je repousse le garage, plus c'est le bazar." },
+      { id: 'f15-7', topic: 'israel',    fr: "Un ami français lit des articles sur le conflit, et il y comprend de moins en moins.", model: "Plus il lit d'articles, moins il comprend." }
     ] },
 
   { id: 'f16', textId: 8, sources: [8],
@@ -431,13 +431,13 @@ var FRAMES = [
             { name: 'B', pos: 'discours direct', note: "la conclusion" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f16-1', topic: 'enfants',   fr: "Ta femme : « Il a eu une mauvaise note, il va rater son année. »" },
-      { id: 'f16-2', topic: 'sante',     fr: "Un ami a mal à la tête, et il est sûr d'avoir une maladie grave." },
-      { id: 'f16-3', topic: 'collegues', fr: "Ton chef a pas répondu à ton mail, et un collègue en conclut que tu vas être viré." },
-      { id: 'f16-4', topic: 'films',     fr: "Un ami a vu la bande-annonce, et il dit que le film est nul." },
-      { id: 'f16-5', topic: 'voisins',   fr: "Un voisin a vu une voiture inconnue dans la rue, et il parle déjà de cambriolage." },
-      { id: 'f16-6', topic: 'tech',      fr: "Ton téléphone est lent, et un ami dit qu'il est piraté." },
-      { id: 'f16-7', topic: 'israel',    fr: "Un ami lit un tweet sur un soldat, et il en conclut que toute l'armée est pareille." }
+      { id: 'f16-1', topic: 'enfants',   fr: "Ta femme : « Il a eu une mauvaise note, il va rater son année. »", model: "Tu pars de « une mauvaise note », et t'arrives direct à « il va rater son année »." },
+      { id: 'f16-2', topic: 'sante',     fr: "Un ami a mal à la tête, et il est sûr d'avoir une maladie grave.", model: "Tu pars de « j'ai mal à la tête », et t'arrives direct à « j'ai une maladie grave »." },
+      { id: 'f16-3', topic: 'collegues', fr: "Ton chef a pas répondu à ton mail, et un collègue en conclut que tu vas être viré.", model: "Tu pars de « il a pas répondu à ton mail », et t'arrives direct à « tu vas être viré »." },
+      { id: 'f16-4', topic: 'films',     fr: "Un ami a vu la bande-annonce, et il dit que le film est nul.", model: "Tu pars de « une bande-annonce », et t'arrives direct à « le film est nul »." },
+      { id: 'f16-5', topic: 'voisins',   fr: "Un voisin a vu une voiture inconnue dans la rue, et il parle déjà de cambriolage.", model: "Tu pars de « une voiture inconnue », et t'arrives direct à « un cambriolage »." },
+      { id: 'f16-6', topic: 'tech',      fr: "Ton téléphone est lent, et un ami dit qu'il est piraté.", model: "Tu pars de « mon téléphone est lent », et t'arrives direct à « il est piraté »." },
+      { id: 'f16-7', topic: 'israel',    fr: "Un ami lit un tweet sur un soldat, et il en conclut que toute l'armée est pareille.", model: "Tu pars de « un tweet sur un soldat », et t'arrives direct à « toute l'armée est pareille »." }
     ] },
 
   { id: 'f17', textId: 2, sources: [2],
@@ -450,13 +450,13 @@ var FRAMES = [
     slots: [{ name: 'P', pos: 'proposition', note: "imparfait ou plus-que-parfait" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f17-1', topic: 'couple',    fr: "Ta femme a vu la facture d'électricité, mais elle en parle pas." },
-      { id: 'f17-2', topic: 'enfants',   fr: "Le grand a cassé un verre, et il continue à jouer tranquillement." },
-      { id: 'f17-3', topic: 'collegues', fr: "Un collègue a raté la réunion, et le lendemain il arrive tout souriant, sans un mot." },
-      { id: 'f17-4', topic: 'sante',     fr: "Ton ami s'est blessé au genou, mais il continue à courir." },
-      { id: 'f17-5', topic: 'cours',     fr: "Un élève a pas fait ses devoirs, et il sort son cahier sans rien dire." },
-      { id: 'f17-6', topic: 'argent',    fr: "Ton ami a une grosse dette, et il vient de réserver des vacances." },
-      { id: 'f17-7', topic: 'israel',    fr: "Un ami parle de Gaza sans jamais mentionner les otages." }
+      { id: 'f17-1', topic: 'couple',    fr: "Ta femme a vu la facture d'électricité, mais elle en parle pas.", model: "Tu fais comme si la facture n'existait pas." },
+      { id: 'f17-2', topic: 'enfants',   fr: "Le grand a cassé un verre, et il continue à jouer tranquillement.", model: "Il fait comme si de rien n'était." },
+      { id: 'f17-3', topic: 'collegues', fr: "Un collègue a raté la réunion, et le lendemain il arrive tout souriant, sans un mot.", model: "Il fait comme s'il avait pas raté la réunion." },
+      { id: 'f17-4', topic: 'sante',     fr: "Ton ami s'est blessé au genou, mais il continue à courir.", model: "Tu fais comme si ton genou n'avait rien." },
+      { id: 'f17-5', topic: 'cours',     fr: "Un élève a pas fait ses devoirs, et il sort son cahier sans rien dire.", model: "Tu fais comme si t'avais fait tes devoirs." },
+      { id: 'f17-6', topic: 'argent',    fr: "Ton ami a une grosse dette, et il vient de réserver des vacances.", model: "Tu fais comme si t'avais pas de dette." },
+      { id: 'f17-7', topic: 'israel',    fr: "Un ami parle de Gaza sans jamais mentionner les otages.", model: "Tu fais comme si les otages n'existaient pas." }
     ] },
 
   { id: 'f18', textId: 2, sources: [2],
@@ -470,13 +470,13 @@ var FRAMES = [
             { name: 'Y', pos: 'nom', note: "celui qu'on n'exempte pas" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f18-1', topic: 'enfants',   fr: "La grande peut rester debout jusqu'à neuf heures, mais pas la petite. La petite trouve ça injuste, et toi aussi." },
-      { id: 'f18-2', topic: 'collegues', fr: "Un collègue part tôt tous les vendredis, mais toi, on te le refuse." },
-      { id: 'f18-3', topic: 'cours',     fr: "Un élève a pu repasser l'examen, mais pas sa sœur." },
-      { id: 'f18-4', topic: 'voisins',   fr: "Le voisin a construit une véranda, mais la mairie t'a refusé la tienne." },
-      { id: 'f18-5', topic: 'sante',     fr: "Ton ami mange ce qu'il veut, mais toi, ton médecin te l'interdit." },
-      { id: 'f18-6', topic: 'films',     fr: "Un acteur a dit une grossièreté à la télé sans problème, mais un autre a été viré pour la même chose." },
-      { id: 'f18-7', topic: 'israel',    fr: "L'ONU condamne Israël pour une frappe, mais pas un autre pays pour la même chose." }
+      { id: 'f18-1', topic: 'enfants',   fr: "La grande peut rester debout jusqu'à neuf heures, mais pas la petite. La petite trouve ça injuste, et toi aussi.", model: "Pourquoi la grande, elle aurait le droit, et pas la petite ?" },
+      { id: 'f18-2', topic: 'collegues', fr: "Un collègue part tôt tous les vendredis, mais toi, on te le refuse.", model: "Pourquoi lui, il aurait le droit de partir tôt, et pas moi ?" },
+      { id: 'f18-3', topic: 'cours',     fr: "Un élève a pu repasser l'examen, mais pas sa sœur.", model: "Pourquoi lui, il aurait le droit de repasser, et pas sa sœur ?" },
+      { id: 'f18-4', topic: 'voisins',   fr: "Le voisin a construit une véranda, mais la mairie t'a refusé la tienne.", model: "Pourquoi lui, il aurait le droit à une véranda, et pas moi ?" },
+      { id: 'f18-5', topic: 'sante',     fr: "Ton ami mange ce qu'il veut, mais toi, ton médecin te l'interdit.", model: "Pourquoi lui, il aurait le droit de manger ce qu'il veut, et pas moi ?" },
+      { id: 'f18-6', topic: 'films',     fr: "Un acteur a dit une grossièreté à la télé sans problème, mais un autre a été viré pour la même chose.", model: "Pourquoi lui, il aurait le droit de le dire, et pas l'autre ?" },
+      { id: 'f18-7', topic: 'israel',    fr: "L'ONU condamne Israël pour une frappe, mais pas un autre pays pour la même chose.", model: "Pourquoi les autres pays, ils auraient le droit de le faire, et pas Israël ?" }
     ] },
 
   { id: 'f19', textId: 6, sources: [6],
@@ -491,13 +491,13 @@ var FRAMES = [
             { name: 'Z', pos: 'conditionnel', note: "ce qu'il fait à la place" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f19-1', topic: 'collegues', fr: "Ton chef dit qu'il veut ton avis, mais il décide tout seul." },
-      { id: 'f19-2', topic: 'enfants',   fr: "Le grand dit qu'il veut un chien, mais il nettoie jamais l'aquarium." },
-      { id: 'f19-3', topic: 'sante',     fr: "Ton ami dit qu'il veut arrêter de fumer, mais il achète des cartouches." },
-      { id: 'f19-4', topic: 'politique', fr: "Le gouvernement dit qu'il veut baisser les prix, mais il augmente les taxes." },
-      { id: 'f19-5', topic: 'cours',     fr: "Un élève dit qu'il veut progresser, mais il annule un cours sur deux." },
-      { id: 'f19-6', topic: 'tech',      fr: "L'entreprise dit qu'elle protège tes données, mais elle les vend à des publicitaires." },
-      { id: 'f19-7', topic: 'israel',    fr: "Le Hamas dit qu'il veut protéger les civils, mais il creuse ses tunnels sous les maisons." }
+      { id: 'f19-1', topic: 'collegues', fr: "Ton chef dit qu'il veut ton avis, mais il décide tout seul.", model: "S'il voulait vraiment mon avis, pourquoi il déciderait tout seul ?" },
+      { id: 'f19-2', topic: 'enfants',   fr: "Le grand dit qu'il veut un chien, mais il nettoie jamais l'aquarium.", model: "Si le grand voulait vraiment un chien, pourquoi il nettoie jamais l'aquarium ?" },
+      { id: 'f19-3', topic: 'sante',     fr: "Ton ami dit qu'il veut arrêter de fumer, mais il achète des cartouches.", model: "S'il voulait vraiment arrêter de fumer, pourquoi il achèterait des cartouches ?" },
+      { id: 'f19-4', topic: 'politique', fr: "Le gouvernement dit qu'il veut baisser les prix, mais il augmente les taxes.", model: "Si le gouvernement voulait vraiment baisser les prix, pourquoi il augmenterait les taxes ?" },
+      { id: 'f19-5', topic: 'cours',     fr: "Un élève dit qu'il veut progresser, mais il annule un cours sur deux.", model: "S'il voulait vraiment progresser, pourquoi il annulerait un cours sur deux ?" },
+      { id: 'f19-6', topic: 'tech',      fr: "L'entreprise dit qu'elle protège tes données, mais elle les vend à des publicitaires.", model: "Si l'entreprise voulait vraiment protéger tes données, pourquoi elle les vendrait à des publicitaires ?" },
+      { id: 'f19-7', topic: 'israel',    fr: "Le Hamas dit qu'il veut protéger les civils, mais il creuse ses tunnels sous les maisons.", model: "Si le Hamas voulait vraiment protéger les civils, pourquoi il creuserait ses tunnels sous les maisons ?" }
     ] },
 
   { id: 'f20', textId: 6, sources: [6],
@@ -511,13 +511,13 @@ var FRAMES = [
             { name: 'PP', pos: 'participe passé', note: "conditionnel passé de doute" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f20-1', topic: 'enfants',   fr: "La petite dit que c'est le chat qui a mangé tous les gâteaux." },
-      { id: 'f20-2', topic: 'cours',     fr: "Un élève dit que son ordinateur a effacé ses devoirs, pour la troisième fois." },
-      { id: 'f20-3', topic: 'collegues', fr: "Un collègue dit qu'il a fini tout le dossier en une heure." },
-      { id: 'f20-4', topic: 'sante',     fr: "Une pub dit qu'on perd dix kilos en une semaine." },
-      { id: 'f20-5', topic: 'voisins',   fr: "Le voisin dit que la rayure sur ta voiture est apparue toute seule." },
-      { id: 'f20-6', topic: 'films',     fr: "Un ami dit qu'il a vu toute la série en un week-end." },
-      { id: 'f20-7', topic: 'israel',    fr: "Un article dit que tous les chiffres de l'armée sont inventés." }
+      { id: 'f20-1', topic: 'enfants',   fr: "La petite dit que c'est le chat qui a mangé tous les gâteaux.", model: "Le chat aurait mangé tous les gâteaux ? C'est un peu gros, non ?" },
+      { id: 'f20-2', topic: 'cours',     fr: "Un élève dit que son ordinateur a effacé ses devoirs, pour la troisième fois.", model: "Ton ordinateur aurait effacé tes devoirs trois fois ? C'est un peu gros, non ?" },
+      { id: 'f20-3', topic: 'collegues', fr: "Un collègue dit qu'il a fini tout le dossier en une heure.", model: "Il aurait fini tout le dossier en une heure ? C'est un peu gros, non ?" },
+      { id: 'f20-4', topic: 'sante',     fr: "Une pub dit qu'on perd dix kilos en une semaine.", model: "On aurait perdu dix kilos en une semaine ? C'est un peu gros, non ?" },
+      { id: 'f20-5', topic: 'voisins',   fr: "Le voisin dit que la rayure sur ta voiture est apparue toute seule.", model: "La rayure serait apparue toute seule ? C'est un peu gros, non ?" },
+      { id: 'f20-6', topic: 'films',     fr: "Un ami dit qu'il a vu toute la série en un week-end.", model: "Il aurait vu toute la série en un week-end ? C'est un peu gros, non ?" },
+      { id: 'f20-7', topic: 'israel',    fr: "Un article dit que tous les chiffres de l'armée sont inventés.", model: "Tous les chiffres de l'armée auraient été inventés ? C'est un peu gros, non ?" }
     ] },
 
   { id: 'f21', textId: 8, sources: [8],
@@ -530,13 +530,13 @@ var FRAMES = [
     slots: [{ name: 'V', pos: 'infinitif', note: "" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f21-1', topic: 'couple',    fr: "Ta femme veut que ce soit toi qui dises aux voisins que leur chien aboie trop." },
-      { id: 'f21-2', topic: 'cours',     fr: "Un parent te demande de faire les devoirs avec son fils tous les soirs." },
-      { id: 'f21-3', topic: 'collegues', fr: "Un collègue te demande de refaire son rapport." },
-      { id: 'f21-4', topic: 'voisins',   fr: "Le voisin veut que tu répares la clôture, alors que c'est son chien qui l'a cassée." },
-      { id: 'f21-5', topic: 'enfants',   fr: "L'école veut que ce soit toi qui expliques le nouveau règlement aux autres parents." },
-      { id: 'f21-6', topic: 'argent',    fr: "Ton ami veut que tu paies l'addition parce que le restaurant, c'était ton idée." },
-      { id: 'f21-7', topic: 'israel',    fr: "Un ami affirme que l'armée vise exprès les journalistes, et te demande de prouver le contraire." }
+      { id: 'f21-1', topic: 'couple',    fr: "Ta femme veut que ce soit toi qui dises aux voisins que leur chien aboie trop.", model: "C'est pas à moi de leur dire que leur chien aboie trop." },
+      { id: 'f21-2', topic: 'cours',     fr: "Un parent te demande de faire les devoirs avec son fils tous les soirs.", model: "C'est pas à moi de faire les devoirs avec votre fils tous les soirs." },
+      { id: 'f21-3', topic: 'collegues', fr: "Un collègue te demande de refaire son rapport.", model: "C'est pas à moi de refaire ton rapport." },
+      { id: 'f21-4', topic: 'voisins',   fr: "Le voisin veut que tu répares la clôture, alors que c'est son chien qui l'a cassée.", model: "C'est pas à moi de réparer la clôture. C'est ton chien qui l'a cassée." },
+      { id: 'f21-5', topic: 'enfants',   fr: "L'école veut que ce soit toi qui expliques le nouveau règlement aux autres parents.", model: "C'est pas à moi d'expliquer le règlement aux autres parents." },
+      { id: 'f21-6', topic: 'argent',    fr: "Ton ami veut que tu paies l'addition parce que le restaurant, c'était ton idée.", model: "C'est pas à moi de payer l'addition juste parce que c'était mon idée." },
+      { id: 'f21-7', topic: 'israel',    fr: "Un ami affirme que l'armée vise exprès les journalistes, et te demande de prouver le contraire.", model: "C'est pas à moi de prouver le contraire. C'est à toi de prouver qu'ils visent exprès." }
     ] },
 
   { id: 'f22', textId: 17, sources: [17],
@@ -550,13 +550,13 @@ var FRAMES = [
             { name: 'P', pos: 'proposition', note: "ce qui reste vrai" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f22-1', topic: 'argent',    fr: "Les travaux : entre dix et vingt mille shekels. Pour toi, c'est trop cher de toute façon." },
-      { id: 'f22-2', topic: 'sante',     fr: "Le médecin dit qu'il faut dormir entre sept et neuf heures. Tu dors cinq heures." },
-      { id: 'f22-3', topic: 'enfants',   fr: "Les enfants regardent entre deux et quatre heures d'écran par jour. Pour toi, c'est trop de toute façon." },
-      { id: 'f22-4', topic: 'cours',     fr: "Il reste entre trois et six mois avant l'examen. Pour toi, il faut commencer maintenant." },
-      { id: 'f22-5', topic: 'collegues', fr: "Le projet a entre deux et quatre semaines de retard. Pour toi, le client va se plaindre de toute façon." },
-      { id: 'f22-6', topic: 'films',     fr: "Le film dure entre deux heures et demie et trois heures selon la version. Pour toi, c'est trop long de toute façon." },
-      { id: 'f22-7', topic: 'dieu',      fr: "Les historiens comptent des milliers de dieux adorés dans l'histoire. Pour toi, même le chiffre le plus bas pose un problème au croyant." }
+      { id: 'f22-1', topic: 'argent',    fr: "Les travaux : entre dix et vingt mille shekels. Pour toi, c'est trop cher de toute façon.", model: "Même en partant de dix mille shekels, c'est trop cher." },
+      { id: 'f22-2', topic: 'sante',     fr: "Le médecin dit qu'il faut dormir entre sept et neuf heures. Tu dors cinq heures.", model: "Même en partant de sept heures, j'en suis loin. Je dors cinq heures." },
+      { id: 'f22-3', topic: 'enfants',   fr: "Les enfants regardent entre deux et quatre heures d'écran par jour. Pour toi, c'est trop de toute façon.", model: "Même en partant de deux heures par jour, c'est trop." },
+      { id: 'f22-4', topic: 'cours',     fr: "Il reste entre trois et six mois avant l'examen. Pour toi, il faut commencer maintenant.", model: "Même en partant de six mois, faut commencer maintenant." },
+      { id: 'f22-5', topic: 'collegues', fr: "Le projet a entre deux et quatre semaines de retard. Pour toi, le client va se plaindre de toute façon.", model: "Même en partant de deux semaines, le client va se plaindre." },
+      { id: 'f22-6', topic: 'films',     fr: "Le film dure entre deux heures et demie et trois heures selon la version. Pour toi, c'est trop long de toute façon.", model: "Même en partant de deux heures et demie, c'est trop long." },
+      { id: 'f22-7', topic: 'dieu',      fr: "Les historiens comptent des milliers de dieux adorés dans l'histoire. Pour toi, même le chiffre le plus bas pose un problème au croyant.", model: "Même en partant du chiffre le plus bas, c'est un problème pour le croyant." }
     ] },
 
   { id: 'f23', textId: 14, sources: [14],
@@ -570,13 +570,13 @@ var FRAMES = [
             { name: 'X', pos: 'nom / adjectif', note: "" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f23-1', topic: 'enfants',   fr: "Ta femme dit que la grande a lu trente pages. Tu soupçonnes qu'elle en a sauté, mais c'est un record pour elle." },
-      { id: 'f23-2', topic: 'sante',     fr: "Ton ami dit qu'il a couru dix kilomètres. Il exagère peut-être, mais c'est énorme pour quelqu'un qui courait pas." },
-      { id: 'f23-3', topic: 'argent',    fr: "Le vendeur dit que la voiture consomme cinq litres aux cent. Tu doutes, mais c'est mieux que la vieille." },
-      { id: 'f23-4', topic: 'cours',     fr: "Un élève dit qu'il a révisé dix heures. T'y crois qu'à moitié, mais c'est plus que d'habitude." },
-      { id: 'f23-5', topic: 'collegues', fr: "Un collègue dit que la réunion a duré trois heures. Il exagère peut-être, mais c'est beaucoup trop long." },
-      { id: 'f23-6', topic: 'tech',      fr: "L'appli promet vingt heures de batterie. Tu doutes, mais c'est mieux que ton vieux téléphone." },
-      { id: 'f23-7', topic: 'dieu',      fr: "Des historiens disent que la Bible a des dizaines d'auteurs. Pour toi, peu importe le nombre exact : c'est pas l'œuvre d'une seule main." }
+      { id: 'f23-1', topic: 'enfants',   fr: "Ta femme dit que la grande a lu trente pages. Tu soupçonnes qu'elle en a sauté, mais c'est un record pour elle.", model: "Prenons même dix pages sautées. Ça reste un record pour elle." },
+      { id: 'f23-2', topic: 'sante',     fr: "Ton ami dit qu'il a couru dix kilomètres. Il exagère peut-être, mais c'est énorme pour quelqu'un qui courait pas.", model: "Prenons même sept kilomètres. Ça reste énorme pour quelqu'un qui courait pas." },
+      { id: 'f23-3', topic: 'argent',    fr: "Le vendeur dit que la voiture consomme cinq litres aux cent. Tu doutes, mais c'est mieux que la vieille.", model: "Prenons même six litres. Ça reste mieux que la vieille." },
+      { id: 'f23-4', topic: 'cours',     fr: "Un élève dit qu'il a révisé dix heures. T'y crois qu'à moitié, mais c'est plus que d'habitude.", model: "Prenons même cinq heures. Ça reste plus que d'habitude." },
+      { id: 'f23-5', topic: 'collegues', fr: "Un collègue dit que la réunion a duré trois heures. Il exagère peut-être, mais c'est beaucoup trop long.", model: "Prenons même deux heures. Ça reste beaucoup trop long." },
+      { id: 'f23-6', topic: 'tech',      fr: "L'appli promet vingt heures de batterie. Tu doutes, mais c'est mieux que ton vieux téléphone.", model: "Prenons même dix heures. Ça reste mieux que mon vieux téléphone." },
+      { id: 'f23-7', topic: 'dieu',      fr: "Des historiens disent que la Bible a des dizaines d'auteurs. Pour toi, peu importe le nombre exact : c'est pas l'œuvre d'une seule main.", model: "Prenons même dix auteurs. Ça reste pas l'œuvre d'une seule main." }
     ] },
 
   { id: 'f24', textId: 14, sources: [14],
@@ -590,13 +590,13 @@ var FRAMES = [
             { name: 'V', pos: 'infinitif', note: "l'usage manqué" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f24-1', topic: 'argent',    fr: "Ton ami a dépensé cinq mille shekels dans un téléphone. Avec ça, il partait en vacances." },
-      { id: 'f24-2', topic: 'collegues', fr: "Trois heures de réunion pour rien. Pendant ce temps-là, tu préparais tes cours." },
-      { id: 'f24-3', topic: 'enfants',   fr: "La petite a passé l'après-midi sur la tablette. Il faisait beau, et le parc est juste à côté." },
-      { id: 'f24-4', topic: 'politique', fr: "Le gouvernement a lancé une énorme campagne de pub. Pour toi, cet argent devait aller aux hôpitaux." },
-      { id: 'f24-5', topic: 'sante',     fr: "T'as payé un an d'abonnement à la salle de sport, et t'y es allé deux fois." },
-      { id: 'f24-6', topic: 'films',     fr: "Deux cents millions pour un film raté. Pour toi, avec ça, on faisait vingt bons films." },
-      { id: 'f24-7', topic: 'dieu',      fr: "Une église dépense des millions en or et en décoration. Pour toi, cet argent devait nourrir les pauvres." }
+      { id: 'f24-1', topic: 'argent',    fr: "Ton ami a dépensé cinq mille shekels dans un téléphone. Avec ça, il partait en vacances.", model: "Cinq mille shekels qui auraient pu payer des vacances." },
+      { id: 'f24-2', topic: 'collegues', fr: "Trois heures de réunion pour rien. Pendant ce temps-là, tu préparais tes cours.", model: "Trois heures qui auraient pu servir à préparer mes cours." },
+      { id: 'f24-3', topic: 'enfants',   fr: "La petite a passé l'après-midi sur la tablette. Il faisait beau, et le parc est juste à côté.", model: "Un après-midi qui aurait pu se passer au parc." },
+      { id: 'f24-4', topic: 'politique', fr: "Le gouvernement a lancé une énorme campagne de pub. Pour toi, cet argent devait aller aux hôpitaux.", model: "De l'argent qui aurait pu aller aux hôpitaux." },
+      { id: 'f24-5', topic: 'sante',     fr: "T'as payé un an d'abonnement à la salle de sport, et t'y es allé deux fois.", model: "Un abonnement qui aurait pu me remettre en forme." },
+      { id: 'f24-6', topic: 'films',     fr: "Deux cents millions pour un film raté. Pour toi, avec ça, on faisait vingt bons films.", model: "Deux cents millions qui auraient pu faire vingt bons films." },
+      { id: 'f24-7', topic: 'dieu',      fr: "Une église dépense des millions en or et en décoration. Pour toi, cet argent devait nourrir les pauvres.", model: "Des millions qui auraient pu nourrir les pauvres." }
     ] },
 
   { id: 'f25', textId: 6, sources: [6],
@@ -610,13 +610,13 @@ var FRAMES = [
             { name: 'X', pos: 'attribut', note: "ce que tu serais aujourd'hui" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f25-1', topic: 'couple',    fr: "Ta femme a grandi avec une mère qui lui parlait français. C'est pour ça qu'elle le parle si bien." },
-      { id: 'f25-2', topic: 'cours',     fr: "Ton élève a commencé l'anglais à quatre ans. C'est pour ça qu'il est bilingue." },
-      { id: 'f25-3', topic: 'sante',     fr: "Ton ami a jamais arrêté le sport. C'est pour ça qu'il est en forme à cinquante ans." },
-      { id: 'f25-4', topic: 'argent',    fr: "Un ami a acheté un appartement il y a quinze ans. Aujourd'hui, il est tranquille." },
-      { id: 'f25-5', topic: 'collegues', fr: "Ton collègue a refusé une promotion il y a trois ans. Aujourd'hui, un autre est directeur à sa place." },
-      { id: 'f25-6', topic: 'films',     fr: "Un acteur a failli refuser le rôle qui l'a rendu célèbre." },
-      { id: 'f25-7', topic: 'israel',    fr: "Un ami français juge Israël depuis Paris. Toi, tu penses qu'à Sdérot, il verrait les choses autrement." }
+      { id: 'f25-1', topic: 'couple',    fr: "Ta femme a grandi avec une mère qui lui parlait français. C'est pour ça qu'elle le parle si bien.", model: "Si elle était née dans une famille sans français, elle le parlerait pas si bien." },
+      { id: 'f25-2', topic: 'cours',     fr: "Ton élève a commencé l'anglais à quatre ans. C'est pour ça qu'il est bilingue.", model: "S'il avait commencé l'anglais à dix ans, il serait pas bilingue." },
+      { id: 'f25-3', topic: 'sante',     fr: "Ton ami a jamais arrêté le sport. C'est pour ça qu'il est en forme à cinquante ans.", model: "S'il avait arrêté le sport à trente ans, il serait pas en forme à cinquante." },
+      { id: 'f25-4', topic: 'argent',    fr: "Un ami a acheté un appartement il y a quinze ans. Aujourd'hui, il est tranquille.", model: "S'il avait attendu quinze ans, il serait pas tranquille aujourd'hui." },
+      { id: 'f25-5', topic: 'collegues', fr: "Ton collègue a refusé une promotion il y a trois ans. Aujourd'hui, un autre est directeur à sa place.", model: "S'il avait accepté la promotion, il serait directeur à la place de l'autre." },
+      { id: 'f25-6', topic: 'films',     fr: "Un acteur a failli refuser le rôle qui l'a rendu célèbre.", model: "S'il avait refusé le rôle, il serait pas célèbre aujourd'hui." },
+      { id: 'f25-7', topic: 'israel',    fr: "Un ami français juge Israël depuis Paris. Toi, tu penses qu'à Sdérot, il verrait les choses autrement.", model: "Si t'étais né à Sdérot, tu verrais les choses autrement." }
     ] },
 
   // ── D. Rétablir les faits ───────────────────────────────
@@ -630,13 +630,13 @@ var FRAMES = [
     slots: [{ name: 'IL', pos: 'sujet', note: "il, elle, le ministre…" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f26-1', topic: 'couple',    fr: "Tout le monde répète qu'un invité a critiqué ton repas. Il a juste dit que c'était un peu salé." },
-      { id: 'f26-2', topic: 'cours',     fr: "Les élèves répètent que le prof de maths a annulé l'examen. Il l'a juste déplacé." },
-      { id: 'f26-3', topic: 'collegues', fr: "Au bureau, on dit que le chef veut supprimer des postes. Il a parlé de réorganiser les équipes." },
-      { id: 'f26-4', topic: 'politique', fr: "Sur les réseaux, on lit que le ministre veut fermer des écoles. Il a parlé d'en regrouper deux." },
-      { id: 'f26-5', topic: 'sante',     fr: "On lit partout qu'une étude dit que le café est mauvais pour le cœur. L'étude parlait de dix tasses par jour." },
-      { id: 'f26-6', topic: 'enfants',   fr: "Les parents de la classe disent que la maîtresse a puni la grande. Elle l'a juste changée de place." },
-      { id: 'f26-7', topic: 'dieu',      fr: "On lit partout qu'Einstein croyait en Dieu. Lui parlait du dieu de Spinoza, la nature, pas d'un dieu qui écoute les prières." }
+      { id: 'f26-1', topic: 'couple',    fr: "Tout le monde répète qu'un invité a critiqué ton repas. Il a juste dit que c'était un peu salé.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'il a dit. Il a dit que c'était un peu salé." },
+      { id: 'f26-2', topic: 'cours',     fr: "Les élèves répètent que le prof de maths a annulé l'examen. Il l'a juste déplacé.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'il a dit. Il a juste déplacé l'examen." },
+      { id: 'f26-3', topic: 'collegues', fr: "Au bureau, on dit que le chef veut supprimer des postes. Il a parlé de réorganiser les équipes.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'il a dit. Il a parlé de réorganiser les équipes." },
+      { id: 'f26-4', topic: 'politique', fr: "Sur les réseaux, on lit que le ministre veut fermer des écoles. Il a parlé d'en regrouper deux.", model: "Ça, on l'a lu partout, mais c'est pas ce qu'il a dit. Il a parlé de regrouper deux écoles." },
+      { id: 'f26-5', topic: 'sante',     fr: "On lit partout qu'une étude dit que le café est mauvais pour le cœur. L'étude parlait de dix tasses par jour.", model: "Ça, on l'a lu partout, mais c'est pas ce qu'elle a dit. L'étude parlait de dix tasses par jour." },
+      { id: 'f26-6', topic: 'enfants',   fr: "Les parents de la classe disent que la maîtresse a puni la grande. Elle l'a juste changée de place.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'elle a fait. Elle a juste changé la grande de place." },
+      { id: 'f26-7', topic: 'dieu',      fr: "On lit partout qu'Einstein croyait en Dieu. Lui parlait du dieu de Spinoza, la nature, pas d'un dieu qui écoute les prières.", model: "Ça, on l'a lu partout, mais c'est pas ce qu'il a dit. Il parlait du dieu de Spinoza, la nature." }
     ] },
 
   { id: 'f27', textId: 17, sources: [17],
@@ -649,13 +649,13 @@ var FRAMES = [
     slots: [{ name: 'V', pos: 'verbe à la 1re personne', note: "" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f27-1', topic: 'enfants',   fr: "La maîtresse dit que la petite parle trop en classe. Ta femme croit que ça vient de toi." },
-      { id: 'f27-2', topic: 'couple',    fr: "Ta femme croit que t'as fini le chocolat. C'était le grand." },
-      { id: 'f27-3', topic: 'collegues', fr: "On t'accuse d'avoir mis la réunion le vendredi soir. C'était le chef." },
-      { id: 'f27-4', topic: 'cours',     fr: "Un parent te reproche la quantité de devoirs. Ils viennent de l'école, pas de toi." },
-      { id: 'f27-5', topic: 'sante',     fr: "Ton ami te reproche de lui avoir interdit le sucre. C'est son médecin." },
-      { id: 'f27-6', topic: 'voisins',   fr: "Le voisin croit que t'as garé ta voiture devant son garage. C'était un livreur." },
-      { id: 'f27-7', topic: 'dieu',      fr: "Un croyant te reproche de dire que la Bible se contredit. Pour toi, il suffit de la lire." }
+      { id: 'f27-1', topic: 'enfants',   fr: "La maîtresse dit que la petite parle trop en classe. Ta femme croit que ça vient de toi.", model: "C'est pas moi qui la fais parler en classe." },
+      { id: 'f27-2', topic: 'couple',    fr: "Ta femme croit que t'as fini le chocolat. C'était le grand.", model: "C'est pas moi qui ai fini le chocolat. C'est le grand." },
+      { id: 'f27-3', topic: 'collegues', fr: "On t'accuse d'avoir mis la réunion le vendredi soir. C'était le chef.", model: "C'est pas moi qui ai mis la réunion le vendredi soir. C'est le chef." },
+      { id: 'f27-4', topic: 'cours',     fr: "Un parent te reproche la quantité de devoirs. Ils viennent de l'école, pas de toi.", model: "C'est pas moi qui donne ces devoirs. Ils viennent de l'école." },
+      { id: 'f27-5', topic: 'sante',     fr: "Ton ami te reproche de lui avoir interdit le sucre. C'est son médecin.", model: "C'est pas moi qui t'ai interdit le sucre. C'est ton médecin." },
+      { id: 'f27-6', topic: 'voisins',   fr: "Le voisin croit que t'as garé ta voiture devant son garage. C'était un livreur.", model: "C'est pas moi qui me suis garé devant ton garage. C'était un livreur." },
+      { id: 'f27-7', topic: 'dieu',      fr: "Un croyant te reproche de dire que la Bible se contredit. Pour toi, il suffit de la lire.", model: "C'est pas moi qui dis que la Bible se contredit. Il suffit de la lire." }
     ] },
 
   { id: 'f28', textId: 14, sources: [14],
@@ -668,13 +668,13 @@ var FRAMES = [
     slots: [{ name: 'N / que P', pos: 'nom ou proposition', note: "" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f28-1', topic: 'films',     fr: "T'as vu un documentaire sur les requins. Un détail t'est resté : ils existaient avant les arbres." },
-      { id: 'f28-2', topic: 'enfants',   fr: "À la fête de l'école, l'enfant le plus timide de la classe a chanté tout seul." },
-      { id: 'f28-3', topic: 'cours',     fr: "À l'examen blanc, ton élève le plus faible a fini premier." },
-      { id: 'f28-4', topic: 'voisins',   fr: "Au mariage des voisins, personne ne dansait avant minuit." },
-      { id: 'f28-5', topic: 'collegues', fr: "À la réunion, le nouveau a pas dit un mot pendant deux heures." },
-      { id: 'f28-6', topic: 'politique', fr: "Pendant le débat télé, aucun candidat n'a parlé du prix des logements." },
-      { id: 'f28-7', topic: 'dieu',      fr: "En lisant la Genèse, t'as remarqué qu'il y a deux récits de la création, et qu'ils se contredisent." }
+      { id: 'f28-1', topic: 'films',     fr: "T'as vu un documentaire sur les requins. Un détail t'est resté : ils existaient avant les arbres.", model: "Ce qui m'a frappé, c'est que les requins existaient avant les arbres." },
+      { id: 'f28-2', topic: 'enfants',   fr: "À la fête de l'école, l'enfant le plus timide de la classe a chanté tout seul.", model: "Ce qui m'a frappé, c'est que le plus timide a chanté tout seul." },
+      { id: 'f28-3', topic: 'cours',     fr: "À l'examen blanc, ton élève le plus faible a fini premier.", model: "Ce qui m'a frappé, c'est que mon élève le plus faible a fini premier." },
+      { id: 'f28-4', topic: 'voisins',   fr: "Au mariage des voisins, personne ne dansait avant minuit.", model: "Ce qui m'a frappé, c'est que personne ne dansait avant minuit." },
+      { id: 'f28-5', topic: 'collegues', fr: "À la réunion, le nouveau a pas dit un mot pendant deux heures.", model: "Ce qui m'a frappé, c'est qu'il a pas dit un mot pendant deux heures." },
+      { id: 'f28-6', topic: 'politique', fr: "Pendant le débat télé, aucun candidat n'a parlé du prix des logements.", model: "Ce qui m'a frappé, c'est qu'aucun candidat n'a parlé du prix des logements." },
+      { id: 'f28-7', topic: 'dieu',      fr: "En lisant la Genèse, t'as remarqué qu'il y a deux récits de la création, et qu'ils se contredisent.", model: "Ce qui m'a frappé, c'est qu'il y a deux récits de la création, et qu'ils se contredisent." }
     ] },
 
   { id: 'f29', textId: 17, sources: [17],
@@ -687,13 +687,13 @@ var FRAMES = [
     slots: [{ name: 'P', pos: 'proposition', note: "" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f29-1', topic: 'enfants',   fr: "La petite était calme jusqu'au dessert. Puis on lui a refusé un deuxième gâteau." },
-      { id: 'f29-2', topic: 'cours',     fr: "Ton élève suivait bien, jusqu'aux fractions." },
-      { id: 'f29-3', topic: 'collegues', fr: "T'étais d'accord avec ton chef sur tout, jusqu'à ce qu'il parle de travailler le dimanche." },
-      { id: 'f29-4', topic: 'films',     fr: "Le film était génial, jusqu'à la dernière demi-heure." },
-      { id: 'f29-5', topic: 'sante',     fr: "Tu courais bien, jusqu'au jour où t'as voulu faire un marathon." },
-      { id: 'f29-6', topic: 'politique', fr: "T'étais d'accord avec le candidat, jusqu'à ce qu'il promette de tout régler en cent jours." },
-      { id: 'f29-7', topic: 'dieu',      fr: "Ton ami croyant dit que Dieu est bon. Tu le suis, jusqu'à ce qu'il dise que la souffrance fait partie du plan." }
+      { id: 'f29-1', topic: 'enfants',   fr: "La petite était calme jusqu'au dessert. Puis on lui a refusé un deuxième gâteau.", model: "C'est là que la petite a explosé." },
+      { id: 'f29-2', topic: 'cours',     fr: "Ton élève suivait bien, jusqu'aux fractions.", model: "C'est là que j'ai perdu mon élève." },
+      { id: 'f29-3', topic: 'collegues', fr: "T'étais d'accord avec ton chef sur tout, jusqu'à ce qu'il parle de travailler le dimanche.", model: "C'est là que je lui ai dit non." },
+      { id: 'f29-4', topic: 'films',     fr: "Le film était génial, jusqu'à la dernière demi-heure.", model: "C'est là que le film a tout gâché." },
+      { id: 'f29-5', topic: 'sante',     fr: "Tu courais bien, jusqu'au jour où t'as voulu faire un marathon.", model: "C'est là que ça s'est gâté." },
+      { id: 'f29-6', topic: 'politique', fr: "T'étais d'accord avec le candidat, jusqu'à ce qu'il promette de tout régler en cent jours.", model: "C'est là que j'ai décroché." },
+      { id: 'f29-7', topic: 'dieu',      fr: "Ton ami croyant dit que Dieu est bon. Tu le suis, jusqu'à ce qu'il dise que la souffrance fait partie du plan.", model: "C'est là que j'arrête de te suivre." }
     ] },
 
   { id: 'f30', textId: 8, sources: [8, 2],
@@ -706,13 +706,13 @@ var FRAMES = [
     slots: [{ name: 'P', pos: 'proposition', note: "la justification" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f30-1', topic: 'enfants',   fr: "Ta femme : « La grande a pas besoin d'aide pour ses devoirs. » Toi, tu penses qu'elle en a besoin." },
-      { id: 'f30-2', topic: 'cours',     fr: "Un élève : « Ça sert à rien d'apprendre la grammaire. »" },
-      { id: 'f30-3', topic: 'sante',     fr: "Un ami : « T'as pas besoin de t'échauffer pour courir. »" },
-      { id: 'f30-4', topic: 'collegues', fr: "Un collègue : « Ça change rien de répondre aux mails le soir. »" },
-      { id: 'f30-5', topic: 'films',     fr: "Un ami : « Ce film a rien à voir avec le livre. » Toi, tu le trouves très fidèle." },
-      { id: 'f30-6', topic: 'couple',    fr: "Ta femme : « T'as pas oublié le dîner chez les voisins ? » Tu l'as oublié." },
-      { id: 'f30-7', topic: 'israel',    fr: "Un ami : « Israël a jamais rien proposé aux Palestiniens. »" }
+      { id: 'f30-1', topic: 'enfants',   fr: "Ta femme : « La grande a pas besoin d'aide pour ses devoirs. » Toi, tu penses qu'elle en a besoin.", model: "Si, justement. Elle en a besoin, même si elle veut pas le dire." },
+      { id: 'f30-2', topic: 'cours',     fr: "Un élève : « Ça sert à rien d'apprendre la grammaire. »", model: "Si, justement. La grammaire, ça sert à parler clairement." },
+      { id: 'f30-3', topic: 'sante',     fr: "Un ami : « T'as pas besoin de t'échauffer pour courir. »", model: "Si, justement. Sans échauffement, tu te blesses." },
+      { id: 'f30-4', topic: 'collegues', fr: "Un collègue : « Ça change rien de répondre aux mails le soir. »", model: "Si, justement. Répondre le soir, ça te coûte ton repos." },
+      { id: 'f30-5', topic: 'films',     fr: "Un ami : « Ce film a rien à voir avec le livre. » Toi, tu le trouves très fidèle.", model: "Si, justement. Il est très fidèle au livre." },
+      { id: 'f30-6', topic: 'couple',    fr: "Ta femme : « T'as pas oublié le dîner chez les voisins ? » Tu l'as oublié.", model: "Si, justement. Je l'avais oublié. On y va tout de suite ?" },
+      { id: 'f30-7', topic: 'israel',    fr: "Un ami : « Israël a jamais rien proposé aux Palestiniens. »", model: "Si, justement. Il y a eu des propositions en 2000 et en 2008." }
     ] },
 
   { id: 'f31', textId: 8, sources: [8],
@@ -726,13 +726,13 @@ var FRAMES = [
             { name: 'V', pos: 'verbe', note: "gagner, construire, apprendre, travailler…" }],
     yield: 3, register: 'parlé courant',
     prompts: [
-      { id: 'f31-1', topic: 'enfants',   fr: "Ta femme pense que les enfants vont devenir polis tout seuls. Toi, tu penses que les bonnes habitudes, ça s'apprend." },
-      { id: 'f31-2', topic: 'cours',     fr: "Un parent croit que son fils est doué ou pas. Toi, tu crois au travail." },
-      { id: 'f31-3', topic: 'argent',    fr: "Un ami croit que les riches ont juste eu de la chance. Toi, tu penses que ça se construit." },
-      { id: 'f31-4', topic: 'sante',     fr: "Un ami admire ta forme. Toi, tu sais combien d'heures ça t'a coûté." },
-      { id: 'f31-5', topic: 'couple',    fr: "Un ami pense qu'un bon couple, c'est de la chance. Toi, tu penses que ça se travaille." },
-      { id: 'f31-6', topic: 'collegues', fr: "Ton chef attend que l'équipe s'entende bien sans rien faire pour ça." },
-      { id: 'f31-7', topic: 'israel',    fr: "Un ami pense que la paix va arriver toute seule avec le temps." }
+      { id: 'f31-1', topic: 'enfants',   fr: "Ta femme pense que les enfants vont devenir polis tout seuls. Toi, tu penses que les bonnes habitudes, ça s'apprend.", model: "La politesse, elle tombe pas du ciel, on l'apprend." },
+      { id: 'f31-2', topic: 'cours',     fr: "Un parent croit que son fils est doué ou pas. Toi, tu crois au travail.", model: "Le talent, il tombe pas du ciel, on le travaille." },
+      { id: 'f31-3', topic: 'argent',    fr: "Un ami croit que les riches ont juste eu de la chance. Toi, tu penses que ça se construit.", model: "La réussite, elle tombe pas du ciel, on la construit." },
+      { id: 'f31-4', topic: 'sante',     fr: "Un ami admire ta forme. Toi, tu sais combien d'heures ça t'a coûté.", model: "La forme, elle tombe pas du ciel, on la fabrique." },
+      { id: 'f31-5', topic: 'couple',    fr: "Un ami pense qu'un bon couple, c'est de la chance. Toi, tu penses que ça se travaille.", model: "Un bon couple, il tombe pas du ciel, on le travaille." },
+      { id: 'f31-6', topic: 'collegues', fr: "Ton chef attend que l'équipe s'entende bien sans rien faire pour ça.", model: "Une bonne entente, elle tombe pas du ciel, on la construit." },
+      { id: 'f31-7', topic: 'israel',    fr: "Un ami pense que la paix va arriver toute seule avec le temps.", model: "La paix, elle tombe pas du ciel, on la fait." }
     ] },
 
   // ── E. Renvoyer la balle ────────────────────────────────
@@ -746,13 +746,13 @@ var FRAMES = [
     slots: [{ name: 'TU V', pos: 'proposition au tu', note: "présent ou conditionnel" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f32-1', topic: 'enfants',   fr: "Ta femme critique ta façon de coucher les enfants. Mets-la au défi de faire mieux." },
-      { id: 'f32-2', topic: 'collegues', fr: "Un collègue critique ton planning. Demande-lui s'il ferait mieux avec deux personnes en moins." },
-      { id: 'f32-3', topic: 'cours',     fr: "Un parent trouve tes méthodes trop strictes. Demande-lui s'il laisserait son fils sans devoirs avant le bac." },
-      { id: 'f32-4', topic: 'voisins',   fr: "Le voisin te reproche d'avoir appelé la police pour le bruit. Demande-lui s'il dormirait, avec la musique à trois heures." },
-      { id: 'f32-5', topic: 'argent',    fr: "Un ami dit que t'as payé ta maison trop cher. Demande-lui s'il aurait trouvé moins cher dans le quartier." },
-      { id: 'f32-6', topic: 'sante',     fr: "Ton ami se moque parce que t'as arrêté de courir. Demande-lui s'il court encore." },
-      { id: 'f32-7', topic: 'dieu',      fr: "Un croyant dit qu'il suit tous les commandements. Demande-lui s'il respecte vraiment tout le Lévitique." }
+      { id: 'f32-1', topic: 'enfants',   fr: "Ta femme critique ta façon de coucher les enfants. Mets-la au défi de faire mieux.", model: "Tu les couches mieux, toi ?" },
+      { id: 'f32-2', topic: 'collegues', fr: "Un collègue critique ton planning. Demande-lui s'il ferait mieux avec deux personnes en moins.", model: "Tu ferais mieux avec deux personnes en moins, toi ?" },
+      { id: 'f32-3', topic: 'cours',     fr: "Un parent trouve tes méthodes trop strictes. Demande-lui s'il laisserait son fils sans devoirs avant le bac.", model: "Tu laisserais ton fils sans devoirs avant le bac, toi ?" },
+      { id: 'f32-4', topic: 'voisins',   fr: "Le voisin te reproche d'avoir appelé la police pour le bruit. Demande-lui s'il dormirait, avec la musique à trois heures.", model: "Tu dormirais avec de la musique à trois heures, toi ?" },
+      { id: 'f32-5', topic: 'argent',    fr: "Un ami dit que t'as payé ta maison trop cher. Demande-lui s'il aurait trouvé moins cher dans le quartier.", model: "Tu aurais trouvé moins cher dans le quartier, toi ?" },
+      { id: 'f32-6', topic: 'sante',     fr: "Ton ami se moque parce que t'as arrêté de courir. Demande-lui s'il court encore.", model: "Tu cours encore, toi ?" },
+      { id: 'f32-7', topic: 'dieu',      fr: "Un croyant dit qu'il suit tous les commandements. Demande-lui s'il respecte vraiment tout le Lévitique.", model: "Tu respectes vraiment tout le Lévitique, toi ?" }
     ] },
 
   { id: 'f33', textId: 8, sources: [8],
@@ -765,13 +765,13 @@ var FRAMES = [
     slots: [{ name: 'A', pos: 'nom', note: "" }, { name: 'B', pos: 'nom', note: "à + le → au, à + les → aux" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f33-1', topic: 'couple',    fr: "Des vacances tranquilles à la maison, ou un voyage stressant à l'étranger ?" },
-      { id: 'f33-2', topic: 'cours',     fr: "Un élève qui fait des erreurs mais qui essaie, ou un élève parfait qui ose rien dire ?" },
-      { id: 'f33-3', topic: 'films',     fr: "Un petit film simple qui touche, ou un film compliqué qui impressionne ?" },
-      { id: 'f33-4', topic: 'collegues', fr: "Un collègue franc qui te vexe, ou un collègue gentil qui te dit jamais rien ?" },
-      { id: 'f33-5', topic: 'enfants',   fr: "Des enfants qui se disputent mais se parlent, ou des enfants chacun sur son écran ?" },
-      { id: 'f33-6', topic: 'argent',    fr: "Une petite voiture payée, ou une grosse voiture à crédit ?" },
-      { id: 'f33-7', topic: 'israel',    fr: "Un accord imparfait qui tient, ou une paix parfaite qui reste sur le papier ?" }
+      { id: 'f33-1', topic: 'couple',    fr: "Des vacances tranquilles à la maison, ou un voyage stressant à l'étranger ?", model: "Je préfère des vacances tranquilles à la maison à un voyage stressant à l'étranger." },
+      { id: 'f33-2', topic: 'cours',     fr: "Un élève qui fait des erreurs mais qui essaie, ou un élève parfait qui ose rien dire ?", model: "Je préfère un élève qui fait des erreurs à un élève parfait qui ose rien dire." },
+      { id: 'f33-3', topic: 'films',     fr: "Un petit film simple qui touche, ou un film compliqué qui impressionne ?", model: "Je préfère un petit film simple qui touche à un film compliqué qui impressionne." },
+      { id: 'f33-4', topic: 'collegues', fr: "Un collègue franc qui te vexe, ou un collègue gentil qui te dit jamais rien ?", model: "Je préfère un collègue franc qui me vexe à un collègue gentil qui me dit rien." },
+      { id: 'f33-5', topic: 'enfants',   fr: "Des enfants qui se disputent mais se parlent, ou des enfants chacun sur son écran ?", model: "Je préfère des enfants qui se disputent à des enfants chacun sur son écran." },
+      { id: 'f33-6', topic: 'argent',    fr: "Une petite voiture payée, ou une grosse voiture à crédit ?", model: "Je préfère une petite voiture payée à une grosse voiture à crédit." },
+      { id: 'f33-7', topic: 'israel',    fr: "Un accord imparfait qui tient, ou une paix parfaite qui reste sur le papier ?", model: "Je préfère un accord imparfait qui tient à une paix parfaite sur le papier." }
     ] },
 
   { id: 'f34', textId: 14, sources: [14],
@@ -784,13 +784,13 @@ var FRAMES = [
     slots: [{ name: 'X', pos: 'nom', note: "détaché en tête" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f34-1', topic: 'couple',    fr: "Ta femme te reproche le désordre dans le garage. Toi, tu veux parler de son placard." },
-      { id: 'f34-2', topic: 'cours',     fr: "Un parent parle des résultats de son fils. Toi, tu veux parler de ses absences." },
-      { id: 'f34-3', topic: 'collegues', fr: "Un collègue parle de ton retard. Toi, tu veux parler de ses pauses café." },
-      { id: 'f34-4', topic: 'enfants',   fr: "Ta femme dit que la petite mange mal. Toi, tu veux parler des bonbons chez ses grands-parents." },
-      { id: 'f34-5', topic: 'politique', fr: "Un ami parle des promesses de campagne. Toi, tu veux parler de ce qui a vraiment été fait." },
-      { id: 'f34-6', topic: 'sante',     fr: "Ton ami te parle de ton poids. Toi, tu veux parler de ses cigarettes." },
-      { id: 'f34-7', topic: 'dieu',      fr: "Un ami parle de la morale religieuse. Toi, tu veux parler de ce que la Bible dit sur l'esclavage." }
+      { id: 'f34-1', topic: 'couple',    fr: "Ta femme te reproche le désordre dans le garage. Toi, tu veux parler de son placard.", model: "Le désordre, parlons-en. Ton placard, tu l'as vu ?" },
+      { id: 'f34-2', topic: 'cours',     fr: "Un parent parle des résultats de son fils. Toi, tu veux parler de ses absences.", model: "Les résultats, parlons-en. Mais d'abord, ses absences." },
+      { id: 'f34-3', topic: 'collegues', fr: "Un collègue parle de ton retard. Toi, tu veux parler de ses pauses café.", model: "Mon retard, parlons-en. Tes pauses café, parlons-en aussi." },
+      { id: 'f34-4', topic: 'enfants',   fr: "Ta femme dit que la petite mange mal. Toi, tu veux parler des bonbons chez ses grands-parents.", model: "Ce qu'elle mange, parlons-en. Les bonbons chez ses grands-parents, aussi." },
+      { id: 'f34-5', topic: 'politique', fr: "Un ami parle des promesses de campagne. Toi, tu veux parler de ce qui a vraiment été fait.", model: "Les promesses, parlons-en. Ce qui a vraiment été fait, parlons-en aussi." },
+      { id: 'f34-6', topic: 'sante',     fr: "Ton ami te parle de ton poids. Toi, tu veux parler de ses cigarettes.", model: "Mon poids, parlons-en. Tes cigarettes, parlons-en aussi." },
+      { id: 'f34-7', topic: 'dieu',      fr: "Un ami parle de la morale religieuse. Toi, tu veux parler de ce que la Bible dit sur l'esclavage.", model: "La morale religieuse, parlons-en. Ce que la Bible dit sur l'esclavage, parlons-en aussi." }
     ] },
 
   { id: 'f35', textId: 17, sources: [17],
@@ -804,13 +804,13 @@ var FRAMES = [
             { name: 'B', pos: "infinitif / que + subjonctif", note: "" }],
     yield: 3, register: 'parlé courant',
     prompts: [
-      { id: 'f35-1', topic: 'couple',    fr: "Ta femme et toi, vous vous disputez sur qui avait raison pour les vacances. Toi, tu veux juste trouver une solution." },
-      { id: 'f35-2', topic: 'enfants',   fr: "Un ami se dispute avec sa fille sur ses notes. Pour toi, il doit choisir : l'aider ou la juger." },
-      { id: 'f35-3', topic: 'collegues', fr: "Un collègue cherche le coupable au lieu de régler le problème." },
-      { id: 'f35-4', topic: 'cours',     fr: "Un élève veut juste la bonne note, pas comprendre." },
-      { id: 'f35-5', topic: 'voisins',   fr: "Le voisin veut porter plainte au lieu de venir te parler." },
-      { id: 'f35-6', topic: 'sante',     fr: "Ton ami veut maigrir vite, mais il refuse de changer quoi que ce soit." },
-      { id: 'f35-7', topic: 'dieu',      fr: "Un ami croyant veut juste te faire admettre que t'as pas de preuve, au lieu de discuter vraiment." }
+      { id: 'f35-1', topic: 'couple',    fr: "Ta femme et toi, vous vous disputez sur qui avait raison pour les vacances. Toi, tu veux juste trouver une solution.", model: "Tu veux avoir raison, ou tu veux trouver une solution ?" },
+      { id: 'f35-2', topic: 'enfants',   fr: "Un ami se dispute avec sa fille sur ses notes. Pour toi, il doit choisir : l'aider ou la juger.", model: "Tu veux l'aider, ou tu veux la juger ?" },
+      { id: 'f35-3', topic: 'collegues', fr: "Un collègue cherche le coupable au lieu de régler le problème.", model: "Tu veux trouver le coupable, ou tu veux régler le problème ?" },
+      { id: 'f35-4', topic: 'cours',     fr: "Un élève veut juste la bonne note, pas comprendre.", model: "Tu veux la bonne note, ou tu veux comprendre ?" },
+      { id: 'f35-5', topic: 'voisins',   fr: "Le voisin veut porter plainte au lieu de venir te parler.", model: "Tu veux porter plainte, ou tu veux qu'on en parle ?" },
+      { id: 'f35-6', topic: 'sante',     fr: "Ton ami veut maigrir vite, mais il refuse de changer quoi que ce soit.", model: "Tu veux maigrir vite, ou tu veux vraiment changer quelque chose ?" },
+      { id: 'f35-7', topic: 'dieu',      fr: "Un ami croyant veut juste te faire admettre que t'as pas de preuve, au lieu de discuter vraiment.", model: "Tu veux me faire admettre que j'ai pas de preuve, ou tu veux discuter vraiment ?" }
     ] },
 
   { id: 'f36', textId: 6, sources: [6, 14],
@@ -823,12 +823,12 @@ var FRAMES = [
     slots: [{ name: 'P', pos: 'proposition', note: "le point plus fort" }],
     yield: 3, register: 'parlé courant',
     prompts: [
-      { id: 'f36-1', topic: 'enfants',   fr: "Tu penses que les écrans fatiguent les enfants, et même qu'ils les rendent tristes." },
-      { id: 'f36-2', topic: 'cours',     fr: "Tu penses que les devoirs servent pas à grand-chose, et même qu'ils dégoûtent certains élèves." },
-      { id: 'f36-3', topic: 'sante',     fr: "Tu penses que le sport aide à dormir, et même que ça marche mieux qu'un somnifère." },
-      { id: 'f36-4', topic: 'collegues', fr: "Tu penses que les réunions sont trop longues, et même que la moitié pourraient être un mail." },
-      { id: 'f36-5', topic: 'films',     fr: "Tu penses que le remake est moins bon, et même qu'il abîme l'original." },
-      { id: 'f36-6', topic: 'tech',      fr: "Tu penses que les enfants ont pas besoin de téléphone à dix ans, et même que les adultes s'en servent trop." },
-      { id: 'f36-7', topic: 'israel',    fr: "Tu penses que le Hamas a rien fait pour Gaza, et même qu'il a détourné le ciment pour ses tunnels." }
+      { id: 'f36-1', topic: 'enfants',   fr: "Tu penses que les écrans fatiguent les enfants, et même qu'ils les rendent tristes.", model: "Je vais même plus loin : ils les rendent tristes." },
+      { id: 'f36-2', topic: 'cours',     fr: "Tu penses que les devoirs servent pas à grand-chose, et même qu'ils dégoûtent certains élèves.", model: "Je vais même plus loin : ils dégoûtent certains élèves." },
+      { id: 'f36-3', topic: 'sante',     fr: "Tu penses que le sport aide à dormir, et même que ça marche mieux qu'un somnifère.", model: "Je vais même plus loin : ça marche mieux qu'un somnifère." },
+      { id: 'f36-4', topic: 'collegues', fr: "Tu penses que les réunions sont trop longues, et même que la moitié pourraient être un mail.", model: "Je vais même plus loin : la moitié pourraient être un mail." },
+      { id: 'f36-5', topic: 'films',     fr: "Tu penses que le remake est moins bon, et même qu'il abîme l'original.", model: "Je vais même plus loin : il abîme l'original." },
+      { id: 'f36-6', topic: 'tech',      fr: "Tu penses que les enfants ont pas besoin de téléphone à dix ans, et même que les adultes s'en servent trop.", model: "Je vais même plus loin : les adultes s'en servent trop." },
+      { id: 'f36-7', topic: 'israel',    fr: "Tu penses que le Hamas a rien fait pour Gaza, et même qu'il a détourné le ciment pour ses tunnels.", model: "Je vais même plus loin : il a détourné le ciment pour ses tunnels." }
     ] }
 ];

@@ -87,6 +87,9 @@ for (const f of FRAMES) {
     if (!(p.topic in TOPICS)) fail(`${p.id}: unknown topic ${p.topic}`);
     if (p.fr.includes(f.exemplarFr)) fail(`${p.id}: prompt contains the exemplar`);
     checkRegister(p.id, p.fr);
+    // Model answer: what a good response sounds like (played after the substitution window).
+    if (!p.model || p.model.length < 8) fail(`${p.id}: missing model answer`);
+    else { checkRegister(p.id + " model", p.model); if (p.model === f.exemplarFr) fail(`${p.id}: model equals the exemplar`); }
   }
 }
 

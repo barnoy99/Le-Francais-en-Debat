@@ -28,7 +28,7 @@
   var mode = 'mains';      // 'mains' = hands-free (hear/speak) | 'calme' = read, tap, self-paced
 
   var run = { active: false, paused: false, gen: 0, steps: [], idx: 0, item: null,
-              timer: null, waitLeft: 0, waitIdx: -1 };
+              timer: null, waitLeft: 0, waitIdx: -1, help: '' };
 
   function $(id) { return document.getElementById(id); }
   function show(el) { el.classList.remove('hidden'); }
@@ -235,7 +235,11 @@
       $('run-main').className = 'run-main' + (v.en ? ' en' : '') + (v.hush ? ' hush' : '');
     }
     if (v.sub !== undefined) $('run-sub').textContent = v.sub;
-    if (v.caption !== undefined) $('run-caption').textContent = v.caption;
+    if (v.caption !== undefined) {
+      $('run-caption').textContent = v.caption;
+      $('run-hint').textContent = v.hint || '';          // a new caption clears the old hint
+      run.help = v.help || v.hint || '';
+    }
     if (v.ring === false) hide($('run-ring'));
   }
 
@@ -324,6 +328,15 @@
     exec();
   }
 
+  // « ? »: pause, say the current instruction in English, then carry on.
+  function explainStep() {
+    if (!run.active || !run.help) return;
+    var wasPaused = run.paused;
+    if (!wasPaused) pauseRun();
+    $('run-hint').textContent = run.help;
+    speak(run.help, 'en', 0.9, function () { if (!wasPaused && run.paused) resumeRun(); });
+  }
+
   function togglePause() { if (run.paused) resumeRun(); else pauseRun(); }
 
   function restartItem() {
@@ -362,6 +375,8 @@
   function buildSteps(item) {
     var W = Core.WINDOW, s = [];
     var k = item.kind;
+    // hint = English line shown under the caption; help = English spoken by « ? »
+    // (defaults to the hint). Compréhension shows no English, only « ? » speaks it.
     function ui(v) { v.kind = v.kind || k; s.push({ t: 'ui', v: v }); }
     function say(text, lang, rate) { s.push({ t: 'say', text: text, lang: lang || 'fr', rate: rate || 0.8 }); }
     function beep(type) { s.push({ t: 'beep', type: type }); }
@@ -371,9 +386,10 @@
     if (k === 'mise') {
       var f = framesById[item.f];
       head.main = f.exemplarFr; head.sub = f.form; head.caption = 'Écoute';
+      head.hint = 'Listen to the sentence.';
       ui(head);
       say(f.exemplarFr, 'fr', 0.8);
-      ui({ caption: 'Maintenant, répète la phrase' });
+      ui({ caption: 'Maintenant, répète la phrase', hint: 'Now say it back, right away.' });
       say('Répète.', 'fr', 0.85);
       beep('go');
       wait(W.mise);
@@ -381,63 +397,77 @@
     } else if (k === 'recon') {
       var r = framesById[item.f];
       head.main = r.gist; head.en = true; head.sub = ''; head.caption = 'Écoute le sens (en anglais)';
+      head.hint = 'You hear the meaning in English. Then say it in French, using the structure.';
       ui(head);
       say(r.gist, 'en', 0.9);
-      ui({ caption: 'Dis-le en français, avec la structure' });
+      ui({ caption: 'Dis-le en français, avec la structure', hint: 'Say it in French now.' });
       say('Dis-le en français.', 'fr', 0.85);
       beep('go');
       wait(W.recon);
       beep('stop');
-      ui({ main: r.exemplarFr, en: false, sub: r.form, caption: 'Le modèle' });
+      ui({ main: r.exemplarFr, en: false, sub: r.form, caption: 'Le modèle', hint: 'Here is the model.' });
       say(r.exemplarFr, 'fr', 0.8);
-      ui({ caption: 'Répète le modèle' });
+      ui({ caption: 'Répète le modèle', hint: 'Repeat the model.' });
       wait(W.reconRepeat);
     } else if (k === 'sub') {
       var sf = framesById[item.f];
       var p = promptOf(item);
       head.main = sf.exemplarFr; head.sub = sf.form; head.caption = '1. La structure à utiliser';
+      head.hint = 'This is the structure you will use.';
       ui(head);
       say(sf.exemplarFr, 'fr', 0.8);
       if (item.q) {
-        ui({ main: p.fr, chip: 'Une de tes phrases', caption: '2. Redis cette phrase avec la structure' });
+        ui({ main: p.fr, chip: 'Une de tes phrases', caption: '2. Redis cette phrase avec la structure',
+             hint: 'Say this sentence of yours again, using the structure.' });
         say('Redis cette phrase avec la structure.', 'fr', 0.85);
         say(p.fr, 'fr', 0.9);
       } else {
-        ui({ main: p.fr, chip: window.TOPICS[p.topic] || '', caption: '2. La situation' });
+        ui({ main: p.fr, chip: window.TOPICS[p.topic] || '', caption: '2. La situation',
+             hint: 'A situation from your life. Listen.' });
         say('La situation.', 'fr', 0.85);
         say(p.fr, 'fr', 0.9);
-        ui({ caption: '3. Réponds, avec la structure' });
+        ui({ caption: '3. Réponds, avec la structure',
+             hint: 'Answer the situation out loud, in your own words, using the structure.' });
         say('Réponds, avec la structure.', 'fr', 0.85);
       }
       beep('go');
-      ui({ caption: 'À toi — parle' });
+      ui({ caption: 'À toi — parle', hint: 'Speak now.' });
       wait(W.sub);
       beep('stop');
+      if (!item.q && p.model) {
+        ui({ caption: 'Un exemple de réponse', hint: 'One example answer. Yours can be different.', sub: p.model });
+        say(p.model, 'fr', 0.85);
+      }
     } else if (k === 'chain') {
       var a = framesById[item.f[0]], b = framesById[item.f[1]];
       var cp = promptOf(item);
       head.main = ''; head.sub = a.form + '\n' + b.form; head.caption = 'Deux structures à utiliser';
+      head.hint = 'Two structures you will use together.';
       ui(head);
       say(a.exemplarFr, 'fr', 0.8);
       say(b.exemplarFr, 'fr', 0.8);
-      ui({ main: cp.fr, chip: window.TOPICS[cp.topic] || '', caption: 'Le sujet' });
+      ui({ main: cp.fr, chip: window.TOPICS[cp.topic] || '', caption: 'Le sujet',
+           hint: 'Link both structures with « du coup » or « n\'empêche », and talk for 30 seconds about this.' });
       say('Relie les deux structures avec « du coup », « n\'empêche » ou « cela dit ». Parle trente secondes. Le sujet :', 'fr', 0.85);
       say(cp.fr, 'fr', 0.9);
       beep('go');
-      ui({ caption: 'À toi — parle sans t\'arrêter' });
+      ui({ caption: 'À toi — parle sans t\'arrêter', hint: 'Speak now, without stopping.' });
       wait(W.chain);
       beep('stop');
     } else if (k === 'comp') {
       var lui = Core.luiText(window.TEXTS, item);
-      head.main = mode === 'calme' ? lui.fr : '· · ·'; head.hush = mode !== 'calme'; head.sub = ''; head.caption = 'Écoute ton ami';
+      head.main = mode === 'calme' ? lui.fr : '· · ·'; head.hush = mode !== 'calme'; head.sub = '';
+      head.caption = 'Écoute ton ami';
+      head.help = 'Your friend says something. Listen, then answer him in French, out loud.';
       ui(head);
       say(lui.fr, 'fr', 0.95);
-      ui({ caption: 'Réponds-lui, en français' });
+      ui({ caption: 'Réponds-lui, en français', help: 'Answer him in French, out loud. There is no single right answer.' });
       say('Réponds-lui.', 'fr', 0.85);
       beep('go');
       wait(W.comp);
       beep('stop');
-      ui({ main: lui.fr, hush: false, caption: lui.model ? 'Un exemple de réponse' : '' });
+      ui({ main: lui.fr, hush: false, caption: lui.model ? 'Un exemple de réponse' : '',
+           help: 'This is one example answer.' });
       if (lui.model) {
         ui({ sub: lui.model });
         say(lui.model, 'fr', 0.9);
@@ -680,8 +710,9 @@
     $('btn-run-home').addEventListener('click', leaveRun);
     $('btn-repeat').addEventListener('click', restartItem);
     $('btn-skip').addEventListener('click', skipItem);
+    $('btn-explain').addEventListener('click', explainStep);
     $('run-tap').addEventListener('click', function (e) {
-      if (inControl(e.target) || mode === 'calme') return;
+      if (inControl(e.target) || (mode === 'calme' && !run.paused)) return;
       togglePause();
     });
     $('btn-home-progress').addEventListener('click', function () {
