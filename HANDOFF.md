@@ -179,6 +179,21 @@ a « Comment ça marche ? » screen, shown automatically on first launch. The pr
 his life* that he answers aloud with the frame (addressed to his wife/friends, by design of Phase 2).
 Pacing tradeoff: a 2-minute session now yields ~3 items, not 4 (test thresholds lowered to match).
 
+**v4 (his answer « yes, all three »):** (1) an English `hint` line under every caption (Compréhension
+shows none — its English lives only behind « ? »); (2) a « ? » button that pauses, speaks the current
+instruction in English (en-GB) and resumes; (3) a **model answer after every substitution window** —
+`model` on all 252 prompts in `data.js` (written in Phase 3, **not yet reviewed by him**; `data-test.js`
+requires one per prompt and runs the register check on it). Not played for Quotidien-sentence
+substitutions (`item.q`) or Enchaînement. All assets `?v=4`, `CACHE_VERSION = 'v4'`.
+
+**Incident to know about:** the Browser pane's `preview_start` opens `/` *without* `?local`, so a
+preview writes the test browser's state to `progress/debat`. That happened; the cloud copy held fake
+seeded frames (19 frames, `updatedAt` 2026-09-30T15:01Z, backup in the session scratchpad) and would
+win the `updatedAt` merge against his phone's real state. Deleting it was blocked by the permission
+classifier, so **he has to remove `progress/debat` in the Firebase console** (Realtime Database →
+Data) — or check his phone's Progrès first. Next time: test on the live URL with `?local`, never via
+`preview_start`.
+
 ## Phase 3 — not done / open
 
 - **Two modes (v3, his request):** launch-screen toggle « Mains libres » | « Au calme », remembered per
