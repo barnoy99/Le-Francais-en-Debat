@@ -3,10 +3,10 @@
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'debat_state';
+  var STORAGE_KEY = 'debat_state2';   // v2 = fresh start (2026-09-30); debat_state held early test data
   var QCACHE_KEY = 'debat_qcache';
   // Own path in the shared Firebase project. NEVER progress/user1: that is Quotidien.
-  var DB_PATH = 'progress/debat';
+  var DB_PATH = 'progress/debat2';
   var Q_PROGRESS_URL = 'https://francais-quotidien-default-rtdb.firebaseio.com/progress/user1.json';
   var Q_DATA_URL = 'https://barnoy99.github.io/Le-Francais-au-Quotidien/data.js';
   var Q_TTL = 6 * 3600000;

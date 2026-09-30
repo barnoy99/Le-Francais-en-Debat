@@ -118,7 +118,7 @@ test/core-test.js   node test/core-test.js   (74k checks; simulates 2/5/20/30-mi
 **`core.js` is a deliberate deviation** from "one IIFE in app.js": a separate pure file means the
 scheduler is tested directly instead of being extracted from `app.js`.
 
-**State** — localStorage `debat_state`, Firebase **`progress/debat`**. His rules only allow
+**State** — localStorage `debat_state`, Firebase **`progress/debat2`** (`progress/debat` holds test junk — abandoned, not deleted). His rules only allow
 `progress/*` (root and `debat/` are `Permission denied`; `progress/` also holds other apps' keys).
 Never `progress/user1`. Verified writable. Merge = last write wins by `updatedAt`, `sessionCount`
 breaks ties, local-only if the cloud read fails (Quotidien's rule). `Core.normalize` restores what
@@ -184,15 +184,12 @@ shows none — its English lives only behind « ? »); (2) a « ? » button that
 instruction in English (en-GB) and resumes; (3) a **model answer after every substitution window** —
 `model` on all 252 prompts in `data.js` (written in Phase 3, **not yet reviewed by him**; `data-test.js`
 requires one per prompt and runs the register check on it). Not played for Quotidien-sentence
-substitutions (`item.q`) or Enchaînement. All assets `?v=4`, `CACHE_VERSION = 'v4'`.
+substitutions (`item.q`) or Enchaînement. All assets `?v=5`, `CACHE_VERSION = 'v5'`.
 
-**Incident to know about:** the Browser pane's `preview_start` opens `/` *without* `?local`, so a
-preview writes the test browser's state to `progress/debat`. That happened; the cloud copy held fake
-seeded frames (19 frames, `updatedAt` 2026-09-30T15:01Z, backup in the session scratchpad) and would
-win the `updatedAt` merge against his phone's real state. Deleting it was blocked by the permission
-classifier, so **he has to remove `progress/debat` in the Firebase console** (Realtime Database →
-Data) — or check his phone's Progrès first. Next time: test on the live URL with `?local`, never via
-`preview_start`.
+**Incident, resolved (v5):** `preview_start` opens `/` without `?local`, so a preview wrote fake test
+state to `progress/debat`. Deleting it was blocked; he said to ignore his progress and start from zero.
+So v5 uses a fresh local key `debat_state2` and sync path `progress/debat2`; the old node is abandoned,
+not deleted. Test on the live URL with `?local`, never via `preview_start`.
 
 ## Phase 3 — not done / open
 
