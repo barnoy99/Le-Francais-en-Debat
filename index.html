@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <div id="app">
@@ -25,6 +25,11 @@
         <h1 class="splash-title">Le Français<br><span class="splash-accent">en Débat</span></h1>
         <p class="splash-flourish">― ✦ ―</p>
         <p class="splash-subtitle" id="home-stats"></p>
+        <div class="mode-toggle" role="group" aria-label="Mode">
+          <button id="mode-mains" class="mode-btn" data-mode="mains">Mains libres</button>
+          <button id="mode-calme" class="mode-btn" data-mode="calme">Au calme</button>
+        </div>
+        <p id="mode-desc" class="mode-desc"></p>
         <button id="btn-start" class="btn-start">
           <span id="btn-start-label">Commencer</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
@@ -52,6 +57,7 @@
           <span id="ring-num" class="ring-num"></span>
         </div>
         <p id="run-caption" class="run-caption"></p>
+        <button id="btn-done" class="btn-done hidden">J'ai fini ›</button>
         <p id="run-paused" class="run-paused hidden">En pause — touche pour reprendre</p>
       </div>
       <div class="run-bar">
@@ -76,6 +82,7 @@
           <li><b>Compréhension</b> — un ami te dit quelque chose ; tu lui réponds en français.</li>
         </ol>
         <p><b>Le signal :</b> bip aigu = à toi de parler ; bip grave = temps écoulé. Il n'y a pas de bonne réponse unique : invente. Personne ne t'écoute encore, alors dis-le vraiment à voix haute.</p>
+        <p><b>Deux modes :</b> « Mains libres » (tu fais la vaisselle) : tout se fait à l'oreille, avec un minuteur et des bips. « Au calme » (tu peux lire et toucher l'écran) : tu vois tout le texte, tu prends ton temps, et tu touches « J'ai fini » quand tu as parlé. Les exercices et le suivi sont les mêmes.</p>
         <p><b>Les boutons :</b> touche l'écran pour mettre en pause. « Répéter » recommence l'exercice ; « Passer » l'ignore (il ne compte pas).</p>
       </div>
     </div>
@@ -97,9 +104,9 @@
 
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  <script src="firebase-config.js?v=2"></script>
-  <script src="data.js?v=2"></script>
-  <script src="core.js?v=2"></script>
-  <script src="app.js?v=2"></script>
+  <script src="firebase-config.js?v=3"></script>
+  <script src="data.js?v=3"></script>
+  <script src="core.js?v=3"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

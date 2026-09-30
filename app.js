@@ -24,6 +24,8 @@
   var qinfo = null;        // { at, count } for the Progrès note
   var session = { start: 0, items: 0 };
   var voices = [];
+  var MODE_KEY = 'debat_mode';
+  var mode = 'mains';      // 'mains' = hands-free (hear/speak) | 'calme' = read, tap, self-paced
 
   var run = { active: false, paused: false, gen: 0, steps: [], idx: 0, item: null,
               timer: null, waitLeft: 0, waitIdx: -1 };
@@ -247,6 +249,7 @@
   }
 
   function stopTimers() {
+    hide($('btn-done'));
     if (run.timer) { clearInterval(run.timer); run.timer = null; }
     if ('speechSynthesis' in window) speechSynthesis.cancel();
   }
@@ -279,6 +282,14 @@
     }, 1000);
   }
 
+  // « Au calme »: no countdown. He speaks in his own time and taps when done.
+  function holdForTap(next) {
+    var btn = $('btn-done');
+    hide($('run-ring'));
+    show(btn);
+    btn.onclick = function () { hide(btn); btn.onclick = null; next(); };
+  }
+
   function exec() {
     if (!run.active || run.paused) return;
     if (run.idx >= run.steps.length) { finishItem(); return; }
@@ -291,8 +302,11 @@
     }
     if (st.t === 'ui') { view(st.v); next(); }
     else if (st.t === 'say') speak(st.text, st.lang, st.rate, function () { setTimeout(next, 600); });
-    else if (st.t === 'beep') playBeep(st.type, next);
-    else if (st.t === 'wait') startWait(st.sec, next);
+    else if (st.t === 'beep') {
+      if (mode === 'calme' && st.type === 'stop') next(); else playBeep(st.type, next);
+    } else if (st.t === 'wait') {
+      if (mode === 'calme') holdForTap(next); else startWait(st.sec, next);
+    }
   }
 
   function pauseRun() {
@@ -415,7 +429,7 @@
       beep('stop');
     } else if (k === 'comp') {
       var lui = Core.luiText(window.TEXTS, item);
-      head.main = '· · ·'; head.hush = true; head.sub = ''; head.caption = 'Écoute ton ami';
+      head.main = mode === 'calme' ? lui.fr : '· · ·'; head.hush = mode !== 'calme'; head.sub = ''; head.caption = 'Écoute ton ami';
       ui(head);
       say(lui.fr, 'fr', 0.95);
       ui({ caption: 'Réponds-lui, en français' });
@@ -524,6 +538,17 @@
     return s;
   }
 
+  var MODE_DESC = { mains: "Tu as les mains prises : tout à l'oreille, minuteur et bips.",
+                    calme: "Tu peux lire et toucher l'écran : sans minuteur, tu touches « J'ai fini »." };
+
+  function setMode(m) {
+    mode = m;
+    try { localStorage.setItem(MODE_KEY, m); } catch (e) {}
+    $('mode-mains').classList.toggle('active', m === 'mains');
+    $('mode-calme').classList.toggle('active', m === 'calme');
+    $('mode-desc').textContent = MODE_DESC[m];
+  }
+
   function updateHome() {
     var now = Date.now();
     Core.rollDay(state, now);
@@ -620,6 +645,10 @@
         if (r && r.catch) r.catch(function () {});
       }
     } catch (e) {}
+    try { mode = localStorage.getItem(MODE_KEY) === 'calme' ? 'calme' : 'mains'; } catch (e) {}
+    setMode(mode);   // default: whichever he used last
+    $('mode-mains').addEventListener('click', function () { setMode('mains'); });
+    $('mode-calme').addEventListener('click', function () { setMode('calme'); });
     initFirebase();
     loadVoices();
     if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = loadVoices;
@@ -652,7 +681,7 @@
     $('btn-repeat').addEventListener('click', restartItem);
     $('btn-skip').addEventListener('click', skipItem);
     $('run-tap').addEventListener('click', function (e) {
-      if (inControl(e.target)) return;
+      if (inControl(e.target) || mode === 'calme') return;
       togglePause();
     });
     $('btn-home-progress').addEventListener('click', function () {

@@ -104,7 +104,7 @@ Left out on purpose because he already masters them in Quotidien: *n'empêche* (
 
 ## Phase 3 — what was built
 
-**Versions:** all assets `?v=2`, `CACHE_VERSION = 'v2'` (cache `debat-v2`). Same triple-bump rule as Quotidien on every asset change:
+**Versions:** all assets `?v=3`, `CACHE_VERSION = 'v3'` (cache `debat-v3`). Same triple-bump rule as Quotidien on every asset change:
 `?v=N` in `index.html` + the same URL in `SHELL` in `sw.js` + `CACHE_VERSION`.
 
 ```
@@ -181,7 +181,11 @@ Pacing tradeoff: a 2-minute session now yields ~3 items, not 4 (test thresholds 
 
 ## Phase 3 — not done / open
 
-- **No « Au calme » toggle** on the launch screen: it has nothing to hold until Phase 5. Add it then.
+- **Two modes (v3, his request):** launch-screen toggle « Mains libres » | « Au calme », remembered per
+  device (`localStorage debat_mode`). Same scheduler, items and counting. Au calme = self-paced: no
+  countdown or stop-beep, a « J'ai fini › » button ends each speaking window, the Compréhension text is
+  visible from the start, tap-to-pause is off. Mains libres = unchanged. Phase 5's review screens
+  (discrimination, transcripts, deferred verdicts, triage) still belong under « Au calme » later.
 - No STT, no `attempts` / `calques` logs, no override (Phase 4).
 - **Quotidien recombination fits unevenly**: a random mastered sentence poured into a random frame is
   sometimes awkward (« Je vais lui dire, quitte à le vexer » into *Je dis pas que… je dis juste que*).
