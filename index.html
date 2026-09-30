@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <div id="app">
@@ -29,6 +29,7 @@
           <span id="btn-start-label">Commencer</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
         </button>
+        <button id="btn-help" class="btn-text">Comment ça marche ?</button>
         <p class="home-hint">Tout se fait à l'oreille et à voix haute.<br>Touche l'écran pour mettre en pause.</p>
       </div>
     </section>
@@ -59,6 +60,26 @@
       </div>
     </section>
 
+    <!-- HOW IT WORKS -->
+    <div id="overlay-help" class="overlay hidden">
+      <div class="overlay-content help">
+        <div class="overlay-header">
+          <h2>Comment ça marche</h2>
+          <button id="btn-help-close" class="btn-text">× Fermer</button>
+        </div>
+        <p>C'est un entraînement à <b>parler</b>. Tu apprends des <b>structures</b> (par exemple « Plus on y réfléchit, moins ça tient debout »), puis tu les utilises pour dire <b>tes propres phrases</b>, sur des sujets sans rapport.</p>
+        <ol>
+          <li><b>Mise en bouche</b> — tu écoutes une phrase et tu la répètes tout de suite.</li>
+          <li><b>Reconstruction</b> — tu entends le sens en anglais, tu le dis en français.</li>
+          <li><b>Substitution</b> — l'essentiel. Tu entends la structure, puis une <b>situation de ta vie</b> (« Ta femme dit que… Toi, tu penses que… »). Tu réponds à voix haute, avec la structure. Tu parles <i>à</i> ta femme ou à un ami, jamais aux enfants.</li>
+          <li><b>Enchaînement</b> — tu relies deux structures et tu parles trente secondes.</li>
+          <li><b>Compréhension</b> — un ami te dit quelque chose ; tu lui réponds en français.</li>
+        </ol>
+        <p><b>Le signal :</b> bip aigu = à toi de parler ; bip grave = temps écoulé. Il n'y a pas de bonne réponse unique : invente. Personne ne t'écoute encore, alors dis-le vraiment à voix haute.</p>
+        <p><b>Les boutons :</b> touche l'écran pour mettre en pause. « Répéter » recommence l'exercice ; « Passer » l'ignore (il ne compte pas).</p>
+      </div>
+    </div>
+
     <!-- PROGRESS -->
     <div id="overlay-progress" class="overlay hidden">
       <div class="overlay-content">
@@ -76,9 +97,9 @@
 
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  <script src="firebase-config.js?v=1"></script>
-  <script src="data.js?v=1"></script>
-  <script src="core.js?v=1"></script>
-  <script src="app.js?v=1"></script>
+  <script src="firebase-config.js?v=2"></script>
+  <script src="data.js?v=2"></script>
+  <script src="core.js?v=2"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>

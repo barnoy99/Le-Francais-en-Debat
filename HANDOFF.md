@@ -104,8 +104,7 @@ Left out on purpose because he already masters them in Quotidien: *n'empêche* (
 
 ## Phase 3 — what was built
 
-**Versions:** `style.css?v=1`, `core.js?v=1`, `data.js?v=1`, `app.js?v=1`, `firebase-config.js?v=1`,
-`CACHE_VERSION = 'v1'` (cache `debat-v1`). Same triple-bump rule as Quotidien on every asset change:
+**Versions:** all assets `?v=2`, `CACHE_VERSION = 'v2'` (cache `debat-v2`). Same triple-bump rule as Quotidien on every asset change:
 `?v=N` in `index.html` + the same URL in `SHELL` in `sw.js` + `CACHE_VERSION`.
 
 ```
@@ -168,6 +167,17 @@ from GitHub Pages (CORS open) → his mastered sentences of 4–14 words, cached
 substitutions (« Redis cette phrase avec la structure », chip « Tes phrases », topic `quotidien`).
 Hook (a) « never drill a frame he owns as a phrase there » exists as an optional `quotidienIds: []`
 on a frame, but **no frame sets it** (f27 vs Quotidien #123 was kept on purpose).
+
+## Phase 3 — first feedback (2026-09-30) and what changed (v2)
+
+His first try: « most are too fast, and I don't get the idea » — and why do prompts mention the kids /
+« ma femme »? The app never said what to do. Fixes: every item now *speaks* its instruction
+(« Répète », « Dis-le en français », « La situation… Réponds, avec la structure », « Réponds-lui »);
+captions number the substitution steps; TTS slowed (exemplars 0.8, prompts 0.9, Lui line 0.95); a 600 ms
+breath after every utterance; windows lengthened (mise 10, recon 15, sub 25, chain 40, comp 25 s);
+a « Comment ça marche ? » screen, shown automatically on first launch. The prompts are situations *about
+his life* that he answers aloud with the frame (addressed to his wife/friends, by design of Phase 2).
+Pacing tradeoff: a 2-minute session now yields ~3 items, not 4 (test thresholds lowered to match).
 
 ## Phase 3 — not done / open
 

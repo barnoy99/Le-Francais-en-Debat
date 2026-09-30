@@ -153,13 +153,13 @@ for (const [name, lengths] of [['2-minute', [2]], ['5-minute', [5]], ['20-minute
 
 // ── Session shape ───────────────────────────────────────
 {
-  // Day 1, first two minutes: 4+ genuine items, none of them a chain.
+  // Day 1, first two minutes: 3+ genuine items, none of them a chain.
   const { log } = simulate(7, 1, [2]);
-  ok(log.length >= 4, `2 minutes should deliver 4+ items, got ${log.length}`);
+  ok(log.length >= 3, `2 minutes should deliver 3+ items, got ${log.length}`);
   ok(!log.some(e => e.item.kind === 'chain'), 'no chain in a 2-minute session');
   // A 30-minute day-1 session must not run dry or loop one item.
   const s30 = simulate(9, 1, [30]);
-  ok(s30.log.length >= 40, `30 minutes on day 1 gave only ${s30.log.length} items`);
+  ok(s30.log.length >= 30, `30 minutes on day 1 gave only ${s30.log.length} items`);
   const sig = s30.log.map(e => JSON.stringify(e.item)); ok(new Set(sig).size === sig.length, 'a day-1 30-minute session repeated an identical item');
 }
 

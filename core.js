@@ -25,8 +25,8 @@ var Core = (function () {
   var REPS_KEEP = 24;
 
   // Seconds — the app uses these for the countdown, the sim for item length.
-  var WINDOW = { mise: 8, recon: 12, sub: 15, chain: 30, comp: 15, reconRepeat: 4 };
-  var EST_SECONDS = { mise: 22, recon: 35, sub: 32, chain: 75, comp: 45 };
+  var WINDOW = { mise: 10, recon: 15, sub: 25, chain: 40, comp: 25, reconRepeat: 6 };
+  var EST_SECONDS = { mise: 30, recon: 45, sub: 50, chain: 95, comp: 60 };
 
   var CONNECTORS = ['du coup', "n'empêche", 'cela dit'];
 

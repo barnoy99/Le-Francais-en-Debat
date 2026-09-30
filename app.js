@@ -290,7 +290,7 @@
       exec();
     }
     if (st.t === 'ui') { view(st.v); next(); }
-    else if (st.t === 'say') speak(st.text, st.lang, st.rate, next);
+    else if (st.t === 'say') speak(st.text, st.lang, st.rate, function () { setTimeout(next, 600); });
     else if (st.t === 'beep') playBeep(st.type, next);
     else if (st.t === 'wait') startWait(st.sec, next);
   }
@@ -349,7 +349,7 @@
     var W = Core.WINDOW, s = [];
     var k = item.kind;
     function ui(v) { v.kind = v.kind || k; s.push({ t: 'ui', v: v }); }
-    function say(text, lang, rate) { s.push({ t: 'say', text: text, lang: lang || 'fr', rate: rate || 0.9 }); }
+    function say(text, lang, rate) { s.push({ t: 'say', text: text, lang: lang || 'fr', rate: rate || 0.8 }); }
     function beep(type) { s.push({ t: 'beep', type: type }); }
     function wait(sec) { s.push({ t: 'wait', sec: sec }); }
     var head = { label: LABELS[k], kind: k, chip: '', ring: false };
@@ -358,67 +358,75 @@
       var f = framesById[item.f];
       head.main = f.exemplarFr; head.sub = f.form; head.caption = 'Écoute';
       ui(head);
-      say(f.exemplarFr, 'fr', 0.9);
+      say(f.exemplarFr, 'fr', 0.8);
+      ui({ caption: 'Maintenant, répète la phrase' });
+      say('Répète.', 'fr', 0.85);
       beep('go');
-      ui({ caption: 'Répète tout de suite' });
       wait(W.mise);
       beep('stop');
     } else if (k === 'recon') {
       var r = framesById[item.f];
-      head.main = r.gist; head.en = true; head.sub = ''; head.caption = 'Écoute le sens';
+      head.main = r.gist; head.en = true; head.sub = ''; head.caption = 'Écoute le sens (en anglais)';
       ui(head);
-      say(r.gist, 'en', 0.95);
+      say(r.gist, 'en', 0.9);
+      ui({ caption: 'Dis-le en français, avec la structure' });
+      say('Dis-le en français.', 'fr', 0.85);
       beep('go');
-      ui({ caption: 'Dis-le en français' });
       wait(W.recon);
       beep('stop');
       ui({ main: r.exemplarFr, en: false, sub: r.form, caption: 'Le modèle' });
-      say(r.exemplarFr, 'fr', 0.9);
-      ui({ caption: 'Répète' });
+      say(r.exemplarFr, 'fr', 0.8);
+      ui({ caption: 'Répète le modèle' });
       wait(W.reconRepeat);
     } else if (k === 'sub') {
       var sf = framesById[item.f];
       var p = promptOf(item);
-      head.main = sf.exemplarFr; head.sub = sf.form; head.caption = 'La structure';
+      head.main = sf.exemplarFr; head.sub = sf.form; head.caption = '1. La structure à utiliser';
       ui(head);
-      say(sf.exemplarFr, 'fr', 0.9);
+      say(sf.exemplarFr, 'fr', 0.8);
       if (item.q) {
-        ui({ main: p.fr, chip: 'Tes phrases', caption: 'Redis-la avec cette structure' });
-        say('Redis cette phrase avec la structure.', 'fr', 1.0);
+        ui({ main: p.fr, chip: 'Une de tes phrases', caption: '2. Redis cette phrase avec la structure' });
+        say('Redis cette phrase avec la structure.', 'fr', 0.85);
+        say(p.fr, 'fr', 0.9);
       } else {
-        ui({ main: p.fr, chip: window.TOPICS[p.topic] || '', caption: 'Écoute la situation' });
+        ui({ main: p.fr, chip: window.TOPICS[p.topic] || '', caption: '2. La situation' });
+        say('La situation.', 'fr', 0.85);
+        say(p.fr, 'fr', 0.9);
+        ui({ caption: '3. Réponds, avec la structure' });
+        say('Réponds, avec la structure.', 'fr', 0.85);
       }
-      say(p.fr, 'fr', 1.0);
       beep('go');
-      ui({ caption: 'À toi' });
+      ui({ caption: 'À toi — parle' });
       wait(W.sub);
       beep('stop');
     } else if (k === 'chain') {
       var a = framesById[item.f[0]], b = framesById[item.f[1]];
       var cp = promptOf(item);
-      head.main = ''; head.sub = a.form + '\n' + b.form; head.caption = 'Deux structures';
+      head.main = ''; head.sub = a.form + '\n' + b.form; head.caption = 'Deux structures à utiliser';
       ui(head);
-      say(a.exemplarFr, 'fr', 0.9);
-      say(b.exemplarFr, 'fr', 0.9);
-      ui({ main: cp.fr, chip: window.TOPICS[cp.topic] || '', caption: 'Relie-les' });
-      say('Relie-les avec « du coup », « n\'empêche » ou « cela dit ». Parle trente secondes de : ' + cp.fr, 'fr', 1.0);
+      say(a.exemplarFr, 'fr', 0.8);
+      say(b.exemplarFr, 'fr', 0.8);
+      ui({ main: cp.fr, chip: window.TOPICS[cp.topic] || '', caption: 'Le sujet' });
+      say('Relie les deux structures avec « du coup », « n\'empêche » ou « cela dit ». Parle trente secondes. Le sujet :', 'fr', 0.85);
+      say(cp.fr, 'fr', 0.9);
       beep('go');
-      ui({ caption: 'Parle sans t\'arrêter' });
+      ui({ caption: 'À toi — parle sans t\'arrêter' });
       wait(W.chain);
       beep('stop');
     } else if (k === 'comp') {
       var lui = Core.luiText(window.TEXTS, item);
-      head.main = '· · ·'; head.hush = true; head.sub = ''; head.caption = 'Écoute';
+      head.main = '· · ·'; head.hush = true; head.sub = ''; head.caption = 'Écoute ton ami';
       ui(head);
-      say(lui.fr, 'fr', 1.1);
+      say(lui.fr, 'fr', 0.95);
+      ui({ caption: 'Réponds-lui, en français' });
+      say('Réponds-lui.', 'fr', 0.85);
       beep('go');
-      ui({ caption: 'Réponds en français' });
       wait(W.comp);
       beep('stop');
-      ui({ main: lui.fr, hush: false, caption: lui.model ? 'Un modèle' : '' });
+      ui({ main: lui.fr, hush: false, caption: lui.model ? 'Un exemple de réponse' : '' });
       if (lui.model) {
         ui({ sub: lui.model });
-        say(lui.model, 'fr', 1.0);
+        say(lui.model, 'fr', 0.9);
       }
     }
     return s;
@@ -623,7 +631,23 @@
       refreshQuotidien();
     });
 
-    $('btn-start').addEventListener('click', startSession);
+    var helpThenStart = false;
+    function openHelp(thenStart) {
+      helpThenStart = thenStart;
+      show($('overlay-help'));
+      $('overlay-help').querySelector('.overlay-content').scrollTop = 0;
+    }
+    function closeHelp() {
+      hide($('overlay-help'));
+      if (helpThenStart) { helpThenStart = false; startSession(); }
+    }
+    $('btn-start').addEventListener('click', function () {
+      var seen = false;
+      try { seen = !!localStorage.getItem('debat_help_seen'); localStorage.setItem('debat_help_seen', '1'); } catch (e) {}
+      if (seen) startSession(); else openHelp(true);   // first launch: explain, then start
+    });
+    $('btn-help').addEventListener('click', function () { openHelp(false); });
+    $('btn-help-close').addEventListener('click', closeHelp);
     $('btn-run-home').addEventListener('click', leaveRun);
     $('btn-repeat').addEventListener('click', restartItem);
     $('btn-skip').addEventListener('click', skipItem);

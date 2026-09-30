@@ -177,3 +177,8 @@ ul { list-style: none; }
 .pf-status.s-solide { color: var(--color-sage); }
 .pf-status.s-cours { color: #8A6A1C; }
 .pf-status.s-nouvelle { color: var(--text-secondary); }
+
+/* ── How it works ────────────────────────────────────── */
+.help p, .help ol { font-size: 0.95rem; line-height: 1.55; margin-bottom: 0.9rem; }
+.help ol { padding-left: 1.2rem; }
+.help li { margin-bottom: 0.55rem; }
