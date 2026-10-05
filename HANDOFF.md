@@ -10,6 +10,37 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v6 redesign (2026-10-05) — READ THIS FIRST; it supersedes the Phase 3 sections below
+
+His feedback on v5: « I use the app and don't know what to do or say. It's over complicated. »
+The scheduler + five activity types + French "situation" prompts asked him to invent French
+from nothing. Settled with him: **text first, sentence by sentence.**
+
+- **Home** = the six texts, each with progress; tap to continue, « ↺ Depuis le début » to restart.
+  Mains libres / Au calme switch kept (his choice).
+- **Per sentence** (`Core.buildSteps`): French + English shown, heard 3×, he repeats after each;
+  the French fades on the 3rd. If the sentence carries a frame (`f`), « À ta façon »: one of that
+  frame's prompt models (same structure, his life). **First time**: French + English, heard 2×,
+  repeated. **Sentence already done** (review): English only, spoken in en-GB → his try →
+  French revealed → repeat once.
+- Variations rotate per frame (`state.vu[frameId]`, consumed on completion), so every visit
+  meets a new one.
+- Mains libres: silences sized to the sentence (`Core.repeatMs` / `tryMs`), thin bar, tap to
+  pause. Au calme: « Suivant » button at each turn. Buttons: ⏮ ↺ ? ⏭.
+- **Content added:** `SENTENCES` in `data.js` (205 sentences, `{ l, fr, en, f? }`); the
+  sentences of a line joined with spaces must equal the line (`data-test.js`). Every frame is
+  carried by at least one sentence. `en` on all 252 prompts (English of `model`, brackets for
+  missing context) — **written by Claude, not yet reviewed by him**, same as the models.
+  f29 `sources` gained text 10.
+- **Gone:** scheduler, mastery, Compréhension/Enchaînement/Reconstruction, the French prompt
+  situations (`prompts[].fr` stays in data, unused), the Quotidien link, Progrès overlay.
+- **State** v2 shape: `{ version: 2, texts: { t<id>: { pos, done: '0101…' } }, vu, lastText }`,
+  localStorage `debat_state3`, Firebase **`progress/debat3`** (fresh; old paths abandoned).
+- Assets `?v=6`, `CACHE_VERSION = 'v6'`.
+
+Open: no STT (he self-checks against the reveal). If he wants it, Phase 4 can grade the review
+try against `model`. More texts = more lessons; a new text needs its `SENTENCES` entry.
+
 ## Status: Phase 3 built (2026-09-30, Sonnet) — not deployed yet; next is Phase 4 (STT + matcher)
 
 | Phase | State | Model |

@@ -5,7 +5,7 @@ const path = require('path');
 
 const root = path.join(__dirname, '..');
 const src = fs.readFileSync(path.join(root, 'data.js'), 'utf8');
-const { TEXTS, TOPICS, FRAMES } = new Function(src + '; return { TEXTS, TOPICS, FRAMES };')();
+const { TEXTS, TOPICS, FRAMES, SENTENCES } = new Function(src + '; return { TEXTS, TOPICS, FRAMES, SENTENCES };')();
 
 let failures = 0;
 const fail = msg => { console.log('FAIL ' + msg); failures++; };
@@ -90,9 +90,40 @@ for (const f of FRAMES) {
     // Model answer: what a good response sounds like (played after the substitution window).
     if (!p.model || p.model.length < 8) fail(`${p.id}: missing model answer`);
     else { checkRegister(p.id + " model", p.model); if (p.model === f.exemplarFr) fail(`${p.id}: model equals the exemplar`); }
+    // English of the model: shown under it, and the cue when he comes back to the text.
+    if (typeof p.en !== 'string' || p.en.length < 8) fail(`${p.id}: missing English (en)`);
   }
 }
 
+// ── SENTENCES: the lesson path. Each text's sentences, joined, give its lines back.
+const frameById = Object.fromEntries(FRAMES.map(f => [f.id, f]));
+const linked = new Set();
+let sentenceCount = 0;
+for (const t of TEXTS) {
+  const ss = SENTENCES[t.id];
+  if (!Array.isArray(ss) || !ss.length) { fail(`text ${t.id}: no SENTENCES`); continue; }
+  sentenceCount += ss.length;
+  let prev = 0;
+  ss.forEach((s, i) => {
+    const w = `text ${t.id} sentence ${i + 1}`;
+    if (!Number.isInteger(s.l) || s.l < prev || s.l >= t.lines.length) fail(`${w}: bad line index ${s.l}`);
+    prev = s.l;
+    if (typeof s.fr !== 'string' || !s.fr.trim() || s.fr !== s.fr.trim()) fail(`${w}: bad fr`);
+    if (typeof s.en !== 'string' || !s.en.trim()) fail(`${w}: missing English`);
+    if (s.fr.split(/\s+/).length > MAX_WORDS) fail(`${w}: too long to repeat (${s.fr.split(/\s+/).length} words)`);
+    if (s.f !== undefined) {
+      const f = frameById[s.f];
+      if (!f) fail(`${w}: unknown frame ${s.f}`);
+      else { linked.add(s.f); if (!f.sources.includes(t.id)) fail(`${w}: ${s.f} does not list text ${t.id} in sources`); }
+    }
+  });
+  t.lines.forEach((ln, i) => {
+    const joined = ss.filter(s => s.l === i).map(s => s.fr).join(' ');
+    if (joined !== ln.fr) fail(`text ${t.id} line ${i + 1}: sentences do not rebuild the line`);
+  });
+}
+for (const f of FRAMES) if (!linked.has(f.id)) fail(`${f.id}: no sentence carries it (never taught)`);
+
 console.log(failures ? `${failures} failure(s)`
-  : `data OK — ${TEXTS.length} texts, ${FRAMES.length} frames, ${promptIds.size} prompts`);
+  : `data OK — ${TEXTS.length} texts, ${sentenceCount} sentences, ${FRAMES.length} frames, ${promptIds.size} prompts`);
 process.exit(failures ? 1 : 0);

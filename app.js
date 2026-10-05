@@ -1,34 +1,26 @@
-/* Le Français en Débat — a hands-free speaking gym. One IIFE, like Quotidien.
-   The scheduler, mastery rule and sync merge live in core.js (testable in node). */
+/* Le Français en Débat — learn a text sentence by sentence, and bend each structure
+   into a sentence of your own life. One IIFE; lesson steps and progress live in core.js. */
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'debat_state2';   // v2 = fresh start (2026-09-30); debat_state held early test data
-  var QCACHE_KEY = 'debat_qcache';
+  var STORAGE_KEY = 'debat_state3';   // v3 = the sentence-by-sentence redesign (2026-10-05)
   // Own path in the shared Firebase project. NEVER progress/user1: that is Quotidien.
-  var DB_PATH = 'progress/debat2';
-  var Q_PROGRESS_URL = 'https://francais-quotidien-default-rtdb.firebaseio.com/progress/user1.json';
-  var Q_DATA_URL = 'https://barnoy99.github.io/Le-Francais-au-Quotidien/data.js';
-  var Q_TTL = 6 * 3600000;
-  // ?local switches off Firebase and the Quotidien read (testing without touching live data).
+  var DB_PATH = 'progress/debat3';
+  // ?local switches Firebase off (testing without touching live data).
   var LOCAL_ONLY = /[?&]local\b/.test(location.search);
+  var MODE_KEY = 'debat_mode';
 
   var state = null;
   var db = null;
   var cloudReadOk = false;
   var wakeLock = null;
-  var audioCtx = null;
-  var framesById = {};
-  var qsent = [];          // his mastered Quotidien sentences, as substitution content
-  var qmastered = {};      // Quotidien phrase ids he already owns
-  var qinfo = null;        // { at, count } for the Progrès note
-  var session = { start: 0, items: 0 };
   var voices = [];
-  var MODE_KEY = 'debat_mode';
-  var mode = 'mains';      // 'mains' = hands-free (hear/speak) | 'calme' = read, tap, self-paced
+  var framesById = {};
+  var textsById = {};
+  var mode = 'mains';      // 'mains' = hands-free, paced by silences | 'calme' = tap « Suivant »
 
-  var run = { active: false, paused: false, gen: 0, steps: [], idx: 0, item: null,
-              timer: null, waitLeft: 0, waitIdx: -1, help: '' };
+  var run = { active: false, paused: false, gen: 0, steps: [], idx: 0,
+              text: null, sents: [], sidx: 0, variant: null, timer: null, help: '' };
 
   function $(id) { return document.getElementById(id); }
   function show(el) { el.classList.remove('hidden'); }
@@ -53,14 +45,14 @@
     return false;
   }
 
-  // ── Persistence: save after EVERY item, never at the end ──────────
+  // ── Persistence: save after every sentence ────────────
 
   function loadLocal() {
     try {
       var raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
         var parsed = JSON.parse(raw);
-        if (parsed.version) return Core.normalize(parsed);
+        if (parsed.version === 2) return Core.normalize(parsed);
       }
     } catch (e) {}
     return null;
@@ -71,14 +63,13 @@
     if (db) {
       db.ref(DB_PATH).once('value').then(function (snap) {
         var cloud = snap.val();
-        state = Core.normalize(Core.pickFreshest(localState, cloud && cloud.version ? Core.normalize(cloud) : null));
+        state = Core.normalize(Core.pickFreshest(localState, cloud && cloud.version === 2 ? Core.normalize(cloud) : null));
         cloudReadOk = true;
         saveLocal();
         saveCloud();
         callback();
       }).catch(function () {
-        // Cloud unknown: writing could clobber something newer. Stay local this
-        // session; updatedAt means the work still wins the merge next time.
+        // Cloud unknown: writing could clobber something newer. Stay local this session.
         cloudReadOk = false;
         state = localState || Core.defaults();
         callback();
@@ -105,44 +96,7 @@
     saveCloud();
   }
 
-  // ── Quotidien link — READ ONLY ────────────────────────
-  // Plain GETs, so nothing here can write. Progress tells us which phrases he
-  // masters; its data.js gives their text. Cached; the app works without either.
-
-  function applyQuotidien(cache) {
-    qmastered = {};
-    (cache.ids || []).forEach(function (id) { qmastered[id] = 1; });
-    qsent = cache.sent || [];
-    qinfo = { at: cache.at, count: (cache.ids || []).length, sentences: qsent.length };
-  }
-
-  function refreshQuotidien() {
-    var cache = null;
-    try { cache = JSON.parse(localStorage.getItem(QCACHE_KEY)); } catch (e) {}
-    if (cache) applyQuotidien(cache);
-    if (LOCAL_ONLY || !navigator.onLine) return;
-    if (cache && Date.now() - cache.at < Q_TTL) return;
-
-    var ids = null;
-    fetch(Q_PROGRESS_URL).then(function (r) { return r.json(); }).then(function (progress) {
-      ids = Core.masteredIds(progress);
-      return fetch(Q_DATA_URL).then(function (r) { return r.text(); }).then(function (txt) {
-        // His own site, his own data file; evaluated only to read PHRASES.
-        var phrases = new Function(txt + ';return PHRASES;')();
-        return Core.quotidienSentences(phrases, ids);
-      }).catch(function () {
-        // Progress arrived but data.js did not: keep the old sentences that still apply.
-        var want = {}; ids.forEach(function (id) { want[id] = 1; });
-        return ((cache && cache.sent) || []).filter(function (q) { return want[parseInt(q.k, 10)]; });
-      });
-    }).then(function (sent) {
-      var fresh = { at: Date.now(), ids: ids, sent: sent };
-      try { localStorage.setItem(QCACHE_KEY, JSON.stringify(fresh)); } catch (e) {}
-      applyQuotidien(fresh);
-    }).catch(function () { /* offline or blocked: keep whatever we had */ });
-  }
-
-  // ── Audio: TTS, beeps, wake-lock ──────────────────────
+  // ── Audio: TTS, wake-lock ─────────────────────────────
 
   function loadVoices() {
     if ('speechSynthesis' in window) voices = speechSynthesis.getVoices() || [];
@@ -160,7 +114,7 @@
   }
 
   // Speaks `text`, then calls cb once. A fallback timer covers a silent engine that
-  // never fires onend, so a hands-free run cannot stall at the sink.
+  // never fires onend, so a hands-free run cannot stall.
   function speak(text, lang, rate, cb) {
     if (!('speechSynthesis' in window)) { setTimeout(cb, 1500); return; }
     var done = false;
@@ -183,31 +137,6 @@
     speechSynthesis.speak(u);
   }
 
-  function initAudio() {
-    try {
-      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      if (audioCtx.state === 'suspended') audioCtx.resume();
-    } catch (e) {}
-  }
-
-  // 'go' = high beep (your turn), 'stop' = low beep (time).
-  function playBeep(type, cb) {
-    if (!audioCtx) { setTimeout(cb, 200); return; }
-    try {
-      if (audioCtx.state === 'suspended') audioCtx.resume();
-      var osc = audioCtx.createOscillator();
-      var gain = audioCtx.createGain();
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.frequency.value = type === 'go' ? 880 : 440;
-      gain.gain.value = 0.3;
-      osc.start();
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
-      osc.stop(audioCtx.currentTime + 0.15);
-    } catch (e) {}
-    setTimeout(cb, 260);
-  }
-
   function requestWakeLock() {
     if (!('wakeLock' in navigator)) return;
     navigator.wakeLock.request('screen').then(function (wl) {
@@ -220,83 +149,55 @@
     if (wakeLock) { wakeLock.release().catch(function () {}); wakeLock = null; }
   }
 
-  // ── The runner: an item is a list of steps, driven by ear ──────
-  // say / beep / wait run one after another; `ui` steps only repaint the mirror.
+  // ── The runner: one sentence = a list of steps ────────
   // Pause cancels the current step and restarts it on resume (a speech engine
-  // cannot resume mid-utterance), except a countdown, which keeps its remaining time.
-
-  var RING_LEN = 2 * Math.PI * 35;
+  // cannot resume mid-utterance).
 
   function view(v) {
-    if (v.label !== undefined) { $('run-label').textContent = v.label; $('run-label').className = 'run-label k-' + v.kind; }
-    if (v.chip !== undefined) $('run-chip').textContent = v.chip;
-    if (v.main !== undefined) {
-      $('run-main').textContent = v.main;
-      $('run-main').className = 'run-main' + (v.en ? ' en' : '') + (v.hush ? ' hush' : '');
+    if (v.phase !== undefined) {
+      var isVar = v.phase === 'var';
+      $('run-card').className = 'run-card' + (isVar ? ' run-card--var' : '');
+      $('run-tag').textContent = isVar ? 'À ta façon' : 'Le texte';
     }
-    if (v.sub !== undefined) $('run-sub').textContent = v.sub;
+    if (v.fr !== undefined) $('run-fr').textContent = v.fr;
+    if (v.en !== undefined) $('run-en').textContent = v.en;
+    if (v.hideFr !== undefined) $('run-fr').classList.toggle('faded', v.hideFr);
     if (v.caption !== undefined) {
       $('run-caption').textContent = v.caption;
-      $('run-hint').textContent = v.hint || '';          // a new caption clears the old hint
-      run.help = v.help || v.hint || '';
+      run.help = v.hint || '';
     }
-    if (v.ring === false) hide($('run-ring'));
-  }
-
-  function ringUpdate(left, total) {
-    var fg = $('ring-fg');
-    fg.style.strokeDasharray = RING_LEN;
-    fg.style.strokeDashoffset = RING_LEN * (1 - left / total);
-    var num = $('ring-num');
-    num.textContent = left;
-    num.className = 'ring-num' + (left >= 10 ? ' two-digit' : '');
   }
 
   function stopTimers() {
-    hide($('btn-done'));
-    if (run.timer) { clearInterval(run.timer); run.timer = null; }
+    hide($('btn-next'));
+    hide($('run-bar-time'));
+    if (run.timer) { clearTimeout(run.timer); run.timer = null; }
     if ('speechSynthesis' in window) speechSynthesis.cancel();
   }
 
-  function startWait(sec, next) {
-    var gen = run.gen;
-    var left = run.waitIdx === run.idx && run.waitLeft > 0 ? run.waitLeft : sec;
-    run.waitIdx = run.idx;
-    show($('run-ring'));
-    var fg = $('ring-fg');
-    fg.style.transition = 'none';
-    ringUpdate(left, sec);
-    void fg.getBoundingClientRect();
-    fg.style.transition = '';
-    run.waitLeft = left;
-    run.timer = setInterval(function () {
-      if (gen !== run.gen) { clearInterval(run.timer); return; }
-      left--;
-      run.waitLeft = left;
-      if (left <= 0) {
-        clearInterval(run.timer);
-        run.timer = null;
-        run.waitLeft = 0;
-        run.waitIdx = -1;
-        hide($('run-ring'));
-        next();
-        return;
-      }
-      ringUpdate(left, sec);
-    }, 1000);
-  }
-
-  // « Au calme »: no countdown. He speaks in his own time and taps when done.
-  function holdForTap(next) {
-    var btn = $('btn-done');
-    hide($('run-ring'));
-    show(btn);
-    btn.onclick = function () { hide(btn); btn.onclick = null; next(); };
+  // His turn. « Mains libres »: a silence sized to the sentence, with a thin bar.
+  // « Au calme »: as long as he wants, then « Suivant ».
+  function startTurn(ms, next) {
+    if (mode === 'calme') {
+      var btn = $('btn-next');
+      show(btn);
+      btn.onclick = function () { hide(btn); btn.onclick = null; next(); };
+      return;
+    }
+    var bar = $('run-bar-time');
+    var fill = $('run-bar-fill');
+    show(bar);
+    fill.style.transition = 'none';
+    fill.style.width = '0%';
+    void fill.getBoundingClientRect();
+    fill.style.transition = 'width ' + ms + 'ms linear';
+    fill.style.width = '100%';
+    run.timer = setTimeout(function () { run.timer = null; hide(bar); next(); }, ms);
   }
 
   function exec() {
     if (!run.active || run.paused) return;
-    if (run.idx >= run.steps.length) { finishItem(); return; }
+    if (run.idx >= run.steps.length) { finishSentence(); return; }
     var st = run.steps[run.idx];
     var gen = run.gen;
     function next() {
@@ -305,12 +206,8 @@
       exec();
     }
     if (st.t === 'ui') { view(st.v); next(); }
-    else if (st.t === 'say') speak(st.text, st.lang, st.rate, function () { setTimeout(next, 600); });
-    else if (st.t === 'beep') {
-      if (mode === 'calme' && st.type === 'stop') next(); else playBeep(st.type, next);
-    } else if (st.t === 'wait') {
-      if (mode === 'calme') holdForTap(next); else startWait(st.sec, next);
-    }
+    else if (st.t === 'say') speak(st.text, st.lang, st.rate, function () { setTimeout(next, 400); });
+    else if (st.t === 'turn') startTurn(st.ms, next);
   }
 
   function pauseRun() {
@@ -328,26 +225,14 @@
     exec();
   }
 
-  // « ? »: pause, say the current instruction in English, then carry on.
+  function togglePause() { if (run.paused) resumeRun(); else pauseRun(); }
+
+  // « ? »: say the current instruction in English, then carry on.
   function explainStep() {
     if (!run.active || !run.help) return;
     var wasPaused = run.paused;
     if (!wasPaused) pauseRun();
-    $('run-hint').textContent = run.help;
     speak(run.help, 'en', 0.9, function () { if (!wasPaused && run.paused) resumeRun(); });
-  }
-
-  function togglePause() { if (run.paused) resumeRun(); else pauseRun(); }
-
-  function restartItem() {
-    if (!run.active) return;
-    run.gen++;
-    stopTimers();
-    run.paused = false;
-    run.idx = 0;
-    run.waitIdx = -1;
-    hide($('run-paused'));
-    exec();
   }
 
   function stopRun() {
@@ -358,218 +243,71 @@
     releaseWakeLock();
   }
 
-  // ── Building an item's steps ──────────────────────────
+  // ── Sentences ─────────────────────────────────────────
 
-  var LABELS = { mise: 'Mise en bouche', recon: 'Reconstruction', sub: 'Substitution',
-                 chain: 'Enchaînement', comp: 'Compréhension' };
-
-  function promptOf(item) {
-    if (item.q) return { fr: item.q.fr, topic: 'quotidien' };
-    var found = null;
-    Object.keys(framesById).forEach(function (id) {
-      framesById[id].prompts.forEach(function (p) { if (p.id === item.p) found = p; });
-    });
-    return found;
-  }
-
-  function buildSteps(item) {
-    var W = Core.WINDOW, s = [];
-    var k = item.kind;
-    // hint = English line shown under the caption; help = English spoken by « ? »
-    // (defaults to the hint). Compréhension shows no English, only « ? » speaks it.
-    function ui(v) { v.kind = v.kind || k; s.push({ t: 'ui', v: v }); }
-    function say(text, lang, rate) { s.push({ t: 'say', text: text, lang: lang || 'fr', rate: rate || 0.8 }); }
-    function beep(type) { s.push({ t: 'beep', type: type }); }
-    function wait(sec) { s.push({ t: 'wait', sec: sec }); }
-    var head = { label: LABELS[k], kind: k, chip: '', ring: false };
-
-    if (k === 'mise') {
-      var f = framesById[item.f];
-      head.main = f.exemplarFr; head.sub = f.form; head.caption = 'Écoute';
-      head.hint = 'Listen to the sentence.';
-      ui(head);
-      say(f.exemplarFr, 'fr', 0.8);
-      ui({ caption: 'Maintenant, répète la phrase', hint: 'Now say it back, right away.' });
-      say('Répète.', 'fr', 0.85);
-      beep('go');
-      wait(W.mise);
-      beep('stop');
-    } else if (k === 'recon') {
-      var r = framesById[item.f];
-      head.main = r.gist; head.en = true; head.sub = ''; head.caption = 'Écoute le sens (en anglais)';
-      head.hint = 'You hear the meaning in English. Then say it in French, using the structure.';
-      ui(head);
-      say(r.gist, 'en', 0.9);
-      ui({ caption: 'Dis-le en français, avec la structure', hint: 'Say it in French now.' });
-      say('Dis-le en français.', 'fr', 0.85);
-      beep('go');
-      wait(W.recon);
-      beep('stop');
-      ui({ main: r.exemplarFr, en: false, sub: r.form, caption: 'Le modèle', hint: 'Here is the model.' });
-      say(r.exemplarFr, 'fr', 0.8);
-      ui({ caption: 'Répète le modèle', hint: 'Repeat the model.' });
-      wait(W.reconRepeat);
-    } else if (k === 'sub') {
-      var sf = framesById[item.f];
-      var p = promptOf(item);
-      head.main = sf.exemplarFr; head.sub = sf.form; head.caption = '1. La structure à utiliser';
-      head.hint = 'This is the structure you will use.';
-      ui(head);
-      say(sf.exemplarFr, 'fr', 0.8);
-      if (item.q) {
-        ui({ main: p.fr, chip: 'Une de tes phrases', caption: '2. Redis cette phrase avec la structure',
-             hint: 'Say this sentence of yours again, using the structure.' });
-        say('Redis cette phrase avec la structure.', 'fr', 0.85);
-        say(p.fr, 'fr', 0.9);
-      } else {
-        ui({ main: p.fr, chip: window.TOPICS[p.topic] || '', caption: '2. La situation',
-             hint: 'A situation from your life. Listen.' });
-        say('La situation.', 'fr', 0.85);
-        say(p.fr, 'fr', 0.9);
-        ui({ caption: '3. Réponds, avec la structure',
-             hint: 'Answer the situation out loud, in your own words, using the structure.' });
-        say('Réponds, avec la structure.', 'fr', 0.85);
-      }
-      beep('go');
-      ui({ caption: 'À toi — parle', hint: 'Speak now.' });
-      wait(W.sub);
-      beep('stop');
-      if (!item.q && p.model) {
-        ui({ caption: 'Un exemple de réponse', hint: 'One example answer. Yours can be different.', sub: p.model });
-        say(p.model, 'fr', 0.85);
-      }
-    } else if (k === 'chain') {
-      var a = framesById[item.f[0]], b = framesById[item.f[1]];
-      var cp = promptOf(item);
-      head.main = ''; head.sub = a.form + '\n' + b.form; head.caption = 'Deux structures à utiliser';
-      head.hint = 'Two structures you will use together.';
-      ui(head);
-      say(a.exemplarFr, 'fr', 0.8);
-      say(b.exemplarFr, 'fr', 0.8);
-      ui({ main: cp.fr, chip: window.TOPICS[cp.topic] || '', caption: 'Le sujet',
-           hint: 'Link both structures with « du coup » or « n\'empêche », and talk for 30 seconds about this.' });
-      say('Relie les deux structures avec « du coup », « n\'empêche » ou « cela dit ». Parle trente secondes. Le sujet :', 'fr', 0.85);
-      say(cp.fr, 'fr', 0.9);
-      beep('go');
-      ui({ caption: 'À toi — parle sans t\'arrêter', hint: 'Speak now, without stopping.' });
-      wait(W.chain);
-      beep('stop');
-    } else if (k === 'comp') {
-      var lui = Core.luiText(window.TEXTS, item);
-      head.main = mode === 'calme' ? lui.fr : '· · ·'; head.hush = mode !== 'calme'; head.sub = '';
-      head.caption = 'Écoute ton ami';
-      head.help = 'Your friend says something. Listen, then answer him in French, out loud.';
-      ui(head);
-      say(lui.fr, 'fr', 0.95);
-      ui({ caption: 'Réponds-lui, en français', help: 'Answer him in French, out loud. There is no single right answer.' });
-      say('Réponds-lui.', 'fr', 0.85);
-      beep('go');
-      wait(W.comp);
-      beep('stop');
-      ui({ main: lui.fr, hush: false, caption: lui.model ? 'Un exemple de réponse' : '',
-           help: 'This is one example answer.' });
-      if (lui.model) {
-        ui({ sub: lui.model });
-        say(lui.model, 'fr', 0.9);
-      }
-    }
-    return s;
-  }
-
-  // ── Serving items ─────────────────────────────────────
-
-  function ctx() {
-    return { now: Date.now(), frames: FRAMES, texts: TEXTS, qsent: qsent, qmastered: qmastered,
-             sessionStart: session.start, sessionItems: session.items, rng: Math.random };
-  }
-
-  function updateCounter() {
-    Core.rollDay(state, Date.now());
-    $('run-counter').innerHTML = state.dayCount + '<small>aujourd\'hui</small>';
-  }
-
-  function advance() {
+  function playSentence(idx) {
     if (!run.active) return;
-    var item = state.current;
-    if (!item) {
-      item = Core.next(state, ctx());
-      if (!item) return;
-      state.current = item;
-      save();
-    }
-    run.item = item;
-    run.steps = buildSteps(item);
+    if (idx >= run.sents.length) { finishText(); return; }
+    run.sidx = idx;
+    Core.setPos(state, run.text.id, idx);
+    var sent = run.sents[idx];
+    var frame = sent.f ? framesById[sent.f] : null;
+    run.variant = Core.pickVariant(state, frame);
+    var review = Core.isDone(state, run.text.id, idx);
+    run.steps = Core.buildSteps(sent, { variant: run.variant, review: review });
     run.idx = 0;
-    run.waitIdx = -1;
     run.gen++;
     run.paused = false;
+    stopTimers();
     hide($('run-paused'));
-    updateCounter();
+    var line = run.text.lines[sent.l];
+    $('run-who').textContent = run.text.kind === 'dialogue' ? (line.who === 'lui' ? 'Ton ami' : 'Toi') : '';
+    $('run-count').textContent = (idx + 1) + ' / ' + run.sents.length;
+    $('run-progress-fill').style.width = (100 * idx / run.sents.length) + '%';
+    $('btn-prev').disabled = idx === 0;
     exec();
   }
 
-  function finishItem() {
-    Core.commit(state, run.item, ctx(), null);
+  function finishSentence() {
+    Core.complete(state, run.text.id, run.sidx, run.variant ? run.sents[run.sidx].f : null);
     save();
-    session.items++;
-    updateCounter();
-    advance();
+    playSentence(run.sidx + 1);
   }
 
-  function skipItem() {
-    if (!run.active) return;
-    stopTimers();
-    run.gen++;
-    Core.skip(state, run.item, ctx());
+  function finishText() {
+    stopRun();
     save();
-    advance();
+    $('done-title').textContent = run.text.title;
+    showScreen('screen-done');
   }
 
-  // A persisted item can outlive the data it points at (frame or text removed).
-  function itemValid(item) {
-    if (!item) return false;
-    if (item.kind === 'comp') return !!Core.luiText(TEXTS, item);
-    var ids = item.kind === 'chain' ? item.f : [item.f];
-    for (var i = 0; i < ids.length; i++) if (!framesById[ids[i]]) return false;
-    return item.kind === 'sub' || item.kind === 'chain' ? !!promptOf(item) : true;
-  }
-
-  function startSession() {
-    if (!itemValid(state.current)) state.current = null;
-    initAudio();
+  function openText(textId, fromStart) {
+    var t = textsById[textId];
+    if (!t) return;
+    run.text = t;
+    run.sents = SENTENCES[t.id];
+    var p = Core.progress(state, t.id, run.sents.length);
+    var start = fromStart || p.finished ? 0 : p.pos;
     loadVoices();
     requestWakeLock();
-    session = { start: Date.now(), items: 0 };
     run.active = true;
+    $('run-title').textContent = t.title;
     showScreen('screen-run');
-    advance();
+    playSentence(start);
   }
 
   function leaveRun() {
-    // The item in flight stays in state.current: reopening resumes on it.
+    // The sentence in flight is state.texts[..].pos: reopening starts on it.
     stopRun();
     save();
-    updateHome();
+    renderHome();
     showScreen('screen-home');
   }
 
-  // ── Home & Progrès ────────────────────────────────────
+  // ── Home ──────────────────────────────────────────────
 
-  function mastered() {
-    var n = 0;
-    FRAMES.forEach(function (fr) { if (Core.mastery(Core.frameRec(state, fr.id)).mastered) n++; });
-    return n;
-  }
-
-  function span(cls, text) {
-    var s = document.createElement('span');
-    s.className = cls;
-    s.textContent = text;
-    return s;
-  }
-
-  var MODE_DESC = { mains: "Tu as les mains prises : tout à l'oreille, minuteur et bips.",
-                    calme: "Tu peux lire et toucher l'écran : sans minuteur, tu touches « J'ai fini »." };
+  var MODE_DESC = { mains: "Tout à l'oreille : l'appli fait une pause pour que tu répètes, puis continue toute seule.",
+                    calme: "Tu lis, tu répètes à ton rythme, et tu touches « Suivant »." };
 
   function setMode(m) {
     mode = m;
@@ -579,80 +317,37 @@
     $('mode-desc').textContent = MODE_DESC[m];
   }
 
-  function updateHome() {
-    var now = Date.now();
-    Core.rollDay(state, now);
-    var yesterday = state.dayHistory[Core.dayKey(now - Core.DAY)];
-    var box = $('home-stats');
-    box.innerHTML = '';
-    var g1 = span('splash-group', '');
-    g1.appendChild(span('splash-num', String(mastered())));
-    g1.appendChild(document.createTextNode(' maîtrisées sur ' + FRAMES.length));
-    var g2 = span('splash-group splash-group--day', '');
-    g2.appendChild(span('splash-num', yesterday === undefined ? '—' : String(yesterday)));
-    g2.appendChild(document.createTextNode(' hier · '));
-    g2.appendChild(span('splash-num', String(state.dayCount)));
-    g2.appendChild(document.createTextNode(' aujourd\'hui'));
-    box.appendChild(g1);
-    box.appendChild(g2);
-    if (state.cycleStart) {
-      var day = Core.daysBetweenKeys(state.cycleStart, Core.dayKey(now)) + 1;
-      var seen = Object.keys(state.cycleSeen).length;
-      var g3 = span('splash-group', 'Cycle ' + state.cycleNo + ' · Jour ' + day + ' · ' + seen + ' / ' + FRAMES.length +
-        (state.cycleLast ? ' · dernier : ' + state.cycleLast + ' j' : ''));
-      box.appendChild(g3);
-    }
-    $('btn-start-label').textContent = state.current ? 'Reprendre' : 'Commencer';
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
   }
 
-  function ago(ts) {
-    var m = Math.round((Date.now() - ts) / 60000);
-    if (m < 2) return 'à l\'instant';
-    if (m < 90) return 'il y a ' + m + ' min';
-    var h = Math.round(m / 60);
-    if (h < 48) return 'il y a ' + h + ' h';
-    return 'il y a ' + Math.round(h / 24) + ' jours';
-  }
-
-  function tile(cls, n, label) {
-    var d = document.createElement('div');
-    d.className = 'tile ' + cls;
-    d.innerHTML = '<b>' + n + '</b><span>' + label + '</span>';
-    return d;
-  }
-
-  function renderProgress() {
-    var counts = { 'maîtrisée': 0, 'solide': 0, 'en cours': 0, 'nouvelle': 0 };
-    var rows = FRAMES.map(function (fr) {
-      var rec = Core.frameRec(state, fr.id);
-      var st = Core.frameStatus(state.frames[fr.id]);
-      counts[st]++;
-      return { fr: fr, rec: rec, st: st, m: Core.mastery(rec) };
-    });
-    var box = $('progress-summary');
-    box.innerHTML = '';
-    box.appendChild(tile('tile--maitrisee', counts['maîtrisée'], 'maîtrisées'));
-    box.appendChild(tile('tile--solide', counts['solide'], 'solides'));
-    box.appendChild(tile('tile--cours', counts['en cours'], 'en cours'));
-    box.appendChild(tile('tile--nouvelle', counts['nouvelle'], 'nouvelles'));
-
-    var q = $('progress-quotidien');
-    q.textContent = qinfo
-      ? 'Quotidien (lecture seule) : ' + qinfo.count + ' phrases acquises, ' + qinfo.sentences + ' phrases utilisables, lu ' + ago(qinfo.at) + '.'
-      : 'Quotidien : pas encore lu (hors ligne ou premier lancement).';
-    q.textContent += ' Maîtrisée = 3 sujets différents, 3 jours différents. Sans reconnaissance vocale, un essai compte dès que tu as eu le temps de parler.';
-
-    var order = { 'en cours': 0, 'solide': 1, 'maîtrisée': 2, 'nouvelle': 3 };
-    rows.sort(function (a, b) { return order[a.st] - order[b.st] || a.fr.id.localeCompare(b.fr.id); });
-    var list = $('progress-list');
+  function renderHome() {
+    var list = $('text-list');
     list.innerHTML = '';
-    rows.forEach(function (r) {
-      var li = document.createElement('li');
-      li.appendChild(span('pf-form', r.fr.form));
-      var meta = span('pf-meta', '');
-      meta.appendChild(span('pf-status s-' + (r.st === 'en cours' ? 'cours' : r.st === 'maîtrisée' ? 'maitrisee' : r.st), r.st));
-      meta.appendChild(document.createTextNode(r.m.days + ' / 3 jours · ' + r.m.topics + ' / 3 sujets · ' + r.rec.n + ' fois'));
-      li.appendChild(meta);
+    TEXTS.forEach(function (t) {
+      var total = SENTENCES[t.id].length;
+      var p = Core.progress(state, t.id, total);
+      var li = el('li', 'text-card' + (t.id === state.lastText ? ' text-card--last' : ''));
+      var main = el('button', 'text-main');
+      main.appendChild(el('span', 'text-kind', (t.corpus === 'A' ? 'Dieu' : 'Israël') + ' · ' + (t.kind === 'dialogue' ? 'dialogue' : 'monologue')));
+      main.appendChild(el('span', 'text-title', t.title));
+      var bar = el('span', 'text-bar');
+      var fill = el('span', 'text-bar-fill');
+      fill.style.width = (100 * p.done / total) + '%';
+      bar.appendChild(fill);
+      main.appendChild(bar);
+      var action = p.finished ? 'Réviser ›' : p.pos > 0 ? 'Continuer · ' + (p.pos + 1) + ' / ' + total + ' ›' : 'Commencer ›';
+      main.appendChild(el('span', 'text-action', action));
+      main.addEventListener('click', function () { openText(t.id, false); });
+      li.appendChild(main);
+      if (p.pos > 0 && !p.finished) {
+        var again = el('button', 'text-restart', '↺ Depuis le début');
+        again.addEventListener('click', function () { openText(t.id, true); });
+        li.appendChild(again);
+      }
       list.appendChild(li);
     });
   }
@@ -669,6 +364,7 @@
 
   function setup() {
     FRAMES.forEach(function (fr) { framesById[fr.id] = fr; });
+    TEXTS.forEach(function (t) { textsById[t.id] = t; });
     try {
       if (screen.orientation && screen.orientation.lock) {
         var r = screen.orientation.lock('portrait');
@@ -676,7 +372,7 @@
       }
     } catch (e) {}
     try { mode = localStorage.getItem(MODE_KEY) === 'calme' ? 'calme' : 'mains'; } catch (e) {}
-    setMode(mode);   // default: whichever he used last
+    setMode(mode);
     $('mode-mains').addEventListener('click', function () { setMode('mains'); });
     $('mode-calme').addEventListener('click', function () { setMode('calme'); });
     initFirebase();
@@ -686,47 +382,27 @@
     load(function () {
       state.sessionCount++;
       save();
-      updateHome();
-      refreshQuotidien();
+      renderHome();
+      var seen = false;
+      try { seen = !!localStorage.getItem('debat_help3_seen'); localStorage.setItem('debat_help3_seen', '1'); } catch (e) {}
+      if (!seen) show($('overlay-help'));
     });
 
-    var helpThenStart = false;
-    function openHelp(thenStart) {
-      helpThenStart = thenStart;
-      show($('overlay-help'));
-      $('overlay-help').querySelector('.overlay-content').scrollTop = 0;
-    }
-    function closeHelp() {
-      hide($('overlay-help'));
-      if (helpThenStart) { helpThenStart = false; startSession(); }
-    }
-    $('btn-start').addEventListener('click', function () {
-      var seen = false;
-      try { seen = !!localStorage.getItem('debat_help_seen'); localStorage.setItem('debat_help_seen', '1'); } catch (e) {}
-      if (seen) startSession(); else openHelp(true);   // first launch: explain, then start
-    });
-    $('btn-help').addEventListener('click', function () { openHelp(false); });
-    $('btn-help-close').addEventListener('click', closeHelp);
+    $('btn-help').addEventListener('click', function () { show($('overlay-help')); });
+    $('btn-help-close').addEventListener('click', function () { hide($('overlay-help')); });
     $('btn-run-home').addEventListener('click', leaveRun);
-    $('btn-repeat').addEventListener('click', restartItem);
-    $('btn-skip').addEventListener('click', skipItem);
+    $('btn-replay').addEventListener('click', function () { if (run.active) playSentence(run.sidx); });
+    $('btn-prev').addEventListener('click', function () { if (run.active && run.sidx > 0) playSentence(run.sidx - 1); });
+    $('btn-skip').addEventListener('click', function () { if (run.active) playSentence(run.sidx + 1); });
     $('btn-explain').addEventListener('click', explainStep);
     $('run-tap').addEventListener('click', function (e) {
       if (inControl(e.target) || (mode === 'calme' && !run.paused)) return;
       togglePause();
     });
-    $('btn-home-progress').addEventListener('click', function () {
-      renderProgress();
-      show($('overlay-progress'));
-      $('overlay-progress').querySelector('.overlay-content').scrollTop = 0;
-    });
-    $('btn-progress-close').addEventListener('click', function () { hide($('overlay-progress')); });
-    $('overlay-progress').addEventListener('click', function (e) {
-      if (e.target === $('overlay-progress')) hide($('overlay-progress'));
-    });
+    $('btn-done-again').addEventListener('click', function () { openText(run.text.id, true); });
+    $('btn-done-home').addEventListener('click', function () { renderHome(); showScreen('screen-home'); });
 
-    // Screen off / app switched: the OS silences speech and throttles timers, so pause
-    // cleanly rather than let the countdown run over nothing.
+    // Screen off / app switched: the OS silences speech and throttles timers, so pause.
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) { if (run.active) pauseRun(); }
       else if (run.active) requestWakeLock();

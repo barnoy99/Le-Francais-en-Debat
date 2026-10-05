@@ -131,13 +131,13 @@ var FRAMES = [
             { name: 'P', pos: 'proposition', note: "ce qui relativise" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f01-1', topic: 'couple',    fr: "Ta femme dit que les enfants se disputent tout le temps. Toi, tu trouves qu'ils s'adorent.", model: "Des disputes, oui, y en a. Mais franchement, ils s'adorent." },
-      { id: 'f01-2', topic: 'cours',     fr: "Un élève se plaint que tu donnes trop de devoirs. Toi, tu trouves que c'est ce qui le fait progresser.", model: "Des devoirs, oui, y en a beaucoup. Mais c'est ça qui le fait progresser." },
-      { id: 'f01-3', topic: 'films',     fr: "Un ami dit que le film était plein d'invraisemblances. Toi, tu l'as adoré quand même.", model: "Des invraisemblances, oui, y en a. Mais je l'ai adoré quand même." },
-      { id: 'f01-4', topic: 'collegues', fr: "Un collègue dit que la nouvelle direction fait n'importe quoi. Toi, tu vois surtout des changements utiles.", model: "Des changements ratés, oui, y en a. Mais je vois surtout des changements utiles." },
-      { id: 'f01-5', topic: 'voisins',   fr: "Ta femme trouve que le quartier est devenu bruyant. Toi, tu penses qu'on est quand même bien ici.", model: "Du bruit, oui, y en a. Mais on est quand même bien ici." },
-      { id: 'f01-6', topic: 'sante',     fr: "Ton médecin dit que courir, c'est mauvais pour les genoux. Toi, tu penses que les blessures sont rares.", model: "Des blessures, oui, y en a. Mais elles sont rares." },
-      { id: 'f01-7', topic: 'dieu',      fr: "Un ami croyant dit que la religion a construit des hôpitaux et des écoles. Toi, tu penses que ça prouve rien sur Dieu.", model: "Des hôpitaux et des écoles, oui, y en a. Mais ça prouve rien sur Dieu." }
+      { id: 'f01-1', topic: 'couple',    fr: "Ta femme dit que les enfants se disputent tout le temps. Toi, tu trouves qu'ils s'adorent.", model: "Des disputes, oui, y en a. Mais franchement, ils s'adorent.", en: "Arguments? Yes, there are some. But honestly, they adore each other." },
+      { id: 'f01-2', topic: 'cours',     fr: "Un élève se plaint que tu donnes trop de devoirs. Toi, tu trouves que c'est ce qui le fait progresser.", model: "Des devoirs, oui, y en a beaucoup. Mais c'est ça qui le fait progresser.", en: "Homework? Yes, there's a lot. But that's what makes him progress." },
+      { id: 'f01-3', topic: 'films',     fr: "Un ami dit que le film était plein d'invraisemblances. Toi, tu l'as adoré quand même.", model: "Des invraisemblances, oui, y en a. Mais je l'ai adoré quand même.", en: "Implausible bits? Yes, there are some. But I loved it anyway." },
+      { id: 'f01-4', topic: 'collegues', fr: "Un collègue dit que la nouvelle direction fait n'importe quoi. Toi, tu vois surtout des changements utiles.", model: "Des changements ratés, oui, y en a. Mais je vois surtout des changements utiles.", en: "Failed changes? Yes, there are some. But mostly I see useful changes." },
+      { id: 'f01-5', topic: 'voisins',   fr: "Ta femme trouve que le quartier est devenu bruyant. Toi, tu penses qu'on est quand même bien ici.", model: "Du bruit, oui, y en a. Mais on est quand même bien ici.", en: "Noise? Yes, there is some. But we're still good here." },
+      { id: 'f01-6', topic: 'sante',     fr: "Ton médecin dit que courir, c'est mauvais pour les genoux. Toi, tu penses que les blessures sont rares.", model: "Des blessures, oui, y en a. Mais elles sont rares.", en: "Injuries? Yes, there are some. But they're rare." },
+      { id: 'f01-7', topic: 'dieu',      fr: "Un ami croyant dit que la religion a construit des hôpitaux et des écoles. Toi, tu penses que ça prouve rien sur Dieu.", model: "Des hôpitaux et des écoles, oui, y en a. Mais ça prouve rien sur Dieu.", en: "Hospitals and schools? Yes, there are some. But that proves nothing about God." }
     ] },
 
   { id: 'f02', textId: 10, sources: [10, 2, 6, 8],
@@ -151,13 +151,13 @@ var FRAMES = [
             { name: 'P', pos: 'proposition', note: "le retournement" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f02-1', topic: 'cours',     fr: "Un collègue dit que les cours en ligne, c'est plus pratique. Toi, tu trouves que les élèves décrochent.", model: "C'est plus pratique, je te l'accorde. Mais les élèves décrochent." },
-      { id: 'f02-2', topic: 'sante',     fr: "Ta femme dit que t'as arrêté de courir à cause de ton genou. Toi, tu sais que c'était surtout la flemme.", model: "Mon genou m'a gêné, je te l'accorde. Mais c'était surtout la flemme." },
-      { id: 'f02-3', topic: 'enfants',   fr: "Ta femme dit que la grande est trop jeune pour un téléphone. Toi, tu penses qu'elle en a besoin pour rentrer seule de l'école.", model: "Elle est jeune, je te l'accorde. Mais elle en a besoin pour rentrer seule de l'école." },
-      { id: 'f02-4', topic: 'films',     fr: "Un ami dit que la série est trop lente. Toi, tu trouves que la fin vaut le coup.", model: "Elle est lente, je te l'accorde. Mais la fin vaut le coup." },
-      { id: 'f02-5', topic: 'argent',    fr: "Ta femme dit que la nouvelle voiture coûte trop cher. Toi, tu penses qu'elle va durer dix ans.", model: "Elle coûte cher, je te l'accorde. Mais elle va durer dix ans." },
-      { id: 'f02-6', topic: 'voisins',   fr: "Le voisin dit que ses travaux vont durer longtemps. Toi, tu veux au moins qu'il commence pas à sept heures.", model: "Ses travaux vont durer, je te l'accorde. Mais qu'il commence pas à sept heures." },
-      { id: 'f02-7', topic: 'dieu',      fr: "Un ami croyant dit que la foi aide les gens à tenir dans les moments durs. Toi, tu penses que ça la rend pas vraie pour autant.", model: "La foi aide les gens, je te l'accorde. Mais ça la rend pas vraie pour autant." }
+      { id: 'f02-1', topic: 'cours',     fr: "Un collègue dit que les cours en ligne, c'est plus pratique. Toi, tu trouves que les élèves décrochent.", model: "C'est plus pratique, je te l'accorde. Mais les élèves décrochent.", en: "It's more practical, I'll grant you that. But the students switch off." },
+      { id: 'f02-2', topic: 'sante',     fr: "Ta femme dit que t'as arrêté de courir à cause de ton genou. Toi, tu sais que c'était surtout la flemme.", model: "Mon genou m'a gêné, je te l'accorde. Mais c'était surtout la flemme.", en: "My knee bothered me, I'll grant you that. But mostly I was lazy." },
+      { id: 'f02-3', topic: 'enfants',   fr: "Ta femme dit que la grande est trop jeune pour un téléphone. Toi, tu penses qu'elle en a besoin pour rentrer seule de l'école.", model: "Elle est jeune, je te l'accorde. Mais elle en a besoin pour rentrer seule de l'école.", en: "She's young, I'll grant you that. But she needs it to come home from school alone." },
+      { id: 'f02-4', topic: 'films',     fr: "Un ami dit que la série est trop lente. Toi, tu trouves que la fin vaut le coup.", model: "Elle est lente, je te l'accorde. Mais la fin vaut le coup.", en: "It's slow, I'll grant you that. But the ending is worth it." },
+      { id: 'f02-5', topic: 'argent',    fr: "Ta femme dit que la nouvelle voiture coûte trop cher. Toi, tu penses qu'elle va durer dix ans.", model: "Elle coûte cher, je te l'accorde. Mais elle va durer dix ans.", en: "It's expensive, I'll grant you that. But it'll last ten years." },
+      { id: 'f02-6', topic: 'voisins',   fr: "Le voisin dit que ses travaux vont durer longtemps. Toi, tu veux au moins qu'il commence pas à sept heures.", model: "Ses travaux vont durer, je te l'accorde. Mais qu'il commence pas à sept heures.", en: "His building work will take a while, I'll grant you that. But he shouldn't start at seven." },
+      { id: 'f02-7', topic: 'dieu',      fr: "Un ami croyant dit que la foi aide les gens à tenir dans les moments durs. Toi, tu penses que ça la rend pas vraie pour autant.", model: "La foi aide les gens, je te l'accorde. Mais ça la rend pas vraie pour autant.", en: "Faith helps people, I'll grant you that. But that doesn't make it true." }
     ] },
 
   { id: 'f03', textId: 17, sources: [17, 8],
@@ -171,13 +171,13 @@ var FRAMES = [
             { name: 'P', pos: 'proposition', note: "le hic" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f03-1', topic: 'couple',    fr: "Ta femme veut partir en vacances en août. Le problème : tout est deux fois plus cher.", model: "Oui, partir en août, ce serait bien. Sauf que tout est deux fois plus cher." },
-      { id: 'f03-2', topic: 'collegues', fr: "Un collègue propose une réunion chaque lundi. Le problème : personne ne lit jamais le compte rendu.", model: "Une réunion le lundi, pourquoi pas. Sauf que personne ne lit le compte rendu." },
-      { id: 'f03-3', topic: 'enfants',   fr: "Les enfants promettent de s'occuper du chien si vous en prenez un. Le problème : ils ont déjà oublié le poisson rouge.", model: "Ils sont très motivés, c'est vrai. Sauf qu'ils ont déjà oublié le poisson rouge." },
-      { id: 'f03-4', topic: 'tech',      fr: "On te dit que la nouvelle appli fait gagner du temps. Le problème : il faut une heure pour la configurer.", model: "Elle fait gagner du temps, c'est vrai. Sauf qu'il faut une heure pour la configurer." },
-      { id: 'f03-5', topic: 'sante',     fr: "Ton ami dit qu'il va courir tous les matins. Le problème : il se lève à huit heures.", model: "C'est une bonne idée. Sauf qu'il se lève à huit heures." },
-      { id: 'f03-6', topic: 'cours',     fr: "Un parent veut que son fils passe l'examen en juin. Le problème : il a pas encore fini le programme.", model: "Juin, c'est un bon objectif. Sauf qu'il a pas encore fini le programme." },
-      { id: 'f03-7', topic: 'dieu',      fr: "Un ami dit que la Bible donne une morale à tout le monde. Le problème : elle dit aussi de lapider des gens.", model: "Elle donne une morale, c'est vrai. Sauf qu'elle dit aussi de lapider des gens." }
+      { id: 'f03-1', topic: 'couple',    fr: "Ta femme veut partir en vacances en août. Le problème : tout est deux fois plus cher.", model: "Oui, partir en août, ce serait bien. Sauf que tout est deux fois plus cher.", en: "Yes, going in August would be nice. Except everything costs twice as much." },
+      { id: 'f03-2', topic: 'collegues', fr: "Un collègue propose une réunion chaque lundi. Le problème : personne ne lit jamais le compte rendu.", model: "Une réunion le lundi, pourquoi pas. Sauf que personne ne lit le compte rendu.", en: "A meeting on Monday, why not. Except nobody reads the minutes." },
+      { id: 'f03-3', topic: 'enfants',   fr: "Les enfants promettent de s'occuper du chien si vous en prenez un. Le problème : ils ont déjà oublié le poisson rouge.", model: "Ils sont très motivés, c'est vrai. Sauf qu'ils ont déjà oublié le poisson rouge.", en: "They're very keen, it's true. Except they've already forgotten the goldfish." },
+      { id: 'f03-4', topic: 'tech',      fr: "On te dit que la nouvelle appli fait gagner du temps. Le problème : il faut une heure pour la configurer.", model: "Elle fait gagner du temps, c'est vrai. Sauf qu'il faut une heure pour la configurer.", en: "It saves time, it's true. Except it takes an hour to set up." },
+      { id: 'f03-5', topic: 'sante',     fr: "Ton ami dit qu'il va courir tous les matins. Le problème : il se lève à huit heures.", model: "C'est une bonne idée. Sauf qu'il se lève à huit heures.", en: "It's a good idea. Except he gets up at eight." },
+      { id: 'f03-6', topic: 'cours',     fr: "Un parent veut que son fils passe l'examen en juin. Le problème : il a pas encore fini le programme.", model: "Juin, c'est un bon objectif. Sauf qu'il a pas encore fini le programme.", en: "June is a good target. Except he hasn't finished the syllabus yet." },
+      { id: 'f03-7', topic: 'dieu',      fr: "Un ami dit que la Bible donne une morale à tout le monde. Le problème : elle dit aussi de lapider des gens.", model: "Elle donne une morale, c'est vrai. Sauf qu'elle dit aussi de lapider des gens.", en: "It gives a moral code, it's true. Except it also says to stone people." }
     ] },
 
   { id: 'f04', textId: 2, sources: [2],
@@ -191,13 +191,13 @@ var FRAMES = [
             { name: 'Q', pos: 'proposition', note: "la version modeste" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f04-1', topic: 'enfants',   fr: "Ta femme croit que tu veux interdire les écrans. Toi, tu veux juste pas d'écran pendant le dîner.", model: "Je dis pas qu'il faut interdire les écrans. Je dis juste qu'on en veut pas pendant le dîner." },
-      { id: 'f04-2', topic: 'cours',     fr: "Un élève croit que tu le trouves nul. Toi, tu penses juste qu'il doit revoir les bases.", model: "Je dis pas que t'es nul. Je dis juste que tu dois revoir les bases." },
-      { id: 'f04-3', topic: 'collegues', fr: "Un collègue croit que tu l'accuses d'être paresseux. Toi, tu trouves juste qu'il parle beaucoup en réunion.", model: "Je dis pas que t'es paresseux. Je dis juste que tu parles beaucoup en réunion." },
-      { id: 'f04-4', topic: 'films',     fr: "Un ami croit que tu détestes tous les films de super-héros. Toi, tu trouves juste que le dernier était trop long.", model: "Je dis pas que je déteste les films de super-héros. Je dis juste que le dernier était trop long." },
-      { id: 'f04-5', topic: 'politique', fr: "Un ami croit que tu soutiens le gouvernement. Toi, tu penses juste que l'opposition a pas de programme.", model: "Je dis pas que je soutiens le gouvernement. Je dis juste que l'opposition a pas de programme." },
-      { id: 'f04-6', topic: 'argent',    fr: "Ta femme croit que tu veux plus jamais partir en vacances. Toi, tu veux juste attendre l'année prochaine.", model: "Je dis pas qu'on part plus jamais en vacances. Je dis juste qu'on attend l'année prochaine." },
-      { id: 'f04-7', topic: 'israel',    fr: "Un ami français croit que tu dis que l'armée fait jamais d'erreurs. Toi, tu dis juste qu'une erreur, c'est pas une politique.", model: "Je dis pas que l'armée fait jamais d'erreurs. Je dis juste qu'une erreur, c'est pas une politique." }
+      { id: 'f04-1', topic: 'enfants',   fr: "Ta femme croit que tu veux interdire les écrans. Toi, tu veux juste pas d'écran pendant le dîner.", model: "Je dis pas qu'il faut interdire les écrans. Je dis juste qu'on en veut pas pendant le dîner.", en: "I'm not saying we should ban screens. I'm just saying we don't want them at dinner." },
+      { id: 'f04-2', topic: 'cours',     fr: "Un élève croit que tu le trouves nul. Toi, tu penses juste qu'il doit revoir les bases.", model: "Je dis pas que t'es nul. Je dis juste que tu dois revoir les bases.", en: "I'm not saying you're useless. I'm just saying you need to go over the basics." },
+      { id: 'f04-3', topic: 'collegues', fr: "Un collègue croit que tu l'accuses d'être paresseux. Toi, tu trouves juste qu'il parle beaucoup en réunion.", model: "Je dis pas que t'es paresseux. Je dis juste que tu parles beaucoup en réunion.", en: "I'm not saying you're lazy. I'm just saying you talk a lot in meetings." },
+      { id: 'f04-4', topic: 'films',     fr: "Un ami croit que tu détestes tous les films de super-héros. Toi, tu trouves juste que le dernier était trop long.", model: "Je dis pas que je déteste les films de super-héros. Je dis juste que le dernier était trop long.", en: "I'm not saying I hate superhero films. I'm just saying the last one was too long." },
+      { id: 'f04-5', topic: 'politique', fr: "Un ami croit que tu soutiens le gouvernement. Toi, tu penses juste que l'opposition a pas de programme.", model: "Je dis pas que je soutiens le gouvernement. Je dis juste que l'opposition a pas de programme.", en: "I'm not saying I support the government. I'm just saying the opposition has no programme." },
+      { id: 'f04-6', topic: 'argent',    fr: "Ta femme croit que tu veux plus jamais partir en vacances. Toi, tu veux juste attendre l'année prochaine.", model: "Je dis pas qu'on part plus jamais en vacances. Je dis juste qu'on attend l'année prochaine.", en: "I'm not saying we'll never go on holiday again. I'm just saying we'll wait till next year." },
+      { id: 'f04-7', topic: 'israel',    fr: "Un ami français croit que tu dis que l'armée fait jamais d'erreurs. Toi, tu dis juste qu'une erreur, c'est pas une politique.", model: "Je dis pas que l'armée fait jamais d'erreurs. Je dis juste qu'une erreur, c'est pas une politique.", en: "I'm not saying the army never makes mistakes. I'm just saying a mistake isn't a policy." }
     ] },
 
   { id: 'f05', textId: 8, sources: [8],
@@ -211,13 +211,13 @@ var FRAMES = [
             { name: 'Q', pos: 'proposition', note: "la conclusion refusée" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f05-1', topic: 'couple',    fr: "Ta femme dit que le restaurant doit être bon, puisqu'il est cher. Toi, t'es pas convaincu.", model: "C'est pas parce que c'est cher que c'est bon." },
-      { id: 'f05-2', topic: 'films',     fr: "Un ami dit que le film est forcément bien, puisqu'il a eu un Oscar.", model: "C'est pas parce qu'il a eu un Oscar que c'est un bon film." },
-      { id: 'f05-3', topic: 'cours',     fr: "Un parent dit que son fils a compris, puisqu'il a eu une bonne note. Toi, t'en doutes.", model: "C'est pas parce qu'il a eu une bonne note qu'il a compris." },
-      { id: 'f05-4', topic: 'enfants',   fr: "Le grand dit qu'il a le droit, puisque tous ses copains le font.", model: "C'est pas parce que tous ses copains le font qu'il a le droit." },
-      { id: 'f05-5', topic: 'tech',      fr: "Un collègue dit que l'appli est sûre, puisque tout le monde l'utilise.", model: "C'est pas parce que tout le monde l'utilise qu'elle est sûre." },
-      { id: 'f05-6', topic: 'sante',     fr: "Un ami dit qu'il est en forme, puisqu'il a pas mal au dos.", model: "C'est pas parce qu'on a pas mal au dos qu'on est en forme." },
-      { id: 'f05-7', topic: 'israel',    fr: "Un ami dit qu'une info sur la guerre est vraie, puisque tous les journaux la reprennent.", model: "C'est pas parce que tous les journaux la reprennent qu'elle est vraie." }
+      { id: 'f05-1', topic: 'couple',    fr: "Ta femme dit que le restaurant doit être bon, puisqu'il est cher. Toi, t'es pas convaincu.", model: "C'est pas parce que c'est cher que c'est bon.", en: "Just because it's expensive doesn't mean it's good." },
+      { id: 'f05-2', topic: 'films',     fr: "Un ami dit que le film est forcément bien, puisqu'il a eu un Oscar.", model: "C'est pas parce qu'il a eu un Oscar que c'est un bon film.", en: "Just because it won an Oscar doesn't mean it's a good film." },
+      { id: 'f05-3', topic: 'cours',     fr: "Un parent dit que son fils a compris, puisqu'il a eu une bonne note. Toi, t'en doutes.", model: "C'est pas parce qu'il a eu une bonne note qu'il a compris.", en: "Just because he got a good mark doesn't mean he understood." },
+      { id: 'f05-4', topic: 'enfants',   fr: "Le grand dit qu'il a le droit, puisque tous ses copains le font.", model: "C'est pas parce que tous ses copains le font qu'il a le droit.", en: "Just because all his friends do it doesn't mean he's allowed." },
+      { id: 'f05-5', topic: 'tech',      fr: "Un collègue dit que l'appli est sûre, puisque tout le monde l'utilise.", model: "C'est pas parce que tout le monde l'utilise qu'elle est sûre.", en: "Just because everyone uses it doesn't mean it's safe." },
+      { id: 'f05-6', topic: 'sante',     fr: "Un ami dit qu'il est en forme, puisqu'il a pas mal au dos.", model: "C'est pas parce qu'on a pas mal au dos qu'on est en forme.", en: "Just because your back doesn't hurt doesn't mean you're fit." },
+      { id: 'f05-7', topic: 'israel',    fr: "Un ami dit qu'une info sur la guerre est vraie, puisque tous les journaux la reprennent.", model: "C'est pas parce que tous les journaux la reprennent qu'elle est vraie.", en: "Just because all the papers repeat it doesn't mean it's true." }
     ] },
 
   { id: 'f06', textId: 6, sources: [6, 14],
@@ -230,13 +230,13 @@ var FRAMES = [
     slots: [{ name: 'P', pos: 'discours direct', note: "l'objection, dans sa voix à lui" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f06-1', topic: 'couple',    fr: "Tu veux acheter un vélo cher. Tu sais que ta femme va dire que t'en as déjà un.", model: "Je vois venir ta réponse : « T'en as déjà un. »" },
-      { id: 'f06-2', topic: 'enfants',   fr: "Tu proposes une randonnée en famille. Tu sais que ta femme va dire que les enfants vont râler.", model: "Je vois venir ta réponse : « Les enfants vont râler. »" },
-      { id: 'f06-3', topic: 'cours',     fr: "Tu proposes plus de devoirs à un élève. Tu sais qu'il va dire qu'il a pas le temps.", model: "Je vois venir ta réponse : « J'ai pas le temps. »" },
-      { id: 'f06-4', topic: 'collegues', fr: "Tu proposes une nouvelle méthode. Tu sais qu'un collègue va dire qu'on a toujours fait autrement.", model: "Je vois venir ta réponse : « On a toujours fait autrement. »" },
-      { id: 'f06-5', topic: 'argent',    fr: "Tu veux changer de banque. Tu sais que ton ami va dire que c'est trop compliqué.", model: "Je vois venir ta réponse : « C'est trop compliqué. »" },
-      { id: 'f06-6', topic: 'sante',     fr: "Tu annonces que tu reprends la course. Tu sais que ta femme va dire que ça va pas durer.", model: "Je vois venir ta réponse : « Ça va pas durer. »" },
-      { id: 'f06-7', topic: 'israel',    fr: "Tu parles des tunnels à un ami français. Tu sais qu'il va dire que c'est la propagande de l'armée.", model: "Je vois venir ta réponse : « C'est la propagande de l'armée. »" }
+      { id: 'f06-1', topic: 'couple',    fr: "Tu veux acheter un vélo cher. Tu sais que ta femme va dire que t'en as déjà un.", model: "Je vois venir ta réponse : « T'en as déjà un. »", en: "I can see your answer coming: 'You already have one.'" },
+      { id: 'f06-2', topic: 'enfants',   fr: "Tu proposes une randonnée en famille. Tu sais que ta femme va dire que les enfants vont râler.", model: "Je vois venir ta réponse : « Les enfants vont râler. »", en: "I can see your answer coming: 'The kids will moan.'" },
+      { id: 'f06-3', topic: 'cours',     fr: "Tu proposes plus de devoirs à un élève. Tu sais qu'il va dire qu'il a pas le temps.", model: "Je vois venir ta réponse : « J'ai pas le temps. »", en: "I can see your answer coming: 'I don't have time.'" },
+      { id: 'f06-4', topic: 'collegues', fr: "Tu proposes une nouvelle méthode. Tu sais qu'un collègue va dire qu'on a toujours fait autrement.", model: "Je vois venir ta réponse : « On a toujours fait autrement. »", en: "I can see your answer coming: 'We've always done it differently.'" },
+      { id: 'f06-5', topic: 'argent',    fr: "Tu veux changer de banque. Tu sais que ton ami va dire que c'est trop compliqué.", model: "Je vois venir ta réponse : « C'est trop compliqué. »", en: "I can see your answer coming: 'It's too complicated.'" },
+      { id: 'f06-6', topic: 'sante',     fr: "Tu annonces que tu reprends la course. Tu sais que ta femme va dire que ça va pas durer.", model: "Je vois venir ta réponse : « Ça va pas durer. »", en: "I can see your answer coming: 'It won't last.'" },
+      { id: 'f06-7', topic: 'israel',    fr: "Tu parles des tunnels à un ami français. Tu sais qu'il va dire que c'est la propagande de l'armée.", model: "Je vois venir ta réponse : « C'est la propagande de l'armée. »", en: "I can see your answer coming: 'That's army propaganda.'" }
     ] },
 
   // ── B. Changer la question ──────────────────────────────
@@ -251,13 +251,13 @@ var FRAMES = [
             { name: 'B', pos: 'question', note: "celle qui compte" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f07-1', topic: 'enfants',   fr: "Tout le monde se demande si le grand doit avoir un téléphone. Pour toi, ce qui compte, c'est ce qu'il va en faire.", model: "La vraie question, c'est pas « est-ce que le grand doit avoir un téléphone ? ». C'est : « qu'est-ce qu'il va en faire ? »" },
-      { id: 'f07-2', topic: 'cours',     fr: "Un parent demande si son fils a assez d'heures de cours. Pour toi, ce qui compte, c'est s'il travaille entre les cours.", model: "La vraie question, c'est pas « est-ce qu'il a assez d'heures de cours ? ». C'est : « est-ce qu'il travaille entre les cours ? »" },
-      { id: 'f07-3', topic: 'argent',    fr: "Ta femme demande si on peut se payer une nouvelle cuisine. Pour toi, ce qui compte, c'est si on en a besoin.", model: "La vraie question, c'est pas « est-ce qu'on peut se la payer ? ». C'est : « est-ce qu'on en a besoin ? »" },
-      { id: 'f07-4', topic: 'politique', fr: "Tout le monde se demande qui va gagner les élections. Pour toi, ce qui compte, c'est qui peut former une coalition.", model: "La vraie question, c'est pas « qui va gagner ? ». C'est : « qui peut former une coalition ? »" },
-      { id: 'f07-5', topic: 'sante',     fr: "Un ami se demande quel régime suivre. Pour toi, ce qui compte, c'est s'il va tenir plus d'un mois.", model: "La vraie question, c'est pas « quel régime suivre ? ». C'est : « est-ce que tu vas tenir plus d'un mois ? »" },
-      { id: 'f07-6', topic: 'collegues', fr: "En réunion, on cherche qui a fait l'erreur. Pour toi, ce qui compte, c'est comment éviter qu'elle recommence.", model: "La vraie question, c'est pas « qui a fait l'erreur ? ». C'est : « comment éviter qu'elle recommence ? »" },
-      { id: 'f07-7', topic: 'dieu',      fr: "Un ami demande si la religion rend les gens meilleurs. Pour toi, ce qui compte, c'est si elle est vraie.", model: "La vraie question, c'est pas « est-ce que la religion rend meilleur ? ». C'est : « est-ce qu'elle est vraie ? »" }
+      { id: 'f07-1', topic: 'enfants',   fr: "Tout le monde se demande si le grand doit avoir un téléphone. Pour toi, ce qui compte, c'est ce qu'il va en faire.", model: "La vraie question, c'est pas « est-ce que le grand doit avoir un téléphone ? ». C'est : « qu'est-ce qu'il va en faire ? »", en: "The real question isn't 'should the eldest have a phone?'. It's: 'what will he do with it?'" },
+      { id: 'f07-2', topic: 'cours',     fr: "Un parent demande si son fils a assez d'heures de cours. Pour toi, ce qui compte, c'est s'il travaille entre les cours.", model: "La vraie question, c'est pas « est-ce qu'il a assez d'heures de cours ? ». C'est : « est-ce qu'il travaille entre les cours ? »", en: "The real question isn't 'does he have enough lessons?'. It's: 'does he work between lessons?'" },
+      { id: 'f07-3', topic: 'argent',    fr: "Ta femme demande si on peut se payer une nouvelle cuisine. Pour toi, ce qui compte, c'est si on en a besoin.", model: "La vraie question, c'est pas « est-ce qu'on peut se la payer ? ». C'est : « est-ce qu'on en a besoin ? »", en: "The real question isn't 'can we afford it?'. It's: 'do we need it?'" },
+      { id: 'f07-4', topic: 'politique', fr: "Tout le monde se demande qui va gagner les élections. Pour toi, ce qui compte, c'est qui peut former une coalition.", model: "La vraie question, c'est pas « qui va gagner ? ». C'est : « qui peut former une coalition ? »", en: "The real question isn't 'who will win?'. It's: 'who can form a coalition?'" },
+      { id: 'f07-5', topic: 'sante',     fr: "Un ami se demande quel régime suivre. Pour toi, ce qui compte, c'est s'il va tenir plus d'un mois.", model: "La vraie question, c'est pas « quel régime suivre ? ». C'est : « est-ce que tu vas tenir plus d'un mois ? »", en: "The real question isn't 'which diet to follow?'. It's: 'will you keep it up for more than a month?'" },
+      { id: 'f07-6', topic: 'collegues', fr: "En réunion, on cherche qui a fait l'erreur. Pour toi, ce qui compte, c'est comment éviter qu'elle recommence.", model: "La vraie question, c'est pas « qui a fait l'erreur ? ». C'est : « comment éviter qu'elle recommence ? »", en: "The real question isn't 'who made the mistake?'. It's: 'how do we stop it happening again?'" },
+      { id: 'f07-7', topic: 'dieu',      fr: "Un ami demande si la religion rend les gens meilleurs. Pour toi, ce qui compte, c'est si elle est vraie.", model: "La vraie question, c'est pas « est-ce que la religion rend meilleur ? ». C'est : « est-ce qu'elle est vraie ? »", en: "The real question isn't 'does religion make you better?'. It's: 'is it true?'" }
     ] },
 
   { id: 'f08', textId: 10, sources: [10],
@@ -271,13 +271,13 @@ var FRAMES = [
             { name: 'B', pos: 'nom', note: "la vraie chose" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f08-1', topic: 'enfants',   fr: "Ta femme dit que la crise de la petite, c'est un caprice. Pour toi, elle est vraiment épuisée.", model: "On parle pas d'un caprice. On parle d'une petite qui est épuisée." },
-      { id: 'f08-2', topic: 'cours',     fr: "Un parent parle d'un « petit retard ». Pour toi, son fils a trois ans de lacunes.", model: "On parle pas d'un petit retard. On parle de trois ans de lacunes." },
-      { id: 'f08-3', topic: 'sante',     fr: "Un ami dit que t'as « un petit mal de dos ». Toi, t'as une hernie.", model: "On parle pas d'un petit mal de dos. On parle d'une hernie." },
-      { id: 'f08-4', topic: 'collegues', fr: "Ton chef appelle ça « un petit dépassement ». Pour toi, le projet a six mois de retard.", model: "On parle pas d'un petit dépassement. On parle de six mois de retard." },
-      { id: 'f08-5', topic: 'voisins',   fr: "Le voisin parle d'« un peu de musique ». Toi, t'appelles ça une fête jusqu'à trois heures du matin.", model: "On parle pas d'un peu de musique. On parle d'une fête jusqu'à trois heures du matin." },
-      { id: 'f08-6', topic: 'argent',    fr: "Un ami dit que t'as fait « une petite dépense ». Toi, t'as remplacé toute la chaudière.", model: "On parle pas d'une petite dépense. On parle d'une chaudière entière." },
-      { id: 'f08-7', topic: 'dieu',      fr: "Un croyant dit que l'athéisme, c'est une religion comme une autre. Pour toi, c'est juste l'absence de croyance.", model: "On parle pas d'une religion. On parle de l'absence de croyance." }
+      { id: 'f08-1', topic: 'enfants',   fr: "Ta femme dit que la crise de la petite, c'est un caprice. Pour toi, elle est vraiment épuisée.", model: "On parle pas d'un caprice. On parle d'une petite qui est épuisée.", en: "We're not talking about a tantrum. We're talking about a little girl who's exhausted." },
+      { id: 'f08-2', topic: 'cours',     fr: "Un parent parle d'un « petit retard ». Pour toi, son fils a trois ans de lacunes.", model: "On parle pas d'un petit retard. On parle de trois ans de lacunes.", en: "We're not talking about being a bit behind. We're talking about three years of gaps." },
+      { id: 'f08-3', topic: 'sante',     fr: "Un ami dit que t'as « un petit mal de dos ». Toi, t'as une hernie.", model: "On parle pas d'un petit mal de dos. On parle d'une hernie.", en: "We're not talking about a bit of backache. We're talking about a slipped disc." },
+      { id: 'f08-4', topic: 'collegues', fr: "Ton chef appelle ça « un petit dépassement ». Pour toi, le projet a six mois de retard.", model: "On parle pas d'un petit dépassement. On parle de six mois de retard.", en: "We're not talking about a small overrun. We're talking about six months' delay." },
+      { id: 'f08-5', topic: 'voisins',   fr: "Le voisin parle d'« un peu de musique ». Toi, t'appelles ça une fête jusqu'à trois heures du matin.", model: "On parle pas d'un peu de musique. On parle d'une fête jusqu'à trois heures du matin.", en: "We're not talking about a bit of music. We're talking about a party till three in the morning." },
+      { id: 'f08-6', topic: 'argent',    fr: "Un ami dit que t'as fait « une petite dépense ». Toi, t'as remplacé toute la chaudière.", model: "On parle pas d'une petite dépense. On parle d'une chaudière entière.", en: "We're not talking about a small expense. We're talking about a whole new boiler." },
+      { id: 'f08-7', topic: 'dieu',      fr: "Un croyant dit que l'athéisme, c'est une religion comme une autre. Pour toi, c'est juste l'absence de croyance.", model: "On parle pas d'une religion. On parle de l'absence de croyance.", en: "We're not talking about a religion. We're talking about the absence of belief." }
     ] },
 
   { id: 'f09', textId: 6, sources: [6],
@@ -291,13 +291,13 @@ var FRAMES = [
             { name: 'B', pos: 'nom', note: "le facteur réel" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f09-1', topic: 'enfants',   fr: "La petite lit pas encore bien. Toi, tu penses que c'est une affaire d'envie, pas de niveau.", model: "Pour la petite, c'est moins une question de niveau qu'une question d'envie." },
-      { id: 'f09-2', topic: 'cours',     fr: "Un élève rate ses examens. Pour toi, c'est son organisation, pas son intelligence.", model: "C'est moins une question d'intelligence qu'une question d'organisation." },
-      { id: 'f09-3', topic: 'sante',     fr: "Un ami arrive pas à maigrir. Pour toi, c'est son sommeil, pas son régime.", model: "C'est moins une question de régime qu'une question de sommeil." },
-      { id: 'f09-4', topic: 'couple',    fr: "Vous vous disputez sur la vaisselle. Pour toi, c'est une affaire d'organisation, pas de bonne volonté.", model: "C'est moins une question de bonne volonté qu'une question d'organisation." },
-      { id: 'f09-5', topic: 'films',     fr: "Tout le monde dit que le film a raté à cause des acteurs. Pour toi, c'est le scénario.", model: "C'est moins une question d'acteurs qu'une question de scénario." },
-      { id: 'f09-6', topic: 'argent',    fr: "Un ami dit qu'il gagne pas assez. Pour toi, le souci, c'est ce qu'il dépense.", model: "C'est moins une question de salaire qu'une question de dépenses." },
-      { id: 'f09-7', topic: 'israel',    fr: "Un ami dit que le conflit, c'est une affaire de territoire. Pour toi, c'est surtout une affaire de reconnaissance.", model: "C'est moins une question de territoire qu'une question de reconnaissance." }
+      { id: 'f09-1', topic: 'enfants',   fr: "La petite lit pas encore bien. Toi, tu penses que c'est une affaire d'envie, pas de niveau.", model: "Pour la petite, c'est moins une question de niveau qu'une question d'envie.", en: "For the little one, it's less a question of level than a question of wanting to." },
+      { id: 'f09-2', topic: 'cours',     fr: "Un élève rate ses examens. Pour toi, c'est son organisation, pas son intelligence.", model: "C'est moins une question d'intelligence qu'une question d'organisation.", en: "It's less a question of intelligence than a question of organisation." },
+      { id: 'f09-3', topic: 'sante',     fr: "Un ami arrive pas à maigrir. Pour toi, c'est son sommeil, pas son régime.", model: "C'est moins une question de régime qu'une question de sommeil.", en: "It's less a question of diet than a question of sleep." },
+      { id: 'f09-4', topic: 'couple',    fr: "Vous vous disputez sur la vaisselle. Pour toi, c'est une affaire d'organisation, pas de bonne volonté.", model: "C'est moins une question de bonne volonté qu'une question d'organisation.", en: "It's less a question of goodwill than a question of organisation." },
+      { id: 'f09-5', topic: 'films',     fr: "Tout le monde dit que le film a raté à cause des acteurs. Pour toi, c'est le scénario.", model: "C'est moins une question d'acteurs qu'une question de scénario.", en: "It's less a question of actors than a question of script." },
+      { id: 'f09-6', topic: 'argent',    fr: "Un ami dit qu'il gagne pas assez. Pour toi, le souci, c'est ce qu'il dépense.", model: "C'est moins une question de salaire qu'une question de dépenses.", en: "It's less a question of salary than a question of spending." },
+      { id: 'f09-7', topic: 'israel',    fr: "Un ami dit que le conflit, c'est une affaire de territoire. Pour toi, c'est surtout une affaire de reconnaissance.", model: "C'est moins une question de territoire qu'une question de reconnaissance.", en: "It's less a question of territory than a question of recognition." }
     ] },
 
   { id: 'f10', textId: 14, sources: [14],
@@ -311,13 +311,13 @@ var FRAMES = [
             { name: 'B', pos: 'nom / infinitif', note: "" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f10-1', topic: 'enfants',   fr: "Ta femme mélange deux choses : est-ce que le grand a le droit de sortir, et à quelle heure il rentre.", model: "Le droit de sortir et l'heure de rentrer, c'est deux questions différentes." },
-      { id: 'f10-2', topic: 'cours',     fr: "Un parent mélange deux choses : est-ce que son fils est intelligent, et est-ce qu'il travaille.", model: "Être intelligent et travailler, c'est deux questions différentes." },
-      { id: 'f10-3', topic: 'collegues', fr: "Ton chef mélange deux choses : est-ce que l'idée est bonne, et qui l'a proposée.", model: "Une bonne idée et la personne qui la propose, c'est deux questions différentes." },
-      { id: 'f10-4', topic: 'argent',    fr: "Un ami mélange deux choses : est-ce qu'il peut payer, et est-ce que ça vaut le prix.", model: "Pouvoir payer et savoir si ça vaut le prix, c'est deux questions différentes." },
-      { id: 'f10-5', topic: 'films',     fr: "Un ami mélange deux choses : est-ce que l'acteur est sympa, et est-ce qu'il joue bien.", model: "Être sympa et bien jouer, c'est deux questions différentes." },
-      { id: 'f10-6', topic: 'politique', fr: "Un ami mélange deux choses : est-ce qu'une réforme est nécessaire, et est-ce que celle-là est la bonne.", model: "Une réforme nécessaire et la bonne réforme, c'est deux questions différentes." },
-      { id: 'f10-7', topic: 'dieu',      fr: "Un croyant mélange deux choses : est-ce que la religion est utile, et est-ce qu'elle est vraie.", model: "Une religion utile et une religion vraie, c'est deux questions différentes." }
+      { id: 'f10-1', topic: 'enfants',   fr: "Ta femme mélange deux choses : est-ce que le grand a le droit de sortir, et à quelle heure il rentre.", model: "Le droit de sortir et l'heure de rentrer, c'est deux questions différentes.", en: "Being allowed out and what time you come home are two different questions." },
+      { id: 'f10-2', topic: 'cours',     fr: "Un parent mélange deux choses : est-ce que son fils est intelligent, et est-ce qu'il travaille.", model: "Être intelligent et travailler, c'est deux questions différentes.", en: "Being clever and working hard are two different questions." },
+      { id: 'f10-3', topic: 'collegues', fr: "Ton chef mélange deux choses : est-ce que l'idée est bonne, et qui l'a proposée.", model: "Une bonne idée et la personne qui la propose, c'est deux questions différentes.", en: "A good idea and the person suggesting it are two different questions." },
+      { id: 'f10-4', topic: 'argent',    fr: "Un ami mélange deux choses : est-ce qu'il peut payer, et est-ce que ça vaut le prix.", model: "Pouvoir payer et savoir si ça vaut le prix, c'est deux questions différentes.", en: "Being able to pay and whether it's worth the price are two different questions." },
+      { id: 'f10-5', topic: 'films',     fr: "Un ami mélange deux choses : est-ce que l'acteur est sympa, et est-ce qu'il joue bien.", model: "Être sympa et bien jouer, c'est deux questions différentes.", en: "Being nice and playing well are two different questions." },
+      { id: 'f10-6', topic: 'politique', fr: "Un ami mélange deux choses : est-ce qu'une réforme est nécessaire, et est-ce que celle-là est la bonne.", model: "Une réforme nécessaire et la bonne réforme, c'est deux questions différentes.", en: "A necessary reform and the right reform are two different questions." },
+      { id: 'f10-7', topic: 'dieu',      fr: "Un croyant mélange deux choses : est-ce que la religion est utile, et est-ce qu'elle est vraie.", model: "Une religion utile et une religion vraie, c'est deux questions différentes.", en: "A useful religion and a true religion are two different questions." }
     ] },
 
   { id: 'f11', textId: 17, sources: [17],
@@ -331,13 +331,13 @@ var FRAMES = [
             { name: 'INF B', pos: 'infinitif', note: "l'acte qui passe la ligne" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f11-1', topic: 'enfants',   fr: "Le grand a le droit d'être fâché. Mais claquer la porte, pour toi, ça va trop loin.", model: "Être fâché, c'est une chose. Claquer la porte, c'en est une autre." },
-      { id: 'f11-2', topic: 'collegues', fr: "Un collègue donne son avis, très bien. Mais couper la parole à tout le monde, pour toi, ça va trop loin.", model: "Donner son avis, c'est une chose. Couper la parole à tout le monde, c'en est une autre." },
-      { id: 'f11-3', topic: 'cours',     fr: "Un élève peut oublier ses devoirs une fois. Mais mentir là-dessus, pour toi, ça va trop loin.", model: "Oublier ses devoirs, c'est une chose. Mentir là-dessus, c'en est une autre." },
-      { id: 'f11-4', topic: 'couple',    fr: "Ta femme peut critiquer ta cuisine. Mais la raconter à tous ses amis, pour toi, ça va trop loin.", model: "Critiquer ma cuisine, c'est une chose. La raconter à tous tes amis, c'en est une autre." },
-      { id: 'f11-5', topic: 'voisins',   fr: "Le voisin peut faire des travaux. Mais commencer à sept heures le samedi, pour toi, ça va trop loin.", model: "Faire des travaux, c'est une chose. Commencer à sept heures le samedi, c'en est une autre." },
-      { id: 'f11-6', topic: 'films',     fr: "Un film peut être violent. Mais montrer la violence comme un jeu, pour toi, ça va trop loin.", model: "Montrer de la violence, c'est une chose. La montrer comme un jeu, c'en est une autre." },
-      { id: 'f11-7', topic: 'dieu',      fr: "Croire en Dieu, pour toi, c'est pas un problème. Mais l'enseigner comme de la science à l'école, si.", model: "Croire en Dieu, c'est une chose. L'enseigner comme de la science, c'en est une autre." }
+      { id: 'f11-1', topic: 'enfants',   fr: "Le grand a le droit d'être fâché. Mais claquer la porte, pour toi, ça va trop loin.", model: "Être fâché, c'est une chose. Claquer la porte, c'en est une autre.", en: "Being angry is one thing. Slamming the door is another." },
+      { id: 'f11-2', topic: 'collegues', fr: "Un collègue donne son avis, très bien. Mais couper la parole à tout le monde, pour toi, ça va trop loin.", model: "Donner son avis, c'est une chose. Couper la parole à tout le monde, c'en est une autre.", en: "Giving your opinion is one thing. Interrupting everyone is another." },
+      { id: 'f11-3', topic: 'cours',     fr: "Un élève peut oublier ses devoirs une fois. Mais mentir là-dessus, pour toi, ça va trop loin.", model: "Oublier ses devoirs, c'est une chose. Mentir là-dessus, c'en est une autre.", en: "Forgetting your homework is one thing. Lying about it is another." },
+      { id: 'f11-4', topic: 'couple',    fr: "Ta femme peut critiquer ta cuisine. Mais la raconter à tous ses amis, pour toi, ça va trop loin.", model: "Critiquer ma cuisine, c'est une chose. La raconter à tous tes amis, c'en est une autre.", en: "Criticising my cooking is one thing. Telling all your friends about it is another." },
+      { id: 'f11-5', topic: 'voisins',   fr: "Le voisin peut faire des travaux. Mais commencer à sept heures le samedi, pour toi, ça va trop loin.", model: "Faire des travaux, c'est une chose. Commencer à sept heures le samedi, c'en est une autre.", en: "Doing building work is one thing. Starting at seven on a Saturday is another." },
+      { id: 'f11-6', topic: 'films',     fr: "Un film peut être violent. Mais montrer la violence comme un jeu, pour toi, ça va trop loin.", model: "Montrer de la violence, c'est une chose. La montrer comme un jeu, c'en est une autre.", en: "Showing violence is one thing. Showing it as a game is another." },
+      { id: 'f11-7', topic: 'dieu',      fr: "Croire en Dieu, pour toi, c'est pas un problème. Mais l'enseigner comme de la science à l'école, si.", model: "Croire en Dieu, c'est une chose. L'enseigner comme de la science, c'en est une autre.", en: "Believing in God is one thing. Teaching it as science is another." }
     ] },
 
   { id: 'f12', textId: 14, sources: [14],
@@ -350,13 +350,13 @@ var FRAMES = [
     slots: [{ name: 'A', pos: 'nom', note: "" }, { name: 'B', pos: 'nom', note: "" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f12-1', topic: 'enfants',   fr: "Ta femme pense qu'il faut choisir entre des enfants libres et des enfants sages. Pour toi, c'est un faux choix.", model: "Le choix, il a jamais été entre des enfants libres et des enfants sages." },
-      { id: 'f12-2', topic: 'cours',     fr: "Un parent pense qu'il faut choisir entre de bonnes notes et un enfant heureux.", model: "Le choix, il a jamais été entre de bonnes notes et un enfant heureux." },
-      { id: 'f12-3', topic: 'sante',     fr: "Un ami croit qu'il doit choisir entre le sport et sa famille. Pour toi, dix minutes le matin suffisent.", model: "Le choix, il a jamais été entre le sport et la famille. Dix minutes le matin suffisent." },
-      { id: 'f12-4', topic: 'argent',    fr: "Un ami croit qu'il doit choisir entre acheter tout de suite et payer un loyer toute sa vie.", model: "Le choix, il a jamais été entre acheter tout de suite et payer un loyer toute sa vie." },
-      { id: 'f12-5', topic: 'collegues', fr: "Ton chef présente ça comme un choix entre travailler le week-end et perdre le client.", model: "Le choix, il a jamais été entre travailler le week-end et perdre le client." },
-      { id: 'f12-6', topic: 'tech',      fr: "On te présente ça comme un choix entre tout accepter et pas utiliser l'appli du tout.", model: "Le choix, il a jamais été entre tout accepter et pas utiliser l'appli du tout." },
-      { id: 'f12-7', topic: 'dieu',      fr: "Un croyant pense qu'il faut choisir entre la foi et une vie sans aucun sens.", model: "Le choix, il a jamais été entre la foi et une vie sans aucun sens." }
+      { id: 'f12-1', topic: 'enfants',   fr: "Ta femme pense qu'il faut choisir entre des enfants libres et des enfants sages. Pour toi, c'est un faux choix.", model: "Le choix, il a jamais été entre des enfants libres et des enfants sages.", en: "The choice was never between free children and well-behaved children." },
+      { id: 'f12-2', topic: 'cours',     fr: "Un parent pense qu'il faut choisir entre de bonnes notes et un enfant heureux.", model: "Le choix, il a jamais été entre de bonnes notes et un enfant heureux.", en: "The choice was never between good marks and a happy child." },
+      { id: 'f12-3', topic: 'sante',     fr: "Un ami croit qu'il doit choisir entre le sport et sa famille. Pour toi, dix minutes le matin suffisent.", model: "Le choix, il a jamais été entre le sport et la famille. Dix minutes le matin suffisent.", en: "The choice was never between sport and family. Ten minutes in the morning is enough." },
+      { id: 'f12-4', topic: 'argent',    fr: "Un ami croit qu'il doit choisir entre acheter tout de suite et payer un loyer toute sa vie.", model: "Le choix, il a jamais été entre acheter tout de suite et payer un loyer toute sa vie.", en: "The choice was never between buying right now and paying rent all your life." },
+      { id: 'f12-5', topic: 'collegues', fr: "Ton chef présente ça comme un choix entre travailler le week-end et perdre le client.", model: "Le choix, il a jamais été entre travailler le week-end et perdre le client.", en: "The choice was never between working at the weekend and losing the client." },
+      { id: 'f12-6', topic: 'tech',      fr: "On te présente ça comme un choix entre tout accepter et pas utiliser l'appli du tout.", model: "Le choix, il a jamais été entre tout accepter et pas utiliser l'appli du tout.", en: "The choice was never between accepting everything and not using the app at all." },
+      { id: 'f12-7', topic: 'dieu',      fr: "Un croyant pense qu'il faut choisir entre la foi et une vie sans aucun sens.", model: "Le choix, il a jamais été entre la foi et une vie sans aucun sens.", en: "The choice was never between faith and a life with no meaning at all." }
     ] },
 
   { id: 'f13', textId: 14, sources: [14],
@@ -370,13 +370,13 @@ var FRAMES = [
             { name: 'Q', pos: 'nom', note: "ce qui reste ouvert" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f13-1', topic: 'cours',     fr: "Un élève a eu vingt sur vingt. D'après toi, ça prouve qu'il a travaillé, pas qu'il a compris.", model: "Ça montre qu'il a travaillé. Ça dit rien sur ce qu'il a compris." },
-      { id: 'f13-2', topic: 'enfants',   fr: "La grande a rangé sa chambre une fois. Elle sait le faire, d'accord. Qu'elle continue, c'est autre chose.", model: "Ça montre qu'elle sait le faire. Ça dit rien sur la suite." },
-      { id: 'f13-3', topic: 'films',     fr: "Le film a battu un record d'entrées. D'après toi, la pub était bonne, mais le film, on sait pas.", model: "Ça montre que la pub était bonne. Ça dit rien sur le film." },
-      { id: 'f13-4', topic: 'collegues', fr: "Un collègue reste tard tous les soirs. D'après toi, il est présent, mais pas forcément efficace.", model: "Ça montre qu'il est présent. Ça dit rien sur son efficacité." },
-      { id: 'f13-5', topic: 'sante',     fr: "Ta prise de sang est parfaite. Mais ton dos, lui, te fait toujours mal.", model: "Ça montre que ma prise de sang est bonne. Ça dit rien sur mon dos." },
-      { id: 'f13-6', topic: 'politique', fr: "Un sondage donne un parti gagnant. D'après toi, il est populaire, mais est-ce qu'il saura gouverner ?", model: "Ça montre qu'il est populaire. Ça dit rien sur sa façon de gouverner." },
-      { id: 'f13-7', topic: 'dieu',      fr: "Un ami a guéri après avoir prié. D'après toi, il a guéri, c'est sûr. Mais pourquoi, c'est une autre histoire.", model: "Ça montre qu'il a guéri. Ça dit rien sur la raison." }
+      { id: 'f13-1', topic: 'cours',     fr: "Un élève a eu vingt sur vingt. D'après toi, ça prouve qu'il a travaillé, pas qu'il a compris.", model: "Ça montre qu'il a travaillé. Ça dit rien sur ce qu'il a compris.", en: "It shows he worked. It says nothing about what he understood." },
+      { id: 'f13-2', topic: 'enfants',   fr: "La grande a rangé sa chambre une fois. Elle sait le faire, d'accord. Qu'elle continue, c'est autre chose.", model: "Ça montre qu'elle sait le faire. Ça dit rien sur la suite.", en: "It shows she can do it. It says nothing about what comes next." },
+      { id: 'f13-3', topic: 'films',     fr: "Le film a battu un record d'entrées. D'après toi, la pub était bonne, mais le film, on sait pas.", model: "Ça montre que la pub était bonne. Ça dit rien sur le film.", en: "It shows the advertising was good. It says nothing about the film." },
+      { id: 'f13-4', topic: 'collegues', fr: "Un collègue reste tard tous les soirs. D'après toi, il est présent, mais pas forcément efficace.", model: "Ça montre qu'il est présent. Ça dit rien sur son efficacité.", en: "It shows he's there. It says nothing about how effective he is." },
+      { id: 'f13-5', topic: 'sante',     fr: "Ta prise de sang est parfaite. Mais ton dos, lui, te fait toujours mal.", model: "Ça montre que ma prise de sang est bonne. Ça dit rien sur mon dos.", en: "It shows my blood test is good. It says nothing about my back." },
+      { id: 'f13-6', topic: 'politique', fr: "Un sondage donne un parti gagnant. D'après toi, il est populaire, mais est-ce qu'il saura gouverner ?", model: "Ça montre qu'il est populaire. Ça dit rien sur sa façon de gouverner.", en: "It shows he's popular. It says nothing about how he governs." },
+      { id: 'f13-7', topic: 'dieu',      fr: "Un ami a guéri après avoir prié. D'après toi, il a guéri, c'est sûr. Mais pourquoi, c'est une autre histoire.", model: "Ça montre qu'il a guéri. Ça dit rien sur la raison.", en: "It shows he got better. It says nothing about why." }
     ] },
 
   { id: 'f14', textId: 17, sources: [17],
@@ -390,13 +390,13 @@ var FRAMES = [
             { name: 'DÉF', pos: 'nom', note: "sa définition stricte" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f14-1', topic: 'enfants',   fr: "Ta femme dit que la petite est « hyperactive ». Pour toi, c'est un mot médical, pas une enfant qui bouge beaucoup.", model: "« Hyperactive », ça veut dire une chose précise : un trouble médical, pas une enfant qui bouge beaucoup." },
-      { id: 'f14-2', topic: 'collegues', fr: "Un collègue dit qu'il fait un « burn-out ». Pour toi, c'est un épuisement qui dure des mois, pas une grosse semaine.", model: "« Burn-out », ça veut dire une chose précise : un épuisement qui dure des mois, pas une grosse semaine." },
-      { id: 'f14-3', topic: 'cours',     fr: "Un parent dit que son fils est « dyslexique ». Pour toi, il faut un diagnostic, pas juste des fautes d'orthographe.", model: "« Dyslexique », ça veut dire une chose précise : un diagnostic, pas juste des fautes d'orthographe." },
-      { id: 'f14-4', topic: 'sante',     fr: "Un ami dit qu'il est « allergique » au gluten. Toi, tu penses qu'il le digère mal, c'est tout.", model: "« Allergique », ça veut dire une chose précise : une réaction du corps, pas juste digérer mal." },
-      { id: 'f14-5', topic: 'films',     fr: "Un ami dit qu'un film sorti le mois dernier est déjà « culte ». Pour toi, un film culte, on le revoit encore trente ans après.", model: "« Culte », ça veut dire une chose précise : un film qu'on revoit encore trente ans après." },
-      { id: 'f14-6', topic: 'politique', fr: "Un ami dit que le gouvernement est « illégitime ». Pour toi, il a été élu, même si tu l'aimes pas.", model: "« Illégitime », ça veut dire une chose précise : un gouvernement qui n'a pas été élu." },
-      { id: 'f14-7', topic: 'dieu',      fr: "Un ami parle d'un « miracle » parce qu'il a trouvé une place de parking. Pour toi, un miracle, c'est les lois de la nature qui s'arrêtent.", model: "« Miracle », ça veut dire une chose précise : les lois de la nature qui s'arrêtent." }
+      { id: 'f14-1', topic: 'enfants',   fr: "Ta femme dit que la petite est « hyperactive ». Pour toi, c'est un mot médical, pas une enfant qui bouge beaucoup.", model: "« Hyperactive », ça veut dire une chose précise : un trouble médical, pas une enfant qui bouge beaucoup.", en: "'Hyperactive' means something precise: a medical disorder, not a child who moves a lot." },
+      { id: 'f14-2', topic: 'collegues', fr: "Un collègue dit qu'il fait un « burn-out ». Pour toi, c'est un épuisement qui dure des mois, pas une grosse semaine.", model: "« Burn-out », ça veut dire une chose précise : un épuisement qui dure des mois, pas une grosse semaine.", en: "'Burnout' means something precise: exhaustion that lasts for months, not one heavy week." },
+      { id: 'f14-3', topic: 'cours',     fr: "Un parent dit que son fils est « dyslexique ». Pour toi, il faut un diagnostic, pas juste des fautes d'orthographe.", model: "« Dyslexique », ça veut dire une chose précise : un diagnostic, pas juste des fautes d'orthographe.", en: "'Dyslexic' means something precise: a diagnosis, not just spelling mistakes." },
+      { id: 'f14-4', topic: 'sante',     fr: "Un ami dit qu'il est « allergique » au gluten. Toi, tu penses qu'il le digère mal, c'est tout.", model: "« Allergique », ça veut dire une chose précise : une réaction du corps, pas juste digérer mal.", en: "'Allergic' means something precise: a reaction of the body, not just bad digestion." },
+      { id: 'f14-5', topic: 'films',     fr: "Un ami dit qu'un film sorti le mois dernier est déjà « culte ». Pour toi, un film culte, on le revoit encore trente ans après.", model: "« Culte », ça veut dire une chose précise : un film qu'on revoit encore trente ans après.", en: "'Cult classic' means something precise: a film people still rewatch thirty years later." },
+      { id: 'f14-6', topic: 'politique', fr: "Un ami dit que le gouvernement est « illégitime ». Pour toi, il a été élu, même si tu l'aimes pas.", model: "« Illégitime », ça veut dire une chose précise : un gouvernement qui n'a pas été élu.", en: "'Illegitimate' means something precise: a government that wasn't elected." },
+      { id: 'f14-7', topic: 'dieu',      fr: "Un ami parle d'un « miracle » parce qu'il a trouvé une place de parking. Pour toi, un miracle, c'est les lois de la nature qui s'arrêtent.", model: "« Miracle », ça veut dire une chose précise : les lois de la nature qui s'arrêtent.", en: "'Miracle' means something precise: the laws of nature stopping." }
     ] },
 
   // ── C. Démonter la logique ──────────────────────────────
@@ -411,13 +411,13 @@ var FRAMES = [
             { name: 'P2', pos: 'proposition', note: "sujet + verbe" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f15-1', topic: 'enfants',   fr: "Les écrans : le soir, les enfants sont de plus en plus énervés.", model: "Plus ils regardent d'écrans, plus ils sont énervés le soir." },
-      { id: 'f15-2', topic: 'sante',     fr: "La course : tu t'arrêtes une semaine, et c'est encore plus dur de reprendre.", model: "Plus je m'arrête longtemps, plus c'est dur de reprendre." },
-      { id: 'f15-3', topic: 'cours',     fr: "Un élève révise la veille de l'examen : il stresse, et il oublie tout.", model: "Plus il révise tard, moins il retient." },
-      { id: 'f15-4', topic: 'collegues', fr: "Un collègue parle longtemps en réunion, et personne n'écoute.", model: "Plus il parle longtemps, moins les gens l'écoutent." },
-      { id: 'f15-5', topic: 'argent',    fr: "Un ami gagne mieux sa vie, mais il dépense aussi davantage.", model: "Plus il gagne, plus il dépense." },
-      { id: 'f15-6', topic: 'couple',    fr: "Tu repousses le rangement du garage, et c'est de pire en pire.", model: "Plus je repousse le garage, plus c'est le bazar." },
-      { id: 'f15-7', topic: 'israel',    fr: "Un ami français lit des articles sur le conflit, et il y comprend de moins en moins.", model: "Plus il lit d'articles, moins il comprend." }
+      { id: 'f15-1', topic: 'enfants',   fr: "Les écrans : le soir, les enfants sont de plus en plus énervés.", model: "Plus ils regardent d'écrans, plus ils sont énervés le soir.", en: "The more screens they watch, the more wound up they are in the evening." },
+      { id: 'f15-2', topic: 'sante',     fr: "La course : tu t'arrêtes une semaine, et c'est encore plus dur de reprendre.", model: "Plus je m'arrête longtemps, plus c'est dur de reprendre.", en: "The longer I stop, the harder it is to start again." },
+      { id: 'f15-3', topic: 'cours',     fr: "Un élève révise la veille de l'examen : il stresse, et il oublie tout.", model: "Plus il révise tard, moins il retient.", en: "The later he revises, the less he remembers." },
+      { id: 'f15-4', topic: 'collegues', fr: "Un collègue parle longtemps en réunion, et personne n'écoute.", model: "Plus il parle longtemps, moins les gens l'écoutent.", en: "The longer he talks, the less people listen to him." },
+      { id: 'f15-5', topic: 'argent',    fr: "Un ami gagne mieux sa vie, mais il dépense aussi davantage.", model: "Plus il gagne, plus il dépense.", en: "The more he earns, the more he spends." },
+      { id: 'f15-6', topic: 'couple',    fr: "Tu repousses le rangement du garage, et c'est de pire en pire.", model: "Plus je repousse le garage, plus c'est le bazar.", en: "The more I put off the garage, the bigger the mess." },
+      { id: 'f15-7', topic: 'israel',    fr: "Un ami français lit des articles sur le conflit, et il y comprend de moins en moins.", model: "Plus il lit d'articles, moins il comprend.", en: "The more articles he reads, the less he understands." }
     ] },
 
   { id: 'f16', textId: 8, sources: [8],
@@ -431,13 +431,13 @@ var FRAMES = [
             { name: 'B', pos: 'discours direct', note: "la conclusion" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f16-1', topic: 'enfants',   fr: "Ta femme : « Il a eu une mauvaise note, il va rater son année. »", model: "Tu pars de « une mauvaise note », et t'arrives direct à « il va rater son année »." },
-      { id: 'f16-2', topic: 'sante',     fr: "Un ami a mal à la tête, et il est sûr d'avoir une maladie grave.", model: "Tu pars de « j'ai mal à la tête », et t'arrives direct à « j'ai une maladie grave »." },
-      { id: 'f16-3', topic: 'collegues', fr: "Ton chef a pas répondu à ton mail, et un collègue en conclut que tu vas être viré.", model: "Tu pars de « il a pas répondu à ton mail », et t'arrives direct à « tu vas être viré »." },
-      { id: 'f16-4', topic: 'films',     fr: "Un ami a vu la bande-annonce, et il dit que le film est nul.", model: "Tu pars de « une bande-annonce », et t'arrives direct à « le film est nul »." },
-      { id: 'f16-5', topic: 'voisins',   fr: "Un voisin a vu une voiture inconnue dans la rue, et il parle déjà de cambriolage.", model: "Tu pars de « une voiture inconnue », et t'arrives direct à « un cambriolage »." },
-      { id: 'f16-6', topic: 'tech',      fr: "Ton téléphone est lent, et un ami dit qu'il est piraté.", model: "Tu pars de « mon téléphone est lent », et t'arrives direct à « il est piraté »." },
-      { id: 'f16-7', topic: 'israel',    fr: "Un ami lit un tweet sur un soldat, et il en conclut que toute l'armée est pareille.", model: "Tu pars de « un tweet sur un soldat », et t'arrives direct à « toute l'armée est pareille »." }
+      { id: 'f16-1', topic: 'enfants',   fr: "Ta femme : « Il a eu une mauvaise note, il va rater son année. »", model: "Tu pars de « une mauvaise note », et t'arrives direct à « il va rater son année ».", en: "You start from 'a bad mark', and you jump straight to 'he's going to fail his year'." },
+      { id: 'f16-2', topic: 'sante',     fr: "Un ami a mal à la tête, et il est sûr d'avoir une maladie grave.", model: "Tu pars de « j'ai mal à la tête », et t'arrives direct à « j'ai une maladie grave ».", en: "You start from 'I've got a headache', and you jump straight to 'I've got a serious illness'." },
+      { id: 'f16-3', topic: 'collegues', fr: "Ton chef a pas répondu à ton mail, et un collègue en conclut que tu vas être viré.", model: "Tu pars de « il a pas répondu à ton mail », et t'arrives direct à « tu vas être viré ».", en: "You start from 'he didn't answer your email', and you jump straight to 'you're going to be fired'." },
+      { id: 'f16-4', topic: 'films',     fr: "Un ami a vu la bande-annonce, et il dit que le film est nul.", model: "Tu pars de « une bande-annonce », et t'arrives direct à « le film est nul ».", en: "You start from 'a trailer', and you jump straight to 'the film is rubbish'." },
+      { id: 'f16-5', topic: 'voisins',   fr: "Un voisin a vu une voiture inconnue dans la rue, et il parle déjà de cambriolage.", model: "Tu pars de « une voiture inconnue », et t'arrives direct à « un cambriolage ».", en: "You start from 'a car we don't know', and you jump straight to 'a burglary'." },
+      { id: 'f16-6', topic: 'tech',      fr: "Ton téléphone est lent, et un ami dit qu'il est piraté.", model: "Tu pars de « mon téléphone est lent », et t'arrives direct à « il est piraté ».", en: "You start from 'my phone is slow', and you jump straight to 'it's been hacked'." },
+      { id: 'f16-7', topic: 'israel',    fr: "Un ami lit un tweet sur un soldat, et il en conclut que toute l'armée est pareille.", model: "Tu pars de « un tweet sur un soldat », et t'arrives direct à « toute l'armée est pareille ».", en: "You start from 'a tweet about one soldier', and you jump straight to 'the whole army is like that'." }
     ] },
 
   { id: 'f17', textId: 2, sources: [2],
@@ -450,13 +450,13 @@ var FRAMES = [
     slots: [{ name: 'P', pos: 'proposition', note: "imparfait ou plus-que-parfait" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f17-1', topic: 'couple',    fr: "Ta femme a vu la facture d'électricité, mais elle en parle pas.", model: "Tu fais comme si la facture n'existait pas." },
-      { id: 'f17-2', topic: 'enfants',   fr: "Le grand a cassé un verre, et il continue à jouer tranquillement.", model: "Il fait comme si de rien n'était." },
-      { id: 'f17-3', topic: 'collegues', fr: "Un collègue a raté la réunion, et le lendemain il arrive tout souriant, sans un mot.", model: "Il fait comme s'il avait pas raté la réunion." },
-      { id: 'f17-4', topic: 'sante',     fr: "Ton ami s'est blessé au genou, mais il continue à courir.", model: "Tu fais comme si ton genou n'avait rien." },
-      { id: 'f17-5', topic: 'cours',     fr: "Un élève a pas fait ses devoirs, et il sort son cahier sans rien dire.", model: "Tu fais comme si t'avais fait tes devoirs." },
-      { id: 'f17-6', topic: 'argent',    fr: "Ton ami a une grosse dette, et il vient de réserver des vacances.", model: "Tu fais comme si t'avais pas de dette." },
-      { id: 'f17-7', topic: 'israel',    fr: "Un ami parle de Gaza sans jamais mentionner les otages.", model: "Tu fais comme si les otages n'existaient pas." }
+      { id: 'f17-1', topic: 'couple',    fr: "Ta femme a vu la facture d'électricité, mais elle en parle pas.", model: "Tu fais comme si la facture n'existait pas.", en: "You act as if the bill didn't exist." },
+      { id: 'f17-2', topic: 'enfants',   fr: "Le grand a cassé un verre, et il continue à jouer tranquillement.", model: "Il fait comme si de rien n'était.", en: "He acts as if nothing happened." },
+      { id: 'f17-3', topic: 'collegues', fr: "Un collègue a raté la réunion, et le lendemain il arrive tout souriant, sans un mot.", model: "Il fait comme s'il avait pas raté la réunion.", en: "He acts as if he hadn't missed the meeting." },
+      { id: 'f17-4', topic: 'sante',     fr: "Ton ami s'est blessé au genou, mais il continue à courir.", model: "Tu fais comme si ton genou n'avait rien.", en: "You act as if there was nothing wrong with your knee." },
+      { id: 'f17-5', topic: 'cours',     fr: "Un élève a pas fait ses devoirs, et il sort son cahier sans rien dire.", model: "Tu fais comme si t'avais fait tes devoirs.", en: "You act as if you'd done your homework." },
+      { id: 'f17-6', topic: 'argent',    fr: "Ton ami a une grosse dette, et il vient de réserver des vacances.", model: "Tu fais comme si t'avais pas de dette.", en: "You act as if you had no debt." },
+      { id: 'f17-7', topic: 'israel',    fr: "Un ami parle de Gaza sans jamais mentionner les otages.", model: "Tu fais comme si les otages n'existaient pas.", en: "You act as if the hostages didn't exist." }
     ] },
 
   { id: 'f18', textId: 2, sources: [2],
@@ -470,13 +470,13 @@ var FRAMES = [
             { name: 'Y', pos: 'nom', note: "celui qu'on n'exempte pas" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f18-1', topic: 'enfants',   fr: "La grande peut rester debout jusqu'à neuf heures, mais pas la petite. La petite trouve ça injuste, et toi aussi.", model: "Pourquoi la grande, elle aurait le droit, et pas la petite ?" },
-      { id: 'f18-2', topic: 'collegues', fr: "Un collègue part tôt tous les vendredis, mais toi, on te le refuse.", model: "Pourquoi lui, il aurait le droit de partir tôt, et pas moi ?" },
-      { id: 'f18-3', topic: 'cours',     fr: "Un élève a pu repasser l'examen, mais pas sa sœur.", model: "Pourquoi lui, il aurait le droit de repasser, et pas sa sœur ?" },
-      { id: 'f18-4', topic: 'voisins',   fr: "Le voisin a construit une véranda, mais la mairie t'a refusé la tienne.", model: "Pourquoi lui, il aurait le droit à une véranda, et pas moi ?" },
-      { id: 'f18-5', topic: 'sante',     fr: "Ton ami mange ce qu'il veut, mais toi, ton médecin te l'interdit.", model: "Pourquoi lui, il aurait le droit de manger ce qu'il veut, et pas moi ?" },
-      { id: 'f18-6', topic: 'films',     fr: "Un acteur a dit une grossièreté à la télé sans problème, mais un autre a été viré pour la même chose.", model: "Pourquoi lui, il aurait le droit de le dire, et pas l'autre ?" },
-      { id: 'f18-7', topic: 'israel',    fr: "L'ONU condamne Israël pour une frappe, mais pas un autre pays pour la même chose.", model: "Pourquoi les autres pays, ils auraient le droit de le faire, et pas Israël ?" }
+      { id: 'f18-1', topic: 'enfants',   fr: "La grande peut rester debout jusqu'à neuf heures, mais pas la petite. La petite trouve ça injuste, et toi aussi.", model: "Pourquoi la grande, elle aurait le droit, et pas la petite ?", en: "Why would the eldest girl be allowed, and not the little one?" },
+      { id: 'f18-2', topic: 'collegues', fr: "Un collègue part tôt tous les vendredis, mais toi, on te le refuse.", model: "Pourquoi lui, il aurait le droit de partir tôt, et pas moi ?", en: "Why would he be allowed to leave early, and not me?" },
+      { id: 'f18-3', topic: 'cours',     fr: "Un élève a pu repasser l'examen, mais pas sa sœur.", model: "Pourquoi lui, il aurait le droit de repasser, et pas sa sœur ?", en: "Why would he be allowed to resit, and not his sister?" },
+      { id: 'f18-4', topic: 'voisins',   fr: "Le voisin a construit une véranda, mais la mairie t'a refusé la tienne.", model: "Pourquoi lui, il aurait le droit à une véranda, et pas moi ?", en: "Why would he be allowed a conservatory, and not me?" },
+      { id: 'f18-5', topic: 'sante',     fr: "Ton ami mange ce qu'il veut, mais toi, ton médecin te l'interdit.", model: "Pourquoi lui, il aurait le droit de manger ce qu'il veut, et pas moi ?", en: "Why would he be allowed to eat what he likes, and not me?" },
+      { id: 'f18-6', topic: 'films',     fr: "Un acteur a dit une grossièreté à la télé sans problème, mais un autre a été viré pour la même chose.", model: "Pourquoi lui, il aurait le droit de le dire, et pas l'autre ?", en: "Why would he be allowed to say it, and not the other one?" },
+      { id: 'f18-7', topic: 'israel',    fr: "L'ONU condamne Israël pour une frappe, mais pas un autre pays pour la même chose.", model: "Pourquoi les autres pays, ils auraient le droit de le faire, et pas Israël ?", en: "Why would other countries be allowed to do it, and not Israel?" }
     ] },
 
   { id: 'f19', textId: 6, sources: [6],
@@ -491,13 +491,13 @@ var FRAMES = [
             { name: 'Z', pos: 'conditionnel', note: "ce qu'il fait à la place" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f19-1', topic: 'collegues', fr: "Ton chef dit qu'il veut ton avis, mais il décide tout seul.", model: "S'il voulait vraiment mon avis, pourquoi il déciderait tout seul ?" },
-      { id: 'f19-2', topic: 'enfants',   fr: "Le grand dit qu'il veut un chien, mais il nettoie jamais l'aquarium.", model: "Si le grand voulait vraiment un chien, pourquoi il nettoie jamais l'aquarium ?" },
-      { id: 'f19-3', topic: 'sante',     fr: "Ton ami dit qu'il veut arrêter de fumer, mais il achète des cartouches.", model: "S'il voulait vraiment arrêter de fumer, pourquoi il achèterait des cartouches ?" },
-      { id: 'f19-4', topic: 'politique', fr: "Le gouvernement dit qu'il veut baisser les prix, mais il augmente les taxes.", model: "Si le gouvernement voulait vraiment baisser les prix, pourquoi il augmenterait les taxes ?" },
-      { id: 'f19-5', topic: 'cours',     fr: "Un élève dit qu'il veut progresser, mais il annule un cours sur deux.", model: "S'il voulait vraiment progresser, pourquoi il annulerait un cours sur deux ?" },
-      { id: 'f19-6', topic: 'tech',      fr: "L'entreprise dit qu'elle protège tes données, mais elle les vend à des publicitaires.", model: "Si l'entreprise voulait vraiment protéger tes données, pourquoi elle les vendrait à des publicitaires ?" },
-      { id: 'f19-7', topic: 'israel',    fr: "Le Hamas dit qu'il veut protéger les civils, mais il creuse ses tunnels sous les maisons.", model: "Si le Hamas voulait vraiment protéger les civils, pourquoi il creuserait ses tunnels sous les maisons ?" }
+      { id: 'f19-1', topic: 'collegues', fr: "Ton chef dit qu'il veut ton avis, mais il décide tout seul.", model: "S'il voulait vraiment mon avis, pourquoi il déciderait tout seul ?", en: "If he really wanted my opinion, why would he decide on his own?" },
+      { id: 'f19-2', topic: 'enfants',   fr: "Le grand dit qu'il veut un chien, mais il nettoie jamais l'aquarium.", model: "Si le grand voulait vraiment un chien, pourquoi il nettoie jamais l'aquarium ?", en: "If the eldest really wanted a dog, why does he never clean the fish tank?" },
+      { id: 'f19-3', topic: 'sante',     fr: "Ton ami dit qu'il veut arrêter de fumer, mais il achète des cartouches.", model: "S'il voulait vraiment arrêter de fumer, pourquoi il achèterait des cartouches ?", en: "If he really wanted to stop smoking, why would he buy cartons of cigarettes?" },
+      { id: 'f19-4', topic: 'politique', fr: "Le gouvernement dit qu'il veut baisser les prix, mais il augmente les taxes.", model: "Si le gouvernement voulait vraiment baisser les prix, pourquoi il augmenterait les taxes ?", en: "If the government really wanted to bring prices down, why would it raise taxes?" },
+      { id: 'f19-5', topic: 'cours',     fr: "Un élève dit qu'il veut progresser, mais il annule un cours sur deux.", model: "S'il voulait vraiment progresser, pourquoi il annulerait un cours sur deux ?", en: "If he really wanted to improve, why would he cancel every other lesson?" },
+      { id: 'f19-6', topic: 'tech',      fr: "L'entreprise dit qu'elle protège tes données, mais elle les vend à des publicitaires.", model: "Si l'entreprise voulait vraiment protéger tes données, pourquoi elle les vendrait à des publicitaires ?", en: "If the company really wanted to protect your data, why would it sell it to advertisers?" },
+      { id: 'f19-7', topic: 'israel',    fr: "Le Hamas dit qu'il veut protéger les civils, mais il creuse ses tunnels sous les maisons.", model: "Si le Hamas voulait vraiment protéger les civils, pourquoi il creuserait ses tunnels sous les maisons ?", en: "If Hamas really wanted to protect civilians, why would it dig its tunnels under houses?" }
     ] },
 
   { id: 'f20', textId: 6, sources: [6],
@@ -511,13 +511,13 @@ var FRAMES = [
             { name: 'PP', pos: 'participe passé', note: "conditionnel passé de doute" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f20-1', topic: 'enfants',   fr: "La petite dit que c'est le chat qui a mangé tous les gâteaux.", model: "Le chat aurait mangé tous les gâteaux ? C'est un peu gros, non ?" },
-      { id: 'f20-2', topic: 'cours',     fr: "Un élève dit que son ordinateur a effacé ses devoirs, pour la troisième fois.", model: "Ton ordinateur aurait effacé tes devoirs trois fois ? C'est un peu gros, non ?" },
-      { id: 'f20-3', topic: 'collegues', fr: "Un collègue dit qu'il a fini tout le dossier en une heure.", model: "Il aurait fini tout le dossier en une heure ? C'est un peu gros, non ?" },
-      { id: 'f20-4', topic: 'sante',     fr: "Une pub dit qu'on perd dix kilos en une semaine.", model: "On aurait perdu dix kilos en une semaine ? C'est un peu gros, non ?" },
-      { id: 'f20-5', topic: 'voisins',   fr: "Le voisin dit que la rayure sur ta voiture est apparue toute seule.", model: "La rayure serait apparue toute seule ? C'est un peu gros, non ?" },
-      { id: 'f20-6', topic: 'films',     fr: "Un ami dit qu'il a vu toute la série en un week-end.", model: "Il aurait vu toute la série en un week-end ? C'est un peu gros, non ?" },
-      { id: 'f20-7', topic: 'israel',    fr: "Un article dit que tous les chiffres de l'armée sont inventés.", model: "Tous les chiffres de l'armée auraient été inventés ? C'est un peu gros, non ?" }
+      { id: 'f20-1', topic: 'enfants',   fr: "La petite dit que c'est le chat qui a mangé tous les gâteaux.", model: "Le chat aurait mangé tous les gâteaux ? C'est un peu gros, non ?", en: "The cat supposedly ate all the cakes? That's a bit much, isn't it?" },
+      { id: 'f20-2', topic: 'cours',     fr: "Un élève dit que son ordinateur a effacé ses devoirs, pour la troisième fois.", model: "Ton ordinateur aurait effacé tes devoirs trois fois ? C'est un peu gros, non ?", en: "Your computer supposedly deleted your homework three times? That's a bit much, isn't it?" },
+      { id: 'f20-3', topic: 'collegues', fr: "Un collègue dit qu'il a fini tout le dossier en une heure.", model: "Il aurait fini tout le dossier en une heure ? C'est un peu gros, non ?", en: "He supposedly finished the whole file in an hour? That's a bit much, isn't it?" },
+      { id: 'f20-4', topic: 'sante',     fr: "Une pub dit qu'on perd dix kilos en une semaine.", model: "On aurait perdu dix kilos en une semaine ? C'est un peu gros, non ?", en: "You'd lose ten kilos in a week? That's a bit much, isn't it?" },
+      { id: 'f20-5', topic: 'voisins',   fr: "Le voisin dit que la rayure sur ta voiture est apparue toute seule.", model: "La rayure serait apparue toute seule ? C'est un peu gros, non ?", en: "The scratch just appeared on its own? That's a bit much, isn't it?" },
+      { id: 'f20-6', topic: 'films',     fr: "Un ami dit qu'il a vu toute la série en un week-end.", model: "Il aurait vu toute la série en un week-end ? C'est un peu gros, non ?", en: "He supposedly watched the whole series in one weekend? That's a bit much, isn't it?" },
+      { id: 'f20-7', topic: 'israel',    fr: "Un article dit que tous les chiffres de l'armée sont inventés.", model: "Tous les chiffres de l'armée auraient été inventés ? C'est un peu gros, non ?", en: "All the army's figures were supposedly made up? That's a bit much, isn't it?" }
     ] },
 
   { id: 'f21', textId: 8, sources: [8],
@@ -530,13 +530,13 @@ var FRAMES = [
     slots: [{ name: 'V', pos: 'infinitif', note: "" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f21-1', topic: 'couple',    fr: "Ta femme veut que ce soit toi qui dises aux voisins que leur chien aboie trop.", model: "C'est pas à moi de leur dire que leur chien aboie trop." },
-      { id: 'f21-2', topic: 'cours',     fr: "Un parent te demande de faire les devoirs avec son fils tous les soirs.", model: "C'est pas à moi de faire les devoirs avec votre fils tous les soirs." },
-      { id: 'f21-3', topic: 'collegues', fr: "Un collègue te demande de refaire son rapport.", model: "C'est pas à moi de refaire ton rapport." },
-      { id: 'f21-4', topic: 'voisins',   fr: "Le voisin veut que tu répares la clôture, alors que c'est son chien qui l'a cassée.", model: "C'est pas à moi de réparer la clôture. C'est ton chien qui l'a cassée." },
-      { id: 'f21-5', topic: 'enfants',   fr: "L'école veut que ce soit toi qui expliques le nouveau règlement aux autres parents.", model: "C'est pas à moi d'expliquer le règlement aux autres parents." },
-      { id: 'f21-6', topic: 'argent',    fr: "Ton ami veut que tu paies l'addition parce que le restaurant, c'était ton idée.", model: "C'est pas à moi de payer l'addition juste parce que c'était mon idée." },
-      { id: 'f21-7', topic: 'israel',    fr: "Un ami affirme que l'armée vise exprès les journalistes, et te demande de prouver le contraire.", model: "C'est pas à moi de prouver le contraire. C'est à toi de prouver qu'ils visent exprès." }
+      { id: 'f21-1', topic: 'couple',    fr: "Ta femme veut que ce soit toi qui dises aux voisins que leur chien aboie trop.", model: "C'est pas à moi de leur dire que leur chien aboie trop.", en: "It's not up to me to tell them their dog barks too much." },
+      { id: 'f21-2', topic: 'cours',     fr: "Un parent te demande de faire les devoirs avec son fils tous les soirs.", model: "C'est pas à moi de faire les devoirs avec votre fils tous les soirs.", en: "It's not up to me to do homework with your son every evening." },
+      { id: 'f21-3', topic: 'collegues', fr: "Un collègue te demande de refaire son rapport.", model: "C'est pas à moi de refaire ton rapport.", en: "It's not up to me to redo your report." },
+      { id: 'f21-4', topic: 'voisins',   fr: "Le voisin veut que tu répares la clôture, alors que c'est son chien qui l'a cassée.", model: "C'est pas à moi de réparer la clôture. C'est ton chien qui l'a cassée.", en: "It's not up to me to fix the fence. It was your dog that broke it." },
+      { id: 'f21-5', topic: 'enfants',   fr: "L'école veut que ce soit toi qui expliques le nouveau règlement aux autres parents.", model: "C'est pas à moi d'expliquer le règlement aux autres parents.", en: "It's not up to me to explain the rules to the other parents." },
+      { id: 'f21-6', topic: 'argent',    fr: "Ton ami veut que tu paies l'addition parce que le restaurant, c'était ton idée.", model: "C'est pas à moi de payer l'addition juste parce que c'était mon idée.", en: "It's not up to me to pay the bill just because it was my idea." },
+      { id: 'f21-7', topic: 'israel',    fr: "Un ami affirme que l'armée vise exprès les journalistes, et te demande de prouver le contraire.", model: "C'est pas à moi de prouver le contraire. C'est à toi de prouver qu'ils visent exprès.", en: "It's not up to me to prove the opposite. It's up to you to prove they aim on purpose." }
     ] },
 
   { id: 'f22', textId: 17, sources: [17],
@@ -550,13 +550,13 @@ var FRAMES = [
             { name: 'P', pos: 'proposition', note: "ce qui reste vrai" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f22-1', topic: 'argent',    fr: "Les travaux : entre dix et vingt mille shekels. Pour toi, c'est trop cher de toute façon.", model: "Même en partant de dix mille shekels, c'est trop cher." },
-      { id: 'f22-2', topic: 'sante',     fr: "Le médecin dit qu'il faut dormir entre sept et neuf heures. Tu dors cinq heures.", model: "Même en partant de sept heures, j'en suis loin. Je dors cinq heures." },
-      { id: 'f22-3', topic: 'enfants',   fr: "Les enfants regardent entre deux et quatre heures d'écran par jour. Pour toi, c'est trop de toute façon.", model: "Même en partant de deux heures par jour, c'est trop." },
-      { id: 'f22-4', topic: 'cours',     fr: "Il reste entre trois et six mois avant l'examen. Pour toi, il faut commencer maintenant.", model: "Même en partant de six mois, faut commencer maintenant." },
-      { id: 'f22-5', topic: 'collegues', fr: "Le projet a entre deux et quatre semaines de retard. Pour toi, le client va se plaindre de toute façon.", model: "Même en partant de deux semaines, le client va se plaindre." },
-      { id: 'f22-6', topic: 'films',     fr: "Le film dure entre deux heures et demie et trois heures selon la version. Pour toi, c'est trop long de toute façon.", model: "Même en partant de deux heures et demie, c'est trop long." },
-      { id: 'f22-7', topic: 'dieu',      fr: "Les historiens comptent des milliers de dieux adorés dans l'histoire. Pour toi, même le chiffre le plus bas pose un problème au croyant.", model: "Même en partant du chiffre le plus bas, c'est un problème pour le croyant." }
+      { id: 'f22-1', topic: 'argent',    fr: "Les travaux : entre dix et vingt mille shekels. Pour toi, c'est trop cher de toute façon.", model: "Même en partant de dix mille shekels, c'est trop cher.", en: "Even starting from ten thousand shekels, it's too expensive." },
+      { id: 'f22-2', topic: 'sante',     fr: "Le médecin dit qu'il faut dormir entre sept et neuf heures. Tu dors cinq heures.", model: "Même en partant de sept heures, j'en suis loin. Je dors cinq heures.", en: "Even starting from seven hours, I'm far off. I sleep five hours." },
+      { id: 'f22-3', topic: 'enfants',   fr: "Les enfants regardent entre deux et quatre heures d'écran par jour. Pour toi, c'est trop de toute façon.", model: "Même en partant de deux heures par jour, c'est trop.", en: "Even starting from two hours a day, it's too much." },
+      { id: 'f22-4', topic: 'cours',     fr: "Il reste entre trois et six mois avant l'examen. Pour toi, il faut commencer maintenant.", model: "Même en partant de six mois, faut commencer maintenant.", en: "Even starting from six months, we need to begin now." },
+      { id: 'f22-5', topic: 'collegues', fr: "Le projet a entre deux et quatre semaines de retard. Pour toi, le client va se plaindre de toute façon.", model: "Même en partant de deux semaines, le client va se plaindre.", en: "Even starting from two weeks, the client will complain." },
+      { id: 'f22-6', topic: 'films',     fr: "Le film dure entre deux heures et demie et trois heures selon la version. Pour toi, c'est trop long de toute façon.", model: "Même en partant de deux heures et demie, c'est trop long.", en: "Even starting from two and a half hours, it's too long." },
+      { id: 'f22-7', topic: 'dieu',      fr: "Les historiens comptent des milliers de dieux adorés dans l'histoire. Pour toi, même le chiffre le plus bas pose un problème au croyant.", model: "Même en partant du chiffre le plus bas, c'est un problème pour le croyant.", en: "Even starting from the lowest figure, it's a problem for the believer." }
     ] },
 
   { id: 'f23', textId: 14, sources: [14],
@@ -570,13 +570,13 @@ var FRAMES = [
             { name: 'X', pos: 'nom / adjectif', note: "" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f23-1', topic: 'enfants',   fr: "Ta femme dit que la grande a lu trente pages. Tu soupçonnes qu'elle en a sauté, mais c'est un record pour elle.", model: "Prenons même dix pages sautées. Ça reste un record pour elle." },
-      { id: 'f23-2', topic: 'sante',     fr: "Ton ami dit qu'il a couru dix kilomètres. Il exagère peut-être, mais c'est énorme pour quelqu'un qui courait pas.", model: "Prenons même sept kilomètres. Ça reste énorme pour quelqu'un qui courait pas." },
-      { id: 'f23-3', topic: 'argent',    fr: "Le vendeur dit que la voiture consomme cinq litres aux cent. Tu doutes, mais c'est mieux que la vieille.", model: "Prenons même six litres. Ça reste mieux que la vieille." },
-      { id: 'f23-4', topic: 'cours',     fr: "Un élève dit qu'il a révisé dix heures. T'y crois qu'à moitié, mais c'est plus que d'habitude.", model: "Prenons même cinq heures. Ça reste plus que d'habitude." },
-      { id: 'f23-5', topic: 'collegues', fr: "Un collègue dit que la réunion a duré trois heures. Il exagère peut-être, mais c'est beaucoup trop long.", model: "Prenons même deux heures. Ça reste beaucoup trop long." },
-      { id: 'f23-6', topic: 'tech',      fr: "L'appli promet vingt heures de batterie. Tu doutes, mais c'est mieux que ton vieux téléphone.", model: "Prenons même dix heures. Ça reste mieux que mon vieux téléphone." },
-      { id: 'f23-7', topic: 'dieu',      fr: "Des historiens disent que la Bible a des dizaines d'auteurs. Pour toi, peu importe le nombre exact : c'est pas l'œuvre d'une seule main.", model: "Prenons même dix auteurs. Ça reste pas l'œuvre d'une seule main." }
+      { id: 'f23-1', topic: 'enfants',   fr: "Ta femme dit que la grande a lu trente pages. Tu soupçonnes qu'elle en a sauté, mais c'est un record pour elle.", model: "Prenons même dix pages sautées. Ça reste un record pour elle.", en: "Let's even say she skipped ten pages. It's still a record for her." },
+      { id: 'f23-2', topic: 'sante',     fr: "Ton ami dit qu'il a couru dix kilomètres. Il exagère peut-être, mais c'est énorme pour quelqu'un qui courait pas.", model: "Prenons même sept kilomètres. Ça reste énorme pour quelqu'un qui courait pas.", en: "Let's even say seven kilometres. It's still huge for someone who didn't run." },
+      { id: 'f23-3', topic: 'argent',    fr: "Le vendeur dit que la voiture consomme cinq litres aux cent. Tu doutes, mais c'est mieux que la vieille.", model: "Prenons même six litres. Ça reste mieux que la vieille.", en: "Let's even say six litres. It's still better than the old one." },
+      { id: 'f23-4', topic: 'cours',     fr: "Un élève dit qu'il a révisé dix heures. T'y crois qu'à moitié, mais c'est plus que d'habitude.", model: "Prenons même cinq heures. Ça reste plus que d'habitude.", en: "Let's even say five hours. It's still more than usual." },
+      { id: 'f23-5', topic: 'collegues', fr: "Un collègue dit que la réunion a duré trois heures. Il exagère peut-être, mais c'est beaucoup trop long.", model: "Prenons même deux heures. Ça reste beaucoup trop long.", en: "Let's even say two hours. It's still far too long." },
+      { id: 'f23-6', topic: 'tech',      fr: "L'appli promet vingt heures de batterie. Tu doutes, mais c'est mieux que ton vieux téléphone.", model: "Prenons même dix heures. Ça reste mieux que mon vieux téléphone.", en: "Let's even say ten hours. It's still better than my old phone." },
+      { id: 'f23-7', topic: 'dieu',      fr: "Des historiens disent que la Bible a des dizaines d'auteurs. Pour toi, peu importe le nombre exact : c'est pas l'œuvre d'une seule main.", model: "Prenons même dix auteurs. Ça reste pas l'œuvre d'une seule main.", en: "Let's even say ten authors. It's still not the work of a single hand." }
     ] },
 
   { id: 'f24', textId: 14, sources: [14],
@@ -590,13 +590,13 @@ var FRAMES = [
             { name: 'V', pos: 'infinitif', note: "l'usage manqué" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f24-1', topic: 'argent',    fr: "Ton ami a dépensé cinq mille shekels dans un téléphone. Avec ça, il partait en vacances.", model: "Cinq mille shekels qui auraient pu payer des vacances." },
-      { id: 'f24-2', topic: 'collegues', fr: "Trois heures de réunion pour rien. Pendant ce temps-là, tu préparais tes cours.", model: "Trois heures qui auraient pu servir à préparer mes cours." },
-      { id: 'f24-3', topic: 'enfants',   fr: "La petite a passé l'après-midi sur la tablette. Il faisait beau, et le parc est juste à côté.", model: "Un après-midi qui aurait pu se passer au parc." },
-      { id: 'f24-4', topic: 'politique', fr: "Le gouvernement a lancé une énorme campagne de pub. Pour toi, cet argent devait aller aux hôpitaux.", model: "De l'argent qui aurait pu aller aux hôpitaux." },
-      { id: 'f24-5', topic: 'sante',     fr: "T'as payé un an d'abonnement à la salle de sport, et t'y es allé deux fois.", model: "Un abonnement qui aurait pu me remettre en forme." },
-      { id: 'f24-6', topic: 'films',     fr: "Deux cents millions pour un film raté. Pour toi, avec ça, on faisait vingt bons films.", model: "Deux cents millions qui auraient pu faire vingt bons films." },
-      { id: 'f24-7', topic: 'dieu',      fr: "Une église dépense des millions en or et en décoration. Pour toi, cet argent devait nourrir les pauvres.", model: "Des millions qui auraient pu nourrir les pauvres." }
+      { id: 'f24-1', topic: 'argent',    fr: "Ton ami a dépensé cinq mille shekels dans un téléphone. Avec ça, il partait en vacances.", model: "Cinq mille shekels qui auraient pu payer des vacances.", en: "Five thousand shekels that could have paid for a holiday." },
+      { id: 'f24-2', topic: 'collegues', fr: "Trois heures de réunion pour rien. Pendant ce temps-là, tu préparais tes cours.", model: "Trois heures qui auraient pu servir à préparer mes cours.", en: "Three hours that could have gone on preparing my lessons." },
+      { id: 'f24-3', topic: 'enfants',   fr: "La petite a passé l'après-midi sur la tablette. Il faisait beau, et le parc est juste à côté.", model: "Un après-midi qui aurait pu se passer au parc.", en: "An afternoon that could have been spent at the park." },
+      { id: 'f24-4', topic: 'politique', fr: "Le gouvernement a lancé une énorme campagne de pub. Pour toi, cet argent devait aller aux hôpitaux.", model: "De l'argent qui aurait pu aller aux hôpitaux.", en: "Money that could have gone to hospitals." },
+      { id: 'f24-5', topic: 'sante',     fr: "T'as payé un an d'abonnement à la salle de sport, et t'y es allé deux fois.", model: "Un abonnement qui aurait pu me remettre en forme.", en: "A membership that could have got me back in shape." },
+      { id: 'f24-6', topic: 'films',     fr: "Deux cents millions pour un film raté. Pour toi, avec ça, on faisait vingt bons films.", model: "Deux cents millions qui auraient pu faire vingt bons films.", en: "Two hundred million that could have made twenty good films." },
+      { id: 'f24-7', topic: 'dieu',      fr: "Une église dépense des millions en or et en décoration. Pour toi, cet argent devait nourrir les pauvres.", model: "Des millions qui auraient pu nourrir les pauvres.", en: "Millions that could have fed the poor." }
     ] },
 
   { id: 'f25', textId: 6, sources: [6],
@@ -610,13 +610,13 @@ var FRAMES = [
             { name: 'X', pos: 'attribut', note: "ce que tu serais aujourd'hui" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f25-1', topic: 'couple',    fr: "Ta femme a grandi avec une mère qui lui parlait français. C'est pour ça qu'elle le parle si bien.", model: "Si elle était née dans une famille sans français, elle le parlerait pas si bien." },
-      { id: 'f25-2', topic: 'cours',     fr: "Ton élève a commencé l'anglais à quatre ans. C'est pour ça qu'il est bilingue.", model: "S'il avait commencé l'anglais à dix ans, il serait pas bilingue." },
-      { id: 'f25-3', topic: 'sante',     fr: "Ton ami a jamais arrêté le sport. C'est pour ça qu'il est en forme à cinquante ans.", model: "S'il avait arrêté le sport à trente ans, il serait pas en forme à cinquante." },
-      { id: 'f25-4', topic: 'argent',    fr: "Un ami a acheté un appartement il y a quinze ans. Aujourd'hui, il est tranquille.", model: "S'il avait attendu quinze ans, il serait pas tranquille aujourd'hui." },
-      { id: 'f25-5', topic: 'collegues', fr: "Ton collègue a refusé une promotion il y a trois ans. Aujourd'hui, un autre est directeur à sa place.", model: "S'il avait accepté la promotion, il serait directeur à la place de l'autre." },
-      { id: 'f25-6', topic: 'films',     fr: "Un acteur a failli refuser le rôle qui l'a rendu célèbre.", model: "S'il avait refusé le rôle, il serait pas célèbre aujourd'hui." },
-      { id: 'f25-7', topic: 'israel',    fr: "Un ami français juge Israël depuis Paris. Toi, tu penses qu'à Sdérot, il verrait les choses autrement.", model: "Si t'étais né à Sdérot, tu verrais les choses autrement." }
+      { id: 'f25-1', topic: 'couple',    fr: "Ta femme a grandi avec une mère qui lui parlait français. C'est pour ça qu'elle le parle si bien.", model: "Si elle était née dans une famille sans français, elle le parlerait pas si bien.", en: "If she'd been born into a family with no French, she wouldn't speak it so well." },
+      { id: 'f25-2', topic: 'cours',     fr: "Ton élève a commencé l'anglais à quatre ans. C'est pour ça qu'il est bilingue.", model: "S'il avait commencé l'anglais à dix ans, il serait pas bilingue.", en: "If he'd started English at ten, he wouldn't be bilingual." },
+      { id: 'f25-3', topic: 'sante',     fr: "Ton ami a jamais arrêté le sport. C'est pour ça qu'il est en forme à cinquante ans.", model: "S'il avait arrêté le sport à trente ans, il serait pas en forme à cinquante.", en: "If he'd stopped sport at thirty, he wouldn't be fit at fifty." },
+      { id: 'f25-4', topic: 'argent',    fr: "Un ami a acheté un appartement il y a quinze ans. Aujourd'hui, il est tranquille.", model: "S'il avait attendu quinze ans, il serait pas tranquille aujourd'hui.", en: "If he'd waited fifteen years, he wouldn't be comfortable today." },
+      { id: 'f25-5', topic: 'collegues', fr: "Ton collègue a refusé une promotion il y a trois ans. Aujourd'hui, un autre est directeur à sa place.", model: "S'il avait accepté la promotion, il serait directeur à la place de l'autre.", en: "If he'd accepted the promotion, he'd be director instead of the other guy." },
+      { id: 'f25-6', topic: 'films',     fr: "Un acteur a failli refuser le rôle qui l'a rendu célèbre.", model: "S'il avait refusé le rôle, il serait pas célèbre aujourd'hui.", en: "If he'd turned the part down, he wouldn't be famous today." },
+      { id: 'f25-7', topic: 'israel',    fr: "Un ami français juge Israël depuis Paris. Toi, tu penses qu'à Sdérot, il verrait les choses autrement.", model: "Si t'étais né à Sdérot, tu verrais les choses autrement.", en: "If you'd been born in Sderot, you'd see things differently." }
     ] },
 
   // ── D. Rétablir les faits ───────────────────────────────
@@ -630,13 +630,13 @@ var FRAMES = [
     slots: [{ name: 'IL', pos: 'sujet', note: "il, elle, le ministre…" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f26-1', topic: 'couple',    fr: "Tout le monde répète qu'un invité a critiqué ton repas. Il a juste dit que c'était un peu salé.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'il a dit. Il a dit que c'était un peu salé." },
-      { id: 'f26-2', topic: 'cours',     fr: "Les élèves répètent que le prof de maths a annulé l'examen. Il l'a juste déplacé.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'il a dit. Il a juste déplacé l'examen." },
-      { id: 'f26-3', topic: 'collegues', fr: "Au bureau, on dit que le chef veut supprimer des postes. Il a parlé de réorganiser les équipes.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'il a dit. Il a parlé de réorganiser les équipes." },
-      { id: 'f26-4', topic: 'politique', fr: "Sur les réseaux, on lit que le ministre veut fermer des écoles. Il a parlé d'en regrouper deux.", model: "Ça, on l'a lu partout, mais c'est pas ce qu'il a dit. Il a parlé de regrouper deux écoles." },
-      { id: 'f26-5', topic: 'sante',     fr: "On lit partout qu'une étude dit que le café est mauvais pour le cœur. L'étude parlait de dix tasses par jour.", model: "Ça, on l'a lu partout, mais c'est pas ce qu'elle a dit. L'étude parlait de dix tasses par jour." },
-      { id: 'f26-6', topic: 'enfants',   fr: "Les parents de la classe disent que la maîtresse a puni la grande. Elle l'a juste changée de place.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'elle a fait. Elle a juste changé la grande de place." },
-      { id: 'f26-7', topic: 'dieu',      fr: "On lit partout qu'Einstein croyait en Dieu. Lui parlait du dieu de Spinoza, la nature, pas d'un dieu qui écoute les prières.", model: "Ça, on l'a lu partout, mais c'est pas ce qu'il a dit. Il parlait du dieu de Spinoza, la nature." }
+      { id: 'f26-1', topic: 'couple',    fr: "Tout le monde répète qu'un invité a critiqué ton repas. Il a juste dit que c'était un peu salé.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'il a dit. Il a dit que c'était un peu salé.", en: "We've heard that everywhere, but that's not what he said. He said it was a bit salty." },
+      { id: 'f26-2', topic: 'cours',     fr: "Les élèves répètent que le prof de maths a annulé l'examen. Il l'a juste déplacé.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'il a dit. Il a juste déplacé l'examen.", en: "We've heard that everywhere, but that's not what he said. He just moved the exam." },
+      { id: 'f26-3', topic: 'collegues', fr: "Au bureau, on dit que le chef veut supprimer des postes. Il a parlé de réorganiser les équipes.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'il a dit. Il a parlé de réorganiser les équipes.", en: "We've heard that everywhere, but that's not what he said. He talked about reorganising the teams." },
+      { id: 'f26-4', topic: 'politique', fr: "Sur les réseaux, on lit que le ministre veut fermer des écoles. Il a parlé d'en regrouper deux.", model: "Ça, on l'a lu partout, mais c'est pas ce qu'il a dit. Il a parlé de regrouper deux écoles.", en: "We've read that everywhere, but that's not what he said. He talked about merging two schools." },
+      { id: 'f26-5', topic: 'sante',     fr: "On lit partout qu'une étude dit que le café est mauvais pour le cœur. L'étude parlait de dix tasses par jour.", model: "Ça, on l'a lu partout, mais c'est pas ce qu'elle a dit. L'étude parlait de dix tasses par jour.", en: "We've read that everywhere, but that's not what it said. The study was about ten cups a day." },
+      { id: 'f26-6', topic: 'enfants',   fr: "Les parents de la classe disent que la maîtresse a puni la grande. Elle l'a juste changée de place.", model: "Ça, on l'a entendu partout, mais c'est pas ce qu'elle a fait. Elle a juste changé la grande de place.", en: "We've heard that everywhere, but that's not what she did. She just moved the eldest girl to another seat." },
+      { id: 'f26-7', topic: 'dieu',      fr: "On lit partout qu'Einstein croyait en Dieu. Lui parlait du dieu de Spinoza, la nature, pas d'un dieu qui écoute les prières.", model: "Ça, on l'a lu partout, mais c'est pas ce qu'il a dit. Il parlait du dieu de Spinoza, la nature.", en: "We've read that everywhere, but that's not what he said. He meant Spinoza's god: nature." }
     ] },
 
   { id: 'f27', textId: 17, sources: [17],
@@ -649,13 +649,13 @@ var FRAMES = [
     slots: [{ name: 'V', pos: 'verbe à la 1re personne', note: "" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f27-1', topic: 'enfants',   fr: "La maîtresse dit que la petite parle trop en classe. Ta femme croit que ça vient de toi.", model: "C'est pas moi qui la fais parler en classe." },
-      { id: 'f27-2', topic: 'couple',    fr: "Ta femme croit que t'as fini le chocolat. C'était le grand.", model: "C'est pas moi qui ai fini le chocolat. C'est le grand." },
-      { id: 'f27-3', topic: 'collegues', fr: "On t'accuse d'avoir mis la réunion le vendredi soir. C'était le chef.", model: "C'est pas moi qui ai mis la réunion le vendredi soir. C'est le chef." },
-      { id: 'f27-4', topic: 'cours',     fr: "Un parent te reproche la quantité de devoirs. Ils viennent de l'école, pas de toi.", model: "C'est pas moi qui donne ces devoirs. Ils viennent de l'école." },
-      { id: 'f27-5', topic: 'sante',     fr: "Ton ami te reproche de lui avoir interdit le sucre. C'est son médecin.", model: "C'est pas moi qui t'ai interdit le sucre. C'est ton médecin." },
-      { id: 'f27-6', topic: 'voisins',   fr: "Le voisin croit que t'as garé ta voiture devant son garage. C'était un livreur.", model: "C'est pas moi qui me suis garé devant ton garage. C'était un livreur." },
-      { id: 'f27-7', topic: 'dieu',      fr: "Un croyant te reproche de dire que la Bible se contredit. Pour toi, il suffit de la lire.", model: "C'est pas moi qui dis que la Bible se contredit. Il suffit de la lire." }
+      { id: 'f27-1', topic: 'enfants',   fr: "La maîtresse dit que la petite parle trop en classe. Ta femme croit que ça vient de toi.", model: "C'est pas moi qui la fais parler en classe.", en: "I'm not the one who makes her talk in class." },
+      { id: 'f27-2', topic: 'couple',    fr: "Ta femme croit que t'as fini le chocolat. C'était le grand.", model: "C'est pas moi qui ai fini le chocolat. C'est le grand.", en: "I'm not the one who finished the chocolate. It was the eldest boy." },
+      { id: 'f27-3', topic: 'collegues', fr: "On t'accuse d'avoir mis la réunion le vendredi soir. C'était le chef.", model: "C'est pas moi qui ai mis la réunion le vendredi soir. C'est le chef.", en: "I'm not the one who put the meeting on Friday evening. It was the boss." },
+      { id: 'f27-4', topic: 'cours',     fr: "Un parent te reproche la quantité de devoirs. Ils viennent de l'école, pas de toi.", model: "C'est pas moi qui donne ces devoirs. Ils viennent de l'école.", en: "I'm not the one who sets this homework. It comes from the school." },
+      { id: 'f27-5', topic: 'sante',     fr: "Ton ami te reproche de lui avoir interdit le sucre. C'est son médecin.", model: "C'est pas moi qui t'ai interdit le sucre. C'est ton médecin.", en: "I'm not the one who banned you from sugar. It was your doctor." },
+      { id: 'f27-6', topic: 'voisins',   fr: "Le voisin croit que t'as garé ta voiture devant son garage. C'était un livreur.", model: "C'est pas moi qui me suis garé devant ton garage. C'était un livreur.", en: "I'm not the one who parked in front of your garage. It was a delivery man." },
+      { id: 'f27-7', topic: 'dieu',      fr: "Un croyant te reproche de dire que la Bible se contredit. Pour toi, il suffit de la lire.", model: "C'est pas moi qui dis que la Bible se contredit. Il suffit de la lire.", en: "I'm not the one saying the Bible contradicts itself. You just have to read it." }
     ] },
 
   { id: 'f28', textId: 14, sources: [14],
@@ -668,16 +668,16 @@ var FRAMES = [
     slots: [{ name: 'N / que P', pos: 'nom ou proposition', note: "" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f28-1', topic: 'films',     fr: "T'as vu un documentaire sur les requins. Un détail t'est resté : ils existaient avant les arbres.", model: "Ce qui m'a frappé, c'est que les requins existaient avant les arbres." },
-      { id: 'f28-2', topic: 'enfants',   fr: "À la fête de l'école, l'enfant le plus timide de la classe a chanté tout seul.", model: "Ce qui m'a frappé, c'est que le plus timide a chanté tout seul." },
-      { id: 'f28-3', topic: 'cours',     fr: "À l'examen blanc, ton élève le plus faible a fini premier.", model: "Ce qui m'a frappé, c'est que mon élève le plus faible a fini premier." },
-      { id: 'f28-4', topic: 'voisins',   fr: "Au mariage des voisins, personne ne dansait avant minuit.", model: "Ce qui m'a frappé, c'est que personne ne dansait avant minuit." },
-      { id: 'f28-5', topic: 'collegues', fr: "À la réunion, le nouveau a pas dit un mot pendant deux heures.", model: "Ce qui m'a frappé, c'est qu'il a pas dit un mot pendant deux heures." },
-      { id: 'f28-6', topic: 'politique', fr: "Pendant le débat télé, aucun candidat n'a parlé du prix des logements.", model: "Ce qui m'a frappé, c'est qu'aucun candidat n'a parlé du prix des logements." },
-      { id: 'f28-7', topic: 'dieu',      fr: "En lisant la Genèse, t'as remarqué qu'il y a deux récits de la création, et qu'ils se contredisent.", model: "Ce qui m'a frappé, c'est qu'il y a deux récits de la création, et qu'ils se contredisent." }
+      { id: 'f28-1', topic: 'films',     fr: "T'as vu un documentaire sur les requins. Un détail t'est resté : ils existaient avant les arbres.", model: "Ce qui m'a frappé, c'est que les requins existaient avant les arbres.", en: "What struck me is that sharks existed before trees." },
+      { id: 'f28-2', topic: 'enfants',   fr: "À la fête de l'école, l'enfant le plus timide de la classe a chanté tout seul.", model: "Ce qui m'a frappé, c'est que le plus timide a chanté tout seul.", en: "What struck me is that the shyest one sang on his own." },
+      { id: 'f28-3', topic: 'cours',     fr: "À l'examen blanc, ton élève le plus faible a fini premier.", model: "Ce qui m'a frappé, c'est que mon élève le plus faible a fini premier.", en: "What struck me is that my weakest student came first." },
+      { id: 'f28-4', topic: 'voisins',   fr: "Au mariage des voisins, personne ne dansait avant minuit.", model: "Ce qui m'a frappé, c'est que personne ne dansait avant minuit.", en: "What struck me is that nobody danced before midnight." },
+      { id: 'f28-5', topic: 'collegues', fr: "À la réunion, le nouveau a pas dit un mot pendant deux heures.", model: "Ce qui m'a frappé, c'est qu'il a pas dit un mot pendant deux heures.", en: "What struck me is that he didn't say a word for two hours." },
+      { id: 'f28-6', topic: 'politique', fr: "Pendant le débat télé, aucun candidat n'a parlé du prix des logements.", model: "Ce qui m'a frappé, c'est qu'aucun candidat n'a parlé du prix des logements.", en: "What struck me is that no candidate talked about the price of housing." },
+      { id: 'f28-7', topic: 'dieu',      fr: "En lisant la Genèse, t'as remarqué qu'il y a deux récits de la création, et qu'ils se contredisent.", model: "Ce qui m'a frappé, c'est qu'il y a deux récits de la création, et qu'ils se contredisent.", en: "What struck me is that there are two creation stories, and they contradict each other." }
     ] },
 
-  { id: 'f29', textId: 17, sources: [17],
+  { id: 'f29', textId: 17, sources: [17, 10],
     form: "C'est là que {P}.",
     gloss: "That's where ___",
     gist: "Mark the exact point where you stop agreeing, or where it went wrong.",
@@ -687,13 +687,13 @@ var FRAMES = [
     slots: [{ name: 'P', pos: 'proposition', note: "" }],
     yield: 5, register: 'parlé courant',
     prompts: [
-      { id: 'f29-1', topic: 'enfants',   fr: "La petite était calme jusqu'au dessert. Puis on lui a refusé un deuxième gâteau.", model: "C'est là que la petite a explosé." },
-      { id: 'f29-2', topic: 'cours',     fr: "Ton élève suivait bien, jusqu'aux fractions.", model: "C'est là que j'ai perdu mon élève." },
-      { id: 'f29-3', topic: 'collegues', fr: "T'étais d'accord avec ton chef sur tout, jusqu'à ce qu'il parle de travailler le dimanche.", model: "C'est là que je lui ai dit non." },
-      { id: 'f29-4', topic: 'films',     fr: "Le film était génial, jusqu'à la dernière demi-heure.", model: "C'est là que le film a tout gâché." },
-      { id: 'f29-5', topic: 'sante',     fr: "Tu courais bien, jusqu'au jour où t'as voulu faire un marathon.", model: "C'est là que ça s'est gâté." },
-      { id: 'f29-6', topic: 'politique', fr: "T'étais d'accord avec le candidat, jusqu'à ce qu'il promette de tout régler en cent jours.", model: "C'est là que j'ai décroché." },
-      { id: 'f29-7', topic: 'dieu',      fr: "Ton ami croyant dit que Dieu est bon. Tu le suis, jusqu'à ce qu'il dise que la souffrance fait partie du plan.", model: "C'est là que j'arrête de te suivre." }
+      { id: 'f29-1', topic: 'enfants',   fr: "La petite était calme jusqu'au dessert. Puis on lui a refusé un deuxième gâteau.", model: "C'est là que la petite a explosé.", en: "That's when the little one exploded." },
+      { id: 'f29-2', topic: 'cours',     fr: "Ton élève suivait bien, jusqu'aux fractions.", model: "C'est là que j'ai perdu mon élève.", en: "That's where I lost my student." },
+      { id: 'f29-3', topic: 'collegues', fr: "T'étais d'accord avec ton chef sur tout, jusqu'à ce qu'il parle de travailler le dimanche.", model: "C'est là que je lui ai dit non.", en: "That's when I said no to him." },
+      { id: 'f29-4', topic: 'films',     fr: "Le film était génial, jusqu'à la dernière demi-heure.", model: "C'est là que le film a tout gâché.", en: "That's where the film ruined everything." },
+      { id: 'f29-5', topic: 'sante',     fr: "Tu courais bien, jusqu'au jour où t'as voulu faire un marathon.", model: "C'est là que ça s'est gâté.", en: "That's when things went wrong." },
+      { id: 'f29-6', topic: 'politique', fr: "T'étais d'accord avec le candidat, jusqu'à ce qu'il promette de tout régler en cent jours.", model: "C'est là que j'ai décroché.", en: "That's where I switched off." },
+      { id: 'f29-7', topic: 'dieu',      fr: "Ton ami croyant dit que Dieu est bon. Tu le suis, jusqu'à ce qu'il dise que la souffrance fait partie du plan.", model: "C'est là que j'arrête de te suivre.", en: "That's where I stop following you." }
     ] },
 
   { id: 'f30', textId: 8, sources: [8, 2],
@@ -706,13 +706,13 @@ var FRAMES = [
     slots: [{ name: 'P', pos: 'proposition', note: "la justification" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f30-1', topic: 'enfants',   fr: "Ta femme : « La grande a pas besoin d'aide pour ses devoirs. » Toi, tu penses qu'elle en a besoin.", model: "Si, justement. Elle en a besoin, même si elle veut pas le dire." },
-      { id: 'f30-2', topic: 'cours',     fr: "Un élève : « Ça sert à rien d'apprendre la grammaire. »", model: "Si, justement. La grammaire, ça sert à parler clairement." },
-      { id: 'f30-3', topic: 'sante',     fr: "Un ami : « T'as pas besoin de t'échauffer pour courir. »", model: "Si, justement. Sans échauffement, tu te blesses." },
-      { id: 'f30-4', topic: 'collegues', fr: "Un collègue : « Ça change rien de répondre aux mails le soir. »", model: "Si, justement. Répondre le soir, ça te coûte ton repos." },
-      { id: 'f30-5', topic: 'films',     fr: "Un ami : « Ce film a rien à voir avec le livre. » Toi, tu le trouves très fidèle.", model: "Si, justement. Il est très fidèle au livre." },
-      { id: 'f30-6', topic: 'couple',    fr: "Ta femme : « T'as pas oublié le dîner chez les voisins ? » Tu l'as oublié.", model: "Si, justement. Je l'avais oublié. On y va tout de suite ?" },
-      { id: 'f30-7', topic: 'israel',    fr: "Un ami : « Israël a jamais rien proposé aux Palestiniens. »", model: "Si, justement. Il y a eu des propositions en 2000 et en 2008." }
+      { id: 'f30-1', topic: 'enfants',   fr: "Ta femme : « La grande a pas besoin d'aide pour ses devoirs. » Toi, tu penses qu'elle en a besoin.", model: "Si, justement. Elle en a besoin, même si elle veut pas le dire.", en: "Yes she does, that's exactly it. She needs it, even if she won't say so." },
+      { id: 'f30-2', topic: 'cours',     fr: "Un élève : « Ça sert à rien d'apprendre la grammaire. »", model: "Si, justement. La grammaire, ça sert à parler clairement.", en: "Yes it is, that's exactly it. Grammar is for speaking clearly." },
+      { id: 'f30-3', topic: 'sante',     fr: "Un ami : « T'as pas besoin de t'échauffer pour courir. »", model: "Si, justement. Sans échauffement, tu te blesses.", en: "Yes it does, that's exactly it. Without a warm-up, you get injured." },
+      { id: 'f30-4', topic: 'collegues', fr: "Un collègue : « Ça change rien de répondre aux mails le soir. »", model: "Si, justement. Répondre le soir, ça te coûte ton repos.", en: "Yes it does, that's exactly it. Answering in the evening costs you your rest." },
+      { id: 'f30-5', topic: 'films',     fr: "Un ami : « Ce film a rien à voir avec le livre. » Toi, tu le trouves très fidèle.", model: "Si, justement. Il est très fidèle au livre.", en: "Yes it is, that's exactly it. It's very faithful to the book." },
+      { id: 'f30-6', topic: 'couple',    fr: "Ta femme : « T'as pas oublié le dîner chez les voisins ? » Tu l'as oublié.", model: "Si, justement. Je l'avais oublié. On y va tout de suite ?", en: "Yes, actually. I'd forgotten. Shall we go right now?" },
+      { id: 'f30-7', topic: 'israel',    fr: "Un ami : « Israël a jamais rien proposé aux Palestiniens. »", model: "Si, justement. Il y a eu des propositions en 2000 et en 2008.", en: "Yes there were, that's exactly it. There were proposals in 2000 and in 2008." }
     ] },
 
   { id: 'f31', textId: 8, sources: [8],
@@ -726,13 +726,13 @@ var FRAMES = [
             { name: 'V', pos: 'verbe', note: "gagner, construire, apprendre, travailler…" }],
     yield: 3, register: 'parlé courant',
     prompts: [
-      { id: 'f31-1', topic: 'enfants',   fr: "Ta femme pense que les enfants vont devenir polis tout seuls. Toi, tu penses que les bonnes habitudes, ça s'apprend.", model: "La politesse, elle tombe pas du ciel, on l'apprend." },
-      { id: 'f31-2', topic: 'cours',     fr: "Un parent croit que son fils est doué ou pas. Toi, tu crois au travail.", model: "Le talent, il tombe pas du ciel, on le travaille." },
-      { id: 'f31-3', topic: 'argent',    fr: "Un ami croit que les riches ont juste eu de la chance. Toi, tu penses que ça se construit.", model: "La réussite, elle tombe pas du ciel, on la construit." },
-      { id: 'f31-4', topic: 'sante',     fr: "Un ami admire ta forme. Toi, tu sais combien d'heures ça t'a coûté.", model: "La forme, elle tombe pas du ciel, on la fabrique." },
-      { id: 'f31-5', topic: 'couple',    fr: "Un ami pense qu'un bon couple, c'est de la chance. Toi, tu penses que ça se travaille.", model: "Un bon couple, il tombe pas du ciel, on le travaille." },
-      { id: 'f31-6', topic: 'collegues', fr: "Ton chef attend que l'équipe s'entende bien sans rien faire pour ça.", model: "Une bonne entente, elle tombe pas du ciel, on la construit." },
-      { id: 'f31-7', topic: 'israel',    fr: "Un ami pense que la paix va arriver toute seule avec le temps.", model: "La paix, elle tombe pas du ciel, on la fait." }
+      { id: 'f31-1', topic: 'enfants',   fr: "Ta femme pense que les enfants vont devenir polis tout seuls. Toi, tu penses que les bonnes habitudes, ça s'apprend.", model: "La politesse, elle tombe pas du ciel, on l'apprend.", en: "Good manners don't fall from the sky, you learn them." },
+      { id: 'f31-2', topic: 'cours',     fr: "Un parent croit que son fils est doué ou pas. Toi, tu crois au travail.", model: "Le talent, il tombe pas du ciel, on le travaille.", en: "Talent doesn't fall from the sky, you work at it." },
+      { id: 'f31-3', topic: 'argent',    fr: "Un ami croit que les riches ont juste eu de la chance. Toi, tu penses que ça se construit.", model: "La réussite, elle tombe pas du ciel, on la construit.", en: "Success doesn't fall from the sky, you build it." },
+      { id: 'f31-4', topic: 'sante',     fr: "Un ami admire ta forme. Toi, tu sais combien d'heures ça t'a coûté.", model: "La forme, elle tombe pas du ciel, on la fabrique.", en: "Fitness doesn't fall from the sky, you build it up." },
+      { id: 'f31-5', topic: 'couple',    fr: "Un ami pense qu'un bon couple, c'est de la chance. Toi, tu penses que ça se travaille.", model: "Un bon couple, il tombe pas du ciel, on le travaille.", en: "A good couple doesn't fall from the sky, you work at it." },
+      { id: 'f31-6', topic: 'collegues', fr: "Ton chef attend que l'équipe s'entende bien sans rien faire pour ça.", model: "Une bonne entente, elle tombe pas du ciel, on la construit.", en: "Getting on well doesn't fall from the sky, you build it." },
+      { id: 'f31-7', topic: 'israel',    fr: "Un ami pense que la paix va arriver toute seule avec le temps.", model: "La paix, elle tombe pas du ciel, on la fait.", en: "Peace doesn't fall from the sky, you make it." }
     ] },
 
   // ── E. Renvoyer la balle ────────────────────────────────
@@ -746,13 +746,13 @@ var FRAMES = [
     slots: [{ name: 'TU V', pos: 'proposition au tu', note: "présent ou conditionnel" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f32-1', topic: 'enfants',   fr: "Ta femme critique ta façon de coucher les enfants. Mets-la au défi de faire mieux.", model: "Tu les couches mieux, toi ?" },
-      { id: 'f32-2', topic: 'collegues', fr: "Un collègue critique ton planning. Demande-lui s'il ferait mieux avec deux personnes en moins.", model: "Tu ferais mieux avec deux personnes en moins, toi ?" },
-      { id: 'f32-3', topic: 'cours',     fr: "Un parent trouve tes méthodes trop strictes. Demande-lui s'il laisserait son fils sans devoirs avant le bac.", model: "Tu laisserais ton fils sans devoirs avant le bac, toi ?" },
-      { id: 'f32-4', topic: 'voisins',   fr: "Le voisin te reproche d'avoir appelé la police pour le bruit. Demande-lui s'il dormirait, avec la musique à trois heures.", model: "Tu dormirais avec de la musique à trois heures, toi ?" },
-      { id: 'f32-5', topic: 'argent',    fr: "Un ami dit que t'as payé ta maison trop cher. Demande-lui s'il aurait trouvé moins cher dans le quartier.", model: "Tu aurais trouvé moins cher dans le quartier, toi ?" },
-      { id: 'f32-6', topic: 'sante',     fr: "Ton ami se moque parce que t'as arrêté de courir. Demande-lui s'il court encore.", model: "Tu cours encore, toi ?" },
-      { id: 'f32-7', topic: 'dieu',      fr: "Un croyant dit qu'il suit tous les commandements. Demande-lui s'il respecte vraiment tout le Lévitique.", model: "Tu respectes vraiment tout le Lévitique, toi ?" }
+      { id: 'f32-1', topic: 'enfants',   fr: "Ta femme critique ta façon de coucher les enfants. Mets-la au défi de faire mieux.", model: "Tu les couches mieux, toi ?", en: "Do you get them to bed better, you?" },
+      { id: 'f32-2', topic: 'collegues', fr: "Un collègue critique ton planning. Demande-lui s'il ferait mieux avec deux personnes en moins.", model: "Tu ferais mieux avec deux personnes en moins, toi ?", en: "Would you do better with two fewer people, you?" },
+      { id: 'f32-3', topic: 'cours',     fr: "Un parent trouve tes méthodes trop strictes. Demande-lui s'il laisserait son fils sans devoirs avant le bac.", model: "Tu laisserais ton fils sans devoirs avant le bac, toi ?", en: "Would you leave your son with no homework before his exams, you?" },
+      { id: 'f32-4', topic: 'voisins',   fr: "Le voisin te reproche d'avoir appelé la police pour le bruit. Demande-lui s'il dormirait, avec la musique à trois heures.", model: "Tu dormirais avec de la musique à trois heures, toi ?", en: "Would you sleep with music at three in the morning, you?" },
+      { id: 'f32-5', topic: 'argent',    fr: "Un ami dit que t'as payé ta maison trop cher. Demande-lui s'il aurait trouvé moins cher dans le quartier.", model: "Tu aurais trouvé moins cher dans le quartier, toi ?", en: "Would you have found it cheaper in the neighbourhood, you?" },
+      { id: 'f32-6', topic: 'sante',     fr: "Ton ami se moque parce que t'as arrêté de courir. Demande-lui s'il court encore.", model: "Tu cours encore, toi ?", en: "Do you still run, you?" },
+      { id: 'f32-7', topic: 'dieu',      fr: "Un croyant dit qu'il suit tous les commandements. Demande-lui s'il respecte vraiment tout le Lévitique.", model: "Tu respectes vraiment tout le Lévitique, toi ?", en: "Do you really keep all of Leviticus, you?" }
     ] },
 
   { id: 'f33', textId: 8, sources: [8],
@@ -765,13 +765,13 @@ var FRAMES = [
     slots: [{ name: 'A', pos: 'nom', note: "" }, { name: 'B', pos: 'nom', note: "à + le → au, à + les → aux" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f33-1', topic: 'couple',    fr: "Des vacances tranquilles à la maison, ou un voyage stressant à l'étranger ?", model: "Je préfère des vacances tranquilles à la maison à un voyage stressant à l'étranger." },
-      { id: 'f33-2', topic: 'cours',     fr: "Un élève qui fait des erreurs mais qui essaie, ou un élève parfait qui ose rien dire ?", model: "Je préfère un élève qui fait des erreurs à un élève parfait qui ose rien dire." },
-      { id: 'f33-3', topic: 'films',     fr: "Un petit film simple qui touche, ou un film compliqué qui impressionne ?", model: "Je préfère un petit film simple qui touche à un film compliqué qui impressionne." },
-      { id: 'f33-4', topic: 'collegues', fr: "Un collègue franc qui te vexe, ou un collègue gentil qui te dit jamais rien ?", model: "Je préfère un collègue franc qui me vexe à un collègue gentil qui me dit rien." },
-      { id: 'f33-5', topic: 'enfants',   fr: "Des enfants qui se disputent mais se parlent, ou des enfants chacun sur son écran ?", model: "Je préfère des enfants qui se disputent à des enfants chacun sur son écran." },
-      { id: 'f33-6', topic: 'argent',    fr: "Une petite voiture payée, ou une grosse voiture à crédit ?", model: "Je préfère une petite voiture payée à une grosse voiture à crédit." },
-      { id: 'f33-7', topic: 'israel',    fr: "Un accord imparfait qui tient, ou une paix parfaite qui reste sur le papier ?", model: "Je préfère un accord imparfait qui tient à une paix parfaite sur le papier." }
+      { id: 'f33-1', topic: 'couple',    fr: "Des vacances tranquilles à la maison, ou un voyage stressant à l'étranger ?", model: "Je préfère des vacances tranquilles à la maison à un voyage stressant à l'étranger.", en: "I prefer a quiet holiday at home to a stressful trip abroad." },
+      { id: 'f33-2', topic: 'cours',     fr: "Un élève qui fait des erreurs mais qui essaie, ou un élève parfait qui ose rien dire ?", model: "Je préfère un élève qui fait des erreurs à un élève parfait qui ose rien dire.", en: "I prefer a student who makes mistakes to a perfect student who doesn't dare say anything." },
+      { id: 'f33-3', topic: 'films',     fr: "Un petit film simple qui touche, ou un film compliqué qui impressionne ?", model: "Je préfère un petit film simple qui touche à un film compliqué qui impressionne.", en: "I prefer a simple little film that moves you to a complicated film that impresses." },
+      { id: 'f33-4', topic: 'collegues', fr: "Un collègue franc qui te vexe, ou un collègue gentil qui te dit jamais rien ?", model: "Je préfère un collègue franc qui me vexe à un collègue gentil qui me dit rien.", en: "I prefer a frank colleague who upsets me to a nice colleague who tells me nothing." },
+      { id: 'f33-5', topic: 'enfants',   fr: "Des enfants qui se disputent mais se parlent, ou des enfants chacun sur son écran ?", model: "Je préfère des enfants qui se disputent à des enfants chacun sur son écran.", en: "I prefer kids who argue to kids each on their own screen." },
+      { id: 'f33-6', topic: 'argent',    fr: "Une petite voiture payée, ou une grosse voiture à crédit ?", model: "Je préfère une petite voiture payée à une grosse voiture à crédit.", en: "I prefer a small car that's paid for to a big car on credit." },
+      { id: 'f33-7', topic: 'israel',    fr: "Un accord imparfait qui tient, ou une paix parfaite qui reste sur le papier ?", model: "Je préfère un accord imparfait qui tient à une paix parfaite sur le papier.", en: "I prefer an imperfect agreement that holds to a perfect peace on paper." }
     ] },
 
   { id: 'f34', textId: 14, sources: [14],
@@ -784,13 +784,13 @@ var FRAMES = [
     slots: [{ name: 'X', pos: 'nom', note: "détaché en tête" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f34-1', topic: 'couple',    fr: "Ta femme te reproche le désordre dans le garage. Toi, tu veux parler de son placard.", model: "Le désordre, parlons-en. Ton placard, tu l'as vu ?" },
-      { id: 'f34-2', topic: 'cours',     fr: "Un parent parle des résultats de son fils. Toi, tu veux parler de ses absences.", model: "Les résultats, parlons-en. Mais d'abord, ses absences." },
-      { id: 'f34-3', topic: 'collegues', fr: "Un collègue parle de ton retard. Toi, tu veux parler de ses pauses café.", model: "Mon retard, parlons-en. Tes pauses café, parlons-en aussi." },
-      { id: 'f34-4', topic: 'enfants',   fr: "Ta femme dit que la petite mange mal. Toi, tu veux parler des bonbons chez ses grands-parents.", model: "Ce qu'elle mange, parlons-en. Les bonbons chez ses grands-parents, aussi." },
-      { id: 'f34-5', topic: 'politique', fr: "Un ami parle des promesses de campagne. Toi, tu veux parler de ce qui a vraiment été fait.", model: "Les promesses, parlons-en. Ce qui a vraiment été fait, parlons-en aussi." },
-      { id: 'f34-6', topic: 'sante',     fr: "Ton ami te parle de ton poids. Toi, tu veux parler de ses cigarettes.", model: "Mon poids, parlons-en. Tes cigarettes, parlons-en aussi." },
-      { id: 'f34-7', topic: 'dieu',      fr: "Un ami parle de la morale religieuse. Toi, tu veux parler de ce que la Bible dit sur l'esclavage.", model: "La morale religieuse, parlons-en. Ce que la Bible dit sur l'esclavage, parlons-en aussi." }
+      { id: 'f34-1', topic: 'couple',    fr: "Ta femme te reproche le désordre dans le garage. Toi, tu veux parler de son placard.", model: "Le désordre, parlons-en. Ton placard, tu l'as vu ?", en: "The mess, let's talk about it. Have you seen your wardrobe?" },
+      { id: 'f34-2', topic: 'cours',     fr: "Un parent parle des résultats de son fils. Toi, tu veux parler de ses absences.", model: "Les résultats, parlons-en. Mais d'abord, ses absences.", en: "The results, let's talk about them. But first, his absences." },
+      { id: 'f34-3', topic: 'collegues', fr: "Un collègue parle de ton retard. Toi, tu veux parler de ses pauses café.", model: "Mon retard, parlons-en. Tes pauses café, parlons-en aussi.", en: "My being late, let's talk about it. Your coffee breaks, let's talk about those too." },
+      { id: 'f34-4', topic: 'enfants',   fr: "Ta femme dit que la petite mange mal. Toi, tu veux parler des bonbons chez ses grands-parents.", model: "Ce qu'elle mange, parlons-en. Les bonbons chez ses grands-parents, aussi.", en: "What she eats, let's talk about it. The sweets at her grandparents', too." },
+      { id: 'f34-5', topic: 'politique', fr: "Un ami parle des promesses de campagne. Toi, tu veux parler de ce qui a vraiment été fait.", model: "Les promesses, parlons-en. Ce qui a vraiment été fait, parlons-en aussi.", en: "The promises, let's talk about them. What was really done, let's talk about that too." },
+      { id: 'f34-6', topic: 'sante',     fr: "Ton ami te parle de ton poids. Toi, tu veux parler de ses cigarettes.", model: "Mon poids, parlons-en. Tes cigarettes, parlons-en aussi.", en: "My weight, let's talk about it. Your cigarettes, let's talk about those too." },
+      { id: 'f34-7', topic: 'dieu',      fr: "Un ami parle de la morale religieuse. Toi, tu veux parler de ce que la Bible dit sur l'esclavage.", model: "La morale religieuse, parlons-en. Ce que la Bible dit sur l'esclavage, parlons-en aussi.", en: "Religious morality, let's talk about it. What the Bible says about slavery, let's talk about that too." }
     ] },
 
   { id: 'f35', textId: 17, sources: [17],
@@ -804,13 +804,13 @@ var FRAMES = [
             { name: 'B', pos: "infinitif / que + subjonctif", note: "" }],
     yield: 3, register: 'parlé courant',
     prompts: [
-      { id: 'f35-1', topic: 'couple',    fr: "Ta femme et toi, vous vous disputez sur qui avait raison pour les vacances. Toi, tu veux juste trouver une solution.", model: "Tu veux avoir raison, ou tu veux trouver une solution ?" },
-      { id: 'f35-2', topic: 'enfants',   fr: "Un ami se dispute avec sa fille sur ses notes. Pour toi, il doit choisir : l'aider ou la juger.", model: "Tu veux l'aider, ou tu veux la juger ?" },
-      { id: 'f35-3', topic: 'collegues', fr: "Un collègue cherche le coupable au lieu de régler le problème.", model: "Tu veux trouver le coupable, ou tu veux régler le problème ?" },
-      { id: 'f35-4', topic: 'cours',     fr: "Un élève veut juste la bonne note, pas comprendre.", model: "Tu veux la bonne note, ou tu veux comprendre ?" },
-      { id: 'f35-5', topic: 'voisins',   fr: "Le voisin veut porter plainte au lieu de venir te parler.", model: "Tu veux porter plainte, ou tu veux qu'on en parle ?" },
-      { id: 'f35-6', topic: 'sante',     fr: "Ton ami veut maigrir vite, mais il refuse de changer quoi que ce soit.", model: "Tu veux maigrir vite, ou tu veux vraiment changer quelque chose ?" },
-      { id: 'f35-7', topic: 'dieu',      fr: "Un ami croyant veut juste te faire admettre que t'as pas de preuve, au lieu de discuter vraiment.", model: "Tu veux me faire admettre que j'ai pas de preuve, ou tu veux discuter vraiment ?" }
+      { id: 'f35-1', topic: 'couple',    fr: "Ta femme et toi, vous vous disputez sur qui avait raison pour les vacances. Toi, tu veux juste trouver une solution.", model: "Tu veux avoir raison, ou tu veux trouver une solution ?", en: "Do you want to be right, or do you want to find a solution?" },
+      { id: 'f35-2', topic: 'enfants',   fr: "Un ami se dispute avec sa fille sur ses notes. Pour toi, il doit choisir : l'aider ou la juger.", model: "Tu veux l'aider, ou tu veux la juger ?", en: "Do you want to help her, or do you want to judge her?" },
+      { id: 'f35-3', topic: 'collegues', fr: "Un collègue cherche le coupable au lieu de régler le problème.", model: "Tu veux trouver le coupable, ou tu veux régler le problème ?", en: "Do you want to find who's to blame, or do you want to fix the problem?" },
+      { id: 'f35-4', topic: 'cours',     fr: "Un élève veut juste la bonne note, pas comprendre.", model: "Tu veux la bonne note, ou tu veux comprendre ?", en: "Do you want the good mark, or do you want to understand?" },
+      { id: 'f35-5', topic: 'voisins',   fr: "Le voisin veut porter plainte au lieu de venir te parler.", model: "Tu veux porter plainte, ou tu veux qu'on en parle ?", en: "Do you want to file a complaint, or do you want us to talk about it?" },
+      { id: 'f35-6', topic: 'sante',     fr: "Ton ami veut maigrir vite, mais il refuse de changer quoi que ce soit.", model: "Tu veux maigrir vite, ou tu veux vraiment changer quelque chose ?", en: "Do you want to lose weight fast, or do you really want to change something?" },
+      { id: 'f35-7', topic: 'dieu',      fr: "Un ami croyant veut juste te faire admettre que t'as pas de preuve, au lieu de discuter vraiment.", model: "Tu veux me faire admettre que j'ai pas de preuve, ou tu veux discuter vraiment ?", en: "Do you want to make me admit I have no proof, or do you want a real discussion?" }
     ] },
 
   { id: 'f36', textId: 6, sources: [6, 14],
@@ -823,12 +823,237 @@ var FRAMES = [
     slots: [{ name: 'P', pos: 'proposition', note: "le point plus fort" }],
     yield: 3, register: 'parlé courant',
     prompts: [
-      { id: 'f36-1', topic: 'enfants',   fr: "Tu penses que les écrans fatiguent les enfants, et même qu'ils les rendent tristes.", model: "Je vais même plus loin : ils les rendent tristes." },
-      { id: 'f36-2', topic: 'cours',     fr: "Tu penses que les devoirs servent pas à grand-chose, et même qu'ils dégoûtent certains élèves.", model: "Je vais même plus loin : ils dégoûtent certains élèves." },
-      { id: 'f36-3', topic: 'sante',     fr: "Tu penses que le sport aide à dormir, et même que ça marche mieux qu'un somnifère.", model: "Je vais même plus loin : ça marche mieux qu'un somnifère." },
-      { id: 'f36-4', topic: 'collegues', fr: "Tu penses que les réunions sont trop longues, et même que la moitié pourraient être un mail.", model: "Je vais même plus loin : la moitié pourraient être un mail." },
-      { id: 'f36-5', topic: 'films',     fr: "Tu penses que le remake est moins bon, et même qu'il abîme l'original.", model: "Je vais même plus loin : il abîme l'original." },
-      { id: 'f36-6', topic: 'tech',      fr: "Tu penses que les enfants ont pas besoin de téléphone à dix ans, et même que les adultes s'en servent trop.", model: "Je vais même plus loin : les adultes s'en servent trop." },
-      { id: 'f36-7', topic: 'israel',    fr: "Tu penses que le Hamas a rien fait pour Gaza, et même qu'il a détourné le ciment pour ses tunnels.", model: "Je vais même plus loin : il a détourné le ciment pour ses tunnels." }
+      { id: 'f36-1', topic: 'enfants',   fr: "Tu penses que les écrans fatiguent les enfants, et même qu'ils les rendent tristes.", model: "Je vais même plus loin : ils les rendent tristes.", en: "I'll go even further: they (screens) make them sad." },
+      { id: 'f36-2', topic: 'cours',     fr: "Tu penses que les devoirs servent pas à grand-chose, et même qu'ils dégoûtent certains élèves.", model: "Je vais même plus loin : ils dégoûtent certains élèves.", en: "I'll go even further: it (homework) puts some students off." },
+      { id: 'f36-3', topic: 'sante',     fr: "Tu penses que le sport aide à dormir, et même que ça marche mieux qu'un somnifère.", model: "Je vais même plus loin : ça marche mieux qu'un somnifère.", en: "I'll go even further: it (sport) works better than a sleeping pill." },
+      { id: 'f36-4', topic: 'collegues', fr: "Tu penses que les réunions sont trop longues, et même que la moitié pourraient être un mail.", model: "Je vais même plus loin : la moitié pourraient être un mail.", en: "I'll go even further: half of them (meetings) could be an email." },
+      { id: 'f36-5', topic: 'films',     fr: "Tu penses que le remake est moins bon, et même qu'il abîme l'original.", model: "Je vais même plus loin : il abîme l'original.", en: "I'll go even further: it (the remake) spoils the original." },
+      { id: 'f36-6', topic: 'tech',      fr: "Tu penses que les enfants ont pas besoin de téléphone à dix ans, et même que les adultes s'en servent trop.", model: "Je vais même plus loin : les adultes s'en servent trop.", en: "I'll go even further: adults use them too much." },
+      { id: 'f36-7', topic: 'israel',    fr: "Tu penses que le Hamas a rien fait pour Gaza, et même qu'il a détourné le ciment pour ses tunnels.", model: "Je vais même plus loin : il a détourné le ciment pour ses tunnels.", en: "I'll go even further: it (Hamas) diverted the cement for its tunnels." }
     ] }
 ];
+
+// The lesson path: each text cut into speakable sentences, in order, with English.
+// l = index of the TEXTS line it comes from (the sentences of a line, joined with
+// spaces, give the line back exactly — data-test.js checks). f = the frame this
+// sentence carries: the lesson then shows one of that frame's prompt models as a
+// variation (same structure, other content).
+var SENTENCES = {
+  2: [
+    { l: 0, fr: "Bon, je vais te dire pourquoi l'histoire du créateur, ça me convainc pas.", en: "OK, I'm going to tell you why the creator story doesn't convince me." },
+    { l: 1, fr: "Ton argument, si je le prends au sérieux, c'est : un truc aussi compliqué que l'univers, quelqu'un l'a forcément conçu.", en: "Your argument, if I take it seriously, is: something as complicated as the universe, someone must have designed it." },
+    { l: 1, fr: "D'accord. Mais du coup, ce quelqu'un, il est comment ?", en: "Fine. But then, this someone, what's he like?" },
+    { l: 1, fr: "Encore plus compliqué, forcément.", en: "Even more complicated, necessarily." },
+    { l: 1, fr: "Pour fabriquer un univers, faut une intelligence énorme.", en: "To make a universe, you need a huge intelligence." },
+    { l: 1, fr: "Et une intelligence énorme, ça sort pas de nulle part, si ?", en: "And a huge intelligence doesn't come out of nowhere, does it?" },
+    { l: 2, fr: "Alors là, tu vas me dire : « Ah non, Dieu, lui, il a pas besoin de cause. Il a toujours existé. »", en: "And here you'll tell me: 'Oh no, God doesn't need a cause. He has always existed.'" },
+    { l: 2, fr: "Attends. Pourquoi lui, il aurait le droit, et pas l'univers ?", en: "Wait. Why would he get a pass, and not the universe?", f: 'f18' },
+    { l: 2, fr: "T'as pas répondu à la question.", en: "You haven't answered the question." },
+    { l: 2, fr: "T'as juste… enfin, t'as repoussé le problème d'un cran, et après tu fais comme s'il avait disparu.", en: "You've just… well, you've pushed the problem back one step, and then you act as if it had disappeared.", f: 'f17' },
+    { l: 3, fr: "Je te l'accorde, d'où vient l'univers, on sait pas.", en: "I'll grant you that: where the universe comes from, we don't know.", f: 'f02' },
+    { l: 3, fr: "Personne ne sait, moi non plus.", en: "Nobody knows, me neither." },
+    { l: 3, fr: "Mais dire « je sais pas », c'est honnête.", en: "But saying 'I don't know' is honest." },
+    { l: 3, fr: "Dire « c'est Dieu », c'est rajouter un mystère encore plus gros par-dessus le premier.", en: "Saying 'it's God' is adding an even bigger mystery on top of the first one." },
+    { l: 4, fr: "Et plus on y réfléchit, moins ça tient debout.", en: "And the more you think about it, the less it holds up.", f: 'f15' },
+    { l: 4, fr: "Une explication, normalement, ça rend les choses plus simples.", en: "An explanation normally makes things simpler." },
+    { l: 4, fr: "Là, on explique un truc compliqué par un truc encore plus compliqué.", en: "Here, you explain something complicated with something even more complicated." },
+    { l: 4, fr: "C'est l'inverse d'une explication, quoi.", en: "It's the opposite of an explanation, really." },
+    { l: 5, fr: "Et puis regarde ce qui s'est passé avec la vie.", en: "And look what happened with life." },
+    { l: 5, fr: "Avant Darwin, tout le monde était sûr qu'il fallait un concepteur.", en: "Before Darwin, everyone was sure you needed a designer." },
+    { l: 5, fr: "Un œil, une aile, ça pouvait pas se faire tout seul.", en: "An eye, a wing, that couldn't happen on its own." },
+    { l: 5, fr: "Et en fait, si.", en: "And actually, it could.", f: 'f30' },
+    { l: 5, fr: "Petit à petit, sans plan, sans personne derrière.", en: "Little by little, with no plan, with nobody behind it." },
+    { l: 5, fr: "Alors je dis pas qu'on sait tout sur l'univers, hein. Je dis juste qu'on s'est déjà trompés une fois, exactement de la même manière.", en: "So I'm not saying we know everything about the universe. I'm just saying we've already been wrong once, in exactly the same way.", f: 'f04' },
+    { l: 5, fr: "Tu me suis ?", en: "Are you with me?" }
+  ],
+  6: [
+    { l: 0, fr: "Tiens, y a un truc qui me travaille depuis longtemps.", en: "Hey, there's something that's been bugging me for a long time." },
+    { l: 0, fr: "Si t'étais né à Karachi, tu serais quoi ? Musulman.", en: "If you'd been born in Karachi, what would you be? Muslim.", f: 'f25' },
+    { l: 0, fr: "En Alabama ? Baptiste, probablement. À Bénarès, hindou.", en: "In Alabama? Baptist, probably. In Benares, Hindu." },
+    { l: 0, fr: "Et dans ma famille à moi, juif, évidemment.", en: "And in my own family, Jewish, obviously." },
+    { l: 1, fr: "Du coup, la religion, c'est moins une question de vérité qu'une question d'adresse.", en: "So religion is less a question of truth than a question of address.", f: 'f09' },
+    { l: 1, fr: "Non mais réfléchis.", en: "No, seriously, think about it." },
+    { l: 1, fr: "L'immense majorité des gens gardent la religion de leurs parents.", en: "The vast majority of people keep their parents' religion." },
+    { l: 1, fr: "Si c'était une découverte, chacun la ferait de son côté, et tout le monde tomberait sur la même.", en: "If it were a discovery, everyone would make it on their own, and everyone would land on the same one." },
+    { l: 1, fr: "Comme en maths, quoi.", en: "Like in maths, you know." },
+    { l: 1, fr: "Personne ne te dit : « Chez nous, deux et deux font cinq. »", en: "Nobody tells you: 'Where we come from, two and two make five.'" },
+    { l: 2, fr: "Alors oui, je vois venir ta réponse : « Ça prouve rien, il y en a peut-être une qui est vraie. »", en: "So yes, I can see your answer coming: 'That proves nothing, maybe one of them is true.'", f: 'f06' },
+    { l: 2, fr: "C'est vrai, je te l'accorde. Mais regarde le problème que ça pose.", en: "That's true, I'll grant you that. But look at the problem it raises.", f: 'f02' },
+    { l: 2, fr: "Chacun est sûr d'être né dans la bonne.", en: "Everyone is sure they were born into the right one." },
+    { l: 2, fr: "Tout le monde aurait tiré le bon numéro ? C'est un peu gros, non ?", en: "Everyone supposedly drew the winning number? That's a bit much, isn't it?", f: 'f20' },
+    { l: 3, fr: "Et je vais plus loin.", en: "And I'll go further.", f: 'f36' },
+    { l: 3, fr: "Si Dieu voulait vraiment qu'on le connaisse, pourquoi il laisserait ça au hasard de la naissance ?", en: "If God really wanted us to know him, why would he leave it to the accident of birth?", f: 'f19' },
+    { l: 3, fr: "Un père qui veut que ses enfants le connaissent, il leur parle à tous.", en: "A father who wants his children to know him talks to all of them." },
+    { l: 3, fr: "Pas seulement à ceux qui habitent du bon côté de la frontière.", en: "Not just to the ones who live on the right side of the border." },
+    { l: 4, fr: "Enfin, bref.", en: "Anyway." },
+    { l: 4, fr: "Quand une croyance suit la carte plutôt que les preuves, moi, ça me met la puce à l'oreille. Pas toi ?", en: "When a belief follows the map rather than the evidence, that makes me suspicious. Doesn't it make you suspicious?" }
+  ],
+  8: [
+    { l: 0, fr: "Attends, tu peux pas prouver que Dieu existe pas. Avoue.", en: "Come on, you can't prove that God doesn't exist. Admit it." },
+    { l: 1, fr: "Non, je peux pas. Mais en fait, c'est pas à moi de le prouver.", en: "No, I can't. But actually, it's not up to me to prove it.", f: 'f21' },
+    { l: 1, fr: "Si je te dis qu'il y a une théière qui tourne autour de Mars,", en: "If I tell you there's a teapot going round Mars," },
+    { l: 1, fr: "tu vas pas me demander de prouver qu'elle y est pas.", en: "you won't ask me to prove it isn't there." },
+    { l: 1, fr: "Tu vas me dire : « Montre-la-moi. »", en: "You'll say: 'Show it to me.'" },
+    { l: 2, fr: "Ouais, enfin, comparer Dieu à une théière…", en: "Yeah, well, comparing God to a teapot…" },
+    { l: 3, fr: "Je sais, c'est un peu gros, je te l'accorde. N'empêche, le principe tient.", en: "I know, it's a bit much, I'll grant you that. Still, the principle holds.", f: 'f02' },
+    { l: 3, fr: "C'est celui qui affirme qui doit montrer quelque chose.", en: "It's the one making the claim who has to show something." },
+    { l: 3, fr: "Et moi, franchement, j'ai jamais rien vu.", en: "And me, honestly, I've never seen anything." },
+    { l: 4, fr: "Rien vu ? Mais regarde autour de toi ! Tout ça, ça s'est pas fait tout seul.", en: "Nothing? But look around you! All this didn't happen on its own." },
+    { l: 5, fr: "Alors là, tu vois ce que tu fais ?", en: "Right there, do you see what you're doing?" },
+    { l: 5, fr: "Tu pars de « on sait pas comment ça s'est fait », et tu arrives direct à « donc c'est Dieu ».", en: "You start from 'we don't know how it happened', and you jump straight to 'so it's God'.", f: 'f16' },
+    { l: 5, fr: "Entre les deux, il manque… enfin, il manque tout, quoi.", en: "In between, there's missing… well, everything's missing." },
+    { l: 5, fr: "Moi, quand je sais pas, je dis que je sais pas.", en: "Me, when I don't know, I say I don't know." },
+    { l: 6, fr: "Bon, d'accord. Mais sans Dieu, la vie, elle a aucun sens.", en: "OK, fine. But without God, life has no meaning." },
+    { l: 7, fr: "Elle a le sens que tu lui donnes.", en: "It has the meaning you give it." },
+    { l: 7, fr: "Écoute, quand ta fille te fait un dessin, ça te touche, non ?", en: "Listen, when your daughter makes you a drawing, it moves you, right?" },
+    { l: 7, fr: "Personne ne te l'a commandé d'en haut, et pourtant ça compte.", en: "Nobody ordered it from above, and yet it matters." },
+    { l: 8, fr: "Ça n'a rien à voir.", en: "That's got nothing to do with it." },
+    { l: 9, fr: "Si, justement.", en: "Yes it does, that's exactly it.", f: 'f30' },
+    { l: 9, fr: "Le sens, il tombe pas du ciel, on le fabrique.", en: "Meaning doesn't fall from the sky, we make it.", f: 'f31' },
+    { l: 9, fr: "Et je vais te dire, un sens qu'on te livre tout fait,", en: "And let me tell you, a meaning that's delivered to you ready-made" },
+    { l: 9, fr: "il vaut moins qu'un sens que tu t'es construit toi-même.", en: "is worth less than a meaning you've built yourself." },
+    { l: 10, fr: "Et la mort, alors ? T'as pas peur ?", en: "And death, then? Aren't you scared?" },
+    { l: 11, fr: "Si, bien sûr que si. Je vais pas faire le malin.", en: "Yes, of course I am. I'm not going to act tough.", f: 'f30' },
+    { l: 11, fr: "Mais réfléchis deux secondes.", en: "But think for two seconds." },
+    { l: 11, fr: "Avant ta naissance, t'étais pas là pendant des milliards d'années, et ça t'a pas dérangé.", en: "Before you were born, you weren't there for billions of years, and it didn't bother you." },
+    { l: 11, fr: "Après, ça sera pareil.", en: "After, it'll be the same." },
+    { l: 12, fr: "Dit comme ça, c'est glacial.", en: "Put like that, it's chilling." },
+    { l: 13, fr: "C'est glacial, oui. Mais c'est pas parce que c'est glacial que c'est faux.", en: "It's chilling, yes. But just because it's chilling doesn't mean it's false.", f: 'f05' },
+    { l: 13, fr: "Je préfère une vérité qui me plaît pas à une histoire qui me rassure.", en: "I prefer a truth I don't like to a story that reassures me.", f: 'f33' },
+    { l: 14, fr: "Et si t'as tort ? Toi, tu risques gros. Moi, si j'ai tort, je perds rien.", en: "And if you're wrong? You're risking a lot. Me, if I'm wrong, I lose nothing." },
+    { l: 15, fr: "Ah, le pari de Pascal. Sauf que t'as parié sur quel dieu ?", en: "Ah, Pascal's wager. Except, which god did you bet on?", f: 'f03' },
+    { l: 15, fr: "Parce que si c'est pas le bon, tu perds aussi.", en: "Because if it's not the right one, you lose too." },
+    { l: 15, fr: "Y en a des milliers, tu sais.", en: "There are thousands of them, you know." },
+    { l: 16, fr: "Non mais c'est pas une question de preuves. C'est la foi.", en: "No, but it's not a question of proof. It's faith." },
+    { l: 17, fr: "Voilà, on y est.", en: "There we go, that's the point." },
+    { l: 17, fr: "Si rien au monde peut te faire changer d'avis, c'est plus vraiment un raisonnement, c'est un choix.", en: "If nothing in the world can make you change your mind, it's not really reasoning any more, it's a choice." },
+    { l: 17, fr: "Et je le respecte, hein, sincèrement. Mais faut pas l'appeler une preuve.", en: "And I respect it, really, sincerely. But you mustn't call it proof." },
+    { l: 18, fr: "T'es dur, quand même.", en: "You're harsh, though." },
+    { l: 19, fr: "Non, je suis direct, c'est pas pareil.", en: "No, I'm direct, it's not the same." },
+    { l: 19, fr: "Et puis on est amis, non ?", en: "And anyway, we're friends, right?" },
+    { l: 19, fr: "Plus on est honnêtes, plus ça vaut le coup d'en parler.", en: "The more honest we are, the more it's worth talking about.", f: 'f15' }
+  ],
+  10: [
+    { l: 0, fr: "Je vais commencer par ton argument dans sa version la plus forte,", en: "I'll start with your argument in its strongest version," },
+    { l: 0, fr: "parce que c'est celle-là que je veux affronter.", en: "because that's the one I want to take on." },
+    { l: 1, fr: "Ta version, c'est : le sionisme vient d'Europe.", en: "Your version is: Zionism comes from Europe." },
+    { l: 1, fr: "Il a organisé l'immigration, acheté des terres,", en: "It organised immigration, bought land," },
+    { l: 1, fr: "et en 1948, à peu près sept cent mille Palestiniens sont partis ou ont été chassés.", en: "and in 1948, about seven hundred thousand Palestinians left or were driven out." },
+    { l: 1, fr: "Et tu sais quoi ? Tout ça, c'est vrai.", en: "And you know what? All that is true." },
+    { l: 1, fr: "Herzl lui-même parlait de colonisation, à l'époque le mot choquait personne.", en: "Herzl himself talked about colonisation; at the time the word shocked nobody." },
+    { l: 1, fr: "Et la Nakba, les gens qui ont perdu leur maison, je la nie pas.", en: "And the Nakba, the people who lost their homes, I don't deny it." },
+    { l: 2, fr: "Alors oui, le mouvement avait des traits coloniaux, je te l'accorde. Mais le mot « colonialisme », il dit autre chose.", en: "So yes, the movement had colonial features, I'll grant you that. But the word 'colonialism' means something else.", f: 'f02' },
+    { l: 2, fr: "Il décrit un pays qui envoie ses gens ailleurs, pour son compte à lui.", en: "It describes a country that sends its people elsewhere, for its own benefit." },
+    { l: 2, fr: "Un colon, il a une métropole derrière lui.", en: "A colonist has a mother country behind him." },
+    { l: 2, fr: "Les Français d'Algérie, ils avaient la France.", en: "The French in Algeria had France." },
+    { l: 3, fr: "Les Juifs qui sont arrivés, eux, ils avaient pas de métropole.", en: "The Jews who arrived had no mother country." },
+    { l: 3, fr: "Ils venaient de pays qui voulaient plus du tout d'eux, ou pire.", en: "They came from countries that didn't want them at all any more, or worse." },
+    { l: 3, fr: "Et ils arrivaient pas n'importe où.", en: "And they weren't arriving just anywhere." },
+    { l: 3, fr: "Il y a toujours eu des Juifs sur cette terre, c'est là que tout commence pour eux.", en: "There have always been Jews on this land; it's where everything begins for them.", f: 'f29' },
+    { l: 4, fr: "Et y a un truc qu'on dit presque jamais en France.", en: "And there's something people almost never say in France." },
+    { l: 4, fr: "Après 1948, environ huit cent cinquante mille Juifs ont quitté les pays arabes et musulmans,", en: "After 1948, about eight hundred and fifty thousand Jews left Arab and Muslim countries," },
+    { l: 4, fr: "ou en ont été expulsés. L'Irak, le Yémen, la Libye, le Maroc.", en: "or were expelled from them. Iraq, Yemen, Libya, Morocco." },
+    { l: 4, fr: "Aujourd'hui, à peu près la moitié des Juifs israéliens viennent de ces familles-là.", en: "Today, about half of Israeli Jews come from those families." },
+    { l: 5, fr: "Tu vas me dire : « Ça efface pas 1948. »", en: "You'll tell me: 'That doesn't erase 1948.'" },
+    { l: 5, fr: "Non, t'as raison, ça efface rien. Deux injustices s'annulent pas.", en: "No, you're right, it erases nothing. Two injustices don't cancel each other out." },
+    { l: 5, fr: "Mais ça veut dire qu'on parle pas d'Européens installés chez les autres. On parle en grande partie de réfugiés, des deux côtés.", en: "But it means we're not talking about Europeans settled in other people's land. We're talking largely about refugees, on both sides.", f: 'f08' },
+    { l: 6, fr: "Donc la vraie question, c'est pas « est-ce qu'il y a eu des injustices ? ». Il y en a eu.", en: "So the real question isn't 'were there injustices?'. There were.", f: 'f07' },
+    { l: 6, fr: "C'est : un peuple qui revient là où il a ses racines,", en: "It's: a people coming back to where its roots are," },
+    { l: 6, fr: "c'est la même chose qu'un empire qui conquiert un pays lointain ?", en: "is that the same thing as an empire conquering a faraway country?" },
+    { l: 6, fr: "Moi, je pense que non.", en: "I don't think so." },
+    { l: 6, fr: "Et si on met le même mot sur les deux, on comprend plus aucune des deux histoires.", en: "And if you put the same word on both, you no longer understand either story." }
+  ],
+  14: [
+    { l: 0, fr: "On me dit souvent : « Vous auriez pu faire autrement. »", en: "People often tell me: 'You could have done it differently.'" },
+    { l: 0, fr: "D'accord. Mais autrement comment ?", en: "OK. But differently how?" },
+    { l: 0, fr: "Parce que le choix, il a jamais été entre la guerre et la paix.", en: "Because the choice was never between war and peace.", f: 'f12' },
+    { l: 1, fr: "Le 7 octobre, le Hamas a tué environ mille deux cents personnes, en majorité des civils,", en: "On October 7th, Hamas killed about twelve hundred people, mostly civilians," },
+    { l: 1, fr: "et il a enlevé à peu près deux cent cinquante otages.", en: "and took about two hundred and fifty hostages." },
+    { l: 1, fr: "Ça, c'est le point de départ.", en: "That's the starting point." },
+    { l: 1, fr: "Et ce qui m'a frappé, c'est ce qu'ils ont dit juste après.", en: "And what struck me is what they said right after.", f: 'f28' },
+    { l: 2, fr: "Le 24 octobre 2023, Ghazi Hamad, du bureau politique du Hamas,", en: "On 24 October 2023, Ghazi Hamad, from Hamas's political bureau," },
+    { l: 2, fr: "passe sur LBC, une chaîne libanaise.", en: "goes on LBC, a Lebanese channel." },
+    { l: 2, fr: "Et il dit, je te traduis : « Le Déluge d'Al-Aqsa, c'est juste la première fois. Il y en aura une deuxième, une troisième, une quatrième. »", en: "And he says, I'll translate for you: 'The Al-Aqsa Flood is just the first time. There will be a second, a third, a fourth.'" },
+    { l: 2, fr: "En France, quand je raconte ça, on me croit pas.", en: "In France, when I tell people this, they don't believe me." },
+    { l: 2, fr: "Mais c'est filmé, c'est traduit, tout le monde peut vérifier.", en: "But it's filmed, it's translated, anyone can check." },
+    { l: 3, fr: "Ça, c'est la première jambe : l'intention, ils l'ont annoncée.", en: "That's the first leg: the intention, they announced it." },
+    { l: 3, fr: "La deuxième, c'est les moyens.", en: "The second is the means." },
+    { l: 3, fr: "Sous Gaza, il y avait des tunnels partout. Combien de kilomètres ?", en: "Under Gaza, there were tunnels everywhere. How many kilometres?" },
+    { l: 3, fr: "Là, faut être honnête, personne d'indépendant n'a pu mesurer.", en: "Here, you have to be honest: nobody independent has been able to measure." },
+    { l: 3, fr: "Les responsables israéliens parlent de cinq cents à sept cents kilomètres.", en: "Israeli officials talk of five to seven hundred kilometres." },
+    { l: 3, fr: "Bon, prenons même la moitié. Ça reste une ville sous la ville,", en: "OK, let's even say half. It's still a city under the city,", f: 'f23' },
+    { l: 3, fr: "construite avec du ciment qui aurait pu servir à bâtir au-dessus.", en: "built with cement that could have been used to build above ground.", f: 'f24' },
+    { l: 4, fr: "Donc regarde ce qu'on avait en face.", en: "So look at what we were facing." },
+    { l: 4, fr: "Une force qui a montré ce qu'elle pouvait faire, et qui a dit qu'elle recommencerait.", en: "A force that showed what it could do, and said it would do it again." },
+    { l: 4, fr: "Tu la laisses en place, toi ?", en: "Would you leave it in place, you?", f: 'f32' },
+    { l: 4, fr: "Le vrai choix, c'était ça. Agir, ou attendre la prochaine fois.", en: "That was the real choice. Act, or wait for next time." },
+    { l: 5, fr: "Mais attends, je m'arrête là, parce que je vois venir ta réponse, et elle est juste.", en: "But wait, I'll stop there, because I can see your answer coming, and it's fair.", f: 'f06' },
+    { l: 5, fr: "Tout ce que je viens de dire, ça montre qu'on avait le droit de riposter. Ça dit rien sur la manière.", en: "Everything I've just said shows we had the right to strike back. It says nothing about the way it's done.", f: 'f13' },
+    { l: 5, fr: "Le droit d'y aller, et la façon d'y aller, en droit, c'est deux questions différentes.", en: "The right to go in and the way you go in are, in law, two different questions.", f: 'f10' },
+    { l: 5, fr: "Et les mélanger, c'est le meilleur moyen de perdre cette discussion.", en: "And mixing them up is the best way to lose this argument." },
+    { l: 6, fr: "Et je vais même te donner un argument contre moi.", en: "And I'll even give you an argument against myself.", f: 'f36' },
+    { l: 6, fr: "Certains juristes disent que la légitime défense, telle que la Charte de l'ONU la prévoit,", en: "Some lawyers say that self-defence, as the UN Charter provides for it," },
+    { l: 6, fr: "s'applique mal contre un groupe armé qui vient d'un territoire qu'on contrôle.", en: "applies poorly against an armed group that comes from a territory you control." },
+    { l: 6, fr: "C'est un vrai débat, je fais pas semblant qu'il existe pas.", en: "It's a real debate, I don't pretend it doesn't exist." },
+    { l: 7, fr: "Alors la manière, parlons-en.", en: "So the way it's done, let's talk about it.", f: 'f34' },
+    { l: 7, fr: "C'est la question la plus dure, et c'est celle-là qui compte vraiment.", en: "It's the hardest question, and it's the one that really matters." }
+  ],
+  17: [
+    { l: 0, fr: "Franchement, Amnesty, Human Rights Watch, et même B'Tselem, une ONG israélienne, disent tous la même chose.", en: "Honestly, Amnesty, Human Rights Watch, and even B'Tselem, an Israeli NGO, all say the same thing." },
+    { l: 0, fr: "C'est un régime d'apartheid. C'est pas moi qui l'invente.", en: "It's an apartheid regime. I'm not the one making it up.", f: 'f27' },
+    { l: 1, fr: "Non, je sais, et c'est pas des rigolos.", en: "No, I know, and they're not clowns." },
+    { l: 1, fr: "Alors je commence par ce qui est vrai.", en: "So I'll start with what's true." },
+    { l: 1, fr: "En Cisjordanie, y a deux systèmes de droit.", en: "In the West Bank, there are two legal systems." },
+    { l: 1, fr: "Un colon passe devant un tribunal civil, un Palestinien devant un tribunal militaire.", en: "A settler goes before a civilian court, a Palestinian before a military court." },
+    { l: 1, fr: "Ça, ça se défend pas, et je vais pas essayer.", en: "That can't be defended, and I won't try." },
+    { l: 2, fr: "Bah voilà. Donc c'est de l'apartheid.", en: "Well, there you go. So it's apartheid." },
+    { l: 3, fr: "C'est là que je te suis plus du tout.", en: "That's where you lose me completely.", f: 'f29' },
+    { l: 3, fr: "En Israël même, un habitant sur cinq est arabe.", en: "In Israel itself, one inhabitant in five is Arab." },
+    { l: 3, fr: "Ils votent, y a des députés arabes,", en: "They vote, there are Arab members of parliament," },
+    { l: 3, fr: "y a eu un parti arabe au gouvernement en 2021, y a un juge arabe à la Cour suprême.", en: "there was an Arab party in government in 2021, there's an Arab judge on the Supreme Court." },
+    { l: 3, fr: "Des discriminations, oui, y en a, et des vraies. Mais en Afrique du Sud, les Noirs pouvaient pas voter du tout.", en: "Discrimination? Yes, there is some, real discrimination. But in South Africa, Black people couldn't vote at all.", f: 'f01' },
+    { l: 4, fr: "Mais la Cisjordanie, c'est pas un détail !", en: "But the West Bank isn't a detail!" },
+    { l: 5, fr: "Non, t'as raison, c'est pas un détail.", en: "No, you're right, it's not a detail." },
+    { l: 5, fr: "C'est une occupation, depuis 1967, et c'est beaucoup trop long. Sauf qu'une occupation, ça se termine par un accord.", en: "It's an occupation, since 1967, and it's gone on far too long. Except an occupation ends with an agreement.", f: 'f03' },
+    { l: 5, fr: "Le mot « apartheid », lui, il dit que le pays est pourri à la racine.", en: "The word 'apartheid' says the country is rotten to the core." },
+    { l: 5, fr: "Et si c'est pourri à la racine, y a plus rien à négocier. Tu me suis ?", en: "And if it's rotten to the core, there's nothing left to negotiate. Are you with me?" },
+    { l: 6, fr: "Et Gaza ? Une commission de l'ONU a conclu que c'était un génocide.", en: "And Gaza? A UN commission concluded it was genocide." },
+    { l: 6, fr: "Une commission de l'ONU, hein, pas un blogueur.", en: "A UN commission, mind you, not a blogger." },
+    { l: 7, fr: "Je sais, la commission Pillay, en septembre 2025.", en: "I know, the Pillay commission, in September 2025." },
+    { l: 7, fr: "Et je vais pas minimiser les morts.", en: "And I'm not going to play down the deaths." },
+    { l: 7, fr: "Le ministère de la Santé de Gaza, qui dépend du Hamas, en compte plus de soixante-dix mille.", en: "The Gaza health ministry, which answers to Hamas, counts more than seventy thousand." },
+    { l: 7, fr: "Son chiffre mélange civils et combattants.", en: "Its figure mixes civilians and fighters." },
+    { l: 7, fr: "Mais même en partant des estimations les plus basses, y a énormément de civils.", en: "But even starting from the lowest estimates, there are a huge number of civilians.", f: 'f22' },
+    { l: 7, fr: "C'est terrible, point.", en: "It's terrible, full stop." },
+    { l: 8, fr: "Donc tu le reconnais.", en: "So you admit it." },
+    { l: 9, fr: "Je reconnais les morts.", en: "I acknowledge the deaths." },
+    { l: 9, fr: "Mais « génocide », en droit, ça veut dire une chose précise : l'intention de détruire un peuple en tant que tel.", en: "But 'genocide', in law, means something precise: the intention to destroy a people as such.", f: 'f14' },
+    { l: 9, fr: "Toute la question est là.", en: "That's the whole question." },
+    { l: 9, fr: "Une guerre atroce en pleine ville, contre un ennemi qui se cache sous les maisons,", en: "An atrocious war in the middle of a city, against an enemy hiding under the houses," },
+    { l: 9, fr: "c'est pas la même chose. Même quand le bilan est effroyable.", en: "is not the same thing. Even when the toll is horrific." },
+    { l: 10, fr: "La Cour internationale de justice a quand même dit que c'était plausible.", en: "The International Court of Justice did say it was plausible." },
+    { l: 11, fr: "Ah non, ça, on l'a lu partout, mais c'est pas ce qu'elle a dit.", en: "Oh no, we've read that everywhere, but that's not what it said.", f: 'f26' },
+    { l: 11, fr: "La présidente de la Cour à l'époque, Joan Donoghue, l'a expliqué elle-même à la BBC.", en: "The Court's president at the time, Joan Donoghue, explained it herself to the BBC." },
+    { l: 11, fr: "La Cour a dit que les Palestiniens avaient un droit plausible à être protégés contre un génocide.", en: "The Court said the Palestinians had a plausible right to be protected from genocide." },
+    { l: 11, fr: "Pas qu'il y avait un génocide plausible.", en: "Not that there was a plausible genocide." },
+    { l: 11, fr: "Et sur le fond, elle a pas encore tranché.", en: "And on the merits, it hasn't ruled yet." },
+    { l: 12, fr: "Bon. Et Netanyahou, tu le condamnes, oui ou non ?", en: "OK. And Netanyahu, do you condemn him, yes or no?" },
+    { l: 13, fr: "Je le critique, et pas qu'un peu.", en: "I criticise him, and not just a little." },
+    { l: 13, fr: "On était des centaines de milliers dans la rue, en Israël, contre son gouvernement.", en: "There were hundreds of thousands of us in the street, in Israel, against his government." },
+    { l: 13, fr: "Mais tu vois, critiquer un gouvernement, c'est une chose. Dire qu'un pays a pas le droit d'exister, c'en est une autre.", en: "But you see, criticising a government is one thing. Saying a country has no right to exist is another.", f: 'f11' },
+    { l: 13, fr: "Quand tu critiques Macron, personne ne te demande si la France doit disparaître.", en: "When you criticise Macron, nobody asks you whether France should disappear." },
+    { l: 14, fr: "Et les colonies ? Tu vas pas me dire que c'est légitime.", en: "And the settlements? Don't tell me they're legitimate." },
+    { l: 15, fr: "Non. Les colonies en Cisjordanie, c'est un obstacle à la paix,", en: "No. The settlements in the West Bank are an obstacle to peace," },
+    { l: 15, fr: "et plein d'Israéliens pensent comme toi.", en: "and lots of Israelis think like you." },
+    { l: 15, fr: "Mais attends, rappelle-toi Gaza. En 2005, on est partis.", en: "But wait, remember Gaza. In 2005, we left." },
+    { l: 15, fr: "Toutes les colonies démontées, jusqu'à la dernière.", en: "All the settlements dismantled, down to the last one." },
+    { l: 15, fr: "Deux ans après, le Hamas avait pris le pouvoir.", en: "Two years later, Hamas had taken power." },
+    { l: 15, fr: "Du coup, quand on me dit « partez, et ça ira mieux », je veux bien.", en: "So when people tell me 'leave, and things will get better', fine, I'm willing." },
+    { l: 15, fr: "Mais la dernière fois, ça s'est pas passé comme prévu.", en: "But last time, it didn't go as planned." },
+    { l: 16, fr: "T'as réponse à tout, toi.", en: "You've got an answer for everything, you." },
+    { l: 17, fr: "Pas du tout. Y a plein de trucs où je sais pas,", en: "Not at all. There are lots of things I don't know," },
+    { l: 17, fr: "et d'autres où je suis pas d'accord avec mon propre camp.", en: "and others where I disagree with my own side." },
+    { l: 17, fr: "Mais je préfère qu'on parle des vrais problèmes plutôt que des mots qui ferment la discussion.", en: "But I'd rather we talk about the real problems than about words that shut the discussion down." },
+    { l: 17, fr: "Tu veux qu'on avance, ou tu veux avoir raison ?", en: "Do you want us to get somewhere, or do you want to be right?", f: 'f35' }
+  ]
+};
