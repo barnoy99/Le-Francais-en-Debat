@@ -34,8 +34,8 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
 
 // ── « Le texte »: chunk sizes ─────────────────────────────
 {
-  ok(Core.repeatsFor(1) === 3 && Core.repeatsFor(2) === 2 && Core.repeatsFor(3) === 1 && Core.repeatsFor(4) === 1 && Core.repeatsFor(0) === 0,
-     'repeats: 3 / 2 / 1 / 1, whole text listen-only');
+  ok(Core.repeatsFor(1) === 3 && Core.repeatsFor(2) === 2 && Core.repeatsFor(3) === 2 && Core.repeatsFor(4) === 2 && Core.repeatsFor(0) === 0,
+     'repeats: 3 / 2 / 2 / 2, whole text listen-only');
   for (const t of TEXTS) {
     const ss = withWho(t);
     for (const n of [1, 2, 3, 4]) {

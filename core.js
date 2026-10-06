@@ -95,8 +95,8 @@ var Core = (function () {
     return sents.slice(from, size ? from + size : sents.length);
   }
 
-  // Bigger chunks = he already knows the text: fewer repeats; the whole text is listen-only.
-  function repeatsFor(size) { return size === 1 ? REPEAT_SENT : size === 2 ? 2 : size ? 1 : 0; }
+  // One sentence: three repeats; bigger chunks: two; the whole text is listen-only.
+  function repeatsFor(size) { return size === 1 ? REPEAT_SENT : size ? 2 : 0; }
 
   function varList(sents) {
     var seen = {}, out = [];
