@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <div id="app">
@@ -23,6 +23,7 @@
         <div class="mode-toggle" role="group" aria-label="Mode">
           <button id="mode-mains" class="mode-btn" data-mode="mains">Mains libres</button>
           <button id="mode-calme" class="mode-btn" data-mode="calme">Au calme</button>
+          <button id="mode-silence" class="mode-btn" data-mode="silence">Silencieux</button>
         </div>
         <p id="mode-desc" class="mode-desc"></p>
         <ul id="text-list" class="text-list"></ul>
@@ -30,7 +31,31 @@
       </div>
     </section>
 
-    <!-- RUN: one sentence at a time -->
+    <!-- ONE TEXT: the text alone, or its variations alone -->
+    <section id="screen-choose" class="screen">
+      <div class="home">
+        <button id="btn-choose-home" class="btn-text btn-back">‹ Textes</button>
+        <h1 id="choose-title" class="choose-title"></h1>
+        <div class="choice">
+          <button id="choose-text" class="choice-main">
+            <span class="choice-name">Le texte</span>
+            <span class="choice-desc">Seulement le texte, phrase après phrase. Tu choisis combien de phrases à la fois : 1, 2, 3, 4, ou tout le texte.</span>
+            <span id="choose-text-action" class="text-action"></span>
+          </button>
+          <button id="choose-text-restart" class="text-restart hidden">↺ Depuis le début</button>
+        </div>
+        <div class="choice choice--var">
+          <button id="choose-var" class="choice-main">
+            <span class="choice-name">Les variations</span>
+            <span class="choice-desc">Seulement les phrases « à ta façon » : chaque structure du texte, dans une phrase sur ta vie.</span>
+            <span id="choose-var-action" class="text-action"></span>
+          </button>
+          <button id="choose-var-restart" class="text-restart hidden">↺ Depuis le début</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RUN: one chunk (or one variation) at a time -->
     <section id="screen-run" class="screen">
       <header class="run-header">
         <button id="btn-run-home" class="btn-text">‹ Textes</button>
@@ -38,6 +63,13 @@
         <span id="run-count" class="run-count"></span>
       </header>
       <div class="run-progress"><span id="run-progress-fill" class="run-progress-fill"></span></div>
+      <div id="size-toggle" class="size-toggle" role="group" aria-label="Phrases à la fois">
+        <button class="size-btn" data-size="1">1</button>
+        <button class="size-btn" data-size="2">2</button>
+        <button class="size-btn" data-size="3">3</button>
+        <button class="size-btn" data-size="4">4</button>
+        <button class="size-btn" data-size="0">Tout</button>
+      </div>
       <div id="run-tap" class="run-tap">
         <div id="run-card" class="run-card">
           <div class="run-top">
@@ -66,7 +98,7 @@
         <p class="splash-flourish">― ✦ ―</p>
         <h2 class="done-head">Texte terminé</h2>
         <p id="done-title" class="done-title"></p>
-        <p class="done-note">La prochaine fois, pour chaque structure, tu verras une nouvelle phrase en anglais, et c'est toi qui la diras en français.</p>
+        <p id="done-note" class="done-note"></p>
         <button id="btn-done-again" class="btn-start">Réviser ce texte</button>
         <button id="btn-done-home" class="btn-text">Choisir un autre texte</button>
       </div>
@@ -79,16 +111,14 @@
           <h2>Comment ça marche</h2>
           <button id="btn-help-close" class="btn-text">× Fermer</button>
         </div>
-        <p>Tu choisis un texte. On le parcourt <b>phrase par phrase</b>.</p>
+        <p>Tu choisis un texte, puis une des deux parties.</p>
         <ol>
-          <li><b>La phrase du texte</b> : tu l'entends trois fois, et tu la <b>répètes à voix haute</b> après chaque écoute. La troisième fois, le français disparaît : dis-la sans lire.</li>
-          <li><b>À ta façon</b> : si la phrase contient une structure utile, tu entends une autre phrase construite pareil, sur ta vie (les enfants, le travail, la politique…). Tu la répètes deux fois.</li>
-          <li>Phrase suivante.</li>
+          <li><b>Le texte</b> : seulement les phrases du texte, dans l'ordre. Une phrase à la fois : tu l'entends trois fois et tu la <b>répètes à voix haute</b> (la troisième fois, sans lire). Quand tu le connais mieux, passe à <b>2, 3 ou 4</b> phrases à la fois (moins de répétitions), ou <b>Tout</b> pour écouter le texte entier d'un coup.</li>
+          <li><b>Les variations</b> : seulement les phrases « à ta façon ». Pour chaque structure du texte, une phrase construite pareil, sur ta vie (les enfants, le travail, la politique…). La première fois, tu l'entends et tu la répètes. Ensuite, chaque structure revient avec une nouvelle phrase, <b>en anglais</b> d'abord : tu la dis en français, puis la réponse s'affiche.</li>
         </ol>
-        <p><b>Quand tu reviens</b> sur un texte déjà fait, la phrase « à ta façon » est nouvelle et s'affiche <b>en anglais</b> : tu essaies de la dire en français, puis la réponse s'affiche.</p>
-        <p><b>Mains libres</b> : tout se fait à l'oreille, l'appli te laisse le temps de répéter puis continue seule. Touche l'écran pour mettre en pause.<br><b>Au calme</b> : tu prends ton temps et tu touches « Suivant ».</p>
-        <p><b>Les boutons</b> : ↺ recommence la phrase, ⏮ ⏭ phrase précédente / suivante, ? redit la consigne en anglais. L'appli se souvient où tu t'es arrêté.</p>
-        <p class="help-en"><i>In short: listen, repeat, then say the same structure about your own life.</i></p>
+        <p><b>Mains libres</b> : tout à l'oreille, l'appli te laisse le temps de répéter puis continue seule. Touche l'écran pour mettre en pause.<br><b>Au calme</b> : tu prends ton temps et tu touches « Suivant ».<br><b>Silencieux</b> : aucun son. Tu vois l'anglais et la première lettre de chaque mot français ; devine la phrase, puis touche « Voir ».</p>
+        <p><b>Les boutons</b> : ↺ recommence, ⏮ ⏭ précédent / suivant, ? redit la consigne en anglais. L'appli se souvient où tu t'es arrêté, dans chaque partie.</p>
+        <p class="help-en"><i>In short: « Le texte » = the text alone, in chunks you choose. « Les variations » = the same structures, about your own life.</i></p>
       </div>
     </div>
 
@@ -96,9 +126,9 @@
 
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  <script src="firebase-config.js?v=6"></script>
-  <script src="data.js?v=6"></script>
-  <script src="core.js?v=6"></script>
-  <script src="app.js?v=6"></script>
+  <script src="firebase-config.js?v=7"></script>
+  <script src="data.js?v=7"></script>
+  <script src="core.js?v=7"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-// Lesson steps, progress per text, variant rotation, cross-device merge. Run: node test/core-test.js
+// Text and variation steps, chunks, silent mode, progress per text, variant rotation, cross-device merge. Run: node test/core-test.js
 // Walks every text of the real data.js through a first pass and a review pass.
 const fs = require('fs');
 const path = require('path');
@@ -17,42 +17,95 @@ const kinds = steps => steps.map(s => s.t);
 const says = steps => steps.filter(s => s.t === 'say');
 const turns = steps => steps.filter(s => s.t === 'turn');
 
-// ── Steps: a plain sentence ──────────────────────────────
+const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who: t.lines[x.l].who }));
+
+// ── « Le texte »: one sentence, three times, French fades ─────
 {
-  const sent = { fr: "Tu me suis ?", en: "Are you with me?" };
-  const st = Core.buildSteps(sent, {});
+  const sent = { fr: "Tu me suis ?", en: "Are you with me?", who: 'moi' };
+  const st = Core.textSteps([sent], { size: 1 });
   ok(st[0].t === 'ui' && st[0].v.fr === sent.fr && st[0].v.en === sent.en && st[0].v.hideFr === false, 'first step shows French + English');
   ok(says(st).length === Core.REPEAT_SENT && says(st).every(s => s.text === sent.fr && s.lang === 'fr'), 'sentence heard three times in French');
   ok(turns(st).length === Core.REPEAT_SENT, 'three turns to repeat');
   const fade = st.findIndex(s => s.t === 'ui' && s.v.hideFr === true);
-  const lastSay = st.map(s => s.t).lastIndexOf('say');
-  ok(fade > 0 && fade < lastSay, 'French fades before the third hearing');
+  ok(fade > 0 && fade < st.map(s => s.t).lastIndexOf('say'), 'French fades before the third hearing');
   ok(st[st.length - 1].t === 'turn', 'ends on his turn');
-  ok(!st.some(s => s.t === 'ui' && s.v.phase === 'var'), 'no variation without a frame');
+  ok(!st.some(s => s.t === 'ui' && s.v.phase === 'var'), 'the text part never shows a variation');
 }
 
-// ── Steps: with a variation, first time and on return ────
+// ── « Le texte »: chunk sizes ─────────────────────────────
 {
-  const f = byId.f02, v = f.prompts[0];
-  const sent = SENTENCES[10].find(s => s.f === 'f02');
-  const first = Core.buildSteps(sent, { variant: v, review: false });
-  const varUi = first.find(s => s.t === 'ui' && s.v.phase === 'var');
-  ok(varUi && varUi.v.fr === v.model && varUi.v.en === v.en && varUi.v.hideFr === false, 'first time: variation shown in French + English');
-  ok(says(first).filter(s => s.text === v.model).length === Core.REPEAT_VAR, 'first time: variation heard twice');
-  ok(!says(first).some(s => s.lang === 'en'), 'first time: no English spoken');
-  ok(turns(first).length === Core.REPEAT_SENT + Core.REPEAT_VAR, 'first time: 3 + 2 turns');
+  ok(Core.repeatsFor(1) === 3 && Core.repeatsFor(2) === 2 && Core.repeatsFor(3) === 1 && Core.repeatsFor(4) === 1 && Core.repeatsFor(0) === 0,
+     'repeats: 3 / 2 / 1 / 1, whole text listen-only');
+  for (const t of TEXTS) {
+    const ss = withWho(t);
+    for (const n of [1, 2, 3, 4]) {
+      let covered = 0;
+      for (let pos = 0; pos < ss.length; pos += n) {
+        const ch = Core.chunkAt(ss, pos, n);
+        ok(ch.length === Math.min(n, ss.length - pos), `text ${t.id}: chunk of ${n} at ${pos}`);
+        covered += ch.length;
+        const st = Core.textSteps(ch, { size: n });
+        ok(says(st).length === ch.length * Core.repeatsFor(n), `text ${t.id} size ${n}: every sentence said per repeat`);
+        ok(turns(st).length === Core.repeatsFor(n), `text ${t.id} size ${n}: one turn per repeat`);
+      }
+      ok(covered === ss.length, `text ${t.id}: chunks of ${n} cover every sentence once`);
+    }
+    const whole = Core.chunkAt(ss, 0, 0);
+    const st = Core.textSteps(whole, { size: 0 });
+    ok(whole.length === ss.length && says(st).length === ss.length && turns(st).length === 0, `text ${t.id}: « Tout » = whole text, listen only`);
+    const label = Core.chunkText(whole, 'fr');
+    ok(t.kind === 'dialogue' ? /^Ton ami : /.test(label) || /^Toi : /.test(label) : !/Toi : /.test(label), `text ${t.id}: speaker labels only in dialogues`);
+  }
+  const mixed = [{ fr: 'A.', en: 'a', who: 'lui' }, { fr: 'B.', en: 'b', who: 'moi' }, { fr: 'C.', en: 'c', who: 'moi' }];
+  ok(Core.chunkText(mixed, 'fr') === 'Ton ami : A.\nToi : B. C.', 'a chunk spanning two speakers: one labelled line per turn');
+  ok(Core.chunkText(mixed.slice(1), 'fr') === 'B. C.', 'one speaker: no label');
+}
 
-  const back = Core.buildSteps(sent, { variant: v, review: true });
+// ── « Les variations »: on their own ──────────────────────
+{
+  for (const t of TEXTS) {
+    const vl = Core.varList(SENTENCES[t.id]);
+    const fs = new Set(SENTENCES[t.id].filter(s => s.f).map(s => s.f));
+    ok(vl.length === fs.size && vl.length >= 3, `text ${t.id}: one variation per structure (${vl.length})`);
+  }
+  const v = byId.f02.prompts[0];
+  const first = Core.varSteps(v, { review: false });
+  const varUi = first.find(s => s.t === 'ui' && s.v.phase === 'var');
+  ok(varUi && varUi.v.fr === v.model && varUi.v.en === v.en && varUi.v.hideFr === false, 'first time: shown in French + English');
+  ok(says(first).filter(s => s.text === v.model).length === Core.REPEAT_VAR && turns(first).length === Core.REPEAT_VAR, 'first time: heard and repeated twice');
+  ok(!first.some(s => s.t === 'ui' && s.v.phase === 'sent'), 'a variation comes without the text sentence');
+
+  const back = Core.varSteps(v, { review: true });
   const i0 = back.findIndex(s => s.t === 'ui' && s.v.phase === 'var');
-  ok(back[i0].v.hideFr === true, 'review: variation starts with French hidden');
   const iEn = back.findIndex(s => s.t === 'say' && s.lang === 'en');
   const iTry = back.findIndex((s, i) => i > iEn && s.t === 'turn');
-  const iReveal = back.findIndex(s => s.t === 'ui' && s.v.hideFr === false && back.indexOf(s) > i0);
+  const iReveal = back.findIndex((s, i) => i > i0 && s.t === 'ui' && s.v.hideFr === false);
   const iModel = back.findIndex(s => s.t === 'say' && s.text === v.model);
-  ok(back[iEn].text === v.en, 'review: English cue spoken');
+  ok(back[i0].v.hideFr === true && back[iEn].text === v.en, 'review: French hidden, English cue spoken');
   ok(iEn > i0 && iTry > iEn && iReveal > iTry && iModel > iReveal, 'review order: English → his try → reveal → model');
   ok(back[iTry].ms > Core.repeatMs(v.model), 'review: the try window is longer than a repeat');
-  ok(back[back.length - 1].t === 'turn', 'review: ends on his repeat');
+
+  // Separate cursor; each one shown moves the rotation on.
+  const st = Core.defaults();
+  const vl = Core.varList(SENTENCES[10]);
+  vl.forEach((e, i) => Core.completeVar(st, 10, i, e.f));
+  ok(Core.varProgress(st, 10, vl.length).finished && st.texts.t10.pos === 0, 'variations finish without moving the text cursor');
+  ok(vl.every(e => st.vu[e.f] === 1), 'each structure shown once');
+  Core.setVarPos(st, 10, 0);
+  ok(!Core.varProgress(st, 10, vl.length).finished, 'restart reopens the variations');
+}
+
+// ── « Silencieux »: nothing spoken, guess then « Voir » ──────
+{
+  const ss = withWho(TEXTS[0]);
+  const st = Core.textSteps(Core.chunkAt(ss, 0, 2), { size: 2, silent: true });
+  ok(says(st).length === 0, 'silent text: nothing spoken');
+  ok(st[0].v.mask === true && turns(st)[0].label === 'Voir', 'silent text: masked first, then « Voir »');
+  ok(st.some(s => s.t === 'ui' && s.v.mask === false), 'silent text: then revealed');
+  const vs = Core.varSteps(byId.f02.prompts[0], { review: true, silent: true });
+  ok(says(vs).length === 0 && vs[0].v.mask === true && vs[0].v.en, 'silent variation: English + masked French, no sound');
+  ok(Core.mask("Bon, je l'accorde.") === "B__, j_ l'a______.", 'mask keeps first letters and punctuation');
+  ok(Core.mask('Ton ami : Avoue.\nToi : Non.') === 'Ton ami : A____.\nToi : N__.', 'mask leaves speaker labels readable');
 }
 
 // ── Windows scale with length ────────────────────────────

@@ -10,6 +10,24 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v7 (2026-10-06) — the text and the variations are separate; chunk sizes; « Silencieux »
+
+His request: hear only the text, with the variations « on their own »; bigger chunks once he knows a
+text; a silent mode to read and guess.
+- Tapping a text opens **screen-choose**: « Le texte » | « Les variations », each with its own cursor
+  (`pos` / new `vpos` in `state.texts.t<id>`) and « ↺ Depuis le début ». The combined v6 flow is gone.
+- **Le texte**: chunk of `size` sentences (`Core.chunkAt`), size toggle 1 · 2 · 3 · 4 · Tout on the run
+  screen (localStorage `debat_chunk`, changeable mid-text). Repeats per chunk `Core.repeatsFor`: 3 / 2 / 1 / 1;
+  « Tout » = whole text, listen only. Mixed-speaker chunks show « Ton ami : » / « Toi : » lines (`chunkText`).
+- **Les variations**: `Core.varList` = one per frame, in order of first use; `Core.varSteps` = v6's
+  variation steps (first time: hear + repeat ×2; once `vu[f] > 0`: English first, his try, reveal).
+  The frame's `form` is shown as the card's label. `completeVar` moves `vpos` and the rotation.
+- **Silencieux** (`mode = 'silence'`): no speech at all. Card shows English + French masked to first
+  letters (`Core.mask`), « Voir » reveals, « Suivant » moves on. « ? » shows the hint instead of speaking.
+- Assets `?v=7`, `CACHE_VERSION = 'v7'`. State shape unchanged apart from `vpos` (normalize adds it).
+- Preview safely with `preview_start {name: "debat-local"}` (`.claude/local_server.py`, gitignored): it
+  redirects `/` to `/index.html?local`.
+
 ## v6 redesign (2026-10-05) — READ THIS FIRST; it supersedes the Phase 3 sections below
 
 His feedback on v5: « I use the app and don't know what to do or say. It's over complicated. »

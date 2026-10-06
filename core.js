@@ -12,7 +12,7 @@ var Core = (function () {
   function words(s) { return String(s).trim().split(/\s+/).length; }
 
   // ── State ─────────────────────────────────────────────
-  // texts: 't<id>' -> { pos, done }. pos = next sentence to play; done = a '0'/'1'
+  // texts: 't<id>' -> { pos, done, vpos }. pos = next sentence to play; vpos = next variation; done = a '0'/'1'
   // string, one char per sentence (a string, because Firebase rewrites integer-keyed
   // objects into arrays). vu: frame id -> variations shown, so each visit gets the next one.
 
@@ -27,6 +27,7 @@ var Core = (function () {
     if (!r) { r = { pos: 0, done: '' }; state.texts[key(textId)] = r; }
     if (typeof r.pos !== 'number') r.pos = 0;
     if (typeof r.done !== 'string') r.done = '';
+    if (typeof r.vpos !== 'number') r.vpos = 0;
     return r;
   }
 
@@ -54,6 +55,25 @@ var Core = (function () {
     state.lastText = textId;
   }
 
+  // « Les variations » keeps its own cursor (vpos) over varList(); each one shown
+  // moves that frame's rotation on, so the next visit meets a new sentence.
+  function completeVar(state, textId, idx, frameId) {
+    textRec(state, textId).vpos = idx + 1;
+    if (frameId) state.vu[frameId] = (state.vu[frameId] || 0) + 1;
+    state.lastText = textId;
+  }
+
+  function setVarPos(state, textId, idx) {
+    textRec(state, textId).vpos = Math.max(0, idx);
+    state.lastText = textId;
+  }
+
+  function varProgress(state, textId, total) {
+    var r = state.texts[key(textId)] || {};
+    var pos = Math.min(r.vpos || 0, total);
+    return { pos: pos, total: total, finished: pos >= total };
+  }
+
   function setPos(state, textId, idx) {
     textRec(state, textId).pos = Math.max(0, idx);
     state.lastText = textId;
@@ -67,52 +87,125 @@ var Core = (function () {
     return frame.prompts[n % frame.prompts.length];
   }
 
-  // ── Steps for one sentence ────────────────────────────
-  // ui = repaint the screen; say = speak; turn = his turn to speak (« Mains libres »:
-  // a silence of `ms`; « Au calme »: wait for « Suivant »).
-  // opts: { variant: prompt|null, review: bool }
+  // ── The two parts of a text ───────────────────────────
+  // « Le texte »: the sentences alone, in chunks of `size` (0 = the whole text).
+  // « Les variations »: one per structure the text carries, in order of first use.
 
-  function buildSteps(sent, opts) {
-    opts = opts || {};
+  function chunkAt(sents, from, size) {
+    return sents.slice(from, size ? from + size : sents.length);
+  }
+
+  // Bigger chunks = he already knows the text: fewer repeats; the whole text is listen-only.
+  function repeatsFor(size) { return size === 1 ? REPEAT_SENT : size === 2 ? 2 : size ? 1 : 0; }
+
+  function varList(sents) {
+    var seen = {}, out = [];
+    sents.forEach(function (s, i) {
+      if (s.f && !seen[s.f]) { seen[s.f] = 1; out.push({ f: s.f, s: i }); }
+    });
+    return out;
+  }
+
+  // Display text of a chunk. Sentences carry `who`; when a chunk spans both
+  // speakers of a dialogue, each turn gets its own line and a label.
+  function chunkText(chunk, field) {
+    var turns = [], cur = null;
+    chunk.forEach(function (x) {
+      if (!cur || cur.who !== x.who) { cur = { who: x.who, parts: [] }; turns.push(cur); }
+      cur.parts.push(x[field]);
+    });
+    var labels = turns.length > 1 ? (field === 'en' ? { lui: 'Friend: ', moi: 'You: ' } : { lui: 'Ton ami : ', moi: 'Toi : ' }) : null;
+    return turns.map(function (t) { return (labels ? labels[t.who] || '' : '') + t.parts.join(' '); }).join('\n');
+  }
+
+  // « Silencieux » guessing aid: each word keeps its first letter, the rest is blanked.
+  // A speaker label from chunkText stays readable.
+  function mask(fr) {
+    return String(fr).split('\n').map(function (line) {
+      var m = /^(Ton ami : |Toi : )?([\s\S]*)$/.exec(line);
+      return (m[1] || '') + m[2].replace(/([A-Za-zÀ-ÖØ-öø-ÿœŒ])([A-Za-zÀ-ÖØ-öø-ÿœŒ]*)/g, function (w, a, b) {
+        return a + new Array(b.length + 1).join('_');
+      });
+    }).join('\n');
+  }
+
+  // ── Steps ─────────────────────────────────────────────
+  // ui = repaint the screen; say = speak; turn = his turn (« Mains libres »: a silence
+  // of `ms`; « Au calme » / « Silencieux »: a button, labelled `label` or « Suivant »).
+  // Silent steps never say anything: the English and the first letters are the cue.
+
+  function stepper() {
     var s = [];
-    function ui(v) { s.push({ t: 'ui', v: v }); }
-    function say(text, lang, rate) { s.push({ t: 'say', text: text, lang: lang || 'fr', rate: rate || 0.85 }); }
-    function turn(ms) { s.push({ t: 'turn', ms: ms }); }
+    return {
+      s: s,
+      ui: function (v) { s.push({ t: 'ui', v: v }); },
+      say: function (text, lang, rate) { s.push({ t: 'say', text: text, lang: lang || 'fr', rate: rate || 0.85 }); },
+      turn: function (ms, label) { var st = { t: 'turn', ms: ms }; if (label) st.label = label; s.push(st); }
+    };
+  }
 
-    ui({ phase: 'sent', fr: sent.fr, en: sent.en, hideFr: false,
-         caption: 'Écoute', hint: 'Listen.' });
-    for (var i = 1; i <= REPEAT_SENT; i++) {
-      if (i === REPEAT_SENT) ui({ hideFr: true, caption: 'Écoute', hint: 'Listen — this time without reading.' });
-      say(sent.fr);
-      ui({ caption: 'Répète (' + i + '/' + REPEAT_SENT + ')',
-           hint: i === REPEAT_SENT ? 'Say it without reading.' : 'Say it out loud.' });
-      turn(repeatMs(sent.fr));
+  // opts: { size, silent }
+  function textSteps(chunk, opts) {
+    opts = opts || {};
+    var k = stepper();
+    var fr = chunkText(chunk, 'fr'), en = chunkText(chunk, 'en');
+    if (opts.silent) {
+      k.ui({ phase: 'sent', fr: fr, en: en, hideFr: false, mask: true,
+             caption: 'Devine en français', hint: 'Guess the French from the English and the first letters.' });
+      k.turn(0, 'Voir');
+      k.ui({ mask: false, caption: 'Relis-le', hint: 'Read it once more, then go on.' });
+      k.turn(0);
+      return k.s;
     }
+    var reps = repeatsFor(opts.size === undefined ? 1 : opts.size);
+    k.ui({ phase: 'sent', fr: fr, en: en, hideFr: false, mask: false, caption: 'Écoute', hint: 'Listen.' });
+    if (!reps) {
+      chunk.forEach(function (x) { k.say(x.fr); });
+      return k.s;
+    }
+    var all = chunk.map(function (x) { return x.fr; }).join(' ');
+    for (var i = 1; i <= reps; i++) {
+      if (i === reps && reps > 1) k.ui({ hideFr: true, caption: 'Écoute', hint: 'Listen — this time without reading.' });
+      chunk.forEach(function (x) { k.say(x.fr); });
+      k.ui({ caption: reps > 1 ? 'Répète (' + i + '/' + reps + ')' : 'Répète',
+             hint: i === reps && reps > 1 ? 'Say it without reading.' : 'Say it out loud.' });
+      k.turn(repeatMs(all));
+    }
+    return k.s;
+  }
 
-    var v = opts.variant;
-    if (v) {
-      if (!opts.review) {
-        ui({ phase: 'var', fr: v.model, en: v.en, hideFr: false,
-             caption: 'Même structure, autre phrase', hint: 'Same structure, a new sentence. Listen.' });
-        say('Même structure.', 'fr', 0.9);
-        for (var j = 1; j <= REPEAT_VAR; j++) {
-          say(v.model);
-          ui({ caption: 'Répète (' + j + '/' + REPEAT_VAR + ')', hint: 'Say it out loud.' });
-          turn(repeatMs(v.model));
-        }
-      } else {
-        ui({ phase: 'var', fr: v.model, en: v.en, hideFr: true,
-             caption: 'Même structure : dis-le en français', hint: 'Same structure. Say this in French.' });
-        say(v.en, 'en', 0.9);
-        ui({ caption: 'À toi, en français', hint: 'Your turn, in French.' });
-        turn(tryMs(v.model));
-        ui({ hideFr: false, caption: 'La réponse', hint: 'Here is the answer.' });
+  // opts: { review, silent }. review = he has met a variation of this structure before.
+  function varSteps(v, opts) {
+    opts = opts || {};
+    var k = stepper(), ui = k.ui, say = k.say, turn = k.turn;
+    if (opts.silent) {
+      ui({ phase: 'var', fr: v.model, en: v.en, hideFr: false, mask: true,
+           caption: 'Devine en français', hint: 'Same structure. Guess the French from the English and the first letters.' });
+      turn(0, 'Voir');
+      ui({ mask: false, caption: 'La réponse', hint: 'Here is the answer.' });
+      turn(0);
+      return k.s;
+    }
+    if (!opts.review) {
+      ui({ phase: 'var', fr: v.model, en: v.en, hideFr: false, mask: false,
+           caption: 'Même structure, autre phrase', hint: 'Same structure, a new sentence. Listen.' });
+      for (var j = 1; j <= REPEAT_VAR; j++) {
         say(v.model);
-        ui({ caption: 'Répète', hint: 'Say it out loud.' });
+        ui({ caption: 'Répète (' + j + '/' + REPEAT_VAR + ')', hint: 'Say it out loud.' });
         turn(repeatMs(v.model));
       }
+    } else {
+      ui({ phase: 'var', fr: v.model, en: v.en, hideFr: true, mask: false,
+           caption: 'Dis-le en français', hint: 'Same structure. Say this in French.' });
+      say(v.en, 'en', 0.9);
+      ui({ caption: 'À toi, en français', hint: 'Your turn, in French.' });
+      turn(tryMs(v.model));
+      ui({ hideFr: false, caption: 'La réponse', hint: 'Here is the answer.' });
+      say(v.model);
+      ui({ caption: 'Répète', hint: 'Say it out loud.' });
+      turn(repeatMs(v.model));
     }
-    return s;
+    return k.s;
   }
 
   // ── Sync merge ────────────────────────────────────────
@@ -133,6 +226,7 @@ var Core = (function () {
       if (!r) { delete state.texts[id]; continue; }
       if (typeof r.pos !== 'number') r.pos = 0;
       if (typeof r.done !== 'string') r.done = '';
+      if (typeof r.vpos !== 'number') r.vpos = 0;
     }
     return state;
   }
@@ -142,7 +236,9 @@ var Core = (function () {
     repeatMs: repeatMs, tryMs: tryMs,
     defaults: defaults, normalize: normalize, pickFreshest: pickFreshest,
     textRec: textRec, isDone: isDone, progress: progress, complete: complete, setPos: setPos,
-    pickVariant: pickVariant, buildSteps: buildSteps
+    completeVar: completeVar, setVarPos: setVarPos, varProgress: varProgress,
+    pickVariant: pickVariant, chunkAt: chunkAt, repeatsFor: repeatsFor, varList: varList,
+    chunkText: chunkText, mask: mask, textSteps: textSteps, varSteps: varSteps
   };
 })();
 

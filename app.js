@@ -1,5 +1,5 @@
-/* Le Français en Débat — learn a text sentence by sentence, and bend each structure
-   into a sentence of your own life. One IIFE; lesson steps and progress live in core.js. */
+/* Le Français en Débat — pick a text, then either the text alone (1–4 sentences at a
+   time, or whole) or its variations (each structure bent into a sentence of your life). One IIFE; lesson steps and progress live in core.js. */
 (function () {
   'use strict';
 
@@ -18,9 +18,12 @@
   var framesById = {};
   var textsById = {};
   var mode = 'mains';      // 'mains' = hands-free, paced by silences | 'calme' = tap « Suivant »
+                           // | 'silence' = no sound: read, guess, tap
+  var SIZE_KEY = 'debat_chunk';
 
-  var run = { active: false, paused: false, gen: 0, steps: [], idx: 0,
-              text: null, sents: [], sidx: 0, variant: null, timer: null, help: '' };
+  // part: 'texte' (the sentences, `size` at a time; 0 = whole text) | 'var' (the variations)
+  var run = { active: false, paused: false, gen: 0, steps: [], idx: 0, text: null, part: 'texte',
+              sents: [], vars: [], pos: 0, len: 1, size: 1, variant: null, timer: null, help: '' };
 
   function $(id) { return document.getElementById(id); }
   function show(el) { el.classList.remove('hidden'); }
@@ -159,7 +162,16 @@
       $('run-card').className = 'run-card' + (isVar ? ' run-card--var' : '');
       $('run-tag').textContent = isVar ? 'À ta façon' : 'Le texte';
     }
-    if (v.fr !== undefined) $('run-fr').textContent = v.fr;
+    if (v.fr !== undefined) {
+      run.fr = v.fr;
+      $('run-card').classList.toggle('run-card--long', v.fr.split(/\s+/).length > 40);
+    }
+    if (v.mask !== undefined) run.masked = v.mask;
+    if (v.fr !== undefined || v.mask !== undefined) {
+      $('run-fr').textContent = run.masked ? Core.mask(run.fr) : run.fr;
+      $('run-fr').classList.toggle('masked', !!run.masked);
+      $('run-card').scrollTop = 0;
+    }
     if (v.en !== undefined) $('run-en').textContent = v.en;
     if (v.hideFr !== undefined) $('run-fr').classList.toggle('faded', v.hideFr);
     if (v.caption !== undefined) {
@@ -176,10 +188,11 @@
   }
 
   // His turn. « Mains libres »: a silence sized to the sentence, with a thin bar.
-  // « Au calme »: as long as he wants, then « Suivant ».
-  function startTurn(ms, next) {
-    if (mode === 'calme') {
+  // « Au calme » / « Silencieux »: as long as he wants, then the button.
+  function startTurn(ms, next, label) {
+    if (mode !== 'mains') {
       var btn = $('btn-next');
+      btn.textContent = label || 'Suivant ›';
       show(btn);
       btn.onclick = function () { hide(btn); btn.onclick = null; next(); };
       return;
@@ -197,7 +210,7 @@
 
   function exec() {
     if (!run.active || run.paused) return;
-    if (run.idx >= run.steps.length) { finishSentence(); return; }
+    if (run.idx >= run.steps.length) { finishItem(); return; }
     var st = run.steps[run.idx];
     var gen = run.gen;
     function next() {
@@ -207,7 +220,7 @@
     }
     if (st.t === 'ui') { view(st.v); next(); }
     else if (st.t === 'say') speak(st.text, st.lang, st.rate, function () { setTimeout(next, 400); });
-    else if (st.t === 'turn') startTurn(st.ms, next);
+    else if (st.t === 'turn') startTurn(st.ms, next, st.label);
   }
 
   function pauseRun() {
@@ -230,6 +243,7 @@
   // « ? »: say the current instruction in English, then carry on.
   function explainStep() {
     if (!run.active || !run.help) return;
+    if (mode === 'silence') { $('run-caption').textContent = run.help; return; }
     var wasPaused = run.paused;
     if (!wasPaused) pauseRun();
     speak(run.help, 'en', 0.9, function () { if (!wasPaused && run.paused) resumeRun(); });
@@ -243,77 +257,146 @@
     releaseWakeLock();
   }
 
-  // ── Sentences ─────────────────────────────────────────
+  // ── Playing a part of a text ──────────────────────────
+  // « Le texte »: run.pos = first sentence of the chunk, run.len = its length.
+  // « Les variations »: run.pos = index in run.vars (one per structure).
 
-  function playSentence(idx) {
+  function items() { return run.part === 'var' ? run.vars : run.sents; }
+
+  function playAt(pos) {
     if (!run.active) return;
-    if (idx >= run.sents.length) { finishText(); return; }
-    run.sidx = idx;
-    Core.setPos(state, run.text.id, idx);
-    var sent = run.sents[idx];
-    var frame = sent.f ? framesById[sent.f] : null;
-    run.variant = Core.pickVariant(state, frame);
-    var review = Core.isDone(state, run.text.id, idx);
-    run.steps = Core.buildSteps(sent, { variant: run.variant, review: review });
+    var list = items();
+    if (pos >= list.length) { finishPart(); return; }
+    pos = Math.max(0, pos);
+    run.pos = pos;
+    var silent = mode === 'silence';
+    var who = '', count;
+    if (run.part === 'texte') {
+      var chunk = Core.chunkAt(run.sents, pos, run.size);
+      run.len = chunk.length;
+      Core.setPos(state, run.text.id, pos);
+      run.variant = null;
+      run.steps = Core.textSteps(chunk, { size: run.size, silent: silent });
+      var one = chunk.every(function (x) { return x.who === chunk[0].who; });
+      if (run.text.kind === 'dialogue' && one) who = chunk[0].who === 'lui' ? 'Ton ami' : 'Toi';
+      count = run.len === 1 ? (pos + 1) + ' / ' + list.length : (pos + 1) + '–' + (pos + run.len) + ' / ' + list.length;
+    } else {
+      var entry = run.vars[pos];
+      var frame = framesById[entry.f];
+      run.len = 1;
+      Core.setVarPos(state, run.text.id, pos);
+      run.variant = Core.pickVariant(state, frame);
+      run.steps = Core.varSteps(run.variant, { review: (state.vu[entry.f] || 0) > 0, silent: silent });
+      who = frame.form;
+      count = (pos + 1) + ' / ' + list.length;
+    }
     run.idx = 0;
     run.gen++;
     run.paused = false;
     stopTimers();
     hide($('run-paused'));
-    var line = run.text.lines[sent.l];
-    $('run-who').textContent = run.text.kind === 'dialogue' ? (line.who === 'lui' ? 'Ton ami' : 'Toi') : '';
-    $('run-count').textContent = (idx + 1) + ' / ' + run.sents.length;
-    $('run-progress-fill').style.width = (100 * idx / run.sents.length) + '%';
-    $('btn-prev').disabled = idx === 0;
+    $('run-who').textContent = who;
+    $('run-count').textContent = count;
+    $('run-progress-fill').style.width = (100 * pos / list.length) + '%';
+    $('btn-prev').disabled = pos === 0;
     exec();
   }
 
-  function finishSentence() {
-    Core.complete(state, run.text.id, run.sidx, run.variant ? run.sents[run.sidx].f : null);
+  function finishItem() {
+    var id = run.text.id;
+    if (run.part === 'texte') {
+      for (var i = run.pos; i < run.pos + run.len; i++) Core.complete(state, id, i, null);
+    } else {
+      Core.completeVar(state, id, run.pos, run.vars[run.pos].f);
+    }
     save();
-    playSentence(run.sidx + 1);
+    playAt(run.pos + run.len);
   }
 
-  function finishText() {
+  function prevItem() {
+    if (!run.active || run.pos === 0) return;
+    playAt(run.part === 'texte' ? run.pos - (run.size || run.sents.length) : run.pos - 1);
+  }
+
+  function finishPart() {
     stopRun();
     save();
     $('done-title').textContent = run.text.title;
+    $('done-note').textContent = run.part === 'texte'
+      ? 'Quand tu le connais mieux, choisis des passages plus longs : 2, 3, 4 phrases, ou tout le texte.'
+      : 'La prochaine fois, chaque structure revient avec une nouvelle phrase, en anglais d\'abord : c\'est toi qui la diras en français.';
+    $('btn-done-again').textContent = run.part === 'texte' ? 'Relire ce texte' : 'Refaire les variations';
     showScreen('screen-done');
   }
 
-  function openText(textId, fromStart) {
-    var t = textsById[textId];
-    if (!t) return;
-    run.text = t;
-    run.sents = SENTENCES[t.id];
-    var p = Core.progress(state, t.id, run.sents.length);
+  // part: 'texte' | 'var'. Resumes where he stopped unless fromStart (or finished).
+  function openPart(part, fromStart) {
+    var t = run.text;
+    run.part = part;
+    run.sents = SENTENCES[t.id].map(function (x) {
+      return { fr: x.fr, en: x.en, f: x.f, who: t.lines[x.l].who };
+    });
+    run.vars = Core.varList(SENTENCES[t.id]);
+    var p = part === 'texte' ? Core.progress(state, t.id, run.sents.length) : Core.varProgress(state, t.id, run.vars.length);
     var start = fromStart || p.finished ? 0 : p.pos;
     loadVoices();
     requestWakeLock();
     run.active = true;
-    $('run-title').textContent = t.title;
+    $('run-title').textContent = (part === 'texte' ? 'Le texte · ' : 'Variations · ') + t.title;
+    $('size-toggle').classList.toggle('hidden', part !== 'texte');
     showScreen('screen-run');
-    playSentence(start);
+    playAt(start);
+  }
+
+  function setSize(n) {
+    run.size = n;
+    try { localStorage.setItem(SIZE_KEY, String(n)); } catch (e) {}
+    var btns = document.querySelectorAll('.size-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.toggle('active', +btns[i].getAttribute('data-size') === n);
+    if (run.active && run.part === 'texte') playAt(n ? run.pos : 0);   // « Tout » starts from the top
   }
 
   function leaveRun() {
-    // The sentence in flight is state.texts[..].pos: reopening starts on it.
+    // The item in flight is the saved cursor (pos / vpos): reopening starts on it.
     stopRun();
     save();
-    renderHome();
-    showScreen('screen-home');
+    openChooser(run.text.id);
+  }
+
+  // ── One text: choose the part ─────────────────────────
+
+  function partLine(p, unit) {
+    if (p.finished) return 'Terminé · ' + p.total + ' ' + unit + ' ›';
+    if (p.pos > 0) return 'Continuer · ' + (p.pos + 1) + ' / ' + p.total + ' ›';
+    return 'Commencer · ' + p.total + ' ' + unit + ' ›';
+  }
+
+  function openChooser(textId) {
+    var t = textsById[textId];
+    run.text = t;
+    state.lastText = textId;
+    var pt = Core.progress(state, t.id, SENTENCES[t.id].length);
+    var pv = Core.varProgress(state, t.id, Core.varList(SENTENCES[t.id]).length);
+    $('choose-title').textContent = t.title;
+    $('choose-text-action').textContent = partLine(pt, 'phrases');
+    $('choose-var-action').textContent = partLine(pv, 'structures');
+    $('choose-text-restart').classList.toggle('hidden', !(pt.pos > 0 && !pt.finished));
+    $('choose-var-restart').classList.toggle('hidden', !(pv.pos > 0 && !pv.finished));
+    showScreen('screen-choose');
   }
 
   // ── Home ──────────────────────────────────────────────
 
   var MODE_DESC = { mains: "Tout à l'oreille : l'appli fait une pause pour que tu répètes, puis continue toute seule.",
-                    calme: "Tu lis, tu répètes à ton rythme, et tu touches « Suivant »." };
+                    calme: "Tu lis, tu répètes à ton rythme, et tu touches « Suivant ».",
+                    silence: "Aucun son : tu lis l'anglais, tu devines le français, puis tu touches « Voir »." };
 
   function setMode(m) {
     mode = m;
     try { localStorage.setItem(MODE_KEY, m); } catch (e) {}
     $('mode-mains').classList.toggle('active', m === 'mains');
     $('mode-calme').classList.toggle('active', m === 'calme');
+    $('mode-silence').classList.toggle('active', m === 'silence');
     $('mode-desc').textContent = MODE_DESC[m];
   }
 
@@ -339,15 +422,10 @@
       fill.style.width = (100 * p.done / total) + '%';
       bar.appendChild(fill);
       main.appendChild(bar);
-      var action = p.finished ? 'Réviser ›' : p.pos > 0 ? 'Continuer · ' + (p.pos + 1) + ' / ' + total + ' ›' : 'Commencer ›';
-      main.appendChild(el('span', 'text-action', action));
-      main.addEventListener('click', function () { openText(t.id, false); });
+      var pv = Core.varProgress(state, t.id, Core.varList(SENTENCES[t.id]).length);
+      main.appendChild(el('span', 'text-action', 'Texte ' + p.done + ' / ' + total + ' · Variations ' + pv.pos + ' / ' + pv.total + ' ›'));
+      main.addEventListener('click', function () { openChooser(t.id); });
       li.appendChild(main);
-      if (p.pos > 0 && !p.finished) {
-        var again = el('button', 'text-restart', '↺ Depuis le début');
-        again.addEventListener('click', function () { openText(t.id, true); });
-        li.appendChild(again);
-      }
       list.appendChild(li);
     });
   }
@@ -371,10 +449,19 @@
         if (r && r.catch) r.catch(function () {});
       }
     } catch (e) {}
-    try { mode = localStorage.getItem(MODE_KEY) === 'calme' ? 'calme' : 'mains'; } catch (e) {}
+    try { mode = localStorage.getItem(MODE_KEY); } catch (e) {}
+    if (!MODE_DESC[mode]) mode = 'mains';
     setMode(mode);
     $('mode-mains').addEventListener('click', function () { setMode('mains'); });
     $('mode-calme').addEventListener('click', function () { setMode('calme'); });
+    $('mode-silence').addEventListener('click', function () { setMode('silence'); });
+    try { run.size = parseInt(localStorage.getItem(SIZE_KEY), 10); } catch (e) {}
+    if (!(run.size >= 0 && run.size <= 4)) run.size = 1;
+    setSize(run.size);
+    var sizeBtns = document.querySelectorAll('.size-btn');
+    for (var sb = 0; sb < sizeBtns.length; sb++) {
+      sizeBtns[sb].addEventListener('click', function () { setSize(+this.getAttribute('data-size')); });
+    }
     initFirebase();
     loadVoices();
     if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = loadVoices;
@@ -391,15 +478,20 @@
     $('btn-help').addEventListener('click', function () { show($('overlay-help')); });
     $('btn-help-close').addEventListener('click', function () { hide($('overlay-help')); });
     $('btn-run-home').addEventListener('click', leaveRun);
-    $('btn-replay').addEventListener('click', function () { if (run.active) playSentence(run.sidx); });
-    $('btn-prev').addEventListener('click', function () { if (run.active && run.sidx > 0) playSentence(run.sidx - 1); });
-    $('btn-skip').addEventListener('click', function () { if (run.active) playSentence(run.sidx + 1); });
+    $('btn-replay').addEventListener('click', function () { if (run.active) playAt(run.pos); });
+    $('btn-prev').addEventListener('click', prevItem);
+    $('btn-skip').addEventListener('click', function () { if (run.active) playAt(run.pos + run.len); });
+    $('btn-choose-home').addEventListener('click', function () { renderHome(); showScreen('screen-home'); });
+    $('choose-text').addEventListener('click', function () { openPart('texte', false); });
+    $('choose-var').addEventListener('click', function () { openPart('var', false); });
+    $('choose-text-restart').addEventListener('click', function () { openPart('texte', true); });
+    $('choose-var-restart').addEventListener('click', function () { openPart('var', true); });
     $('btn-explain').addEventListener('click', explainStep);
     $('run-tap').addEventListener('click', function (e) {
-      if (inControl(e.target) || (mode === 'calme' && !run.paused)) return;
+      if (inControl(e.target) || (mode !== 'mains' && !run.paused)) return;
       togglePause();
     });
-    $('btn-done-again').addEventListener('click', function () { openText(run.text.id, true); });
+    $('btn-done-again').addEventListener('click', function () { openPart(run.part, true); });
     $('btn-done-home').addEventListener('click', function () { renderHome(); showScreen('screen-home'); });
 
     // Screen off / app switched: the OS silences speech and throttles timers, so pause.
