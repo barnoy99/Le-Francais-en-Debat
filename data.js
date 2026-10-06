@@ -16,10 +16,10 @@ var TEXTS = [
     cues: ["Ah non, Dieu, lui, il a pas besoin de cause. Il a toujours existé."] },
   { id: 6, corpus: 'A', kind: 'monologue', title: "L'accident géographique", file: "texts/06-laccident-geographique.md",
     lines: [
-      { who: 'moi', fr: "Tiens, y a un truc qui me travaille depuis longtemps. Si t'étais né à Karachi, tu serais quoi ? Musulman. En Alabama ? Baptiste, probablement. À Bénarès, hindou. Et dans ma famille à moi, juif, évidemment." },
+      { who: 'moi', fr: "Tiens, y a un truc qui me travaille depuis longtemps. Si t'étais né en Indonésie, tu serais quoi ? Musulman. Au Brésil ? Chrétien. En Inde ? Hindou. Dans la Grèce antique, tu croirais en Zeus, comme tout le monde. Et dans ma famille à moi, juif, évidemment." },
       { who: 'moi', fr: "Du coup, la religion, c'est moins une question de vérité qu'une question d'adresse. Non mais réfléchis. L'immense majorité des gens gardent la religion de leurs parents. Si c'était une découverte, chacun la ferait de son côté, et tout le monde tomberait sur la même. Comme en maths, quoi. Personne ne te dit : « Chez nous, deux et deux font cinq. »" },
       { who: 'moi', fr: "Alors oui, je vois venir ta réponse : « Ça prouve rien, il y en a peut-être une qui est vraie. » C'est vrai, je te l'accorde. Mais regarde le problème que ça pose. Chacun est sûr d'être né dans la bonne. Tout le monde aurait tiré le bon numéro ? C'est un peu gros, non ?" },
-      { who: 'moi', fr: "Et je vais plus loin. Si Dieu voulait vraiment qu'on le connaisse, pourquoi il laisserait ça au hasard de la naissance ? Un père qui veut que ses enfants le connaissent, il leur parle à tous. Pas seulement à ceux qui habitent du bon côté de la frontière." },
+      { who: 'moi', fr: "Et je vais plus loin. Si Dieu voulait vraiment qu'on le connaisse, pourquoi il laisserait ça au hasard de la naissance ? Une vérité qui dépend de l'endroit où t'es né, ça ressemble pas à une vérité. Ça ressemble à une tradition qu'on se passe de parents en enfants." },
       { who: 'moi', fr: "Enfin, bref. Quand une croyance suit la carte plutôt que les preuves, moi, ça me met la puce à l'oreille. Pas toi ?" }
     ],
     // Monologues quote the friend's objection; these are the Compréhension cues.
@@ -603,8 +603,8 @@ var FRAMES = [
     form: "Si t'étais né {AILLEURS}, tu serais {X}.",
     gloss: "If you'd been born ___, you'd be ___",
     gist: "Change one fact of their past, and show how different they'd be today.",
-    exemplarFr: "Si t'étais né à Karachi, tu serais musulman.",
-    exemplarEn: "If you'd been born in Karachi, you'd be Muslim.",
+    exemplarFr: "Si t'étais né en Indonésie, tu serais musulman.",
+    exemplarEn: "If you'd been born in Indonesia, you'd be Muslim.",
     trap: "English 'if you would have been' → « si t'aurais été né ». Never a conditional after si: plus-que-parfait after si, conditionnel présent for today. The frame extends to any past: si t'avais + pp, tu serais…",
     slots: [{ name: 'AILLEURS', pos: 'complément', note: "ou tout autre fait passé : si t'avais…" },
             { name: 'X', pos: 'attribut', note: "ce que tu serais aujourd'hui" }],
@@ -868,8 +868,9 @@ var SENTENCES = {
   ],
   6: [
     { l: 0, fr: "Tiens, y a un truc qui me travaille depuis longtemps.", en: "Hey, there's something that's been bugging me for a long time." },
-    { l: 0, fr: "Si t'étais né à Karachi, tu serais quoi ? Musulman.", en: "If you'd been born in Karachi, what would you be? Muslim.", f: 'f25' },
-    { l: 0, fr: "En Alabama ? Baptiste, probablement. À Bénarès, hindou.", en: "In Alabama? Baptist, probably. In Benares, Hindu." },
+    { l: 0, fr: "Si t'étais né en Indonésie, tu serais quoi ? Musulman.", en: "If you'd been born in Indonesia, what would you be? Muslim.", f: 'f25' },
+    { l: 0, fr: "Au Brésil ? Chrétien. En Inde ? Hindou.", en: "In Brazil? Christian. In India? Hindu." },
+    { l: 0, fr: "Dans la Grèce antique, tu croirais en Zeus, comme tout le monde.", en: "In ancient Greece, you'd believe in Zeus, like everyone else." },
     { l: 0, fr: "Et dans ma famille à moi, juif, évidemment.", en: "And in my own family, Jewish, obviously." },
     { l: 1, fr: "Du coup, la religion, c'est moins une question de vérité qu'une question d'adresse.", en: "So religion is less a question of truth than a question of address.", f: 'f09' },
     { l: 1, fr: "Non mais réfléchis.", en: "No, seriously, think about it." },
@@ -883,8 +884,8 @@ var SENTENCES = {
     { l: 2, fr: "Tout le monde aurait tiré le bon numéro ? C'est un peu gros, non ?", en: "Everyone supposedly drew the winning number? That's a bit much, isn't it?", f: 'f20' },
     { l: 3, fr: "Et je vais plus loin.", en: "And I'll go further.", f: 'f36' },
     { l: 3, fr: "Si Dieu voulait vraiment qu'on le connaisse, pourquoi il laisserait ça au hasard de la naissance ?", en: "If God really wanted us to know him, why would he leave it to the accident of birth?", f: 'f19' },
-    { l: 3, fr: "Un père qui veut que ses enfants le connaissent, il leur parle à tous.", en: "A father who wants his children to know him talks to all of them." },
-    { l: 3, fr: "Pas seulement à ceux qui habitent du bon côté de la frontière.", en: "Not just to the ones who live on the right side of the border." },
+    { l: 3, fr: "Une vérité qui dépend de l'endroit où t'es né, ça ressemble pas à une vérité.", en: "A truth that depends on where you were born doesn't look like a truth." },
+    { l: 3, fr: "Ça ressemble à une tradition qu'on se passe de parents en enfants.", en: "It looks like a tradition handed down from parents to children." },
     { l: 4, fr: "Enfin, bref.", en: "Anyway." },
     { l: 4, fr: "Quand une croyance suit la carte plutôt que les preuves, moi, ça me met la puce à l'oreille. Pas toi ?", en: "When a belief follows the map rather than the evidence, that makes me suspicious. Doesn't it make you suspicious?" }
   ],
