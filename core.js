@@ -4,7 +4,7 @@ var Core = (function () {
   'use strict';
 
   var REPEAT_SENT = 3;      // the text's sentence: heard and repeated three times
-  var REPEAT_VAR = 2;       // a variation seen for the first time: repeated twice
+  var REPEAT_VAR = 3;       // a variation: heard and repeated three times (Quotidien-style)
   // Speaking windows in « Mains libres », scaled to the sentence. Generous on purpose:
   // his first feedback was « too fast ».
   function repeatMs(fr) { return 1500 + words(fr) * 450; }
@@ -88,11 +88,40 @@ var Core = (function () {
   }
 
   // ── The two parts of a text ───────────────────────────
-  // « Le texte »: the sentences alone, in chunks of `size` (0 = the whole text).
+  // « Le texte »: the sentences alone, cut by meaning. size 1 = « Phrase » (one
+  // sentence, with its comma-split half or a few words that can't stand alone), 2 = « Bouchée », 3 = « Passage »
+  // (both from CHUNKS in data.js), 0 = « Tout ».
   // « Les variations »: one per structure the text carries, in order of first use.
 
-  function chunkAt(sents, from, size) {
-    return sents.slice(from, size ? from + size : sents.length);
+  var SIZES = [1, 2, 3, 0];
+
+  // « Phrase »: a sentence ending on a comma, or listed in `join`, carries on into the next one.
+  function units(sents, join) {
+    var out = [], n = 0;
+    sents.forEach(function (x, i) {
+      n++;
+      var on = /,\s*$/.test(x.fr) || (join && join.indexOf(i) >= 0);
+      if (!on || i === sents.length - 1) { out.push(n); n = 0; }
+    });
+    return out;
+  }
+
+  // The chunks of a text at a size: [{ from, len }], in order, covering every sentence once.
+  function chunks(sents, size, plan) {
+    var lens = size === 1 ? units(sents, plan && plan.join)
+             : size === 2 && plan ? plan.small
+             : size === 3 && plan ? plan.big
+             : [sents.length];
+    var out = [], from = 0;
+    lens.forEach(function (len) { out.push({ from: from, len: len }); from += len; });
+    return out;
+  }
+
+  // Index of the chunk holding sentence `pos` (so a size change mid-text starts
+  // the chunk he is in, never half of it).
+  function chunkIndex(list, pos) {
+    for (var i = list.length - 1; i > 0; i--) if (list[i].from <= pos) return i;
+    return 0;
   }
 
   // One sentence: three repeats; bigger chunks: two; the whole text is listen-only.
@@ -189,20 +218,21 @@ var Core = (function () {
     if (!opts.review) {
       ui({ phase: 'var', fr: v.model, en: v.en, hideFr: false, mask: false,
            caption: 'Même structure, autre phrase', hint: 'Same structure, a new sentence. Listen.' });
-      for (var j = 1; j <= REPEAT_VAR; j++) {
-        say(v.model);
-        ui({ caption: 'Répète (' + j + '/' + REPEAT_VAR + ')', hint: 'Say it out loud.' });
-        turn(repeatMs(v.model));
-      }
     } else {
+      // He meets the structure again: the English first, his try, then the answer.
       ui({ phase: 'var', fr: v.model, en: v.en, hideFr: true, mask: false,
            caption: 'Dis-le en français', hint: 'Same structure. Say this in French.' });
       say(v.en, 'en', 0.9);
       ui({ caption: 'À toi, en français', hint: 'Your turn, in French.' });
       turn(tryMs(v.model));
-      ui({ hideFr: false, caption: 'La réponse', hint: 'Here is the answer.' });
+      ui({ hideFr: false, caption: 'La réponse', hint: 'Here is the answer. Listen.' });
+    }
+    // Either way: heard and repeated three times, the last one without reading.
+    for (var j = 1; j <= REPEAT_VAR; j++) {
+      if (j === REPEAT_VAR) ui({ hideFr: true, caption: 'Écoute', hint: 'Listen — this time without reading.' });
       say(v.model);
-      ui({ caption: 'Répète', hint: 'Say it out loud.' });
+      ui({ caption: 'Répète (' + j + '/' + REPEAT_VAR + ')',
+           hint: j === REPEAT_VAR ? 'Say it without reading.' : 'Say it out loud.' });
       turn(repeatMs(v.model));
     }
     return k.s;
@@ -237,7 +267,7 @@ var Core = (function () {
     defaults: defaults, normalize: normalize, pickFreshest: pickFreshest,
     textRec: textRec, isDone: isDone, progress: progress, complete: complete, setPos: setPos,
     completeVar: completeVar, setVarPos: setVarPos, varProgress: varProgress,
-    pickVariant: pickVariant, chunkAt: chunkAt, repeatsFor: repeatsFor, varList: varList,
+    pickVariant: pickVariant, SIZES: SIZES, units: units, chunks: chunks, chunkIndex: chunkIndex, repeatsFor: repeatsFor, varList: varList,
     chunkText: chunkText, mask: mask, textSteps: textSteps, varSteps: varSteps
   };
 })();

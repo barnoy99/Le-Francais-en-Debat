@@ -5,7 +5,7 @@ const path = require('path');
 
 const root = path.join(__dirname, '..');
 const src = fs.readFileSync(path.join(root, 'data.js'), 'utf8');
-const { TEXTS, TOPICS, FRAMES, SENTENCES } = new Function(src + '; return { TEXTS, TOPICS, FRAMES, SENTENCES };')();
+const { TEXTS, TOPICS, FRAMES, SENTENCES, CHUNKS } = new Function(src + '; return { TEXTS, TOPICS, FRAMES, SENTENCES, CHUNKS };')();
 
 let failures = 0;
 const fail = msg => { console.log('FAIL ' + msg); failures++; };
@@ -123,6 +123,35 @@ for (const t of TEXTS) {
   });
 }
 for (const f of FRAMES) if (!linked.has(f.id)) fail(`${f.id}: no sentence carries it (never taught)`);
+
+// ── CHUNKS: bouchées and passages cover the text, are made of whole phrases (never
+// cut after a comma or a join), and every passage is whole bouchées.
+const MAX_PASSAGE = 60;
+for (const t of TEXTS) {
+  const ss = SENTENCES[t.id], plan = CHUNKS[t.id];
+  if (!ss) continue;
+  if (!plan) { fail(`text ${t.id}: no CHUNKS`); continue; }
+  const cuts = {};
+  if (plan.join && !plan.join.every(i => Number.isInteger(i) && i >= 0 && i < ss.length - 1)) fail(`text ${t.id}: bad join`);
+  const phraseCuts = new Set();
+  ss.forEach((x, i) => { if (!/,\s*$/.test(x.fr) && !(plan.join || []).includes(i)) phraseCuts.add(i + 1); });
+  phraseCuts.add(ss.length);
+  for (const lvl of ['small', 'big']) {
+    const lens = plan[lvl];
+    if (!Array.isArray(lens) || !lens.every(n => Number.isInteger(n) && n > 0)) { fail(`text ${t.id} ${lvl}: bad lengths`); continue; }
+    const sum = lens.reduce((a, b) => a + b, 0);
+    if (sum !== ss.length) fail(`text ${t.id} ${lvl}: covers ${sum} of ${ss.length} sentences`);
+    cuts[lvl] = new Set();
+    let p = 0;
+    for (const n of lens) {
+      if (!phraseCuts.has(p + n)) fail(`text ${t.id} ${lvl}: cuts a phrase after sentence ${p + n}`);
+      const w = ss.slice(p, p + n).map(x => x.fr).join(' ').split(/\s+/).length;
+      if (lvl === 'big' && w > MAX_PASSAGE) fail(`text ${t.id}: passage at sentence ${p + 1} is ${w} words`);
+      p += n; cuts[lvl].add(p);
+    }
+  }
+  if (cuts.small && cuts.big) for (const c of cuts.big) if (!cuts.small.has(c)) fail(`text ${t.id}: passage ends inside a bouchée (after sentence ${c})`);
+}
 
 console.log(failures ? `${failures} failure(s)`
   : `data OK — ${TEXTS.length} texts, ${sentenceCount} sentences, ${FRAMES.length} frames, ${promptIds.size} prompts`);

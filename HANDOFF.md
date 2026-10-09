@@ -10,6 +10,21 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v10 (2026-10-09) — chunks by meaning; variations heard three times
+
+His request: 2/3/4 sentences « breaks in the middle of the idea »; variations heard only once.
+- Size toggle is now **Phrase · Bouchée · Passage · Tout** (`size` 1 · 2 · 3 · 0; old stored `4` → 3).
+  Phrase = `Core.units`: one sentence, but a sentence ending on a comma, or listed in `CHUNKS[id].join`
+  (a few words that cannot stand alone, his ask: « no very very small chunks »), runs on into the next.
+  Bouchée / Passage = hand-cut `CHUNKS` in `data.js` (lengths in sentences per text): a bouchée is a
+  sentence plus what it leans on (lead-in, question + answer, echo); a passage is a short paragraph,
+  ≤ 60 words. `data-test.js` checks coverage, no cut after a comma, passages made of whole bouchées.
+  **A new text needs its `CHUNKS` entry too.** Repeats unchanged: 3 / 2 / 2 / listen-only.
+  `Core.chunks` + `Core.chunkIndex`: changing size mid-text starts the chunk holding the current sentence.
+- **Variations** (Mains libres / Au calme): always heard + repeated **3×**, French fades on the 3rd.
+  Review keeps English → his try first, then the answer 3×. Silencieux unchanged.
+- Assets `?v=10`, `CACHE_VERSION = 'v10'`.
+
 ## v7 (2026-10-06) — the text and the variations are separate; chunk sizes; « Silencieux »
 
 His request: hear only the text, with the variations « on their own »; bigger chunks once he knows a

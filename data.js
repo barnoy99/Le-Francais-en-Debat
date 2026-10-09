@@ -1058,3 +1058,30 @@ var SENTENCES = {
     { l: 17, fr: "Tu veux qu'on avance, ou tu veux avoir raison ?", en: "Do you want us to get somewhere, or do you want to be right?", f: 'f35' }
   ]
 };
+
+// How « Le texte » cuts each text, by meaning rather than by count. Lengths in
+// sentences, in order. join = « Phrase »: these sentences carry on into the next one
+// (a few words that can't stand alone: « Tu me suis ? », « Enfin, bref. »); a sentence
+// ending on a comma always does. small = « Bouchée »: a phrase with the one it leans on
+// (a lead-in, a question and its answer, an echo); big = « Passage »: a short paragraph.
+// Each size is made of whole pieces of the size below (data-test.js checks).
+var CHUNKS = {
+  2:  { join: [2, 7, 10, 16, 21, 23],
+        small: [1, 1, 2, 2, 1, 3, 2, 2, 1, 3, 2, 3, 2],
+        big:   [2, 4, 4, 4, 4, 5, 2] },
+  6:  { join: [6, 9, 15, 19],
+        small: [1, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2, 2, 2],
+        big:   [5, 3, 3, 4, 4, 2] },
+  8:  { join: [18, 19, 25, 26, 28, 36, 39],
+        small: [2, 3, 2, 2, 1, 2, 2, 2, 2, 3, 2, 2, 3, 2, 1, 2, 2, 3, 1, 2, 2],
+        big:   [2, 3, 4, 3, 2, 4, 5, 5, 3, 4, 4, 4] },
+  10: { join: [14, 25],
+        small: [2, 3, 1, 1, 1, 1, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 3, 1],
+        big:   [2, 4, 2, 4, 4, 4, 3, 1, 4] },
+  14: { join: [0, 5, 12, 31],
+        small: [2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 3, 1, 1, 1, 2, 1, 2, 1, 2],
+        big:   [3, 4, 3, 2, 3, 4, 4, 2, 2, 4, 2] },
+  17: { join: [7, 22, 24, 26, 28, 51],
+        small: [2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2, 2, 2, 2, 2, 4, 2, 2, 1, 3, 2, 1, 1, 1, 3, 3, 2, 3, 1, 1],
+        big:   [2, 5, 2, 4, 3, 2, 4, 4, 4, 2, 2, 4, 3, 2, 6, 2, 5] }
+};

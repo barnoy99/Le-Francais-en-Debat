@@ -6,7 +6,7 @@ const Core = require('../core.js');
 
 const root = path.join(__dirname, '..');
 const src = fs.readFileSync(path.join(root, 'data.js'), 'utf8');
-const { TEXTS, FRAMES, SENTENCES } = new Function(src + '; return { TEXTS, FRAMES, SENTENCES };')();
+const { TEXTS, FRAMES, SENTENCES, CHUNKS } = new Function(src + '; return { TEXTS, FRAMES, SENTENCES, CHUNKS };')();
 const byId = {}; FRAMES.forEach(f => { byId[f.id] = f; });
 
 let failures = 0, checks = 0;
@@ -34,25 +34,33 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
 
 // ── « Le texte »: chunk sizes ─────────────────────────────
 {
-  ok(Core.repeatsFor(1) === 3 && Core.repeatsFor(2) === 2 && Core.repeatsFor(3) === 2 && Core.repeatsFor(4) === 2 && Core.repeatsFor(0) === 0,
-     'repeats: 3 / 2 / 2 / 2, whole text listen-only');
+  ok(Core.repeatsFor(1) === 3 && Core.repeatsFor(2) === 2 && Core.repeatsFor(3) === 2 && Core.repeatsFor(0) === 0,
+     'repeats: phrase 3 / bouchée 2 / passage 2, whole text listen-only');
+  ok(String(Core.units([{ fr: 'A,' }, { fr: 'b.' }, { fr: 'C.' }])) === '2,1', 'phrase: a comma-split sentence stays whole');
   for (const t of TEXTS) {
     const ss = withWho(t);
-    for (const n of [1, 2, 3, 4]) {
+    const counts = {};
+    for (const n of [1, 2, 3]) {
+      const list = Core.chunks(ss, n, CHUNKS[t.id]);
+      counts[n] = list.length;
       let covered = 0;
-      for (let pos = 0; pos < ss.length; pos += n) {
-        const ch = Core.chunkAt(ss, pos, n);
-        ok(ch.length === Math.min(n, ss.length - pos), `text ${t.id}: chunk of ${n} at ${pos}`);
-        covered += ch.length;
+      list.forEach((c, i) => {
+        ok(c.from === covered && c.len > 0, `text ${t.id} size ${n}: chunk ${i} follows the last`);
+        for (let p = c.from; p < c.from + c.len; p++) ok(Core.chunkIndex(list, p) === i, `text ${t.id} size ${n}: sentence ${p} found in chunk ${i}`);
+        covered += c.len;
+        const ch = ss.slice(c.from, c.from + c.len);
         const st = Core.textSteps(ch, { size: n });
         ok(says(st).length === ch.length * Core.repeatsFor(n), `text ${t.id} size ${n}: every sentence said per repeat`);
         ok(turns(st).length === Core.repeatsFor(n), `text ${t.id} size ${n}: one turn per repeat`);
-      }
-      ok(covered === ss.length, `text ${t.id}: chunks of ${n} cover every sentence once`);
+      });
+      ok(covered === ss.length, `text ${t.id}: size ${n} covers every sentence once`);
     }
-    const whole = Core.chunkAt(ss, 0, 0);
+    ok(counts[1] > counts[2] && counts[2] > counts[3], `text ${t.id}: phrase > bouchée > passage in count (${counts[1]}/${counts[2]}/${counts[3]})`);
+    const all = Core.chunks(ss, 0, CHUNKS[t.id]);
+    ok(all.length === 1 && all[0].len === ss.length, `text ${t.id}: « Tout » is one chunk`);
+    const whole = ss;
     const st = Core.textSteps(whole, { size: 0 });
-    ok(whole.length === ss.length && says(st).length === ss.length && turns(st).length === 0, `text ${t.id}: « Tout » = whole text, listen only`);
+    ok(says(st).length === ss.length && turns(st).length === 0, `text ${t.id}: « Tout » = whole text, listen only`);
     const label = Core.chunkText(whole, 'fr');
     ok(t.kind === 'dialogue' ? /^Ton ami : /.test(label) || /^Toi : /.test(label) : !/Toi : /.test(label), `text ${t.id}: speaker labels only in dialogues`);
   }
@@ -72,7 +80,7 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
   const first = Core.varSteps(v, { review: false });
   const varUi = first.find(s => s.t === 'ui' && s.v.phase === 'var');
   ok(varUi && varUi.v.fr === v.model && varUi.v.en === v.en && varUi.v.hideFr === false, 'first time: shown in French + English');
-  ok(says(first).filter(s => s.text === v.model).length === Core.REPEAT_VAR && turns(first).length === Core.REPEAT_VAR, 'first time: heard and repeated twice');
+  ok(says(first).filter(s => s.text === v.model).length === Core.REPEAT_VAR && turns(first).length === Core.REPEAT_VAR, 'first time: heard and repeated three times');
   ok(!first.some(s => s.t === 'ui' && s.v.phase === 'sent'), 'a variation comes without the text sentence');
 
   const back = Core.varSteps(v, { review: true });
@@ -84,6 +92,13 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
   ok(back[i0].v.hideFr === true && back[iEn].text === v.en, 'review: French hidden, English cue spoken');
   ok(iEn > i0 && iTry > iEn && iReveal > iTry && iModel > iReveal, 'review order: English → his try → reveal → model');
   ok(back[iTry].ms > Core.repeatMs(v.model), 'review: the try window is longer than a repeat');
+  ok(says(back).filter(s => s.text === v.model).length === Core.REPEAT_VAR && turns(back).length === Core.REPEAT_VAR + 1,
+     'review: after his try, the answer heard and repeated three times');
+  for (const steps of [first, back]) {
+    const lastSay = steps.map(s => s.t === 'say' && s.text === v.model).lastIndexOf(true);
+    const fade = steps.findIndex((s, i) => i < lastSay && s.t === 'ui' && s.v.hideFr === true && s.v.caption === 'Écoute');
+    ok(fade > 0, 'variation: the French fades before the third hearing');
+  }
 
   // Separate cursor; each one shown moves the rotation on.
   const st = Core.defaults();
@@ -98,7 +113,7 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
 // ── « Silencieux »: nothing spoken, guess then « Voir » ──────
 {
   const ss = withWho(TEXTS[0]);
-  const st = Core.textSteps(Core.chunkAt(ss, 0, 2), { size: 2, silent: true });
+  const st = Core.textSteps(ss.slice(0, 2), { size: 2, silent: true });
   ok(says(st).length === 0, 'silent text: nothing spoken');
   ok(st[0].v.mask === true && turns(st)[0].label === 'Voir', 'silent text: masked first, then « Voir »');
   ok(st.some(s => s.t === 'ui' && s.v.mask === false), 'silent text: then revealed');

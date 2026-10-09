@@ -1,5 +1,5 @@
-/* Le Français en Débat — pick a text, then either the text alone (1–4 sentences at a
-   time, or whole) or its variations (each structure bent into a sentence of your life). One IIFE; lesson steps and progress live in core.js. */
+/* Le Français en Débat — pick a text, then either the text alone (a sentence, a bite or
+   a passage at a time, or whole) or its variations (each structure bent into a sentence of your life). One IIFE; lesson steps and progress live in core.js. */
 (function () {
   'use strict';
 
@@ -21,9 +21,10 @@
                            // | 'silence' = no sound: read, guess, tap
   var SIZE_KEY = 'debat_chunk';
 
-  // part: 'texte' (the sentences, `size` at a time; 0 = whole text) | 'var' (the variations)
+  // part: 'texte' (the sentences, cut at `size`: 1 phrase · 2 bouchée · 3 passage · 0 tout,
+  // into run.chunks) | 'var' (the variations)
   var run = { active: false, paused: false, gen: 0, steps: [], idx: 0, text: null, part: 'texte',
-              sents: [], vars: [], pos: 0, len: 1, size: 1, variant: null, timer: null, help: '' };
+              sents: [], chunks: [], vars: [], pos: 0, len: 1, size: 1, variant: null, timer: null, help: '' };
 
   function $(id) { return document.getElementById(id); }
   function show(el) { el.classList.remove('hidden'); }
@@ -272,8 +273,10 @@
     var silent = mode === 'silence';
     var who = '', count;
     if (run.part === 'texte') {
-      var chunk = Core.chunkAt(run.sents, pos, run.size);
-      run.len = chunk.length;
+      var c = run.chunks[Core.chunkIndex(run.chunks, pos)];
+      pos = run.pos = c.from;
+      var chunk = run.sents.slice(c.from, c.from + c.len);
+      run.len = c.len;
       Core.setPos(state, run.text.id, pos);
       run.variant = null;
       run.steps = Core.textSteps(chunk, { size: run.size, silent: silent });
@@ -315,7 +318,7 @@
 
   function prevItem() {
     if (!run.active || run.pos === 0) return;
-    playAt(run.part === 'texte' ? run.pos - (run.size || run.sents.length) : run.pos - 1);
+    playAt(run.part === 'texte' ? run.chunks[Core.chunkIndex(run.chunks, run.pos) - 1].from : run.pos - 1);
   }
 
   function finishPart() {
@@ -323,7 +326,7 @@
     save();
     $('done-title').textContent = run.text.title;
     $('done-note').textContent = run.part === 'texte'
-      ? 'Quand tu le connais mieux, choisis des passages plus longs : 2, 3, 4 phrases, ou tout le texte.'
+      ? 'Quand tu le connais mieux, prends des morceaux plus longs : une bouchée, un passage, ou tout le texte.'
       : 'La prochaine fois, chaque structure revient avec une nouvelle phrase, en anglais d\'abord : c\'est toi qui la diras en français.';
     $('btn-done-again').textContent = run.part === 'texte' ? 'Relire ce texte' : 'Refaire les variations';
     showScreen('screen-done');
@@ -336,6 +339,7 @@
     run.sents = SENTENCES[t.id].map(function (x) {
       return { fr: x.fr, en: x.en, f: x.f, who: t.lines[x.l].who };
     });
+    run.chunks = Core.chunks(run.sents, run.size, CHUNKS[t.id]);
     run.vars = Core.varList(SENTENCES[t.id]);
     var p = part === 'texte' ? Core.progress(state, t.id, run.sents.length) : Core.varProgress(state, t.id, run.vars.length);
     var start = fromStart || p.finished ? 0 : p.pos;
@@ -353,7 +357,11 @@
     try { localStorage.setItem(SIZE_KEY, String(n)); } catch (e) {}
     var btns = document.querySelectorAll('.size-btn');
     for (var i = 0; i < btns.length; i++) btns[i].classList.toggle('active', +btns[i].getAttribute('data-size') === n);
-    if (run.active && run.part === 'texte') playAt(n ? run.pos : 0);   // « Tout » starts from the top
+    // Mid-text: the chunk holding the current sentence at the new size (« Tout » = the top).
+    if (run.active && run.part === 'texte') {
+      run.chunks = Core.chunks(run.sents, n, CHUNKS[run.text.id]);
+      playAt(run.pos);
+    }
   }
 
   function leaveRun() {
@@ -456,7 +464,8 @@
     $('mode-calme').addEventListener('click', function () { setMode('calme'); });
     $('mode-silence').addEventListener('click', function () { setMode('silence'); });
     try { run.size = parseInt(localStorage.getItem(SIZE_KEY), 10); } catch (e) {}
-    if (!(run.size >= 0 && run.size <= 4)) run.size = 1;
+    if (run.size === 4) run.size = 3;                    // v9 had 1·2·3·4·Tout
+    if (Core.SIZES.indexOf(run.size) < 0) run.size = 1;
     setSize(run.size);
     var sizeBtns = document.querySelectorAll('.size-btn');
     for (var sb = 0; sb < sizeBtns.length; sb++) {
