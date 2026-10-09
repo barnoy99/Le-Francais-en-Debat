@@ -79,6 +79,7 @@ ul { list-style: none; }
   box-shadow: 0 6px 18px rgba(139, 45, 58, 0.25);
 }
 .btn-text { font-size: 0.95rem; color: var(--text-secondary); padding: 0.6rem 0.4rem; min-height: 44px; }
+.app-version { font-size: 0.75rem; color: var(--text-secondary); opacity: 0.7; text-align: center; margin-top: 0.4rem; }
 
 #screen-done { justify-content: center; }
 .done { text-align: center; }

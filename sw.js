@@ -1,17 +1,17 @@
 /* Service worker — offline support.
    IMPORTANT: bump CACHE_VERSION on every deploy that changes assets,
    together with the ?v=N cache-busters in index.html. */
-var CACHE_VERSION = 'v16';
+var CACHE_VERSION = 'v17';
 var CACHE_NAME = 'debat-' + CACHE_VERSION;
 
 var SHELL = [
   './',
   'index.html',
-  'style.css?v=16',
-  'core.js?v=16',
-  'data.js?v=16',
-  'app.js?v=16',
-  'firebase-config.js?v=16',
+  'style.css?v=17',
+  'core.js?v=17',
+  'data.js?v=17',
+  'app.js?v=17',
+  'firebase-config.js?v=17',
   'manifest.json',
   'icon-192.png',
   'icon-512.png'
@@ -53,7 +53,9 @@ self.addEventListener('fetch', function (e) {
   // Navigations: network-first so updates arrive, cached shell offline.
   if (req.mode === 'navigate') {
     e.respondWith(
-      fetch(req).then(function (res) {
+      // no-cache: revalidate with the server, so the HTTP cache (Pages: 10 min)
+      // cannot hand back the previous index.html right after a deploy.
+      fetch(req, { cache: 'no-cache' }).then(function (res) {
         var copy = res.clone();
         caches.open(CACHE_NAME).then(function (c) { c.put('index.html', copy); });
         return res;

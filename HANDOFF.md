@@ -10,6 +10,17 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v17 (2026-10-09) — updates arrive; version shown
+
+His report after v16: « I still hear the French right after the English » — his phone was still on v15.
+Two causes: Android resumes a « closed » PWA without reloading, and the SW's network-first navigation
+went through the HTTP cache (Pages serves HTML with max-age=600), so a reload just after a deploy
+could get the old index.html. Fixes: navigation fetch uses `{ cache: 'no-cache' }`; on returning to
+the app the SW registration calls `update()`; when a new SW takes control (`controllerchange`, and only
+if a SW already controlled the page) the app reloads — at once if no run is active, else on the next
+return home. Home shows « version N » (read from app.js's `?v=`), so he can tell what he runs.
+**Not verified on his phone** (the pane can't test the live SW without writing Firebase).
+
 ## v16 (2026-10-09) — a try after the English
 
 His ask: time after the English to say it in French, « at least the same time as after the French ».

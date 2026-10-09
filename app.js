@@ -20,6 +20,8 @@
   var mode = 'mains';      // 'mains' = hands-free, paced by silences | 'calme' = tap « Suivant »
                            // | 'silence' = no sound: read, guess, tap
                            // | 'anglais' = hands-free, the English once then the French ×3
+  var swReg = null, updatePending = false;
+  function reloadIfUpdated() { if (updatePending && !run.active) location.reload(); }
   function handsFree() { return mode === 'mains' || mode === 'anglais'; }
   var SIZE_KEY = 'debat_chunk';
 
@@ -426,6 +428,7 @@
   }
 
   function renderHome() {
+    reloadIfUpdated();
     var list = $('text-list');
     list.innerHTML = '';
     TEXTS.forEach(function (t) {
@@ -515,13 +518,26 @@
     $('btn-done-home').addEventListener('click', function () { renderHome(); showScreen('screen-home'); });
 
     // Screen off / app switched: the OS silences speech and throttles timers, so pause.
+    // Coming back is also when a resumed (never reloaded) app looks for an update.
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) { if (run.active) pauseRun(); }
-      else if (run.active) requestWakeLock();
+      else {
+        if (run.active) requestWakeLock();
+        if (swReg) swReg.update().catch(function () {});
+        reloadIfUpdated();
+      }
     });
 
+    var m = /[?&]v=(\d+)/.exec(document.querySelector('script[src*="app.js"]').src);
+    $('app-version').textContent = m ? 'version ' + m[1] : '';
+
     if ('serviceWorker' in navigator && !LOCAL_ONLY) {
-      navigator.serviceWorker.register('sw.js').catch(function () {});
+      var hadController = !!navigator.serviceWorker.controller;
+      navigator.serviceWorker.register('sw.js').then(function (reg) { swReg = reg; }).catch(function () {});
+      // A new version took over: reload into it, but never in the middle of a run.
+      navigator.serviceWorker.addEventListener('controllerchange', function () {
+        if (hadController) { updatePending = true; reloadIfUpdated(); }
+      });
     }
   }
 
