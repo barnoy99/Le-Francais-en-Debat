@@ -133,7 +133,11 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
     ok(sp.slice(0, ch.length).every((s, i) => s.lang === 'en' && s.text === ch[i].en), `en-first size ${size}: the English first, once`);
     ok(sp.filter(s => s.lang === 'en').length === ch.length, `en-first size ${size}: English said only once`);
     ok(sp.filter(s => s.lang === 'fr').length === 3 * ch.length, `en-first size ${size}: French three times, whatever the size`);
-    ok(turns(st).length === 3, `en-first size ${size}: a turn after each French`);
+    ok(turns(st).length === 4, `en-first size ${size}: a try after the English, a turn after each French`);
+    const firstTurn = st.findIndex(s => s.t === 'turn');
+    ok(firstTurn > st.findIndex(s => s.t === 'say' && s.lang === 'en') && firstTurn < st.findIndex(s => s.t === 'say' && s.lang === 'fr') && st[firstTurn].ms >= turns(st)[1].ms,
+       `en-first size ${size}: the try comes before the French, at least as long as a repeat`);
+    ok(st.slice(0, firstTurn).every(s => s.t !== 'ui' || s.v.hideFr !== false), `en-first size ${size}: French still hidden during the try`);
     ok(st[0].v.hideFr === true, `en-first size ${size}: French hidden while the English plays`);
     const shown = st.findIndex(s => s.t === 'ui' && s.v.hideFr === false);
     const firstFr = st.findIndex(s => s.t === 'say' && s.lang === 'fr');
@@ -144,7 +148,7 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
     const vs = Core.varSteps(v, { review, enFirst: true });
     const sp = says(vs);
     ok(sp[0].lang === 'en' && sp[0].text === v.en && sp.filter(s => s.lang === 'en').length === 1, 'en-first variation: English once, first');
-    ok(sp.filter(s => s.lang === 'fr' && s.text === v.model).length === 3 && turns(vs).length === 3, 'en-first variation: French ×3, a turn each');
+    ok(sp.filter(s => s.lang === 'fr' && s.text === v.model).length === 3 && turns(vs).length === 4, 'en-first variation: a try, then French ×3, a turn each');
   }
 }
 

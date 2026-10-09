@@ -404,7 +404,7 @@
   // ── Home ──────────────────────────────────────────────
 
   var MODE_DESC = { mains: "Tout à l'oreille : l'appli fait une pause pour que tu répètes, puis continue toute seule.",
-                    anglais: "Tout à l'oreille : d'abord l'anglais, puis trois fois le français, avec une pause pour répéter.",
+                    anglais: "Tout à l'oreille : l'anglais, un temps pour le dire en français, puis trois fois le français à répéter.",
                     calme: "Tu lis, tu répètes à ton rythme, et tu touches « Suivant ».",
                     silence: "Aucun son : tu lis l'anglais, tu devines le français, puis tu touches « Voir »." };
 

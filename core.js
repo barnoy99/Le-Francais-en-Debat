@@ -192,6 +192,9 @@ var Core = (function () {
       k.ui({ phase: 'sent', fr: fr, en: en, hideFr: true, mask: false,
              caption: "En anglais d'abord", hint: 'First the English. Listen.' });
       chunk.forEach(function (x) { k.say(x.en, 'en', 0.9); });
+      // His try in French before hearing it: longer than a repeat window.
+      k.ui({ caption: 'À toi, en français', hint: 'Your turn: say it in French.' });
+      k.turn(tryMs(chunk.map(function (x) { return x.fr; }).join(' ')));
       repeatFr(k, chunk.map(function (x) { return x.fr; }), REPEAT_EN);
       return k.s;
     }
@@ -241,6 +244,8 @@ var Core = (function () {
       ui({ phase: 'var', fr: v.model, en: v.en, hideFr: true, mask: false,
            caption: "En anglais d'abord", hint: 'Same structure, a new sentence. First the English.' });
       say(v.en, 'en', 0.9);
+      ui({ caption: 'À toi, en français', hint: 'Your turn: say it in French.' });
+      turn(tryMs(v.model));
       repeatFr(k, [v.model], REPEAT_EN);
       return k.s;
     }

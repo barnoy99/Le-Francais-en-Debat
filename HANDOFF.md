@@ -10,6 +10,12 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v16 (2026-10-09) — a try after the English
+
+His ask: time after the English to say it in French, « at least the same time as after the French ».
+« Anglais d'abord » now: English → **his try** (caption « À toi, en français », French still hidden,
+`tryMs` = 3 s + 0.7 s/word, longer than `repeatMs`) → French ×3 with a turn each. Text and variations. Assets `?v=16`.
+
 ## v15 (2026-10-09) — three repeats everywhere
 
 His ask: « all repeats always 3 times ». `Core.repeatsFor`: Phrase, Bouchée, Passage all 3 (were 3 / 2 / 2);
