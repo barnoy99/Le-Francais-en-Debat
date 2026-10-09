@@ -19,6 +19,8 @@
   var textsById = {};
   var mode = 'mains';      // 'mains' = hands-free, paced by silences | 'calme' = tap « Suivant »
                            // | 'silence' = no sound: read, guess, tap
+                           // | 'anglais' = hands-free, the English once then the French ×3
+  function handsFree() { return mode === 'mains' || mode === 'anglais'; }
   var SIZE_KEY = 'debat_chunk';
 
   // part: 'texte' (the sentences, cut at `size`: 1 phrase · 2 bouchée · 3 passage · 0 tout,
@@ -174,7 +176,13 @@
       $('run-card').scrollTop = 0;
     }
     if (v.en !== undefined) $('run-en').textContent = v.en;
-    if (v.hideFr !== undefined) $('run-fr').classList.toggle('faded', v.hideFr);
+    if (v.hideFr !== undefined) {
+      var frEl = $('run-fr');
+      // A new sentence that starts hidden must not flash in during the fade.
+      if (v.fr !== undefined) frEl.style.transition = 'none';
+      frEl.classList.toggle('faded', v.hideFr);
+      if (v.fr !== undefined) { void frEl.offsetWidth; frEl.style.transition = ''; }
+    }
     if (v.caption !== undefined) {
       $('run-caption').textContent = v.caption;
       run.help = v.hint || '';
@@ -191,7 +199,7 @@
   // His turn. « Mains libres »: a silence sized to the sentence, with a thin bar.
   // « Au calme » / « Silencieux »: as long as he wants, then the button.
   function startTurn(ms, next, label) {
-    if (mode !== 'mains') {
+    if (!handsFree()) {
       var btn = $('btn-next');
       btn.textContent = label || 'Suivant ›';
       show(btn);
@@ -279,7 +287,7 @@
       run.len = c.len;
       Core.setPos(state, run.text.id, pos);
       run.variant = null;
-      run.steps = Core.textSteps(chunk, { size: run.size, silent: silent });
+      run.steps = Core.textSteps(chunk, { size: run.size, silent: silent, enFirst: mode === 'anglais' });
       var one = chunk.every(function (x) { return x.who === chunk[0].who; });
       if (run.text.kind === 'dialogue' && one) who = chunk[0].who === 'lui' ? 'Ton ami' : 'Toi';
       count = run.len === 1 ? (pos + 1) + ' / ' + list.length : (pos + 1) + '–' + (pos + run.len) + ' / ' + list.length;
@@ -289,7 +297,7 @@
       run.len = 1;
       Core.setVarPos(state, run.text.id, pos);
       run.variant = Core.pickVariant(state, frame);
-      run.steps = Core.varSteps(run.variant, { review: (state.vu[entry.f] || 0) > 0, silent: silent });
+      run.steps = Core.varSteps(run.variant, { review: (state.vu[entry.f] || 0) > 0, silent: silent, enFirst: mode === 'anglais' });
       who = frame.form;
       count = (pos + 1) + ' / ' + list.length;
     }
@@ -396,6 +404,7 @@
   // ── Home ──────────────────────────────────────────────
 
   var MODE_DESC = { mains: "Tout à l'oreille : l'appli fait une pause pour que tu répètes, puis continue toute seule.",
+                    anglais: "Tout à l'oreille : d'abord l'anglais, puis trois fois le français, avec une pause pour répéter.",
                     calme: "Tu lis, tu répètes à ton rythme, et tu touches « Suivant ».",
                     silence: "Aucun son : tu lis l'anglais, tu devines le français, puis tu touches « Voir »." };
 
@@ -403,6 +412,7 @@
     mode = m;
     try { localStorage.setItem(MODE_KEY, m); } catch (e) {}
     $('mode-mains').classList.toggle('active', m === 'mains');
+    $('mode-anglais').classList.toggle('active', m === 'anglais');
     $('mode-calme').classList.toggle('active', m === 'calme');
     $('mode-silence').classList.toggle('active', m === 'silence');
     $('mode-desc').textContent = MODE_DESC[m];
@@ -461,6 +471,7 @@
     if (!MODE_DESC[mode]) mode = 'mains';
     setMode(mode);
     $('mode-mains').addEventListener('click', function () { setMode('mains'); });
+    $('mode-anglais').addEventListener('click', function () { setMode('anglais'); });
     $('mode-calme').addEventListener('click', function () { setMode('calme'); });
     $('mode-silence').addEventListener('click', function () { setMode('silence'); });
     try { run.size = parseInt(localStorage.getItem(SIZE_KEY), 10); } catch (e) {}
@@ -497,7 +508,7 @@
     $('choose-var-restart').addEventListener('click', function () { openPart('var', true); });
     $('btn-explain').addEventListener('click', explainStep);
     $('run-tap').addEventListener('click', function (e) {
-      if (inControl(e.target) || (mode !== 'mains' && !run.paused)) return;
+      if (inControl(e.target) || (!handsFree() && !run.paused)) return;
       togglePause();
     });
     $('btn-done-again').addEventListener('click', function () { openPart(run.part, true); });

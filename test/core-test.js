@@ -34,8 +34,8 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
 
 // ── « Le texte »: chunk sizes ─────────────────────────────
 {
-  ok(Core.repeatsFor(1) === 3 && Core.repeatsFor(2) === 2 && Core.repeatsFor(3) === 2 && Core.repeatsFor(0) === 0,
-     'repeats: phrase 3 / bouchée 2 / passage 2, whole text listen-only');
+  ok(Core.repeatsFor(1) === 3 && Core.repeatsFor(2) === 3 && Core.repeatsFor(3) === 3 && Core.repeatsFor(0) === 0,
+     'repeats: three for every chunk size, whole text listen-only');
   ok(String(Core.units([{ fr: 'A,' }, { fr: 'b.' }, { fr: 'C.' }])) === '2,1', 'phrase: a comma-split sentence stays whole');
   for (const t of TEXTS) {
     const ss = withWho(t);
@@ -123,6 +123,31 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
   ok(Core.mask('Ton ami : Avoue.\nToi : Non.') === 'Ton ami : A____.\nToi : N__.', 'mask leaves speaker labels readable');
 }
 
+// ── « Anglais d'abord »: the English once, then the French ×3 with his turns ──
+{
+  const ss = withWho(TEXTS[0]);
+  for (const size of [1, 2, 3, 0]) {
+    const ch = ss.slice(0, 3);
+    const st = Core.textSteps(ch, { size, enFirst: true });
+    const sp = says(st);
+    ok(sp.slice(0, ch.length).every((s, i) => s.lang === 'en' && s.text === ch[i].en), `en-first size ${size}: the English first, once`);
+    ok(sp.filter(s => s.lang === 'en').length === ch.length, `en-first size ${size}: English said only once`);
+    ok(sp.filter(s => s.lang === 'fr').length === 3 * ch.length, `en-first size ${size}: French three times, whatever the size`);
+    ok(turns(st).length === 3, `en-first size ${size}: a turn after each French`);
+    ok(st[0].v.hideFr === true, `en-first size ${size}: French hidden while the English plays`);
+    const shown = st.findIndex(s => s.t === 'ui' && s.v.hideFr === false);
+    const firstFr = st.findIndex(s => s.t === 'say' && s.lang === 'fr');
+    ok(shown > 0 && shown < firstFr, `en-first size ${size}: French appears with the first French`);
+  }
+  const v = byId.f02.prompts[0];
+  for (const review of [false, true]) {
+    const vs = Core.varSteps(v, { review, enFirst: true });
+    const sp = says(vs);
+    ok(sp[0].lang === 'en' && sp[0].text === v.en && sp.filter(s => s.lang === 'en').length === 1, 'en-first variation: English once, first');
+    ok(sp.filter(s => s.lang === 'fr' && s.text === v.model).length === 3 && turns(vs).length === 3, 'en-first variation: French ×3, a turn each');
+  }
+}
+
 // ── Windows scale with length ────────────────────────────
 ok(Core.repeatMs('un deux trois quatre cinq six') > Core.repeatMs('un deux'), 'longer sentence, longer window');
 ok(Core.repeatMs('Tu me suis ?') >= 2500, 'even a short sentence leaves time to repeat');
@@ -160,8 +185,9 @@ ok(Core.repeatMs('Tu me suis ?') >= 2500, 'even a short sentence leaves time to 
     ok(ss.every((s, i) => Core.isDone(st, t.id, i)), `text ${t.id}: everything is review on the second pass`);
     ok(!Core.progress(st, t.id, ss.length).finished, `text ${t.id}: restart reopens it`);
   }
-  // Frames used in several sentences rotate across them: f02 sits in four texts.
-  ok(st.vu.f02 === 4, 'f02 shown once per sentence carrying it');
+  // Frames used in several sentences rotate across them: f02 sits in many texts.
+  const f02n = TEXTS.reduce((a, t) => a + SENTENCES[t.id].filter(s => s.f === 'f02').length, 0);
+  ok(st.vu.f02 === f02n, 'f02 shown once per sentence carrying it');
 }
 
 // ── Out-of-order completion (⏭ then ⏮) keeps the done string coherent ──

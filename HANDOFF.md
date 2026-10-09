@@ -10,6 +10,57 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v15 (2026-10-09) — three repeats everywhere
+
+His ask: « all repeats always 3 times ». `Core.repeatsFor`: Phrase, Bouchée, Passage all 3 (were 3 / 2 / 2);
+« Tout » stays listen-only (a whole text can't be repeated aloud in one go). Help text updated. Assets `?v=15`.
+
+## v14 (2026-10-09) — scrollable card; « Anglais d'abord » mode
+
+His asks: see all the English when a chunk is long; a mode that plays the English once, then the
+French three times.
+- **Card scrolls**: `.run-card` is always `overflow-y: auto` (was only past 40 French words) and its
+  children don't shrink, so long English is never clipped. Swiping it doesn't pause the run.
+- **« Anglais d'abord »** (`mode = 'anglais'`), 4th button on home. His choices: hands-free like
+  Mains libres (timed turns, tap to pause — `handsFree()` in `app.js`); French hidden while the English
+  plays, shown from the first French, hidden on the third; **both** the text and the variations;
+  **always 3** French repeats whatever the chunk size (`REPEAT_EN`, incl. « Tout »).
+  `Core.textSteps` / `Core.varSteps` take `enFirst`; shared `repeatFr()` in `core.js`. In variations it
+  replaces both the first-meet and review flows (no « à toi » try window).
+- A sentence that starts hidden no longer flashes in during the 0.5 s fade (`view()` drops the
+  transition when `fr` changes).
+- Assets `?v=14`, `CACHE_VERSION = 'v14'` (v11–v13 were never pushed).
+
+## v11 (2026-10-09) — the full catalogue: 18 texts
+
+His ask: « more texts as we planned », plus one on the Haredim (draft, taxes, the Rambam), « be fair:
+if they have strong arguments, don't ignore them ». Added the eleven remaining catalogue texts
+(#1 3 4 5 7 9 11 12 13 15 16) and **#18 Les ultra-orthodoxes, l'armée et l'argent** (dialogue,
+corpus B, outside the original catalogue). All in `texts/*.md`, `TEXTS`, `SENTENCES` (+457), `CHUNKS`,
+English in `texts-english.md` (paragraph-numbered, rebuilt from the per-sentence `en`).
+- **Written and integrated in one go, not yet reviewed by him** (unlike Phase 1). Expect edits.
+- #18 steelmans in the friend's mouth: Torah study as protection, fear of secularisation, Arab citizens
+  don't serve either (conceded: a civil service for all), the household calculation inflated by family
+  size (conceded in part), Yosef Karo against the Rambam. Narrow claim kept: they are **not** tax-exempt
+  (VAT); they pay ~2% of income tax because half the men don't work, and the exemption requires staying
+  in yeshiva — the system pays men not to work. No draft-law status in the text (unresolved, election 27 Oct 2026).
+- Each monologue quotes the friend's objection (`cues`); every text carries ≥ 3 frames (core-test rule).
+  Frame `sources` extended; no new frames (f37+ still free).
+- Bouchées/passages for the new texts were cut by a heuristic (unit + what leans on it, within a turn;
+  passages ≤ 60 words preferring turn ends), not by hand — retune any that read badly.
+- `core-test.js`: the f02 rotation count is now computed, not hard-coded to 4.
+- Assets bumped (see v14).
+
+Facts checked 2026-10-09 (web): IDI Haredi yearbook 2025 (14.3%, men 53% employed, women 81%);
+IDI on 2024 draft year (≈24,000 orders → 798 enlisted); ≈80,000 eligible; HCJ ruling 25 June 2024,
+unanimous; Bank of Israel household fiscal accounts (non-Haredi Jewish household net payer ≈ ₪6,000/month,
+Haredi net recipient ≈ ₪4,000); Calcalist via ToI (2% of income tax); Globes (kollel stipend ≈ ₪750);
+Rambam Hilchot Talmud Torah 3:10; 7 Oct per Bituah Leumi (1,139: 695 Israeli civilians incl. 36 children,
+71 foreigners, 373 security), Nova ≈ 364; UN Watch 2015–23 (154 vs 71 — advocacy NGO, said so in text);
+Sudan ≈ 14 M displaced (UN, Apr 2026). From memory, solid: Peel ≈ 20%, 1947 ≈ 55% of land for ≈ 1/3,
+Olmert ≈ 94% + swaps, Abbas 2015 « rejected it out of hand » (Channel 10), Mosul 9–11k civilians (AP),
+Raqqa ≈ 1,600 (Amnesty), WSJ June 2024 Sinwar « necessary sacrifices », WCK April 2024.
+
 ## v10 (2026-10-09) — chunks by meaning; variations heard three times
 
 His request: 2/3/4 sentences « breaks in the middle of the idea »; variations heard only once.
@@ -19,7 +70,7 @@ His request: 2/3/4 sentences « breaks in the middle of the idea »; variations 
   Bouchée / Passage = hand-cut `CHUNKS` in `data.js` (lengths in sentences per text): a bouchée is a
   sentence plus what it leans on (lead-in, question + answer, echo); a passage is a short paragraph,
   ≤ 60 words. `data-test.js` checks coverage, no cut after a comma, passages made of whole bouchées.
-  **A new text needs its `CHUNKS` entry too.** Repeats unchanged: 3 / 2 / 2 / listen-only.
+  **A new text needs its `CHUNKS` entry too.** Repeats: 3 / 2 / 2 / listen-only (v15: 3 / 3 / 3 / listen-only).
   `Core.chunks` + `Core.chunkIndex`: changing size mid-text starts the chunk holding the current sentence.
 - **Variations** (Mains libres / Au calme): always heard + repeated **3×**, French fades on the 3rd.
   Review keeps English → his try first, then the answer 3×. Silencieux unchanged.

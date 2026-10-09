@@ -57,7 +57,7 @@ ul { list-style: none; }
 .splash-flourish { color: var(--color-gold); margin: 0.6rem 0 0.9rem; letter-spacing: 0.1em; text-align: center; }
 
 .mode-toggle { display: flex; width: 100%; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 0.5rem; background: var(--bg-card); }
-.mode-btn { flex: 1; min-height: 48px; font-size: 0.92rem; font-weight: 600; color: var(--text-secondary); }
+.mode-btn { flex: 1; min-height: 48px; padding: 0.3rem 0.25rem; font-size: 0.86rem; font-weight: 600; line-height: 1.15; color: var(--text-secondary); }
 .mode-btn.active { background: var(--color-accent-light); color: var(--color-accent); }
 .mode-desc { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem; min-height: 2.4em; text-align: center; line-height: 1.4; }
 
@@ -106,8 +106,10 @@ ul { list-style: none; }
 .run-card {
   background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px;
   padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.8rem;
-  max-height: 62dvh; overflow: hidden;
+  max-height: 62dvh; overflow-y: auto; overscroll-behavior: contain;
 }
+/* Children keep their full height so the card scrolls instead of squeezing the English. */
+.run-card > * { flex-shrink: 0; }
 .run-card--var { border-color: var(--color-teal); background: #F7FBFB; }
 .run-top { display: flex; justify-content: space-between; align-items: center; }
 .run-tag {
@@ -178,7 +180,6 @@ ul { list-style: none; }
 .size-btn.active { background: var(--color-accent-light); color: var(--color-accent); }
 .run-fr, .run-en { white-space: pre-line; }
 .run-fr.masked { color: var(--text-secondary); letter-spacing: 0.04em; }
-.run-card--long { overflow-y: auto; }
 .run-card--long .run-fr { font-size: 1.2rem; }
 .run-card--long .run-en { font-size: 0.85rem; }
 .choice--var .text-action { color: var(--color-teal); }

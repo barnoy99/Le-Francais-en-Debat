@@ -3,8 +3,9 @@
 var Core = (function () {
   'use strict';
 
-  var REPEAT_SENT = 3;      // the text's sentence: heard and repeated three times
+  var REPEAT_SENT = 3;      // a chunk of the text, any size but « Tout »: heard and repeated three times
   var REPEAT_VAR = 3;       // a variation: heard and repeated three times (Quotidien-style)
+  var REPEAT_EN = 3;        // « Anglais d'abord »: the English once, then the French three times, any size
   // Speaking windows in « Mains libres », scaled to the sentence. Generous on purpose:
   // his first feedback was « too fast ».
   function repeatMs(fr) { return 1500 + words(fr) * 450; }
@@ -125,7 +126,7 @@ var Core = (function () {
   }
 
   // One sentence: three repeats; bigger chunks: two; the whole text is listen-only.
-  function repeatsFor(size) { return size === 1 ? REPEAT_SENT : size ? 2 : 0; }
+  function repeatsFor(size) { return size ? REPEAT_SENT : 0; }  // « Tout » = listen only
 
   function varList(sents) {
     var seen = {}, out = [];
@@ -173,7 +174,7 @@ var Core = (function () {
     };
   }
 
-  // opts: { size, silent }
+  // opts: { size, silent, enFirst }
   function textSteps(chunk, opts) {
     opts = opts || {};
     var k = stepper();
@@ -184,6 +185,14 @@ var Core = (function () {
       k.turn(0, 'Voir');
       k.ui({ mask: false, caption: 'Relis-le', hint: 'Read it once more, then go on.' });
       k.turn(0);
+      return k.s;
+    }
+    if (opts.enFirst) {
+      // « Anglais d'abord »: the meaning first, French hidden; then the French, repeated.
+      k.ui({ phase: 'sent', fr: fr, en: en, hideFr: true, mask: false,
+             caption: "En anglais d'abord", hint: 'First the English. Listen.' });
+      chunk.forEach(function (x) { k.say(x.en, 'en', 0.9); });
+      repeatFr(k, chunk.map(function (x) { return x.fr; }), REPEAT_EN);
       return k.s;
     }
     var reps = repeatsFor(opts.size === undefined ? 1 : opts.size);
@@ -203,7 +212,20 @@ var Core = (function () {
     return k.s;
   }
 
-  // opts: { review, silent }. review = he has met a variation of this structure before.
+  // The French heard and repeated n times: shown from the first, hidden on the last.
+  function repeatFr(k, frs, n) {
+    var all = frs.join(' ');
+    for (var i = 1; i <= n; i++) {
+      if (i === 1) k.ui({ hideFr: false, caption: 'Écoute', hint: 'Now the French. Listen.' });
+      if (i === n && n > 1) k.ui({ hideFr: true, caption: 'Écoute', hint: 'Listen — this time without reading.' });
+      frs.forEach(function (fr) { k.say(fr); });
+      k.ui({ caption: n > 1 ? 'Répète (' + i + '/' + n + ')' : 'Répète',
+             hint: i === n && n > 1 ? 'Say it without reading.' : 'Say it out loud.' });
+      k.turn(repeatMs(all));
+    }
+  }
+
+  // opts: { review, silent, enFirst }. review = he has met a variation of this structure before.
   function varSteps(v, opts) {
     opts = opts || {};
     var k = stepper(), ui = k.ui, say = k.say, turn = k.turn;
@@ -213,6 +235,13 @@ var Core = (function () {
       turn(0, 'Voir');
       ui({ mask: false, caption: 'La réponse', hint: 'Here is the answer.' });
       turn(0);
+      return k.s;
+    }
+    if (opts.enFirst) {
+      ui({ phase: 'var', fr: v.model, en: v.en, hideFr: true, mask: false,
+           caption: "En anglais d'abord", hint: 'Same structure, a new sentence. First the English.' });
+      say(v.en, 'en', 0.9);
+      repeatFr(k, [v.model], REPEAT_EN);
       return k.s;
     }
     if (!opts.review) {
