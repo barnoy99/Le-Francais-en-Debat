@@ -5,7 +5,7 @@ Steelman d'abord (1947 vu de l'autre côté). Version étroite : pas « tout est
 
 ---
 
-On entend souvent : « Israël a jamais voulu d'État palestinien. » Alors refaisons l'histoire, vite fait. Et je commence par l'argument d'en face, parce qu'il est sérieux.
+On entend souvent : « Israël a jamais voulu d'État palestinien. » Alors reprenons l'histoire, vite fait. Et je commence par l'argument d'en face, parce qu'il est sérieux.
 
 En 1947, l'ONU propose de partager le pays. Les Juifs sont à peu près un tiers de la population, et on leur donne plus de la moitié de la terre. Bon, une bonne partie, c'est le désert du Néguev, mais quand même. Vu de l'autre côté, pourquoi dire oui à ça ? Je comprends qu'on ait refusé. Vraiment.
 

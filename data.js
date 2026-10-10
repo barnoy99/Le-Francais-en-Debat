@@ -8,7 +8,7 @@ var TEXTS = [
       { who: 'moi', fr: "Tu sais ce qui m'a fait décrocher, au fond ? C'est pas un argument. C'est l'échelle. Regarde le ciel une nuit, vraiment. Des centaines de milliards de galaxies, chacune avec des milliards d'étoiles." },
       { who: 'moi', fr: "Et l'univers a à peu près quatorze milliards d'années. Si tu le ramènes à une seule année, l'humanité arrive le trente et un décembre, dans les dernières minutes. Et on voudrait que tout ça ait été fait pour nous ? Franchement, ça me paraît un peu gros." },
       { who: 'moi', fr: "Et puis y a la souffrance. En 2004, un tsunami tue plus de deux cent mille personnes en une journée. Des croyants, des athées, des bébés. La vague, elle a pas trié. Pour moi, ça ressemble pas à un monde que quelqu'un surveille. Ça ressemble à un monde qui s'en fiche." },
-      { who: 'moi', fr: "C'est ce que dit Dawkins, en gros. Dans l'univers, y a pas de dessein, pas de but, pas de bien ni de mal. Juste une indifférence aveugle. Et ce qu'on voit, c'est exactement ce qu'on attendrait s'il y avait personne derrière." },
+      { who: 'moi', fr: "C'est ce que dit Dawkins, en gros. Dans l'univers, y a pas de dessein, pas de but, pas de bien ni de mal. Juste une indifférence aveugle. Et ce qu'on voit, c'est exactement ce à quoi on s'attendrait s'il y avait personne derrière." },
       { who: 'moi', fr: "Alors oui, je vois venir ta réponse : « C'est horrible, ce que tu dis. Vivre dans un monde comme ça, c'est insupportable. » Je comprends. Mais c'est pas parce qu'une idée fait peur qu'elle est fausse. Le monde, il a pas à être confortable." },
       { who: 'moi', fr: "Et je vais même plus loin. Si l'univers s'en fiche, alors la gentillesse, elle vient de nous. Personne ne nous l'a imposée. Quand quelqu'un aide un inconnu, c'est pas un ordre d'en haut, c'est un choix. Moi, je trouve ça plus beau, pas moins. Pas toi ?" }
     ],
@@ -27,8 +27,8 @@ var TEXTS = [
     cues: ["Ah non, Dieu, lui, il a pas besoin de cause. Il a toujours existé."] },
   { id: 3, corpus: 'A', kind: 'monologue', title: "Le mauvais design", file: "texts/03-le-mauvais-design.md",
     lines: [
-      { who: 'moi', fr: "Tu sais ce qui me fait douter d'un grand ingénieur ? C'est pas la beauté du monde. C'est les défauts." },
-      { who: 'moi', fr: "Prends un nerf de ton cou, le nerf laryngé. Il part du cerveau et il va à la gorge, pour faire marcher ta voix. Le cerveau et la gorge, c'est tout près. Quelques centimètres, normalement, ça suffit. Sauf que lui, il prend pas ce chemin. Il descend jusque dans la poitrine, il fait le tour d'une grosse artère, près du cœur, et il remonte vers la gorge." },
+      { who: 'moi', fr: "Tu sais ce qui me fait douter qu'il y ait vraiment un grand ingénieur derrière tout ça ? C'est pas la beauté du monde. C'est les défauts." },
+      { who: 'moi', fr: "Prends un nerf de ton cou, le nerf laryngé. Il part du cerveau et il va à la gorge, pour faire marcher ta voix. Le cerveau et la gorge, c'est tout près : une dizaine de centimètres. Si c'était toi qui dessinais le corps, tu ferais quoi ? Un nerf tout droit, évidemment. Dix centimètres de nerf, ça suffit largement. Sauf que lui, il prend pas ce chemin. Il descend jusque dans la poitrine, comme si on l'avait tiré vers le bas. Il fait le tour d'une grosse artère, juste à côté du cœur, et il remonte jusqu'à la gorge." },
       { who: 'moi', fr: "Chez la girafe, c'est encore plus fou. Le cou fait presque deux mètres. Alors le nerf descend tout le cou, fait le tour de l'artère, et remonte tout le cou. Plusieurs mètres de détour, pour arriver à quelques centimètres de son point de départ. Un ingénieur qui fait ça, tu le vires. Un créateur aurait fait passer ce nerf par la poitrine, pour aller du cerveau à la gorge ? C'est un peu gros." },
       { who: 'moi', fr: "Maintenant, regarde le poisson. Le poisson a pas de cou. Chez lui, le cerveau, le cœur et les branchies sont tout près, et le nerf passe derrière l'artère sans faire de détour. C'est le chemin le plus court. Et nos ancêtres très lointains, c'étaient des poissons. Au fil des générations, le cou s'est allongé, le cœur est descendu dans la poitrine, et le nerf est resté coincé derrière l'artère. Il a pas pu changer de côté, alors il s'est allongé avec. Le détour, c'est juste la trace de notre histoire." },
       { who: 'moi', fr: "Avec l'évolution, ce détour s'explique complètement. Avec un ingénieur, il s'explique pas du tout." },
@@ -64,7 +64,7 @@ var TEXTS = [
   { id: 6, corpus: 'A', kind: 'monologue', title: "L'accident géographique", file: "texts/06-laccident-geographique.md",
     lines: [
       { who: 'moi', fr: "Tiens, y a un truc qui me travaille depuis longtemps. Si t'étais né en Indonésie, tu serais quoi ? Musulman. Au Brésil ? Chrétien. En Inde ? Hindou. Dans la Grèce antique, tu croirais en Zeus, comme tout le monde. Et dans ma famille à moi, juif, évidemment." },
-      { who: 'moi', fr: "Du coup, la religion, c'est moins une question de vérité qu'une question d'adresse. Non mais réfléchis. L'immense majorité des gens gardent la religion de leurs parents. Si c'était une découverte, chacun la ferait de son côté, et tout le monde tomberait sur la même. Comme en maths, quoi. Personne ne te dit : « Chez nous, deux et deux font cinq. »" },
+      { who: 'moi', fr: "Du coup, la religion, c'est moins une question de vérité qu'une question de code postal. Non mais réfléchis. L'immense majorité des gens gardent la religion de leurs parents. Si c'était une découverte, chacun la ferait de son côté, et tout le monde tomberait sur la même. Comme en maths, quoi. Personne ne te dit : « Chez nous, deux et deux font cinq. »" },
       { who: 'moi', fr: "Alors oui, je vois venir ta réponse : « Ça prouve rien, il y en a peut-être une qui est vraie. » C'est vrai, je te l'accorde. Mais regarde le problème que ça pose. Chacun est sûr d'être né dans la bonne. Tout le monde aurait tiré le bon numéro ? C'est un peu gros, non ?" },
       { who: 'moi', fr: "Et je vais plus loin. Si Dieu voulait vraiment qu'on le connaisse, pourquoi il laisserait ça au hasard de la naissance ? Une vérité qui dépend de l'endroit où t'es né, ça ressemble pas à une vérité. Ça ressemble à une tradition qu'on se passe de parents en enfants." },
       { who: 'moi', fr: "Enfin, bref. Quand une croyance suit la carte plutôt que les preuves, moi, ça me met la puce à l'oreille. Pas toi ?" }
@@ -120,7 +120,7 @@ var TEXTS = [
     cues: ["Israël, c'est un pays artificiel. Les Européens l'ont créé pour se débarrasser de leurs Juifs."] },
   { id: 10, corpus: 'B', kind: 'monologue', title: "Le mot « colonialisme »", file: "texts/10-le-mot-colonialisme.md",
     lines: [
-      { who: 'moi', fr: "Je vais commencer par ton argument dans sa version la plus forte, parce que c'est celle-là que je veux affronter." },
+      { who: 'moi', fr: "Je vais commencer par ton argument dans sa version la plus forte, parce que c'est à celle-là que je veux répondre." },
       { who: 'moi', fr: "Ta version, c'est : le sionisme vient d'Europe. Il a organisé l'immigration, acheté des terres, et en 1948, à peu près sept cent mille Palestiniens sont partis ou ont été chassés. Et tu sais quoi ? Tout ça, c'est vrai. Herzl lui-même parlait de colonisation, à l'époque le mot choquait personne. Et la Nakba, les gens qui ont perdu leur maison, je la nie pas." },
       { who: 'moi', fr: "Alors oui, le mouvement avait des traits coloniaux, je te l'accorde. Mais le mot « colonialisme », il dit autre chose. Il décrit un pays qui envoie ses gens ailleurs, pour son compte à lui. Un colon, il a une métropole derrière lui. Les Français d'Algérie, ils avaient la France." },
       { who: 'moi', fr: "Les Juifs qui sont arrivés, eux, ils avaient pas de métropole. Ils venaient de pays qui voulaient plus du tout d'eux, ou pire. Et ils arrivaient pas n'importe où. Il y a toujours eu des Juifs sur cette terre, c'est là que tout commence pour eux." },
@@ -132,7 +132,7 @@ var TEXTS = [
     cues: ["Ça efface pas 1948."] },
   { id: 11, corpus: 'B', kind: 'monologue', title: "Ce qu'on a proposé, ce qui a été refusé", file: "texts/11-ce-quon-a-propose.md",
     lines: [
-      { who: 'moi', fr: "On entend souvent : « Israël a jamais voulu d'État palestinien. » Alors refaisons l'histoire, vite fait. Et je commence par l'argument d'en face, parce qu'il est sérieux." },
+      { who: 'moi', fr: "On entend souvent : « Israël a jamais voulu d'État palestinien. » Alors reprenons l'histoire, vite fait. Et je commence par l'argument d'en face, parce qu'il est sérieux." },
       { who: 'moi', fr: "En 1947, l'ONU propose de partager le pays. Les Juifs sont à peu près un tiers de la population, et on leur donne plus de la moitié de la terre. Bon, une bonne partie, c'est le désert du Néguev, mais quand même. Vu de l'autre côté, pourquoi dire oui à ça ? Je comprends qu'on ait refusé. Vraiment." },
       { who: 'moi', fr: "Mais regarde la suite. Côté juif, on accepte. Côté arabe, on refuse, et les armées voisines attaquent. Et dix ans plus tôt, en 1937, c'était déjà le même scénario avec le plan Peel. On proposait aux Juifs un petit bout de territoire, à peu près un cinquième. Les dirigeants sionistes ont discuté les frontières, mais ils ont accepté le principe. Les dirigeants arabes ont dit non tout de suite." },
       { who: 'moi', fr: "En 2000, à Camp David, Barak propose un État. Là, faut être honnête, l'offre est contestée. Les Palestiniens disent qu'elle était mal découpée, et trop floue sur Jérusalem. Admettons. Mais quelques mois plus tard, Clinton met ses propres paramètres sur la table. Israël dit oui, avec des réserves. Arafat aussi, mais avec tellement de réserves que ça revenait à un non." },
@@ -158,11 +158,11 @@ var TEXTS = [
     lines: [
       { who: 'moi', fr: "Quand on parle du 7 octobre, on me dit souvent : « Oui, mais Gaza aussi, il y a des civils qui meurent. C'est pareil. » Et je comprends pourquoi on dit ça. Mais non, c'est pas pareil, et je vais t'expliquer pourquoi." },
       { who: 'moi', fr: "D'abord, les faits. Environ mille deux cents morts en une journée. À peu près les deux tiers, des civils, dont trente-six enfants. Plus de deux cent cinquante otages, des bébés jusqu'aux vieillards. Au festival Nova, à peu près trois cent soixante jeunes tués en quelques heures." },
-      { who: 'moi', fr: "Dans les kibboutz, ils sont entrés maison par maison. Ils cherchaient les gens dans les abris. Les civils, c'était pas des victimes collatérales. C'était la cible." },
+      { who: 'moi', fr: "Dans les kibboutz, ils sont entrés maison par maison. Ils cherchaient les gens dans les abris. Les civils, c'était pas des dommages collatéraux. C'était la cible." },
       { who: 'moi', fr: "Et ce qui m'a frappé, c'est qu'ils ont filmé. Eux-mêmes. Avec des caméras sur la tête, avec les téléphones des victimes. Y a même un enregistrement où un des assaillants appelle ses parents, tout fier, pour leur dire combien de Juifs il a tués." },
       { who: 'moi', fr: "Alors pourquoi ça compte, l'intention ? Prends un accident de voiture. Un type qui tue quelqu'un parce qu'il a mal freiné, et un type qui fonce exprès sur la foule. Le mort est le même. Mais personne ne dit que c'est le même crime." },
       { who: 'moi', fr: "En droit de la guerre, c'est pareil. Viser des civils exprès, c'est un crime de guerre, point. Tuer des civils en visant une cible militaire, ça se juge autrement : est-ce que c'était nécessaire, est-ce que c'était proportionné. Et là, oui, on peut critiquer Israël, frappe par frappe." },
-      { who: 'moi', fr: "Je vais même te donner deux arguments contre moi. Le premier, c'est le secrétaire général de l'ONU qui l'a dit : ça s'est pas passé dans le vide. Le blocus, l'occupation, tout ça, c'est vrai. Mais expliquer, c'est une chose. Excuser, c'en est une autre." },
+      { who: 'moi', fr: "Je vais même te donner deux arguments contre moi. Le premier, c'est le secrétaire général de l'ONU qui l'a dit : ça vient pas de nulle part. Le blocus, l'occupation, tout ça, c'est vrai. Mais expliquer, c'est une chose. Excuser, c'en est une autre." },
       { who: 'moi', fr: "Le deuxième : ce jour-là, certains Israéliens sont morts sous des tirs israéliens, dans le chaos des combats. L'armée l'a reconnu, elle a enquêté. C'est vrai, et c'est terrible. Mais ça change pas qui est venu, et pourquoi." },
       { who: 'moi', fr: "Donc oui, les morts de Gaza comptent. Je le dis sans hésiter. Mais quand quelqu'un met les deux sur le même plan, je lui demande juste une chose. Le chauffard et celui qui fonce exprès dans la foule, tu trouves ça pareil, toi ?" }
     ],
@@ -173,10 +173,10 @@ var TEXTS = [
       { who: 'moi', fr: "On me dit souvent : « Vous auriez pu faire autrement. » D'accord. Mais autrement comment ? Parce que le choix, il a jamais été entre la guerre et la paix." },
       { who: 'moi', fr: "Le 7 octobre, le Hamas a tué environ mille deux cents personnes, en majorité des civils, et il a enlevé à peu près deux cent cinquante otages. Ça, c'est le point de départ. Et ce qui m'a frappé, c'est ce qu'ils ont dit juste après." },
       { who: 'moi', fr: "Le 24 octobre 2023, Ghazi Hamad, du bureau politique du Hamas, passe sur LBC, une chaîne libanaise. Et il dit, je te traduis : « Le Déluge d'Al-Aqsa, c'est juste la première fois. Il y en aura une deuxième, une troisième, une quatrième. » En France, quand je raconte ça, on me croit pas. Mais c'est filmé, c'est traduit, tout le monde peut vérifier." },
-      { who: 'moi', fr: "Ça, c'est la première jambe : l'intention, ils l'ont annoncée. La deuxième, c'est les moyens. Sous Gaza, il y avait des tunnels partout. Combien de kilomètres ? Là, faut être honnête, personne d'indépendant n'a pu mesurer. Les responsables israéliens parlent de cinq cents à sept cents kilomètres. Bon, prenons même la moitié. Ça reste une ville sous la ville, construite avec du ciment qui aurait pu servir à bâtir au-dessus." },
+      { who: 'moi', fr: "Ça, c'est le premier pilier : l'intention, ils l'ont annoncée. Le deuxième, c'est les moyens. Sous Gaza, il y avait des tunnels partout. Combien de kilomètres ? Là, faut être honnête, personne d'indépendant n'a pu mesurer. Les responsables israéliens parlent de cinq cents à sept cents kilomètres. Bon, prenons même la moitié. Ça reste une ville sous la ville, construite avec du ciment qui aurait pu servir à bâtir au-dessus." },
       { who: 'moi', fr: "Donc regarde ce qu'on avait en face. Une force qui a montré ce qu'elle pouvait faire, et qui a dit qu'elle recommencerait. Tu la laisses en place, toi ? Le vrai choix, c'était ça. Agir, ou attendre la prochaine fois." },
       { who: 'moi', fr: "Mais attends, je m'arrête là, parce que je vois venir ta réponse, et elle est juste. Tout ce que je viens de dire, ça montre qu'on avait le droit de riposter. Ça dit rien sur la manière. Le droit d'y aller, et la façon d'y aller, en droit, c'est deux questions différentes. Et les mélanger, c'est le meilleur moyen de perdre cette discussion." },
-      { who: 'moi', fr: "Et je vais même te donner un argument contre moi. Certains juristes disent que la légitime défense, telle que la Charte de l'ONU la prévoit, s'applique mal contre un groupe armé qui vient d'un territoire qu'on contrôle. C'est un vrai débat, je fais pas semblant qu'il existe pas." },
+      { who: 'moi', fr: "Et je vais même te donner un argument contre moi. Certains juristes disent que la légitime défense, telle que la Charte de l'ONU la prévoit, s'applique mal contre un groupe armé qui vient d'un territoire qu'on contrôle. C'est un vrai débat, je vais pas faire comme s'il existait pas." },
       { who: 'moi', fr: "Alors la manière, parlons-en. C'est la question la plus dure, et c'est celle-là qui compte vraiment." }
     ],
     // Monologues quote the friend's objection; these are the Compréhension cues.
@@ -184,7 +184,7 @@ var TEXTS = [
   { id: 15, corpus: 'B', kind: 'monologue', title: "Pourquoi il y a tant de morts à Gaza", file: "texts/15-pourquoi-tant-de-morts.md",
     lines: [
       { who: 'moi', fr: "Avant de dire quoi que ce soit, je veux commencer par là. Les morts à Gaza, ils sont réels, et c'est terrible. Des enfants, des familles entières. Je vais pas faire des calculs pour que ça ait l'air moins grave. Ça l'est." },
-      { who: 'moi', fr: "Le chiffre, tu le connais. Le ministère de la Santé de Gaza parle de plus de soixante-dix mille morts. C'est un ministère du Hamas, oui. Mais ses chiffres passés ont plutôt tenu, donc je pars de là." },
+      { who: 'moi', fr: "Le chiffre, tu le connais. Le ministère de la Santé de Gaza parle de plus de soixante-dix mille morts. C'est un ministère du Hamas, oui. Mais par le passé, ses chiffres ont plutôt tenu la route, donc je pars de là." },
       { who: 'moi', fr: "Sauf que ce ministère fait pas la différence entre civils et combattants. Et là, les chiffres partent dans tous les sens. L'armée israélienne dit avoir tué environ vingt mille combattants. Une enquête du Guardian, à partir d'une base de données de l'armée elle-même, en trouvait beaucoup moins. Donc je vais pas te dire que c'étaient tous des terroristes. Ce serait faux." },
       { who: 'moi', fr: "Mais la question qu'on me pose, c'est : est-ce que ce nombre prouve un crime ? Et là, « proportionnalité », en droit, ça veut dire une chose précise. C'est pas un ratio entre tes morts et les miens. C'est, pour chaque frappe : les dégâts prévus chez les civils, est-ce qu'ils sont excessifs par rapport à l'avantage militaire attendu ?" },
       { who: 'moi', fr: "Frappe par frappe. Donc le total, il montre qu'il y a eu une tragédie. Il dit rien, à lui seul, sur la question du crime." },
@@ -259,7 +259,7 @@ var TEXTS = [
       { who: 'lui', fr: "Oui, mais d'autres rabbins disent le contraire, non ?" },
       { who: 'moi', fr: "C'est vrai, je te l'accorde. Rabbi Yossef Karo, celui du Choulhan Aroukh, lui répond que les temps ont changé, qu'on peut soutenir ceux qui étudient. C'est un vrai débat entre rabbins. Mais je dis pas que la Torah interdit d'étudier. Je dis juste que le plus grand d'entre eux trouvait honteux d'en vivre." },
       { who: 'lui', fr: "Alors tu veux quoi, au fond ?" },
-      { who: 'moi', fr: "Je veux pas qu'ils arrêtent d'étudier. Je veux qu'ils partagent. La vraie question, c'est pas « est-ce qu'on respecte la Torah ? ». C'est « est-ce qu'il y a deux sortes de citoyens ? ». Et moi, je préfère un pays où tout le monde porte le sac à un pays où certains le portent pour les autres." }
+      { who: 'moi', fr: "Je veux pas qu'ils arrêtent d'étudier. Je veux qu'ils partagent. La vraie question, c'est pas « est-ce qu'on respecte la Torah ? ». C'est « est-ce qu'il y a deux sortes de citoyens ? ». Et moi, je préfère un pays où chacun porte sa part à un pays où certains portent celle des autres." }
     ] }
 ];
 
@@ -452,7 +452,7 @@ var FRAMES = [
     form: "C'est moins une question de {A} qu'une question de {B}.",
     gloss: "It's less about ___ than about ___",
     gist: "Say what it really comes down to, weighing one factor against the other.",
-    exemplarFr: "La religion, c'est moins une question de vérité qu'une question d'adresse.",
+    exemplarFr: "La religion, c'est moins une question de vérité qu'une question de code postal.",
     exemplarEn: "Religion is less about truth than about where you live.",
     trap: "'Less about X than Y' → « moins à propos de X que Y ». French repeats the noun: moins une question de… QU'UNE question de…",
     slots: [{ name: 'A', pos: 'nom', note: "le facteur qu'on minimise" },
@@ -561,7 +561,7 @@ var FRAMES = [
       { id: 'f14-1', topic: 'enfants',   fr: "Ta femme dit que la petite est « hyperactive ». Pour toi, c'est un mot médical, pas une enfant qui bouge beaucoup.", model: "« Hyperactive », ça veut dire une chose précise : un trouble médical, pas une enfant qui bouge beaucoup.", en: "'Hyperactive' means something precise: a medical disorder, not a child who moves a lot." },
       { id: 'f14-2', topic: 'collegues', fr: "Un collègue dit qu'il fait un « burn-out ». Pour toi, c'est un épuisement qui dure des mois, pas une grosse semaine.", model: "« Burn-out », ça veut dire une chose précise : un épuisement qui dure des mois, pas une grosse semaine.", en: "'Burnout' means something precise: exhaustion that lasts for months, not one heavy week." },
       { id: 'f14-3', topic: 'cours',     fr: "Un parent dit que son fils est « dyslexique ». Pour toi, il faut un diagnostic, pas juste des fautes d'orthographe.", model: "« Dyslexique », ça veut dire une chose précise : un diagnostic, pas juste des fautes d'orthographe.", en: "'Dyslexic' means something precise: a diagnosis, not just spelling mistakes." },
-      { id: 'f14-4', topic: 'sante',     fr: "Un ami dit qu'il est « allergique » au gluten. Toi, tu penses qu'il le digère mal, c'est tout.", model: "« Allergique », ça veut dire une chose précise : une réaction du corps, pas juste digérer mal.", en: "'Allergic' means something precise: a reaction of the body, not just bad digestion." },
+      { id: 'f14-4', topic: 'sante',     fr: "Un ami dit qu'il est « allergique » au gluten. Toi, tu penses qu'il le digère mal, c'est tout.", model: "« Allergique », ça veut dire une chose précise : une réaction du corps, pas juste mal digérer.", en: "'Allergic' means something precise: a reaction of the body, not just bad digestion." },
       { id: 'f14-5', topic: 'films',     fr: "Un ami dit qu'un film sorti le mois dernier est déjà « culte ». Pour toi, un film culte, on le revoit encore trente ans après.", model: "« Culte », ça veut dire une chose précise : un film qu'on revoit encore trente ans après.", en: "'Cult classic' means something precise: a film people still rewatch thirty years later." },
       { id: 'f14-6', topic: 'politique', fr: "Un ami dit que le gouvernement est « illégitime ». Pour toi, il a été élu, même si tu l'aimes pas.", model: "« Illégitime », ça veut dire une chose précise : un gouvernement qui n'a pas été élu.", en: "'Illegitimate' means something precise: a government that wasn't elected." },
       { id: 'f14-7', topic: 'dieu',      fr: "Un ami parle d'un « miracle » parce qu'il a trouvé une place de parking. Pour toi, un miracle, c'est les lois de la nature qui s'arrêtent.", model: "« Miracle », ça veut dire une chose précise : les lois de la nature qui s'arrêtent.", en: "'Miracle' means something precise: the laws of nature stopping." }
@@ -778,7 +778,7 @@ var FRAMES = [
             { name: 'X', pos: 'attribut', note: "ce que tu serais aujourd'hui" }],
     yield: 4, register: 'parlé courant',
     prompts: [
-      { id: 'f25-1', topic: 'couple',    fr: "Ta femme a grandi avec une mère qui lui parlait français. C'est pour ça qu'elle le parle si bien.", model: "Si elle était née dans une famille sans français, elle le parlerait pas si bien.", en: "If she'd been born into a family with no French, she wouldn't speak it so well." },
+      { id: 'f25-1', topic: 'couple',    fr: "Ta femme a grandi avec une mère qui lui parlait français. C'est pour ça qu'elle le parle si bien.", model: "Si elle était née dans une famille qui parle pas français, elle le parlerait pas si bien.", en: "If she'd been born into a family with no French, she wouldn't speak it so well." },
       { id: 'f25-2', topic: 'cours',     fr: "Ton élève a commencé l'anglais à quatre ans. C'est pour ça qu'il est bilingue.", model: "S'il avait commencé l'anglais à dix ans, il serait pas bilingue.", en: "If he'd started English at ten, he wouldn't be bilingual." },
       { id: 'f25-3', topic: 'sante',     fr: "Ton ami a jamais arrêté le sport. C'est pour ça qu'il est en forme à cinquante ans.", model: "S'il avait arrêté le sport à trente ans, il serait pas en forme à cinquante.", en: "If he'd stopped sport at thirty, he wouldn't be fit at fifty." },
       { id: 'f25-4', topic: 'argent',    fr: "Un ami a acheté un appartement il y a quinze ans. Aujourd'hui, il est tranquille.", model: "S'il avait attendu quinze ans, il serait pas tranquille aujourd'hui.", en: "If he'd waited fifteen years, he wouldn't be comfortable today." },
@@ -1025,7 +1025,7 @@ var SENTENCES = {
     { l: 3, fr: "C'est ce que dit Dawkins, en gros.", en: "That's what Dawkins says, roughly." },
     { l: 3, fr: "Dans l'univers, y a pas de dessein, pas de but, pas de bien ni de mal.", en: "In the universe there's no design, no purpose, no good and no evil." },
     { l: 3, fr: "Juste une indifférence aveugle.", en: "Just blind indifference." },
-    { l: 3, fr: "Et ce qu'on voit, c'est exactement ce qu'on attendrait s'il y avait personne derrière.", en: "And what we see is exactly what we'd expect if there were nobody behind it." },
+    { l: 3, fr: "Et ce qu'on voit, c'est exactement ce à quoi on s'attendrait s'il y avait personne derrière.", en: "And what we see is exactly what we'd expect if there were nobody behind it." },
     { l: 4, fr: "Alors oui, je vois venir ta réponse : « C'est horrible, ce que tu dis. Vivre dans un monde comme ça, c'est insupportable. » Je comprends.", en: "So yes, I can see your answer coming: 'That's horrible, what you're saying. Living in a world like that is unbearable.' I understand.", f: 'f06' },
     { l: 4, fr: "Mais c'est pas parce qu'une idée fait peur qu'elle est fausse.", en: "But just because an idea is frightening doesn't make it false.", f: 'f05' },
     { l: 4, fr: "Le monde, il a pas à être confortable.", en: "The world doesn't have to be comfortable." },
@@ -1069,15 +1069,18 @@ var SENTENCES = {
     { l: 5, fr: "Tu me suis ?", en: "Are you with me?" }
   ],
   3: [
-    { l: 0, fr: "Tu sais ce qui me fait douter d'un grand ingénieur ?", en: "You know what makes me doubt there's a great engineer?" },
+    { l: 0, fr: "Tu sais ce qui me fait douter qu'il y ait vraiment un grand ingénieur derrière tout ça ?", en: "You know what makes me doubt there's really a great engineer behind all this?" },
     { l: 0, fr: "C'est pas la beauté du monde.", en: "It's not the beauty of the world." },
     { l: 0, fr: "C'est les défauts.", en: "It's the flaws." },
     { l: 1, fr: "Prends un nerf de ton cou, le nerf laryngé.", en: "Take a nerve in your neck, the laryngeal nerve." },
     { l: 1, fr: "Il part du cerveau et il va à la gorge, pour faire marcher ta voix.", en: "It goes from the brain to the throat, to make your voice work." },
-    { l: 1, fr: "Le cerveau et la gorge, c'est tout près.", en: "The brain and the throat are right next to each other." },
-    { l: 1, fr: "Quelques centimètres, normalement, ça suffit.", en: "A few centimetres should normally do it." },
+    { l: 1, fr: "Le cerveau et la gorge, c'est tout près : une dizaine de centimètres.", en: "The brain and the throat are right next to each other: about ten centimetres." },
+    { l: 1, fr: "Si c'était toi qui dessinais le corps, tu ferais quoi ?", en: "If you were the one designing the body, what would you do?" },
+    { l: 1, fr: "Un nerf tout droit, évidemment.", en: "A straight nerve, obviously." },
+    { l: 1, fr: "Dix centimètres de nerf, ça suffit largement.", en: "Ten centimetres of nerve is plenty." },
     { l: 1, fr: "Sauf que lui, il prend pas ce chemin.", en: "Except this nerve doesn't take that route." },
-    { l: 1, fr: "Il descend jusque dans la poitrine, il fait le tour d'une grosse artère, près du cœur, et il remonte vers la gorge.", en: "It goes all the way down into the chest, loops around a big artery near the heart, and comes back up to the throat." },
+    { l: 1, fr: "Il descend jusque dans la poitrine, comme si on l'avait tiré vers le bas.", en: "It goes all the way down into the chest, as if someone had pulled it down." },
+    { l: 1, fr: "Il fait le tour d'une grosse artère, juste à côté du cœur, et il remonte jusqu'à la gorge.", en: "It loops around a big artery right next to the heart, and comes all the way back up to the throat." },
     { l: 2, fr: "Chez la girafe, c'est encore plus fou.", en: "In the giraffe, it's even crazier." },
     { l: 2, fr: "Le cou fait presque deux mètres.", en: "Its neck is almost two metres long." },
     { l: 2, fr: "Alors le nerf descend tout le cou, fait le tour de l'artère, et remonte tout le cou.", en: "So the nerve goes all the way down the neck, loops around the artery, and goes all the way back up." },
@@ -1175,7 +1178,7 @@ var SENTENCES = {
     { l: 0, fr: "Au Brésil ? Chrétien. En Inde ? Hindou.", en: "In Brazil? Christian. In India? Hindu." },
     { l: 0, fr: "Dans la Grèce antique, tu croirais en Zeus, comme tout le monde.", en: "In ancient Greece, you'd believe in Zeus, like everyone else." },
     { l: 0, fr: "Et dans ma famille à moi, juif, évidemment.", en: "And in my own family, Jewish, obviously." },
-    { l: 1, fr: "Du coup, la religion, c'est moins une question de vérité qu'une question d'adresse.", en: "So religion is less a question of truth than a question of address.", f: 'f09' },
+    { l: 1, fr: "Du coup, la religion, c'est moins une question de vérité qu'une question de code postal.", en: "So religion is less a question of truth than a question of postcode.", f: 'f09' },
     { l: 1, fr: "Non mais réfléchis.", en: "No, seriously, think about it." },
     { l: 1, fr: "L'immense majorité des gens gardent la religion de leurs parents.", en: "The vast majority of people keep their parents' religion." },
     { l: 1, fr: "Si c'était une découverte, chacun la ferait de son côté, et tout le monde tomberait sur la même.", en: "If it were a discovery, everyone would make it on their own, and everyone would land on the same one." },
@@ -1303,7 +1306,7 @@ var SENTENCES = {
   ],
   10: [
     { l: 0, fr: "Je vais commencer par ton argument dans sa version la plus forte,", en: "I'll start with your argument in its strongest version," },
-    { l: 0, fr: "parce que c'est celle-là que je veux affronter.", en: "because that's the one I want to take on." },
+    { l: 0, fr: "parce que c'est à celle-là que je veux répondre.", en: "because that's the one I want to answer." },
     { l: 1, fr: "Ta version, c'est : le sionisme vient d'Europe.", en: "Your version is: Zionism comes from Europe." },
     { l: 1, fr: "Il a organisé l'immigration, acheté des terres,", en: "It organised immigration, bought land," },
     { l: 1, fr: "et en 1948, à peu près sept cent mille Palestiniens sont partis ou ont été chassés.", en: "and in 1948, about seven hundred thousand Palestinians left or were driven out." },
@@ -1333,7 +1336,7 @@ var SENTENCES = {
   ],
   11: [
     { l: 0, fr: "On entend souvent : « Israël a jamais voulu d'État palestinien. »", en: "You often hear: 'Israel never wanted a Palestinian state.'" },
-    { l: 0, fr: "Alors refaisons l'histoire, vite fait.", en: "So let's run through the history, quickly." },
+    { l: 0, fr: "Alors reprenons l'histoire, vite fait.", en: "So let's run through the history, quickly." },
     { l: 0, fr: "Et je commence par l'argument d'en face, parce qu'il est sérieux.", en: "And I'll start with the other side's argument, because it's serious." },
     { l: 1, fr: "En 1947, l'ONU propose de partager le pays.", en: "In 1947, the UN proposes partitioning the country." },
     { l: 1, fr: "Les Juifs sont à peu près un tiers de la population, et on leur donne plus de la moitié de la terre.", en: "Jews are about a third of the population, and they're given more than half the land." },
@@ -1412,7 +1415,7 @@ var SENTENCES = {
     { l: 1, fr: "Au festival Nova, à peu près trois cent soixante jeunes tués en quelques heures.", en: "At the Nova festival, about three hundred and sixty young people killed in a few hours." },
     { l: 2, fr: "Dans les kibboutz, ils sont entrés maison par maison.", en: "In the kibbutzim, they went in house by house." },
     { l: 2, fr: "Ils cherchaient les gens dans les abris.", en: "They looked for people in the shelters." },
-    { l: 2, fr: "Les civils, c'était pas des victimes collatérales.", en: "The civilians weren't collateral victims." },
+    { l: 2, fr: "Les civils, c'était pas des dommages collatéraux.", en: "The civilians weren't collateral damage." },
     { l: 2, fr: "C'était la cible.", en: "They were the target." },
     { l: 3, fr: "Et ce qui m'a frappé, c'est qu'ils ont filmé. Eux-mêmes.", en: "And what struck me is that they filmed it. Themselves.", f: 'f28' },
     { l: 3, fr: "Avec des caméras sur la tête, avec les téléphones des victimes.", en: "With cameras on their heads, with the victims' phones." },
@@ -1427,7 +1430,7 @@ var SENTENCES = {
     { l: 5, fr: "Tuer des civils en visant une cible militaire, ça se juge autrement : est-ce que c'était nécessaire, est-ce que c'était proportionné.", en: "Killing civilians while aiming at a military target is judged differently: was it necessary, was it proportionate." },
     { l: 5, fr: "Et là, oui, on peut critiquer Israël, frappe par frappe.", en: "And there, yes, you can criticise Israel, strike by strike." },
     { l: 6, fr: "Je vais même te donner deux arguments contre moi.", en: "I'll even give you two arguments against me." },
-    { l: 6, fr: "Le premier, c'est le secrétaire général de l'ONU qui l'a dit : ça s'est pas passé dans le vide.", en: "The first, the UN Secretary-General said it: it didn't happen in a vacuum." },
+    { l: 6, fr: "Le premier, c'est le secrétaire général de l'ONU qui l'a dit : ça vient pas de nulle part.", en: "The first, the UN Secretary-General said it: it didn't come out of nowhere." },
     { l: 6, fr: "Le blocus, l'occupation, tout ça, c'est vrai.", en: "The blockade, the occupation, all that is true." },
     { l: 6, fr: "Mais expliquer, c'est une chose.", en: "But explaining is one thing.", f: 'f11' },
     { l: 6, fr: "Excuser, c'en est une autre.", en: "Excusing is another." },
@@ -1453,8 +1456,8 @@ var SENTENCES = {
     { l: 2, fr: "Et il dit, je te traduis : « Le Déluge d'Al-Aqsa, c'est juste la première fois. Il y en aura une deuxième, une troisième, une quatrième. »", en: "And he says, I'll translate for you: 'The Al-Aqsa Flood is just the first time. There will be a second, a third, a fourth.'" },
     { l: 2, fr: "En France, quand je raconte ça, on me croit pas.", en: "In France, when I tell people this, they don't believe me." },
     { l: 2, fr: "Mais c'est filmé, c'est traduit, tout le monde peut vérifier.", en: "But it's filmed, it's translated, anyone can check." },
-    { l: 3, fr: "Ça, c'est la première jambe : l'intention, ils l'ont annoncée.", en: "That's the first leg: the intention, they announced it." },
-    { l: 3, fr: "La deuxième, c'est les moyens.", en: "The second is the means." },
+    { l: 3, fr: "Ça, c'est le premier pilier : l'intention, ils l'ont annoncée.", en: "That's the first pillar: the intention, they announced it." },
+    { l: 3, fr: "Le deuxième, c'est les moyens.", en: "The second is the means." },
     { l: 3, fr: "Sous Gaza, il y avait des tunnels partout. Combien de kilomètres ?", en: "Under Gaza, there were tunnels everywhere. How many kilometres?" },
     { l: 3, fr: "Là, faut être honnête, personne d'indépendant n'a pu mesurer.", en: "Here, you have to be honest: nobody independent has been able to measure." },
     { l: 3, fr: "Les responsables israéliens parlent de cinq cents à sept cents kilomètres.", en: "Israeli officials talk of five to seven hundred kilometres." },
@@ -1471,7 +1474,7 @@ var SENTENCES = {
     { l: 6, fr: "Et je vais même te donner un argument contre moi.", en: "And I'll even give you an argument against myself.", f: 'f36' },
     { l: 6, fr: "Certains juristes disent que la légitime défense, telle que la Charte de l'ONU la prévoit,", en: "Some lawyers say that self-defence, as the UN Charter provides for it," },
     { l: 6, fr: "s'applique mal contre un groupe armé qui vient d'un territoire qu'on contrôle.", en: "applies poorly against an armed group that comes from a territory you control." },
-    { l: 6, fr: "C'est un vrai débat, je fais pas semblant qu'il existe pas.", en: "It's a real debate, I don't pretend it doesn't exist." },
+    { l: 6, fr: "C'est un vrai débat, je vais pas faire comme s'il existait pas.", en: "It's a real debate, I'm not going to act like it doesn't exist." },
     { l: 7, fr: "Alors la manière, parlons-en.", en: "So the way it's done, let's talk about it.", f: 'f34' },
     { l: 7, fr: "C'est la question la plus dure, et c'est celle-là qui compte vraiment.", en: "It's the hardest question, and it's the one that really matters." }
   ],
@@ -1483,7 +1486,7 @@ var SENTENCES = {
     { l: 1, fr: "Le chiffre, tu le connais.", en: "You know the figure." },
     { l: 1, fr: "Le ministère de la Santé de Gaza parle de plus de soixante-dix mille morts.", en: "Gaza's health ministry says more than seventy thousand dead." },
     { l: 1, fr: "C'est un ministère du Hamas, oui.", en: "It's a Hamas ministry, yes." },
-    { l: 1, fr: "Mais ses chiffres passés ont plutôt tenu, donc je pars de là.", en: "But its past figures have mostly held up, so I start from there." },
+    { l: 1, fr: "Mais par le passé, ses chiffres ont plutôt tenu la route, donc je pars de là.", en: "But in the past, its figures have mostly held up, so I start from there." },
     { l: 2, fr: "Sauf que ce ministère fait pas la différence entre civils et combattants.", en: "Except that ministry doesn't distinguish between civilians and fighters." },
     { l: 2, fr: "Et là, les chiffres partent dans tous les sens.", en: "And there, the numbers go all over the place." },
     { l: 2, fr: "L'armée israélienne dit avoir tué environ vingt mille combattants.", en: "The Israeli army says it killed about twenty thousand fighters." },
@@ -1715,7 +1718,7 @@ var SENTENCES = {
     { l: 29, fr: "Je veux qu'ils partagent.", en: "I want them to share." },
     { l: 29, fr: "La vraie question, c'est pas « est-ce qu'on respecte la Torah ? ».", en: "The real question isn't 'do we respect the Torah?'.", f: 'f07' },
     { l: 29, fr: "C'est « est-ce qu'il y a deux sortes de citoyens ? ».", en: "It's 'are there two kinds of citizens?'." },
-    { l: 29, fr: "Et moi, je préfère un pays où tout le monde porte le sac à un pays où certains le portent pour les autres.", en: "And I'd rather have a country where everyone carries the pack than one where some carry it for the others.", f: 'f33' }
+    { l: 29, fr: "Et moi, je préfère un pays où chacun porte sa part à un pays où certains portent celle des autres.", en: "And I'd rather have a country where everyone pulls their weight than one where some carry the weight of others.", f: 'f33' }
   ]
 };
 
@@ -1732,9 +1735,9 @@ var CHUNKS = {
   2:  { join: [2, 5, 9, 12, 15, 21, 26, 28],
         small: [1, 1, 2, 3, 1, 1, 2, 4, 2, 2, 1, 3, 2, 3, 2],
         big:   [2, 5, 4, 4, 4, 4, 5, 2] },
-  3:  { join: [1, 5, 7, 9, 14, 16, 18, 24, 26, 37],
-        small: [3, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 1, 1, 3],
-        big:   [5, 4, 4, 3, 4, 4, 5, 6, 4] },
+  3:  { join: [1, 6, 9, 12, 17, 19, 21, 27, 29, 40],
+        small: [3, 2, 1, 3, 3, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 1, 1, 3],
+        big:   [5, 4, 3, 4, 3, 4, 4, 5, 6, 4] },
   4:  { join: [9],
         small: [2, 2, 1, 2, 2, 3, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1],
         big:   [5, 4, 5, 4, 3, 4] },

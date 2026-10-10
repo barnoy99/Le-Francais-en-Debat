@@ -4,7 +4,7 @@ Corpus B · monologue, à un ami français. Steelman d'abord, réponse ensuite.
 
 ---
 
-Je vais commencer par ton argument dans sa version la plus forte, parce que c'est celle-là que je veux affronter.
+Je vais commencer par ton argument dans sa version la plus forte, parce que c'est à celle-là que je veux répondre.
 
 Ta version, c'est : le sionisme vient d'Europe. Il a organisé l'immigration, acheté des terres, et en 1948, à peu près sept cent mille Palestiniens sont partis ou ont été chassés. Et tu sais quoi ? Tout ça, c'est vrai. Herzl lui-même parlait de colonisation, à l'époque le mot choquait personne. Et la Nakba, les gens qui ont perdu leur maison, je la nie pas.
 

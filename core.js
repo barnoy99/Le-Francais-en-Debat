@@ -9,9 +9,10 @@ var Core = (function () {
   // A text's first readings: the French four times, not three (his ask, v18).
   var REPEAT_NEW = 4, NEW_READS = 3;
   // Speaking windows in « Mains libres », scaled to the sentence. Generous on purpose:
-  // his first feedback was « too fast ».
-  function repeatMs(fr) { return 1500 + words(fr) * 450; }
+  // his first feedback was « too fast ». Since v19 a repeat gets as long as a try after
+  // the English (his ask: it was ~60–75% shorter).
   function tryMs(fr) { return 3000 + words(fr) * 700; }
+  function repeatMs(fr) { return tryMs(fr); }
   function words(s) { return String(s).trim().split(/\s+/).length; }
 
   // ── State ─────────────────────────────────────────────

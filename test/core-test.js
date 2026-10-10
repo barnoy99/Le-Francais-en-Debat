@@ -110,7 +110,7 @@ const neverHidden = steps => steps.every(s => s.t !== 'ui' || (s.v.hideFr === un
   const iModel = back.findIndex(s => s.t === 'say' && s.text === v.model);
   ok(back[iEn].text === v.en, 'review: English cue spoken');
   ok(iEn > i0 && iTry > iEn && iModel > iTry, 'review order: English → his try → model');
-  ok(back[iTry].ms > Core.repeatMs(v.model), 'review: the try window is longer than a repeat');
+  ok(back[iTry].ms >= Core.repeatMs(v.model), 'review: the try window is at least a repeat');
   ok(says(back).filter(s => s.text === v.model).length === Core.REPEAT_VAR && turns(back).length === Core.REPEAT_VAR + 1,
      'review: after his try, the answer heard and repeated three times');
   ok(neverHidden(first) && neverHidden(back), 'variation: the French stays on screen');

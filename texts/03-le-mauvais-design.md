@@ -4,9 +4,9 @@ Corpus A · monologue, à un ami. Le nerf laryngé, chez nous, chez la girafe et
 
 ---
 
-Tu sais ce qui me fait douter d'un grand ingénieur ? C'est pas la beauté du monde. C'est les défauts.
+Tu sais ce qui me fait douter qu'il y ait vraiment un grand ingénieur derrière tout ça ? C'est pas la beauté du monde. C'est les défauts.
 
-Prends un nerf de ton cou, le nerf laryngé. Il part du cerveau et il va à la gorge, pour faire marcher ta voix. Le cerveau et la gorge, c'est tout près. Quelques centimètres, normalement, ça suffit. Sauf que lui, il prend pas ce chemin. Il descend jusque dans la poitrine, il fait le tour d'une grosse artère, près du cœur, et il remonte vers la gorge.
+Prends un nerf de ton cou, le nerf laryngé. Il part du cerveau et il va à la gorge, pour faire marcher ta voix. Le cerveau et la gorge, c'est tout près : une dizaine de centimètres. Si c'était toi qui dessinais le corps, tu ferais quoi ? Un nerf tout droit, évidemment. Dix centimètres de nerf, ça suffit largement. Sauf que lui, il prend pas ce chemin. Il descend jusque dans la poitrine, comme si on l'avait tiré vers le bas. Il fait le tour d'une grosse artère, juste à côté du cœur, et il remonte jusqu'à la gorge.
 
 Chez la girafe, c'est encore plus fou. Le cou fait presque deux mètres. Alors le nerf descend tout le cou, fait le tour de l'artère, et remonte tout le cou. Plusieurs mètres de détour, pour arriver à quelques centimètres de son point de départ. Un ingénieur qui fait ça, tu le vires. Un créateur aurait fait passer ce nerf par la poitrine, pour aller du cerveau à la gorge ? C'est un peu gros.
 

@@ -1,7 +1,7 @@
 # 13 · Le 7 octobre
 
 Corpus B · monologue, à un ami français. Les civils comme cible, pas comme dommage collatéral ; filmé par les auteurs. Pourquoi l'intention compte, en droit et en morale.
-Steelman : « ça s'est pas passé dans le vide » ; certains morts par des tirs israéliens. Les deux concédés.
+Steelman : « ça vient pas de nulle part » ; certains morts par des tirs israéliens. Les deux concédés.
 
 ---
 
@@ -9,7 +9,7 @@ Quand on parle du 7 octobre, on me dit souvent : « Oui, mais Gaza aussi, il y a
 
 D'abord, les faits. Environ mille deux cents morts en une journée. À peu près les deux tiers, des civils, dont trente-six enfants. Plus de deux cent cinquante otages, des bébés jusqu'aux vieillards. Au festival Nova, à peu près trois cent soixante jeunes tués en quelques heures.
 
-Dans les kibboutz, ils sont entrés maison par maison. Ils cherchaient les gens dans les abris. Les civils, c'était pas des victimes collatérales. C'était la cible.
+Dans les kibboutz, ils sont entrés maison par maison. Ils cherchaient les gens dans les abris. Les civils, c'était pas des dommages collatéraux. C'était la cible.
 
 Et ce qui m'a frappé, c'est qu'ils ont filmé. Eux-mêmes. Avec des caméras sur la tête, avec les téléphones des victimes. Y a même un enregistrement où un des assaillants appelle ses parents, tout fier, pour leur dire combien de Juifs il a tués.
 
@@ -17,7 +17,7 @@ Alors pourquoi ça compte, l'intention ? Prends un accident de voiture. Un type 
 
 En droit de la guerre, c'est pareil. Viser des civils exprès, c'est un crime de guerre, point. Tuer des civils en visant une cible militaire, ça se juge autrement : est-ce que c'était nécessaire, est-ce que c'était proportionné. Et là, oui, on peut critiquer Israël, frappe par frappe.
 
-Je vais même te donner deux arguments contre moi. Le premier, c'est le secrétaire général de l'ONU qui l'a dit : ça s'est pas passé dans le vide. Le blocus, l'occupation, tout ça, c'est vrai. Mais expliquer, c'est une chose. Excuser, c'en est une autre.
+Je vais même te donner deux arguments contre moi. Le premier, c'est le secrétaire général de l'ONU qui l'a dit : ça vient pas de nulle part. Le blocus, l'occupation, tout ça, c'est vrai. Mais expliquer, c'est une chose. Excuser, c'en est une autre.
 
 Le deuxième : ce jour-là, certains Israéliens sont morts sous des tirs israéliens, dans le chaos des combats. L'armée l'a reconnu, elle a enquêté. C'est vrai, et c'est terrible. Mais ça change pas qui est venu, et pourquoi.
 

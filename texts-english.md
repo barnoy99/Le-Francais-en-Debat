@@ -34,7 +34,7 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 **6.1** You know, there's something that's been bugging me for a long time. If you'd been born in Indonesia, what would you be? Muslim. In Brazil? Christian. In India? Hindu. In ancient Greece, you'd believe in Zeus, like everyone else. And in my own family, Jewish, obviously.
 
-**6.2** So religion is less a question of truth than a question of address. No, seriously, think about it. The vast majority of people keep their parents' religion. If it were a discovery, everyone would make it on their own, and everyone would land on the same one. Like in maths. Nobody tells you: "Where we come from, two and two make five."
+**6.2** So religion is less a question of truth than a question of postcode. No, seriously, think about it. The vast majority of people keep their parents' religion. If it were a discovery, everyone would make it on their own, and everyone would land on the same one. Like in maths. Nobody tells you: "Where we come from, two and two make five."
 
 **6.3** So yes, I can see your answer coming: "That doesn't prove anything, maybe one of them is true." True, I'll grant you that. But look at the problem it creates. Everyone is sure they were born into the right one. Everyone happened to draw the winning ticket? That's a bit much, no?
 
@@ -94,7 +94,7 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 *Corpus B · monologue, to a French friend. Steelman first, answer second.*
 
-**10.1** I'm going to start with your argument in its strongest form, because that's the one I want to take on.
+**10.1** I'm going to start with your argument in its strongest form, because that's the one I want to answer.
 
 **10.2** Your version is: Zionism comes from Europe. It organised immigration, bought land, and in 1948 roughly seven hundred thousand Palestinians left or were driven out. And you know what? All of that is true. Herzl himself talked about colonisation; at the time the word didn't shock anybody. And the Nakba, the people who lost their homes, I don't deny it.
 
@@ -120,13 +120,13 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 **14.3** On October 24th, 2023, Ghazi Hamad, from Hamas's political bureau, goes on LBC, a Lebanese channel. And he says, I'll translate for you: "Al-Aqsa Flood is just the first time. There will be a second, a third, a fourth." In France, when I tell people this, they don't believe me. But it's on film, it's translated, anyone can check.
 
-**14.4** That's the first leg: the intent, they announced it. The second is the means. Under Gaza, there were tunnels everywhere. How many kilometres? Here you have to be honest: nobody independent has been able to measure. Israeli officials talk about five hundred to seven hundred kilometres. Fine, let's even take half. That's still a city under the city, built with cement that could have been used to build above ground.
+**14.4** That's the first pillar: the intent, they announced it. The second is the means. Under Gaza, there were tunnels everywhere. How many kilometres? Here you have to be honest: nobody independent has been able to measure. Israeli officials talk about five hundred to seven hundred kilometres. Fine, let's even take half. That's still a city under the city, built with cement that could have been used to build above ground.
 
 **14.5** So look at what we were facing. A force that had shown what it could do, and said it would do it again. Would you leave it in place? That was the real choice. Act, or wait for next time.
 
 **14.6** But hang on, I'll stop there, because I can see your answer coming, and it's a fair one. Everything I've just said shows we had the right to respond. It says nothing about how. The right to go in, and the way you go in, legally, those are two different questions. And mixing them up is the best way to lose this argument.
 
-**14.7** And I'll even give you an argument against myself. Some legal scholars say that self-defence, as the UN Charter provides for it, fits poorly against an armed group coming from a territory you control. It's a real debate; I'm not pretending it doesn't exist.
+**14.7** And I'll even give you an argument against myself. Some legal scholars say that self-defence, as the UN Charter provides for it, fits poorly against an armed group coming from a territory you control. It's a real debate; I'm not going to act like it doesn't exist.
 
 **14.8** So, the manner, let's talk about it. It's the hardest question, and it's the one that really matters.
 
@@ -200,9 +200,9 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 *Corpus A · monologue.*
 
-**3.1** You know what makes me doubt there's a great engineer? It's not the beauty of the world. It's the flaws.
+**3.1** You know what makes me doubt there's really a great engineer behind all this? It's not the beauty of the world. It's the flaws.
 
-**3.2** Take a nerve in your neck, the laryngeal nerve. It goes from the brain to the throat, to make your voice work. The brain and the throat are right next to each other. A few centimetres should normally do it. Except this nerve doesn't take that route. It goes all the way down into the chest, loops around a big artery near the heart, and comes back up to the throat.
+**3.2** Take a nerve in your neck, the laryngeal nerve. It goes from the brain to the throat, to make your voice work. The brain and the throat are right next to each other: about ten centimetres. If you were the one designing the body, what would you do? A straight nerve, obviously. Ten centimetres of nerve is plenty. Except this nerve doesn't take that route. It goes all the way down into the chest, as if someone had pulled it down. It loops around a big artery right next to the heart, and comes all the way back up to the throat.
 
 **3.3** In the giraffe, it's even crazier. Its neck is almost two metres long. So the nerve goes all the way down the neck, loops around the artery, and goes all the way back up. A detour of several metres, to end up a few centimetres from where it started. An engineer who did that, you'd fire him. A creator supposedly sent this nerve through the chest to get from the brain to the throat? That's a bit much.
 
@@ -344,7 +344,7 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 **13.2** First, the facts. About twelve hundred dead in one day. Roughly two thirds civilians, including thirty-six children. More than two hundred and fifty hostages, from babies to old people. At the Nova festival, about three hundred and sixty young people killed in a few hours.
 
-**13.3** In the kibbutzim, they went in house by house. They looked for people in the shelters. The civilians weren't collateral victims. They were the target.
+**13.3** In the kibbutzim, they went in house by house. They looked for people in the shelters. The civilians weren't collateral damage. They were the target.
 
 **13.4** And what struck me is that they filmed it. Themselves. With cameras on their heads, with the victims' phones. There's even a recording where one of the attackers calls his parents, proud, to tell them how many Jews he's killed.
 
@@ -352,7 +352,7 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 **13.6** In the law of war, it's the same. Targeting civilians on purpose is a war crime, full stop. Killing civilians while aiming at a military target is judged differently: was it necessary, was it proportionate. And there, yes, you can criticise Israel, strike by strike.
 
-**13.7** I'll even give you two arguments against me. The first, the UN Secretary-General said it: it didn't happen in a vacuum. The blockade, the occupation, all that is true. But explaining is one thing. Excusing is another.
+**13.7** I'll even give you two arguments against me. The first, the UN Secretary-General said it: it didn't come out of nowhere. The blockade, the occupation, all that is true. But explaining is one thing. Excusing is another.
 
 **13.8** The second: that day, some Israelis died under Israeli fire, in the chaos of the fighting. The army acknowledged it, it investigated. That's true, and it's terrible. But it doesn't change who came, and why.
 
@@ -366,7 +366,7 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 **15.1** Before I say anything, I want to start here. The dead in Gaza are real, and it's terrible. Children, whole families. I'm not going to do sums to make it look less serious. It is serious.
 
-**15.2** You know the figure. Gaza's health ministry says more than seventy thousand dead. It's a Hamas ministry, yes. But its past figures have mostly held up, so I start from there.
+**15.2** You know the figure. Gaza's health ministry says more than seventy thousand dead. It's a Hamas ministry, yes. But in the past, its figures have mostly held up, so I start from there.
 
 **15.3** Except that ministry doesn't distinguish between civilians and fighters. And there, the numbers go all over the place. The Israeli army says it killed about twenty thousand fighters. A Guardian investigation, based on the army's own database, found far fewer. So I'm not going to tell you they were all terrorists. That would be false.
 
@@ -466,4 +466,4 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 **18.29 Him:** So what do you actually want?
 
-**18.30 Me:** I don't want them to stop studying. I want them to share. The real question isn't 'do we respect the Torah?'. It's 'are there two kinds of citizens?'. And I'd rather have a country where everyone carries the pack than one where some carry it for the others.
+**18.30 Me:** I don't want them to stop studying. I want them to share. The real question isn't 'do we respect the Torah?'. It's 'are there two kinds of citizens?'. And I'd rather have a country where everyone pulls their weight than one where some carry the weight of others.

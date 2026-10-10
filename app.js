@@ -161,6 +161,10 @@
   // Pause cancels the current step and restarts it on resume (a speech engine
   // cannot resume mid-utterance).
 
+  // What the card shows, as it should be read aloud (no « Toi : » labels).
+  var shown = { fr: '', en: '' };
+  function sayable(s) { return s.replace(/^(Ton ami|Toi|Friend|You) : ?/gm, ''); }
+
   function view(v) {
     if (v.phase !== undefined) {
       var isVar = v.phase === 'var';
@@ -170,9 +174,10 @@
     if (v.fr !== undefined) {
       $('run-card').classList.toggle('run-card--long', v.fr.split(/\s+/).length > 40);
       $('run-fr').textContent = v.fr;
+      shown.fr = sayable(v.fr);
       $('run-card').scrollTop = 0;
     }
-    if (v.en !== undefined) $('run-en').textContent = v.en;
+    if (v.en !== undefined) { $('run-en').textContent = v.en; shown.en = sayable(v.en); }
     if (v.fr !== undefined || v.en !== undefined) markMore();
     if (v.caption !== undefined) {
       $('run-caption').textContent = v.caption;
@@ -255,6 +260,25 @@
     var wasPaused = run.paused;
     if (!wasPaused) pauseRun();
     speak(run.help, 'en', 0.9, function () { if (!wasPaused && run.paused) resumeRun(); });
+  }
+
+  // ▶ Français / ▶ Anglais: read the card now (even in « Silencieux »), then carry on.
+  // The first tap decides whether the run resumes; a second tap restarts the reading.
+  var play = { gen: 0, on: false, resume: false };
+  function playNow(lang) {
+    if (!run.active || !shown[lang]) return;
+    var my = ++play.gen;
+    if (!play.on) {
+      play.resume = !run.paused;
+      if (!run.paused) { pauseRun(); hide($('run-paused')); }
+    }
+    play.on = true;
+    if ('speechSynthesis' in window) speechSynthesis.cancel();
+    speak(shown[lang], lang, lang === 'en' ? 0.9 : 0.85, function () {
+      if (my !== play.gen) return;
+      play.on = false;
+      if (play.resume && run.paused) resumeRun();
+    });
   }
 
   function stopRun() {
@@ -516,11 +540,24 @@
     $('choose-text-restart').addEventListener('click', function () { openPart('texte', true); });
     $('choose-var-restart').addEventListener('click', function () { openPart('var', true); });
     $('btn-explain').addEventListener('click', explainStep);
+    $('play-fr').addEventListener('click', function () { playNow('fr'); });
+    $('play-en').addEventListener('click', function () { playNow('en'); });
+    // Long-press on the text selects it (to copy): pause, so the card stays put. The tap
+    // that clears a selection must not toggle the pause.
+    var selLive = false, selGoneAt = 0;
+    document.addEventListener('selectionchange', function () {
+      var s = window.getSelection();
+      var live = !!s && !s.isCollapsed && $('run-card').contains(s.anchorNode);
+      if (selLive && !live) selGoneAt = Date.now();
+      selLive = live;
+      if (live && run.active && !run.paused) pauseRun();
+    });
     $('run-card').addEventListener('scroll', markMore);
     // The card shrinks when the « Suivant » button or the time bar shows up.
     if ('ResizeObserver' in window) new ResizeObserver(markMore).observe($('run-card'));
     $('run-tap').addEventListener('click', function (e) {
       if (inControl(e.target) || (!handsFree() && !run.paused)) return;
+      if (selLive || Date.now() - selGoneAt < 700) return;
       togglePause();
     });
     $('btn-done-again').addEventListener('click', function () { openPart(run.part, true); });

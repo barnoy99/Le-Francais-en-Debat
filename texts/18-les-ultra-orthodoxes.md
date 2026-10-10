@@ -63,4 +63,4 @@ Chiffres : IDI 2025, Banque d'Israël, Cour suprême juin 2024. Version étroite
 
 **Lui :** Alors tu veux quoi, au fond ?
 
-**Moi :** Je veux pas qu'ils arrêtent d'étudier. Je veux qu'ils partagent. La vraie question, c'est pas « est-ce qu'on respecte la Torah ? ». C'est « est-ce qu'il y a deux sortes de citoyens ? ». Et moi, je préfère un pays où tout le monde porte le sac à un pays où certains le portent pour les autres.
+**Moi :** Je veux pas qu'ils arrêtent d'étudier. Je veux qu'ils partagent. La vraie question, c'est pas « est-ce qu'on respecte la Torah ? ». C'est « est-ce qu'il y a deux sortes de citoyens ? ». Et moi, je préfère un pays où chacun porte sa part à un pays où certains portent celle des autres.

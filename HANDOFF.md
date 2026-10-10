@@ -10,6 +10,28 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v19 (2026-10-10) — longer repeats; ▶ buttons; copyable text; language pass
+
+His asks, all done:
+- **Repeat window = try window**: `repeatMs` now returns `tryMs` (3 s + 0.7 s/word). Before, a try after
+  the English was ~60–75% longer than a repeat (1.5 s + 0.45 s/word) for 5–20-word chunks.
+- **▶ Français / ▶ Anglais** under the card (`playNow` in `app.js`): pauses the run, reads what the card
+  shows (dialogue labels stripped), then resumes; works in « Silencieux » too. A second tap restarts the
+  reading; only the first tap decides whether the run resumes.
+- **Copy**: `.run-fr` / `.run-en` are selectable. A selection on the card pauses the run; the tap that
+  clears it doesn't toggle the pause (`selectionchange`, 700 ms grace).
+- **Text 3**: « douter qu'il y ait vraiment un grand ingénieur derrière tout ça » (was « douter d'un grand
+  ingénieur » = distrust him). The nerve: « une dizaine de centimètres. Si c'était toi qui dessinais le
+  corps, tu ferais quoi ? Un nerf tout droit, évidemment. Dix centimètres de nerf, ça suffit largement. »
+  then « comme si on l'avait tiré vers le bas » and « juste à côté du cœur ». 39 → 42 sentences; CHUNKS 3
+  re-cut. Saved `pos` / `done` for text 3 past sentence 8 now point 3 sentences early (harmless).
+- **Language pass** over all 18 texts and the 252 models, fixing calques / odd idioms: ce à quoi on
+  s'attendrait (1), question de code postal (6, + f09 exemplar), c'est à celle-là que je veux répondre (10),
+  reprenons l'histoire (11), dommages collatéraux, ça vient pas de nulle part (13), le premier pilier,
+  je vais pas faire comme s'il existait pas (14), par le passé… tenu la route (15), chacun porte sa part (18),
+  pas juste mal digérer (f14-4), une famille qui parle pas français (f25-1). English follows.
+- Assets `?v=19`, `CACHE_VERSION = 'v19'`.
+
 ## v18 (2026-10-10) — French always shown; controls on every screen; readings counted
 
 His asks, all done:

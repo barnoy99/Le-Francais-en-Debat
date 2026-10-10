@@ -10,7 +10,7 @@ Et l'univers a à peu près quatorze milliards d'années. Si tu le ramènes à u
 
 Et puis y a la souffrance. En 2004, un tsunami tue plus de deux cent mille personnes en une journée. Des croyants, des athées, des bébés. La vague, elle a pas trié. Pour moi, ça ressemble pas à un monde que quelqu'un surveille. Ça ressemble à un monde qui s'en fiche.
 
-C'est ce que dit Dawkins, en gros. Dans l'univers, y a pas de dessein, pas de but, pas de bien ni de mal. Juste une indifférence aveugle. Et ce qu'on voit, c'est exactement ce qu'on attendrait s'il y avait personne derrière.
+C'est ce que dit Dawkins, en gros. Dans l'univers, y a pas de dessein, pas de but, pas de bien ni de mal. Juste une indifférence aveugle. Et ce qu'on voit, c'est exactement ce à quoi on s'attendrait s'il y avait personne derrière.
 
 Alors oui, je vois venir ta réponse : « C'est horrible, ce que tu dis. Vivre dans un monde comme ça, c'est insupportable. » Je comprends. Mais c'est pas parce qu'une idée fait peur qu'elle est fausse. Le monde, il a pas à être confortable.
 

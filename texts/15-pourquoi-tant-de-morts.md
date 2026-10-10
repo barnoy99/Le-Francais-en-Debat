@@ -7,7 +7,7 @@ Ouvre sur la concession. Proportionnalité = frappe par frappe, pas un ratio. Bo
 
 Avant de dire quoi que ce soit, je veux commencer par là. Les morts à Gaza, ils sont réels, et c'est terrible. Des enfants, des familles entières. Je vais pas faire des calculs pour que ça ait l'air moins grave. Ça l'est.
 
-Le chiffre, tu le connais. Le ministère de la Santé de Gaza parle de plus de soixante-dix mille morts. C'est un ministère du Hamas, oui. Mais ses chiffres passés ont plutôt tenu, donc je pars de là.
+Le chiffre, tu le connais. Le ministère de la Santé de Gaza parle de plus de soixante-dix mille morts. C'est un ministère du Hamas, oui. Mais par le passé, ses chiffres ont plutôt tenu la route, donc je pars de là.
 
 Sauf que ce ministère fait pas la différence entre civils et combattants. Et là, les chiffres partent dans tous les sens. L'armée israélienne dit avoir tué environ vingt mille combattants. Une enquête du Guardian, à partir d'une base de données de l'armée elle-même, en trouvait beaucoup moins. Donc je vais pas te dire que c'étaient tous des terroristes. Ce serait faux.
 
