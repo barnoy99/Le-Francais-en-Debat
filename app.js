@@ -168,27 +168,22 @@
       $('run-tag').textContent = isVar ? 'À ta façon' : 'Le texte';
     }
     if (v.fr !== undefined) {
-      run.fr = v.fr;
       $('run-card').classList.toggle('run-card--long', v.fr.split(/\s+/).length > 40);
-    }
-    if (v.mask !== undefined) run.masked = v.mask;
-    if (v.fr !== undefined || v.mask !== undefined) {
-      $('run-fr').textContent = run.masked ? Core.mask(run.fr) : run.fr;
-      $('run-fr').classList.toggle('masked', !!run.masked);
+      $('run-fr').textContent = v.fr;
       $('run-card').scrollTop = 0;
     }
     if (v.en !== undefined) $('run-en').textContent = v.en;
-    if (v.hideFr !== undefined) {
-      var frEl = $('run-fr');
-      // A new sentence that starts hidden must not flash in during the fade.
-      if (v.fr !== undefined) frEl.style.transition = 'none';
-      frEl.classList.toggle('faded', v.hideFr);
-      if (v.fr !== undefined) { void frEl.offsetWidth; frEl.style.transition = ''; }
-    }
+    if (v.fr !== undefined || v.en !== undefined) markMore();
     if (v.caption !== undefined) {
       $('run-caption').textContent = v.caption;
       run.help = v.hint || '';
     }
+  }
+
+  // The card fades at the bottom while there is more to scroll to (long English).
+  function markMore() {
+    var c = $('run-card');
+    c.classList.toggle('run-card--more', c.scrollTop + c.clientHeight < c.scrollHeight - 4);
   }
 
   function stopTimers() {
@@ -206,11 +201,13 @@
       btn.textContent = label || 'Suivant ›';
       show(btn);
       btn.onclick = function () { hide(btn); btn.onclick = null; next(); };
+      markMore();
       return;
     }
     var bar = $('run-bar-time');
     var fill = $('run-bar-fill');
     show(bar);
+    markMore();
     fill.style.transition = 'none';
     fill.style.width = '0%';
     void fill.getBoundingClientRect();
@@ -289,7 +286,7 @@
       run.len = c.len;
       Core.setPos(state, run.text.id, pos);
       run.variant = null;
-      run.steps = Core.textSteps(chunk, { size: run.size, silent: silent, enFirst: mode === 'anglais' });
+      run.steps = Core.textSteps(chunk, { size: run.size, reads: Core.reads(state, run.text.id), silent: silent, enFirst: mode === 'anglais' });
       var one = chunk.every(function (x) { return x.who === chunk[0].who; });
       if (run.text.kind === 'dialogue' && one) who = chunk[0].who === 'lui' ? 'Ton ami' : 'Toi';
       count = run.len === 1 ? (pos + 1) + ' / ' + list.length : (pos + 1) + '–' + (pos + run.len) + ' / ' + list.length;
@@ -319,6 +316,8 @@
     var id = run.text.id;
     if (run.part === 'texte') {
       for (var i = run.pos; i < run.pos + run.len; i++) Core.complete(state, id, i, null);
+      // Played to the last chunk (not skipped past it): one more reading of this text.
+      if (run.pos + run.len >= run.sents.length) Core.finishRead(state, id);
     } else {
       Core.completeVar(state, id, run.pos, run.vars[run.pos].f);
     }
@@ -335,8 +334,9 @@
     stopRun();
     save();
     $('done-title').textContent = run.text.title;
+    var n = Core.reads(state, run.text.id);
     $('done-note').textContent = run.part === 'texte'
-      ? 'Quand tu le connais mieux, prends des morceaux plus longs : une bouchée, un passage, ou tout le texte.'
+      ? (n ? 'Lu jusqu\'au bout ' + n + ' fois. ' : '') + 'Quand tu le connais mieux, prends des morceaux plus longs : une bouchée, un passage, ou tout le texte.'
       : 'La prochaine fois, chaque structure revient avec une nouvelle phrase, en anglais d\'abord : c\'est toi qui la diras en français.';
     $('btn-done-again').textContent = run.part === 'texte' ? 'Relire ce texte' : 'Refaire les variations';
     showScreen('screen-done');
@@ -357,7 +357,6 @@
     requestWakeLock();
     run.active = true;
     $('run-title').textContent = (part === 'texte' ? 'Le texte · ' : 'Variations · ') + t.title;
-    $('size-toggle').classList.toggle('hidden', part !== 'texte');
     showScreen('screen-run');
     playAt(start);
   }
@@ -408,9 +407,10 @@
   var MODE_DESC = { mains: "Tout à l'oreille : l'appli fait une pause pour que tu répètes, puis continue toute seule.",
                     anglais: "Tout à l'oreille : l'anglais, un temps pour le dire en français, puis trois fois le français à répéter.",
                     calme: "Tu lis, tu répètes à ton rythme, et tu touches « Suivant ».",
-                    silence: "Aucun son : tu lis l'anglais, tu devines le français, puis tu touches « Voir »." };
+                    silence: "Aucun son : tu lis le français et l'anglais, à ton rythme, et tu touches « Suivant »." };
 
   function setMode(m) {
+    var changed = m !== mode;
     mode = m;
     try { localStorage.setItem(MODE_KEY, m); } catch (e) {}
     $('mode-mains').classList.toggle('active', m === 'mains');
@@ -418,6 +418,8 @@
     $('mode-calme').classList.toggle('active', m === 'calme');
     $('mode-silence').classList.toggle('active', m === 'silence');
     $('mode-desc').textContent = MODE_DESC[m];
+    // Mid-run: the current piece starts again in the new mode.
+    if (changed && run.active) playAt(run.pos);
   }
 
   function el(tag, cls, text) {
@@ -437,7 +439,11 @@
       var li = el('li', 'text-card' + (t.id === state.lastText ? ' text-card--last' : ''));
       var main = el('button', 'text-main');
       main.appendChild(el('span', 'text-kind', (t.corpus === 'A' ? 'Dieu' : 'Israël') + ' · ' + (t.kind === 'dialogue' ? 'dialogue' : 'monologue')));
-      main.appendChild(el('span', 'text-title', t.title));
+      var head = el('span', 'text-head');
+      head.appendChild(el('span', 'text-title', t.title));
+      var n = Core.reads(state, t.id);
+      if (n) head.appendChild(el('span', 'text-reads', n + '×'));
+      main.appendChild(head);
       var bar = el('span', 'text-bar');
       var fill = el('span', 'text-bar-fill');
       fill.style.width = (100 * p.done / total) + '%';
@@ -510,6 +516,9 @@
     $('choose-text-restart').addEventListener('click', function () { openPart('texte', true); });
     $('choose-var-restart').addEventListener('click', function () { openPart('var', true); });
     $('btn-explain').addEventListener('click', explainStep);
+    $('run-card').addEventListener('scroll', markMore);
+    // The card shrinks when the « Suivant » button or the time bar shows up.
+    if ('ResizeObserver' in window) new ResizeObserver(markMore).observe($('run-card'));
     $('run-tap').addEventListener('click', function (e) {
       if (inControl(e.target) || (!handsFree() && !run.paused)) return;
       togglePause();

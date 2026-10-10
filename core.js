@@ -6,6 +6,8 @@ var Core = (function () {
   var REPEAT_SENT = 3;      // a chunk of the text, any size but « Tout »: heard and repeated three times
   var REPEAT_VAR = 3;       // a variation: heard and repeated three times (Quotidien-style)
   var REPEAT_EN = 3;        // « Anglais d'abord »: the English once, then the French three times, any size
+  // A text's first readings: the French four times, not three (his ask, v18).
+  var REPEAT_NEW = 4, NEW_READS = 3;
   // Speaking windows in « Mains libres », scaled to the sentence. Generous on purpose:
   // his first feedback was « too fast ».
   function repeatMs(fr) { return 1500 + words(fr) * 450; }
@@ -13,7 +15,8 @@ var Core = (function () {
   function words(s) { return String(s).trim().split(/\s+/).length; }
 
   // ── State ─────────────────────────────────────────────
-  // texts: 't<id>' -> { pos, done, vpos }. pos = next sentence to play; vpos = next variation; done = a '0'/'1'
+  // texts: 't<id>' -> { pos, done, vpos, reads }. pos = next sentence to play; vpos = next variation;
+  // reads = times « Le texte » was played to its end; done = a '0'/'1'
   // string, one char per sentence (a string, because Firebase rewrites integer-keyed
   // objects into arrays). vu: frame id -> variations shown, so each visit gets the next one.
 
@@ -29,8 +32,13 @@ var Core = (function () {
     if (typeof r.pos !== 'number') r.pos = 0;
     if (typeof r.done !== 'string') r.done = '';
     if (typeof r.vpos !== 'number') r.vpos = 0;
+    if (typeof r.reads !== 'number') r.reads = 0;
     return r;
   }
+
+  // « Le texte » reached its last chunk: one more reading (shown on home).
+  function finishRead(state, textId) { textRec(state, textId).reads++; }
+  function reads(state, textId) { var r = state.texts[key(textId)]; return (r && r.reads) || 0; }
 
   function isDone(state, textId, idx) {
     var r = state.texts[key(textId)];
@@ -125,8 +133,11 @@ var Core = (function () {
     return 0;
   }
 
-  // One sentence: three repeats; bigger chunks: two; the whole text is listen-only.
-  function repeatsFor(size) { return size ? REPEAT_SENT : 0; }  // « Tout » = listen only
+  // Any chunk: three repeats, four during the first readings; the whole text is listen-only.
+  function repeatsFor(size, nReads) {
+    if (!size) return 0;                                   // « Tout » = listen only
+    return (nReads || 0) < NEW_READS ? REPEAT_NEW : REPEAT_SENT;
+  }
 
   function varList(sents) {
     var seen = {}, out = [];
@@ -148,21 +159,10 @@ var Core = (function () {
     return turns.map(function (t) { return (labels ? labels[t.who] || '' : '') + t.parts.join(' '); }).join('\n');
   }
 
-  // « Silencieux » guessing aid: each word keeps its first letter, the rest is blanked.
-  // A speaker label from chunkText stays readable.
-  function mask(fr) {
-    return String(fr).split('\n').map(function (line) {
-      var m = /^(Ton ami : |Toi : )?([\s\S]*)$/.exec(line);
-      return (m[1] || '') + m[2].replace(/([A-Za-zÀ-ÖØ-öø-ÿœŒ])([A-Za-zÀ-ÖØ-öø-ÿœŒ]*)/g, function (w, a, b) {
-        return a + new Array(b.length + 1).join('_');
-      });
-    }).join('\n');
-  }
-
   // ── Steps ─────────────────────────────────────────────
   // ui = repaint the screen; say = speak; turn = his turn (« Mains libres »: a silence
   // of `ms`; « Au calme » / « Silencieux »: a button, labelled `label` or « Suivant »).
-  // Silent steps never say anything: the English and the first letters are the cue.
+  // Silent steps never say anything. The French is always on screen (his ask, v18).
 
   function stepper() {
     var s = [];
@@ -174,56 +174,44 @@ var Core = (function () {
     };
   }
 
-  // opts: { size, silent, enFirst }
+  // opts: { size, reads, silent, enFirst }. reads = times this text was already played to its end.
   function textSteps(chunk, opts) {
     opts = opts || {};
     var k = stepper();
     var fr = chunkText(chunk, 'fr'), en = chunkText(chunk, 'en');
+    var frs = chunk.map(function (x) { return x.fr; });
     if (opts.silent) {
-      k.ui({ phase: 'sent', fr: fr, en: en, hideFr: false, mask: true,
-             caption: 'Devine en français', hint: 'Guess the French from the English and the first letters.' });
-      k.turn(0, 'Voir');
-      k.ui({ mask: false, caption: 'Relis-le', hint: 'Read it once more, then go on.' });
+      k.ui({ phase: 'sent', fr: fr, en: en, caption: 'Lis-le', hint: 'Read it, then go on.' });
       k.turn(0);
       return k.s;
     }
+    var reps = repeatsFor(opts.size === undefined ? 1 : opts.size, opts.reads);
     if (opts.enFirst) {
-      // « Anglais d'abord »: the meaning first, French hidden; then the French, repeated.
-      k.ui({ phase: 'sent', fr: fr, en: en, hideFr: true, mask: false,
-             caption: "En anglais d'abord", hint: 'First the English. Listen.' });
+      // « Anglais d'abord »: the meaning first, then the French repeated (« Tout » too).
+      k.ui({ phase: 'sent', fr: fr, en: en, caption: "En anglais d'abord", hint: 'First the English. Listen.' });
       chunk.forEach(function (x) { k.say(x.en, 'en', 0.9); });
       // His try in French before hearing it: longer than a repeat window.
       k.ui({ caption: 'À toi, en français', hint: 'Your turn: say it in French.' });
-      k.turn(tryMs(chunk.map(function (x) { return x.fr; }).join(' ')));
-      repeatFr(k, chunk.map(function (x) { return x.fr; }), REPEAT_EN);
+      k.turn(tryMs(frs.join(' ')));
+      repeatFr(k, frs, Math.max(repeatsFor(1, opts.reads), REPEAT_EN));
       return k.s;
     }
-    var reps = repeatsFor(opts.size === undefined ? 1 : opts.size);
-    k.ui({ phase: 'sent', fr: fr, en: en, hideFr: false, mask: false, caption: 'Écoute', hint: 'Listen.' });
+    k.ui({ phase: 'sent', fr: fr, en: en, caption: 'Écoute', hint: 'Listen.' });
     if (!reps) {
       chunk.forEach(function (x) { k.say(x.fr); });
       return k.s;
     }
-    var all = chunk.map(function (x) { return x.fr; }).join(' ');
-    for (var i = 1; i <= reps; i++) {
-      if (i === reps && reps > 1) k.ui({ hideFr: true, caption: 'Écoute', hint: 'Listen — this time without reading.' });
-      chunk.forEach(function (x) { k.say(x.fr); });
-      k.ui({ caption: reps > 1 ? 'Répète (' + i + '/' + reps + ')' : 'Répète',
-             hint: i === reps && reps > 1 ? 'Say it without reading.' : 'Say it out loud.' });
-      k.turn(repeatMs(all));
-    }
+    repeatFr(k, frs, reps);
     return k.s;
   }
 
-  // The French heard and repeated n times: shown from the first, hidden on the last.
+  // The French heard and repeated n times.
   function repeatFr(k, frs, n) {
     var all = frs.join(' ');
     for (var i = 1; i <= n; i++) {
-      if (i === 1) k.ui({ hideFr: false, caption: 'Écoute', hint: 'Now the French. Listen.' });
-      if (i === n && n > 1) k.ui({ hideFr: true, caption: 'Écoute', hint: 'Listen — this time without reading.' });
+      k.ui({ caption: 'Écoute', hint: 'Listen.' });
       frs.forEach(function (fr) { k.say(fr); });
-      k.ui({ caption: n > 1 ? 'Répète (' + i + '/' + n + ')' : 'Répète',
-             hint: i === n && n > 1 ? 'Say it without reading.' : 'Say it out loud.' });
+      k.ui({ caption: 'Répète (' + i + '/' + n + ')', hint: 'Say it out loud.' });
       k.turn(repeatMs(all));
     }
   }
@@ -233,16 +221,12 @@ var Core = (function () {
     opts = opts || {};
     var k = stepper(), ui = k.ui, say = k.say, turn = k.turn;
     if (opts.silent) {
-      ui({ phase: 'var', fr: v.model, en: v.en, hideFr: false, mask: true,
-           caption: 'Devine en français', hint: 'Same structure. Guess the French from the English and the first letters.' });
-      turn(0, 'Voir');
-      ui({ mask: false, caption: 'La réponse', hint: 'Here is the answer.' });
+      ui({ phase: 'var', fr: v.model, en: v.en, caption: 'Lis-la', hint: 'Same structure, a new sentence. Read it, then go on.' });
       turn(0);
       return k.s;
     }
     if (opts.enFirst) {
-      ui({ phase: 'var', fr: v.model, en: v.en, hideFr: true, mask: false,
-           caption: "En anglais d'abord", hint: 'Same structure, a new sentence. First the English.' });
+      ui({ phase: 'var', fr: v.model, en: v.en, caption: "En anglais d'abord", hint: 'Same structure, a new sentence. First the English.' });
       say(v.en, 'en', 0.9);
       ui({ caption: 'À toi, en français', hint: 'Your turn: say it in French.' });
       turn(tryMs(v.model));
@@ -250,25 +234,16 @@ var Core = (function () {
       return k.s;
     }
     if (!opts.review) {
-      ui({ phase: 'var', fr: v.model, en: v.en, hideFr: false, mask: false,
-           caption: 'Même structure, autre phrase', hint: 'Same structure, a new sentence. Listen.' });
+      ui({ phase: 'var', fr: v.model, en: v.en, caption: 'Même structure, autre phrase', hint: 'Same structure, a new sentence. Listen.' });
     } else {
       // He meets the structure again: the English first, his try, then the answer.
-      ui({ phase: 'var', fr: v.model, en: v.en, hideFr: true, mask: false,
-           caption: 'Dis-le en français', hint: 'Same structure. Say this in French.' });
+      ui({ phase: 'var', fr: v.model, en: v.en, caption: 'Dis-le en français', hint: 'Same structure. Say this in French.' });
       say(v.en, 'en', 0.9);
       ui({ caption: 'À toi, en français', hint: 'Your turn, in French.' });
       turn(tryMs(v.model));
-      ui({ hideFr: false, caption: 'La réponse', hint: 'Here is the answer. Listen.' });
     }
-    // Either way: heard and repeated three times, the last one without reading.
-    for (var j = 1; j <= REPEAT_VAR; j++) {
-      if (j === REPEAT_VAR) ui({ hideFr: true, caption: 'Écoute', hint: 'Listen — this time without reading.' });
-      say(v.model);
-      ui({ caption: 'Répète (' + j + '/' + REPEAT_VAR + ')',
-           hint: j === REPEAT_VAR ? 'Say it without reading.' : 'Say it out loud.' });
-      turn(repeatMs(v.model));
-    }
+    // Either way: heard and repeated three times.
+    repeatFr(k, [v.model], REPEAT_VAR);
     return k.s;
   }
 
@@ -291,18 +266,19 @@ var Core = (function () {
       if (typeof r.pos !== 'number') r.pos = 0;
       if (typeof r.done !== 'string') r.done = '';
       if (typeof r.vpos !== 'number') r.vpos = 0;
+      if (typeof r.reads !== 'number') r.reads = 0;
     }
     return state;
   }
 
   return {
-    REPEAT_SENT: REPEAT_SENT, REPEAT_VAR: REPEAT_VAR,
+    REPEAT_SENT: REPEAT_SENT, REPEAT_VAR: REPEAT_VAR, REPEAT_NEW: REPEAT_NEW, NEW_READS: NEW_READS,
     repeatMs: repeatMs, tryMs: tryMs,
     defaults: defaults, normalize: normalize, pickFreshest: pickFreshest,
-    textRec: textRec, isDone: isDone, progress: progress, complete: complete, setPos: setPos,
+    textRec: textRec, finishRead: finishRead, reads: reads, isDone: isDone, progress: progress, complete: complete, setPos: setPos,
     completeVar: completeVar, setVarPos: setVarPos, varProgress: varProgress,
     pickVariant: pickVariant, SIZES: SIZES, units: units, chunks: chunks, chunkIndex: chunkIndex, repeatsFor: repeatsFor, varList: varList,
-    chunkText: chunkText, mask: mask, textSteps: textSteps, varSteps: varSteps
+    chunkText: chunkText, textSteps: textSteps, varSteps: varSteps
   };
 })();
 

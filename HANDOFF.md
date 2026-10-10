@@ -10,6 +10,32 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v18 (2026-10-10) — French always shown; controls on every screen; readings counted
+
+His asks, all done:
+- **The French is never hidden**: no fade on the last repeat, none during « Anglais d'abord » or the
+  variation review try. « Silencieux » = French + English shown, one « Suivant » (masking and
+  `Core.mask` removed; steps no longer carry `hideFr` / `mask`).
+- **English bigger** (1.3rem, upright, darker). The card takes whatever height is left and scrolls;
+  its bottom fades (`run-card--more`) while there is more below.
+- **Two rows on top of every screen** (`.controls`, outside the screens): mode, then Phrase / Bouchée /
+  Passage / Tout. Changing either mid-run restarts the current piece in the new setting. `#app` is
+  100dvh; the active screen scrolls inside it.
+- **Readings per text**: `state.texts.t<id>.reads`, +1 when « Le texte » plays its last chunk to the
+  end (⏭ past it doesn't count), any mode/size. Home shows « N× » next to the title.
+- **Four repeats during the first three readings** (`Core.repeatsFor(size, reads)`: 4 while reads < 3,
+  else 3; « Tout » still listen-only; « Anglais d'abord » also 4 then 3). Variations unchanged (3).
+- **Text 2**: the question is now explicit (« Alors qui l'a créé, lui ? », « Ma question, c'était :
+  d'où il vient, ce créateur ? », « avant, fallait expliquer d'où vient l'univers ; maintenant, d'où
+  vient Dieu »). **Text 3**: only the laryngeal nerve, told step by step (brain→throat is short, the
+  nerve loops round the heart's artery; giraffe; fish has no neck, so no detour; the neck grew and
+  the nerve stayed hooked), then « Y en a plein d'autres : la rétine…, l'accouchement…, les dents de
+  sagesse, le mal de dos. Si ça t'intéresse, regarde. » The f20 sentence moved to the nerve
+  (« Un créateur aurait fait passer ce nerf par la poitrine… ? C'est un peu gros. »); objection and
+  conclusion kept. CHUNKS for 2 and 3 re-cut by hand.
+- `texts-english.md` had the twelve-texts section pasted three times; kept the latest copy.
+- Assets `?v=18`, `CACHE_VERSION = 'v18'`.
+
 ## v17 (2026-10-09) — updates arrive; version shown
 
 His report after v16: « I still hear the French right after the English » — his phone was still on v15.

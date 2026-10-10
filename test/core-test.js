@@ -19,23 +19,41 @@ const turns = steps => steps.filter(s => s.t === 'turn');
 
 const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who: t.lines[x.l].who }));
 
-// ── « Le texte »: one sentence, three times, French fades ─────
+// The French is never hidden (v18): no step may hide or mask it.
+const neverHidden = steps => steps.every(s => s.t !== 'ui' || (s.v.hideFr === undefined && s.v.mask === undefined));
+
+// ── « Le texte »: one sentence, four times while new, then three ─────
 {
   const sent = { fr: "Tu me suis ?", en: "Are you with me?", who: 'moi' };
-  const st = Core.textSteps([sent], { size: 1 });
-  ok(st[0].t === 'ui' && st[0].v.fr === sent.fr && st[0].v.en === sent.en && st[0].v.hideFr === false, 'first step shows French + English');
+  const st = Core.textSteps([sent], { size: 1, reads: 3 });
+  ok(st[0].t === 'ui' && st[0].v.fr === sent.fr && st[0].v.en === sent.en, 'first step shows French + English');
   ok(says(st).length === Core.REPEAT_SENT && says(st).every(s => s.text === sent.fr && s.lang === 'fr'), 'sentence heard three times in French');
   ok(turns(st).length === Core.REPEAT_SENT, 'three turns to repeat');
-  const fade = st.findIndex(s => s.t === 'ui' && s.v.hideFr === true);
-  ok(fade > 0 && fade < st.map(s => s.t).lastIndexOf('say'), 'French fades before the third hearing');
+  ok(neverHidden(st), 'the French stays on screen');
   ok(st[st.length - 1].t === 'turn', 'ends on his turn');
   ok(!st.some(s => s.t === 'ui' && s.v.phase === 'var'), 'the text part never shows a variation');
+  for (const r of [undefined, 0, 1, 2]) {
+    const nw = Core.textSteps([sent], { size: 1, reads: r });
+    ok(says(nw).length === 4 && turns(nw).length === 4, `reads ${r}: heard and repeated four times`);
+  }
+}
+
+// ── Readings counted per text ─────────────────────────────
+{
+  const st = Core.defaults();
+  ok(Core.reads(st, 2) === 0, 'no reading yet');
+  Core.finishRead(st, 2); Core.finishRead(st, 2);
+  ok(Core.reads(st, 2) === 2 && Core.reads(st, 3) === 0, 'readings counted per text');
+  const back = Core.normalize(JSON.parse(JSON.stringify({ version: 2, texts: { t2: { pos: 1, done: '1' } } })));
+  ok(back.texts.t2.reads === 0, 'normalize adds reads to an old record');
 }
 
 // ── « Le texte »: chunk sizes ─────────────────────────────
 {
-  ok(Core.repeatsFor(1) === 3 && Core.repeatsFor(2) === 3 && Core.repeatsFor(3) === 3 && Core.repeatsFor(0) === 0,
+  ok(Core.repeatsFor(1, 3) === 3 && Core.repeatsFor(2, 3) === 3 && Core.repeatsFor(3, 5) === 3 && Core.repeatsFor(0) === 0,
      'repeats: three for every chunk size, whole text listen-only');
+  ok(Core.repeatsFor(1, 0) === 4 && Core.repeatsFor(3, 2) === 4 && Core.repeatsFor(0, 0) === 0,
+     'repeats: four during the first three readings');
   ok(String(Core.units([{ fr: 'A,' }, { fr: 'b.' }, { fr: 'C.' }])) === '2,1', 'phrase: a comma-split sentence stays whole');
   for (const t of TEXTS) {
     const ss = withWho(t);
@@ -49,9 +67,11 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
         for (let p = c.from; p < c.from + c.len; p++) ok(Core.chunkIndex(list, p) === i, `text ${t.id} size ${n}: sentence ${p} found in chunk ${i}`);
         covered += c.len;
         const ch = ss.slice(c.from, c.from + c.len);
-        const st = Core.textSteps(ch, { size: n });
-        ok(says(st).length === ch.length * Core.repeatsFor(n), `text ${t.id} size ${n}: every sentence said per repeat`);
-        ok(turns(st).length === Core.repeatsFor(n), `text ${t.id} size ${n}: one turn per repeat`);
+        for (const r of [0, 3]) {
+          const st = Core.textSteps(ch, { size: n, reads: r });
+          ok(says(st).length === ch.length * Core.repeatsFor(n, r), `text ${t.id} size ${n}: every sentence said per repeat`);
+          ok(turns(st).length === Core.repeatsFor(n, r), `text ${t.id} size ${n}: one turn per repeat`);
+        }
       });
       ok(covered === ss.length, `text ${t.id}: size ${n} covers every sentence once`);
     }
@@ -79,7 +99,7 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
   const v = byId.f02.prompts[0];
   const first = Core.varSteps(v, { review: false });
   const varUi = first.find(s => s.t === 'ui' && s.v.phase === 'var');
-  ok(varUi && varUi.v.fr === v.model && varUi.v.en === v.en && varUi.v.hideFr === false, 'first time: shown in French + English');
+  ok(varUi && varUi.v.fr === v.model && varUi.v.en === v.en, 'first time: shown in French + English');
   ok(says(first).filter(s => s.text === v.model).length === Core.REPEAT_VAR && turns(first).length === Core.REPEAT_VAR, 'first time: heard and repeated three times');
   ok(!first.some(s => s.t === 'ui' && s.v.phase === 'sent'), 'a variation comes without the text sentence');
 
@@ -87,18 +107,13 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
   const i0 = back.findIndex(s => s.t === 'ui' && s.v.phase === 'var');
   const iEn = back.findIndex(s => s.t === 'say' && s.lang === 'en');
   const iTry = back.findIndex((s, i) => i > iEn && s.t === 'turn');
-  const iReveal = back.findIndex((s, i) => i > i0 && s.t === 'ui' && s.v.hideFr === false);
   const iModel = back.findIndex(s => s.t === 'say' && s.text === v.model);
-  ok(back[i0].v.hideFr === true && back[iEn].text === v.en, 'review: French hidden, English cue spoken');
-  ok(iEn > i0 && iTry > iEn && iReveal > iTry && iModel > iReveal, 'review order: English → his try → reveal → model');
+  ok(back[iEn].text === v.en, 'review: English cue spoken');
+  ok(iEn > i0 && iTry > iEn && iModel > iTry, 'review order: English → his try → model');
   ok(back[iTry].ms > Core.repeatMs(v.model), 'review: the try window is longer than a repeat');
   ok(says(back).filter(s => s.text === v.model).length === Core.REPEAT_VAR && turns(back).length === Core.REPEAT_VAR + 1,
      'review: after his try, the answer heard and repeated three times');
-  for (const steps of [first, back]) {
-    const lastSay = steps.map(s => s.t === 'say' && s.text === v.model).lastIndexOf(true);
-    const fade = steps.findIndex((s, i) => i < lastSay && s.t === 'ui' && s.v.hideFr === true && s.v.caption === 'Écoute');
-    ok(fade > 0, 'variation: the French fades before the third hearing');
-  }
+  ok(neverHidden(first) && neverHidden(back), 'variation: the French stays on screen');
 
   // Separate cursor; each one shown moves the rotation on.
   const st = Core.defaults();
@@ -110,17 +125,14 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
   ok(!Core.varProgress(st, 10, vl.length).finished, 'restart reopens the variations');
 }
 
-// ── « Silencieux »: nothing spoken, guess then « Voir » ──────
+// ── « Silencieux »: nothing spoken, French + English shown, one tap ──────
 {
   const ss = withWho(TEXTS[0]);
   const st = Core.textSteps(ss.slice(0, 2), { size: 2, silent: true });
   ok(says(st).length === 0, 'silent text: nothing spoken');
-  ok(st[0].v.mask === true && turns(st)[0].label === 'Voir', 'silent text: masked first, then « Voir »');
-  ok(st.some(s => s.t === 'ui' && s.v.mask === false), 'silent text: then revealed');
+  ok(st[0].v.fr && st[0].v.en && turns(st).length === 1 && neverHidden(st), 'silent text: French + English shown, then « Suivant »');
   const vs = Core.varSteps(byId.f02.prompts[0], { review: true, silent: true });
-  ok(says(vs).length === 0 && vs[0].v.mask === true && vs[0].v.en, 'silent variation: English + masked French, no sound');
-  ok(Core.mask("Bon, je l'accorde.") === "B__, j_ l'a______.", 'mask keeps first letters and punctuation');
-  ok(Core.mask('Ton ami : Avoue.\nToi : Non.') === 'Ton ami : A____.\nToi : N__.', 'mask leaves speaker labels readable');
+  ok(says(vs).length === 0 && vs[0].v.fr && vs[0].v.en && neverHidden(vs), 'silent variation: French + English, no sound');
 }
 
 // ── « Anglais d'abord »: the English once, then the French ×3 with his turns ──
@@ -128,7 +140,7 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
   const ss = withWho(TEXTS[0]);
   for (const size of [1, 2, 3, 0]) {
     const ch = ss.slice(0, 3);
-    const st = Core.textSteps(ch, { size, enFirst: true });
+    const st = Core.textSteps(ch, { size, reads: 3, enFirst: true });
     const sp = says(st);
     ok(sp.slice(0, ch.length).every((s, i) => s.lang === 'en' && s.text === ch[i].en), `en-first size ${size}: the English first, once`);
     ok(sp.filter(s => s.lang === 'en').length === ch.length, `en-first size ${size}: English said only once`);
@@ -137,11 +149,9 @@ const withWho = t => SENTENCES[t.id].map(x => ({ fr: x.fr, en: x.en, f: x.f, who
     const firstTurn = st.findIndex(s => s.t === 'turn');
     ok(firstTurn > st.findIndex(s => s.t === 'say' && s.lang === 'en') && firstTurn < st.findIndex(s => s.t === 'say' && s.lang === 'fr') && st[firstTurn].ms >= turns(st)[1].ms,
        `en-first size ${size}: the try comes before the French, at least as long as a repeat`);
-    ok(st.slice(0, firstTurn).every(s => s.t !== 'ui' || s.v.hideFr !== false), `en-first size ${size}: French still hidden during the try`);
-    ok(st[0].v.hideFr === true, `en-first size ${size}: French hidden while the English plays`);
-    const shown = st.findIndex(s => s.t === 'ui' && s.v.hideFr === false);
-    const firstFr = st.findIndex(s => s.t === 'say' && s.lang === 'fr');
-    ok(shown > 0 && shown < firstFr, `en-first size ${size}: French appears with the first French`);
+    ok(neverHidden(st), `en-first size ${size}: the French stays on screen`);
+    const nw = Core.textSteps(ch, { size, reads: 0, enFirst: true });
+    ok(says(nw).filter(s => s.lang === 'fr').length === 4 * ch.length && turns(nw).length === 5, `en-first size ${size}: four times while the text is new`);
   }
   const v = byId.f02.prompts[0];
   for (const review of [false, true]) {

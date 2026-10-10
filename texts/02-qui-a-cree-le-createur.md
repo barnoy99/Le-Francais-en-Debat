@@ -6,9 +6,9 @@ Corpus A · monologue, à un ami, autour d'un café.
 
 Bon, je vais te dire pourquoi l'histoire du créateur, ça me convainc pas.
 
-Ton argument, si je le prends au sérieux, c'est : un truc aussi compliqué que l'univers, quelqu'un l'a forcément conçu. D'accord. Mais du coup, ce quelqu'un, il est comment ? Encore plus compliqué, forcément. Pour fabriquer un univers, faut une intelligence énorme. Et une intelligence énorme, ça sort pas de nulle part, si ?
+Ton argument, si je le prends au sérieux, c'est : un truc aussi compliqué que l'univers, quelqu'un l'a forcément conçu. D'accord. Mais du coup, ce quelqu'un, il est comment ? Encore plus compliqué, forcément. Pour fabriquer un univers, faut une intelligence énorme. Et une intelligence énorme, ça sort pas de nulle part, si ? Alors qui l'a créé, lui ?
 
-Alors là, tu vas me dire : « Ah non, Dieu, lui, il a pas besoin de cause. Il a toujours existé. » Attends. Pourquoi lui, il aurait le droit, et pas l'univers ? T'as pas répondu à la question. T'as juste… enfin, t'as repoussé le problème d'un cran, et après tu fais comme s'il avait disparu.
+Alors là, tu vas me dire : « Ah non, Dieu, lui, il a pas besoin de cause. Il a toujours existé. » Attends. Pourquoi lui, il aurait le droit, et pas l'univers ? Ma question, c'était : d'où il vient, ce créateur ? T'as pas répondu à ça. T'as juste repoussé le problème d'un cran. Avant, fallait expliquer d'où vient l'univers. Maintenant, faut expliquer d'où vient Dieu. Et après, tu fais comme si le problème avait disparu.
 
 Je te l'accorde, d'où vient l'univers, on sait pas. Personne ne sait, moi non plus. Mais dire « je sais pas », c'est honnête. Dire « c'est Dieu », c'est rajouter un mystère encore plus gros par-dessus le premier.
 

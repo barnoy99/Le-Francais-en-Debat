@@ -41,8 +41,14 @@ ul { list-style: none; }
 }
 
 /* ── Screens ─────────────────────────────────────────── */
-.screen { display: none; min-height: 100dvh; }
-.screen--active { display: flex; flex-direction: column; }
+/* The two control rows stay on top; the active screen fills the rest and scrolls on its own. */
+#app { height: 100dvh; display: flex; flex-direction: column; }
+.controls {
+  width: 100%; max-width: var(--col); margin: 0 auto; padding: 0.4rem 1rem 0.3rem; flex-shrink: 0;
+  display: flex; flex-direction: column; gap: 0.35rem; background: var(--bg-primary);
+}
+.screen { display: none; }
+.screen--active { display: flex; flex-direction: column; flex: 1; min-height: 0; overflow-y: auto; }
 
 /* ── Home ────────────────────────────────────────────── */
 .home {
@@ -56,8 +62,8 @@ ul { list-style: none; }
 .splash-accent { color: var(--color-accent); font-style: italic; }
 .splash-flourish { color: var(--color-gold); margin: 0.6rem 0 0.9rem; letter-spacing: 0.1em; text-align: center; }
 
-.mode-toggle { display: flex; width: 100%; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 0.5rem; background: var(--bg-card); }
-.mode-btn { flex: 1; min-height: 48px; padding: 0.3rem 0.25rem; font-size: 0.86rem; font-weight: 600; line-height: 1.15; color: var(--text-secondary); }
+.mode-toggle { display: flex; width: 100%; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--bg-card); }
+.mode-btn { flex: 1; min-height: 44px; padding: 0.3rem 0.25rem; font-size: 0.86rem; font-weight: 600; line-height: 1.15; color: var(--text-secondary); }
 .mode-btn.active { background: var(--color-accent-light); color: var(--color-accent); }
 .mode-desc { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem; min-height: 2.4em; text-align: center; line-height: 1.4; }
 
@@ -66,6 +72,8 @@ ul { list-style: none; }
 .text-card--last { border-color: var(--color-accent); }
 .text-main { width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 0.3rem; padding: 0.9rem 1rem 0.8rem; text-align: left; }
 .text-kind { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600; }
+.text-head { display: flex; align-items: baseline; gap: 0.6rem; width: 100%; }
+.text-reads { margin-left: auto; flex-shrink: 0; font-size: 0.9rem; font-weight: 600; color: var(--color-sage); background: var(--color-sage-light); border-radius: 999px; padding: 0.1rem 0.6rem; }
 .text-title { font-family: var(--font-heading); font-size: 1.45rem; font-weight: 600; line-height: 1.15; color: var(--text-heading); }
 .text-bar { width: 100%; height: 4px; border-radius: 2px; background: var(--bg-secondary); overflow: hidden; margin-top: 0.3rem; }
 .text-bar-fill { display: block; height: 100%; background: var(--color-sage); }
@@ -88,7 +96,7 @@ ul { list-style: none; }
 .done-note { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.5; }
 
 /* ── Run screen ──────────────────────────────────────── */
-#screen-run { height: 100dvh; min-height: 0; overflow: hidden; }
+#screen-run { overflow: hidden; }
 .run-header {
   display: flex; align-items: center; gap: 0.6rem;
   width: 100%; max-width: var(--col); margin: 0 auto; padding: 0.3rem 1rem 0; flex-shrink: 0;
@@ -107,8 +115,12 @@ ul { list-style: none; }
 .run-card {
   background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px;
   padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.8rem;
-  max-height: 62dvh; overflow-y: auto; overscroll-behavior: contain;
+  flex: 0 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
 }
+/* Everything but the card keeps its height; the card takes what is left and scrolls. */
+.run-tap > :not(.run-card) { flex-shrink: 0; }
+/* More below: the bottom of the card fades out. */
+.run-card--more { -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent); mask-image: linear-gradient(to bottom, #000 82%, transparent); }
 /* Children keep their full height so the card scrolls instead of squeezing the English. */
 .run-card > * { flex-shrink: 0; }
 .run-card--var { border-color: var(--color-teal); background: #F7FBFB; }
@@ -121,10 +133,9 @@ ul { list-style: none; }
 .run-who { font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; }
 .run-fr {
   font-family: var(--font-heading); font-size: 1.75rem; line-height: 1.25; font-weight: 500;
-  color: var(--text-heading); transition: opacity 0.5s, filter 0.5s;
+  color: var(--text-heading);
 }
-.run-fr.faded { opacity: 0.08; filter: blur(3px); }
-.run-en { font-size: 1rem; font-style: italic; color: var(--text-secondary); line-height: 1.4; }
+.run-en { font-size: 1.3rem; color: #5E534B; line-height: 1.4; }
 .run-caption { font-size: 1.15rem; font-weight: 600; color: var(--color-accent); min-height: 1.5em; }
 .run-bar-time { height: 6px; border-radius: 3px; background: var(--bg-secondary); overflow: hidden; margin: 0 2rem; }
 .run-bar-fill { display: block; height: 100%; width: 0; background: var(--color-accent); }
@@ -174,13 +185,11 @@ ul { list-style: none; }
 
 /* ── Chunk size, masked guessing, long chunks ────────── */
 .size-toggle {
-  display: flex; width: calc(100% - 2rem); max-width: calc(var(--col) - 2rem); margin: 0.4rem auto 0;
-  border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--bg-card); flex-shrink: 0;
+  display: flex; width: 100%; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--bg-card);
 }
-.size-btn { flex: 1; min-height: 42px; font-size: 0.92rem; font-weight: 600; color: var(--text-secondary); }
+.size-btn { flex: 1; min-height: 40px; font-size: 0.92rem; font-weight: 600; color: var(--text-secondary); }
 .size-btn.active { background: var(--color-accent-light); color: var(--color-accent); }
 .run-fr, .run-en { white-space: pre-line; }
-.run-fr.masked { color: var(--text-secondary); letter-spacing: 0.04em; }
 .run-card--long .run-fr { font-size: 1.2rem; }
-.run-card--long .run-en { font-size: 0.85rem; }
+.run-card--long .run-en { font-size: 1.1rem; }
 .choice--var .text-action { color: var(--color-teal); }
