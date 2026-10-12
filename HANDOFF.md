@@ -10,6 +10,21 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v20 (2026-10-12) — one speaker button; « Silencieux » merged into « Au calme » + « auto »
+
+His asks, all done:
+- **One read-aloud button**: a speaker icon (no label) under the card reads the French. ▶ Anglais is gone.
+- **Three modes**: Mains libres / Anglais d'abord / Au calme. « Au calme » = one card, one « Suivant »
+  (the old « Silencieux » steps, `silent: true` in Core). An « auto » pill beside the speaker (only in
+  Au calme, `localStorage debat_auto`, default on): on = the French read **once** when the card appears
+  (caption « Écoute et répète »); off = no sound (« Lis-le »). The speaker reads it again on demand.
+  Switching auto on also reads the current card. A stored `debat_mode = 'silence'` loads as Au calme
+  with auto off. The old Au calme (×3 repeats with a « Suivant » each) is gone, at his request.
+- **Text 3, the nerve**: « Au lieu de ça, il descend… », « une grosse artère qui sort du cœur », and
+  « le cœur est descendu dans la poitrine en emmenant l'artère avec lui, et le nerf, coincé derrière, a
+  été tiré vers le bas » (echoes « comme si on l'avait tiré vers le bas »). Sentence count unchanged.
+- Assets `?v=20`, `CACHE_VERSION = 'v20'`.
+
 ## v19 (2026-10-10) — longer repeats; ▶ buttons; copyable text; language pass
 
 His asks, all done:

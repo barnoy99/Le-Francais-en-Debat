@@ -190,12 +190,20 @@ ul { list-style: none; }
 .size-btn { flex: 1; min-height: 40px; font-size: 0.92rem; font-weight: 600; color: var(--text-secondary); }
 .size-btn.active { background: var(--color-accent-light); color: var(--color-accent); }
 .run-fr, .run-en { white-space: pre-line; -webkit-user-select: text; user-select: text; }
-/* ▶ Français / ▶ Anglais: read what is on the card, now. */
+/* The speaker: read the French on the card, now. */
 .run-play { display: flex; gap: 0.6rem; justify-content: center; }
 .btn-play {
-  min-height: 44px; padding: 0 1.1rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 999px;
   color: var(--color-accent); border: 1px solid var(--border); background: var(--bg-card);
 }
+.run-play { align-items: center; }
+/* « Au calme »: auto = the French read once at each card (as in Quotidien's « Mes acquis »). */
+.btn-auto {
+  height: 36px; padding: 0 0.9rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600;
+  color: var(--color-accent); border: 2px solid var(--color-accent); background: transparent;
+}
+.btn-auto.activated { color: #fff; background: var(--color-accent); }
 .run-card--long .run-fr { font-size: 1.2rem; }
 .run-card--long .run-en { font-size: 1.1rem; }
 .choice--var .text-action { color: var(--color-teal); }

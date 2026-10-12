@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=19">
+  <link rel="stylesheet" href="style.css?v=20">
 </head>
 <body>
   <div id="app">
@@ -22,7 +22,6 @@
         <button id="mode-mains" class="mode-btn" data-mode="mains">Mains libres</button>
         <button id="mode-anglais" class="mode-btn" data-mode="anglais">Anglais d'abord</button>
         <button id="mode-calme" class="mode-btn" data-mode="calme">Au calme</button>
-        <button id="mode-silence" class="mode-btn" data-mode="silence">Silencieux</button>
       </div>
       <div id="size-toggle" class="size-toggle" role="group" aria-label="Taille des morceaux">
         <button class="size-btn" data-size="1">Phrase</button>
@@ -85,8 +84,8 @@
           <p id="run-en" class="run-en"></p>
         </div>
         <div class="run-play">
-          <button id="play-fr" class="btn-play" aria-label="Lire le français">▶ Français</button>
-          <button id="play-en" class="btn-play" aria-label="Lire l'anglais">▶ Anglais</button>
+          <button id="play-fr" class="btn-play" aria-label="Lire à voix haute"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
+          <button id="btn-auto" class="btn-auto hidden" aria-label="Lecture automatique" title="Lire le français une fois, à chaque carte">auto</button>
         </div>
         <p id="run-caption" class="run-caption"></p>
         <div id="run-bar-time" class="run-bar-time hidden"><span id="run-bar-fill" class="run-bar-fill"></span></div>
@@ -126,8 +125,8 @@
           <li><b>Les variations</b> : seulement les phrases « à ta façon ». Pour chaque structure du texte, une phrase construite pareil, sur ta vie (les enfants, le travail, la politique…). Tu l'entends <b>trois fois</b> et tu la répètes après chaque fois. Ensuite, chaque structure revient avec une nouvelle phrase, <b>en anglais</b> d'abord : tu essaies en français, puis tu entends la réponse trois fois et tu la répètes.</li>
         </ol>
         <p>En haut de chaque écran, tu changes le mode et la taille des morceaux quand tu veux.</p>
-        <p><b>Mains libres</b> : tout à l'oreille, l'appli te laisse le temps de répéter puis continue seule. Touche l'écran pour mettre en pause.<br><b>Anglais d'abord</b> : pareil, mais tu entends d'abord l'anglais une fois, tu essaies de le dire en français, puis tu entends le français, avec une pause après chaque fois pour répéter.<br><b>Au calme</b> : tu prends ton temps et tu touches « Suivant ».<br><b>Silencieux</b> : aucun son. Tu lis le français et l'anglais, puis tu touches « Suivant ».</p>
-        <p><b>Les boutons</b> : ▶ Français / ▶ Anglais lit tout de suite le texte affiché, puis l'exercice reprend. ↺ recommence, ⏮ ⏭ précédent / suivant, ? redit la consigne en anglais. Si l'anglais est long, fais défiler la carte. Pour copier, appuie longtemps sur le texte : ça met en pause. L'appli se souvient où tu t'es arrêté, dans chaque partie.</p>
+        <p><b>Mains libres</b> : tout à l'oreille, l'appli te laisse le temps de répéter puis continue seule. Touche l'écran pour mettre en pause.<br><b>Anglais d'abord</b> : pareil, mais tu entends d'abord l'anglais une fois, tu essaies de le dire en français, puis tu entends le français, avec une pause après chaque fois pour répéter.<br><b>Au calme</b> : tu prends ton temps et tu touches « Suivant ». Avec « auto », le français est lu une fois à chaque carte ; sans « auto », aucun son. Le haut-parleur le relit quand tu veux.</p>
+        <p><b>Les boutons</b> : le haut-parleur lit tout de suite le français affiché, puis l'exercice reprend. ↺ recommence, ⏮ ⏭ précédent / suivant, ? redit la consigne en anglais. Si l'anglais est long, fais défiler la carte. Pour copier, appuie longtemps sur le texte : ça met en pause. L'appli se souvient où tu t'es arrêté, dans chaque partie.</p>
         <p class="help-en"><i>In short: « Le texte » = the text alone, in chunks you choose. « Les variations » = the same structures, about your own life.</i></p>
       </div>
     </div>
@@ -136,9 +135,9 @@
 
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  <script src="firebase-config.js?v=19"></script>
-  <script src="data.js?v=19"></script>
-  <script src="core.js?v=19"></script>
-  <script src="app.js?v=19"></script>
+  <script src="firebase-config.js?v=20"></script>
+  <script src="data.js?v=20"></script>
+  <script src="core.js?v=20"></script>
+  <script src="app.js?v=20"></script>
 </body>
 </html>

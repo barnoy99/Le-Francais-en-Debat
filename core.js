@@ -175,14 +175,18 @@ var Core = (function () {
     };
   }
 
-  // opts: { size, reads, silent, enFirst }. reads = times this text was already played to its end.
+  // opts: { size, reads, silent, auto, enFirst }. reads = times this text was already played to its end.
+  // silent = « Au calme »: one card, one « Suivant »; auto = the French read once first.
   function textSteps(chunk, opts) {
     opts = opts || {};
     var k = stepper();
     var fr = chunkText(chunk, 'fr'), en = chunkText(chunk, 'en');
     var frs = chunk.map(function (x) { return x.fr; });
     if (opts.silent) {
-      k.ui({ phase: 'sent', fr: fr, en: en, caption: 'Lis-le', hint: 'Read it, then go on.' });
+      if (opts.auto) {
+        k.ui({ phase: 'sent', fr: fr, en: en, caption: 'Écoute et répète', hint: 'Listen, say it, then go on.' });
+        chunk.forEach(function (x) { k.say(x.fr); });
+      } else k.ui({ phase: 'sent', fr: fr, en: en, caption: 'Lis-le', hint: 'Read it, then go on.' });
       k.turn(0);
       return k.s;
     }
@@ -217,12 +221,15 @@ var Core = (function () {
     }
   }
 
-  // opts: { review, silent, enFirst }. review = he has met a variation of this structure before.
+  // opts: { review, silent, auto, enFirst } (see textSteps). review = he has met a variation of this structure before.
   function varSteps(v, opts) {
     opts = opts || {};
     var k = stepper(), ui = k.ui, say = k.say, turn = k.turn;
     if (opts.silent) {
-      ui({ phase: 'var', fr: v.model, en: v.en, caption: 'Lis-la', hint: 'Same structure, a new sentence. Read it, then go on.' });
+      if (opts.auto) {
+        ui({ phase: 'var', fr: v.model, en: v.en, caption: 'Écoute et répète', hint: 'Same structure, a new sentence. Listen, say it, then go on.' });
+        say(v.model);
+      } else ui({ phase: 'var', fr: v.model, en: v.en, caption: 'Lis-la', hint: 'Same structure, a new sentence. Read it, then go on.' });
       turn(0);
       return k.s;
     }

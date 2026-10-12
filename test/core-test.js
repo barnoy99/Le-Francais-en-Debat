@@ -1,4 +1,4 @@
-// Text and variation steps, chunks, silent mode, progress per text, variant rotation, cross-device merge. Run: node test/core-test.js
+// Text and variation steps, chunks, « Au calme » (silent / auto), progress per text, variant rotation, cross-device merge. Run: node test/core-test.js
 // Walks every text of the real data.js through a first pass and a review pass.
 const fs = require('fs');
 const path = require('path');
@@ -125,7 +125,7 @@ const neverHidden = steps => steps.every(s => s.t !== 'ui' || (s.v.hideFr === un
   ok(!Core.varProgress(st, 10, vl.length).finished, 'restart reopens the variations');
 }
 
-// ── « Silencieux »: nothing spoken, French + English shown, one tap ──────
+// ── « Au calme »: one card, one tap; nothing spoken unless auto (then the French once) ──
 {
   const ss = withWho(TEXTS[0]);
   const st = Core.textSteps(ss.slice(0, 2), { size: 2, silent: true });
@@ -133,6 +133,10 @@ const neverHidden = steps => steps.every(s => s.t !== 'ui' || (s.v.hideFr === un
   ok(st[0].v.fr && st[0].v.en && turns(st).length === 1 && neverHidden(st), 'silent text: French + English shown, then « Suivant »');
   const vs = Core.varSteps(byId.f02.prompts[0], { review: true, silent: true });
   ok(says(vs).length === 0 && vs[0].v.fr && vs[0].v.en && neverHidden(vs), 'silent variation: French + English, no sound');
+  const sa = Core.textSteps(ss.slice(0, 2), { size: 2, silent: true, auto: true });
+  ok(says(sa).length === 2 && says(sa).every(x => x.lang === 'fr') && turns(sa).length === 1, 'calm auto text: each sentence heard once, one « Suivant »');
+  const va = Core.varSteps(byId.f02.prompts[0], { review: true, silent: true, auto: true });
+  ok(says(va).length === 1 && says(va)[0].lang === 'fr' && turns(va).length === 1, 'calm auto variation: the French once, one « Suivant »');
 }
 
 // ── « Anglais d'abord »: the English once, then the French ×3 with his turns ──

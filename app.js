@@ -17,13 +17,15 @@
   var voices = [];
   var framesById = {};
   var textsById = {};
-  var mode = 'mains';      // 'mains' = hands-free, paced by silences | 'calme' = tap « Suivant »
-                           // | 'silence' = no sound: read, guess, tap
+  var mode = 'mains';      // 'mains' = hands-free, paced by silences
+                           // | 'calme' = one card, one « Suivant »; heard once if `auto`
                            // | 'anglais' = hands-free, the English once then the French ×3
   var swReg = null, updatePending = false;
   function reloadIfUpdated() { if (updatePending && !run.active) location.reload(); }
   function handsFree() { return mode === 'mains' || mode === 'anglais'; }
   var SIZE_KEY = 'debat_chunk';
+  var AUTO_KEY = 'debat_auto';
+  var auto = true;         // « Au calme »: read the French once when the card appears
 
   // part: 'texte' (the sentences, cut at `size`: 1 phrase · 2 bouchée · 3 passage · 0 tout,
   // into run.chunks) | 'var' (the variations)
@@ -199,7 +201,7 @@
   }
 
   // His turn. « Mains libres »: a silence sized to the sentence, with a thin bar.
-  // « Au calme » / « Silencieux »: as long as he wants, then the button.
+  // « Au calme »: as long as he wants, then the button.
   function startTurn(ms, next, label) {
     if (!handsFree()) {
       var btn = $('btn-next');
@@ -256,13 +258,13 @@
   // « ? »: say the current instruction in English, then carry on.
   function explainStep() {
     if (!run.active || !run.help) return;
-    if (mode === 'silence') { $('run-caption').textContent = run.help; return; }
+    if (mode === 'calme' && !auto) { $('run-caption').textContent = run.help; return; }
     var wasPaused = run.paused;
     if (!wasPaused) pauseRun();
     speak(run.help, 'en', 0.9, function () { if (!wasPaused && run.paused) resumeRun(); });
   }
 
-  // ▶ Français / ▶ Anglais: read the card now (even in « Silencieux »), then carry on.
+  // The speaker button: read the card's French now (even in « Silencieux »), then carry on.
   // The first tap decides whether the run resumes; a second tap restarts the reading.
   var play = { gen: 0, on: false, resume: false };
   function playNow(lang) {
@@ -301,7 +303,7 @@
     if (pos >= list.length) { finishPart(); return; }
     pos = Math.max(0, pos);
     run.pos = pos;
-    var silent = mode === 'silence';
+    var silent = mode === 'calme';
     var who = '', count;
     if (run.part === 'texte') {
       var c = run.chunks[Core.chunkIndex(run.chunks, pos)];
@@ -310,7 +312,7 @@
       run.len = c.len;
       Core.setPos(state, run.text.id, pos);
       run.variant = null;
-      run.steps = Core.textSteps(chunk, { size: run.size, reads: Core.reads(state, run.text.id), silent: silent, enFirst: mode === 'anglais' });
+      run.steps = Core.textSteps(chunk, { size: run.size, reads: Core.reads(state, run.text.id), silent: silent, auto: auto, enFirst: mode === 'anglais' });
       var one = chunk.every(function (x) { return x.who === chunk[0].who; });
       if (run.text.kind === 'dialogue' && one) who = chunk[0].who === 'lui' ? 'Ton ami' : 'Toi';
       count = run.len === 1 ? (pos + 1) + ' / ' + list.length : (pos + 1) + '–' + (pos + run.len) + ' / ' + list.length;
@@ -320,7 +322,7 @@
       run.len = 1;
       Core.setVarPos(state, run.text.id, pos);
       run.variant = Core.pickVariant(state, frame);
-      run.steps = Core.varSteps(run.variant, { review: (state.vu[entry.f] || 0) > 0, silent: silent, enFirst: mode === 'anglais' });
+      run.steps = Core.varSteps(run.variant, { review: (state.vu[entry.f] || 0) > 0, silent: silent, auto: auto, enFirst: mode === 'anglais' });
       who = frame.form;
       count = (pos + 1) + ' / ' + list.length;
     }
@@ -430,8 +432,7 @@
 
   var MODE_DESC = { mains: "Tout à l'oreille : l'appli fait une pause pour que tu répètes, puis continue toute seule.",
                     anglais: "Tout à l'oreille : l'anglais, un temps pour le dire en français, puis trois fois le français à répéter.",
-                    calme: "Tu lis, tu répètes à ton rythme, et tu touches « Suivant ».",
-                    silence: "Aucun son : tu lis le français et l'anglais, à ton rythme, et tu touches « Suivant »." };
+                    calme: "À ton rythme : tu lis, tu répètes, et tu touches « Suivant ». « auto » : le français est lu une fois." };
 
   function setMode(m) {
     var changed = m !== mode;
@@ -440,10 +441,19 @@
     $('mode-mains').classList.toggle('active', m === 'mains');
     $('mode-anglais').classList.toggle('active', m === 'anglais');
     $('mode-calme').classList.toggle('active', m === 'calme');
-    $('mode-silence').classList.toggle('active', m === 'silence');
+    $('btn-auto').classList.toggle('hidden', m !== 'calme');
     $('mode-desc').textContent = MODE_DESC[m];
     // Mid-run: the current piece starts again in the new mode.
     if (changed && run.active) playAt(run.pos);
+  }
+
+  // Next cards only; the current one is not rebuilt.
+  function setAuto(on) {
+    auto = on;
+    try { localStorage.setItem(AUTO_KEY, on ? '1' : '0'); } catch (e) {}
+    var b = $('btn-auto');
+    b.classList.toggle('activated', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
   }
 
   function el(tag, cls, text) {
@@ -501,12 +511,18 @@
       }
     } catch (e) {}
     try { mode = localStorage.getItem(MODE_KEY); } catch (e) {}
+    try { auto = localStorage.getItem(AUTO_KEY) !== '0'; } catch (e) {}
+    if (mode === 'silence') { mode = 'calme'; auto = false; }  // v19 « Silencieux » = « Au calme » without auto
     if (!MODE_DESC[mode]) mode = 'mains';
+    setAuto(auto);
     setMode(mode);
     $('mode-mains').addEventListener('click', function () { setMode('mains'); });
     $('mode-anglais').addEventListener('click', function () { setMode('anglais'); });
     $('mode-calme').addEventListener('click', function () { setMode('calme'); });
-    $('mode-silence').addEventListener('click', function () { setMode('silence'); });
+    $('btn-auto').addEventListener('click', function () {
+      setAuto(!auto);
+      if (auto) playNow('fr');                           // switched on: hear this card now
+    });
     try { run.size = parseInt(localStorage.getItem(SIZE_KEY), 10); } catch (e) {}
     if (run.size === 4) run.size = 3;                    // v9 had 1·2·3·4·Tout
     if (Core.SIZES.indexOf(run.size) < 0) run.size = 1;
@@ -541,7 +557,6 @@
     $('choose-var-restart').addEventListener('click', function () { openPart('var', true); });
     $('btn-explain').addEventListener('click', explainStep);
     $('play-fr').addEventListener('click', function () { playNow('fr'); });
-    $('play-en').addEventListener('click', function () { playNow('en'); });
     // Long-press on the text selects it (to copy): pause, so the card stays put. The tap
     // that clears a selection must not toggle the pause.
     var selLive = false, selGoneAt = 0;
