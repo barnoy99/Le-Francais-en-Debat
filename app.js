@@ -125,13 +125,16 @@
 
   // Speaks `text`, then calls cb once. A fallback timer covers a silent engine that
   // never fires onend, so a hands-free run cannot stall.
+  var speaking = 0;   // utterances in flight; the speaker button stops them when > 0
   function speak(text, lang, rate, cb) {
     if (!('speechSynthesis' in window)) { setTimeout(cb, 1500); return; }
     var done = false;
     var fallback = null;
+    speaking++;
     function finish() {
       if (done) return;
       done = true;
+      speaking--;
       clearTimeout(fallback);
       cb();
     }
@@ -270,6 +273,14 @@
   function playNow(lang) {
     if (!run.active || !shown[lang]) return;
     var my = ++play.gen;
+    if (speaking > 0) {                       // already speaking: a tap silences it
+      if (play.on) {
+        play.on = false;
+        speechSynthesis.cancel();
+        if (play.resume && run.paused) resumeRun();
+      } else speechSynthesis.cancel();        // auto reading: its callback carries the run on
+      return;
+    }
     if (!play.on) {
       play.resume = !run.paused;
       if (!run.paused) { pauseRun(); hide($('run-paused')); }
