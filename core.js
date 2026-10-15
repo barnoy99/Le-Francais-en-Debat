@@ -149,14 +149,16 @@ var Core = (function () {
   }
 
   // Display text of a chunk. Sentences carry `who`; when a chunk spans both
-  // speakers of a dialogue, each turn gets its own line and a label.
-  function chunkText(chunk, field) {
+  // speakers of a dialogue, each turn gets its own line and a label. other = the other
+  // speaker's [fr, en] label (« Ma vie »: « Ta cousine »…); default « Ton ami ».
+  function chunkText(chunk, field, other) {
     var turns = [], cur = null;
     chunk.forEach(function (x) {
       if (!cur || cur.who !== x.who) { cur = { who: x.who, parts: [] }; turns.push(cur); }
       cur.parts.push(x[field]);
     });
-    var labels = turns.length > 1 ? (field === 'en' ? { lui: 'Friend: ', moi: 'You: ' } : { lui: 'Ton ami : ', moi: 'Toi : ' }) : null;
+    other = other || ['Ton ami', 'Friend'];
+    var labels = turns.length > 1 ? (field === 'en' ? { lui: other[1] + ': ', moi: 'You: ' } : { lui: other[0] + ' : ', moi: 'Toi : ' }) : null;
     return turns.map(function (t) { return (labels ? labels[t.who] || '' : '') + t.parts.join(' '); }).join('\n');
   }
 
@@ -175,12 +177,12 @@ var Core = (function () {
     };
   }
 
-  // opts: { size, reads, silent, auto, enFirst }. reads = times this text was already played to its end.
+  // opts: { size, reads, silent, auto, enFirst, other }. reads = times this text was already played to its end.
   // silent = « Au calme »: one card, one « Suivant »; auto = the French read once first.
   function textSteps(chunk, opts) {
     opts = opts || {};
     var k = stepper();
-    var fr = chunkText(chunk, 'fr'), en = chunkText(chunk, 'en');
+    var fr = chunkText(chunk, 'fr', opts.other), en = chunkText(chunk, 'en', opts.other);
     var frs = chunk.map(function (x) { return x.fr; });
     if (opts.silent) {
       if (opts.auto) {

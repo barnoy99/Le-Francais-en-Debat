@@ -26,6 +26,9 @@
   var SIZE_KEY = 'debat_chunk';
   var AUTO_KEY = 'debat_auto';
   var auto = true;         // « Au calme »: read the French once when the card appears
+  var TRACK_KEY = 'debat_track';
+  var track = 'debat';     // home tab: 'debat' (corpus A/B) | 'vie' (corpus V, family video calls)
+  function trackOf(t) { return t.corpus === 'V' ? 'vie' : 'debat'; }
 
   // part: 'texte' (the sentences, cut at `size`: 1 phrase · 2 bouchée · 3 passage · 0 tout,
   // into run.chunks) | 'var' (the variations)
@@ -168,7 +171,8 @@
 
   // What the card shows, as it should be read aloud (no « Toi : » labels).
   var shown = { fr: '', en: '' };
-  function sayable(s) { return s.replace(/^(Ton ami|Toi|Friend|You) : ?/gm, ''); }
+  var LABELS = /^(Ton ami|Toi|Friend|You) ?: ?/gm;   // + the « Ma vie » speakers, in setup()
+  function sayable(s) { return s.replace(LABELS, ''); }
 
   function view(v) {
     if (v.phase !== undefined) {
@@ -323,9 +327,9 @@
       run.len = c.len;
       Core.setPos(state, run.text.id, pos);
       run.variant = null;
-      run.steps = Core.textSteps(chunk, { size: run.size, reads: Core.reads(state, run.text.id), silent: silent, auto: auto, enFirst: mode === 'anglais' });
+      run.steps = Core.textSteps(chunk, { size: run.size, reads: Core.reads(state, run.text.id), silent: silent, auto: auto, enFirst: mode === 'anglais', other: run.text.other });
       var one = chunk.every(function (x) { return x.who === chunk[0].who; });
-      if (run.text.kind === 'dialogue' && one) who = chunk[0].who === 'lui' ? 'Ton ami' : 'Toi';
+      if (run.text.kind === 'dialogue' && one) who = chunk[0].who === 'lui' ? (run.text.other ? run.text.other[0] : 'Ton ami') : 'Toi';
       count = run.len === 1 ? (pos + 1) + ' / ' + list.length : (pos + 1) + '–' + (pos + run.len) + ' / ' + list.length;
     } else {
       var entry = run.vars[pos];
@@ -474,16 +478,34 @@
     return e;
   }
 
+  var TRACKS = {
+    debat: { accent: 'en Débat', desc: "Des arguments sur Dieu et sur Israël, face à un ami." },
+    vie:   { accent: 'en Famille', desc: "Ta vie, racontée à la famille de France et du Luxembourg, en appel vidéo." }
+  };
+
+  function setTrack(t) {
+    track = TRACKS[t] ? t : 'debat';
+    try { localStorage.setItem(TRACK_KEY, track); } catch (e) {}
+    $('track-debat').classList.toggle('active', track === 'debat');
+    $('track-vie').classList.toggle('active', track === 'vie');
+    $('track-debat').setAttribute('aria-selected', track === 'debat' ? 'true' : 'false');
+    $('track-vie').setAttribute('aria-selected', track === 'vie' ? 'true' : 'false');
+    $('splash-accent').textContent = TRACKS[track].accent;
+    $('track-desc').textContent = TRACKS[track].desc;
+  }
+
   function renderHome() {
     reloadIfUpdated();
     var list = $('text-list');
     list.innerHTML = '';
-    TEXTS.forEach(function (t) {
+    TEXTS.filter(function (t) { return trackOf(t) === track; }).forEach(function (t) {
       var total = SENTENCES[t.id].length;
       var p = Core.progress(state, t.id, total);
       var li = el('li', 'text-card' + (t.id === state.lastText ? ' text-card--last' : ''));
       var main = el('button', 'text-main');
-      main.appendChild(el('span', 'text-kind', (t.corpus === 'A' ? 'Dieu' : 'Israël') + ' · ' + (t.kind === 'dialogue' ? 'dialogue' : 'monologue')));
+      main.appendChild(el('span', 'text-kind', t.corpus === 'V'
+        ? t.theme + ' · avec ' + t.other[0].toLowerCase()
+        : (t.corpus === 'A' ? 'Dieu' : 'Israël') + ' · ' + (t.kind === 'dialogue' ? 'dialogue' : 'monologue')));
       var head = el('span', 'text-head');
       head.appendChild(el('span', 'text-title', t.title));
       var n = Core.reads(state, t.id);
@@ -515,6 +537,14 @@
   function setup() {
     FRAMES.forEach(function (fr) { framesById[fr.id] = fr; });
     TEXTS.forEach(function (t) { textsById[t.id] = t; });
+    var names = ['Ton ami', 'Toi', 'Friend', 'You'];
+    TEXTS.forEach(function (t) { if (t.other && names.indexOf(t.other[0]) < 0) names.push(t.other[0], t.other[1]); });
+    LABELS = new RegExp('^(' + names.join('|') + ') ?: ?', 'gm');
+    var storedTrack = null;
+    try { storedTrack = localStorage.getItem(TRACK_KEY); } catch (e) {}
+    setTrack(storedTrack);
+    $('track-debat').addEventListener('click', function () { setTrack('debat'); renderHome(); });
+    $('track-vie').addEventListener('click', function () { setTrack('vie'); renderHome(); });
     try {
       if (screen.orientation && screen.orientation.lock) {
         var r = screen.orientation.lock('portrait');

@@ -41,7 +41,9 @@ function parseMd(file) {
 const textIds = new Set();
 for (const t of TEXTS) {
   textIds.add(t.id);
-  if (!['A', 'B'].includes(t.corpus)) fail(`text ${t.id}: corpus`);
+  // A = God, B = Israel (« Débat »); V = his life, family video calls (« Ma vie »).
+  if (!['A', 'B', 'V'].includes(t.corpus)) fail(`text ${t.id}: corpus`);
+  if (t.corpus === 'V' && !(t.theme && Array.isArray(t.other) && t.other.length === 2)) fail(`text ${t.id}: Ma vie needs theme and other [fr, en]`);
   if (!fs.existsSync(path.join(root, t.file))) { fail(`text ${t.id}: missing ${t.file}`); continue; }
   const md = parseMd(t.file);
   if (md.length !== t.lines.length) fail(`text ${t.id}: ${t.lines.length} lines in data.js, ${md.length} in ${t.file}`);

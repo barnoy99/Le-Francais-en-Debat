@@ -60,6 +60,10 @@ ul { list-style: none; }
   color: var(--text-heading); text-align: center; margin-bottom: 1rem;
 }
 .splash-accent { color: var(--color-accent); font-style: italic; }
+.track-toggle { display: flex; margin: -0.6rem 0 1.1rem; border-bottom: 1px solid var(--border); }
+.track-btn { flex: 1; min-height: 46px; font-family: var(--font-heading); font-size: 1.35rem; font-weight: 600; color: var(--text-secondary); border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.track-btn.active { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+.track-desc { font-size: 0.9rem; color: var(--text-secondary); text-align: center; line-height: 1.4; margin: -0.5rem 0 0.8rem; }
 .splash-flourish { color: var(--color-gold); margin: 0.6rem 0 0.9rem; letter-spacing: 0.1em; text-align: center; }
 
 .mode-toggle { display: flex; width: 100%; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--bg-card); }

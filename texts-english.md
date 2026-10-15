@@ -467,3 +467,174 @@ The translation keeps the casual spoken tone rather than polishing it.
 **18.29 Him:** So what do you actually want?
 
 **18.30 Me:** I don't want them to stop studying. I want them to share. The real question isn't 'do we respect the Torah?'. It's 'are there two kinds of citizens?'. And I'd rather have a country where everyone pulls their weight than one where some carry the weight of others.
+
+---
+
+# Ma vie — the family texts added 2026-10-16
+
+Dialogues on a video call with family in France or Luxembourg. Written by Claude, not yet reviewed by him.
+
+## 19 · Pourquoi j'apprends le français
+
+*Why I'm learning French* — with your cousin, on a video call.
+
+19.1 **Your cousin:** Wait, you speak French now? Since when?
+
+19.2 **You:** I've been learning for a while, yes. I don't speak very well yet, but I get by. And I prefer French with mistakes to a polite silence.
+
+19.3 **Your cousin:** But why? Everyone speaks English these days.
+
+19.4 **You:** Yes, English, I speak it. But at home, with my wife, we speak more and more French. She grew up with a mother who spoke French to her, so for her it's natural. And besides, speaking English with you is one thing. Speaking your language is another. In English, we understand each other. In French, we laugh together.
+
+19.5 **Your cousin:** That's sweet. And is it hard?
+
+19.6 **You:** Honestly, yes. The hardest part isn't the vocabulary. It's the word order. I think in Hebrew or in English, and I build the sentence backwards. What struck me is that you talk much faster than in the books. The more I listen to you, the more I understand. But at first, it felt like I was hearing one single very long word.
+
+19.7 **Your cousin:** And how do you go about learning?
+
+19.8 **You:** I have an app on my phone, and I repeat sentences out loud, in the car, while walking. People look at me funny, but oh well. And in the evening, I talk with my wife. She's my real teacher. But I'm warning you: if I say something silly, you correct me, OK?
+
+19.9 **Your cousin:** Promise. But we're not going to correct you on every sentence, come on.
+
+19.10 **You:** Yes, you should, actually. That's how I learn. If I keep making the same mistakes, it's because nobody corrected them.
+
+## 20 · Les enfants, en ce moment
+
+*The kids, these days* — with your aunt, on a video call.
+
+20.1 **Your aunt:** So, what about the kids? Tell me! They must have grown so much.
+
+20.2 **You:** Oh, they're growing too fast. The eldest, right now, he only thinks about football. He plays at break time, after school, and even in the living room. He knows the names of all the players, but not his times tables.
+
+20.3 **Your aunt:** Like his father, right?
+
+20.4 **You:** It wasn't me who taught him that, I swear! It comes from his friends.
+
+20.5 **Your aunt:** And the older girl?
+
+20.6 **You:** The older girl is something else. She reads all the time: in bed, at the table, in the car. And she has an opinion on everything. Last week, she explained to me why bedtime was unfair. She'd prepared her arguments, like a real lawyer. I'm not saying she won. I'm just saying she won a quarter of an hour.
+
+20.7 **Your aunt:** And the little one?
+
+20.8 **You:** The little one wants to do everything like the big ones. If her big brother plays football, she plays football. If her big sister reads, she picks up a book, even upside down. She's starting to recognise letters, and she's very proud. Yesterday she wrote her name all by herself. On her bedroom wall. My wife laughed less than I did.
+
+20.9 **Your aunt:** And do the three of them fight a lot?
+
+20.10 **You:** Fights? Yes, there are some, every day. But as soon as one of the three is sick, the other two worry about them. And at night, they all want to sleep in the same room.
+
+20.11 **Your aunt:** Send me photos, I haven't seen them in so long.
+
+20.12 **You:** I'll try. But the bigger they get, the less they want their picture taken. The little one still poses, though.
+
+## 21 · Une journée chez nous
+
+*A day at our place* — with your cousin, on a video call.
+
+21.1 **Your cousin:** What does a normal day look like at your place?
+
+21.2 **You:** In the morning, it's a race. We get up at half past six, and by half past seven everyone has to be ready. Three kids, three sandwiches, three water bottles, three school bags. In theory, everything's ready the night before. Except that in real life, there's always a surprise in the morning. A shoe that's vanished, forgotten homework, a little one who refuses to wear her favourite dress.
+
+21.3 **Your cousin:** And then?
+
+21.4 **You:** Then we drop them off and go to work. They finish early here, at the start of the afternoon. So in the afternoon there are the activities: football for the eldest, swimming for the older girl. And we play taxi driver.
+
+21.5 **Your cousin:** And it's hot, isn't it?
+
+21.6 **You:** In summer, it's awful. Thirty-five degrees, and it lasts until October. The kids don't mind at all. Me, I live with the air conditioning. And where you are, is it already cold? Are you already wearing a sweater?
+
+21.7 **Your cousin:** Oh yes, it's been raining for a week. And in the evening, at your place?
+
+21.8 **You:** In the evening, it's bath, dinner, and homework. And then the bedtime story. It's my favourite moment. With the life we have, you have to fight for those moments. Those moments don't fall from the sky, you make them happen. And at nine, when everyone's finally asleep, my wife and I sit down and speak a bit of French. Well, when we don't fall asleep before they do.
+
+## 22 · La réserve
+
+*The reserves* — with your uncle, on a video call.
+
+22.1 **Your uncle:** I was told you're still in the army. Aren't you past the age?
+
+22.2 **You:** It's the reserves. In Israel, after your service, you stay a reservist for years. They call you up a few weeks a year, sometimes more. And these last few years, it's often been a lot more.
+
+22.3 **Your uncle:** And what do you do there?
+
+22.4 **You:** I can't really go into the details. But most of the time, it's nothing like in the films. It's guard shifts, waiting, short nights, and a lot of coffee.
+
+22.5 **Your uncle:** And the guys with you, what are they like?
+
+22.6 **You:** What I like is the mix. In the reserves you get everyone: a teacher, a plumber, a lawyer, a student. In normal life, they'd never have met. Out there, they sleep in the same room and fight over the last coffee. And honestly, holding up out there is less a matter of strength than a matter of mates.
+
+22.7 **Your uncle:** And your wife, meanwhile?
+
+22.8 **You:** She's the one with the hardest part, honestly. Leaving is one thing. Staying alone with three kids and the worry is another. The kids, they count the days. The little one asked me on the phone whether I sleep with my rifle.
+
+22.9 **Your uncle:** And do you?
+
+22.10 **You:** Let's say it's never very far.
+
+22.11 **Your uncle:** It must be strange coming home afterwards.
+
+22.12 **You:** The first few days, yes. You go from the army to the supermarket in a few hours. And in the morning you hear the kids fighting over the cereal, and you think: there, I'm home. The longer I stay out there, the more I miss that noise.
+
+## 23 · La politique, vue de chez nous
+
+*Politics, seen from here* — with your uncle, on a video call.
+
+23.1 **Your uncle:** Right, explain your politics to me. On the news, I don't understand a thing.
+
+23.2 **You:** Nobody really understands, not even us. In France, you vote for a president. Here, we vote for a party, a list. There are a hundred and twenty seats in the Knesset, our parliament, and you need sixty-one to govern. And no party has ever had a majority on its own.
+
+23.3 **Your uncle:** So you need coalitions.
+
+23.4 **You:** Exactly. And that's where it all gets complicated. The big party has to team up with small ones. And the small parties know very well that they're needed. So they ask for a lot: a ministry, a budget, a law for their voters. And if one of them walks out, the government falls.
+
+23.5 **Your uncle:** Does that happen often?
+
+23.6 **You:** Between 2019 and 2022, we voted five times. Five times in under four years. By the end, we'd joke: 'See you in six months!'
+
+23.7 **Your uncle:** And do you talk about it with friends?
+
+23.8 **You:** All the time. In Israel, everyone has an opinion, and they share it. At Friday night dinner, it can get very lively. I'm not saying everyone agrees. I'm just saying that afterwards we eat dessert together.
+
+23.9 **Your uncle:** And you, which side are you on?
+
+23.10 **You:** Now that's a long conversation. We'll talk about it again when my French is better. But tell me. Do you still follow French politics?
+
+## 24 · Le vendredi soir et les fêtes
+
+*Friday night and the holidays* — with your cousin, on a video call.
+
+24.1 **Your cousin:** And Shabbat, do you keep it? Are you religious?
+
+24.2 **You:** No, we're not religious. But Friday night is still sacred at our place. We all eat together, often with family or friends. There's braided bread, wine, and far too much food. I don't believe in God, but I love that moment.
+
+24.3 **Your cousin:** Isn't that a bit contradictory?
+
+24.4 **You:** Just because I don't believe doesn't mean I can't love the traditions. For me, Shabbat is less a matter of religion than a matter of family. Once a week, we put the phones down and talk to each other. Well, we try.
+
+24.5 **Your cousin:** And the holidays?
+
+24.6 **You:** In autumn, we get all the holidays one after another. New Year, Yom Kippur, then Sukkot. For three weeks, the country runs in slow motion. On Yom Kippur, there's hardly a car on the road. Kids ride their bikes down the middle of the big roads. What struck me, the first time I told French people about it, is that they didn't believe me.
+
+24.7 **Your cousin:** And Sukkot, what's that again?
+
+24.8 **You:** We build a hut on the balcony or in the garden. The kids decorate it, and we eat in it for a week. This year, the eldest even wanted to sleep in it. He lasted until midnight.
+
+## 25 · Venez nous voir !
+
+*Come and see us!* — with your cousin, on a video call.
+
+25.1 **Your cousin:** We'd love to come and see you one day. But with everything we see on the news, I admit I'm a bit scared.
+
+25.2 **You:** I understand, really. The pictures on the news show that there are hard times. They say nothing about everyday life. Most of the time, people go to work, to the café, to the beach. And if one day it's not the right time, I'll tell you straight.
+
+25.3 **Your cousin:** And what is there to see?
+
+25.4 **You:** Jerusalem, first. The Old City is really something. Tel Aviv, the beach, the restaurants. The Dead Sea: you float without doing anything, it's very strange. And the desert, at sunrise. Personally, I prefer a sunrise in the desert to a day at the beach.
+
+25.5 **Your cousin:** And where would we sleep?
+
+25.6 **You:** At our place, obviously! Well, it's not huge. The kids will give you their room. They'll grumble for two minutes, and then they'll be thrilled.
+
+25.7 **Your cousin:** And will we understand each other with the kids? Do they speak French?
+
+25.8 **You:** Not much. But with kids, you don't need much. A ball, a deck of cards, and off you go. And besides, it'll make me practise my French. So tell me. Do you want to wait for the perfect moment, or do you want to come? Because the perfect moment, here, doesn't exist. Come in spring: the weather's nice, and it's not too hot yet.
+

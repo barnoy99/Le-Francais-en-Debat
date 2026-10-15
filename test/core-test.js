@@ -87,6 +87,8 @@ const neverHidden = steps => steps.every(s => s.t !== 'ui' || (s.v.hideFr === un
   const mixed = [{ fr: 'A.', en: 'a', who: 'lui' }, { fr: 'B.', en: 'b', who: 'moi' }, { fr: 'C.', en: 'c', who: 'moi' }];
   ok(Core.chunkText(mixed, 'fr') === 'Ton ami : A.\nToi : B. C.', 'a chunk spanning two speakers: one labelled line per turn');
   ok(Core.chunkText(mixed.slice(1), 'fr') === 'B. C.', 'one speaker: no label');
+  ok(Core.chunkText(mixed, 'fr', ['Ta tante', 'Your aunt']) === 'Ta tante : A.\nToi : B. C.' &&
+     Core.chunkText(mixed, 'en', ['Ta tante', 'Your aunt']) === 'Your aunt: a\nYou: b c', '« Ma vie »: the other speaker is named by the text');
 }
 
 // ── « Les variations »: on their own ──────────────────────

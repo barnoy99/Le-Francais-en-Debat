@@ -10,6 +10,31 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v22 (2026-10-16) — two tracks: « Débat » and « Ma vie »
+
+His ask: the current app becomes one of two options, « Débat »; the other is the same thing for talking about
+his own life (kids, reserve duty, everyday Israeli politics, not work) with French-speaking family in France
+and Luxembourg.
+- **Home tabs** « Débat » | « Ma vie » (`setTrack`, localStorage `debat_track`). The title reads « Le Français
+  en Débat » / « en Famille ». Everything else (chooser, modes, sizes, variations, sync) is shared, unchanged.
+- **Corpus `V`** = « Ma vie »: 7 dialogues (ids 19–25), a relative on a video call (**Lui**) and him (**Moi**):
+  19 Pourquoi j'apprends le français · 20 Les enfants · 21 Une journée chez nous · 22 La réserve ·
+  23 La politique · 24 Le vendredi soir et les fêtes · 25 Venez nous voir. 171 sentences.
+  V texts carry `theme` (home card) and `other: [fr, en]`, the other speaker's label (« Ta cousine » /
+  « Ta tante » / « Ton oncle »), passed to `Core.chunkText` (default still « Ton ami »).
+- **Variations reuse the existing frames** (16 of them; `sources` extended), ≥ 3 per text. No new frames or
+  prompts. Next step if he wants it: life-conversation frames (f37+: « Ça fait X que… », « Le plus dur,
+  c'est… », « Depuis que… ») with their own prompts.
+- **Written by Claude, not yet reviewed by him.** Invented details he should correct: the kids' hobbies (foot,
+  reading, swimming, the name on the wall), the morning times, the Friday dinners, the sukkah, « the kids
+  don't speak much French », reserve life kept generic on purpose (no unit, no role). His political views
+  are deliberately left out (« On en reparlera quand mon français sera meilleur »). Facts: Knesset 120 /
+  61, no party ever won a majority alone, five elections 2019–2022.
+- Chunks were cut by a heuristic (`small`: short question + start of the answer, else two phrases of a turn;
+  `big`: ≤ 55 words, closed at a turn end) — retune by hand if any read badly. Generator was a one-off
+  scratch script; edit `texts/*.md` and `data.js` together from now on.
+- Assets `?v=22`, `CACHE_VERSION = 'v22'`.
+
 ## v20 (2026-10-12) — one speaker button; « Silencieux » merged into « Au calme » + « auto »
 
 His asks, all done:
