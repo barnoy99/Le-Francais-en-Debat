@@ -10,6 +10,26 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v23 (2026-10-16) — « Ma vie » with his real details; text 26 on the Haredim
+
+His corrections, all applied (texts 20–24 rewritten; 19 and 25 unchanged):
+- **Kids**: le grand reads, plays PlayStation adventure games, is in an excellence programme (maths +
+  general knowledge) — **only him**. La grande loves the tablet, films herself. La petite sings, dances,
+  learns to write. Friends over / at friends' all the time. No football, no swimming, no name on the wall.
+- **Friday dinners**: at his wife's mother's or at his brothers'. **No sukkah** (Souccot only named in the list).
+- **Reserves**: combat soldier « en Cisjordanie » (his choice of word, for French ears), protecting the
+  Modiin area; patrols in villages with weapon and vest, checkpoints, arrests; home for a few days, then back.
+- **Politics**: he will never vote for Netanyahu; flaws far outweigh his qualities; « some things he did are
+  very serious ». His flaws, in his words: sets Israelis against each other and breeds hatred; feeds fake news;
+  the « partenaires naturels » deal with the Haredim (vote with me on everything, get everything).
+  His qualities, in his words: a brilliant campaigner, a master at elections, and he liked him being very strong in the war.
+- **Text 26 « Les ultra-orthodoxes et l'armée »** (shown after 23; with « ton cousin »): his view only, no
+  steelman (his choice), framed as equality, **not** through his own reserve duty (his ask). Facts: 1948,
+  400 students; ≈ 80,000 of age; HCJ 2024 unanimous, no legal basis; ≈ 24,000 orders → < 800 enlisted;
+  Rambam, Hilchot Talmud Torah 3:10 (lives off charity = chilul Hashem; ends up « mekhastem et habriyot »,
+  rendered « finira en brigand, à voler les gens »).
+- Assets `?v=23`, `CACHE_VERSION = 'v23'`. 8 Ma vie texts, 26 in all.
+
 ## v22 (2026-10-16) — two tracks: « Débat » and « Ma vie »
 
 His ask: the current app becomes one of two options, « Débat »; the other is the same thing for talking about

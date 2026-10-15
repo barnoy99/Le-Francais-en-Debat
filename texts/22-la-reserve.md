@@ -10,7 +10,11 @@ Corpus V (Ma vie) · dialogue · deux voix : **Lui** (ton oncle, en appel vidéo
 
 **Lui :** Et tu fais quoi, là-bas ?
 
-**Moi :** Je peux pas trop entrer dans les détails. Mais la plupart du temps, c'est pas du tout comme dans les films. C'est des gardes, de l'attente, des nuits courtes, et beaucoup de café.
+**Moi :** Je suis combattant, en Cisjordanie. On protège la région de Modiin, à mi-chemin entre Tel-Aviv et Jérusalem. On patrouille dans les villages, avec l'arme et le gilet pare-balles. On fait des barrages sur les routes. Et parfois, des arrestations. Mais la plupart du temps, c'est pas du tout comme dans les films. C'est de l'attente, des nuits courtes, et beaucoup de café.
+
+**Lui :** Et tu dors à la maison, de temps en temps ?
+
+**Moi :** De temps en temps, je rentre quelques jours, et après je repars. Tu retrouves les enfants, et deux jours après, tu remets l'uniforme. C'est là que c'est le plus dur.
 
 **Lui :** Et les gars avec toi, ils sont comment ?
 
@@ -18,12 +22,8 @@ Corpus V (Ma vie) · dialogue · deux voix : **Lui** (ton oncle, en appel vidéo
 
 **Lui :** Et ta femme, pendant ce temps-là ?
 
-**Moi :** C'est elle qui a le rôle le plus dur, honnêtement. Partir, c'est une chose. Rester seule avec trois enfants et l'inquiétude, c'en est une autre. Les enfants, eux, ils comptent les jours. La petite m'a demandé au téléphone si je dormais avec mon fusil.
+**Moi :** C'est elle qui a le rôle le plus dur, honnêtement. Partir, c'est une chose. Rester seule avec trois enfants et l'inquiétude, c'en est une autre. Les enfants, eux, ils comptent les jours.
 
-**Lui :** Et c'est vrai ?
+**Lui :** Ça doit être bizarre, de rentrer à chaque fois.
 
-**Moi :** Disons qu'il est jamais très loin.
-
-**Lui :** Ça doit être bizarre de rentrer, après.
-
-**Moi :** Les premiers jours, oui. Tu passes de l'armée au supermarché en quelques heures. Et le matin, t'entends les enfants qui se disputent pour les céréales, et tu te dis : voilà, je suis rentré. Plus je reste longtemps là-bas, plus ce bruit-là me manque.
+**Moi :** Tu passes du barrage au supermarché en quelques heures. Et le matin, t'entends les enfants qui se disputent pour les céréales, et tu te dis : voilà, je suis rentré. Plus je reste longtemps là-bas, plus ce bruit-là me manque.

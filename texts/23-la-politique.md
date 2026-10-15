@@ -20,6 +20,10 @@ Corpus V (Ma vie) · dialogue · deux voix : **Lui** (ton oncle, en appel vidéo
 
 **Moi :** Tout le temps. En Israël, tout le monde a un avis, et il le donne. Au repas du vendredi soir, ça peut devenir très animé. Je dis pas que tout le monde est d'accord. Je dis juste qu'après, on mange le dessert ensemble.
 
-**Lui :** Et toi, t'es plutôt de quel côté ?
+**Lui :** Et toi, Netanyahou, t'en penses quoi ? À la télé, il a l'air fort.
 
-**Moi :** Ça, c'est une longue conversation. On en reparlera quand mon français sera meilleur. Mais dis-moi. Tu suis encore la politique française, toi ?
+**Moi :** Moi, je voterai jamais pour lui. Fort, il l'est. C'est un génie des campagnes. Personne ne gagne une élection comme lui. Et pendant la guerre, j'ai aimé qu'il soit aussi dur. Il a des qualités, je te l'accorde. Mais ses défauts pèsent beaucoup plus lourd. D'abord, il dresse les Israéliens les uns contre les autres. Il fabrique de la haine. Ensuite, il alimente les fausses informations. Et puis y a les ultra-orthodoxes. Il les appelle ses « partenaires naturels ». Le marché est simple : vous votez avec moi sur tout, et vous obtenez tout. Certaines choses qu'il a faites, franchement, c'est très grave.
+
+**Lui :** Eh ben, t'as un avis, toi !
+
+**Moi :** Je suis israélien, je t'ai dit. Mais dis-moi. Tu suis encore la politique française, toi ?

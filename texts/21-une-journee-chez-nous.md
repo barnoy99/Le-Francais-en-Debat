@@ -10,7 +10,7 @@ Corpus V (Ma vie) · dialogue · deux voix : **Lui** (ta cousine, en appel vidé
 
 **Lui :** Et après ?
 
-**Moi :** Après, on les dépose, et on part travailler. Ils finissent tôt, chez nous, en début d'après-midi. Alors l'après-midi, y a les activités : le foot pour le grand, la natation pour la grande. Et nous, on fait le taxi.
+**Moi :** Après, on les dépose, et on part travailler. Ils finissent tôt, chez nous, en début d'après-midi. L'après-midi, y a toujours des copains : soit ils viennent chez nous, soit les enfants vont chez eux. Le grand a aussi son programme d'excellence. Et la grande, si on la laisse faire, elle passe l'après-midi sur la tablette. Et nous, on fait le taxi.
 
 **Lui :** Et il fait chaud, non ?
 

@@ -504,27 +504,31 @@ Dialogues on a video call with family in France or Luxembourg. Written by Claude
 
 20.1 **Your aunt:** So, what about the kids? Tell me! They must have grown so much.
 
-20.2 **You:** Oh, they're growing too fast. The eldest, right now, he only thinks about football. He plays at break time, after school, and even in the living room. He knows the names of all the players, but not his times tables.
+20.2 **You:** Oh, they're growing too fast. The eldest reads a lot at the moment. And when he isn't reading, he plays adventure games on the PlayStation. He's also in an excellence programme, in maths and general knowledge.
 
-20.3 **Your aunt:** Like his father, right?
+20.3 **Your aunt:** So he's gifted! Like his father, right?
 
-20.4 **You:** It wasn't me who taught him that, I swear! It comes from his friends.
+20.4 **You:** I'm not the one who said it, I swear! But yes, we're proud of him.
 
 20.5 **Your aunt:** And the older girl?
 
-20.6 **You:** The older girl is something else. She reads all the time: in bed, at the table, in the car. And she has an opinion on everything. Last week, she explained to me why bedtime was unfair. She'd prepared her arguments, like a real lawyer. I'm not saying she won. I'm just saying she won a quarter of an hour.
+20.6 **You:** The older girl is something else. She loves the tablet. She films herself singing, talking, pulling faces. She thinks she's an influencer. We try to limit screen time. I'm not saying we manage. I'm just saying we try.
 
 20.7 **Your aunt:** And the little one?
 
-20.8 **You:** The little one wants to do everything like the big ones. If her big brother plays football, she plays football. If her big sister reads, she picks up a book, even upside down. She's starting to recognise letters, and she's very proud. Yesterday she wrote her name all by herself. On her bedroom wall. My wife laughed less than I did.
+20.8 **You:** The little one sings and dances all day long. In the living room, in the bath, even at the table. And she's learning to write. Yesterday she wrote her name all by herself, and she was very proud.
 
-20.9 **Your aunt:** And do the three of them fight a lot?
+20.9 **Your aunt:** And do they have friends?
 
-20.10 **You:** Fights? Yes, there are some, every day. But as soon as one of the three is sick, the other two worry about them. And at night, they all want to sleep in the same room.
+20.10 **You:** Oh yes. Our place is a constant parade. One day, friends come over to our house. The next day, ours go to theirs. Personally, I prefer a house full of noise to kids alone in front of a screen.
 
-20.11 **Your aunt:** Send me photos, I haven't seen them in so long.
+20.11 **Your aunt:** And do the three of them fight a lot?
 
-20.12 **You:** I'll try. But the bigger they get, the less they want their picture taken. The little one still poses, though.
+20.12 **You:** Fights? Yes, there are some, every day. But as soon as one of the three is sick, the other two worry about them.
+
+20.13 **Your aunt:** Send me photos, I haven't seen them in so long.
+
+20.14 **You:** I'll try. But the bigger they get, the less they want their picture taken. Well, except the older girl. She'll send you her videos herself.
 
 ## 21 · Une journée chez nous
 
@@ -536,7 +540,7 @@ Dialogues on a video call with family in France or Luxembourg. Written by Claude
 
 21.3 **Your cousin:** And then?
 
-21.4 **You:** Then we drop them off and go to work. They finish early here, at the start of the afternoon. So in the afternoon there are the activities: football for the eldest, swimming for the older girl. And we play taxi driver.
+21.4 **You:** Then we drop them off and go to work. They finish early here, at the start of the afternoon. In the afternoon, there are always friends: either they come to us, or the kids go to them. The eldest also has his excellence programme. And the older girl, if we let her, spends the afternoon on the tablet. And we play taxi driver.
 
 21.5 **Your cousin:** And it's hot, isn't it?
 
@@ -556,23 +560,23 @@ Dialogues on a video call with family in France or Luxembourg. Written by Claude
 
 22.3 **Your uncle:** And what do you do there?
 
-22.4 **You:** I can't really go into the details. But most of the time, it's nothing like in the films. It's guard shifts, waiting, short nights, and a lot of coffee.
+22.4 **You:** I'm a combat soldier, in the West Bank. We protect the Modiin area, halfway between Tel Aviv and Jerusalem. We patrol the villages, with our weapons and bulletproof vests. We set up checkpoints on the roads. And sometimes, arrests. But most of the time, it's nothing like in the films. It's waiting, short nights, and a lot of coffee.
 
-22.5 **Your uncle:** And the guys with you, what are they like?
+22.5 **Your uncle:** And do you sleep at home now and then?
 
-22.6 **You:** What I like is the mix. In the reserves you get everyone: a teacher, a plumber, a lawyer, a student. In normal life, they'd never have met. Out there, they sleep in the same room and fight over the last coffee. And honestly, holding up out there is less a matter of strength than a matter of mates.
+22.6 **You:** Now and then I come home for a few days, and then I go back. You get back to the kids, and two days later you put the uniform back on. That's when it's hardest.
 
-22.7 **Your uncle:** And your wife, meanwhile?
+22.7 **Your uncle:** And the guys with you, what are they like?
 
-22.8 **You:** She's the one with the hardest part, honestly. Leaving is one thing. Staying alone with three kids and the worry is another. The kids, they count the days. The little one asked me on the phone whether I sleep with my rifle.
+22.8 **You:** What I like is the mix. In the reserves you get everyone: a teacher, a plumber, a lawyer, a student. In normal life, they'd never have met. Out there, they sleep in the same room and fight over the last coffee. And honestly, holding up out there is less a matter of strength than a matter of mates.
 
-22.9 **Your uncle:** And do you?
+22.9 **Your uncle:** And your wife, meanwhile?
 
-22.10 **You:** Let's say it's never very far.
+22.10 **You:** She's the one with the hardest part, honestly. Leaving is one thing. Staying alone with three kids and the worry is another. The kids, they count the days.
 
-22.11 **Your uncle:** It must be strange coming home afterwards.
+22.11 **Your uncle:** It must be strange, coming home every time.
 
-22.12 **You:** The first few days, yes. You go from the army to the supermarket in a few hours. And in the morning you hear the kids fighting over the cereal, and you think: there, I'm home. The longer I stay out there, the more I miss that noise.
+22.12 **You:** You go from the checkpoint to the supermarket in a few hours. And in the morning you hear the kids fighting over the cereal, and you think: there, I'm home. The longer I stay out there, the more I miss that noise.
 
 ## 23 · La politique, vue de chez nous
 
@@ -594,9 +598,37 @@ Dialogues on a video call with family in France or Luxembourg. Written by Claude
 
 23.8 **You:** All the time. In Israel, everyone has an opinion, and they share it. At Friday night dinner, it can get very lively. I'm not saying everyone agrees. I'm just saying that afterwards we eat dessert together.
 
-23.9 **Your uncle:** And you, which side are you on?
+23.9 **Your uncle:** And you, what do you think of Netanyahu? On TV, he comes across as strong.
 
-23.10 **You:** Now that's a long conversation. We'll talk about it again when my French is better. But tell me. Do you still follow French politics?
+23.10 **You:** Me, I'll never vote for him. Strong, he is. He's a campaigning genius. Nobody wins an election like him. And during the war, I liked him being so tough. He has qualities, I'll grant you that. But his flaws weigh far more. First, he sets Israelis against each other. He manufactures hatred. Then, he feeds fake news. And then there are the ultra-Orthodox. He calls them his 'natural partners'. The deal is simple: you vote with me on everything, and you get everything. Some of the things he's done, honestly, are very serious.
+
+23.11 **Your uncle:** Well, you certainly have an opinion!
+
+23.12 **You:** I'm Israeli, I told you. But tell me. Do you still follow French politics?
+
+## 26 · Les ultra-orthodoxes et l'armée
+
+*The ultra-Orthodox and the army* — with your cousin, on a video call.
+
+26.1 **Your cousin:** I read an article about the ultra-Orthodox in your country. Is it true they don't do the army?
+
+26.2 **You:** It's true, for most of them. And to me, it's a moral scandal. It's a question of justice, the simplest kind there is: equality.
+
+26.3 **Your cousin:** How did it start?
+
+26.4 **You:** In 1948, Ben-Gurion exempts four hundred yeshiva students. After the Holocaust, the idea was to save a world of study that had almost disappeared. Four hundred, you can understand. Today, there are about eighty thousand of military age. We're not talking about four hundred students. We're talking about eighty thousand young men.
+
+26.5 **Your cousin:** But haven't the courts said anything?
+
+26.6 **You:** Yes, they have, actually. In 2024, the Supreme Court ruled unanimously that the exemption had no legal basis. So the army sent out call-up orders. Out of about twenty-four thousand orders, fewer than eight hundred enlisted. And the government does everything to keep the exemption.
+
+26.7 **Your cousin:** And what does the religion say about it?
+
+26.8 **You:** That's the craziest part. The Rambam, Maimonides, the greatest of their rabbis, wrote about it. Whoever studies Torah without working and lives off other people's money desecrates the name of God. And he says a man like that will end up a bandit, robbing people. It's not me saying it, it's the Rambam.
+
+26.9 **Your cousin:** And what do you suggest?
+
+26.10 **You:** Something very simple: the same law for everyone. You want to study? Fine. But you do your service, like everyone else. And you work, like everyone else. Why should the yeshiva boy have the right to stay home, and not the secular boy the same age? For me, it's less a question of religion than a question of equality.
 
 ## 24 · Le vendredi soir et les fêtes
 
@@ -604,7 +636,7 @@ Dialogues on a video call with family in France or Luxembourg. Written by Claude
 
 24.1 **Your cousin:** And Shabbat, do you keep it? Are you religious?
 
-24.2 **You:** No, we're not religious. But Friday night is still sacred at our place. We all eat together, often with family or friends. There's braided bread, wine, and far too much food. I don't believe in God, but I love that moment.
+24.2 **You:** No, we're not religious. But Friday night is still sacred at our place. We all eat together, at my wife's mother's or at my brothers'. There's braided bread, wine, and far too much food. The kids find their cousins and vanish until dessert. I don't believe in God, but I love that moment.
 
 24.3 **Your cousin:** Isn't that a bit contradictory?
 
@@ -613,10 +645,6 @@ Dialogues on a video call with family in France or Luxembourg. Written by Claude
 24.5 **Your cousin:** And the holidays?
 
 24.6 **You:** In autumn, we get all the holidays one after another. New Year, Yom Kippur, then Sukkot. For three weeks, the country runs in slow motion. On Yom Kippur, there's hardly a car on the road. Kids ride their bikes down the middle of the big roads. What struck me, the first time I told French people about it, is that they didn't believe me.
-
-24.7 **Your cousin:** And Sukkot, what's that again?
-
-24.8 **You:** We build a hut on the balcony or in the garden. The kids decorate it, and we eat in it for a week. This year, the eldest even wanted to sleep in it. He lasted until midnight.
 
 ## 25 · Venez nous voir !
 
