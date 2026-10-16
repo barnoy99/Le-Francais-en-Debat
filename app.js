@@ -504,8 +504,8 @@
       var li = el('li', 'text-card' + (t.id === state.lastText ? ' text-card--last' : ''));
       var main = el('button', 'text-main');
       main.appendChild(el('span', 'text-kind', t.corpus === 'V'
-        ? t.theme + ' · avec ' + t.other[0].toLowerCase()
-        : (t.corpus === 'A' ? 'Dieu' : 'Israël') + ' · ' + (t.kind === 'dialogue' ? 'dialogue' : 'monologue')));
+        ? t.theme
+        : (t.corpus === 'A' ? 'Dieu' : 'Israël')));   // every text is his words only (v24)
       var head = el('span', 'text-head');
       head.appendChild(el('span', 'text-title', t.title));
       var n = Core.reads(state, t.id);

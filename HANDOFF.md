@@ -10,6 +10,28 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v24 (2026-10-16) — « Ma vie » is only what he says
+
+His asks: no second voice (« no "ton cousin" text, just what I say »), and in politics « assume the
+listener knows how it works here ».
+- All 8 « Ma vie » texts are now **monologues** (`kind: 'monologue'`, no `other`, no `cues` — data-test
+  exempts corpus V from the cue rule and requires a monologue). The relatives' questions became his own
+  lead-ins (« Les enfants ? Ah… », « Vous allez me dire : … »), so f30 « Si, justement » still answers
+  a quoted objection (19, 26). Home card shows only the theme. `Core.chunkText`'s `other` param stays (unused).
+- **Text 23** is now « Ce que je pense de Netanyahou »: the Knesset / coalition / five-elections part is
+  gone; politics as a national sport + the Friday-dinner f04, then his view (qualities, then the three flaws
+  and the « partenaires naturels » deal), ending on f32.
+- **Then « do that to all the texts »**: the three Débat dialogues (8, 17, 18) are monologues too. Each
+  friend line became an objection he quotes (« Tu vas me dire : « … » », « Tu me demandes si… »); all his
+  answers kept word for word except two in 18 (« Justement. » dropped before the 2024 ruling, « Une partie,
+  oui. » → « Mais une partie seulement. »). Frames unchanged; `cues` rebuilt from the quoted objections;
+  CHUNKS for 8/17/18 re-cut by the heuristic (were hand-cut — retune if a bouchée reads badly).
+  **No text has a second speaker now**; the dialogue code paths (labels, `who`) stay but are unused, and
+  the « How the dialogues work » section below is history. Home cards show only « Dieu » / « Israël ».
+  Saved `pos` on 8/17/18 now points a little off (harmless).
+- 168 sentences in « Ma vie », 834 in all. Saved `pos` on V texts may point a little off (harmless).
+- Assets `?v=24`, `CACHE_VERSION = 'v24'`.
+
 ## v23 (2026-10-16) — « Ma vie » with his real details; text 26 on the Haredim
 
 His corrections, all applied (texts 20–24 rewritten; 19 and 25 unchanged):

@@ -43,7 +43,8 @@ for (const t of TEXTS) {
   textIds.add(t.id);
   // A = God, B = Israel (« Débat »); V = his life, family video calls (« Ma vie »).
   if (!['A', 'B', 'V'].includes(t.corpus)) fail(`text ${t.id}: corpus`);
-  if (t.corpus === 'V' && !(t.theme && Array.isArray(t.other) && t.other.length === 2)) fail(`text ${t.id}: Ma vie needs theme and other [fr, en]`);
+  // « Ma vie » is only what he says: monologues, no quoted objection.
+  if (t.corpus === 'V' && !(t.theme && t.kind === 'monologue')) fail(`text ${t.id}: Ma vie needs a theme and is a monologue`);
   if (!fs.existsSync(path.join(root, t.file))) { fail(`text ${t.id}: missing ${t.file}`); continue; }
   const md = parseMd(t.file);
   if (md.length !== t.lines.length) fail(`text ${t.id}: ${t.lines.length} lines in data.js, ${md.length} in ${t.file}`);
@@ -53,7 +54,7 @@ for (const t of TEXTS) {
   });
   t.lines.forEach((l, i) => checkRegister(`text ${t.id} line ${i + 1}`, l.fr));
   for (const c of t.cues || []) if (!t.lines.some(l => l.fr.includes(c))) fail(`text ${t.id}: cue not in text: ${c}`);
-  if (t.kind === 'monologue' && !(t.cues && t.cues.length)) fail(`text ${t.id}: monologue without cues`);
+  if (t.kind === 'monologue' && t.corpus !== 'V' && !(t.cues && t.cues.length)) fail(`text ${t.id}: monologue without cues`);
   if (t.kind === 'dialogue' && !t.lines.some(l => l.who === 'lui')) fail(`text ${t.id}: dialogue without Lui lines`);
 }
 

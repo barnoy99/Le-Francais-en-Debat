@@ -46,47 +46,27 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 ## 8 · What I say when people tell me… (God)
 
-*Corpus A · dialogue · two voices: **Him** (a believing friend, or just someone pushing back) and **Me**. A table, a coffee, informal "tu" throughout.*
+*Monologue (v24): his words only; the friend's objections are quoted by him.*
 
-**8.1 Him:** Come on, you can't prove God doesn't exist. Admit it.
+8.1 You'll say: 'You can't prove God doesn't exist. Admit it.' No, I can't. But actually, it's not up to me to prove it. If I tell you there's a teapot going round Mars, you won't ask me to prove it isn't there. You'll say: 'Show it to me.'
 
-**8.2 Me:** No, I can't. But actually, it's not on me to prove it. If I tell you there's a teapot orbiting Mars, you're not going to ask me to prove it isn't there. You're going to say: "Show me."
+8.2 Then you answer: 'Comparing God to a teapot…' I know, it's a bit much, I'll grant you that. Still, the principle holds. It's the one making the claim who has to show something. And me, honestly, I've never seen anything.
 
-**8.3 Him:** Yeah, well, comparing God to a teapot…
+8.3 And then you tell me: 'Look around you! All this didn't happen on its own.' Right there, do you see what you're doing? You start from 'we don't know how it happened', and you jump straight to 'so it's God'. In between, there's missing… well, everything's missing. Me, when I don't know, I say I don't know.
 
-**8.4 Me:** I know, it's a bit much, I'll grant you. Still, the principle holds. The one making the claim has to show something. And honestly, I've never seen anything.
+8.4 Next, you tell me: 'Without God, life has no meaning.' It has the meaning you give it. Listen, when your daughter makes you a drawing, it moves you, right? Nobody ordered it from above, and yet it matters.
 
-**8.5 Him:** Never seen anything? Look around you! All this didn't just happen on its own.
+8.5 You'll tell me that's got nothing to do with it. Yes it does, that's exactly it. Meaning doesn't fall from the sky, we make it. And let me tell you, a meaning that's delivered to you ready-made is worth less than a meaning you've built yourself.
 
-**8.6 Me:** Right there, see what you're doing? You start from "we don't know how it happened," and you jump straight to "so it's God." In between, there's… well, everything's missing, basically. Me, when I don't know, I say I don't know.
+8.6 And death, then? You ask me whether I'm not scared. Yes, of course I am. I'm not going to act tough. But think for two seconds. Before you were born, you weren't there for billions of years, and it didn't bother you. After, it'll be the same.
 
-**8.7 Him:** Okay, fine. But without God, life has no meaning.
+8.7 You find that chilling? It's chilling, yes. But just because it's chilling doesn't mean it's false. I prefer a truth I don't like to a story that reassures me.
 
-**8.8 Me:** It has the meaning you give it. Listen, when your daughter draws you a picture, it moves you, right? Nobody ordered it from on high, and yet it matters.
+8.8 And then there's the classic argument: 'And if you're wrong? You're risking a lot. Me, if I'm wrong, I lose nothing.' Ah, Pascal's wager. Except, which god did you bet on? Because if it's not the right one, you lose too. There are thousands of them, you know.
 
-**8.9 Him:** That's got nothing to do with it.
+8.9 And in the end you always tell me: 'It's not a question of proof. It's faith.' There we go, that's the point. If nothing in the world can make you change your mind, it's not really reasoning any more, it's a choice. And I respect it, really, sincerely. But you mustn't call it proof.
 
-**8.10 Me:** Yes it does, that's exactly the point. Meaning doesn't fall from the sky, we make it. And I'll tell you, a meaning that's delivered to you ready-made is worth less than one you've built yourself.
-
-**8.11 Him:** And death, then? Aren't you scared?
-
-**8.12 Me:** Yes, of course I am. I'm not going to act tough. But think for two seconds. Before you were born, you weren't there for billions of years, and it didn't bother you. After, it'll be the same.
-
-**8.13 Him:** Put like that, it's chilling.
-
-**8.14 Me:** It's chilling, yes. But being chilling doesn't make it false. I'd rather have a truth I don't like than a story that comforts me.
-
-**8.15 Him:** And what if you're wrong? You've got a lot to lose. If I'm wrong, I lose nothing.
-
-**8.16 Me:** Ah, Pascal's wager. Except which god did you bet on? Because if it's not the right one, you lose too. There are thousands of them, you know.
-
-**8.17 Him:** No, but it's not a question of evidence. It's faith.
-
-**8.18 Me:** There we go, that's the heart of it. If nothing in the world can make you change your mind, it's not really reasoning anymore, it's a choice. And I respect that, sincerely. But you shouldn't call it proof.
-
-**8.19 Him:** You're pretty harsh, though.
-
-**8.20 Me:** No, I'm direct, that's not the same thing. And we're friends, right? The more honest we are, the more it's worth talking about.
+8.10 You'll find me harsh. No, I'm direct, it's not the same. And anyway, we're friends, right? The more honest we are, the more it's worth talking about.
 
 ---
 
@@ -134,43 +114,25 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 ## 17 · What I say when people tell me… (Israel)
 
-*Corpus B · dialogue · two voices: **Him** (a French friend, sincere, not hostile, who has read what people read in France) and **Me**. Around a table, informal "tu". Each of Him's objections is given in its strongest form.*
+*Monologue (v24): his words only; the friend's objections are quoted by him.*
 
-**17.1 Him:** Honestly, Amnesty, Human Rights Watch, and even B'Tselem, an Israeli NGO, all say the same thing. It's an apartheid regime. I'm not the one making it up.
+17.1 You'll say: 'Amnesty, Human Rights Watch, and even B'Tselem, an Israeli NGO, all say the same thing.' 'It's an apartheid regime. I'm not the one making it up.' No, I know, and they're not clowns. So I'll start with what's true. In the West Bank, there are two legal systems. A settler goes before a civilian court, a Palestinian before a military court. That can't be defended, and I won't try.
 
-**17.2 Me:** No, I know, and they're not clowns. So I'll start with what's true. In the West Bank, there are two legal systems. A settler goes before a civilian court, a Palestinian before a military court. That's indefensible, and I'm not going to try.
+17.2 And you'll conclude: 'So it's apartheid.' That's where you lose me completely. In Israel itself, one inhabitant in five is Arab. They vote, there are Arab members of parliament, there was an Arab party in government in 2021, there's an Arab judge on the Supreme Court. Discrimination? Yes, there is some, real discrimination. But in South Africa, Black people couldn't vote at all.
 
-**17.3 Him:** Well, there you go. So it's apartheid.
+17.3 You'll tell me the West Bank isn't a detail. No, you're right, it's not a detail. It's an occupation, since 1967, and it's gone on far too long. Except an occupation ends with an agreement. The word 'apartheid' says the country is rotten to the core. And if it's rotten to the core, there's nothing left to negotiate. Are you with me?
 
-**17.4 Me:** That's where you lose me completely. In Israel itself, one in five residents is Arab. They vote, there are Arab members of parliament, there was an Arab party in the government in 2021, there's an Arab judge on the Supreme Court. Discrimination, yes, there is, and real discrimination. But in South Africa, Black people couldn't vote at all.
+17.4 And then there's Gaza. You'll say: 'A UN commission concluded it was genocide. A UN commission, mind you, not a blogger.' I know, the Pillay commission, in September 2025. And I'm not going to play down the deaths. The Gaza health ministry, which answers to Hamas, counts more than seventy thousand. Its figure mixes civilians and fighters. But even starting from the lowest estimates, there are a huge number of civilians. It's terrible, full stop.
 
-**17.5 Him:** But the West Bank isn't a detail!
+17.5 So do I admit it? I acknowledge the deaths. But 'genocide', in law, means something precise: the intention to destroy a people as such. That's the whole question. An atrocious war in the middle of a city, against an enemy hiding under the houses, is not the same thing. Even when the toll is horrific.
 
-**17.6 Me:** No, you're right, it isn't a detail. It's an occupation, since 1967, and it's gone on far too long. Except an occupation ends with an agreement. The word "apartheid" says the country is rotten at the root. And if it's rotten at the root, there's nothing left to negotiate. You with me?
+17.6 You'll tell me the International Court of Justice did say it was plausible. Oh no, we've read that everywhere, but that's not what it said. The Court's president at the time, Joan Donoghue, explained it herself to the BBC. The Court said the Palestinians had a plausible right to be protected from genocide. Not that there was a plausible genocide. And on the merits, it hasn't ruled yet.
 
-**17.7 Him:** And Gaza? A UN commission concluded it was genocide. A UN commission, mind you, not some blogger.
+17.7 And Netanyahu, you ask me whether I condemn him, yes or no. I criticise him, and not just a little. There were hundreds of thousands of us in the street, in Israel, against his government. But you see, criticising a government is one thing. Saying a country has no right to exist is another. When you criticise Macron, nobody asks you whether France should disappear.
 
-**17.8 Me:** I know, the Pillay commission, in September 2025. And I'm not going to minimise the deaths. The Gaza Health Ministry, which answers to Hamas, counts more than seventy thousand. Its figure mixes civilians and combatants. But even starting from the lowest estimates, there are an enormous number of civilians. It's terrible, full stop.
+17.8 And the settlements? You'll tell me they're not legitimate. No. The settlements in the West Bank are an obstacle to peace, and lots of Israelis think like you. But wait, remember Gaza. In 2005, we left. All the settlements dismantled, down to the last one. Two years later, Hamas had taken power. So when people tell me 'leave, and things will get better', fine, I'm willing. But last time, it didn't go as planned.
 
-**17.9 Him:** So you admit it.
-
-**17.10 Me:** I admit the deaths. But "genocide", legally, means one precise thing: the intent to destroy a people as such. That's the whole question. An atrocious war in the middle of a city, against an enemy hiding under houses, isn't the same thing. Even when the toll is horrific.
-
-**17.11 Him:** The International Court of Justice still said it was plausible.
-
-**17.12 Me:** Ah no, you read that everywhere, but that's not what it said. The Court's president at the time, Joan Donoghue, explained it herself to the BBC. The Court said that Palestinians had a plausible right to be protected from genocide. Not that there was a plausible genocide. And on the merits, it hasn't ruled yet.
-
-**17.13 Him:** Okay. And Netanyahu, do you condemn him, yes or no?
-
-**17.14 Me:** I criticise him, and not just a little. There were hundreds of thousands of us in the streets, in Israel, against his government. But you see, criticising a government is one thing. Saying a country has no right to exist is another. When you criticise Macron, nobody asks you whether France should disappear.
-
-**17.15 Him:** And the settlements? You're not going to tell me they're legitimate.
-
-**17.16 Me:** No. The settlements in the West Bank are an obstacle to peace, and plenty of Israelis think like you. But wait, remember Gaza. In 2005, we left. Every settlement dismantled, down to the last one. Two years later, Hamas had taken power. So when people tell me "leave, and things will get better," fine, I hear you. But last time, it didn't go as planned.
-
-**17.17 Him:** You've got an answer for everything, you.
-
-**17.18 Me:** Not at all. There's plenty I don't know, and other things where I disagree with my own side. But I'd rather we talk about the real problems than about words that shut the conversation down. Do you want us to get somewhere, or do you want to be right?
+17.9 You'll tell me I've got an answer for everything. Not at all. There are lots of things I don't know, and others where I disagree with my own side. But I'd rather we talk about the real problems than about words that shut the discussion down. Do you want us to get somewhere, or do you want to be right?
 
 ---
 
@@ -406,263 +368,149 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 ## 18 · Les ultra-orthodoxes, l'armée et l'argent
 
-*Corpus B · dialogue.*
+*Monologue (v24): his words only; the friend's objections are quoted by him.*
 
-**18.1 Him:** Explain something to me. In Israel, the ultra-Orthodox don't do the army? How come?
+18.1 You're asking me why the ultra-Orthodox don't do the army in Israel. It's an old story. In 1948, Ben-Gurion exempts four hundred yeshiva students. Four hundred. After the Holocaust, the idea was to save a world that had almost vanished. That, I can understand.
 
-**18.2 Me:** It's an old story. In 1948, Ben-Gurion exempts four hundred yeshiva students. Four hundred. After the Holocaust, the idea was to save a world that had almost vanished. That, I can understand.
+18.2 Except four hundred was in 1948. Today, the Haredim are about one Israeli in seven. And we're talking about roughly eighty thousand young men of service age who don't serve.
 
-**18.3 Him:** Well, there you go.
+18.3 You'll say: 'For them, studying Torah also protects the country. It's their way of serving.' I know, that's their argument, and for a believer it's not nothing. But look at what it gives in reality. Since October 7th, reservists have done hundreds of days. Fathers who left their jobs and their kids. If study really protected us, why is it always the same people who go and get killed?
 
-**18.4 Me:** Except four hundred was in 1948. Today, the Haredim are about one Israeli in seven. And we're talking about roughly eighty thousand young men of service age who don't serve.
+18.4 They're also afraid the army will change their sons, make them secular. That, I can hear. But the army has made an effort. There are units with no women, strict kashrut, prayer times. There's even a whole brigade just for them. So 'the army will change them' is an argument that holds less and less.
 
-**18.5 Him:** But for them, studying Torah also protects the country. It's their way of serving.
+18.5 And you'll say: 'And Israeli Arabs? They don't serve either. Why go after the Haredim only?' That's a really good question. The difference is we never wanted to send Arabs to fight against people of their own nation. It's the state that excused them; they didn't negotiate it. But I'll grant you, if I talk about equal duties, it applies to them too. A civilian service, for example, for everyone.
 
-**18.6 Me:** I know, that's their argument, and for a believer it's not nothing. But look at what it gives in reality. Since October 7th, reservists have done hundreds of days. Fathers who left their jobs and their kids. If study really protected us, why is it always the same people who go and get killed?
+18.6 And what does the law say? In June 2024, the Supreme Court said, unanimously: there's no legal basis for this exemption, they have to be called up. The first year, the army sent about twenty-four thousand call-up orders. Know how many were enlisted? Fewer than a thousand.
 
-**18.7 Him:** They're afraid the army will change their sons. Make them secular.
+18.7 Then there's money. You'll tell me they pay taxes like everyone else. Right, here you have to be precise, because this is where people talk nonsense. They're not exempt from taxes. They pay VAT like everyone. The problem is that among the men, about one in two doesn't work. Among other Jewish men, it's over eighty percent who work. Haredi women work almost as much as other women. It's the men who are the problem.
 
-**18.8 Me:** That, I can hear. But the army has made an effort. There are units with no women, strict kashrut, prayer times. There's even a whole brigade just for them. So 'the army will change them' is an argument that holds less and less.
+18.8 And what does that mean, concretely? It means they're nearly one in seven, and they pay about two percent of income tax. The Bank of Israel did the maths, household by household. A non-Haredi Jewish household gives the state, on average, about six thousand shekels a month more than it gets back. A Haredi household gets about four thousand more than it gives.
 
-**18.9 Him:** And Israeli Arabs? They don't serve either. Why go after the Haredim only?
+18.9 You'll say: 'But they have six, seven kids, they're poor.' 'A poor family, back home too, gets more than it pays. That's normal.' You're right on one point, and their defenders say it too. In these calculations, every child counts: school, health care. A family with seven children costs more, it's mechanical. So part of the gap is just family size.
 
-**18.10 Me:** That's a really good question. The difference is we never wanted to send Arabs to fight against people of their own nation. It's the state that excused them; they didn't negotiate it. But I'll grant you, if I talk about equal duties, it applies to them too. A civilian service, for example, for everyone.
+18.10 But only part of it. But not all, and that's the heart of the problem. A poor family, I'm happy to help. But this poverty doesn't fall from the sky. To keep the exemption, you have to stay in yeshiva. The day you take a job, you can be called up. So the state pays people not to work, and then it's surprised they don't work.
 
-**18.11 Him:** And what does the law say?
+18.11 And do the ones who study get a fortune? No, and I won't exaggerate. A married man studying in kollel gets a few hundred shekels a month. Nobody gets rich on that. The money goes through child benefits, daycare, local-tax discounts. It's not a scam, it's a system. And it's the system I'm criticising.
 
-**18.12 Me:** Exactly. In June 2024, the Supreme Court said, unanimously: there's no legal basis for this exemption, they have to be called up. The first year, the army sent about twenty-four thousand call-up orders. Know how many were enlisted? Fewer than a thousand.
+18.12 You'll say: 'It's their religion. You can't ask them to betray the Torah.' Ah, the Torah, let's talk about it. Do you know Maimonides, the Rambam? The greatest codifier of Jewish law. Not some secular guy from Tel Aviv, mind you. He writes that whoever decides to study without working, and to live off charity, desecrates God's name. He disgraces the Torah. He puts out the light of religion.
 
-**18.13 Him:** Okay. But money is another matter. They pay taxes like everyone else, don't they?
+18.13 Word for word, or nearly. And in Pirkei Avot there's this image: don't make the Torah a spade to dig with. A spade, meaning a livelihood. And he himself was a doctor. He worked all day, and studied afterwards.
 
-**18.14 Me:** Right, here you have to be precise, because this is where people talk nonsense. They're not exempt from taxes. They pay VAT like everyone. The problem is that among the men, about one in two doesn't work. Among other Jewish men, it's over eighty percent who work. Haredi women work almost as much as other women. It's the men who are the problem.
+18.14 You'll tell me other rabbis say the opposite. True, I'll grant you that. Rabbi Yosef Karo, the Shulchan Aruch one, answers him that times have changed, that it's fine to support those who study. It's a real debate between rabbis. But I'm not saying the Torah forbids study. I'm just saying the greatest of them found it shameful to live off it.
 
-**18.15 Him:** And what does that mean, concretely?
-
-**18.16 Me:** It means they're nearly one in seven, and they pay about two percent of income tax. The Bank of Israel did the maths, household by household. A non-Haredi Jewish household gives the state, on average, about six thousand shekels a month more than it gets back. A Haredi household gets about four thousand more than it gives.
-
-**18.17 Him:** Hang on, they have six, seven kids, they're poor. A poor family, back home too, gets more than it pays. That's normal.
-
-**18.18 Me:** You're right on one point, and their defenders say it too. In these calculations, every child counts: school, health care. A family with seven children costs more, it's mechanical. So part of the gap is just family size.
-
-**18.19 Him:** Well, you see.
-
-**18.20 Me:** Part of it, yes. But not all, and that's the heart of the problem. A poor family, I'm happy to help. But this poverty doesn't fall from the sky. To keep the exemption, you have to stay in yeshiva. The day you take a job, you can be called up. So the state pays people not to work, and then it's surprised they don't work.
-
-**18.21 Him:** And do the ones who study get a fortune?
-
-**18.22 Me:** No, and I won't exaggerate. A married man studying in kollel gets a few hundred shekels a month. Nobody gets rich on that. The money goes through child benefits, daycare, local-tax discounts. It's not a scam, it's a system. And it's the system I'm criticising.
-
-**18.23 Him:** Okay, but it's their religion. You can't ask them to betray the Torah.
-
-**18.24 Me:** Ah, the Torah, let's talk about it. Do you know Maimonides, the Rambam? The greatest codifier of Jewish law. Not some secular guy from Tel Aviv, mind you. He writes that whoever decides to study without working, and to live off charity, desecrates God's name. He disgraces the Torah. He puts out the light of religion.
-
-**18.25 Him:** The Rambam says that?
-
-**18.26 Me:** Word for word, or nearly. And in Pirkei Avot there's this image: don't make the Torah a spade to dig with. A spade, meaning a livelihood. And he himself was a doctor. He worked all day, and studied afterwards.
-
-**18.27 Him:** Yes, but other rabbis say the opposite, don't they?
-
-**18.28 Me:** True, I'll grant you that. Rabbi Yosef Karo, the Shulchan Aruch one, answers him that times have changed, that it's fine to support those who study. It's a real debate between rabbis. But I'm not saying the Torah forbids study. I'm just saying the greatest of them found it shameful to live off it.
-
-**18.29 Him:** So what do you actually want?
-
-**18.30 Me:** I don't want them to stop studying. I want them to share. The real question isn't 'do we respect the Torah?'. It's 'are there two kinds of citizens?'. And I'd rather have a country where everyone pulls their weight than one where some carry the weight of others.
+18.15 So what do I actually want? I don't want them to stop studying. I want them to share. The real question isn't 'do we respect the Torah?'. It's 'are there two kinds of citizens?'. And I'd rather have a country where everyone pulls their weight than one where some carry the weight of others.
 
 ---
 
 # Ma vie — the family texts added 2026-10-16
 
-Dialogues on a video call with family in France or Luxembourg. Written by Claude, not yet reviewed by him.
+Monologues: what he says on a video call with family in France or Luxembourg. Written by Claude, not yet reviewed by him.
 
 ## 19 · Pourquoi j'apprends le français
 
-*Why I'm learning French* — with your cousin, on a video call.
+*Why I'm learning French* — to the family, on a video call.
 
-19.1 **Your cousin:** Wait, you speak French now? Since when?
+19.1 Yes, I speak French now! Well, I try. I've been learning for a while. I don't speak very well yet, but I get by. And I prefer French with mistakes to a polite silence.
 
-19.2 **You:** I've been learning for a while, yes. I don't speak very well yet, but I get by. And I prefer French with mistakes to a polite silence.
+19.2 Why French? Everyone speaks English, I know. But at home, with my wife, we speak more and more French. She grew up with a mother who spoke French to her, so for her it's natural. And besides, speaking English with you is one thing. Speaking your language is another. In English, we understand each other. In French, we laugh together.
 
-19.3 **Your cousin:** But why? Everyone speaks English these days.
+19.3 The hardest part isn't the vocabulary. It's the word order. I think in Hebrew or in English, and I build the sentence backwards. What struck me is that you talk much faster than in the books. The more I listen to you, the more I understand. But at first, it felt like I was hearing one single very long word.
 
-19.4 **You:** Yes, English, I speak it. But at home, with my wife, we speak more and more French. She grew up with a mother who spoke French to her, so for her it's natural. And besides, speaking English with you is one thing. Speaking your language is another. In English, we understand each other. In French, we laugh together.
+19.4 To learn, I have an app on my phone. I repeat sentences out loud, in the car, while walking. People look at me funny, but oh well. And in the evening, I talk with my wife. She's my real teacher.
 
-19.5 **Your cousin:** That's sweet. And is it hard?
-
-19.6 **You:** Honestly, yes. The hardest part isn't the vocabulary. It's the word order. I think in Hebrew or in English, and I build the sentence backwards. What struck me is that you talk much faster than in the books. The more I listen to you, the more I understand. But at first, it felt like I was hearing one single very long word.
-
-19.7 **Your cousin:** And how do you go about learning?
-
-19.8 **You:** I have an app on my phone, and I repeat sentences out loud, in the car, while walking. People look at me funny, but oh well. And in the evening, I talk with my wife. She's my real teacher. But I'm warning you: if I say something silly, you correct me, OK?
-
-19.9 **Your cousin:** Promise. But we're not going to correct you on every sentence, come on.
-
-19.10 **You:** Yes, you should, actually. That's how I learn. If I keep making the same mistakes, it's because nobody corrected them.
+19.5 So I'm warning you: if I say something silly, you correct me. You'll say: 'We're not going to correct you on every sentence, come on!' Yes, you should, actually. That's how I learn. If I keep making the same mistakes, it's because nobody corrected them.
 
 ## 20 · Les enfants, en ce moment
 
-*The kids, these days* — with your aunt, on a video call.
+*The kids, these days* — to the family, on a video call.
 
-20.1 **Your aunt:** So, what about the kids? Tell me! They must have grown so much.
+20.1 The kids? Oh, they're growing too fast. The eldest reads a lot at the moment. And when he isn't reading, he plays adventure games on the PlayStation. He's also in an excellence programme, in maths and general knowledge. You're going to say he takes after his father. I'm not the one who said it, OK! But yes, we're proud of him.
 
-20.2 **You:** Oh, they're growing too fast. The eldest reads a lot at the moment. And when he isn't reading, he plays adventure games on the PlayStation. He's also in an excellence programme, in maths and general knowledge.
+20.2 The older girl is something else. She loves the tablet. She films herself singing, talking, pulling faces. She thinks she's an influencer. We try to limit screen time. I'm not saying we manage. I'm just saying we try.
 
-20.3 **Your aunt:** So he's gifted! Like his father, right?
+20.3 The little one sings and dances all day long. In the living room, in the bath, even at the table. And she's learning to write. Yesterday she wrote her name all by herself, and she was very proud.
 
-20.4 **You:** I'm not the one who said it, I swear! But yes, we're proud of him.
+20.4 And friends, they have loads. Our place is a constant parade. One day, friends come over to our house. The next day, ours go to theirs. Personally, I prefer a house full of noise to kids alone in front of a screen.
 
-20.5 **Your aunt:** And the older girl?
+20.5 Fights between them? Yes, there are some, every day. But as soon as one of the three is sick, the other two worry about them.
 
-20.6 **You:** The older girl is something else. She loves the tablet. She films herself singing, talking, pulling faces. She thinks she's an influencer. We try to limit screen time. I'm not saying we manage. I'm just saying we try.
-
-20.7 **Your aunt:** And the little one?
-
-20.8 **You:** The little one sings and dances all day long. In the living room, in the bath, even at the table. And she's learning to write. Yesterday she wrote her name all by herself, and she was very proud.
-
-20.9 **Your aunt:** And do they have friends?
-
-20.10 **You:** Oh yes. Our place is a constant parade. One day, friends come over to our house. The next day, ours go to theirs. Personally, I prefer a house full of noise to kids alone in front of a screen.
-
-20.11 **Your aunt:** And do the three of them fight a lot?
-
-20.12 **You:** Fights? Yes, there are some, every day. But as soon as one of the three is sick, the other two worry about them.
-
-20.13 **Your aunt:** Send me photos, I haven't seen them in so long.
-
-20.14 **You:** I'll try. But the bigger they get, the less they want their picture taken. Well, except the older girl. She'll send you her videos herself.
+20.6 I'll try to send you photos. But the bigger they get, the less they want their picture taken. Well, except the older girl. She'll send you her videos herself.
 
 ## 21 · Une journée chez nous
 
-*A day at our place* — with your cousin, on a video call.
+*A day at our place* — to the family, on a video call.
 
-21.1 **Your cousin:** What does a normal day look like at your place?
+21.1 A normal day at our place? In the morning, it's a race. We get up at half past six, and by half past seven everyone has to be ready. Three kids, three sandwiches, three water bottles, three school bags. In theory, everything's ready the night before. Except that in real life, there's always a surprise in the morning. A shoe that's vanished, forgotten homework, a little one who refuses to wear her favourite dress.
 
-21.2 **You:** In the morning, it's a race. We get up at half past six, and by half past seven everyone has to be ready. Three kids, three sandwiches, three water bottles, three school bags. In theory, everything's ready the night before. Except that in real life, there's always a surprise in the morning. A shoe that's vanished, forgotten homework, a little one who refuses to wear her favourite dress.
+21.2 Then we drop them off and go to work. They finish early here, at the start of the afternoon. In the afternoon, there are always friends: either they come to us, or the kids go to them. The eldest also has his excellence programme. And the older girl, if we let her, spends the afternoon on the tablet. And we play taxi driver.
 
-21.3 **Your cousin:** And then?
+21.3 And then, it's hot here. In summer, it's awful. Thirty-five degrees, and it lasts until October. The kids don't mind at all. Me, I live with the air conditioning. And where you are, is it already cold? Are you already wearing a sweater?
 
-21.4 **You:** Then we drop them off and go to work. They finish early here, at the start of the afternoon. In the afternoon, there are always friends: either they come to us, or the kids go to them. The eldest also has his excellence programme. And the older girl, if we let her, spends the afternoon on the tablet. And we play taxi driver.
-
-21.5 **Your cousin:** And it's hot, isn't it?
-
-21.6 **You:** In summer, it's awful. Thirty-five degrees, and it lasts until October. The kids don't mind at all. Me, I live with the air conditioning. And where you are, is it already cold? Are you already wearing a sweater?
-
-21.7 **Your cousin:** Oh yes, it's been raining for a week. And in the evening, at your place?
-
-21.8 **You:** In the evening, it's bath, dinner, and homework. And then the bedtime story. It's my favourite moment. With the life we have, you have to fight for those moments. Those moments don't fall from the sky, you make them happen. And at nine, when everyone's finally asleep, my wife and I sit down and speak a bit of French. Well, when we don't fall asleep before they do.
+21.4 In the evening, it's bath, dinner, and homework. And then the bedtime story. It's my favourite moment. With the life we have, you have to fight for those moments. Those moments don't fall from the sky, you make them happen. And at nine, when everyone's finally asleep, my wife and I sit down and speak a bit of French. Well, when we don't fall asleep before they do.
 
 ## 22 · La réserve
 
-*The reserves* — with your uncle, on a video call.
+*The reserves* — to the family, on a video call.
 
-22.1 **Your uncle:** I was told you're still in the army. Aren't you past the age?
+22.1 Yes, I'm still in the army. It's the reserves. In Israel, after your service, you stay a reservist for years. They call you up a few weeks a year, sometimes more. And these last few years, it's often been a lot more.
 
-22.2 **You:** It's the reserves. In Israel, after your service, you stay a reservist for years. They call you up a few weeks a year, sometimes more. And these last few years, it's often been a lot more.
+22.2 I'm a combat soldier, in the West Bank. We protect the Modiin area, halfway between Tel Aviv and Jerusalem. We patrol the villages, with our weapons and bulletproof vests. We set up checkpoints on the roads. And sometimes, arrests. But most of the time, it's nothing like in the films. It's waiting, short nights, and a lot of coffee.
 
-22.3 **Your uncle:** And what do you do there?
+22.3 Now and then I come home for a few days, and then I go back. You get back to the kids, and two days later you put the uniform back on. That's when it's hardest.
 
-22.4 **You:** I'm a combat soldier, in the West Bank. We protect the Modiin area, halfway between Tel Aviv and Jerusalem. We patrol the villages, with our weapons and bulletproof vests. We set up checkpoints on the roads. And sometimes, arrests. But most of the time, it's nothing like in the films. It's waiting, short nights, and a lot of coffee.
+22.4 What I like is the mix. In the reserves you get everyone: a teacher, a plumber, a lawyer, a student. In normal life, they'd never have met. Out there, they sleep in the same room and fight over the last coffee. And honestly, holding up out there is less a matter of strength than a matter of mates.
 
-22.5 **Your uncle:** And do you sleep at home now and then?
+22.5 For my wife, it's even harder, honestly. Leaving is one thing. Staying alone with three kids and the worry is another. The kids, they count the days.
 
-22.6 **You:** Now and then I come home for a few days, and then I go back. You get back to the kids, and two days later you put the uniform back on. That's when it's hardest.
+22.6 And coming home, every time, is strange. You go from the checkpoint to the supermarket in a few hours. And in the morning you hear the kids fighting over the cereal, and you think: there, I'm home. The longer I stay out there, the more I miss that noise.
 
-22.7 **Your uncle:** And the guys with you, what are they like?
+## 23 · Ce que je pense de Netanyahou
 
-22.8 **You:** What I like is the mix. In the reserves you get everyone: a teacher, a plumber, a lawyer, a student. In normal life, they'd never have met. Out there, they sleep in the same room and fight over the last coffee. And honestly, holding up out there is less a matter of strength than a matter of mates.
+*What I think of Netanyahu* — to the family, on a video call.
 
-22.9 **Your uncle:** And your wife, meanwhile?
+23.1 Politics, here, is a national sport. Everyone has an opinion, and they share it. At Friday night dinner, it can get very lively. I'm not saying everyone agrees. I'm just saying that afterwards we eat dessert together.
 
-22.10 **You:** She's the one with the hardest part, honestly. Leaving is one thing. Staying alone with three kids and the worry is another. The kids, they count the days.
+23.2 Me, I'll never vote for Netanyahu. He has qualities, I'll grant you that. He's a campaigning genius. Nobody wins an election like him. And during the war, I liked him being so tough. But his flaws weigh far more.
 
-22.11 **Your uncle:** It must be strange, coming home every time.
+23.3 First, he sets Israelis against each other. He manufactures hatred. Then, he feeds fake news. And then there are the ultra-Orthodox, his 'natural partners', as he puts it. The deal is simple: you vote with me on everything, and you get everything. That's where he loses me completely. Some of the things he's done, honestly, are very serious.
 
-22.12 **You:** You go from the checkpoint to the supermarket in a few hours. And in the morning you hear the kids fighting over the cereal, and you think: there, I'm home. The longer I stay out there, the more I miss that noise.
-
-## 23 · La politique, vue de chez nous
-
-*Politics, seen from here* — with your uncle, on a video call.
-
-23.1 **Your uncle:** Right, explain your politics to me. On the news, I don't understand a thing.
-
-23.2 **You:** Nobody really understands, not even us. In France, you vote for a president. Here, we vote for a party, a list. There are a hundred and twenty seats in the Knesset, our parliament, and you need sixty-one to govern. And no party has ever had a majority on its own.
-
-23.3 **Your uncle:** So you need coalitions.
-
-23.4 **You:** Exactly. And that's where it all gets complicated. The big party has to team up with small ones. And the small parties know very well that they're needed. So they ask for a lot: a ministry, a budget, a law for their voters. And if one of them walks out, the government falls.
-
-23.5 **Your uncle:** Does that happen often?
-
-23.6 **You:** Between 2019 and 2022, we voted five times. Five times in under four years. By the end, we'd joke: 'See you in six months!'
-
-23.7 **Your uncle:** And do you talk about it with friends?
-
-23.8 **You:** All the time. In Israel, everyone has an opinion, and they share it. At Friday night dinner, it can get very lively. I'm not saying everyone agrees. I'm just saying that afterwards we eat dessert together.
-
-23.9 **Your uncle:** And you, what do you think of Netanyahu? On TV, he comes across as strong.
-
-23.10 **You:** Me, I'll never vote for him. Strong, he is. He's a campaigning genius. Nobody wins an election like him. And during the war, I liked him being so tough. He has qualities, I'll grant you that. But his flaws weigh far more. First, he sets Israelis against each other. He manufactures hatred. Then, he feeds fake news. And then there are the ultra-Orthodox. He calls them his 'natural partners'. The deal is simple: you vote with me on everything, and you get everything. Some of the things he's done, honestly, are very serious.
-
-23.11 **Your uncle:** Well, you certainly have an opinion!
-
-23.12 **You:** I'm Israeli, I told you. But tell me. Do you still follow French politics?
+23.4 Well, you see, I've got an opinion too! And you, do you still follow French politics?
 
 ## 26 · Les ultra-orthodoxes et l'armée
 
-*The ultra-Orthodox and the army* — with your cousin, on a video call.
+*The ultra-Orthodox and the army* — to the family, on a video call.
 
-26.1 **Your cousin:** I read an article about the ultra-Orthodox in your country. Is it true they don't do the army?
+26.1 The ultra-Orthodox and the army is a subject that makes me angry. Most of them don't do the army. And to me, it's a moral scandal. It's a question of justice, the simplest kind there is: equality.
 
-26.2 **You:** It's true, for most of them. And to me, it's a moral scandal. It's a question of justice, the simplest kind there is: equality.
+26.2 At the start, in 1948, Ben-Gurion exempts four hundred yeshiva students. After the Holocaust, the idea was to save a world of study that had almost disappeared. Four hundred, you can understand. Today, there are about eighty thousand of military age. We're not talking about four hundred students. We're talking about eighty thousand young men.
 
-26.3 **Your cousin:** How did it start?
+26.3 You'll say: 'And the courts, haven't they done anything?' Yes, they have, actually. In 2024, the Supreme Court ruled unanimously that the exemption had no legal basis. So the army sent out call-up orders. Out of about twenty-four thousand orders, fewer than eight hundred enlisted. And the government does everything to keep the exemption.
 
-26.4 **You:** In 1948, Ben-Gurion exempts four hundred yeshiva students. After the Holocaust, the idea was to save a world of study that had almost disappeared. Four hundred, you can understand. Today, there are about eighty thousand of military age. We're not talking about four hundred students. We're talking about eighty thousand young men.
+26.4 And the craziest part is what their own tradition says. The Rambam, Maimonides, one of the greatest rabbis in history, wrote about it. Whoever studies Torah without working and lives off other people's money desecrates the name of God. And he says a man like that will end up a bandit, robbing people. It's not me saying it, it's the Rambam.
 
-26.5 **Your cousin:** But haven't the courts said anything?
-
-26.6 **You:** Yes, they have, actually. In 2024, the Supreme Court ruled unanimously that the exemption had no legal basis. So the army sent out call-up orders. Out of about twenty-four thousand orders, fewer than eight hundred enlisted. And the government does everything to keep the exemption.
-
-26.7 **Your cousin:** And what does the religion say about it?
-
-26.8 **You:** That's the craziest part. The Rambam, Maimonides, the greatest of their rabbis, wrote about it. Whoever studies Torah without working and lives off other people's money desecrates the name of God. And he says a man like that will end up a bandit, robbing people. It's not me saying it, it's the Rambam.
-
-26.9 **Your cousin:** And what do you suggest?
-
-26.10 **You:** Something very simple: the same law for everyone. You want to study? Fine. But you do your service, like everyone else. And you work, like everyone else. Why should the yeshiva boy have the right to stay home, and not the secular boy the same age? For me, it's less a question of religion than a question of equality.
+26.5 What I propose is very simple: the same law for everyone. You want to study? Fine. But you do your service, like everyone else. And you work, like everyone else. Why should the yeshiva boy have the right to stay home, and not the secular boy the same age? For me, it's less a question of religion than a question of equality.
 
 ## 24 · Le vendredi soir et les fêtes
 
-*Friday night and the holidays* — with your cousin, on a video call.
+*Friday night and the holidays* — to the family, on a video call.
 
-24.1 **Your cousin:** And Shabbat, do you keep it? Are you religious?
+24.1 Shabbat? No, we're not religious. But Friday night is still sacred at our place. We all eat together, at my wife's mother's or at my brothers'. There's braided bread, wine, and far too much food. The kids find their cousins and vanish until dessert. I don't believe in God, but I love that moment.
 
-24.2 **You:** No, we're not religious. But Friday night is still sacred at our place. We all eat together, at my wife's mother's or at my brothers'. There's braided bread, wine, and far too much food. The kids find their cousins and vanish until dessert. I don't believe in God, but I love that moment.
+24.2 You'll tell me it's a bit contradictory. But just because I don't believe doesn't mean I can't love the traditions. For me, Shabbat is less a matter of religion than a matter of family. Once a week, we put the phones down and talk to each other. Well, we try.
 
-24.3 **Your cousin:** Isn't that a bit contradictory?
-
-24.4 **You:** Just because I don't believe doesn't mean I can't love the traditions. For me, Shabbat is less a matter of religion than a matter of family. Once a week, we put the phones down and talk to each other. Well, we try.
-
-24.5 **Your cousin:** And the holidays?
-
-24.6 **You:** In autumn, we get all the holidays one after another. New Year, Yom Kippur, then Sukkot. For three weeks, the country runs in slow motion. On Yom Kippur, there's hardly a car on the road. Kids ride their bikes down the middle of the big roads. What struck me, the first time I told French people about it, is that they didn't believe me.
+24.3 And in autumn, we get all the holidays one after another. New Year, Yom Kippur, then Sukkot. For three weeks, the country runs in slow motion. On Yom Kippur, there's hardly a car on the road. Kids ride their bikes down the middle of the big roads. What struck me, the first time I told French people about it, is that they didn't believe me.
 
 ## 25 · Venez nous voir !
 
-*Come and see us!* — with your cousin, on a video call.
+*Come and see us!* — to the family, on a video call.
 
-25.1 **Your cousin:** We'd love to come and see you one day. But with everything we see on the news, I admit I'm a bit scared.
+25.1 You say you'd like to come, but with everything you see on the news, you're a bit scared. I understand, really. The pictures on the news show that there are hard times. They say nothing about everyday life. Most of the time, people go to work, to the café, to the beach. And if one day it's not the right time, I'll tell you straight.
 
-25.2 **You:** I understand, really. The pictures on the news show that there are hard times. They say nothing about everyday life. Most of the time, people go to work, to the café, to the beach. And if one day it's not the right time, I'll tell you straight.
+25.2 And there's so much to see! Jerusalem, first. The Old City is really something. Tel Aviv, the beach, the restaurants. The Dead Sea: you float without doing anything, it's very strange. And the desert, at sunrise. Personally, I prefer a sunrise in the desert to a day at the beach.
 
-25.3 **Your cousin:** And what is there to see?
+25.3 You'll sleep at our place, obviously! Well, it's not huge. The kids will give you their room. They'll grumble for two minutes, and then they'll be thrilled.
 
-25.4 **You:** Jerusalem, first. The Old City is really something. Tel Aviv, the beach, the restaurants. The Dead Sea: you float without doing anything, it's very strange. And the desert, at sunrise. Personally, I prefer a sunrise in the desert to a day at the beach.
+25.4 The kids don't speak much French. But with kids, you don't need much. A ball, a deck of cards, and off you go. And besides, it'll make me practise my French.
 
-25.5 **Your cousin:** And where would we sleep?
-
-25.6 **You:** At our place, obviously! Well, it's not huge. The kids will give you their room. They'll grumble for two minutes, and then they'll be thrilled.
-
-25.7 **Your cousin:** And will we understand each other with the kids? Do they speak French?
-
-25.8 **You:** Not much. But with kids, you don't need much. A ball, a deck of cards, and off you go. And besides, it'll make me practise my French. So tell me. Do you want to wait for the perfect moment, or do you want to come? Because the perfect moment, here, doesn't exist. Come in spring: the weather's nice, and it's not too hot yet.
+25.5 So tell me. Do you want to wait for the perfect moment, or do you want to come? Because the perfect moment, here, doesn't exist. Come in spring: the weather's nice, and it's not too hot yet.
 
