@@ -17,9 +17,9 @@ His asks, English reviewed first (`texts-english.md` §23):
 - 23.2: qualities are now politics, experience, « la carrure d'un leader mondial ».
 - 23.3: the Haredi deal spelled out (« Pas de service militaire, et l'argent de l'État. »); « très grave » line cut.
 - 23.4 new, replacing the French-politics ending: campaign genius → « c'est aussi ça, le problème » →
-  one-man-show, béni-oui-oui « au doigt et à l'œil », rivals leave → « C'est un fan-club. »
+  one-man-show, béni-oui-oui « au doigt et à l'œil », rivals leave → « c'est un fan-club. Et le jour où Netanyahou s'en va, le Likoud s'en va avec lui. »
   f32 no longer in 23 (still in eight texts). 26 sentences, CHUNKS hand-cut.
-- Assets `?v=27`, `CACHE_VERSION = 'v27'`.
+- Assets `?v=28`, `CACHE_VERSION = 'v28'` (v28 = the new last line).
 
 ## v25 (2026-10-23) — text 6 rewritten: see yourself as you see the other
 
