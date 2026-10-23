@@ -10,6 +10,21 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v25 (2026-10-23) — text 6 rewritten: see yourself as you see the other
+
+His ask: show how arbitrary belief is, and make the friend look at himself the way he looks at a
+Muslim. He reviewed the English first (now in `texts-english.md` §6), then the French was written from it.
+- **Text 6** « L'accident géographique »: Saudi Arabia (« Musulman, très probablement »), Rome and Jupiter
+  (« Tu te serais pas dit : … le Dieu des Juifs qui a raison »), « huit personnes sur dix » keep their
+  childhood religion (Pew 2025: about one adult in five has left it), the Egypt mirror (each pities the
+  other), « elles peuvent pas toutes être vraies » so most are wrong and each thinks it's the others,
+  ending on Syria. Cut: the maths / « deux et deux font cinq » part (text 5's argument), « le bon numéro »,
+  « Si Dieu voulait vraiment… », « Et je vais plus loin ». 26 sentences, CHUNKS hand-cut.
+- Frames: f25's exemplar is now Arabie saoudite. **f20** home → text 3, **f36** home → text 7 (both
+  still carried there). **f19** keeps `textId: 6` only so its prompts stay corpus-A; text 18 is the
+  only one that carries it now. Saved `pos` on text 6 may point a little off (harmless).
+- Assets `?v=25`, `CACHE_VERSION = 'v25'`.
+
 ## v24 (2026-10-16) — « Ma vie » is only what he says
 
 His asks: no second voice (« no "ton cousin" text, just what I say »), and in politics « assume the

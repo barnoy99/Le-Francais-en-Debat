@@ -32,15 +32,19 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 *Corpus A · monologue, to a friend.*
 
-**6.1** You know, there's something that's been bugging me for a long time. If you'd been born in Indonesia, what would you be? Muslim. In Brazil? Christian. In India? Hindu. In ancient Greece, you'd believe in Zeus, like everyone else. And in my own family, Jewish, obviously.
+**6.1** Hey, there's something that's been bugging me for a long time. If you'd been born in Saudi Arabia, what would you be? Most likely Muslim. In Brazil? Christian. In India? Hindu. And you, born here, to your parents? Jewish. Obviously.
 
-**6.2** So religion is less a question of truth than a question of postcode. No, seriously, think about it. The vast majority of people keep their parents' religion. If it were a discovery, everyone would make it on their own, and everyone would land on the same one. Like in maths. Nobody tells you: "Where we come from, two and two make five."
+**6.2** Now picture Rome, two thousand years ago. Everyone believed in Jupiter. They sacrificed animals to him, they prayed to him before a battle. Today, for you, it's ridiculous. But if you'd been born there, you'd have believed in him too, like everyone else. You wouldn't have thought: "No, actually, it's probably the God of the Jews who's right."
 
-**6.3** So yes, I can see your answer coming: "That doesn't prove anything, maybe one of them is true." True, I'll grant you that. But look at the problem it creates. Everyone is sure they were born into the right one. Everyone happened to draw the winning ticket? That's a bit much, no?
+**6.3** So religion is less a question of truth than a question of postcode. About eight in ten people in the world keep the religion they grew up with (Pew Research Center, 2025). Not because they checked, but because that's what they got at home, along with the language, the food, the culture and the values.
 
-**6.4** And I'll go further. If God really wanted us to know him, why would he leave it to the luck of birth? A truth that depends on where you were born doesn't look like a truth. It looks like a tradition handed down from parents to children.
+**6.4** And here's what really gets me. When you think of a Muslim in Egypt, you're certain he's wrong: poor guy, he was raised to believe a lie. And he looks at you exactly the same way. You each feel sorry for the other, and each of you is sure he's the lucky one.
 
-**6.5** Anyway. When a belief follows the map rather than the evidence, that makes me suspicious. Doesn't it you?
+**6.5** So yes, I can see your answer coming: "That proves nothing, maybe one of them is true." True, I'll grant you that. But they can't all be true. So most people on earth are wrong, billions of them, and every single one is sure it's the others who are wrong. The Egyptian is sure it's you. You're sure it's him. So how do you know you're not one of them?
+
+**6.6** Just look at yourself the way you look at him. If you'd been born in Syria, you'd be sitting here defending Islam, just as sure as you are now. Doesn't that bother you a bit?
+
+*Comprehension cue (the friend's objection):* "That proves nothing, maybe one of them is true."
 
 ---
 
