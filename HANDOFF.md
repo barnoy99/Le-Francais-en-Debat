@@ -10,6 +10,17 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v27 (2026-10-23) — text 23 (Netanyahou): the Likud as a one-man show
+
+His asks, English reviewed first (`texts-english.md` §23):
+- 23.1: « Je dis pas que tout le monde crie. Je dis juste que personne ne se tait. » (f04, was the dessert line).
+- 23.2: qualities are now politics, experience, « la carrure d'un leader mondial ».
+- 23.3: the Haredi deal spelled out (« Pas de service militaire, et l'argent de l'État. »); « très grave » line cut.
+- 23.4 new, replacing the French-politics ending: campaign genius → « c'est aussi ça, le problème » →
+  one-man-show, béni-oui-oui « au doigt et à l'œil », rivals leave → « C'est un fan-club. »
+  f32 no longer in 23 (still in eight texts). 26 sentences, CHUNKS hand-cut.
+- Assets `?v=27`, `CACHE_VERSION = 'v27'`.
+
 ## v25 (2026-10-23) — text 6 rewritten: see yourself as you see the other
 
 His ask: show how arbitrary belief is, and make the friend look at himself the way he looks at a

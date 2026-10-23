@@ -472,13 +472,13 @@ Monologues: what he says on a video call with family in France or Luxembourg. Wr
 
 *What I think of Netanyahu* — to the family, on a video call.
 
-23.1 Politics, here, is a national sport. Everyone has an opinion, and they share it. At Friday night dinner, it can get very lively. I'm not saying everyone agrees. I'm just saying that afterwards we eat dessert together.
+23.1 Politics, here, is a national sport. Everyone has an opinion, and they share it. At Friday night dinner, it can get very lively. I'm not saying everyone shouts. I'm just saying nobody keeps quiet.
 
-23.2 Me, I'll never vote for Netanyahu. He has qualities, I'll grant you that. He's a campaigning genius. Nobody wins an election like him. And during the war, I liked him being so tough. But his flaws weigh far more.
+23.2 Me, I'll never vote for Netanyahu. He has qualities, I'll grant you that. He understands politics better than anyone, he has huge experience, and he has the stature of a world leader. And during the war, I liked him being so tough. But his flaws weigh far more.
 
-23.3 First, he sets Israelis against each other. He manufactures hatred. Then, he feeds fake news. And then there are the ultra-Orthodox, his 'natural partners', as he puts it. The deal is simple: you vote with me on everything, and you get everything. That's where he loses me completely. Some of the things he's done, honestly, are very serious.
+23.3 First, he sets Israelis against each other. He manufactures hatred. Then, he feeds fake news. And then there are the ultra-Orthodox, his "natural partners", as he puts it. The deal is simple: you vote with me on everything, and you get everything. No army service, and money from the state. That's where he loses me completely.
 
-23.4 Well, you see, I've got an opinion too! And you, do you still follow French politics?
+23.4 And one last thing. He's a campaigning genius, nobody wins an election like him. But that's also the problem. He's turned the Likud into a one-man show. It used to be a real party, with big names, people who could take over. Today, around him, there are only yes-men, weak people who do what he says without thinking. Try to imagine the Likud without him: you can't. Anyone who starts to look like a rival ends up leaving. So yes, it wins elections. But it isn't a party anymore. It's a fan club.
 
 ## 26 · Les ultra-orthodoxes et l'armée
 
