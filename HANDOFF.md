@@ -19,7 +19,7 @@ His asks, English reviewed first (`texts-english.md` §23):
 - 23.4 new, replacing the French-politics ending: campaign genius → « c'est aussi ça, le problème » →
   one-man-show, béni-oui-oui « au doigt et à l'œil », rivals leave → « c'est un fan-club. Et le jour où Netanyahou s'en va, le Likoud s'en va avec lui. »
   f32 no longer in 23 (still in eight texts). 26 sentences, CHUNKS hand-cut.
-- Assets `?v=28`, `CACHE_VERSION = 'v28'` (v28 = the new last line).
+- Assets `?v=29`, `CACHE_VERSION = 'v29'` (v28 = the new last line; v29 = « il gagne des élections »).
 
 ## v25 (2026-10-23) — text 6 rewritten: see yourself as you see the other
 

@@ -478,7 +478,7 @@ Monologues: what he says on a video call with family in France or Luxembourg. Wr
 
 23.3 First, he sets Israelis against each other. He manufactures hatred. Then, he feeds fake news. And then there are the ultra-Orthodox, his "natural partners", as he puts it. The deal is simple: you vote with me on everything, and you get everything. No army service, and money from the state. That's where he loses me completely.
 
-23.4 And one last thing. He's a campaigning genius, nobody wins an election like him. But that's also the problem. He's turned the Likud into a one-man show. It used to be a real party, with big names, people who could take over. Today, around him, there are only yes-men, weak people who do what he says without thinking. Try to imagine the Likud without him: you can't. Anyone who starts to look like a rival ends up leaving. So yes, it wins elections. But it isn't a party anymore, it's a fan club. And the day Netanyahu goes, the Likud goes with him.
+23.4 And one last thing. He's a campaigning genius, nobody wins an election like him. But that's also the problem. He's turned the Likud into a one-man show. It used to be a real party, with big names, people who could take over. Today, around him, there are only yes-men, weak people who do what he says without thinking. Try to imagine the Likud without him: you can't. Anyone who starts to look like a rival ends up leaving. So yes, he wins elections. But it isn't a party anymore, it's a fan club. And the day Netanyahu goes, the Likud goes with him.
 
 ## 26 · Les ultra-orthodoxes et l'armée
 
