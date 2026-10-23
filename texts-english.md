@@ -42,7 +42,7 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 **6.5** So yes, I can see your answer coming: "That proves nothing, maybe one of them is true." True, I'll grant you that. But they can't all be true. So most people on earth are wrong, billions of them, and every single one is sure it's the others who are wrong. The Egyptian is sure it's you. You're sure it's him. So how do you know you're not one of them?
 
-**6.6** Just look at yourself the way you look at him. If you'd been born in Syria, you'd be sitting here defending Islam, just as sure as you are now. Doesn't that bother you a bit?
+**6.6** And honestly, if God really wanted us to know him, why would he leave it to the accident of birth? Just look at yourself the way you look at him. If you'd been born in Syria, you'd be sitting here defending Islam, just as sure as you are now. Doesn't that bother you a bit?
 
 *Comprehension cue (the friend's objection):* "That proves nothing, maybe one of them is true."
 

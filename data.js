@@ -68,7 +68,7 @@ var TEXTS = [
       { who: 'moi', fr: "Du coup, la religion, c'est moins une question de vérité qu'une question de code postal. Environ huit personnes sur dix dans le monde gardent la religion dans laquelle elles ont grandi. Pas parce qu'elles ont vérifié, mais parce que c'est ce qu'on leur a donné à la maison, avec la langue, la bouffe, la culture et les valeurs." },
       { who: 'moi', fr: "Et ce qui me tue, c'est ça. Quand tu penses à un musulman en Égypte, t'es certain qu'il se trompe : le pauvre, on l'a élevé dans un mensonge. Et lui, il te regarde exactement pareil. Chacun a pitié de l'autre, et chacun est sûr d'être celui qui a eu de la chance." },
       { who: 'moi', fr: "Alors oui, je vois venir ta réponse : « Ça prouve rien, il y en a peut-être une qui est vraie. » C'est vrai, je te l'accorde. Mais elles peuvent pas toutes être vraies. Donc la plupart des gens sur terre se trompent, des milliards, et chacun est sûr que c'est les autres qui ont tort. L'Égyptien est sûr que c'est toi. Toi, t'es sûr que c'est lui. Alors comment tu sais que t'en fais pas partie ?" },
-      { who: 'moi', fr: "Regarde-toi juste comme tu le regardes, lui. Si t'étais né en Syrie, tu serais assis là à défendre l'islam, aussi sûr de toi que maintenant. Ça te dérange pas un peu ?" }
+      { who: 'moi', fr: "Et franchement, si Dieu voulait vraiment qu'on le connaisse, pourquoi il laisserait ça au hasard de la naissance ? Regarde-toi juste comme tu le regardes, lui. Si t'étais né en Syrie, tu serais assis là à défendre l'islam, aussi sûr de toi que maintenant. Ça te dérange pas un peu ?" }
     ],
     // Monologues quote the friend's objection; these are the Compréhension cues.
     cues: ["Ça prouve rien, il y en a peut-être une qui est vraie."] },
@@ -1240,6 +1240,7 @@ var SENTENCES = {
     { l: 4, fr: "L'Égyptien est sûr que c'est toi.", en: "The Egyptian is sure it's you." },
     { l: 4, fr: "Toi, t'es sûr que c'est lui.", en: "You're sure it's him." },
     { l: 4, fr: "Alors comment tu sais que t'en fais pas partie ?", en: "So how do you know you're not one of them?" },
+    { l: 5, fr: "Et franchement, si Dieu voulait vraiment qu'on le connaisse, pourquoi il laisserait ça au hasard de la naissance ?", en: "And honestly, if God really wanted us to know him, why would he leave it to the accident of birth?", f: 'f19' },
     { l: 5, fr: "Regarde-toi juste comme tu le regardes, lui.", en: "Just look at yourself the way you look at him." },
     { l: 5, fr: "Si t'étais né en Syrie, tu serais assis là à défendre l'islam, aussi sûr de toi que maintenant.", en: "If you'd been born in Syria, you'd be sitting here defending Islam, just as sure as you are now." },
     { l: 5, fr: "Ça te dérange pas un peu ?", en: "Doesn't that bother you a bit?" }
@@ -1967,8 +1968,8 @@ var CHUNKS = {
         small: [3, 1, 2, 2, 1, 2, 1, 2, 2, 2, 2, 1, 3, 1, 2, 2, 2],
         big:   [8, 4, 4, 5, 8, 2] },
   6:  { join: [13, 17, 20],
-        small: [1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 2, 1, 1, 2],
-        big:   [4, 3, 3, 2, 1, 4, 3, 3, 3] },
+        small: [1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2],
+        big:   [4, 3, 3, 2, 1, 4, 3, 3, 4] },
   7:  { join: [3],
         small: [1, 2, 3, 1, 1, 1, 2, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1],
         big:   [3, 5, 4, 8, 5, 4] },

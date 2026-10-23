@@ -14,4 +14,4 @@ Et ce qui me tue, c'est ça. Quand tu penses à un musulman en Égypte, t'es cer
 
 Alors oui, je vois venir ta réponse : « Ça prouve rien, il y en a peut-être une qui est vraie. » C'est vrai, je te l'accorde. Mais elles peuvent pas toutes être vraies. Donc la plupart des gens sur terre se trompent, des milliards, et chacun est sûr que c'est les autres qui ont tort. L'Égyptien est sûr que c'est toi. Toi, t'es sûr que c'est lui. Alors comment tu sais que t'en fais pas partie ?
 
-Regarde-toi juste comme tu le regardes, lui. Si t'étais né en Syrie, tu serais assis là à défendre l'islam, aussi sûr de toi que maintenant. Ça te dérange pas un peu ?
+Et franchement, si Dieu voulait vraiment qu'on le connaisse, pourquoi il laisserait ça au hasard de la naissance ? Regarde-toi juste comme tu le regardes, lui. Si t'étais né en Syrie, tu serais assis là à défendre l'islam, aussi sûr de toi que maintenant. Ça te dérange pas un peu ?

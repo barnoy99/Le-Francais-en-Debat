@@ -19,11 +19,10 @@ Muslim. He reviewed the English first (now in `texts-english.md` §6), then the 
   childhood religion (Pew 2025: about one adult in five has left it), the Egypt mirror (each pities the
   other), « elles peuvent pas toutes être vraies » so most are wrong and each thinks it's the others,
   ending on Syria. Cut: the maths / « deux et deux font cinq » part (text 5's argument), « le bon numéro »,
-  « Si Dieu voulait vraiment… », « Et je vais plus loin ». 26 sentences, CHUNKS hand-cut.
+  « Et je vais plus loin ». 26 sentences, CHUNKS hand-cut.
 - Frames: f25's exemplar is now Arabie saoudite. **f20** home → text 3, **f36** home → text 7 (both
-  still carried there). **f19** keeps `textId: 6` only so its prompts stay corpus-A; text 18 is the
-  only one that carries it now. Saved `pos` on text 6 may point a little off (harmless).
-- Assets `?v=25`, `CACHE_VERSION = 'v25'`.
+  still carried there). **f19** stays in text 6: he asked for « Si Dieu voulait vraiment… au hasard de la naissance ? » back, before the ending (v26). Saved `pos` on text 6 may point a little off (harmless).
+- Assets `?v=26`, `CACHE_VERSION = 'v26'` (v26 = the f19 line back).
 
 ## v24 (2026-10-16) — « Ma vie » is only what he says
 
