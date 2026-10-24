@@ -518,3 +518,32 @@ Monologues: what he says on a video call with family in France or Luxembourg. Wr
 
 25.5 So tell me. Do you want to wait for the perfect moment, or do you want to come? Because the perfect moment, here, doesn't exist. Come in spring: the weather's nice, and it's not too hot yet.
 
+
+## 27 · Entre deux gardes
+
+*Between two guard shifts* — to a French-speaking friend from another platoon in his company, on base.
+Draft, English first; the French is not written yet. Only his words: the friend's answers show in his reactions.
+
+Terms (IDF → English → French army): פלוגה → company → *la compagnie*; מחלקה → platoon → *la section*;
+צוות → squad → *le groupe*; עלה לשמירה → went on guard → *il est monté de garde* (and back: *descendre de garde*);
+אפוד → combat vest → *le gilet de combat*; מחסניות → magazines → *les chargeurs*; חדר אוכל → dining hall →
+*le réfectoire*; כוננות → on standby → *être d'alerte*; מ"פ → company commander → *le commandant de compagnie*;
+סיור רגלי / רכוב → foot / vehicle patrol → *une patrouille à pied / motorisée*; מחסום → checkpoint → *un barrage*.
+
+27.1 Hey! What are you doing here? I thought your platoon was at the other post. Ah, you got back last night. Wait, I'll grab my weapon and I'm coming. Give me two minutes.
+
+27.2 Are you coming to the dining hall? Apparently there's schnitzel today. Honestly, the food here is actually fine. It's even good.
+
+27.3 Where's Shai? Ah, he went on guard. He's stuck there until two. Poor guy, he was on last night too. If he comes off guard in time, we'll save him a plate.
+
+27.4 Did you hear? The guy from your squad lost his vest. The whole vest, with the magazines in it. Don't ask me how. He's been looking for it since this morning, he turned the whole room upside down. And the company commander is furious. If it doesn't turn up by tonight, it's going to be a big deal. Ah, it was in the jeep? Seriously? Well, he got off lightly.
+
+27.5 Tonight we're going out on an operation. First a checkpoint at the entrance to the village, then a patrol. We don't know yet if it's on foot or in vehicles. It depends on how many drivers there are. And you? You're on standby? Lucky you.
+
+27.6 What time is the briefing? Seven? Then I've got time to sleep for an hour. If I'm not there by quarter to, come and wake me up. Seriously, don't let me sleep.
+
+27.7 By the way, you wouldn't have a charger? Not a magazine, eh, a phone charger. My phone's at two percent, and I promised my wife I'd call her before we go out.
+
+27.8 And at home, how's it going? Mine are holding up, but they're counting the days. When do you go home? Thursday? Lucky you. Me, not before next week.
+
+27.9 Come on, let's go eat before there's nothing left. And if there really is schnitzel, I'm taking two.
