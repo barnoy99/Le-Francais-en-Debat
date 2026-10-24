@@ -10,6 +10,20 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v30 (2026-10-24) — text 27 « Entre deux gardes » (Ma vie)
+
+His ask: reserve small talk with a French-speaking friend from another platoon in his company, on base.
+English reviewed first (`texts-english.md` §27, with the IDF → English → French army terms table), then the French.
+- **Text 27** (theme « Sur la base »): only his words, the friend's answers show in his reactions (« Ah, il était
+  dans la jeep ? Sérieux ? »). Grab the weapon and come, the réfectoire and the food, Shaï « monté de garde »
+  until 14:00, the guy from the friend's squad who lost his « gilet de combat » with « les chargeurs dedans »,
+  tonight's « barrage » + « patrouille à pied ou en véhicule », the briefing, the phone « chargeur » joke, going home.
+- Terms: compagnie / section / groupe (פלוגה / מחלקה / צוות), monter / descendre de garde, être d'alerte.
+- Frames: **f05** (« c'est pas parce que c'est l'armée qu'on mange mal »), **f32** (« T'es d'alerte, toi ? »),
+  **f35** (« tu veux manger, ou tu veux attendre qu'il reste plus rien ? »); 27 added to their `sources`.
+  36 sentences, CHUNKS hand-cut.
+- Assets `?v=30`, `CACHE_VERSION = 'v30'`. 9 Ma vie texts, 27 in all.
+
 ## v27 (2026-10-23) — text 23 (Netanyahou): the Likud as a one-man show
 
 His asks, English reviewed first (`texts-english.md` §23):

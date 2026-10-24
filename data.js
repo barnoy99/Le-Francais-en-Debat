@@ -305,6 +305,19 @@ var TEXTS = [
       { who: 'moi', fr: "Les enfants parlent pas beaucoup français. Mais avec des enfants, on a pas besoin de grand-chose. Un ballon, un jeu de cartes, et c'est parti. Et puis, moi, ça me fera pratiquer mon français." },
       { who: 'moi', fr: "Alors, dites-moi. Vous voulez attendre le moment parfait, ou vous voulez venir ? Parce que le moment parfait, chez nous, il existe pas. Venez au printemps : il fait beau, et c'est pas encore trop chaud." }
     ] },
+  { id: 27, corpus: 'V', kind: 'monologue', title: "Entre deux gardes", file: "texts/27-entre-deux-gardes.md",
+    theme: "Sur la base",
+    lines: [
+      { who: 'moi', fr: "Hé ! Qu'est-ce que tu fais là ? Je croyais que ta section était à l'autre poste. Ah, vous êtes rentrés hier soir. Attends, je prends mon arme et j'arrive. Donne-moi deux minutes." },
+      { who: 'moi', fr: "Tu viens au réfectoire ? Il paraît qu'il y a du schnitzel aujourd'hui. Franchement, c'est pas parce que c'est l'armée qu'on mange mal. C'est même bon." },
+      { who: 'moi', fr: "Il est où, Shaï ? Ah, il est monté de garde. Il en a jusqu'à quatorze heures. Le pauvre, il était déjà de garde cette nuit. S'il descend de garde à temps, on lui met une assiette de côté." },
+      { who: 'moi', fr: "T'es au courant ? Le gars de ton groupe, il a perdu son gilet de combat. Tout le gilet, avec les chargeurs dedans. Me demande pas comment. Il le cherche depuis ce matin, il a retourné toute la chambre. Et le commandant de compagnie est furieux. S'il le retrouve pas d'ici ce soir, ça va faire toute une histoire. Ah, il était dans la jeep ? Sérieux ? Bon, il s'en est bien tiré." },
+      { who: 'moi', fr: "Ce soir, on sort en opération. D'abord un barrage à l'entrée du village, et après une patrouille. On sait pas encore si c'est à pied ou en véhicule. Ça dépend de combien de chauffeurs on a. Et toi ? T'es d'alerte, toi ? Veinard !" },
+      { who: 'moi', fr: "Le briefing, c'est à quelle heure ? Sept heures ? Alors j'ai le temps de dormir une heure. Si je suis pas là à sept heures moins le quart, viens me réveiller. Sérieux, me laisse pas dormir." },
+      { who: 'moi', fr: "Au fait, t'aurais pas un chargeur ? Pas pour l'arme, hein, un chargeur de téléphone. Mon téléphone est à deux pour cent, et j'ai promis à ma femme de l'appeler avant qu'on sorte." },
+      { who: 'moi', fr: "Et chez toi, ça va ? Chez moi, ils tiennent le coup, mais ils comptent les jours. Tu rentres quand ? Jeudi ? T'as de la chance. Moi, pas avant la semaine prochaine." },
+      { who: 'moi', fr: "Allez, tu veux manger, ou tu veux attendre qu'il reste plus rien ? Et s'il y a vraiment du schnitzel, j'en prends deux." }
+    ] },
 ];
 
 // Prompt topics. The scheduler needs three DIFFERENT topics for a frame's three
@@ -412,7 +425,7 @@ var FRAMES = [
       { id: 'f04-7', topic: 'israel',    fr: "Un ami français croit que tu dis que l'armée fait jamais d'erreurs. Toi, tu dis juste qu'une erreur, c'est pas une politique.", model: "Je dis pas que l'armée fait jamais d'erreurs. Je dis juste qu'une erreur, c'est pas une politique.", en: "I'm not saying the army never makes mistakes. I'm just saying a mistake isn't a policy." }
     ] },
 
-  { id: 'f05', textId: 8, sources: [8, 1, 7, 24],
+  { id: 'f05', textId: 8, sources: [8, 1, 7, 24, 27],
     form: "C'est pas parce que {P} que {Q}.",
     gloss: "Just because ___ doesn't mean ___",
     gist: "Being cold doesn't make it false.",
@@ -948,7 +961,7 @@ var FRAMES = [
     ] },
 
   // ── E. Renvoyer la balle ────────────────────────────────
-  { id: 'f32', textId: 14, sources: [14, 4, 7, 11, 12, 13, 16, 21],
+  { id: 'f32', textId: 14, sources: [14, 4, 7, 11, 12, 13, 16, 21, 27],
     form: "{TU V}, toi ?",
     gloss: "Would YOU ___?",
     gist: "Put the dilemma to them personally: what would you do in my place?",
@@ -1005,7 +1018,7 @@ var FRAMES = [
       { id: 'f34-7', topic: 'dieu',      fr: "Un ami parle de la morale religieuse. Toi, tu veux parler de ce que la Bible dit sur l'esclavage.", model: "La morale religieuse, parlons-en. Ce que la Bible dit sur l'esclavage, parlons-en aussi.", en: "Religious morality, let's talk about it. What the Bible says about slavery, let's talk about that too." }
     ] },
 
-  { id: 'f35', textId: 17, sources: [17, 25],
+  { id: 'f35', textId: 17, sources: [17, 25, 27],
     form: "Tu veux {A}, ou tu veux {B} ?",
     gloss: "Do you want ___, or do you want ___?",
     gist: "Make them choose between solving the problem and scoring the point.",
@@ -1951,6 +1964,44 @@ var SENTENCES = {
     { l: 4, fr: "Alors, dites-moi. Vous voulez attendre le moment parfait, ou vous voulez venir ?", en: "So tell me. Do you want to wait for the perfect moment, or do you want to come?", f: 'f35' },
     { l: 4, fr: "Parce que le moment parfait, chez nous, il existe pas.", en: "Because the perfect moment, here, doesn't exist." },
     { l: 4, fr: "Venez au printemps : il fait beau, et c'est pas encore trop chaud.", en: "Come in spring: the weather's nice, and it's not too hot yet." }
+  ],
+  27: [
+    { l: 0, fr: "Hé ! Qu'est-ce que tu fais là ?", en: "Hey! What are you doing here?" },
+    { l: 0, fr: "Je croyais que ta section était à l'autre poste.", en: "I thought your platoon was at the other post." },
+    { l: 0, fr: "Ah, vous êtes rentrés hier soir.", en: "Ah, you got back last night." },
+    { l: 0, fr: "Attends, je prends mon arme et j'arrive. Donne-moi deux minutes.", en: "Wait, I'll grab my weapon and I'm coming. Give me two minutes." },
+    { l: 1, fr: "Tu viens au réfectoire ?", en: "Are you coming to the dining hall?" },
+    { l: 1, fr: "Il paraît qu'il y a du schnitzel aujourd'hui.", en: "Apparently there's schnitzel today." },
+    { l: 1, fr: "Franchement, c'est pas parce que c'est l'armée qu'on mange mal. C'est même bon.", en: "Honestly, just because it's the army doesn't mean the food's bad. It's even good.", f: 'f05' },
+    { l: 2, fr: "Il est où, Shaï ? Ah, il est monté de garde.", en: "Where's Shai? Ah, he went on guard." },
+    { l: 2, fr: "Il en a jusqu'à quatorze heures.", en: "He's stuck there until two." },
+    { l: 2, fr: "Le pauvre, il était déjà de garde cette nuit.", en: "Poor guy, he was already on last night." },
+    { l: 2, fr: "S'il descend de garde à temps, on lui met une assiette de côté.", en: "If he comes off guard in time, we'll put a plate aside for him." },
+    { l: 3, fr: "T'es au courant ?", en: "Did you hear?" },
+    { l: 3, fr: "Le gars de ton groupe, il a perdu son gilet de combat.", en: "The guy from your squad lost his combat vest." },
+    { l: 3, fr: "Tout le gilet, avec les chargeurs dedans. Me demande pas comment.", en: "The whole vest, with the magazines in it. Don't ask me how." },
+    { l: 3, fr: "Il le cherche depuis ce matin, il a retourné toute la chambre.", en: "He's been looking for it since this morning, he turned the whole room upside down." },
+    { l: 3, fr: "Et le commandant de compagnie est furieux.", en: "And the company commander is furious." },
+    { l: 3, fr: "S'il le retrouve pas d'ici ce soir, ça va faire toute une histoire.", en: "If he doesn't find it by tonight, it's going to be a big deal." },
+    { l: 3, fr: "Ah, il était dans la jeep ? Sérieux ? Bon, il s'en est bien tiré.", en: "Ah, it was in the jeep? Seriously? Well, he got off lightly." },
+    { l: 4, fr: "Ce soir, on sort en opération.", en: "Tonight we're going out on an operation." },
+    { l: 4, fr: "D'abord un barrage à l'entrée du village, et après une patrouille.", en: "First a checkpoint at the entrance to the village, then a patrol." },
+    { l: 4, fr: "On sait pas encore si c'est à pied ou en véhicule.", en: "We don't know yet if it's on foot or in vehicles." },
+    { l: 4, fr: "Ça dépend de combien de chauffeurs on a.", en: "It depends on how many drivers we have." },
+    { l: 4, fr: "Et toi ? T'es d'alerte, toi ? Veinard !", en: "And you? You're on standby, are you? Lucky you!", f: 'f32' },
+    { l: 5, fr: "Le briefing, c'est à quelle heure ? Sept heures ?", en: "What time is the briefing? Seven?" },
+    { l: 5, fr: "Alors j'ai le temps de dormir une heure.", en: "Then I've got time to sleep for an hour." },
+    { l: 5, fr: "Si je suis pas là à sept heures moins le quart, viens me réveiller.", en: "If I'm not there by quarter to seven, come and wake me up." },
+    { l: 5, fr: "Sérieux, me laisse pas dormir.", en: "Seriously, don't let me sleep." },
+    { l: 6, fr: "Au fait, t'aurais pas un chargeur ?", en: "By the way, you wouldn't have a charger?" },
+    { l: 6, fr: "Pas pour l'arme, hein, un chargeur de téléphone.", en: "Not for the weapon, eh, a phone charger." },
+    { l: 6, fr: "Mon téléphone est à deux pour cent, et j'ai promis à ma femme de l'appeler avant qu'on sorte.", en: "My phone's at two percent, and I promised my wife I'd call her before we go out." },
+    { l: 7, fr: "Et chez toi, ça va ?", en: "And at home, how's it going?" },
+    { l: 7, fr: "Chez moi, ils tiennent le coup, mais ils comptent les jours.", en: "Mine are holding up, but they're counting the days." },
+    { l: 7, fr: "Tu rentres quand ? Jeudi ? T'as de la chance.", en: "When do you go home? Thursday? Lucky you." },
+    { l: 7, fr: "Moi, pas avant la semaine prochaine.", en: "Me, not before next week." },
+    { l: 8, fr: "Allez, tu veux manger, ou tu veux attendre qu'il reste plus rien ?", en: "Come on, do you want to eat, or do you want to wait till there's nothing left?", f: 'f35' },
+    { l: 8, fr: "Et s'il y a vraiment du schnitzel, j'en prends deux.", en: "And if there really is schnitzel, I'm taking two." }
   ]
 };
 
@@ -2038,5 +2089,8 @@ var CHUNKS = {
         big:   [4, 4, 2, 4, 2] },
   25: { join: [1],
         small: [1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1],
-        big:   [3, 2, 4, 5, 3, 3] }
+        big:   [3, 2, 4, 5, 3, 3] },
+  27: { join: [],
+        small: [2, 2, 2, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2],
+        big:   [4, 3, 4, 3, 4, 5, 4, 3, 6] }
 };
