@@ -1,17 +1,17 @@
 /* Service worker — offline support.
    IMPORTANT: bump CACHE_VERSION on every deploy that changes assets,
    together with the ?v=N cache-busters in index.html. */
-var CACHE_VERSION = 'v32';
+var CACHE_VERSION = 'v33';
 var CACHE_NAME = 'debat-' + CACHE_VERSION;
 
 var SHELL = [
   './',
   'index.html',
-  'style.css?v=32',
-  'core.js?v=32',
-  'data.js?v=32',
-  'app.js?v=32',
-  'firebase-config.js?v=32',
+  'style.css?v=33',
+  'core.js?v=33',
+  'data.js?v=33',
+  'app.js?v=33',
+  'firebase-config.js?v=33',
   'manifest.json',
   'icon-192.png',
   'icon-512.png'

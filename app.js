@@ -349,7 +349,7 @@
     $('run-who').textContent = who;
     $('run-count').textContent = count;
     $('run-progress-fill').style.width = (100 * pos / list.length) + '%';
-    $('btn-prev').disabled = pos === 0;
+    run.startedAt = Date.now();
     exec();
   }
 
@@ -366,8 +366,10 @@
     playAt(run.pos + run.len);
   }
 
+  // Like a music player: a few seconds in, ⏮ restarts this passage; right at its start, it goes back one.
   function prevItem() {
-    if (!run.active || run.pos === 0) return;
+    if (!run.active) return;
+    if (run.pos === 0 || Date.now() - run.startedAt > 2500) { playAt(run.pos); return; }
     playAt(run.part === 'texte' ? run.chunks[Core.chunkIndex(run.chunks, run.pos) - 1].from : run.pos - 1);
   }
 

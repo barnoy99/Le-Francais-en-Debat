@@ -10,6 +10,12 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v33 (2026-10-26) — ⏮ restarts the passage
+
+Hands-free had no way to hear a passage again from its start by going back: ⏮ only jumped to the previous chunk
+(and was disabled at the first). Now ⏮ restarts the current passage if > 2.5 s in (or at the first); within 2.5 s
+of its start it goes back one chunk. ↺ Réécouter unchanged. Assets `?v=33`, `CACHE_VERSION = 'v33'`.
+
 ## v32 (2026-10-26) — text 23: the Haredi deal, unambiguous
 
 « Pas de service militaire, et l'argent de l'État. » could be heard as « no army, no money ». Now money first,
