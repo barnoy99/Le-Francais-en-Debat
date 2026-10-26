@@ -10,6 +10,14 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v31 (2026-10-26) — text 26 (Haredim): the moral case before « scandale moral »
+
+His ask, added to 26.1 between « La plupart font pas l'armée » and the scandal line (now « Alors pour moi… »):
+« Tout le monde sait que pour vivre ici, faut savoir se défendre. Eux aussi, ils le savent. Ils savent très bien
+que des gens risquent leur vie, et parfois la sacrifient, pour qu'eux puissent vivre dans ce pays. »
+(His dash → commas for TTS; « pour qu'eux » so « ils » can't read as « des gens ».) 26 sentences, CHUNKS re-cut
+(paragraph 1 is now 2+2+1+2 small, 4+3 big). Assets `?v=31`, `CACHE_VERSION = 'v31'`.
+
 ## v30 (2026-10-24) — text 27 « Entre deux gardes » (Ma vie)
 
 His ask: reserve small talk with a French-speaking friend from another platoon in his company, on base.

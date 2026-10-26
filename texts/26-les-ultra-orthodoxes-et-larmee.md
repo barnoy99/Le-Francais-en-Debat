@@ -4,7 +4,7 @@ Corpus V (Ma vie) · monologue, à la famille, en appel vidéo.
 
 ---
 
-Les ultra-orthodoxes et l'armée, c'est un sujet qui me met en colère. La plupart font pas l'armée. Et pour moi, c'est un scandale moral. C'est une question de justice, la plus simple qui soit : l'égalité.
+Les ultra-orthodoxes et l'armée, c'est un sujet qui me met en colère. La plupart font pas l'armée. Tout le monde sait que pour vivre ici, faut savoir se défendre. Eux aussi, ils le savent. Ils savent très bien que des gens risquent leur vie, et parfois la sacrifient, pour qu'eux puissent vivre dans ce pays. Alors pour moi, c'est un scandale moral. C'est une question de justice, la plus simple qui soit : l'égalité.
 
 Au début, en 1948, Ben Gourion exempte quatre cents étudiants de yeshiva. Après la Shoah, l'idée, c'était de sauver un monde d'étude qui avait presque disparu. Quatre cents, ça se comprend. Aujourd'hui, y en a à peu près quatre-vingt mille en âge de servir. On parle pas de quatre cents étudiants. On parle de quatre-vingt mille jeunes hommes.
 

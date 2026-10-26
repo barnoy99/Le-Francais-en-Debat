@@ -484,7 +484,7 @@ Monologues: what he says on a video call with family in France or Luxembourg. Wr
 
 *The ultra-Orthodox and the army* — to the family, on a video call.
 
-26.1 The ultra-Orthodox and the army is a subject that makes me angry. Most of them don't do the army. And to me, it's a moral scandal. It's a question of justice, the simplest kind there is: equality.
+26.1 The ultra-Orthodox and the army is a subject that makes me angry. Most of them don't do the army. Everyone knows that to live here, you have to be able to defend yourself. They know it too. They know very well that people risk their lives, and sometimes give them, so that they can live in this country. So to me, it's a moral scandal. It's a question of justice, the simplest kind there is: equality.
 
 26.2 At the start, in 1948, Ben-Gurion exempts four hundred yeshiva students. After the Holocaust, the idea was to save a world of study that had almost disappeared. Four hundred, you can understand. Today, there are about eighty thousand of military age. We're not talking about four hundred students. We're talking about eighty thousand young men.
 
