@@ -6,9 +6,9 @@ var TEXTS = [
   { id: 1, corpus: 'A', kind: 'monologue', title: "L'indifférence du cosmos", file: "texts/01-lindifference-du-cosmos.md",
     lines: [
       { who: 'moi', fr: "Tu sais ce qui m'a fait décrocher, au fond ? C'est pas un argument. C'est l'échelle. Regarde le ciel une nuit, vraiment. Des centaines de milliards de galaxies, chacune avec des milliards d'étoiles." },
-      { who: 'moi', fr: "Et l'univers a à peu près quatorze milliards d'années. Si tu le ramènes à une seule année, l'humanité arrive le trente et un décembre, dans les dernières minutes. Et on voudrait que tout ça ait été fait pour nous ? Franchement, ça me paraît un peu gros." },
+      { who: 'moi', fr: "Et l'univers a à peu près quatorze milliards d'années. Imagine que tu ramènes ces quatorze milliards d'années à une seule année. Le premier janvier, à minuit, c'est le début de l'univers. Et la toute dernière seconde du trente et un décembre, c'est aujourd'hui. Dans ce calendrier, l'humanité arrive le trente et un décembre, dans les toutes dernières minutes. Et on voudrait que tout ça ait été fait pour nous ? Franchement, ça me paraît un peu gros." },
       { who: 'moi', fr: "Et puis y a la souffrance. En 2004, un tsunami tue plus de deux cent mille personnes en une journée. Des croyants, des athées, des bébés. La vague, elle a pas trié. Pour moi, ça ressemble pas à un monde que quelqu'un surveille. Ça ressemble à un monde qui s'en fiche." },
-      { who: 'moi', fr: "C'est ce que dit Dawkins, en gros. Dans l'univers, y a pas de dessein, pas de but, pas de bien ni de mal. Juste une indifférence aveugle. Et ce qu'on voit, c'est exactement ce à quoi on s'attendrait s'il y avait personne derrière." },
+      { who: 'moi', fr: "Dans l'univers, y a pas de dessein, pas de but, pas de bien ni de mal. Juste une indifférence aveugle. Et ce qu'on voit, c'est exactement ce à quoi on s'attendrait s'il y avait personne derrière." },
       { who: 'moi', fr: "Alors oui, je vois venir ta réponse : « C'est horrible, ce que tu dis. Vivre dans un monde comme ça, c'est insupportable. » Je comprends. Mais c'est pas parce qu'une idée fait peur qu'elle est fausse. Le monde, il a pas à être confortable." },
       { who: 'moi', fr: "Et je vais même plus loin. Si l'univers s'en fiche, alors la gentillesse, elle vient de nous. Personne ne nous l'a imposée. Quand quelqu'un aide un inconnu, c'est pas un ordre d'en haut, c'est un choix. Moi, je trouve ça plus beau, pas moins. Pas toi ?" }
     ],
@@ -1070,7 +1070,10 @@ var SENTENCES = {
     { l: 0, fr: "Regarde le ciel une nuit, vraiment.", en: "Look at the sky one night, really look." },
     { l: 0, fr: "Des centaines de milliards de galaxies, chacune avec des milliards d'étoiles.", en: "Hundreds of billions of galaxies, each with billions of stars." },
     { l: 1, fr: "Et l'univers a à peu près quatorze milliards d'années.", en: "And the universe is about fourteen billion years old." },
-    { l: 1, fr: "Si tu le ramènes à une seule année, l'humanité arrive le trente et un décembre, dans les dernières minutes.", en: "If you squeeze it into a single year, humanity shows up on the thirty-first of December, in the last few minutes." },
+    { l: 1, fr: "Imagine que tu ramènes ces quatorze milliards d'années à une seule année.", en: "Imagine you squeeze these fourteen billion years into a single year." },
+    { l: 1, fr: "Le premier janvier, à minuit, c'est le début de l'univers.", en: "January first, at midnight, is the beginning of the universe." },
+    { l: 1, fr: "Et la toute dernière seconde du trente et un décembre, c'est aujourd'hui.", en: "And the very last second of December thirty-first is today." },
+    { l: 1, fr: "Dans ce calendrier, l'humanité arrive le trente et un décembre, dans les toutes dernières minutes.", en: "On that calendar, humanity shows up on the thirty-first of December, in the very last few minutes." },
     { l: 1, fr: "Et on voudrait que tout ça ait été fait pour nous ?", en: "And we'd like all that to have been made for us?" },
     { l: 1, fr: "Franchement, ça me paraît un peu gros.", en: "Honestly, that seems a bit much to me." },
     { l: 2, fr: "Et puis y a la souffrance.", en: "And then there's suffering." },
@@ -1079,7 +1082,6 @@ var SENTENCES = {
     { l: 2, fr: "La vague, elle a pas trié.", en: "The wave didn't pick and choose." },
     { l: 2, fr: "Pour moi, ça ressemble pas à un monde que quelqu'un surveille.", en: "To me, that doesn't look like a world someone is watching over." },
     { l: 2, fr: "Ça ressemble à un monde qui s'en fiche.", en: "It looks like a world that doesn't care." },
-    { l: 3, fr: "C'est ce que dit Dawkins, en gros.", en: "That's what Dawkins says, roughly." },
     { l: 3, fr: "Dans l'univers, y a pas de dessein, pas de but, pas de bien ni de mal.", en: "In the universe there's no design, no purpose, no good and no evil." },
     { l: 3, fr: "Juste une indifférence aveugle.", en: "Just blind indifference." },
     { l: 3, fr: "Et ce qu'on voit, c'est exactement ce à quoi on s'attendrait s'il y avait personne derrière.", en: "And what we see is exactly what we'd expect if there were nobody behind it." },
@@ -2015,9 +2017,9 @@ var SENTENCES = {
 // (a lead-in, a question and its answer, an echo); big = « Passage »: a short paragraph.
 // Each size is made of whole pieces of the size below (data-test.js checks).
 var CHUNKS = {
-  1:  { join: [15, 25],
-        small: [2, 2, 2, 2, 2, 2, 2, 3, 1, 1, 2, 2, 2, 2],
-        big:   [4, 4, 6, 4, 3, 6] },
+  1:  { join: [17, 27],
+        small: [2, 2, 2, 2, 3, 2, 2, 2, 3, 1, 2, 2, 2, 2],
+        big:   [4, 4, 3, 6, 3, 3, 6] },
   2:  { join: [2, 5, 9, 12, 15, 21, 26, 28],
         small: [1, 1, 2, 3, 1, 1, 2, 4, 2, 2, 1, 3, 2, 3, 2],
         big:   [2, 5, 4, 4, 4, 4, 5, 2] },

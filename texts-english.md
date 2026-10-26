@@ -150,11 +150,11 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 **1.1** You know what made me drop it, deep down? It's not an argument. It's the scale. Look at the sky one night, really look. Hundreds of billions of galaxies, each with billions of stars.
 
-**1.2** And the universe is about fourteen billion years old. If you squeeze it into a single year, humanity shows up on the thirty-first of December, in the last few minutes. And we'd like all that to have been made for us? Honestly, that seems a bit much to me.
+**1.2** And the universe is about fourteen billion years old. Imagine you squeeze these fourteen billion years into a single year. January first, at midnight, is the beginning of the universe. And the very last second of December thirty-first is today. On that calendar, humanity shows up on the thirty-first of December, in the very last few minutes. And we'd like all that to have been made for us? Honestly, that seems a bit much to me.
 
 **1.3** And then there's suffering. In 2004, a tsunami kills more than two hundred thousand people in one day. Believers, atheists, babies. The wave didn't pick and choose. To me, that doesn't look like a world someone is watching over. It looks like a world that doesn't care.
 
-**1.4** That's what Dawkins says, roughly. In the universe there's no design, no purpose, no good and no evil. Just blind indifference. And what we see is exactly what we'd expect if there were nobody behind it.
+**1.4** In the universe there's no design, no purpose, no good and no evil. Just blind indifference. And what we see is exactly what we'd expect if there were nobody behind it.
 
 **1.5** So yes, I can see your answer coming: 'That's horrible, what you're saying. Living in a world like that is unbearable.' I understand. But just because an idea is frightening doesn't make it false. The world doesn't have to be comfortable.
 

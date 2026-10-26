@@ -10,6 +10,13 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v34 (2026-10-26) — text 1: the year-calendar spelled out, no Dawkins
+
+His ask: explain « squeeze 14 billion years into one year » so it works the first time (1 Jan midnight = the
+beginning, last second of 31 Dec = today); name no one, keep only the idea. 1.2 now has 4 calendar sentences;
+the « C'est ce que dit Dawkins, en gros. » sentence is gone. 27 → 29 sentences, CHUNKS (join/small/big) re-cut.
+Assets `?v=34`, `CACHE_VERSION = 'v34'`.
+
 ## v33 (2026-10-26) — ⏮ restarts the passage
 
 Hands-free had no way to hear a passage again from its start by going back: ⏮ only jumped to the previous chunk
