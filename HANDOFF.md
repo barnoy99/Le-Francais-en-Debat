@@ -10,6 +10,12 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v32 (2026-10-26) — text 23: the Haredi deal, unambiguous
+
+« Pas de service militaire, et l'argent de l'État. » could be heard as « no army, no money ». Now money first,
+exemption spelled out: « Vous recevez l'argent de l'État, et vous êtes dispensés de l'armée. » Same sentence
+count, CHUNKS unchanged. Assets `?v=32`, `CACHE_VERSION = 'v32'`.
+
 ## v31 (2026-10-26) — text 26 (Haredim): the moral case before « scandale moral »
 
 His ask, added to 26.1 between « La plupart font pas l'armée » and the scandal line (now « Alors pour moi… »):

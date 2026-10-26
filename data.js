@@ -277,7 +277,7 @@ var TEXTS = [
     lines: [
       { who: 'moi', fr: "La politique, chez nous, c'est un sport national. Tout le monde a un avis, et il le donne. Au repas du vendredi soir, ça peut devenir très animé. Je dis pas que tout le monde crie. Je dis juste que personne ne se tait." },
       { who: 'moi', fr: "Moi, Netanyahou, je voterai jamais pour lui. Il a des qualités, je vous l'accorde. Il comprend la politique mieux que personne, il a une énorme expérience, et il a la carrure d'un leader mondial. Et pendant la guerre, j'ai aimé qu'il soit aussi dur. Mais ses défauts pèsent beaucoup plus lourd." },
-      { who: 'moi', fr: "D'abord, il dresse les Israéliens les uns contre les autres. Il fabrique de la haine. Ensuite, il alimente les fausses informations. Et puis y a les ultra-orthodoxes, ses « partenaires naturels », comme il dit. Le marché est simple : vous votez avec moi sur tout, et vous obtenez tout. Pas de service militaire, et l'argent de l'État. C'est là que je décroche complètement." },
+      { who: 'moi', fr: "D'abord, il dresse les Israéliens les uns contre les autres. Il fabrique de la haine. Ensuite, il alimente les fausses informations. Et puis y a les ultra-orthodoxes, ses « partenaires naturels », comme il dit. Le marché est simple : vous votez avec moi sur tout, et vous obtenez tout. Vous recevez l'argent de l'État, et vous êtes dispensés de l'armée. C'est là que je décroche complètement." },
       { who: 'moi', fr: "Et un dernier truc. C'est un génie des campagnes, personne ne gagne une élection comme lui. Mais c'est aussi ça, le problème. Il a fait du Likoud un one-man-show. Avant, c'était un vrai parti, avec des grands noms, des gens qui pouvaient prendre la relève. Aujourd'hui, autour de lui, y a plus que des béni-oui-oui, des gens faibles qui lui obéissent au doigt et à l'œil. Essayez d'imaginer le Likoud sans lui : vous pouvez pas. Tous ceux qui commencent à ressembler à un rival finissent par partir. Alors oui, il gagne des élections. Mais c'est plus un parti, c'est un fan-club. Et le jour où Netanyahou s'en va, le Likoud s'en va avec lui." }
     ] },
   { id: 26, corpus: 'V', kind: 'monologue', title: "Les ultra-orthodoxes et l'armée", file: "texts/26-les-ultra-orthodoxes-et-larmee.md",
@@ -1886,7 +1886,7 @@ var SENTENCES = {
     { l: 2, fr: "Ensuite, il alimente les fausses informations.", en: "Then, he feeds fake news." },
     { l: 2, fr: "Et puis y a les ultra-orthodoxes, ses « partenaires naturels », comme il dit.", en: "And then there are the ultra-Orthodox, his 'natural partners', as he puts it." },
     { l: 2, fr: "Le marché est simple : vous votez avec moi sur tout, et vous obtenez tout.", en: "The deal is simple: you vote with me on everything, and you get everything." },
-    { l: 2, fr: "Pas de service militaire, et l'argent de l'État.", en: "No army service, and money from the state." },
+    { l: 2, fr: "Vous recevez l'argent de l'État, et vous êtes dispensés de l'armée.", en: "You get the state's money, and you're exempt from the army." },
     { l: 2, fr: "C'est là que je décroche complètement.", en: "That's where he loses me completely.", f: 'f29' },
     { l: 3, fr: "Et un dernier truc.", en: "And one last thing." },
     { l: 3, fr: "C'est un génie des campagnes, personne ne gagne une élection comme lui.", en: "He's a campaigning genius, nobody wins an election like him." },
