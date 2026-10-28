@@ -150,7 +150,7 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 **1.1** You know what made me drop it, deep down? It's not an argument. It's the scale. Look at the sky one night, really look. Hundreds of billions of galaxies, each with billions of stars.
 
-**1.2** And the universe is about fourteen billion years old. Imagine you squeeze these fourteen billion years into a single year. January first, at midnight, is the beginning of the universe. And the very last second of December thirty-first is today. On that calendar, humanity shows up on the thirty-first of December, in the very last few minutes. And we'd like all that to have been made for us? Honestly, that seems a bit much to me.
+**1.2** And the universe is about fourteen billion years old. Imagine you squeeze these fourteen billion years into a single year. January first, at midnight, is the beginning of the universe. And the very last second of December thirty-first is today. On that calendar, humanity shows up on December thirty-first, at about eleven forty-eight at night. And writing, the start of history, the pharaohs, all of it? About twelve seconds before midnight. Everything we've ever written fits into the last twelve seconds of the year. And we'd like all that to have been made for us? Honestly, that seems a bit much to me.
 
 **1.3** And then there's suffering. In 2004, a tsunami kills more than two hundred thousand people in one day. Believers, atheists, babies. The wave didn't pick and choose. To me, that doesn't look like a world someone is watching over. It looks like a world that doesn't care.
 

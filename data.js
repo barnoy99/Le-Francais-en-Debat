@@ -6,7 +6,7 @@ var TEXTS = [
   { id: 1, corpus: 'A', kind: 'monologue', title: "L'indifférence du cosmos", file: "texts/01-lindifference-du-cosmos.md",
     lines: [
       { who: 'moi', fr: "Tu sais ce qui m'a fait décrocher, au fond ? C'est pas un argument. C'est l'échelle. Regarde le ciel une nuit, vraiment. Des centaines de milliards de galaxies, chacune avec des milliards d'étoiles." },
-      { who: 'moi', fr: "Et l'univers a à peu près quatorze milliards d'années. Imagine que tu ramènes ces quatorze milliards d'années à une seule année. Le premier janvier, à minuit, c'est le début de l'univers. Et la toute dernière seconde du trente et un décembre, c'est aujourd'hui. Dans ce calendrier, l'humanité arrive le trente et un décembre, dans les toutes dernières minutes. Et on voudrait que tout ça ait été fait pour nous ? Franchement, ça me paraît un peu gros." },
+      { who: 'moi', fr: "Et l'univers a à peu près quatorze milliards d'années. Imagine que tu ramènes ces quatorze milliards d'années à une seule année. Le premier janvier, à minuit, c'est le début de l'univers. Et la toute dernière seconde du trente et un décembre, c'est aujourd'hui. Dans ce calendrier, l'humanité arrive le trente et un décembre, vers vingt-trois heures quarante-huit. Et l'écriture, le début de l'histoire, les pharaons, tout ça ? À peu près douze secondes avant minuit. Tout ce qu'on a jamais écrit tient dans les douze dernières secondes de l'année. Et on voudrait que tout ça ait été fait pour nous ? Franchement, ça me paraît un peu gros." },
       { who: 'moi', fr: "Et puis y a la souffrance. En 2004, un tsunami tue plus de deux cent mille personnes en une journée. Des croyants, des athées, des bébés. La vague, elle a pas trié. Pour moi, ça ressemble pas à un monde que quelqu'un surveille. Ça ressemble à un monde qui s'en fiche." },
       { who: 'moi', fr: "Dans l'univers, y a pas de dessein, pas de but, pas de bien ni de mal. Juste une indifférence aveugle. Et ce qu'on voit, c'est exactement ce à quoi on s'attendrait s'il y avait personne derrière." },
       { who: 'moi', fr: "Alors oui, je vois venir ta réponse : « C'est horrible, ce que tu dis. Vivre dans un monde comme ça, c'est insupportable. » Je comprends. Mais c'est pas parce qu'une idée fait peur qu'elle est fausse. Le monde, il a pas à être confortable." },
@@ -1073,7 +1073,9 @@ var SENTENCES = {
     { l: 1, fr: "Imagine que tu ramènes ces quatorze milliards d'années à une seule année.", en: "Imagine you squeeze these fourteen billion years into a single year." },
     { l: 1, fr: "Le premier janvier, à minuit, c'est le début de l'univers.", en: "January first, at midnight, is the beginning of the universe." },
     { l: 1, fr: "Et la toute dernière seconde du trente et un décembre, c'est aujourd'hui.", en: "And the very last second of December thirty-first is today." },
-    { l: 1, fr: "Dans ce calendrier, l'humanité arrive le trente et un décembre, dans les toutes dernières minutes.", en: "On that calendar, humanity shows up on the thirty-first of December, in the very last few minutes." },
+    { l: 1, fr: "Dans ce calendrier, l'humanité arrive le trente et un décembre, vers vingt-trois heures quarante-huit.", en: "On that calendar, humanity shows up on December thirty-first, at about eleven forty-eight at night." },
+    { l: 1, fr: "Et l'écriture, le début de l'histoire, les pharaons, tout ça ? À peu près douze secondes avant minuit.", en: "And writing, the start of history, the pharaohs, all of it? About twelve seconds before midnight." },
+    { l: 1, fr: "Tout ce qu'on a jamais écrit tient dans les douze dernières secondes de l'année.", en: "Everything we've ever written fits into the last twelve seconds of the year." },
     { l: 1, fr: "Et on voudrait que tout ça ait été fait pour nous ?", en: "And we'd like all that to have been made for us?" },
     { l: 1, fr: "Franchement, ça me paraît un peu gros.", en: "Honestly, that seems a bit much to me." },
     { l: 2, fr: "Et puis y a la souffrance.", en: "And then there's suffering." },
@@ -2017,9 +2019,9 @@ var SENTENCES = {
 // (a lead-in, a question and its answer, an echo); big = « Passage »: a short paragraph.
 // Each size is made of whole pieces of the size below (data-test.js checks).
 var CHUNKS = {
-  1:  { join: [17, 27],
-        small: [2, 2, 2, 2, 3, 2, 2, 2, 3, 1, 2, 2, 2, 2],
-        big:   [4, 4, 3, 6, 3, 3, 6] },
+  1:  { join: [19, 29],
+        small: [2, 2, 2, 2, 2, 3, 2, 2, 2, 3, 1, 2, 2, 2, 2],
+        big:   [4, 4, 2, 3, 6, 3, 3, 6] },
   2:  { join: [2, 5, 9, 12, 15, 21, 26, 28],
         small: [1, 1, 2, 3, 1, 1, 2, 4, 2, 2, 1, 3, 2, 3, 2],
         big:   [2, 5, 4, 4, 4, 4, 5, 2] },

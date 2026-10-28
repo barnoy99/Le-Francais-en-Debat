@@ -6,7 +6,7 @@ Corpus A · monologue, à un ami. Pas de dessein, pas de but, juste de l'indiff�
 
 Tu sais ce qui m'a fait décrocher, au fond ? C'est pas un argument. C'est l'échelle. Regarde le ciel une nuit, vraiment. Des centaines de milliards de galaxies, chacune avec des milliards d'étoiles.
 
-Et l'univers a à peu près quatorze milliards d'années. Imagine que tu ramènes ces quatorze milliards d'années à une seule année. Le premier janvier, à minuit, c'est le début de l'univers. Et la toute dernière seconde du trente et un décembre, c'est aujourd'hui. Dans ce calendrier, l'humanité arrive le trente et un décembre, dans les toutes dernières minutes. Et on voudrait que tout ça ait été fait pour nous ? Franchement, ça me paraît un peu gros.
+Et l'univers a à peu près quatorze milliards d'années. Imagine que tu ramènes ces quatorze milliards d'années à une seule année. Le premier janvier, à minuit, c'est le début de l'univers. Et la toute dernière seconde du trente et un décembre, c'est aujourd'hui. Dans ce calendrier, l'humanité arrive le trente et un décembre, vers vingt-trois heures quarante-huit. Et l'écriture, le début de l'histoire, les pharaons, tout ça ? À peu près douze secondes avant minuit. Tout ce qu'on a jamais écrit tient dans les douze dernières secondes de l'année. Et on voudrait que tout ça ait été fait pour nous ? Franchement, ça me paraît un peu gros.
 
 Et puis y a la souffrance. En 2004, un tsunami tue plus de deux cent mille personnes en une journée. Des croyants, des athées, des bébés. La vague, elle a pas trié. Pour moi, ça ressemble pas à un monde que quelqu'un surveille. Ça ressemble à un monde qui s'en fiche.
 

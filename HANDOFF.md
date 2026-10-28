@@ -10,6 +10,14 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v35 (2026-10-28) — text 1: the calendar gets its times
+
+His ask: say when humans arrive on 31 Dec and how many seconds before midnight history starts. « dans les
+toutes dernières minutes » → « vers vingt-trois heures quarante-huit » (Homo sapiens, ~300 000 years, at
+14 billion years = one year: ~444 years a second), plus two sentences: writing (~5 200 years) ≈ twelve seconds
+before midnight. 29 → 31 sentences, CHUNKS re-cut (join +2, the new three as small 2+3, each its own passage).
+Assets `?v=35`, `CACHE_VERSION = 'v35'`.
+
 ## v34 (2026-10-26) — text 1: the year-calendar spelled out, no Dawkins
 
 His ask: explain « squeeze 14 billion years into one year » so it works the first time (1 Jan midnight = the
