@@ -75,7 +75,7 @@ His asks, English reviewed first (`texts-english.md` §23):
 His ask: show how arbitrary belief is, and make the friend look at himself the way he looks at a
 Muslim. He reviewed the English first (now in `texts-english.md` §6), then the French was written from it.
 - **Text 6** « L'accident géographique »: Saudi Arabia (« Musulman, très probablement »), Rome and Jupiter
-  (« Tu te serais pas dit : … le Dieu des Juifs qui a raison »), « huit personnes sur dix » keep their
+  (« Tu te serais pas dit : … le Dieu des Juifs qui a raison »), « neuf personnes sur dix » keep their
   childhood religion (Pew 2025: about one adult in five has left it), the Egypt mirror (each pities the
   other), « elles peuvent pas toutes être vraies » so most are wrong and each thinks it's the others,
   ending on Syria. Cut: the maths / « deux et deux font cinq » part (text 5's argument), « le bon numéro »,

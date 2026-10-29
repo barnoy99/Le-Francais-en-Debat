@@ -8,7 +8,7 @@ Tiens, y a un truc qui me travaille depuis longtemps. Si t'étais né en Arabie 
 
 Maintenant, imagine Rome, il y a deux mille ans. Tout le monde croyait en Jupiter. On lui sacrifiait des animaux, on le priait avant une bataille. Aujourd'hui, pour toi, c'est ridicule. Mais si t'étais né là-bas, t'aurais cru en lui aussi, comme tout le monde. Tu te serais pas dit : « Non, en fait, c'est sûrement le Dieu des Juifs qui a raison. »
 
-Du coup, la religion, c'est moins une question de vérité qu'une question de code postal. Environ huit personnes sur dix dans le monde gardent la religion dans laquelle elles ont grandi. Pas parce qu'elles ont vérifié, mais parce que c'est ce qu'on leur a donné à la maison, avec la langue, la bouffe, la culture et les valeurs.
+Du coup, la religion, c'est moins une question de vérité qu'une question de code postal. Environ neuf personnes sur dix dans le monde gardent la religion dans laquelle elles ont grandi. Pas parce qu'elles ont vérifié, mais parce que c'est ce qu'on leur a donné à la maison, avec la langue, la bouffe, la culture et les valeurs.
 
 Et ce qui me tue, c'est ça. Quand tu penses à un musulman en Égypte, t'es certain qu'il se trompe : le pauvre, on l'a élevé dans un mensonge. Et lui, il te regarde exactement pareil. Chacun a pitié de l'autre, et chacun est sûr d'être celui qui a eu de la chance.
 
