@@ -500,7 +500,12 @@
     reloadIfUpdated();
     var list = $('text-list');
     list.innerHTML = '';
-    TEXTS.filter(function (t) { return trackOf(t) === track; }).forEach(function (t) {
+    var shown = TEXTS.filter(function (t) { return trackOf(t) === track; });
+    // Starred first; otherwise the corpus order (map index keeps the sort stable).
+    shown = shown.map(function (t, i) { return { t: t, i: i, pin: Core.isPinned(state, t.id) }; })
+      .sort(function (a, b) { return (b.pin - a.pin) || (a.i - b.i); })
+      .map(function (x) { return x.t; });
+    shown.forEach(function (t) {
       var total = SENTENCES[t.id].length;
       var p = Core.progress(state, t.id, total);
       var li = el('li', 'text-card' + (t.id === state.lastText ? ' text-card--last' : ''));
@@ -522,6 +527,16 @@
       main.appendChild(el('span', 'text-action', 'Texte ' + p.done + ' / ' + total + ' · Variations ' + pv.pos + ' / ' + pv.total + ' ›'));
       main.addEventListener('click', function () { openChooser(t.id); });
       li.appendChild(main);
+      var pinned = Core.isPinned(state, t.id);
+      var star = el('button', 'text-pin' + (pinned ? ' text-pin--on' : ''), pinned ? '★' : '☆');
+      star.setAttribute('aria-pressed', pinned ? 'true' : 'false');
+      star.setAttribute('aria-label', (pinned ? 'Retirer des favoris : ' : 'Mettre en favori : ') + t.title);
+      star.addEventListener('click', function () {
+        Core.togglePin(state, t.id);
+        save();
+        renderHome();
+      });
+      li.appendChild(star);
       list.appendChild(li);
     });
   }

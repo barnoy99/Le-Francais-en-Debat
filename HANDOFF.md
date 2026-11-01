@@ -10,6 +10,15 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v38 (2026-11-01) — text 6: the India scene
+
+His ask: after Brazil/India, make him picture himself, born in India, one day deciding « c'est pas Shiva, c'est le
+Dieu des Juifs » — and feel how absurd that is. New paragraph 6.2 (temples, grand-mère, « Tu vois ça arriver ?
+Sérieusement ? », a small people four thousand km away, « Tu serais hindou, point. »), then « Mais t'es né ici… Donc
+t'es juif. » Rome no longer has « Tu te serais pas dit : … » (now India's line); it ends on the God of the Jews as
+« le dieu bizarre d'une petite province, à l'autre bout de la Méditerranée ». 37 → 43 sentences, 7 lines, CHUNKS
+re-cut. Assets `?v=38`, `CACHE_VERSION = 'v38'`.
+
 ## v37 (2026-11-01) — text 6 opens on « pourquoi le Dieu des Juifs ? »
 
 His ask: start with "why do you believe in the Jewish God specifically? Because it's the truth?", then

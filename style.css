@@ -74,6 +74,10 @@ ul { list-style: none; }
 .text-list { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1rem; }
 .text-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
 .text-card--last { border-color: var(--color-accent); }
+.text-card { position: relative; }
+.text-pin { position: absolute; top: 0; right: 0; width: 48px; height: 48px; font-size: 1.6rem; line-height: 1; color: var(--text-secondary); }
+.text-pin--on { color: var(--color-accent); }
+.text-head { padding-right: 2.4rem; }
 .text-main { width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 0.3rem; padding: 0.9rem 1rem 0.8rem; text-align: left; }
 .text-kind { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600; }
 .text-head { display: flex; align-items: baseline; gap: 0.6rem; width: 100%; }

@@ -41,6 +41,14 @@ var Core = (function () {
   function finishRead(state, textId) { textRec(state, textId).reads++; }
   function reads(state, textId) { var r = state.texts[key(textId)]; return (r && r.reads) || 0; }
 
+  // ★ on the home list: starred texts are listed first. A boolean on the text's record.
+  function isPinned(state, textId) { var r = state.texts[key(textId)]; return !!(r && r.pin); }
+  function togglePin(state, textId) {
+    var r = textRec(state, textId);
+    r.pin = !r.pin;
+    return r.pin;
+  }
+
   function isDone(state, textId, idx) {
     var r = state.texts[key(textId)];
     return !!(r && typeof r.done === 'string' && r.done.charAt(idx) === '1');
@@ -285,7 +293,7 @@ var Core = (function () {
     REPEAT_SENT: REPEAT_SENT, REPEAT_VAR: REPEAT_VAR, REPEAT_NEW: REPEAT_NEW, NEW_READS: NEW_READS,
     repeatMs: repeatMs, tryMs: tryMs,
     defaults: defaults, normalize: normalize, pickFreshest: pickFreshest,
-    textRec: textRec, finishRead: finishRead, reads: reads, isDone: isDone, progress: progress, complete: complete, setPos: setPos,
+    textRec: textRec, finishRead: finishRead, reads: reads, isPinned: isPinned, togglePin: togglePin, isDone: isDone, progress: progress, complete: complete, setPos: setPos,
     completeVar: completeVar, setVarPos: setVarPos, varProgress: varProgress,
     pickVariant: pickVariant, SIZES: SIZES, units: units, chunks: chunks, chunkIndex: chunkIndex, repeatsFor: repeatsFor, varList: varList,
     chunkText: chunkText, textSteps: textSteps, varSteps: varSteps
