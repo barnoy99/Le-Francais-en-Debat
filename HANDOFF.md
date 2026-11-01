@@ -10,6 +10,15 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v40 (2026-11-01) — text 6: hooked since birth, the mirror
+
+His asks: drop « elles peuvent pas toutes être vraies / la plupart se trompent »; keep the realization that you're
+hooked on what you met since birth, and that how you see the other is exactly who you are. The country list
+(Arabie saoudite, Brésil) now comes after the India scene, not before. 6.4 ends on « moins une question de vérité
+qu'une question d'accent » (f09 kept) + « Tu l'attrapes quand t'es petit ». 6.6: the objection is now « Moi, c'est
+pas pareil, j'y ai réfléchi » (new cue), « lui aussi », he ended where he started, « Ça, c'est pas son portrait à
+lui. C'est le tien. » English reviewed first. 43 → 45 sentences, CHUNKS re-cut. Assets `?v=40`, `CACHE_VERSION = 'v40'`.
+
 ## v38 (2026-11-01) — text 6: the India scene
 
 His ask: after Brazil/India, make him picture himself, born in India, one day deciding « c'est pas Shiva, c'est le

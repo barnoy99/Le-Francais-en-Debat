@@ -32,21 +32,21 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 *Corpus A · monologue, to a friend.*
 
-**6.1** Tell me something. Have you ever really asked yourself why you believe in the Jewish God? Not God in general, this one. Why do you think that is? Because it's the truth? Okay. Then here's my question: if you'd been born in Saudi Arabia, do you think you'd believe in the same God? Be honest: you'd most likely be Muslim. In Brazil? Christian. In India? Hindu.
+**6.1** Tell me something. Have you ever really asked yourself why you believe in the Jewish God? Not God in general, this one. Why do you think that is? Because it's the truth? Okay. Then here's my question: if you'd been born somewhere else, do you think you'd believe in the same God? In Saudi Arabia, say? Or in India?
 
-**6.2** Take India, then. You'd have grown up with the temples, the festivals, your grandmother's prayers, like everyone around you. And one fine morning, you'd wake up and say: "No, actually, it's not Shiva. It's the God of the Jews, the real one." Can you see that happening? Seriously? The God of a small people, four thousand kilometres from home, that you'd barely have heard of? No. You'd be Hindu, full stop. But you were born here, to your parents. So you're Jewish. Funny, the truth is always the one from wherever you were born.
+**6.2** Take India. You'd have grown up with the temples, the festivals, your grandmother's prayers, like everyone around you. And one fine morning, you'd wake up and say: "No, actually, it's not Shiva. It's the God of the Jews, the real one." Can you see that happening? Seriously? The God of a small people, four thousand kilometres from home, that you'd barely have heard of? No. You'd be Hindu, full stop. In Saudi Arabia, you'd be Muslim. In Brazil, Christian. But you were born here, to your parents. So you're Jewish. Funny, the truth is always the one from wherever you were born.
 
 **6.3** And it's not just a question of country. Picture Rome, two thousand years ago. Everyone believed in Jupiter. They sacrificed animals to him, they prayed to him before a battle. Today, for you, it's ridiculous. But if you'd been born there, you'd have believed in him too, like everyone else. The God of the Jews, for you, would have been the strange god of a small province, at the other end of the Mediterranean.
 
-**6.4** So back to my question. If people believed because it's true, they'd all land on the same answer, wherever they were born. But that's not what happens. About nine in ten people in the world keep the religion they grew up with (Pew Research Center, 2025). Not because they checked, but because that's what they got at home, along with the language, the food, the culture and the values. So religion is less a question of truth than a question of postcode.
+**6.4** So back to my question. If people believed because it's true, they'd all land on the same answer, wherever they were born. But that's not what happens. About nine in ten people in the world keep the religion they grew up with (Pew Research Center, 2025). Not because they checked, but because that's what they got at home, along with the language, the food, the culture and the values. So religion is less a question of truth than a question of accent. You pick it up as a child, and then it just sounds normal to you.
 
 **6.5** And here's what really gets me. When you think of a Muslim in Egypt, you're certain he's wrong: poor guy, he was raised to believe a lie. And he looks at you exactly the same way. You each feel sorry for the other, and each of you is sure he's the lucky one.
 
-**6.6** So yes, I can see your answer coming: "That proves nothing, maybe one of them is true." That's true, I'll grant you that. But they can't all be true. So most people on earth are wrong, billions of them. And if you ask any one of them why he believes, he'll give you the same answer you gave me: "Because it's the truth." So how do you know you're not one of them?
+**6.6** So yes, I can see your answer coming: "It's not the same for me, I've thought about it." Okay, you've thought about it, I'll grant you that. But so has he. He's read his books, he's asked his imams, he's had his doubts. And he ended up exactly where he started. Just like you. So look at what you see in him: a man hooked on what he was given as a child, who calls it the truth. That's not a description of him. That's a description of you.
 
 **6.7** And honestly, if God really wanted us to know him, why would he leave it to the accident of birth? So I'll ask you again: why the Jewish God? If you'd been born in Syria, you'd be sitting here defending Islam, just as sure of yourself as you are now. And you'd tell me it's because it's the truth. Doesn't that bother you a bit?
 
-*Comprehension cue (the friend's objection):* "That proves nothing, maybe one of them is true."
+*Comprehension cue (the friend's objection):* "It's not the same for me, I've thought about it."
 
 ---
 
