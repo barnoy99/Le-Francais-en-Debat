@@ -10,6 +10,16 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v37 (2026-11-01) — text 6 opens on « pourquoi le Dieu des Juifs ? »
+
+His ask: start with "why do you believe in the Jewish God specifically? Because it's the truth?", then
+« si t'étais né en Arabie saoudite… au même Dieu ? », and carry « parce que c'est la vérité » through the text.
+English reviewed first (`texts-english.md` §6). New: the opening five sentences, « C'est marrant, la vérité… »,
+« Alors je reviens à ma question » + why truth would give one answer everywhere, every believer answers
+« Parce que c'est la vérité », and the ending asks again before Syria. Cut: « Évidemment », « L'Égyptien est
+sûr que c'est toi / Toi, t'es sûr que c'est lui », « Regarde-toi juste comme tu le regardes, lui ». f25 now
+tags the Saudi question. 26 → 37 sentences, CHUNKS re-cut. Assets `?v=37`, `CACHE_VERSION = 'v37'`.
+
 ## v35 (2026-10-28) — text 1: the calendar gets its times
 
 His ask: say when humans arrive on 31 Dec and how many seconds before midnight history starts. « dans les

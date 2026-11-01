@@ -32,17 +32,17 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 *Corpus A · monologue, to a friend.*
 
-**6.1** Hey, there's something that's been bugging me for a long time. If you'd been born in Saudi Arabia, what would you be? Most likely Muslim. In Brazil? Christian. In India? Hindu. And you, born here, to your parents? Jewish. Obviously.
+**6.1** Tell me something. Have you ever really asked yourself why you believe in the Jewish God? Not God in general, this one. Why do you think that is? Because it's the truth? Okay. Then here's my question: if you'd been born in Saudi Arabia, do you think you'd believe in the same God? Be honest: you'd most likely be Muslim. In Brazil? Christian. In India? Hindu. And here, to your parents? Jewish. Funny, the truth is always the one from wherever you were born.
 
-**6.2** Now picture Rome, two thousand years ago. Everyone believed in Jupiter. They sacrificed animals to him, they prayed to him before a battle. Today, for you, it's ridiculous. But if you'd been born there, you'd have believed in him too, like everyone else. You wouldn't have thought: "No, actually, it's probably the God of the Jews who's right."
+**6.2** And it's not just a question of country. Picture Rome, two thousand years ago. Everyone believed in Jupiter. They sacrificed animals to him, they prayed to him before a battle. Today, for you, it's ridiculous. But if you'd been born there, you'd have believed in him too, like everyone else. You wouldn't have thought: "No, actually, it's probably the God of the Jews who's right."
 
-**6.3** So religion is less a question of truth than a question of postcode. About eight in ten people in the world keep the religion they grew up with (Pew Research Center, 2025). Not because they checked, but because that's what they got at home, along with the language, the food, the culture and the values.
+**6.3** So back to my question. If people believed because it's true, they'd all land on the same answer, wherever they were born. But that's not what happens. About nine in ten people in the world keep the religion they grew up with (Pew Research Center, 2025). Not because they checked, but because that's what they got at home, along with the language, the food, the culture and the values. So religion is less a question of truth than a question of postcode.
 
 **6.4** And here's what really gets me. When you think of a Muslim in Egypt, you're certain he's wrong: poor guy, he was raised to believe a lie. And he looks at you exactly the same way. You each feel sorry for the other, and each of you is sure he's the lucky one.
 
-**6.5** So yes, I can see your answer coming: "That proves nothing, maybe one of them is true." True, I'll grant you that. But they can't all be true. So most people on earth are wrong, billions of them, and every single one is sure it's the others who are wrong. The Egyptian is sure it's you. You're sure it's him. So how do you know you're not one of them?
+**6.5** So yes, I can see your answer coming: "That proves nothing, maybe one of them is true." True, I'll grant you that. But they can't all be true. So most people on earth are wrong, billions of them. And if you ask any one of them why he believes, he'll give you the same answer you gave me: "Because it's the truth." So how do you know you're not one of them?
 
-**6.6** And honestly, if God really wanted us to know him, why would he leave it to the accident of birth? Just look at yourself the way you look at him. If you'd been born in Syria, you'd be sitting here defending Islam, just as sure as you are now. Doesn't that bother you a bit?
+**6.6** And honestly, if God really wanted us to know him, why would he leave it to the accident of birth? So I'll ask you again: why the Jewish God? If you'd been born in Syria, you'd be sitting here defending Islam, just as sure of yourself as you are now. And you'd tell me it's because it's the truth. Doesn't that bother you a bit?
 
 *Comprehension cue (the friend's objection):* "That proves nothing, maybe one of them is true."
 
