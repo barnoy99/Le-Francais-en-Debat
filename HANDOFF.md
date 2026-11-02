@@ -10,6 +10,12 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v42 (2026-11-02) — text 6: « code postal » back, then the accent
+
+His ask: keep « code postal » in the f09 line, then the accent as its own image: « …qu'une question de code postal.
+C'est comme un accent : tu l'attrapes quand t'es petit, et après, il te paraît normal, c'est tout. » Same 41
+sentences and CHUNKS. Assets `?v=42`, `CACHE_VERSION = 'v42'`.
+
 ## v41 (2026-11-02) — text 6: his shortened version, each country once
 
 His edit, English reviewed first: one country per example (Inde, Jordanie, Brésil, Rome, Égypte, Syrie), « tu te

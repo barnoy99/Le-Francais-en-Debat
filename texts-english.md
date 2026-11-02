@@ -38,7 +38,7 @@ The translation keeps the casual spoken tone rather than polishing it.
 
 **6.3** And it's not just a question of place. It's a question of time too. Picture Rome, two thousand years ago. Everyone believed in Jupiter. They sacrificed animals to him, they prayed to him before a battle. Today, for you, it's ridiculous. But if you'd been born there, you'd have believed in him too, like everyone else. And the God of the Jews would have seemed as strange to you as Jupiter does now.
 
-**6.4** If it were about truth, people would find their way to it wherever they were born. They don't. About nine in ten people in the world keep the religion they grew up with (Pew Research Center, 2025). Not because they checked, but because that's what they got at home, along with the language, the food, the culture and the values. So religion is less a question of truth than a question of accent. You pick it up as a child, and then it just sounds normal to you.
+**6.4** If it were about truth, people would find their way to it wherever they were born. They don't. About nine in ten people in the world keep the religion they grew up with (Pew Research Center, 2025). Not because they checked, but because that's what they got at home, along with the language, the food, the culture and the values. So religion is less a question of truth than a question of postcode. It's like an accent: you pick it up as a child, and then it just sounds normal to you.
 
 **6.5** And here's what really gets me. When you think of a Muslim in Egypt, you're certain he's wrong: poor guy, he was raised to believe a lie. And he looks at you exactly the same way. You each feel sorry for the other, and each of you is sure he's the lucky one.
 
