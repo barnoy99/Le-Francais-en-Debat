@@ -10,6 +10,18 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v41 (2026-11-02) — text 6: his shortened version, each country once
+
+His edit, English reviewed first: one country per example (Inde, Jordanie, Brésil, Rome, Égypte, Syrie), « tu te
+réveillerais et tu te dirais », Rome ends « il t'aurait paru aussi bizarre que Jupiter te paraît aujourd'hui », a
+one-line bridge to the stat (« Si c'était une question de vérité… Et c'est pas le cas. »), postcode cut (accent
+only, still f09), « Comme toi. Comme des milliards d'autres. » (no "90%": the stat is already in 6.4 and is rough),
+the mirror « un type attaché à ce qu'on lui a donné… C'est toi. » (« attaché », not « accroché »/« accro »), ending
+« Difficile d'y échapper : si t'étais né en Syrie… ». Cut: « C'est marrant, la vérité… », « Si Dieu voulait vraiment…
+au hasard de la naissance ? ». So **f19** is no longer in text 6; it stays taught by text 18, and its home stays
+textId 6 (moving it to 18, corpus B, breaks its prompt-topic rules). 45 → 41 sentences, CHUNKS re-cut.
+Assets `?v=41`, `CACHE_VERSION = 'v41'`.
+
 ## v40 (2026-11-01) — text 6: hooked since birth, the mirror
 
 His asks: drop « elles peuvent pas toutes être vraies / la plupart se trompent »; keep the realization that you're
