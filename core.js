@@ -20,9 +20,10 @@ var Core = (function () {
   // reads = times « Le texte » was played to its end; done = a '0'/'1'
   // string, one char per sentence (a string, because Firebase rewrites integer-keyed
   // objects into arrays). vu: frame id -> variations shown, so each visit gets the next one.
+  // gone: frame id -> true for a structure he deleted.
 
   function defaults() {
-    return { version: 2, updatedAt: 0, sessionCount: 0, texts: {}, vu: {}, lastText: 0 };
+    return { version: 2, updatedAt: 0, sessionCount: 0, texts: {}, vu: {}, gone: {}, lastText: 0 };
   }
 
   function key(textId) { return 't' + textId; }
@@ -148,12 +149,22 @@ var Core = (function () {
     return (nReads || 0) < NEW_READS ? REPEAT_NEW : REPEAT_SENT;
   }
 
-  function varList(sents) {
+  // A sentence's f is one frame id or several. gone = the structures he deleted (state.gone), left out.
+  function varList(sents, gone) {
     var seen = {}, out = [];
     sents.forEach(function (s, i) {
-      if (s.f && !seen[s.f]) { seen[s.f] = 1; out.push({ f: s.f, s: i }); }
+      [].concat(s.f || []).forEach(function (f) {
+        if (!seen[f] && !(gone && gone[f])) { seen[f] = 1; out.push({ f: f, s: i }); }
+      });
     });
     return out;
+  }
+
+  // 🗑 on a variation: gone from every text that carries it, until he restores it.
+  function removeFrame(state, frameId) { state.gone[frameId] = true; }
+  function restoreFrame(state, frameId) { delete state.gone[frameId]; }
+  function goneIn(state, sents) {
+    return varList(sents).map(function (e) { return e.f; }).filter(function (f) { return state.gone[f]; });
   }
 
   // Display text of a chunk. Sentences carry `who`; when a chunk spans both
@@ -296,6 +307,7 @@ var Core = (function () {
     textRec: textRec, finishRead: finishRead, reads: reads, isPinned: isPinned, togglePin: togglePin, isDone: isDone, progress: progress, complete: complete, setPos: setPos,
     completeVar: completeVar, setVarPos: setVarPos, varProgress: varProgress,
     pickVariant: pickVariant, SIZES: SIZES, units: units, chunks: chunks, chunkIndex: chunkIndex, repeatsFor: repeatsFor, varList: varList,
+    removeFrame: removeFrame, restoreFrame: restoreFrame, goneIn: goneIn,
     chunkText: chunkText, textSteps: textSteps, varSteps: varSteps
   };
 })();

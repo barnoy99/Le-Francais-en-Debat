@@ -68,6 +68,20 @@ for (const f of FRAMES) {
   const w = f.id;
   if (!/^f\d{2}$/.test(f.id) || frameIds.has(f.id)) fail(`${w}: bad or duplicate id`);
   frameIds.add(f.id);
+  // His own picks (v46): a form, a gloss and 3+ sentences on his life.
+  if (f.light) {
+    if (typeof f.form !== 'string' || !f.form.trim() || typeof f.gloss !== 'string' || !f.gloss.trim()) fail(`${w}: needs form and gloss`);
+    if (!textIds.has(f.textId) || !f.sources || !f.sources.includes(f.textId)) fail(`${w}: sources`);
+    if (!f.prompts || f.prompts.length < 3) fail(`${w}: needs 3+ sentences`);
+    for (const p of f.prompts || []) {
+      if (!p.id.startsWith(f.id + '-') || promptIds.has(p.id)) fail(`${w}: bad or duplicate prompt id ${p.id}`);
+      promptIds.add(p.id);
+      if (!(p.topic in TOPICS)) fail(`${p.id}: unknown topic ${p.topic}`);
+      if (!p.model || p.model.length < 8) fail(`${p.id}: missing model`); else checkRegister(p.id + ' model', p.model);
+      if (typeof p.en !== 'string' || p.en.length < 8) fail(`${p.id}: missing English (en)`);
+    }
+    continue;
+  }
   for (const k of ['form', 'gloss', 'gist', 'exemplarFr', 'exemplarEn', 'trap', 'register'])
     if (typeof f[k] !== 'string' || !f[k].trim()) fail(`${w}: missing ${k}`);
   if (!/\{[^}]+\}/.test(f.form)) fail(`${w}: form has no slot`);
@@ -114,10 +128,10 @@ for (const t of TEXTS) {
     if (typeof s.fr !== 'string' || !s.fr.trim() || s.fr !== s.fr.trim()) fail(`${w}: bad fr`);
     if (typeof s.en !== 'string' || !s.en.trim()) fail(`${w}: missing English`);
     if (s.fr.split(/\s+/).length > MAX_WORDS) fail(`${w}: too long to repeat (${s.fr.split(/\s+/).length} words)`);
-    if (s.f !== undefined) {
-      const f = frameById[s.f];
-      if (!f) fail(`${w}: unknown frame ${s.f}`);
-      else { linked.add(s.f); if (!f.sources.includes(t.id)) fail(`${w}: ${s.f} does not list text ${t.id} in sources`); }
+    for (const id of [].concat(s.f === undefined ? [] : s.f)) {
+      const f = frameById[id];
+      if (!f) fail(`${w}: unknown frame ${id}`);
+      else { linked.add(id); if (!f.sources.includes(t.id)) fail(`${w}: ${id} does not list text ${t.id} in sources`); }
     }
   });
   t.lines.forEach((ln, i) => {

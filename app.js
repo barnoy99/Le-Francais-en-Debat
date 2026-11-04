@@ -196,6 +196,7 @@
       var isVar = v.phase === 'var';
       $('run-card').className = 'run-card' + (isVar ? ' run-card--var' : '');
       $('run-tag').textContent = isVar ? 'À ta façon' : 'Le texte';
+      $('btn-delete').classList.toggle('hidden', !isVar);
     }
     if (v.fr !== undefined) {
       $('run-card').classList.toggle('run-card--long', v.fr.split(/\s+/).length > 40);
@@ -397,9 +398,46 @@
     var n = Core.reads(state, run.text.id);
     $('done-note').textContent = run.part === 'texte'
       ? (n ? 'Lu jusqu\'au bout ' + n + ' fois. ' : '') + 'Quand tu le connais mieux, prends des morceaux plus longs : une bouchée, un passage, ou tout le texte.'
+      : !run.vars.length ? 'Il ne reste plus de structure dans ce texte.'
       : 'La prochaine fois, chaque structure revient avec une nouvelle phrase, en anglais d\'abord : c\'est toi qui la diras en français.';
     $('btn-done-again').textContent = run.part === 'texte' ? 'Relire ce texte' : 'Refaire les variations';
     showScreen('screen-done');
+  }
+
+  // 🗑: no question asked. The next structure takes its place; « Annuler » stays a few seconds.
+  var undo = { f: null, textId: 0, timer: null };
+
+  function closeUndo() {
+    clearTimeout(undo.timer);
+    undo.f = null;
+    hide($('undo-bar'));
+  }
+
+  function deleteStructure() {
+    if (!run.active || run.part !== 'var') return;
+    var f = run.vars[run.pos].f;
+    Core.removeFrame(state, f);
+    save();
+    run.vars = Core.varList(SENTENCES[run.text.id], state.gone);
+    closeUndo();
+    undo.f = f;
+    undo.textId = run.text.id;
+    undo.timer = setTimeout(closeUndo, 6000);
+    show($('undo-bar'));
+    playAt(run.pos);
+  }
+
+  function undoDelete() {
+    var f = undo.f, textId = undo.textId;
+    closeUndo();
+    if (!f) return;
+    Core.restoreFrame(state, f);
+    save();
+    if (run.text.id !== textId) return;
+    if (run.active && run.part === 'var') {
+      run.vars = Core.varList(SENTENCES[textId], state.gone);
+      for (var i = 0; i < run.vars.length; i++) if (run.vars[i].f === f) playAt(i);
+    } else if (!run.active) openChooser(textId);
   }
 
   // part: 'texte' | 'var'. Resumes where he stopped unless fromStart (or finished).
@@ -410,7 +448,7 @@
       return { fr: x.fr, en: x.en, f: x.f, who: t.lines[x.l].who };
     });
     run.chunks = Core.chunks(run.sents, run.size, CHUNKS[t.id]);
-    run.vars = Core.varList(SENTENCES[t.id]);
+    run.vars = Core.varList(SENTENCES[t.id], state.gone);
     var p = part === 'texte' ? Core.progress(state, t.id, run.sents.length) : Core.varProgress(state, t.id, run.vars.length);
     var start = fromStart || p.finished ? 0 : p.pos;
     loadVoices();
@@ -453,7 +491,10 @@
     run.text = t;
     state.lastText = textId;
     var pt = Core.progress(state, t.id, SENTENCES[t.id].length);
-    var pv = Core.varProgress(state, t.id, Core.varList(SENTENCES[t.id]).length);
+    var pv = Core.varProgress(state, t.id, Core.varList(SENTENCES[t.id], state.gone).length);
+    var gone = Core.goneIn(state, SENTENCES[t.id]).length;
+    $('choose-var-restore').textContent = '↩ Remettre ' + (gone > 1 ? 'les ' + gone + ' structures supprimées' : 'la structure supprimée');
+    $('choose-var-restore').classList.toggle('hidden', !gone);
     $('choose-title').textContent = t.title;
     $('choose-text-action').textContent = partLine(pt, 'phrases');
     $('choose-var-action').textContent = partLine(pv, 'structures');
@@ -540,7 +581,7 @@
       fill.style.width = (100 * p.done / total) + '%';
       bar.appendChild(fill);
       main.appendChild(bar);
-      var pv = Core.varProgress(state, t.id, Core.varList(SENTENCES[t.id]).length);
+      var pv = Core.varProgress(state, t.id, Core.varList(SENTENCES[t.id], state.gone).length);
       main.appendChild(el('span', 'text-action', 'Texte ' + p.done + ' / ' + total + ' · Variations ' + pv.pos + ' / ' + pv.total + ' ›'));
       main.addEventListener('click', function () { openChooser(t.id); });
       li.appendChild(main);
@@ -630,6 +671,13 @@
     $('choose-var').addEventListener('click', function () { openPart('var', false); });
     $('choose-text-restart').addEventListener('click', function () { openPart('texte', true); });
     $('choose-var-restart').addEventListener('click', function () { openPart('var', true); });
+    $('choose-var-restore').addEventListener('click', function () {
+      Core.goneIn(state, SENTENCES[run.text.id]).forEach(function (f) { Core.restoreFrame(state, f); });
+      save();
+      openChooser(run.text.id);
+    });
+    $('btn-delete').addEventListener('click', deleteStructure);
+    $('btn-undo').addEventListener('click', undoDelete);
     $('btn-explain').addEventListener('click', explainStep);
     $('play-fr').addEventListener('click', function () { playNow('fr'); });
     // Long-press on the text selects it (to copy): pause, so the card stays put. The tap

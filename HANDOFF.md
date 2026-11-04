@@ -10,6 +10,14 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v46 (2026-11-04) — text 6: his own structures, and a delete button
+
+His ask: « structures » for him are the phrases he marks in a text, not just the argument moves. He listed 13 from text 6.
+- **f37–f48** (`light: true`, home text 6): 3 sentences each, no situation prompts, no trap/slots, form may have no slot. Written by Claude, not yet reviewed by him. His 13th pick is the existing f09.
+- A sentence's `f` may be an array (« Du coup… moins une question… » = f43 + f09; « Je vois venir… Moi, c'est pas pareil » = f06 + f46). Text 6 keeps f25, f06, f02 too: he deletes what he doesn't want.
+- **🗑 on a variation card**: `state.gone[frameId]`, synced, no confirmation, next structure plays; « Annuler » for 6 s; chooser offers « ↩ Remettre… » per text. Deleting is per structure, so a shared frame (f02) leaves every text.
+- Next if he likes it: the same for other texts, from his own lists. Assets `?v=46`, `CACHE_VERSION = 'v46'`.
+
 ## v42 (2026-11-02) — text 6: « code postal » back, then the accent
 
 His ask: keep « code postal » in the f09 line, then the accent as its own image: « …qu'une question de code postal.

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=45">
+  <link rel="stylesheet" href="style.css?v=46">
 </head>
 <body>
   <div id="app">
@@ -67,6 +67,7 @@
             <span id="choose-var-action" class="text-action"></span>
           </button>
           <button id="choose-var-restart" class="text-restart hidden">↺ Depuis le début</button>
+          <button id="choose-var-restore" class="text-restart hidden"></button>
         </div>
       </div>
     </section>
@@ -84,6 +85,7 @@
           <div class="run-top">
             <span id="run-tag" class="run-tag"></span>
             <span id="run-who" class="run-who"></span>
+            <button id="btn-delete" class="btn-delete hidden" aria-label="Supprimer cette structure" title="Supprimer cette structure"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/><path d="M10 11v5"/><path d="M14 11v5"/></svg></button>
           </div>
           <p id="run-fr" class="run-fr"></p>
           <p id="run-en" class="run-en"></p>
@@ -104,6 +106,8 @@
         <button id="btn-skip" class="btn-bar" aria-label="Phrase suivante">⏭</button>
       </div>
     </section>
+
+    <div id="undo-bar" class="undo-bar hidden"><span>Structure supprimée</span><button id="btn-undo">Annuler</button></div>
 
     <!-- END OF A TEXT -->
     <section id="screen-done" class="screen">
@@ -128,7 +132,7 @@
         <p>Tu choisis un texte, puis une des deux parties.</p>
         <ol>
           <li><b>Le texte</b> : seulement les phrases du texte, dans l'ordre. Une phrase à la fois : tu l'entends et tu la <b>répètes à voix haute</b>, trois fois (quatre fois pour tes trois premières lectures du texte). Quand tu le connais mieux, passe à une <b>Bouchée</b> (deux ou trois phrases qui vont ensemble) ou à un <b>Passage</b> (un petit paragraphe), ou <b>Tout</b> pour écouter le texte entier d'un coup. Sur l'accueil, le chiffre à côté d'un texte dit combien de fois tu l'as fait jusqu'au bout.</li>
-          <li><b>Les variations</b> : seulement les phrases « à ta façon ». Pour chaque structure du texte, une phrase construite pareil, sur ta vie (les enfants, le travail, la politique…). Tu l'entends <b>trois fois</b> et tu la répètes après chaque fois. Ensuite, chaque structure revient avec une nouvelle phrase, <b>en anglais</b> d'abord : tu essaies en français, puis tu entends la réponse trois fois et tu la répètes.</li>
+          <li><b>Les variations</b> : seulement les phrases « à ta façon ». Pour chaque structure du texte, une phrase construite pareil, sur ta vie (les enfants, le travail, la politique…). Tu l'entends <b>trois fois</b> et tu la répètes après chaque fois. Ensuite, chaque structure revient avec une nouvelle phrase, <b>en anglais</b> d'abord : tu essaies en français, puis tu entends la réponse trois fois et tu la répètes. Une structure trop facile ou sans intérêt ? La <b>corbeille</b> sur la carte la supprime aussitôt, dans tous les textes.</li>
         </ol>
         <p>En haut de chaque écran, tu changes le mode et la taille des morceaux quand tu veux.</p>
         <p><b>Mains libres</b> : tout à l'oreille, l'appli te laisse le temps de répéter puis continue seule. Touche l'écran pour mettre en pause.<br><b>Anglais d'abord</b> : pareil, mais tu entends d'abord l'anglais une fois, tu essaies de le dire en français, puis tu entends le français, avec une pause après chaque fois pour répéter.<br><b>Au calme</b> : tu prends ton temps et tu touches « Suivant ». Avec « auto », le français est lu une fois à chaque carte ; sans « auto », aucun son. Le haut-parleur le relit quand tu veux.</p>
@@ -141,9 +145,9 @@
 
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  <script src="firebase-config.js?v=45"></script>
-  <script src="data.js?v=45"></script>
-  <script src="core.js?v=45"></script>
-  <script src="app.js?v=45"></script>
+  <script src="firebase-config.js?v=46"></script>
+  <script src="data.js?v=46"></script>
+  <script src="core.js?v=46"></script>
+  <script src="app.js?v=46"></script>
 </body>
 </html>

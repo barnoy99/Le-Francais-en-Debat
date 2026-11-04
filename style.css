@@ -138,7 +138,18 @@ ul { list-style: none; }
   padding: 0.25rem 0.65rem; border-radius: 999px; background: var(--color-sage-light); color: var(--color-sage);
 }
 .run-card--var .run-tag { background: var(--color-teal-light); color: var(--color-teal); }
-.run-who { font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; }
+.run-who { flex: 1; margin-left: 0.6rem; text-align: right; font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; }
+.btn-delete {
+  flex: none; width: 44px; height: 44px; margin: -0.4rem -0.5rem -0.4rem 0.2rem;
+  display: flex; align-items: center; justify-content: center; color: var(--text-secondary);
+}
+.undo-bar {
+  position: fixed; left: 50%; top: 0.5rem; transform: translateX(-50%); z-index: 20;  /* never over « Suivant » */
+  width: calc(100% - 32px); max-width: calc(var(--col) - 32px); padding: 0.3rem 0.4rem 0.3rem 1rem; border-radius: 12px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--text-primary); color: #fff; font-size: 0.95rem;
+}
+.undo-bar button { min-height: 44px; padding: 0 0.8rem; color: #F0D48A; font-weight: 600; }
 .run-fr {
   font-family: var(--font-heading); font-size: 1.75rem; line-height: 1.25; font-weight: 500;
   color: var(--text-heading);

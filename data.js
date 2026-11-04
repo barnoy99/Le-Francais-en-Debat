@@ -1056,6 +1056,116 @@ var FRAMES = [
       { id: 'f36-5', topic: 'films',     fr: "Tu penses que le remake est moins bon, et même qu'il abîme l'original.", model: "Je vais même plus loin : il abîme l'original.", en: "I'll go even further: it (the remake) spoils the original." },
       { id: 'f36-6', topic: 'tech',      fr: "Tu penses que les enfants ont pas besoin de téléphone à dix ans, et même que les adultes s'en servent trop.", model: "Je vais même plus loin : les adultes s'en servent trop.", en: "I'll go even further: adults use them too much." },
       { id: 'f36-7', topic: 'israel',    fr: "Tu penses que le Hamas a rien fait pour Gaza, et même qu'il a détourné le ciment pour ses tunnels.", model: "Je vais même plus loin : il a détourné le ciment pour ses tunnels.", en: "I'll go even further: it (Hamas) diverted the cement for its tunnels." }
+    ] },
+
+  // ── Ses structures, texte 6 (v46): his own picks. light = three sentences on his life,
+  // no situation prompts, a form that may have no slot. ─────────
+  { id: 'f37', textId: 6, sources: [6], light: true,
+    form: "Pas {à X} en général, {à} celui-là.",
+    gloss: "Not ___ in general: this one.",
+    prompts: [
+      { id: 'f37-1', topic: 'enfants', model: "J'en veux au prof de la petite. Pas aux profs en général, à celui-là.", en: "I'm angry at my little one's teacher. Not at teachers in general, at this one." },
+      { id: 'f37-2', topic: 'voisins', model: "Je parle plus à ce voisin. Pas aux voisins en général, à celui-là.", en: "I don't talk to that neighbour any more. Not to the neighbours in general, to that one." },
+      { id: 'f37-3', topic: 'politique', model: "J'ai un problème avec ce ministre. Pas avec la politique en général, avec celui-là.", en: "I've got a problem with this minister. Not with politics in general, with this one." }
+    ] },
+
+  { id: 'f38', textId: 6, sources: [6], light: true,
+    form: "{Un fait}. Pourquoi, à ton avis ?",
+    gloss: "___. Why do you think that is?",
+    prompts: [
+      { id: 'f38-1', topic: 'enfants', model: "Les enfants rangent leur chambre seulement quand leur grand-mère vient. Pourquoi, à ton avis ?", en: "The kids only tidy their room when their grandmother's coming. Why do you think that is?" },
+      { id: 'f38-2', topic: 'cours', model: "Mes élèves posent toutes leurs questions la veille de l'examen. Pourquoi, à ton avis ?", en: "My students ask all their questions the night before the exam. Why do you think that is?" },
+      { id: 'f38-3', topic: 'argent', model: "Tout le monde se plaint des prix, et les restaurants sont pleins. Pourquoi, à ton avis ?", en: "Everyone complains about prices, and the restaurants are full. Why do you think that is?" }
+    ] },
+
+  { id: 'f39', textId: 6, sources: [6], light: true,
+    form: "T'aurais à peine entendu parler {de X}.",
+    gloss: "You'd have barely heard of ___",
+    prompts: [
+      { id: 'f39-1', topic: 'politique', model: "Sans les réseaux, t'aurais à peine entendu parler de ce ministre.", en: "Without social media, you'd have barely heard of this minister." },
+      { id: 'f39-2', topic: 'tech', model: "Sans tes enfants, t'aurais à peine entendu parler de TikTok.", en: "Without your kids, you'd have barely heard of TikTok." },
+      { id: 'f39-3', topic: 'films', model: "Une petite série coréenne, dont t'aurais à peine entendu parler il y a dix ans, et aujourd'hui tout le monde la regarde.", en: "A little Korean series you'd have barely heard of ten years ago, and now everybody's watching it." }
+    ] },
+
+  { id: 'f40', textId: 6, sources: [6], light: true,
+    form: "{Les faits}. Donc {verdict court}.",
+    gloss: "The facts, then a short verdict: So ___",
+    prompts: [
+      { id: 'f40-1', topic: 'enfants', model: "Ils ont grandi ici, à l'école israélienne, avec leurs copains d'ici. Donc ils parlent hébreu entre eux.", en: "They grew up here, in Israeli school, with friends from here. So they speak Hebrew to each other." },
+      { id: 'f40-2', topic: 'sante', model: "Tu dors cinq heures, tu manges debout, tu cours plus. Donc t'es crevé.", en: "You sleep five hours, you eat standing up, you've stopped running. So you're wiped." },
+      { id: 'f40-3', topic: 'cours', model: "Il vient jamais en cours, il rend jamais rien. Donc il rate.", en: "He never comes to class, he never hands anything in. So he fails." }
+    ] },
+
+  { id: 'f41', textId: 6, sources: [6], light: true,
+    form: "Et c'est pas qu'une question de {A}. C'est aussi une question de {B}.",
+    gloss: "And it's not just about ___. It's also about ___",
+    prompts: [
+      { id: 'f41-1', topic: 'argent', model: "Et c'est pas qu'une question de salaire. C'est aussi une question de temps.", en: "And it's not just a question of salary. It's also a question of time." },
+      { id: 'f41-2', topic: 'enfants', model: "Et c'est pas qu'une question de notes. C'est aussi une question de confiance.", en: "And it's not just a question of grades. It's also a question of confidence." },
+      { id: 'f41-3', topic: 'couple', model: "Et c'est pas qu'une question de ménage. C'est aussi une question de respect.", en: "And it's not just a question of housework. It's also a question of respect." }
+    ] },
+
+  { id: 'f42', textId: 6, sources: [6], light: true,
+    form: "{P}, peu importe {où / qui / ce que…}.",
+    gloss: "___, no matter where / who / what ___",
+    prompts: [
+      { id: 'f42-1', topic: 'enfants', model: "Ils rentrent à neuf heures, peu importe où ils sont allés.", en: "They're home by nine, no matter where they've been." },
+      { id: 'f42-2', topic: 'politique', model: "Les prix montent, peu importe qui gagne les élections.", en: "Prices go up, no matter who wins the election." },
+      { id: 'f42-3', topic: 'collegues', model: "Il répond toujours la même chose, peu importe ce que tu lui demandes.", en: "He always gives the same answer, no matter what you ask him." }
+    ] },
+
+  { id: 'f43', textId: 6, sources: [6], light: true,
+    form: "{La cause}, du coup {le résultat}.",
+    gloss: "___, so ___",
+    prompts: [
+      { id: 'f43-1', topic: 'voisins', model: "Les travaux commencent à six heures. Du coup, je suis levé avant tout le monde.", en: "The building work starts at six. So I'm up before everyone." },
+      { id: 'f43-2', topic: 'enfants', model: "La petite était malade, du coup on a annulé le dîner.", en: "Our little one was sick, so we cancelled dinner." },
+      { id: 'f43-3', topic: 'tech', model: "J'ai cassé mon téléphone, du coup j'ai raté ton message.", en: "I broke my phone, so I missed your message." }
+    ] },
+
+  { id: 'f44', textId: 6, sources: [6], light: true,
+    form: "Ce qui me tue, c'est {N / que P / ça}.",
+    gloss: "What really gets me is ___",
+    prompts: [
+      { id: 'f44-1', topic: 'collegues', model: "Et ce qui me tue, c'est qu'on a cette réunion toutes les semaines.", en: "And what really gets me is that we have this meeting every week." },
+      { id: 'f44-2', topic: 'politique', model: "Ce qui me tue, c'est ça : ils se disputent à la télé, et après ils déjeunent ensemble.", en: "Here's what really gets me: they fight on TV, and then they have lunch together." },
+      { id: 'f44-3', topic: 'argent', model: "Ce qui me tue, c'est le prix du parking.", en: "What really gets me is the price of parking." }
+    ] },
+
+  { id: 'f45', textId: 6, sources: [6], light: true,
+    form: "Chacun est sûr {d'être celui qui… / de + infinitif}.",
+    gloss: "Each one is sure ___",
+    prompts: [
+      { id: 'f45-1', topic: 'couple', model: "Chacun est sûr d'être celui qui fait le plus à la maison.", en: "Each of us is sure they're the one who does the most at home." },
+      { id: 'f45-2', topic: 'politique', model: "Chacun est sûr d'avoir raison, et personne n'écoute.", en: "Everyone's sure they're right, and nobody listens." },
+      { id: 'f45-3', topic: 'enfants', model: "Chacun est sûr d'être celui qu'on punit tout le temps.", en: "Each of them is sure they're the one who always gets punished." }
+    ] },
+
+  { id: 'f46', textId: 6, sources: [6], light: true,
+    form: "Moi, c'est pas pareil, {la raison}.",
+    gloss: "It's different for me, ___",
+    prompts: [
+      { id: 'f46-1', topic: 'sante', model: "Moi, c'est pas pareil, je cours pas pour maigrir.", en: "It's different for me, I don't run to lose weight." },
+      { id: 'f46-2', topic: 'enfants', model: "Moi, c'est pas pareil, j'ai des enfants.", en: "It's different for me, I've got kids." },
+      { id: 'f46-3', topic: 'cours', model: "Moi, c'est pas pareil, j'ai cours à huit heures.", en: "It's different for me, I teach at eight." }
+    ] },
+
+  { id: 'f47', textId: 6, sources: [6], light: true,
+    form: "Exactement là où {plus-que-parfait}.",
+    gloss: "Exactly where ___ had ___",
+    prompts: [
+      { id: 'f47-1', topic: 'argent', model: "On a fait trois devis, et on a fini exactement là où on avait commencé.", en: "We got three quotes, and we ended up exactly where we started." },
+      { id: 'f47-2', topic: 'couple', model: "J'ai retrouvé mes clés exactement là où je les avais laissées.", en: "I found my keys exactly where I'd left them." },
+      { id: 'f47-3', topic: 'politique', model: "Deux ans de négociations, et ils sont revenus exactement là où ils s'étaient arrêtés.", en: "Two years of talks, and they came back to exactly where they'd stopped." }
+    ] },
+
+  { id: 'f48', textId: 6, sources: [6], light: true,
+    form: "{X}, difficile d'y échapper.",
+    gloss: "___: hard to get out of it",
+    prompts: [
+      { id: 'f48-1', topic: 'collegues', model: "Les réunions du lundi, difficile d'y échapper.", en: "Monday meetings: hard to get out of them." },
+      { id: 'f48-2', topic: 'couple', model: "Le dîner du vendredi, difficile d'y échapper.", en: "Friday dinner: hard to get out of it." },
+      { id: 'f48-3', topic: 'tech', model: "Les groupes WhatsApp de l'école, difficile d'y échapper.", en: "School WhatsApp groups: hard to escape them." }
     ] }
 ];
 
@@ -1237,43 +1347,43 @@ var SENTENCES = {
   6: [
     { l: 0, fr: "Dis-moi un truc.", en: "Tell me something." },
     { l: 0, fr: "Tu t'es déjà vraiment demandé pourquoi tu crois au Dieu des Juifs ?", en: "Have you ever really asked yourself why you believe in the Jewish God?" },
-    { l: 0, fr: "Pas à Dieu en général, à celui-là.", en: "Not God in general, this one." },
-    { l: 0, fr: "Pourquoi, à ton avis ?", en: "Why do you think that is?" },
+    { l: 0, fr: "Pas à Dieu en général, à celui-là.", en: "Not God in general, this one.", f: 'f37' },
+    { l: 0, fr: "Pourquoi, à ton avis ?", en: "Why do you think that is?", f: 'f38' },
     { l: 0, fr: "Parce que c'est la vérité ? D'accord.", en: "Because it's the truth? Okay." },
     { l: 0, fr: "Alors je te pose une question : si t'étais né ailleurs, disons au Yémen ou en Ukraine, tu penses que tu croirais au même Dieu ?", en: "Then here's my question: if you'd been born somewhere else, say in Yemen or Ukraine, do you think you'd believe in the same God?", f: 'f25' },
     { l: 0, fr: "En Inde, par exemple ?", en: "In India, say?" },
     { l: 1, fr: "T'aurais grandi avec les temples, les fêtes, les prières de ta grand-mère, comme tout le monde autour de toi.", en: "You'd have grown up with the temples, the festivals, your grandmother's prayers, like everyone around you." },
     { l: 1, fr: "Et un beau matin, tu te réveillerais et tu te dirais : « Non, en fait, c'est pas Shiva. C'est le Dieu des Juifs, le vrai. »", en: "And one fine morning, you'd wake up and think: \"No, actually, it's not Shiva. It's the God of the Jews, the real one.\"" },
     { l: 1, fr: "Tu vois ça arriver ? Sérieusement ?", en: "Can you see that happening? Seriously?" },
-    { l: 1, fr: "Le Dieu d'un petit peuple, à quatre mille kilomètres de chez toi, dont t'aurais à peine entendu parler ?", en: "The God of a small people, four thousand kilometres away, that you'd barely have heard of?" },
+    { l: 1, fr: "Le Dieu d'un petit peuple, à quatre mille kilomètres de chez toi, dont t'aurais à peine entendu parler ?", en: "The God of a small people, four thousand kilometres away, that you'd barely have heard of?", f: 'f39' },
     { l: 1, fr: "Non. Tu serais hindou, point.", en: "No. You'd be Hindu, full stop." },
     { l: 1, fr: "En Jordanie, tu serais musulman. Au Brésil, chrétien.", en: "In Jordan, you'd be Muslim. In Brazil, Christian." },
-    { l: 1, fr: "Mais t'es né ici, chez tes parents. Donc t'es juif.", en: "But you were born here, to your parents. So you're Jewish." },
-    { l: 2, fr: "Et c'est pas qu'une question d'endroit. C'est aussi une question d'époque.", en: "And it's not just a question of place. It's a question of time too." },
+    { l: 1, fr: "Mais t'es né ici, chez tes parents. Donc t'es juif.", en: "But you were born here, to your parents. So you're Jewish.", f: 'f40' },
+    { l: 2, fr: "Et c'est pas qu'une question d'endroit. C'est aussi une question d'époque.", en: "And it's not just a question of place. It's a question of time too.", f: 'f41' },
     { l: 2, fr: "Imagine Rome, il y a deux mille ans.", en: "Picture Rome, two thousand years ago." },
     { l: 2, fr: "Tout le monde croyait en Jupiter.", en: "Everyone believed in Jupiter." },
     { l: 2, fr: "On lui sacrifiait des animaux, on le priait avant une bataille.", en: "They sacrificed animals to him, they prayed to him before a battle." },
     { l: 2, fr: "Aujourd'hui, pour toi, c'est ridicule.", en: "Today, for you, it's ridiculous." },
     { l: 2, fr: "Mais si t'étais né là-bas, t'aurais cru en lui aussi, comme tout le monde.", en: "But if you'd been born there, you'd have believed in him too, like everyone else." },
     { l: 2, fr: "Et le Dieu des Juifs, il t'aurait paru aussi bizarre que Jupiter te paraît aujourd'hui.", en: "And the God of the Jews would have seemed as strange to you as Jupiter does now." },
-    { l: 3, fr: "Si c'était une question de vérité, les gens la trouveraient, peu importe où ils sont nés, comme pour les maths, la physique ou la chimie.", en: "If it were about truth, people would find their way to it wherever they were born, like with math, physics or chemistry." },
+    { l: 3, fr: "Si c'était une question de vérité, les gens la trouveraient, peu importe où ils sont nés, comme pour les maths, la physique ou la chimie.", en: "If it were about truth, people would find their way to it wherever they were born, like with math, physics or chemistry.", f: 'f42' },
     { l: 3, fr: "Et c'est pas le cas.", en: "They don't." },
     { l: 3, fr: "Environ neuf personnes sur dix dans le monde gardent la religion dans laquelle elles ont grandi.", en: "About nine in ten people in the world keep the religion they grew up with." },
     { l: 3, fr: "Pas parce qu'elles ont vérifié, mais parce que c'est ce qu'on leur a donné à la maison, avec la langue, la bouffe, la culture et les valeurs.", en: "Not because they checked, but because that's what they got at home, along with the language, the food, the culture and the values." },
-    { l: 3, fr: "Du coup, la religion, c'est moins une question de vérité qu'une question de code postal.", en: "So religion is less a question of truth than a question of postcode.", f: 'f09' },
+    { l: 3, fr: "Du coup, la religion, c'est moins une question de vérité qu'une question de code postal.", en: "So religion is less a question of truth than a question of postcode.", f: ['f43', 'f09'] },
     { l: 3, fr: "C'est comme un accent : tu l'attrapes quand t'es petit, et après, il te paraît normal, c'est tout.", en: "It's like an accent: you pick it up as a child, and then it just sounds normal to you." },
-    { l: 4, fr: "Et ce qui me tue, c'est ça.", en: "And here's what really gets me." },
+    { l: 4, fr: "Et ce qui me tue, c'est ça.", en: "And here's what really gets me.", f: 'f44' },
     { l: 4, fr: "Quand tu penses à un musulman en Égypte, t'es certain qu'il se trompe : le pauvre, on l'a élevé dans un mensonge.", en: "When you think of a Muslim in Egypt, you're certain he's wrong: poor guy, he was raised to believe a lie." },
     { l: 4, fr: "Et lui, il te regarde exactement pareil.", en: "And he looks at you exactly the same way." },
-    { l: 4, fr: "Chacun a pitié de l'autre, et chacun est sûr d'être celui qui a eu de la chance.", en: "You each feel sorry for the other, and each of you is sure he's the lucky one." },
-    { l: 5, fr: "Alors oui, je vois venir ta réponse : « Moi, c'est pas pareil, j'y ai réfléchi. »", en: "So yes, I can see your answer coming: \"It's not the same for me, I've thought about it.\"", f: 'f06' },
+    { l: 4, fr: "Chacun a pitié de l'autre, et chacun est sûr d'être celui qui a eu de la chance.", en: "You each feel sorry for the other, and each of you is sure he's the lucky one.", f: 'f45' },
+    { l: 5, fr: "Alors oui, je vois venir ta réponse : « Moi, c'est pas pareil, j'y ai réfléchi. »", en: "So yes, I can see your answer coming: \"It's not the same for me, I've thought about it.\"", f: ['f06', 'f46'] },
     { l: 5, fr: "D'accord, t'y as réfléchi, je te l'accorde. Mais lui aussi.", en: "Okay, you've thought about it, I'll grant you that. But so has he.", f: 'f02' },
     { l: 5, fr: "Il a lu ses livres, il a posé ses questions à ses imams, il a eu ses doutes.", en: "He's read his books, he's asked his imams, he's had his doubts." },
-    { l: 5, fr: "Et il a fini exactement là où il avait commencé.", en: "And he ended up exactly where he started." },
+    { l: 5, fr: "Et il a fini exactement là où il avait commencé.", en: "And he ended up exactly where he started.", f: 'f47' },
     { l: 5, fr: "Comme toi. Comme des milliards d'autres.", en: "Just like you. Just like billions of others." },
     { l: 5, fr: "Alors regarde comment tu le vois : un type attaché à ce qu'on lui a donné quand il était petit, et qui appelle ça la vérité.", en: "So look at how you see him: a man attached to what he was given as a child, who calls it the truth." },
     { l: 5, fr: "C'est toi.", en: "That's you." },
-    { l: 6, fr: "Difficile d'y échapper : si t'étais né en Syrie, tu serais assis là à défendre l'islam, aussi sûr de toi que maintenant.", en: "It's hard to get away from it: if you'd been born in Syria, you'd be sitting here defending Islam, just as sure of yourself as you are now." },
+    { l: 6, fr: "Difficile d'y échapper : si t'étais né en Syrie, tu serais assis là à défendre l'islam, aussi sûr de toi que maintenant.", en: "It's hard to get away from it: if you'd been born in Syria, you'd be sitting here defending Islam, just as sure of yourself as you are now.", f: 'f48' },
     { l: 6, fr: "Et tu me dirais que c'est parce que c'est la vérité.", en: "And you'd tell me it's because it's the truth." },
     { l: 6, fr: "Ça te dérange pas un peu ?", en: "Doesn't that bother you a bit?" }
   ],

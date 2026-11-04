@@ -95,7 +95,7 @@ const neverHidden = steps => steps.every(s => s.t !== 'ui' || (s.v.hideFr === un
 {
   for (const t of TEXTS) {
     const vl = Core.varList(SENTENCES[t.id]);
-    const fs = new Set(SENTENCES[t.id].filter(s => s.f).map(s => s.f));
+    const fs = new Set(SENTENCES[t.id].flatMap(s => [].concat(s.f || [])));
     ok(vl.length === fs.size && vl.length >= 3, `text ${t.id}: one variation per structure (${vl.length})`);
   }
   const v = byId.f02.prompts[0];
@@ -195,9 +195,9 @@ ok(Core.repeatMs('Tu me suis ?') >= 2500, 'even a short sentence leaves time to 
     ok(p.pos === 0 && p.done === 0 && !p.finished, `text ${t.id}: starts at 0`);
     ss.forEach((s, i) => {
       ok(!Core.isDone(st, t.id, i), `text ${t.id}: sentence ${i} is new on first pass`);
-      const v = s.f ? Core.pickVariant(st, byId[s.f]) : null;
-      ok(!s.f || (v && v.model && v.en), `text ${t.id} sentence ${i}: frame gives a variation with English`);
-      Core.complete(st, t.id, i, v ? s.f : null);
+      const ids = [].concat(s.f || []);
+      ids.forEach(id => { const v = Core.pickVariant(st, byId[id]); ok(v && v.model && v.en, `text ${t.id} sentence ${i}: ${id} gives a variation with English`); });
+      Core.complete(st, t.id, i, ids[0] || null);
     });
     p = Core.progress(st, t.id, ss.length);
     ok(p.finished && p.done === ss.length, `text ${t.id}: finished after the last sentence`);
@@ -208,6 +208,25 @@ ok(Core.repeatMs('Tu me suis ?') >= 2500, 'even a short sentence leaves time to 
   // Frames used in several sentences rotate across them: f02 sits in many texts.
   const f02n = TEXTS.reduce((a, t) => a + SENTENCES[t.id].filter(s => s.f === 'f02').length, 0);
   ok(st.vu.f02 === f02n, 'f02 shown once per sentence carrying it');
+}
+
+// ── 🗑: a deleted structure leaves the list, and comes back ──
+{
+  const st = Core.defaults();
+  const ss = SENTENCES[6];
+  const all = Core.varList(ss, st.gone);
+  ok(all.length === 16, 'text 6 carries 16 structures');
+  ok(all.some(e => e.f === 'f43') && all.some(e => e.f === 'f09'), 'a sentence can carry two structures');
+  Core.removeFrame(st, 'f43');
+  ok(Core.varList(ss, st.gone).length === 15 && !Core.varList(ss, st.gone).some(e => e.f === 'f43'), 'deleted: gone from the list');
+  ok(Core.goneIn(st, ss).join() === 'f43', 'the chooser knows what to restore');
+  ok(Core.goneIn(st, SENTENCES[1]).length === 0, 'another text has nothing to restore');
+  const back = Core.normalize(JSON.parse(JSON.stringify(st)));
+  ok(back.gone.f43 === true, 'survives a save');
+  const old = Core.defaults(); delete old.gone;
+  ok(Core.normalize(old).gone && Core.varList(ss, old.gone).length === 16, 'an older save gets an empty list');
+  Core.restoreFrame(st, 'f43');
+  ok(Core.varList(ss, st.gone).length === 16, 'restored');
 }
 
 // ── Out-of-order completion (⏭ then ⏮) keeps the done string coherent ──
