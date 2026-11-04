@@ -24,7 +24,6 @@
   function reloadIfUpdated() { if (updatePending && !run.active) location.reload(); }
   function handsFree() { return mode === 'mains' || mode === 'anglais'; }
   var SIZE_KEY = 'debat_chunk';
-  var AUTO_KEY = 'debat_auto';
   var auto = true;         // « Au calme »: read the French once when the card appears
   var TRACK_KEY = 'debat_track';
   var track = 'debat';     // home tab: 'debat' (corpus A/B) | 'vie' (corpus V, family video calls)
@@ -478,6 +477,7 @@
     $('mode-calme').classList.toggle('active', m === 'calme');
     $('btn-auto').classList.toggle('hidden', m !== 'calme');
     $('mode-desc').textContent = MODE_DESC[m];
+    if (changed && m === 'calme') setAuto(false);        // entering « Au calme » is silent, whatever it was before
     // Mid-run: the current piece starts again in the new mode.
     if (changed && run.active) playAt(run.pos);
   }
@@ -485,7 +485,6 @@
   // Next cards only; the current one is not rebuilt.
   function setAuto(on) {
     auto = on;
-    try { localStorage.setItem(AUTO_KEY, on ? '1' : '0'); } catch (e) {}
     var b = $('btn-auto');
     b.classList.toggle('activated', on);
     b.setAttribute('aria-pressed', on ? 'true' : 'false');
@@ -587,8 +586,8 @@
       }
     } catch (e) {}
     try { mode = localStorage.getItem(MODE_KEY); } catch (e) {}
-    try { auto = localStorage.getItem(AUTO_KEY) !== '0'; } catch (e) {}
-    if (mode === 'silence') { mode = 'calme'; auto = false; }  // v19 « Silencieux » = « Au calme » without auto
+    auto = false;                                        // « auto » is never remembered: « Au calme » opens silent
+    if (mode === 'silence') mode = 'calme';              // v19 « Silencieux » = « Au calme » without auto
     if (!MODE_DESC[mode]) mode = 'mains';
     setAuto(auto);
     setMode(mode);
@@ -597,7 +596,7 @@
     $('mode-calme').addEventListener('click', function () { setMode('calme'); });
     $('btn-auto').addEventListener('click', function () {
       setAuto(!auto);
-      if (auto) playNow('fr');                           // switched on: hear this card now
+      if (auto || speaking > 0) playNow('fr');           // on: hear this card now; off while reading: stop it
     });
     try { run.size = parseInt(localStorage.getItem(SIZE_KEY), 10); } catch (e) {}
     if (run.size === 4) run.size = 3;                    // v9 had 1·2·3·4·Tout
