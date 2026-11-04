@@ -129,6 +129,17 @@
   // Speaks `text`, then calls cb once. A fallback timer covers a silent engine that
   // never fires onend, so a hands-free run cannot stall.
   var speaking = 0;   // utterances in flight; the speaker button stops them when > 0
+  // Android's engine clips the first syllable when speak() follows cancel() at once, or when
+  // the audio route is still waking up. So every utterance starts after a short lead-in
+  // (longer right after a cancel), and cancelSpeech() also drops utterances still waiting.
+  var lastCancel = 0;
+  var waiting = [];   // { t: timer, finish: fn } for utterances not yet handed to the engine
+  function cancelSpeech() {
+    lastCancel = Date.now();
+    if ('speechSynthesis' in window) speechSynthesis.cancel();
+    var w = waiting; waiting = [];
+    for (var i = 0; i < w.length; i++) { clearTimeout(w[i].t); w[i].finish(); }
+  }
   function speak(text, lang, rate, cb) {
     if (!('speechSynthesis' in window)) { setTimeout(cb, 1500); return; }
     var done = false;
@@ -149,8 +160,15 @@
     u.onend = finish;
     u.onerror = finish;
     var words = text.split(/\s+/).length;
-    fallback = setTimeout(finish, Math.max(3000, words * 650 / rate + 2500));
-    speechSynthesis.speak(u);
+    var lead = Math.max(150, 400 - (Date.now() - lastCancel));
+    fallback = setTimeout(finish, Math.max(3000, words * 650 / rate + 2500) + lead);
+    var entry = { finish: finish };
+    entry.t = setTimeout(function () {
+      var k = waiting.indexOf(entry);
+      if (k >= 0) waiting.splice(k, 1);
+      speechSynthesis.speak(u);
+    }, lead);
+    waiting.push(entry);
   }
 
   function requestWakeLock() {
@@ -204,7 +222,7 @@
     hide($('btn-next'));
     hide($('run-bar-time'));
     if (run.timer) { clearTimeout(run.timer); run.timer = null; }
-    if ('speechSynthesis' in window) speechSynthesis.cancel();
+    cancelSpeech();
   }
 
   // His turn. « Mains libres »: a silence sized to the sentence, with a thin bar.
@@ -280,9 +298,9 @@
     if (speaking > 0) {                       // already speaking: a tap silences it
       if (play.on) {
         play.on = false;
-        speechSynthesis.cancel();
+        cancelSpeech();
         if (play.resume && run.paused) resumeRun();
-      } else speechSynthesis.cancel();        // auto reading: its callback carries the run on
+      } else cancelSpeech();                  // auto reading: its callback carries the run on
       return;
     }
     if (!play.on) {
@@ -290,7 +308,7 @@
       if (!run.paused) { pauseRun(); hide($('run-paused')); }
     }
     play.on = true;
-    if ('speechSynthesis' in window) speechSynthesis.cancel();
+    cancelSpeech();
     speak(shown[lang], lang, lang === 'en' ? 0.9 : 0.85, function () {
       if (my !== play.gen) return;
       play.on = false;
