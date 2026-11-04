@@ -144,8 +144,10 @@ var Core = (function () {
   }
 
   // Any chunk: three repeats, four during the first readings; the whole text is listen-only.
-  function repeatsFor(size, nReads) {
+  // pref = his chosen number of repeats (2–4); 0 / unset = automatic (the rule above).
+  function repeatsFor(size, nReads, pref) {
     if (!size) return 0;                                   // « Tout » = listen only
+    if (pref) return pref;
     return (nReads || 0) < NEW_READS ? REPEAT_NEW : REPEAT_SENT;
   }
 
@@ -196,7 +198,7 @@ var Core = (function () {
     };
   }
 
-  // opts: { size, reads, silent, auto, enFirst, other }. reads = times this text was already played to its end.
+  // opts: { size, reads, reps, silent, auto, enFirst, other }. reps = his chosen repeats (0 = automatic). reads = times this text was already played to its end.
   // silent = « Au calme »: one card, one « Suivant »; auto = the French read once first.
   function textSteps(chunk, opts) {
     opts = opts || {};
@@ -211,7 +213,7 @@ var Core = (function () {
       k.turn(0);
       return k.s;
     }
-    var reps = repeatsFor(opts.size === undefined ? 1 : opts.size, opts.reads);
+    var reps = repeatsFor(opts.size === undefined ? 1 : opts.size, opts.reads, opts.reps);
     if (opts.enFirst) {
       // « Anglais d'abord »: the meaning first, then the French repeated (« Tout » too).
       k.ui({ phase: 'sent', fr: fr, en: en, caption: "En anglais d'abord", hint: 'First the English. Listen.' });
@@ -219,7 +221,7 @@ var Core = (function () {
       // His try in French before hearing it: longer than a repeat window.
       k.ui({ caption: 'À toi, en français', hint: 'Your turn: say it in French.' });
       k.turn(tryMs(frs.join(' ')));
-      repeatFr(k, frs, Math.max(repeatsFor(1, opts.reads), REPEAT_EN));
+      repeatFr(k, frs, opts.reps || Math.max(repeatsFor(1, opts.reads), REPEAT_EN));
       return k.s;
     }
     k.ui({ phase: 'sent', fr: fr, en: en, caption: 'Écoute', hint: 'Listen.' });
@@ -242,7 +244,7 @@ var Core = (function () {
     }
   }
 
-  // opts: { review, silent, auto, enFirst } (see textSteps). review = he has met a variation of this structure before.
+  // opts: { review, reps, silent, auto, enFirst } (see textSteps). review = he has met a variation of this structure before.
   function varSteps(v, opts) {
     opts = opts || {};
     var k = stepper(), ui = k.ui, say = k.say, turn = k.turn;
@@ -259,7 +261,7 @@ var Core = (function () {
       say(v.en, 'en', 0.9);
       ui({ caption: 'À toi, en français', hint: 'Your turn: say it in French.' });
       turn(tryMs(v.model));
-      repeatFr(k, [v.model], REPEAT_EN);
+      repeatFr(k, [v.model], opts.reps || REPEAT_EN);
       return k.s;
     }
     if (!opts.review) {
@@ -272,7 +274,7 @@ var Core = (function () {
       turn(tryMs(v.model));
     }
     // Either way: heard and repeated three times.
-    repeatFr(k, [v.model], REPEAT_VAR);
+    repeatFr(k, [v.model], opts.reps || REPEAT_VAR);
     return k.s;
   }
 

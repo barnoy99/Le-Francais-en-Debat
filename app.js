@@ -24,6 +24,8 @@
   function reloadIfUpdated() { if (updatePending && !run.active) location.reload(); }
   function handsFree() { return mode === 'mains' || mode === 'anglais'; }
   var SIZE_KEY = 'debat_chunk';
+  var REPS_KEY = 'debat_reps';
+  var reps = 0;            // how many times the French is repeated: 2–4, 0 = automatic (Core.repeatsFor)
   var auto = true;         // « Au calme »: read the French once when the card appears
   var TRACK_KEY = 'debat_track';
   var track = 'debat';     // home tab: 'debat' (corpus A/B) | 'vie' (corpus V, family video calls)
@@ -345,7 +347,7 @@
       run.len = c.len;
       Core.setPos(state, run.text.id, pos);
       run.variant = null;
-      run.steps = Core.textSteps(chunk, { size: run.size, reads: Core.reads(state, run.text.id), silent: silent, auto: auto, enFirst: mode === 'anglais', other: run.text.other });
+      run.steps = Core.textSteps(chunk, { size: run.size, reads: Core.reads(state, run.text.id), reps: reps, silent: silent, auto: auto, enFirst: mode === 'anglais', other: run.text.other });
       var one = chunk.every(function (x) { return x.who === chunk[0].who; });
       if (run.text.kind === 'dialogue' && one) who = chunk[0].who === 'lui' ? (run.text.other ? run.text.other[0] : 'Ton ami') : 'Toi';
       count = run.len === 1 ? (pos + 1) + ' / ' + list.length : (pos + 1) + '–' + (pos + run.len) + ' / ' + list.length;
@@ -355,7 +357,7 @@
       run.len = 1;
       Core.setVarPos(state, run.text.id, pos);
       run.variant = Core.pickVariant(state, frame);
-      run.steps = Core.varSteps(run.variant, { review: (state.vu[entry.f] || 0) > 0, silent: silent, auto: auto, enFirst: mode === 'anglais' });
+      run.steps = Core.varSteps(run.variant, { review: (state.vu[entry.f] || 0) > 0, reps: reps, silent: silent, auto: auto, enFirst: mode === 'anglais' });
       who = frame.form;
       count = (pos + 1) + ' / ' + list.length;
     }
@@ -471,6 +473,14 @@
     }
   }
 
+  // Next cards only; the current one is not rebuilt.
+  function setReps(n) {
+    reps = n;
+    try { localStorage.setItem(REPS_KEY, String(n)); } catch (e) {}
+    var btns = document.querySelectorAll('.reps-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.toggle('active', +btns[i].getAttribute('data-reps') === n);
+  }
+
   function leaveRun() {
     // The item in flight is the saved cursor (pos / vpos): reopening starts on it.
     stopRun();
@@ -517,6 +527,7 @@
     $('mode-anglais').classList.toggle('active', m === 'anglais');
     $('mode-calme').classList.toggle('active', m === 'calme');
     $('btn-auto').classList.toggle('hidden', m !== 'calme');
+    $('reps-toggle').classList.toggle('hidden', m === 'calme');   // « Au calme » has no repeats
     $('mode-desc').textContent = MODE_DESC[m];
     if (changed && m === 'calme') setAuto(false);        // entering « Au calme » is silent, whatever it was before
     // Mid-run: the current piece starts again in the new mode.
@@ -643,6 +654,13 @@
     if (run.size === 4) run.size = 3;                    // v9 had 1·2·3·4·Tout
     if (Core.SIZES.indexOf(run.size) < 0) run.size = 1;
     setSize(run.size);
+    try { reps = parseInt(localStorage.getItem(REPS_KEY), 10); } catch (e) {}
+    if ([0, 2, 3, 4].indexOf(reps) < 0) reps = 0;
+    setReps(reps);
+    var repBtns = document.querySelectorAll('.reps-btn');
+    for (var rb = 0; rb < repBtns.length; rb++) {
+      repBtns[rb].addEventListener('click', function () { setReps(+this.getAttribute('data-reps')); });
+    }
     var sizeBtns = document.querySelectorAll('.size-btn');
     for (var sb = 0; sb < sizeBtns.length; sb++) {
       sizeBtns[sb].addEventListener('click', function () { setSize(+this.getAttribute('data-size')); });

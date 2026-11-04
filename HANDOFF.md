@@ -10,6 +10,10 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v47 (2026-11-04) — text 6: Rome hedged
+
+His ask, to be fair: « Mais si t'étais né là-bas, t'aurais très probablement cru en lui aussi, comme presque tout le monde. » (« très probablement », not « sûrement », which also reads as "surely".) « Tu serais hindou, point. » stays. Same sentences and CHUNKS. Assets `?v=47`, `CACHE_VERSION = 'v47'`.
+
 ## v46 (2026-11-04) — text 6: his own structures, and a delete button
 
 His ask: « structures » for him are the phrases he marks in a text, not just the argument moves. He listed 13 from text 6.
