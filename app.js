@@ -25,7 +25,7 @@
   function handsFree() { return mode === 'mains' || mode === 'anglais'; }
   var SIZE_KEY = 'debat_chunk';
   var REPS_KEY = 'debat_reps';
-  var reps = 0;            // how many times the French is repeated: 2–4, 0 = automatic (Core.repeatsFor)
+  var reps = 3;            // how many times the French is repeated: 2–5 (his choice)
   var auto = true;         // « Au calme »: read the French once when the card appears
   var TRACK_KEY = 'debat_track';
   var track = 'debat';     // home tab: 'debat' (corpus A/B) | 'vie' (corpus V, family video calls)
@@ -655,7 +655,7 @@
     if (Core.SIZES.indexOf(run.size) < 0) run.size = 1;
     setSize(run.size);
     try { reps = parseInt(localStorage.getItem(REPS_KEY), 10); } catch (e) {}
-    if ([0, 2, 3, 4].indexOf(reps) < 0) reps = 0;
+    if ([2, 3, 4, 5].indexOf(reps) < 0) reps = 3;        // also maps the old « Auto » (0)
     setReps(reps);
     var repBtns = document.querySelectorAll('.reps-btn');
     for (var rb = 0; rb < repBtns.length; rb++) {
