@@ -42,12 +42,14 @@ var Core = (function () {
   function finishRead(state, textId) { textRec(state, textId).reads++; }
   function reads(state, textId) { var r = state.texts[key(textId)]; return (r && r.reads) || 0; }
 
-  // ★ on the home list: starred texts are listed first. A boolean on the text's record.
+  // ★ on the home list: starred texts are listed first, the latest starred at the top.
+  // r.pin = when it was starred (ms); false when not. Stars from before v49 are `true` (= oldest).
   function isPinned(state, textId) { var r = state.texts[key(textId)]; return !!(r && r.pin); }
-  function togglePin(state, textId) {
+  function pinRank(state, textId) { var r = state.texts[key(textId)]; return !r || !r.pin ? 0 : r.pin === true ? 1 : r.pin; }
+  function togglePin(state, textId, now) {
     var r = textRec(state, textId);
-    r.pin = !r.pin;
-    return r.pin;
+    r.pin = r.pin ? false : (now || Date.now());
+    return !!r.pin;
   }
 
   function isDone(state, textId, idx) {
@@ -306,7 +308,7 @@ var Core = (function () {
     REPEAT_SENT: REPEAT_SENT, REPEAT_VAR: REPEAT_VAR, REPEAT_NEW: REPEAT_NEW, NEW_READS: NEW_READS,
     repeatMs: repeatMs, tryMs: tryMs,
     defaults: defaults, normalize: normalize, pickFreshest: pickFreshest,
-    textRec: textRec, finishRead: finishRead, reads: reads, isPinned: isPinned, togglePin: togglePin, isDone: isDone, progress: progress, complete: complete, setPos: setPos,
+    textRec: textRec, finishRead: finishRead, reads: reads, isPinned: isPinned, pinRank: pinRank, togglePin: togglePin, isDone: isDone, progress: progress, complete: complete, setPos: setPos,
     completeVar: completeVar, setVarPos: setVarPos, varProgress: varProgress,
     pickVariant: pickVariant, SIZES: SIZES, units: units, chunks: chunks, chunkIndex: chunkIndex, repeatsFor: repeatsFor, varList: varList,
     removeFrame: removeFrame, restoreFrame: restoreFrame, goneIn: goneIn,

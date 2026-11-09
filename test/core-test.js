@@ -254,5 +254,15 @@ ok(Core.repeatMs('Tu me suis ?') >= 2500, 'even a short sentence leaves time to 
   ok(Core.normalize(round).texts && Core.normalize(round).vu, 'round-trips through JSON');
 }
 
+// ★ order: the latest starred ranks highest; old boolean stars rank below new ones.
+{
+  const s = Core.defaults();
+  s.texts.t3 = { pos: 0, done: '', vpos: 0, reads: 0, pin: true };
+  Core.togglePin(s, 1, 1000);
+  Core.togglePin(s, 2, 2000);
+  ok(Core.pinRank(s, 2) > Core.pinRank(s, 1) && Core.pinRank(s, 1) > Core.pinRank(s, 3) && Core.pinRank(s, 3) > Core.pinRank(s, 4), 'latest star first, old star after, unstarred last');
+  ok(Core.togglePin(s, 2) === false && Core.pinRank(s, 2) === 0 && !Core.isPinned(s, 2), 'unstarring clears the rank');
+}
+
 console.log(failures ? `${failures} failure(s) in ${checks} checks` : `core OK — ${checks} checks`);
 process.exit(failures ? 1 : 0);

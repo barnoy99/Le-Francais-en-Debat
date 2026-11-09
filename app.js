@@ -25,7 +25,10 @@
   function handsFree() { return mode === 'mains' || mode === 'anglais'; }
   var SIZE_KEY = 'debat_chunk';
   var REPS_KEY = 'debat_reps';
-  var reps = 3;            // how many times the French is repeated: 2–5 (his choice)
+  var reps = 3;            // how many times the French is repeated: 1–5 (his choice)
+  var PACE_KEY = 'debat_pace';
+  var pace = 3;            // ⏱ 1–5: his silences (hands-free) × PACE[pace]; 3 = as before v49
+  var PACE = { 1: 1.6, 2: 1.3, 3: 1, 4: 0.75, 5: 0.55 };
   var auto = true;         // « Au calme »: read the French once when the card appears
   var TRACK_KEY = 'debat_track';
   var track = 'debat';     // home tab: 'debat' (corpus A/B) | 'vie' (corpus V, family video calls)
@@ -238,6 +241,7 @@
       markMore();
       return;
     }
+    ms = Math.round(ms * PACE[pace]);
     var bar = $('run-bar-time');
     var fill = $('run-bar-fill');
     show(bar);
@@ -316,6 +320,20 @@
       play.on = false;
       if (play.resume && run.paused) resumeRun();
     });
+  }
+
+  // « auto » turned off mid-card: silence now. A card of several sentences is one utterance
+  // per sentence, so cancelling only the current one let the next start: skip to his turn.
+  function silenceCard() {
+    if (play.on) { play.gen++; play.on = false; cancelSpeech(); if (play.resume && run.paused) resumeRun(); }
+    if (!run.active || run.paused) { cancelSpeech(); return; }
+    var i = run.idx;
+    while (i < run.steps.length && run.steps[i].t !== 'turn') i++;
+    if (i === run.idx) return;                            // already his turn: nothing is playing
+    run.gen++;
+    cancelSpeech();
+    run.idx = i;
+    exec();
   }
 
   function stopRun() {
@@ -481,6 +499,13 @@
     for (var i = 0; i < btns.length; i++) btns[i].classList.toggle('active', +btns[i].getAttribute('data-reps') === n);
   }
 
+  // ⏱ cycles 1 → 5 → 1. Takes effect from his next silence.
+  function setPace(n) {
+    pace = PACE[n] ? n : 3;
+    try { localStorage.setItem(PACE_KEY, String(pace)); } catch (e) {}
+    $('btn-pace').textContent = '⏱ ' + pace;
+  }
+
   function leaveRun() {
     // The item in flight is the saved cursor (pos / vpos): reopening starts on it.
     stopRun();
@@ -527,7 +552,7 @@
     $('mode-anglais').classList.toggle('active', m === 'anglais');
     $('mode-calme').classList.toggle('active', m === 'calme');
     $('btn-auto').classList.toggle('hidden', m !== 'calme');
-    $('reps-toggle').classList.toggle('hidden', m === 'calme');   // « Au calme » has no repeats
+    $('reps-toggle').classList.toggle('hidden', m === 'calme');   // « Au calme » has no repeats (nor timed silences)
     $('mode-desc').textContent = MODE_DESC[m];
     if (changed && m === 'calme') setAuto(false);        // entering « Au calme » is silent, whatever it was before
     // Mid-run: the current piece starts again in the new mode.
@@ -570,8 +595,8 @@
     var list = $('text-list');
     list.innerHTML = '';
     var shown = TEXTS.filter(function (t) { return trackOf(t) === track; });
-    // Starred first; otherwise the corpus order (map index keeps the sort stable).
-    shown = shown.map(function (t, i) { return { t: t, i: i, pin: Core.isPinned(state, t.id) }; })
+    // Starred first, the latest starred on top; otherwise the corpus order (map index keeps the sort stable).
+    shown = shown.map(function (t, i) { return { t: t, i: i, pin: Core.pinRank(state, t.id) }; })
       .sort(function (a, b) { return (b.pin - a.pin) || (a.i - b.i); })
       .map(function (x) { return x.t; });
     shown.forEach(function (t) {
@@ -648,15 +673,20 @@
     $('mode-calme').addEventListener('click', function () { setMode('calme'); });
     $('btn-auto').addEventListener('click', function () {
       setAuto(!auto);
-      if (auto || speaking > 0) playNow('fr');           // on: hear this card now; off while reading: stop it
+      if (auto) playNow('fr');                           // on: hear this card now
+      else silenceCard();                                // off: stop the reading at once
     });
     try { run.size = parseInt(localStorage.getItem(SIZE_KEY), 10); } catch (e) {}
     if (run.size === 4) run.size = 3;                    // v9 had 1·2·3·4·Tout
     if (Core.SIZES.indexOf(run.size) < 0) run.size = 1;
     setSize(run.size);
     try { reps = parseInt(localStorage.getItem(REPS_KEY), 10); } catch (e) {}
-    if ([2, 3, 4, 5].indexOf(reps) < 0) reps = 3;        // also maps the old « Auto » (0)
+    if ([1, 2, 3, 4, 5].indexOf(reps) < 0) reps = 3;     // also maps the old « Auto » (0)
     setReps(reps);
+    var storedPace = 3;
+    try { storedPace = parseInt(localStorage.getItem(PACE_KEY), 10); } catch (e) {}
+    setPace(storedPace);
+    $('btn-pace').addEventListener('click', function () { setPace(pace % 5 + 1); });
     var repBtns = document.querySelectorAll('.reps-btn');
     for (var rb = 0; rb < repBtns.length; rb++) {
       repBtns[rb].addEventListener('click', function () { setReps(+this.getAttribute('data-reps')); });
