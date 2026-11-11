@@ -10,6 +10,10 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v50 (2026-11-11) — text 6: « Dis-moi où t'es né… »
+
+His ask: a line right after « code postal »: « Dis-moi où t'es né, je te dirai en qui tu crois. » (his draft had « t'étais né » / « dirait »; the proverb pattern takes present + future). No frame on it. 41 → 42 sentences; CHUNKS 6: the code-postal bouchée and passage are now 3 (code postal + this + accent), joins after it shifted by one. Saved `pos` / `done` for text 6 past sentence 25 now point one sentence early (harmless). Assets `?v=50`, `CACHE_VERSION = 'v50'`.
+
 ## v47 (2026-11-04) — text 6: Rome hedged
 
 His ask, to be fair: « Mais si t'étais né là-bas, t'aurais très probablement cru en lui aussi, comme presque tout le monde. » (« très probablement », not « sûrement », which also reads as "surely".) « Tu serais hindou, point. » stays. Same sentences and CHUNKS. Assets `?v=47`, `CACHE_VERSION = 'v47'`.
