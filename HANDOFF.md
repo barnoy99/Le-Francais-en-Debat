@@ -10,6 +10,10 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v52 (2026-11-12) — text 6: polish of the « Et toi, alors ? » paragraph
+
+He asked for a full read-through. Four wording fixes, all in the v51 paragraph Claude drafted: « moi aussi » (not a third « exactement »), « Attention, je te dis pas… » (« Après, » already opens the paragraph before), « Il y a autant de preuves pour l'un que pour l'autre. » (not « Les preuves sont les mêmes »), second « justement » dropped. Same 63 sentences and CHUNKS. A third objection (« chez nous, c'est différent »: Sinaï, survival) was drafted and he dropped it: don't re-add. Then two in his own paragraphs, with his yes: « disons au Yémen ou en Ukraine » cut from the opening (Jews lived in both, so the friend can just say yes; it now goes straight to « En Inde, par exemple ? ») and « Tout le monde croyait en Jupiter » → « Les gens croyaient en Jupiter. » (it sat next to « comme presque tout le monde »). Assets `?v=52`, `CACHE_VERSION = 'v52'`.
+
 ## v51 (2026-11-12) — text 6: two objections answered
 
 After a structure review he asked for the two replies the text never met, placed after « C'est toi. », before the closer. (1) « Et alors ? C'est pas parce que je l'ai appris à la maison que c'est faux. » → « Je dis pas que c'est faux. Je dis que ta certitude, elle prouve rien. … T'as pas choisi, t'as hérité. » (2) « Et toi, alors ? » → his own story, from him: born into a religious Jewish family and left (« Sur les dix, je suis celui qui est parti. »); not certain there's no God, but thinks so « comme je pense que le père Noël existe pas » (he chose Santa Claus over the tooth fairy); then Téhéran / Tokyo. Drafted by Claude from his points. No frames on the new lines. 42 → 63 sentences, 7 → 9 lines (closer is now `l: 8`); CHUNKS 6 extended, joins unchanged. Saved `pos` / `done` for the closer now point into the new part (harmless). Assets `?v=51`, `CACHE_VERSION = 'v51'`.
