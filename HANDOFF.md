@@ -10,6 +10,10 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v51 (2026-11-12) — text 6: two objections answered
+
+After a structure review he asked for the two replies the text never met, placed after « C'est toi. », before the closer. (1) « Et alors ? C'est pas parce que je l'ai appris à la maison que c'est faux. » → « Je dis pas que c'est faux. Je dis que ta certitude, elle prouve rien. … T'as pas choisi, t'as hérité. » (2) « Et toi, alors ? » → his own story, from him: born into a religious Jewish family and left (« Sur les dix, je suis celui qui est parti. »); not certain there's no God, but thinks so « comme je pense que le père Noël existe pas » (he chose Santa Claus over the tooth fairy); then Téhéran / Tokyo. Drafted by Claude from his points. No frames on the new lines. 42 → 63 sentences, 7 → 9 lines (closer is now `l: 8`); CHUNKS 6 extended, joins unchanged. Saved `pos` / `done` for the closer now point into the new part (harmless). Assets `?v=51`, `CACHE_VERSION = 'v51'`.
+
 ## v50 (2026-11-11) — text 6: « Dis-moi où t'es né… »
 
 His ask: a line right after « code postal »: « Dis-moi où t'es né, je te dirai en qui tu crois. » (his draft had « t'étais né » / « dirait »; the proverb pattern takes present + future). No frame on it. 41 → 42 sentences; CHUNKS 6: the code-postal bouchée and passage are now 3 (code postal + this + accent), joins after it shifted by one. Saved `pos` / `done` for text 6 past sentence 25 now point one sentence early (harmless). Assets `?v=50`, `CACHE_VERSION = 'v50'`.
