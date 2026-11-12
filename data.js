@@ -64,13 +64,12 @@ var TEXTS = [
   { id: 6, corpus: 'A', kind: 'monologue', title: "L'accident géographique", file: "texts/06-laccident-geographique.md",
     lines: [
       { who: 'moi', fr: "Dis-moi un truc. Tu t'es déjà vraiment demandé pourquoi tu crois au Dieu des Juifs ? Pas à Dieu en général, à celui-là. Pourquoi, à ton avis ? Parce que c'est la vérité ? D'accord. Alors je te pose une question : si t'étais né ailleurs, tu penses que tu croirais au même Dieu ? En Inde, par exemple ?" },
-      { who: 'moi', fr: "T'aurais grandi avec les temples, les fêtes, les prières de ta grand-mère, comme tout le monde autour de toi. Et un beau matin, tu te réveillerais et tu te dirais : « Non, en fait, c'est pas Shiva. C'est le Dieu des Juifs, le vrai. » Tu vois ça arriver ? Sérieusement ? Le Dieu d'un petit peuple, à quatre mille kilomètres de chez toi, dont t'aurais à peine entendu parler ? Non. Tu serais hindou, point. En Jordanie, tu serais musulman. Au Brésil, chrétien. Mais t'es né ici, chez tes parents. Donc t'es juif." },
+      { who: 'moi', fr: "Comme tout le monde autour de toi, t'aurais grandi avec les temples, les fêtes, les prières de ta grand-mère. Et un beau matin, tu te réveillerais et tu te dirais : « Non, en fait, c'est pas Shiva. C'est le Dieu des Juifs, le vrai. » Tu vois ça arriver ? Sérieusement ? Le Dieu d'un petit peuple, à quatre mille kilomètres de chez toi, dont t'aurais à peine entendu parler ? Non. Tu serais hindou, point. En Jordanie, tu serais musulman. Au Brésil, chrétien. Mais t'es né ici, chez tes parents. Donc t'es juif." },
       { who: 'moi', fr: "Et c'est pas qu'une question d'endroit. C'est aussi une question d'époque. Imagine Rome, il y a deux mille ans. Les gens croyaient en Jupiter. On lui sacrifiait des animaux, on le priait avant une bataille. Aujourd'hui, pour toi, c'est ridicule. Mais si t'étais né là-bas, t'aurais très probablement cru en lui aussi, comme presque tout le monde. Et le Dieu des Juifs, il t'aurait paru aussi bizarre que Jupiter te paraît aujourd'hui." },
       { who: 'moi', fr: "Si c'était une question de vérité, les gens la trouveraient, peu importe où ils sont nés, comme pour les maths, la physique ou la chimie. Et c'est pas le cas. Environ neuf personnes sur dix dans le monde gardent la religion dans laquelle elles ont grandi. Pas parce qu'elles ont vérifié, mais parce que c'est ce qu'on leur a donné à la maison, avec la langue, la bouffe, la culture et les valeurs. Du coup, la religion, c'est moins une question de vérité qu'une question de code postal. Dis-moi où t'es né, je te dirai en qui tu crois. C'est comme un accent : tu l'attrapes quand t'es petit, et après, il te paraît normal, c'est tout." },
       { who: 'moi', fr: "Et ce qui me tue, c'est ça. Quand tu penses à un musulman en Égypte, t'es certain qu'il se trompe : le pauvre, on l'a élevé dans un mensonge. Et lui, il te regarde exactement pareil. Chacun a pitié de l'autre, et chacun est sûr d'être celui qui a eu de la chance." },
       { who: 'moi', fr: "Alors oui, je vois venir ta réponse : « Moi, c'est pas pareil, j'y ai réfléchi. » D'accord, t'y as réfléchi, je te l'accorde. Mais lui aussi. Il a lu ses livres, il a posé ses questions à ses imams, il a eu ses doutes. Et il a fini exactement là où il avait commencé. Comme toi. Comme des milliards d'autres. Alors regarde comment tu le vois : un type attaché à ce qu'on lui a donné quand il était petit, et qui appelle ça la vérité. C'est toi." },
       { who: 'moi', fr: "Après, tu peux me répondre : « Et alors ? C'est pas parce que je l'ai appris à la maison que c'est faux. » Et là-dessus, t'as raison. Je dis pas que c'est faux. Je dis que ta certitude, elle prouve rien. Parce que cette certitude, tu l'aurais eue de toute façon. Hindou, t'aurais été aussi sûr de Shiva. Romain, aussi sûr de Jupiter. Quand un sentiment est aussi fort pour le faux que pour le vrai, il te dit rien sur ce qui est vrai. T'as pas choisi, t'as hérité. Et les raisons, tu les as trouvées après." },
-      { who: 'moi', fr: "Et là, tu vas me retourner la question : « Et toi, alors ? Toi aussi, tu viens de quelque part. » Oui. Et justement : je suis né dans une famille juive religieuse. J'ai grandi avec tout ça, moi aussi. Et j'en suis sorti. Sur les dix, je suis celui qui est parti. Attention, je te dis pas que je suis certain qu'il y a pas de Dieu. Je pense qu'il y en a pas, comme je pense que le père Noël existe pas. Il y a autant de preuves pour l'un que pour l'autre. Et ce à quoi je fais confiance, c'est ce qui dépend pas du hasard de la naissance. Un médecin à Téhéran et un médecin à Tokyo, ils te donnent le même antibiotique. Deux physiciens, n'importe où, ils tombent sur le même résultat. Deux croyants, ça dépend d'où ils viennent." },
       { who: 'moi', fr: "Difficile d'y échapper : si t'étais né en Syrie, tu serais assis là à défendre l'islam, aussi sûr de toi que maintenant. Et tu me dirais que c'est parce que c'est la vérité. Ça te dérange pas un peu ?" }
     ],
     // Monologues quote the friend's objection; these are the Compréhension cues.
@@ -299,6 +298,16 @@ var TEXTS = [
       { who: 'moi', fr: "Vous allez me dire que c'est un peu contradictoire. Mais c'est pas parce que je crois pas que je peux pas aimer les traditions. Pour moi, le shabbat, c'est moins une question de religion qu'une question de famille. Une fois par semaine, on pose les téléphones et on se parle. Enfin, on essaie." },
       { who: 'moi', fr: "Et en automne, on a toutes les fêtes à la suite. Le Nouvel An, Kippour, puis Souccot. Pendant trois semaines, le pays tourne au ralenti. À Kippour, y a presque pas une voiture sur la route. Les enfants font du vélo au milieu des grandes routes. Ce qui m'a frappé, la première fois que je l'ai raconté à des Français, c'est qu'ils me croyaient pas." }
     ] },
+  { id: 28, corpus: 'V', kind: 'monologue', title: "Pourquoi j'ai quitté la religion", file: "texts/28-pourquoi-jai-quitte-la-religion.md",
+    theme: "La religion",
+    lines: [
+      { who: 'moi', fr: "Vous me demandez pourquoi j'ai quitté la religion ? C'est une longue histoire, mais je vais faire court. Je suis né dans une famille juive religieuse. J'ai grandi avec tout ça : le shabbat, les prières, les fêtes. Pour moi, c'était normal, comme un accent qu'on attrape quand on est petit. Et j'en suis sorti." },
+      { who: 'moi', fr: "C'est pas arrivé d'un coup. C'était moins une question de colère qu'une question de curiosité. J'ai commencé à me poser des questions, et les réponses me suffisaient pas." },
+      { who: 'moi', fr: "La première question, elle était toute simple : pourquoi cette religion-là ? Pas la religion en général, celle-là. Si j'étais né en Inde, je serais hindou. Mais je suis né ici, dans cette famille. Donc j'étais juif. J'avais pas choisi, j'avais hérité." },
+      { who: 'moi', fr: "Et puis, ce qui m'a frappé, c'est l'échelle. Des centaines de milliards de galaxies, des milliards d'années. Et au milieu de tout ça, un Dieu qui regarderait si j'allume la lumière le samedi ? J'arrivais plus à y croire." },
+      { who: 'moi', fr: "Attention, je dis pas que je suis certain qu'il y a pas de Dieu. Je dis juste que j'y crois pas. Je pense qu'il y en a pas, comme je pense que le père Noël existe pas. Il y a autant de preuves pour l'un que pour l'autre." },
+      { who: 'moi', fr: "Vous allez me dire : « Alors vous faites pas shabbat, chez vous ? » Si, justement. Le vendredi soir, on mange tous ensemble, chez la mère de ma femme ou chez mes frères. Quitter la religion, c'est une chose. Quitter sa famille, c'en est une autre. Moi, j'ai gardé la famille, les fêtes et la bouffe. J'ai juste laissé Dieu de côté." }
+    ] },
   { id: 25, corpus: 'V', kind: 'monologue', title: "Venez nous voir !", file: "texts/25-venez-nous-voir.md",
     theme: "Le voyage",
     lines: [
@@ -408,7 +417,7 @@ var FRAMES = [
       { id: 'f03-7', topic: 'dieu',      fr: "Un ami dit que la Bible donne une morale à tout le monde. Le problème : elle dit aussi de lapider des gens.", model: "Elle donne une morale, c'est vrai. Sauf qu'elle dit aussi de lapider des gens.", en: "It gives a moral code, it's true. Except it also says to stone people." }
     ] },
 
-  { id: 'f04', textId: 2, sources: [2, 9, 11, 12, 15, 16, 18, 20, 23],
+  { id: 'f04', textId: 2, sources: [2, 9, 11, 12, 15, 16, 18, 20, 23, 28],
     form: "Je dis pas que {P}. Je dis juste que {Q}.",
     gloss: "I'm not saying ___. I'm just saying ___",
     gist: "Rule out the big claim they think you're making, then state the small one you are making.",
@@ -508,7 +517,7 @@ var FRAMES = [
       { id: 'f08-7', topic: 'dieu',      fr: "Un croyant dit que l'athéisme, c'est une religion comme une autre. Pour toi, c'est juste l'absence de croyance.", model: "On parle pas d'une religion. On parle de l'absence de croyance.", en: "We're not talking about a religion. We're talking about the absence of belief." }
     ] },
 
-  { id: 'f09', textId: 6, sources: [6, 22, 26, 24],
+  { id: 'f09', textId: 6, sources: [6, 22, 26, 24, 28],
     form: "C'est moins une question de {A} qu'une question de {B}.",
     gloss: "It's less about ___ than about ___",
     gist: "Say what it really comes down to, weighing one factor against the other.",
@@ -548,7 +557,7 @@ var FRAMES = [
       { id: 'f10-7', topic: 'dieu',      fr: "Un croyant mélange deux choses : est-ce que la religion est utile, et est-ce qu'elle est vraie.", model: "Une religion utile et une religion vraie, c'est deux questions différentes.", en: "A useful religion and a true religion are two different questions." }
     ] },
 
-  { id: 'f11', textId: 17, sources: [17, 11, 13, 19, 22],
+  { id: 'f11', textId: 17, sources: [17, 11, 13, 19, 22, 28],
     form: "{INF A}, c'est une chose. {INF B}, c'en est une autre.",
     gloss: "___ is one thing. ___ is another",
     gist: "Grant the milder act, then draw a hard line before the stronger one.",
@@ -827,7 +836,7 @@ var FRAMES = [
       { id: 'f24-7', topic: 'dieu',      fr: "Une église dépense des millions en or et en décoration. Pour toi, cet argent devait nourrir les pauvres.", model: "Des millions qui auraient pu nourrir les pauvres.", en: "Millions that could have fed the poor." }
     ] },
 
-  { id: 'f25', textId: 6, sources: [6],
+  { id: 'f25', textId: 6, sources: [6, 28],
     form: "Si t'étais né {AILLEURS}, tu serais {X}.",
     gloss: "If you'd been born ___, you'd be ___",
     gist: "Change one fact of their past, and show how different they'd be today.",
@@ -886,7 +895,7 @@ var FRAMES = [
       { id: 'f27-7', topic: 'dieu',      fr: "Un croyant te reproche de dire que la Bible se contredit. Pour toi, il suffit de la lire.", model: "C'est pas moi qui dis que la Bible se contredit. Il suffit de la lire.", en: "I'm not the one saying the Bible contradicts itself. You just have to read it." }
     ] },
 
-  { id: 'f28', textId: 14, sources: [14, 5, 13, 19, 24],
+  { id: 'f28', textId: 14, sources: [14, 5, 13, 19, 24, 28],
     form: "Ce qui m'a frappé, c'est {N / que P}.",
     gloss: "What struck me was ___",
     gist: "Single out the one detail that stuck with you.",
@@ -924,7 +933,7 @@ var FRAMES = [
       { id: 'f29-7', topic: 'dieu',      fr: "Ton ami croyant dit que Dieu est bon. Tu le suis, jusqu'à ce qu'il dise que la souffrance fait partie du plan.", model: "C'est là que j'arrête de te suivre.", en: "That's where I stop following you." }
     ] },
 
-  { id: 'f30', textId: 8, sources: [8, 2, 19, 26],
+  { id: 'f30', textId: 8, sources: [8, 2, 19, 26, 28],
     form: "Si, {justement / bien sûr que si}. {P}",
     gloss: "Oh yes it is / Yes I do — contradicting a negative",
     gist: "Contradict a negative statement or question head-on.",
@@ -1062,7 +1071,7 @@ var FRAMES = [
 
   // ── Ses structures, texte 6 (v46): his own picks. light = three sentences on his life,
   // no situation prompts, a form that may have no slot. ─────────
-  { id: 'f37', textId: 6, sources: [6], light: true,
+  { id: 'f37', textId: 6, sources: [6, 28], light: true,
     form: "Pas {à X} en général, {à} celui-là.",
     gloss: "Not ___ in general: this one.",
     prompts: [
@@ -1089,7 +1098,7 @@ var FRAMES = [
       { id: 'f39-3', topic: 'films', model: "Une petite série coréenne, dont t'aurais à peine entendu parler il y a dix ans, et aujourd'hui tout le monde la regarde.", en: "A little Korean series you'd have barely heard of ten years ago, and now everybody's watching it." }
     ] },
 
-  { id: 'f40', textId: 6, sources: [6], light: true,
+  { id: 'f40', textId: 6, sources: [6, 28], light: true,
     form: "{Les faits}. Donc {verdict court}.",
     gloss: "The facts, then a short verdict: So ___",
     prompts: [
@@ -1354,7 +1363,7 @@ var SENTENCES = {
     { l: 0, fr: "Parce que c'est la vérité ? D'accord.", en: "Because it's the truth? Okay." },
     { l: 0, fr: "Alors je te pose une question : si t'étais né ailleurs, tu penses que tu croirais au même Dieu ?", en: "Then here's my question: if you'd been born somewhere else, do you think you'd believe in the same God?", f: 'f25' },
     { l: 0, fr: "En Inde, par exemple ?", en: "In India, say?" },
-    { l: 1, fr: "T'aurais grandi avec les temples, les fêtes, les prières de ta grand-mère, comme tout le monde autour de toi.", en: "You'd have grown up with the temples, the festivals, your grandmother's prayers, like everyone around you." },
+    { l: 1, fr: "Comme tout le monde autour de toi, t'aurais grandi avec les temples, les fêtes, les prières de ta grand-mère.", en: "Like everyone around you, you'd have grown up with the temples, the festivals, your grandmother's prayers." },
     { l: 1, fr: "Et un beau matin, tu te réveillerais et tu te dirais : « Non, en fait, c'est pas Shiva. C'est le Dieu des Juifs, le vrai. »", en: "And one fine morning, you'd wake up and think: \"No, actually, it's not Shiva. It's the God of the Jews, the real one.\"" },
     { l: 1, fr: "Tu vois ça arriver ? Sérieusement ?", en: "Can you see that happening? Seriously?" },
     { l: 1, fr: "Le Dieu d'un petit peuple, à quatre mille kilomètres de chez toi, dont t'aurais à peine entendu parler ?", en: "The God of a small people, four thousand kilometres away, that you'd barely have heard of?", f: 'f39' },
@@ -1395,21 +1404,9 @@ var SENTENCES = {
     { l: 6, fr: "Quand un sentiment est aussi fort pour le faux que pour le vrai, il te dit rien sur ce qui est vrai.", en: "When a feeling is as strong for what's false as for what's true, it tells you nothing about what's true." },
     { l: 6, fr: "T'as pas choisi, t'as hérité.", en: "You didn't choose, you inherited." },
     { l: 6, fr: "Et les raisons, tu les as trouvées après.", en: "And the reasons, you found them afterwards." },
-    { l: 7, fr: "Et là, tu vas me retourner la question : « Et toi, alors ? Toi aussi, tu viens de quelque part. »", en: "And now you're going to turn the question back on me: \"What about you? You come from somewhere too.\"" },
-    { l: 7, fr: "Oui. Et justement : je suis né dans une famille juive religieuse.", en: "Yes. And that's just it: I was born into a religious Jewish family." },
-    { l: 7, fr: "J'ai grandi avec tout ça, moi aussi.", en: "I grew up with all of it too." },
-    { l: 7, fr: "Et j'en suis sorti.", en: "And I left." },
-    { l: 7, fr: "Sur les dix, je suis celui qui est parti.", en: "Out of the ten, I'm the one who left." },
-    { l: 7, fr: "Attention, je te dis pas que je suis certain qu'il y a pas de Dieu.", en: "Mind you, I'm not telling you I'm certain there's no God." },
-    { l: 7, fr: "Je pense qu'il y en a pas, comme je pense que le père Noël existe pas.", en: "I think there isn't one, the same way I think Santa Claus doesn't exist." },
-    { l: 7, fr: "Il y a autant de preuves pour l'un que pour l'autre.", en: "There's as much evidence for one as for the other." },
-    { l: 7, fr: "Et ce à quoi je fais confiance, c'est ce qui dépend pas du hasard de la naissance.", en: "And what I trust is what doesn't depend on the accident of birth." },
-    { l: 7, fr: "Un médecin à Téhéran et un médecin à Tokyo, ils te donnent le même antibiotique.", en: "A doctor in Tehran and a doctor in Tokyo give you the same antibiotic." },
-    { l: 7, fr: "Deux physiciens, n'importe où, ils tombent sur le même résultat.", en: "Two physicists, anywhere, land on the same result." },
-    { l: 7, fr: "Deux croyants, ça dépend d'où ils viennent.", en: "Two believers: it depends where they come from." },
-    { l: 8, fr: "Difficile d'y échapper : si t'étais né en Syrie, tu serais assis là à défendre l'islam, aussi sûr de toi que maintenant.", en: "It's hard to get away from it: if you'd been born in Syria, you'd be sitting here defending Islam, just as sure of yourself as you are now.", f: 'f48' },
-    { l: 8, fr: "Et tu me dirais que c'est parce que c'est la vérité.", en: "And you'd tell me it's because it's the truth." },
-    { l: 8, fr: "Ça te dérange pas un peu ?", en: "Doesn't that bother you a bit?" }
+    { l: 7, fr: "Difficile d'y échapper : si t'étais né en Syrie, tu serais assis là à défendre l'islam, aussi sûr de toi que maintenant.", en: "It's hard to get away from it: if you'd been born in Syria, you'd be sitting here defending Islam, just as sure of yourself as you are now.", f: 'f48' },
+    { l: 7, fr: "Et tu me dirais que c'est parce que c'est la vérité.", en: "And you'd tell me it's because it's the truth." },
+    { l: 7, fr: "Ça te dérange pas un peu ?", en: "Doesn't that bother you a bit?" }
   ],
   7: [
     { l: 0, fr: "On me dit souvent : « Sans Dieu, pourquoi tu serais quelqu'un de bien ? Tout serait permis. »", en: "People often say to me: 'Without God, why would you be a good person? Everything would be allowed.'" },
@@ -2099,6 +2096,34 @@ var SENTENCES = {
     { l: 2, fr: "Les enfants font du vélo au milieu des grandes routes.", en: "Kids ride their bikes down the middle of the big roads." },
     { l: 2, fr: "Ce qui m'a frappé, la première fois que je l'ai raconté à des Français, c'est qu'ils me croyaient pas.", en: "What struck me, the first time I told French people about it, is that they didn't believe me.", f: 'f28' }
   ],
+  28: [
+    { l: 0, fr: "Vous me demandez pourquoi j'ai quitté la religion ?", en: "You're asking why I left religion?" },
+    { l: 0, fr: "C'est une longue histoire, mais je vais faire court.", en: "It's a long story, but I'll keep it short." },
+    { l: 0, fr: "Je suis né dans une famille juive religieuse.", en: "I was born into a religious Jewish family." },
+    { l: 0, fr: "J'ai grandi avec tout ça : le shabbat, les prières, les fêtes.", en: "I grew up with all of it: Shabbat, the prayers, the holidays." },
+    { l: 0, fr: "Pour moi, c'était normal, comme un accent qu'on attrape quand on est petit.", en: "To me it was normal, like an accent you pick up as a child." },
+    { l: 0, fr: "Et j'en suis sorti.", en: "And I left." },
+    { l: 1, fr: "C'est pas arrivé d'un coup.", en: "It didn't happen all at once." },
+    { l: 1, fr: "C'était moins une question de colère qu'une question de curiosité.", en: "It was less a question of anger than a question of curiosity.", f: 'f09' },
+    { l: 1, fr: "J'ai commencé à me poser des questions, et les réponses me suffisaient pas.", en: "I started asking myself questions, and the answers weren't enough for me." },
+    { l: 2, fr: "La première question, elle était toute simple : pourquoi cette religion-là ?", en: "The first question was very simple: why this religion?" },
+    { l: 2, fr: "Pas la religion en général, celle-là.", en: "Not religion in general, this one.", f: 'f37' },
+    { l: 2, fr: "Si j'étais né en Inde, je serais hindou.", en: "If I'd been born in India, I'd be Hindu.", f: 'f25' },
+    { l: 2, fr: "Mais je suis né ici, dans cette famille. Donc j'étais juif.", en: "But I was born here, in this family. So I was Jewish.", f: 'f40' },
+    { l: 2, fr: "J'avais pas choisi, j'avais hérité.", en: "I hadn't chosen, I'd inherited." },
+    { l: 3, fr: "Et puis, ce qui m'a frappé, c'est l'échelle.", en: "And then, what struck me was the scale.", f: 'f28' },
+    { l: 3, fr: "Des centaines de milliards de galaxies, des milliards d'années.", en: "Hundreds of billions of galaxies, billions of years." },
+    { l: 3, fr: "Et au milieu de tout ça, un Dieu qui regarderait si j'allume la lumière le samedi ?", en: "And in the middle of all that, a God who'd be watching whether I turn on the light on Saturday?" },
+    { l: 3, fr: "J'arrivais plus à y croire.", en: "I couldn't believe it anymore." },
+    { l: 4, fr: "Attention, je dis pas que je suis certain qu'il y a pas de Dieu. Je dis juste que j'y crois pas.", en: "Mind you, I'm not saying I'm certain there's no God. I'm just saying I don't believe in one.", f: 'f04' },
+    { l: 4, fr: "Je pense qu'il y en a pas, comme je pense que le père Noël existe pas.", en: "I think there isn't one, the same way I think Santa Claus doesn't exist." },
+    { l: 4, fr: "Il y a autant de preuves pour l'un que pour l'autre.", en: "There's as much evidence for one as for the other." },
+    { l: 5, fr: "Vous allez me dire : « Alors vous faites pas shabbat, chez vous ? »", en: "You're going to say: 'So you don't do Shabbat at your place?'" },
+    { l: 5, fr: "Si, justement. Le vendredi soir, on mange tous ensemble, chez la mère de ma femme ou chez mes frères.", en: "Yes we do, actually. On Friday night we all eat together, at my wife's mother's or at my brothers'.", f: 'f30' },
+    { l: 5, fr: "Quitter la religion, c'est une chose. Quitter sa famille, c'en est une autre.", en: "Leaving religion is one thing. Leaving your family is another.", f: 'f11' },
+    { l: 5, fr: "Moi, j'ai gardé la famille, les fêtes et la bouffe.", en: "Me, I kept the family, the holidays and the food." },
+    { l: 5, fr: "J'ai juste laissé Dieu de côté.", en: "I just left God aside." }
+  ],
   25: [
     { l: 0, fr: "Vous dites que vous aimeriez venir, mais qu'avec tout ce que vous voyez aux infos, vous avez un peu peur.", en: "You say you'd like to come, but with everything you see on the news, you're a bit scared." },
     { l: 0, fr: "Je comprends, vraiment.", en: "I understand, really." },
@@ -2185,8 +2210,8 @@ var CHUNKS = {
         big:   [8, 4, 4, 5, 8, 2] },
   6:  { join: [0, 9, 28, 32, 37],
         small: [2, 1, 2, 2, 1, 1, 2, 2, 1, 2, 2, 1, 2, 2, 2, 3, 2, 2, 2, 2, 1, 2,
-                2, 2, 2, 1, 2,  2, 2, 1, 3, 1, 3,  1, 2],
-        big:   [3, 4, 2, 2, 3, 4, 3, 2, 2, 3, 4, 4, 3,  4, 3, 2,  5, 3, 4,  3] },
+                2, 2, 2, 1, 2,  1, 2],
+        big:   [3, 4, 2, 2, 3, 4, 3, 2, 2, 3, 4, 4, 3,  4, 3, 2,  3] },
   7:  { join: [3],
         small: [1, 2, 3, 1, 1, 1, 2, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1],
         big:   [3, 5, 4, 8, 5, 4] },
@@ -2244,6 +2269,9 @@ var CHUNKS = {
   24: { join: [],
         small: [2, 2, 2, 2, 2, 2, 2, 2],
         big:   [4, 4, 2, 4, 2] },
+  28: { join: [],
+        small: [2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2],
+        big:   [6, 3, 5, 4, 3, 2, 3] },
   25: { join: [1],
         small: [1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1],
         big:   [3, 2, 4, 5, 3, 3] },

@@ -10,6 +10,15 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v53 (2026-11-12) — his story moves out of text 6 into text 28 (Ma vie)
+
+His ask: delete « the two new parts about me being religious or being certain » from text 6, and reuse them in a « Ma vie » text about why he left religion (« you draft it but keep in mind my goals for this app »).
+- **Text 6**: the whole « Et toi, alors ? » paragraph is gone (his story, père Noël, and then, at his word, the Téhéran / Tokyo answer too: « delete the whole section »). The « Et alors ? C'est pas parce que je l'ai appris à la maison… » paragraph stays, then the closer. 63 → 51 sentences, 9 → 8 lines (closer is `l: 7`), CHUNKS re-cut.
+- **Text 28 « Pourquoi j'ai quitté la religion »** (theme « La religion », shown after 24): to the family, only his words. From him: religious Jewish family, left, not certain but thinks there's no God « comme le père Noël », Friday dinners at his wife's mother's or his brothers' (text 24), the scale (text 1). **Claude's guesses, for him to correct**: « C'est pas arrivé d'un coup », « moins une question de colère qu'une question de curiosité », « les réponses me suffisaient pas », the light-on-Saturday image, « j'ai gardé… la bouffe ». No age, no family reaction, nothing about the kids: he hasn't said.
+- Built to recycle structures he already drills: **f09, f37, f25, f40, f28, f04, f30, f11** (28 added to their `sources`). 26 sentences, CHUNKS hand-cut. English in `texts-english.md` §28 (written with the French, not reviewed first this time).
+- Text 6, India: « Comme tout le monde autour de toi, t'aurais grandi avec… les prières de ta grand-mère. » (he heard the old order as everyone having his grandmother's prayers).
+- Assets `?v=53`, `CACHE_VERSION = 'v53'`. 10 Ma vie texts, 28 in all.
+
 ## v52 (2026-11-12) — text 6: polish of the « Et toi, alors ? » paragraph
 
 He asked for a full read-through. Four wording fixes, all in the v51 paragraph Claude drafted: « moi aussi » (not a third « exactement »), « Attention, je te dis pas… » (« Après, » already opens the paragraph before), « Il y a autant de preuves pour l'un que pour l'autre. » (not « Les preuves sont les mêmes »), second « justement » dropped. Same 63 sentences and CHUNKS. A third objection (« chez nous, c'est différent »: Sinaï, survival) was drafted and he dropped it: don't re-add. Then two in his own paragraphs, with his yes: « disons au Yémen ou en Ukraine » cut from the opening (Jews lived in both, so the friend can just say yes; it now goes straight to « En Inde, par exemple ? ») and « Tout le monde croyait en Jupiter » → « Les gens croyaient en Jupiter. » (it sat next to « comme presque tout le monde »). Assets `?v=52`, `CACHE_VERSION = 'v52'`.

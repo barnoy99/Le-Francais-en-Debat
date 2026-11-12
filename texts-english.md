@@ -549,3 +549,19 @@ Terms (IDF → English → French army): פלוגה → company → *la compagni
 27.8 And at home, how's it going? Mine are holding up, but they're counting the days. When do you go home? Thursday? Lucky you. Me, not before next week.
 
 27.9 Come on, do you want to eat, or do you want to wait till there's nothing left? And if there really is schnitzel, I'm taking two.
+
+## 28 · Pourquoi j'ai quitté la religion
+
+*Why I left religion* — to the family, on a video call. Drafted by Claude from his facts; not yet reviewed by him.
+
+You're asking why I left religion? It's a long story, but I'll keep it short. I was born into a religious Jewish family. I grew up with all of it: Shabbat, the prayers, the holidays. To me it was normal, like an accent you pick up as a child. And I left.
+
+It didn't happen all at once. It was less a question of anger than a question of curiosity. I started asking myself questions, and the answers weren't enough for me.
+
+The first question was very simple: why this religion? Not religion in general, this one. If I'd been born in India, I'd be Hindu. But I was born here, in this family. So I was Jewish. I hadn't chosen, I'd inherited.
+
+And then, what struck me was the scale. Hundreds of billions of galaxies, billions of years. And in the middle of all that, a God who'd be watching whether I turn on the light on Saturday? I couldn't believe it anymore.
+
+Mind you, I'm not saying I'm certain there's no God. I'm just saying I don't believe in one. I think there isn't one, the same way I think Santa Claus doesn't exist. There's as much evidence for one as for the other.
+
+You're going to say: 'So you don't do Shabbat at your place?' Yes we do, actually. On Friday night we all eat together, at my wife's mother's or at my brothers'. Leaving religion is one thing. Leaving your family is another. Me, I kept the family, the holidays and the food. I just left God aside.
