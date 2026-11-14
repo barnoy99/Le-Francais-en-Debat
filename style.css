@@ -213,6 +213,12 @@ ul { list-style: none; }
   flex: 0 0 auto; min-height: 34px; padding: 0 0.75rem; font-size: 0.92rem; font-weight: 600; white-space: nowrap;
   color: var(--color-accent); border-left: 1px solid var(--border);
 }
+/* Background deepens with the number; 3 (the benchmark) is gold, the rest teal. */
+.pace-btn[data-pace="1"] { background: #D6ECF0; color: #07505C; }
+.pace-btn[data-pace="2"] { background: #8CC9D4; color: #07404A; }
+.pace-btn[data-pace="3"] { background: #E3C77A; color: #4A3A0C; }
+.pace-btn[data-pace="4"] { background: #0C8599; color: #FFFFFF; }
+.pace-btn[data-pace="5"] { background: #075866; color: #FFFFFF; }
 .size-btn.active, .reps-btn.active { background: var(--color-accent-light); color: var(--color-accent); }
 .run-fr, .run-en { white-space: pre-line; -webkit-user-select: text; user-select: text; }
 /* The speaker: read the French on the card, now. */

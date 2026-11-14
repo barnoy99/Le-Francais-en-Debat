@@ -164,7 +164,8 @@
     u.onend = finish;
     u.onerror = finish;
     var words = text.split(/\s+/).length;
-    var lead = Math.max(150, 400 - (Date.now() - lastCancel));
+    // Longer lead-in than before: « Alors » was heard as « Lors » while the audio route woke up.
+    var lead = Math.max(350, 700 - (Date.now() - lastCancel));
     fallback = setTimeout(finish, Math.max(3000, words * 650 / rate + 2500) + lead);
     var entry = { finish: finish };
     entry.t = setTimeout(function () {
@@ -504,6 +505,7 @@
     pace = PACE[n] ? n : 3;
     try { localStorage.setItem(PACE_KEY, String(pace)); } catch (e) {}
     $('btn-pace').textContent = '⏱ ' + pace;
+    $('btn-pace').setAttribute('data-pace', String(pace));
   }
 
   function leaveRun() {

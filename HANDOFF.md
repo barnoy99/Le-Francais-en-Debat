@@ -10,6 +10,10 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v55 (2026-11-14) — clipped first syllable, coloured ⏱ button
+
+« Alors » was heard as « Lors »: TTS lead-in raised (350 ms min, 700 ms right after a cancel; was 150/400). ⏱ button gets `data-pace` and a background that deepens with the number: 1–2 light teal, 3 gold (benchmark), 4–5 dark teal. Assets `?v=55`, `CACHE_VERSION = 'v55'`.
+
 ## v54 (2026-11-13) — text 6: the two dropped paragraphs are back
 
 His ask: « bring back the 2 texts you wrote… what we deleted, bring it all back ». Both restored word for word, after the « Et alors ? … ta certitude, elle prouve rien » paragraph (`l: 6`) and before the closer: (1) `l: 7`, « Oui, mais chez nous, c'est différent. » (Sinaï: « Tu prouves le livre avec le livre. »; Coran, Jésus ressuscité; survival: « Durer, ça prouve qu'on est solide, pas qu'on a raison. »), drafted on 2026-11-12 and dropped before it was ever committed, recovered from that session; this overrides the v52 « don't re-add ». (2) `l: 8`, « Et toi, alors ? » in its v52 wording (his story, père Noël, Téhéran / Tokyo), cut in v53. Closer is `l: 9`. 51 → 74 sentences, 8 → 10 lines; CHUNKS 6 extended, joins unchanged. No frames on either. Text 28 is untouched, so his story and the père Noël lines now sit in both 6 and 28. `texts-english.md` §6 was already behind (stops before « Et alors ? ») and still is. Assets `?v=54`, `CACHE_VERSION = 'v54'`.
