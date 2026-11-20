@@ -10,6 +10,10 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v56 (2026-11-20) — text 6: « chez nous, c'est différent » reordered, his story out
+
+His ask: answer in order Sinaï → survival → « tout le monde le dit », and survival means « everyone tried to kill us and we're still here », not just lasting. `l: 7` now: Sinaï « du livre »; survival « Il fallait bien que quelqu'un tienne jusqu'au bout » → « Alors les hindous, ils sont spéciaux ? Les Chinois ? Les Arméniens ? » → Shoah « Drôle de protection. » → « Survivre, ça prouve qu'on est solide, pas qu'on a raison. »; then Coran / Jésus. `l: 8` « Et toi, alors ? » loses his story and the père Noël (he asked to drop the religious-family part): « C'est vrai. … je me fie pas à ce que je ressens », then Téhéran / Tokyo. 7: 11 → 16 sentences, 8: 12 → 7, total still 74; CHUNKS 6 tail redone, joins unchanged. Assets `?v=56`, `CACHE_VERSION = 'v56'`.
+
 ## v55 (2026-11-14) — clipped first syllable, coloured ⏱ button
 
 « Alors » was heard as « Lors »: TTS lead-in raised (350 ms min, 700 ms right after a cancel; was 150/400). ⏱ button gets `data-pace` and a background that deepens with the number: 1–2 light teal, 3 gold (benchmark), 4–5 dark teal. Assets `?v=55`, `CACHE_VERSION = 'v55'`.
