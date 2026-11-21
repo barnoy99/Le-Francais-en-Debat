@@ -10,6 +10,15 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v58 (2026-11-21) — structures checked: text 29 and text 6
+
+His ask: check that text 29's structures are good and that text 6's still suit it. The card shows only `form` and plays a prompt's `model` (`exemplarFr` / `gist` / `trap` aren't shown), so the check was: does the text sentence fit the form, and do the variations say it the way the text does.
+- **29, f32**: « T'as dormi avant de monter, toi ? » (the tagged « toi » at the end, as in the form; was « Et toi ? T'as dormi, toi, avant de monter ? »).
+- **f44** form now `{N / que P / de + inf / ça}` (29 says « c'est de se taper… »), + **f44-4** « Ce qui me tue, c'est de répéter dix fois la même chose avant de partir à l'école. »
+- **f48** form now also `Difficile d'y échapper : {P}.` (text 6 puts it first, then the « si t'étais né en Syrie… » it can't escape), + **f48-4** in that order.
+- Text 6, the rest: all fit the current wording. f25 sits on « si t'étais né ailleurs, tu penses que tu croirais… » (same si + plus-que-parfait → conditionnel, not the exact form; the exact one is in the closer, « si t'étais né en Syrie, tu serais… »). Unshown leftovers, not fixed: f25's `exemplarFr` is still Arabie saoudite (cut in v41), f06's is « Ça prouve rien »; f19 still lists 6 in `sources` with no sentence (v41).
+- Assets `?v=58`, `CACHE_VERSION = 'v58'`.
+
 ## v57 (2026-11-21) — text 29 « La relève » (Ma vie)
 
 His ask: a two-soldier night-guard dialogue he brought, made into an app text; « work is fine in this context », « slang in general is fine by me ».

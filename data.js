@@ -335,7 +335,7 @@ var TEXTS = [
   { id: 29, corpus: 'V', kind: 'monologue', title: "La relève", file: "texts/29-la-releve.md",
     theme: "Sur la base",
     lines: [
-      { who: 'moi', fr: "Putain, j'ai trop hâte que la relève arrive, là. J'en peux plus, j'ai les yeux qui se ferment tout seuls. Et toi ? T'as dormi, toi, avant de monter ? Non ? Pareil. Et en plus, ça caille sévère ce soir." },
+      { who: 'moi', fr: "Putain, j'ai trop hâte que la relève arrive, là. J'en peux plus, j'ai les yeux qui se ferment tout seuls. T'as dormi avant de monter, toi ? Non ? Pareil. Et en plus, ça caille sévère ce soir." },
       { who: 'moi', fr: "Attends, t'as un thermos ? T'as fait du café ? Carrément, vas-y, sers-moi. Encore un peu chaud, c'est déjà ça. Merci mec, tu me sauves la vie." },
       { who: 'moi', fr: "Au fait, t'as entendu ce que le commandant de compagnie a dit tout à l'heure, au briefing ? Apparemment, on risque d'avoir une alerte cette nuit ou demain soir. C'est pour une interpellation dans le secteur." },
       { who: 'moi', fr: "Ah, t'as capté ça aussi ? Franchement, tant mieux, ça va nous réveiller un peu. Parce que ce qui me tue, c'est de se taper quatre heures de garde toutes les nuits sans rien faire. Ça commence à me rendre fou. Mais bon, vaut mieux que ce soit calme. Je préfère une nuit chiante à une nuit qui part en vrille." },
@@ -1148,12 +1148,13 @@ var FRAMES = [
     ] },
 
   { id: 'f44', textId: 6, sources: [6, 29], light: true,
-    form: "Ce qui me tue, c'est {N / que P / ça}.",
+    form: "Ce qui me tue, c'est {N / que P / de + inf / ça}.",
     gloss: "What really gets me is ___",
     prompts: [
       { id: 'f44-1', topic: 'collegues', model: "Et ce qui me tue, c'est qu'on a cette réunion toutes les semaines.", en: "And what really gets me is that we have this meeting every week." },
       { id: 'f44-2', topic: 'politique', model: "Ce qui me tue, c'est ça : ils se disputent à la télé, et après ils déjeunent ensemble.", en: "Here's what really gets me: they fight on TV, and then they have lunch together." },
-      { id: 'f44-3', topic: 'argent', model: "Ce qui me tue, c'est le prix du parking.", en: "What really gets me is the price of parking." }
+      { id: 'f44-3', topic: 'argent', model: "Ce qui me tue, c'est le prix du parking.", en: "What really gets me is the price of parking." },
+      { id: 'f44-4', topic: 'enfants', model: "Ce qui me tue, c'est de répéter dix fois la même chose avant de partir à l'école.", en: "What really gets me is saying the same thing ten times before we leave for school." }
     ] },
 
   { id: 'f45', textId: 6, sources: [6], light: true,
@@ -1184,12 +1185,13 @@ var FRAMES = [
     ] },
 
   { id: 'f48', textId: 6, sources: [6], light: true,
-    form: "{X}, difficile d'y échapper.",
-    gloss: "___: hard to get out of it",
+    form: "{X}, difficile d'y échapper. / Difficile d'y échapper : {P}.",
+    gloss: "___: hard to get out of it / No getting away from it: ___",
     prompts: [
       { id: 'f48-1', topic: 'collegues', model: "Les réunions du lundi, difficile d'y échapper.", en: "Monday meetings: hard to get out of them." },
       { id: 'f48-2', topic: 'couple', model: "Le dîner du vendredi, difficile d'y échapper.", en: "Friday dinner: hard to get out of it." },
-      { id: 'f48-3', topic: 'tech', model: "Les groupes WhatsApp de l'école, difficile d'y échapper.", en: "School WhatsApp groups: hard to escape them." }
+      { id: 'f48-3', topic: 'tech', model: "Les groupes WhatsApp de l'école, difficile d'y échapper.", en: "School WhatsApp groups: hard to escape them." },
+      { id: 'f48-4', topic: 'enfants', model: "Difficile d'y échapper : si les parents sont tout le temps sur leur téléphone, les enfants le seront aussi.", en: "There's no getting away from it: if the parents are always on their phones, the kids will be too." }
     ] }
 ];
 
@@ -2223,7 +2225,7 @@ var SENTENCES = {
   29: [
     { l: 0, fr: "Putain, j'ai trop hâte que la relève arrive, là.", en: "Man, I can't wait for the relief to get here." },
     { l: 0, fr: "J'en peux plus, j'ai les yeux qui se ferment tout seuls.", en: "I'm done, my eyes keep closing on their own." },
-    { l: 0, fr: "Et toi ? T'as dormi, toi, avant de monter ? Non ? Pareil.", en: "And you? Did YOU sleep before coming up? No? Same here.", f: 'f32' },
+    { l: 0, fr: "T'as dormi avant de monter, toi ? Non ? Pareil.", en: "Did YOU sleep before coming up? No? Same here.", f: 'f32' },
     { l: 0, fr: "Et en plus, ça caille sévère ce soir.", en: "And on top of that, it's freezing tonight." },
     { l: 1, fr: "Attends, t'as un thermos ? T'as fait du café ?", en: "Wait, you've got a thermos? You made coffee?" },
     { l: 1, fr: "Carrément, vas-y, sers-moi.", en: "Absolutely, go on, pour me some." },

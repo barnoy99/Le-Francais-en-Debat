@@ -4,7 +4,7 @@ Corpus V (Ma vie) · monologue, à un copain de garde avec lui, la nuit, sur la 
 
 ---
 
-Putain, j'ai trop hâte que la relève arrive, là. J'en peux plus, j'ai les yeux qui se ferment tout seuls. Et toi ? T'as dormi, toi, avant de monter ? Non ? Pareil. Et en plus, ça caille sévère ce soir.
+Putain, j'ai trop hâte que la relève arrive, là. J'en peux plus, j'ai les yeux qui se ferment tout seuls. T'as dormi avant de monter, toi ? Non ? Pareil. Et en plus, ça caille sévère ce soir.
 
 Attends, t'as un thermos ? T'as fait du café ? Carrément, vas-y, sers-moi. Encore un peu chaud, c'est déjà ça. Merci mec, tu me sauves la vie.
 

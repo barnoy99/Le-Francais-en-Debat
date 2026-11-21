@@ -575,7 +575,7 @@ Terms (IDF → English → French army): החלפה → the relief → *la relè
 גדר → fence → *la clôture*; חמ"ל → command post → *le poste de commandement*; קשר → radio → *la radio*;
 מעצר → arrest → *une interpellation* (police word; text 22 has *une arrestation*); תן → jackal → *un chacal*.
 
-29.1 Man, I can't wait for the relief to get here. I'm done, my eyes keep closing on their own. And you? Did YOU sleep before coming up? No? Same here. And on top of that, it's freezing tonight.
+29.1 Man, I can't wait for the relief to get here. I'm done, my eyes keep closing on their own. Did YOU sleep before coming up? No? Same here. And on top of that, it's freezing tonight.
 
 29.2 Wait, you've got a thermos? You made coffee? Absolutely, go on, pour me some. Still a bit warm, that's something. Thanks man, you're a lifesaver.
 
