@@ -565,3 +565,26 @@ And then, what struck me was the scale. Hundreds of billions of galaxies, billio
 Mind you, I'm not saying I'm certain there's no God. I'm just saying I don't believe in one. I think there isn't one, the same way I think Santa Claus doesn't exist. There's as much evidence for one as for the other.
 
 You're going to say: 'So you don't do Shabbat at your place?' Yes we do, actually. On Friday night we all eat together, at my wife's mother's or at my brothers'. Leaving religion is one thing. Leaving your family is another. Me, I kept the family, the holidays and the food. I just left God aside.
+
+## 29 · La relève
+
+*The relief* — to a French-speaking friend on night guard with him, on base. Adapted by Claude from a two-voice
+dialogue he brought; only his words now, the friend's lines show in his reactions. Not yet reviewed by him.
+
+Terms (IDF → English → French army): החלפה → the relief → *la relève*; משקפת → binoculars → *les jumelles*;
+גדר → fence → *la clôture*; חמ"ל → command post → *le poste de commandement*; קשר → radio → *la radio*;
+מעצר → arrest → *une interpellation* (police word; text 22 has *une arrestation*); תן → jackal → *un chacal*.
+
+29.1 Man, I can't wait for the relief to get here. I'm done, my eyes keep closing on their own. And you? Did YOU sleep before coming up? No? Same here. And on top of that, it's freezing tonight.
+
+29.2 Wait, you've got a thermos? You made coffee? Absolutely, go on, pour me some. Still a bit warm, that's something. Thanks man, you're a lifesaver.
+
+29.3 By the way, did you hear what the company commander said earlier, at the briefing? Apparently we might get called out tonight or tomorrow night. It's for an arrest in the sector.
+
+29.4 Ah, you caught that too? Honestly, good, it'll wake us up a bit. Because what really gets me is pulling four hours of guard every night with nothing happening. It's starting to drive me crazy. But hey, better that it's quiet. I'd rather have a boring night than a night that goes sideways.
+
+29.5 Wait, don't move. Did you hear that? A noise by the fence, down on the left. Pass me the binoculars. The radio? Wait, don't call the command post yet. Let me look first.
+
+29.6 No, forget it, false alarm. It's just a jackal, or a stray dog, rooting around in the bushes. Phew, great. But just because it was a jackal this time doesn't mean we stop watching, eh.
+
+29.7 Right, so, what were you telling me before? What's your job in civilian life, again? Oh yeah? Go on, tell me. It'll help pass the time until the relief comes.

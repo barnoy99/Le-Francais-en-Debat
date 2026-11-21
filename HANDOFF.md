@@ -10,6 +10,14 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v57 (2026-11-21) — text 29 « La relève » (Ma vie)
+
+His ask: a two-soldier night-guard dialogue he brought, made into an app text; « work is fine in this context », « slang in general is fine by me ».
+- **Text 29 « La relève »** (theme « Sur la base », shown after 27): only his words, the friend's lines show in his reactions (« Attends, t'as un thermos ? T'as fait du café ? », « La radio ? Attends, préviens pas encore… »). Waiting for the relief, the cold, the coffee, the company commander's briefing (an alert tonight or tomorrow « pour une interpellation dans le secteur »), four hours of guard with nothing happening, a noise at the fence, binoculars, false alarm, then « Ton boulot dans le civil, c'est quoi, déjà ? ».
+- Changes from what he brought: two voices → one; « J'préviens » / « Nan » gone (respelling); « vas-y, balance » → « vas-y, sers-moi »; wild boar → « un chacal, ou un chien errant » (**Claude's guess for the Modiin area, for him to correct**, like « quatre heures de garde toutes les nuits »); ends on « Ça nous fera passer le temps jusqu'à la relève ». Slang kept (putain, ça caille sévère, capté, se taper, chiante, partir en vrille, nickel).
+- Frames: **f32** (« T'as dormi, toi, avant de monter ? »), **f44** (« ce qui me tue, c'est de se taper quatre heures de garde… »), **f33** (« Je préfère une nuit chiante à une nuit qui part en vrille. »), **f05** (« c'est pas parce que c'était un chacal cette fois qu'on arrête de regarder »); 29 added to their `sources`. 30 sentences, CHUNKS hand-cut. English + terms in `texts-english.md` §29 (not reviewed first).
+- Assets `?v=57`, `CACHE_VERSION = 'v57'`. 11 Ma vie texts, 29 in all.
+
 ## v56 (2026-11-20) — text 6: « chez nous, c'est différent » reordered, his story out
 
 His ask: answer in order Sinaï → survival → « tout le monde le dit », and survival means « everyone tried to kill us and we're still here », not just lasting. `l: 7` now: Sinaï « du livre »; survival « Il fallait bien que quelqu'un tienne jusqu'au bout » → « Alors les hindous, ils sont spéciaux ? Les Chinois ? Les Arméniens ? » → Shoah « Drôle de protection. » → « Survivre, ça prouve qu'on est solide, pas qu'on a raison. »; then Coran / Jésus. `l: 8` « Et toi, alors ? » loses his story and the père Noël (he asked to drop the religious-family part): « C'est vrai. … je me fie pas à ce que je ressens », then Téhéran / Tokyo. 7: 11 → 16 sentences, 8: 12 → 7, total still 74; CHUNKS 6 tail redone, joins unchanged. Assets `?v=56`, `CACHE_VERSION = 'v56'`.

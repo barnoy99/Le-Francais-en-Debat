@@ -332,6 +332,17 @@ var TEXTS = [
       { who: 'moi', fr: "Et chez toi, ça va ? Chez moi, ils tiennent le coup, mais ils comptent les jours. Tu rentres quand ? Jeudi ? T'as de la chance. Moi, pas avant la semaine prochaine." },
       { who: 'moi', fr: "Allez, tu veux manger, ou tu veux attendre qu'il reste plus rien ? Et s'il y a vraiment du schnitzel, j'en prends deux." }
     ] },
+  { id: 29, corpus: 'V', kind: 'monologue', title: "La relève", file: "texts/29-la-releve.md",
+    theme: "Sur la base",
+    lines: [
+      { who: 'moi', fr: "Putain, j'ai trop hâte que la relève arrive, là. J'en peux plus, j'ai les yeux qui se ferment tout seuls. Et toi ? T'as dormi, toi, avant de monter ? Non ? Pareil. Et en plus, ça caille sévère ce soir." },
+      { who: 'moi', fr: "Attends, t'as un thermos ? T'as fait du café ? Carrément, vas-y, sers-moi. Encore un peu chaud, c'est déjà ça. Merci mec, tu me sauves la vie." },
+      { who: 'moi', fr: "Au fait, t'as entendu ce que le commandant de compagnie a dit tout à l'heure, au briefing ? Apparemment, on risque d'avoir une alerte cette nuit ou demain soir. C'est pour une interpellation dans le secteur." },
+      { who: 'moi', fr: "Ah, t'as capté ça aussi ? Franchement, tant mieux, ça va nous réveiller un peu. Parce que ce qui me tue, c'est de se taper quatre heures de garde toutes les nuits sans rien faire. Ça commence à me rendre fou. Mais bon, vaut mieux que ce soit calme. Je préfère une nuit chiante à une nuit qui part en vrille." },
+      { who: 'moi', fr: "Attends, bouge pas. T'as entendu ? Un bruit vers la clôture, en bas à gauche. Passe-moi les jumelles. La radio ? Attends, préviens pas encore le poste de commandement. Laisse-moi d'abord regarder." },
+      { who: 'moi', fr: "Non, laisse tomber, fausse alerte. C'est juste un chacal, ou un chien errant, qui fouille dans les buissons. Ouf, nickel. Mais c'est pas parce que c'était un chacal cette fois qu'on arrête de regarder, hein." },
+      { who: 'moi', fr: "Bon, du coup, tu me racontais quoi, avant ? Ton boulot dans le civil, c'est quoi, déjà ? Ah ouais ? Vas-y, raconte. Ça nous fera passer le temps jusqu'à la relève." }
+    ] },
 ];
 
 // Prompt topics. The scheduler needs three DIFFERENT topics for a frame's three
@@ -439,7 +450,7 @@ var FRAMES = [
       { id: 'f04-7', topic: 'israel',    fr: "Un ami français croit que tu dis que l'armée fait jamais d'erreurs. Toi, tu dis juste qu'une erreur, c'est pas une politique.", model: "Je dis pas que l'armée fait jamais d'erreurs. Je dis juste qu'une erreur, c'est pas une politique.", en: "I'm not saying the army never makes mistakes. I'm just saying a mistake isn't a policy." }
     ] },
 
-  { id: 'f05', textId: 8, sources: [8, 1, 7, 24, 27],
+  { id: 'f05', textId: 8, sources: [8, 1, 7, 24, 27, 29],
     form: "C'est pas parce que {P} que {Q}.",
     gloss: "Just because ___ doesn't mean ___",
     gist: "Being cold doesn't make it false.",
@@ -975,7 +986,7 @@ var FRAMES = [
     ] },
 
   // ── E. Renvoyer la balle ────────────────────────────────
-  { id: 'f32', textId: 14, sources: [14, 4, 7, 11, 12, 13, 16, 21, 27],
+  { id: 'f32', textId: 14, sources: [14, 4, 7, 11, 12, 13, 16, 21, 27, 29],
     form: "{TU V}, toi ?",
     gloss: "Would YOU ___?",
     gist: "Put the dilemma to them personally: what would you do in my place?",
@@ -994,7 +1005,7 @@ var FRAMES = [
       { id: 'f32-7', topic: 'dieu',      fr: "Un croyant dit qu'il suit tous les commandements. Demande-lui s'il respecte vraiment tout le Lévitique.", model: "Tu respectes vraiment tout le Lévitique, toi ?", en: "Do you really keep all of Leviticus, you?" }
     ] },
 
-  { id: 'f33', textId: 8, sources: [8, 3, 18, 19, 20, 25],
+  { id: 'f33', textId: 8, sources: [8, 3, 18, 19, 20, 25, 29],
     form: "Je préfère {A} à {B}.",
     gloss: "I'd rather have ___ than ___",
     gist: "State a preference, the less comfortable option first.",
@@ -1136,7 +1147,7 @@ var FRAMES = [
       { id: 'f43-3', topic: 'tech', model: "J'ai cassé mon téléphone, du coup j'ai raté ton message.", en: "I broke my phone, so I missed your message." }
     ] },
 
-  { id: 'f44', textId: 6, sources: [6], light: true,
+  { id: 'f44', textId: 6, sources: [6, 29], light: true,
     form: "Ce qui me tue, c'est {N / que P / ça}.",
     gloss: "What really gets me is ___",
     prompts: [
@@ -2208,6 +2219,38 @@ var SENTENCES = {
     { l: 7, fr: "Moi, pas avant la semaine prochaine.", en: "Me, not before next week." },
     { l: 8, fr: "Allez, tu veux manger, ou tu veux attendre qu'il reste plus rien ?", en: "Come on, do you want to eat, or do you want to wait till there's nothing left?", f: 'f35' },
     { l: 8, fr: "Et s'il y a vraiment du schnitzel, j'en prends deux.", en: "And if there really is schnitzel, I'm taking two." }
+  ],
+  29: [
+    { l: 0, fr: "Putain, j'ai trop hâte que la relève arrive, là.", en: "Man, I can't wait for the relief to get here." },
+    { l: 0, fr: "J'en peux plus, j'ai les yeux qui se ferment tout seuls.", en: "I'm done, my eyes keep closing on their own." },
+    { l: 0, fr: "Et toi ? T'as dormi, toi, avant de monter ? Non ? Pareil.", en: "And you? Did YOU sleep before coming up? No? Same here.", f: 'f32' },
+    { l: 0, fr: "Et en plus, ça caille sévère ce soir.", en: "And on top of that, it's freezing tonight." },
+    { l: 1, fr: "Attends, t'as un thermos ? T'as fait du café ?", en: "Wait, you've got a thermos? You made coffee?" },
+    { l: 1, fr: "Carrément, vas-y, sers-moi.", en: "Absolutely, go on, pour me some." },
+    { l: 1, fr: "Encore un peu chaud, c'est déjà ça.", en: "Still a bit warm, that's something." },
+    { l: 1, fr: "Merci mec, tu me sauves la vie.", en: "Thanks man, you're a lifesaver." },
+    { l: 2, fr: "Au fait, t'as entendu ce que le commandant de compagnie a dit tout à l'heure, au briefing ?", en: "By the way, did you hear what the company commander said earlier, at the briefing?" },
+    { l: 2, fr: "Apparemment, on risque d'avoir une alerte cette nuit ou demain soir.", en: "Apparently we might get called out tonight or tomorrow night." },
+    { l: 2, fr: "C'est pour une interpellation dans le secteur.", en: "It's for an arrest in the sector." },
+    { l: 3, fr: "Ah, t'as capté ça aussi ?", en: "Ah, you caught that too?" },
+    { l: 3, fr: "Franchement, tant mieux, ça va nous réveiller un peu.", en: "Honestly, good, it'll wake us up a bit." },
+    { l: 3, fr: "Parce que ce qui me tue, c'est de se taper quatre heures de garde toutes les nuits sans rien faire.", en: "Because what really gets me is pulling four hours of guard every night with nothing happening.", f: 'f44' },
+    { l: 3, fr: "Ça commence à me rendre fou.", en: "It's starting to drive me crazy." },
+    { l: 3, fr: "Mais bon, vaut mieux que ce soit calme.", en: "But hey, better that it's quiet." },
+    { l: 3, fr: "Je préfère une nuit chiante à une nuit qui part en vrille.", en: "I'd rather have a boring night than a night that goes sideways.", f: 'f33' },
+    { l: 4, fr: "Attends, bouge pas. T'as entendu ?", en: "Wait, don't move. Did you hear that?" },
+    { l: 4, fr: "Un bruit vers la clôture, en bas à gauche.", en: "A noise by the fence, down on the left." },
+    { l: 4, fr: "Passe-moi les jumelles.", en: "Pass me the binoculars." },
+    { l: 4, fr: "La radio ? Attends, préviens pas encore le poste de commandement.", en: "The radio? Wait, don't call the command post yet." },
+    { l: 4, fr: "Laisse-moi d'abord regarder.", en: "Let me look first." },
+    { l: 5, fr: "Non, laisse tomber, fausse alerte.", en: "No, forget it, false alarm." },
+    { l: 5, fr: "C'est juste un chacal, ou un chien errant, qui fouille dans les buissons.", en: "It's just a jackal, or a stray dog, rooting around in the bushes." },
+    { l: 5, fr: "Ouf, nickel.", en: "Phew, great." },
+    { l: 5, fr: "Mais c'est pas parce que c'était un chacal cette fois qu'on arrête de regarder, hein.", en: "But just because it was a jackal this time doesn't mean we stop watching, eh.", f: 'f05' },
+    { l: 6, fr: "Bon, du coup, tu me racontais quoi, avant ?", en: "Right, so, what were you telling me before?" },
+    { l: 6, fr: "Ton boulot dans le civil, c'est quoi, déjà ?", en: "What's your job in civilian life, again?" },
+    { l: 6, fr: "Ah ouais ? Vas-y, raconte.", en: "Oh yeah? Go on, tell me." },
+    { l: 6, fr: "Ça nous fera passer le temps jusqu'à la relève.", en: "It'll help pass the time until the relief comes." }
   ]
 };
 
@@ -2302,5 +2345,8 @@ var CHUNKS = {
         big:   [3, 2, 4, 5, 3, 3] },
   27: { join: [],
         small: [2, 2, 2, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2],
-        big:   [4, 3, 4, 3, 4, 5, 4, 3, 6] }
+        big:   [4, 3, 4, 3, 4, 5, 4, 3, 6] },
+  29: { join: [],
+        small: [2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
+        big:   [4, 4, 3, 4, 2, 5, 4, 4] }
 };
