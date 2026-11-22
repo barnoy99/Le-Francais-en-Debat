@@ -10,6 +10,13 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v59 (2026-11-22) — text 19 rewritten from scratch
+
+His ask: rewrite « Pourquoi j'apprends le français », questions first, English reviewed before any French. Three English drafts: the first was « too kitsch » (« קיטשי »): no lyrical lines, no « arguing at the table and still loving each other », no aunts-and-uncles scene, no « dream in it / it clicks ». Show what he likes through examples, not statements.
+- **Text 19** now to one relative, **« tu »** (was the family, « vous »); nothing kept from the old text. England from six to ten; Arabic « à l'armée » (no unit, no details); « moins une question de cours qu'une question de bain »; dishes and motorbike, short useful sentences, thinking in French, « J'ai même créé des applis pour ça »; some of the family only speak French; religion private in France (« La religion d'un ministre, ça intéresse personne »); culture by example (L'Étranger, Les Misérables with Depardieu, Kieślowski's Trois couleurs, the chic, the real Moulin Rouge show they saw in Paris, the bac philo exam); this life, here, now; then his caveat, in his words: many French see only one side on Israel and don't want to see the problems with Islam (« Je dis pas que tous les musulmans… Je dis juste que si on en parle pas, ça va pas disparaître. »); ends « Tu apprendrais l'hébreu, toi ? ». He also saw Irréversible; left out on purpose.
+- Frames: **f29, f09, f15, f11, f04, f32** (19 added where missing); **f33, f28, f30** no longer in 19 (still taught elsewhere; 19 dropped from their `sources`). 22 → 39 sentences, 5 → 10 lines, CHUNKS hand-cut. Saved `pos` / `done` on 19 now point into the new text (harmless). English in `texts-english.md` §19.
+- Assets `?v=59`, `CACHE_VERSION = 'v59'`.
+
 ## v58 (2026-11-21) — structures checked: text 29 and text 6
 
 His ask: check that text 29's structures are good and that text 6's still suit it. The card shows only `form` and plays a prompt's `model` (`exemplarFr` / `gist` / `trap` aren't shown), so the check was: does the text sentence fit the form, and do the variations say it the way the text does.

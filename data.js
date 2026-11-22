@@ -242,11 +242,16 @@ var TEXTS = [
   { id: 19, corpus: 'V', kind: 'monologue', title: "Pourquoi j'apprends le français", file: "texts/19-pourquoi-japprends-le-francais.md",
     theme: "Le français",
     lines: [
-      { who: 'moi', fr: "Oui, je parle français, maintenant ! Enfin, j'essaie. Ça fait un moment que j'apprends. Je parle pas encore très bien, mais je me débrouille. Et je préfère un français avec des fautes à un silence poli." },
-      { who: 'moi', fr: "Pourquoi le français ? Tout le monde parle anglais, je sais. Mais à la maison, avec ma femme, on parle de plus en plus français. Elle a grandi avec une mère qui lui parlait français, alors pour elle, c'est naturel. Et puis, parler anglais avec vous, c'est une chose. Parler votre langue, c'en est une autre. En anglais, on se comprend. En français, on rigole ensemble." },
-      { who: 'moi', fr: "Le plus dur, c'est pas le vocabulaire. C'est l'ordre des mots. Je pense en hébreu ou en anglais, et je construis la phrase à l'envers. Ce qui m'a frappé, c'est que vous parlez beaucoup plus vite que dans les livres. Plus je vous écoute, plus je comprends. Mais au début, j'avais l'impression d'entendre un seul mot très long." },
-      { who: 'moi', fr: "Pour apprendre, j'ai une appli sur mon téléphone. Je répète des phrases à voix haute, dans la voiture, en marchant. Les gens me regardent bizarrement, mais bon. Et le soir, je parle avec ma femme. C'est elle, ma vraie prof." },
-      { who: 'moi', fr: "Alors je vous préviens : si je dis une bêtise, vous me corrigez. Vous allez me dire : « On va pas te corriger à chaque phrase, quand même ! » Si, justement. C'est comme ça que j'apprends. Si je fais toujours les mêmes fautes, c'est que personne ne me les a corrigées." }
+      { who: 'moi', fr: "Pourquoi le français ? Ça remonte à loin. J'ai toujours aimé les langues. Quand j'étais petit, de six à dix ans, on a vécu quatre ans en Angleterre. Je suis rentré en parlant anglais. Je me souviens même pas de l'avoir appris." },
+      { who: 'moi', fr: "Après, à l'armée, j'ai appris l'arabe. Et c'est là que j'ai compris comment ça marche : il faut plonger dedans. Une langue, c'est moins une question de cours qu'une question de bain. Il faut être dedans toute la journée." },
+      { who: 'moi', fr: "Alors avec le français, je fais pareil. Quand je fais la vaisselle, quand je suis sur ma moto, je répète des petites phrases utiles. Et j'essaie de penser en français. J'ai même créé des applis pour ça. Oui, des applis. Je sais, c'est un peu exagéré." },
+      { who: 'moi', fr: "Et puis, dans ta famille, y en a qui parlent que français. Alors si je veux leur parler, j'ai pas le choix." },
+      { who: 'moi', fr: "Mais c'est pas la seule raison. Plus j'apprends le français, plus je me rends compte que je vois les choses un peu comme vous." },
+      { who: 'moi', fr: "La religion, d'abord. En France, personne ne te demande en quoi tu crois. La religion d'un ministre, ça intéresse personne. Tu crois ce que tu veux, chez toi, et dehors, t'es un citoyen, c'est tout. Croire, c'est une chose. L'imposer à tout le monde, c'en est une autre." },
+      { who: 'moi', fr: "Et puis la culture. J'ai lu L'Étranger, de Camus. J'ai vu Les Misérables, celui avec Depardieu, et Trois couleurs, de Kieślowski. La musique, le vin, l'art, le chic. On a même vu le spectacle au Moulin Rouge, à Paris. Le vrai. Et la philo : en France, tous les ados passent un examen de philosophie à la fin du lycée. Tu me trouves un autre pays qui fait ça ?" },
+      { who: 'moi', fr: "Ce que j'aime dans tout ça, c'est que ça parle de cette vie-ci, ici, maintenant. Tu prends ton temps à table, tu ouvres une bonne bouteille, et personne ne se sent coupable. Et une personne compte plus qu'une règle." },
+      { who: 'moi', fr: "Attention, je suis pas d'accord avec les Français sur tout. Sur Israël, beaucoup voient qu'un seul côté. Et sur l'islam, beaucoup préfèrent pas voir les problèmes, pour pas passer pour des racistes. Je dis pas que tous les musulmans sont un problème. Je dis juste que si on en parle pas, ça va pas disparaître." },
+      { who: 'moi', fr: "Voilà, c'est pour ça. Et toi ? Tu apprendrais l'hébreu, toi ?" }
     ] },
   { id: 20, corpus: 'V', kind: 'monologue', title: "Les enfants, en ce moment", file: "texts/20-les-enfants.md",
     theme: "Les enfants",
@@ -430,7 +435,7 @@ var FRAMES = [
       { id: 'f03-7', topic: 'dieu',      fr: "Un ami dit que la Bible donne une morale à tout le monde. Le problème : elle dit aussi de lapider des gens.", model: "Elle donne une morale, c'est vrai. Sauf qu'elle dit aussi de lapider des gens.", en: "It gives a moral code, it's true. Except it also says to stone people." }
     ] },
 
-  { id: 'f04', textId: 2, sources: [2, 9, 11, 12, 15, 16, 18, 20, 23, 28],
+  { id: 'f04', textId: 2, sources: [2, 9, 11, 12, 15, 16, 18, 20, 23, 28, 19],
     form: "Je dis pas que {P}. Je dis juste que {Q}.",
     gloss: "I'm not saying ___. I'm just saying ___",
     gist: "Rule out the big claim they think you're making, then state the small one you are making.",
@@ -530,7 +535,7 @@ var FRAMES = [
       { id: 'f08-7', topic: 'dieu',      fr: "Un croyant dit que l'athéisme, c'est une religion comme une autre. Pour toi, c'est juste l'absence de croyance.", model: "On parle pas d'une religion. On parle de l'absence de croyance.", en: "We're not talking about a religion. We're talking about the absence of belief." }
     ] },
 
-  { id: 'f09', textId: 6, sources: [6, 22, 26, 24, 28],
+  { id: 'f09', textId: 6, sources: [6, 22, 26, 24, 28, 19],
     form: "C'est moins une question de {A} qu'une question de {B}.",
     gloss: "It's less about ___ than about ___",
     gist: "Say what it really comes down to, weighing one factor against the other.",
@@ -908,7 +913,7 @@ var FRAMES = [
       { id: 'f27-7', topic: 'dieu',      fr: "Un croyant te reproche de dire que la Bible se contredit. Pour toi, il suffit de la lire.", model: "C'est pas moi qui dis que la Bible se contredit. Il suffit de la lire.", en: "I'm not the one saying the Bible contradicts itself. You just have to read it." }
     ] },
 
-  { id: 'f28', textId: 14, sources: [14, 5, 13, 19, 24, 28],
+  { id: 'f28', textId: 14, sources: [14, 5, 13, 24, 28],
     form: "Ce qui m'a frappé, c'est {N / que P}.",
     gloss: "What struck me was ___",
     gist: "Single out the one detail that stuck with you.",
@@ -927,7 +932,7 @@ var FRAMES = [
       { id: 'f28-7', topic: 'dieu',      fr: "En lisant la Genèse, t'as remarqué qu'il y a deux récits de la création, et qu'ils se contredisent.", model: "Ce qui m'a frappé, c'est qu'il y a deux récits de la création, et qu'ils se contredisent.", en: "What struck me is that there are two creation stories, and they contradict each other." }
     ] },
 
-  { id: 'f29', textId: 17, sources: [17, 10, 22, 23],
+  { id: 'f29', textId: 17, sources: [17, 10, 22, 23, 19],
     form: "C'est là que {P}.",
     gloss: "That's where ___",
     gist: "Mark the exact point where you stop agreeing, or where it went wrong.",
@@ -946,7 +951,7 @@ var FRAMES = [
       { id: 'f29-7', topic: 'dieu',      fr: "Ton ami croyant dit que Dieu est bon. Tu le suis, jusqu'à ce qu'il dise que la souffrance fait partie du plan.", model: "C'est là que j'arrête de te suivre.", en: "That's where I stop following you." }
     ] },
 
-  { id: 'f30', textId: 8, sources: [8, 2, 19, 26, 28],
+  { id: 'f30', textId: 8, sources: [8, 2, 26, 28],
     form: "Si, {justement / bien sûr que si}. {P}",
     gloss: "Oh yes it is / Yes I do — contradicting a negative",
     gist: "Contradict a negative statement or question head-on.",
@@ -986,7 +991,7 @@ var FRAMES = [
     ] },
 
   // ── E. Renvoyer la balle ────────────────────────────────
-  { id: 'f32', textId: 14, sources: [14, 4, 7, 11, 12, 13, 16, 21, 27, 29],
+  { id: 'f32', textId: 14, sources: [14, 4, 7, 11, 12, 13, 16, 21, 27, 29, 19],
     form: "{TU V}, toi ?",
     gloss: "Would YOU ___?",
     gist: "Put the dilemma to them personally: what would you do in my place?",
@@ -1005,7 +1010,7 @@ var FRAMES = [
       { id: 'f32-7', topic: 'dieu',      fr: "Un croyant dit qu'il suit tous les commandements. Demande-lui s'il respecte vraiment tout le Lévitique.", model: "Tu respectes vraiment tout le Lévitique, toi ?", en: "Do you really keep all of Leviticus, you?" }
     ] },
 
-  { id: 'f33', textId: 8, sources: [8, 3, 18, 19, 20, 25, 29],
+  { id: 'f33', textId: 8, sources: [8, 3, 18, 20, 25, 29],
     form: "Je préfère {A} à {B}.",
     gloss: "I'd rather have ___ than ___",
     gist: "State a preference, the less comfortable option first.",
@@ -1961,28 +1966,45 @@ var SENTENCES = {
     { l: 14, fr: "Et moi, je préfère un pays où chacun porte sa part à un pays où certains portent celle des autres.", en: "And I'd rather have a country where everyone pulls their weight than one where some carry the weight of others.", f: 'f33' }
   ],
   19: [
-    { l: 0, fr: "Oui, je parle français, maintenant ! Enfin, j'essaie.", en: "Yes, I speak French now! Well, I try." },
-    { l: 0, fr: "Ça fait un moment que j'apprends.", en: "I've been learning for a while." },
-    { l: 0, fr: "Je parle pas encore très bien, mais je me débrouille.", en: "I don't speak very well yet, but I get by." },
-    { l: 0, fr: "Et je préfère un français avec des fautes à un silence poli.", en: "And I prefer French with mistakes to a polite silence.", f: 'f33' },
-    { l: 1, fr: "Pourquoi le français ? Tout le monde parle anglais, je sais.", en: "Why French? Everyone speaks English, I know." },
-    { l: 1, fr: "Mais à la maison, avec ma femme, on parle de plus en plus français.", en: "But at home, with my wife, we speak more and more French." },
-    { l: 1, fr: "Elle a grandi avec une mère qui lui parlait français, alors pour elle, c'est naturel.", en: "She grew up with a mother who spoke French to her, so for her it's natural." },
-    { l: 1, fr: "Et puis, parler anglais avec vous, c'est une chose. Parler votre langue, c'en est une autre.", en: "And besides, speaking English with you is one thing. Speaking your language is another.", f: 'f11' },
-    { l: 1, fr: "En anglais, on se comprend. En français, on rigole ensemble.", en: "In English, we understand each other. In French, we laugh together." },
-    { l: 2, fr: "Le plus dur, c'est pas le vocabulaire. C'est l'ordre des mots.", en: "The hardest part isn't the vocabulary. It's the word order." },
-    { l: 2, fr: "Je pense en hébreu ou en anglais, et je construis la phrase à l'envers.", en: "I think in Hebrew or in English, and I build the sentence backwards." },
-    { l: 2, fr: "Ce qui m'a frappé, c'est que vous parlez beaucoup plus vite que dans les livres.", en: "What struck me is that you talk much faster than in the books.", f: 'f28' },
-    { l: 2, fr: "Plus je vous écoute, plus je comprends.", en: "The more I listen to you, the more I understand.", f: 'f15' },
-    { l: 2, fr: "Mais au début, j'avais l'impression d'entendre un seul mot très long.", en: "But at first, it felt like I was hearing one single very long word." },
-    { l: 3, fr: "Pour apprendre, j'ai une appli sur mon téléphone.", en: "To learn, I have an app on my phone." },
-    { l: 3, fr: "Je répète des phrases à voix haute, dans la voiture, en marchant.", en: "I repeat sentences out loud, in the car, while walking." },
-    { l: 3, fr: "Les gens me regardent bizarrement, mais bon.", en: "People look at me funny, but oh well." },
-    { l: 3, fr: "Et le soir, je parle avec ma femme. C'est elle, ma vraie prof.", en: "And in the evening, I talk with my wife. She's my real teacher." },
-    { l: 4, fr: "Alors je vous préviens : si je dis une bêtise, vous me corrigez.", en: "So I'm warning you: if I say something silly, you correct me." },
-    { l: 4, fr: "Vous allez me dire : « On va pas te corriger à chaque phrase, quand même ! »", en: "You'll say: 'We're not going to correct you on every sentence, come on!'" },
-    { l: 4, fr: "Si, justement. C'est comme ça que j'apprends.", en: "Yes, you should, actually. That's how I learn.", f: 'f30' },
-    { l: 4, fr: "Si je fais toujours les mêmes fautes, c'est que personne ne me les a corrigées.", en: "If I keep making the same mistakes, it's because nobody corrected them." }
+    { l: 0, fr: "Pourquoi le français ? Ça remonte à loin.", en: "Why French? It goes back a long way." },
+    { l: 0, fr: "J'ai toujours aimé les langues.", en: "I've always liked languages." },
+    { l: 0, fr: "Quand j'étais petit, de six à dix ans, on a vécu quatre ans en Angleterre.", en: "When I was a kid, from six to ten, we lived in England for four years." },
+    { l: 0, fr: "Je suis rentré en parlant anglais.", en: "I came back speaking English." },
+    { l: 0, fr: "Je me souviens même pas de l'avoir appris.", en: "I don't even remember learning it." },
+    { l: 1, fr: "Après, à l'armée, j'ai appris l'arabe.", en: "Then, in the army, I learned Arabic." },
+    { l: 1, fr: "Et c'est là que j'ai compris comment ça marche : il faut plonger dedans.", en: "And that's where I understood how it works: you have to dive in.", f: 'f29' },
+    { l: 1, fr: "Une langue, c'est moins une question de cours qu'une question de bain.", en: "A language is less about lessons than about immersion.", f: 'f09' },
+    { l: 1, fr: "Il faut être dedans toute la journée.", en: "You have to be in it all day long." },
+    { l: 2, fr: "Alors avec le français, je fais pareil.", en: "So with French, I do the same thing." },
+    { l: 2, fr: "Quand je fais la vaisselle, quand je suis sur ma moto, je répète des petites phrases utiles.", en: "When I do the dishes, when I'm on my motorbike, I repeat short, useful sentences." },
+    { l: 2, fr: "Et j'essaie de penser en français.", en: "And I try to think in French." },
+    { l: 2, fr: "J'ai même créé des applis pour ça.", en: "I've even made apps for it." },
+    { l: 2, fr: "Oui, des applis. Je sais, c'est un peu exagéré.", en: "Yes, apps. I know, it's a bit much." },
+    { l: 3, fr: "Et puis, dans ta famille, y en a qui parlent que français.", en: "And then, in your family, some people only speak French." },
+    { l: 3, fr: "Alors si je veux leur parler, j'ai pas le choix.", en: "So if I want to talk to them, I don't have a choice." },
+    { l: 4, fr: "Mais c'est pas la seule raison.", en: "But that's not the only reason." },
+    { l: 4, fr: "Plus j'apprends le français, plus je me rends compte que je vois les choses un peu comme vous.", en: "The more French I learn, the more I realize I see things a bit like you do.", f: 'f15' },
+    { l: 5, fr: "La religion, d'abord.", en: "Religion, first." },
+    { l: 5, fr: "En France, personne ne te demande en quoi tu crois.", en: "In France, nobody asks you what you believe." },
+    { l: 5, fr: "La religion d'un ministre, ça intéresse personne.", en: "A minister's religion? Nobody cares." },
+    { l: 5, fr: "Tu crois ce que tu veux, chez toi, et dehors, t'es un citoyen, c'est tout.", en: "You believe what you want, at home, and outside, you're a citizen, that's all." },
+    { l: 5, fr: "Croire, c'est une chose. L'imposer à tout le monde, c'en est une autre.", en: "Believing is one thing. Imposing it on everyone is another.", f: 'f11' },
+    { l: 6, fr: "Et puis la culture.", en: "And then the culture." },
+    { l: 6, fr: "J'ai lu L'Étranger, de Camus.", en: "I've read The Stranger, by Camus." },
+    { l: 6, fr: "J'ai vu Les Misérables, celui avec Depardieu, et Trois couleurs, de Kieślowski.", en: "I've seen Les Misérables, the one with Depardieu, and Three Colours, by Kieślowski." },
+    { l: 6, fr: "La musique, le vin, l'art, le chic.", en: "The music, the wine, the art, the chic." },
+    { l: 6, fr: "On a même vu le spectacle au Moulin Rouge, à Paris. Le vrai.", en: "We even saw the show at the Moulin Rouge, in Paris. The real one." },
+    { l: 6, fr: "Et la philo : en France, tous les ados passent un examen de philosophie à la fin du lycée.", en: "And philosophy: in France, every teenager takes a philosophy exam at the end of high school." },
+    { l: 6, fr: "Tu me trouves un autre pays qui fait ça ?", en: "Show me another country that does that." },
+    { l: 7, fr: "Ce que j'aime dans tout ça, c'est que ça parle de cette vie-ci, ici, maintenant.", en: "What I like about all that is that it's about this life, here, now." },
+    { l: 7, fr: "Tu prends ton temps à table, tu ouvres une bonne bouteille, et personne ne se sent coupable.", en: "You take your time at the table, you open a good bottle, and nobody feels guilty." },
+    { l: 7, fr: "Et une personne compte plus qu'une règle.", en: "And a person counts more than a rule." },
+    { l: 8, fr: "Attention, je suis pas d'accord avec les Français sur tout.", en: "Mind you, I don't agree with the French on everything." },
+    { l: 8, fr: "Sur Israël, beaucoup voient qu'un seul côté.", en: "On Israel, a lot of them only see one side." },
+    { l: 8, fr: "Et sur l'islam, beaucoup préfèrent pas voir les problèmes, pour pas passer pour des racistes.", en: "And on Islam, many prefer not to see the problems, so they won't look racist." },
+    { l: 8, fr: "Je dis pas que tous les musulmans sont un problème. Je dis juste que si on en parle pas, ça va pas disparaître.", en: "I'm not saying all Muslims are a problem. I'm just saying that if we don't talk about it, it won't go away.", f: 'f04' },
+    { l: 9, fr: "Voilà, c'est pour ça.", en: "So, that's why." },
+    { l: 9, fr: "Et toi ? Tu apprendrais l'hébreu, toi ?", en: "And you? Would YOU learn Hebrew?", f: 'f32' }
   ],
   20: [
     { l: 0, fr: "Les enfants ? Ah, ils grandissent trop vite.", en: "The kids? Oh, they're growing too fast." },
@@ -2319,8 +2341,8 @@ var CHUNKS = {
         small: [3, 2, 2, 1, 1, 2, 2, 1, 3, 2, 1, 1, 2, 2, 1, 2, 2, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 3, 2, 2, 2, 2, 2, 1, 3, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2, 3, 1],
         big:   [5, 3, 3, 3, 5, 2, 4, 3, 5, 4, 5, 2, 3, 3, 5, 2, 6, 6, 3, 5, 4, 4, 4] },
   19: { join: [],
-        small: [2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1],
-        big:   [4, 3, 2, 4, 5, 4] },
+        small: [2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 1, 2, 2, 2, 1, 2, 1, 1, 2],
+        big:   [5, 4, 5, 4, 5, 3, 4, 3, 4, 2] },
   20: { join: [8],
         small: [2, 2, 2, 1, 3, 2, 1, 2, 2, 1, 1, 1, 1, 2, 1],
         big:   [4, 6, 5, 4, 2, 3] },

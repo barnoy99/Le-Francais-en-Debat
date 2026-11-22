@@ -414,17 +414,28 @@ Monologues: what he says on a video call with family in France or Luxembourg. Wr
 
 ## 19 · Pourquoi j'apprends le français
 
-*Why I'm learning French* — to the family, on a video call.
+*Why I'm learning French* — to one relative (« tu »), on a video call. Rewritten from scratch in v59 from his answers;
+English reviewed by him first (third draft: plain, no kitsch, examples rather than statements).
 
-19.1 Yes, I speak French now! Well, I try. I've been learning for a while. I don't speak very well yet, but I get by. And I prefer French with mistakes to a polite silence.
+19.1 Why French? It goes back a long way. I've always liked languages. When I was a kid, from six to ten, we lived in England for four years. I came back speaking English. I don't even remember learning it.
 
-19.2 Why French? Everyone speaks English, I know. But at home, with my wife, we speak more and more French. She grew up with a mother who spoke French to her, so for her it's natural. And besides, speaking English with you is one thing. Speaking your language is another. In English, we understand each other. In French, we laugh together.
+19.2 Then, in the army, I learned Arabic. And that's where I understood how it works: you have to dive in. A language is less about lessons than about immersion. You have to be in it all day long.
 
-19.3 The hardest part isn't the vocabulary. It's the word order. I think in Hebrew or in English, and I build the sentence backwards. What struck me is that you talk much faster than in the books. The more I listen to you, the more I understand. But at first, it felt like I was hearing one single very long word.
+19.3 So with French, I do the same thing. When I do the dishes, when I'm on my motorbike, I repeat short, useful sentences. And I try to think in French. I've even made apps for it. Yes, apps. I know, it's a bit much.
 
-19.4 To learn, I have an app on my phone. I repeat sentences out loud, in the car, while walking. People look at me funny, but oh well. And in the evening, I talk with my wife. She's my real teacher.
+19.4 And then, in your family, some people only speak French. So if I want to talk to them, I don't have a choice.
 
-19.5 So I'm warning you: if I say something silly, you correct me. You'll say: 'We're not going to correct you on every sentence, come on!' Yes, you should, actually. That's how I learn. If I keep making the same mistakes, it's because nobody corrected them.
+19.5 But that's not the only reason. The more French I learn, the more I realize I see things a bit like you do.
+
+19.6 Religion, first. In France, nobody asks you what you believe. A minister's religion? Nobody cares. You believe what you want, at home, and outside, you're a citizen, that's all. Believing is one thing. Imposing it on everyone is another.
+
+19.7 And then the culture. I've read The Stranger, by Camus. I've seen Les Misérables, the one with Depardieu, and Three Colours, by Kieślowski. The music, the wine, the art, the chic. We even saw the show at the Moulin Rouge, in Paris. The real one. And philosophy: in France, every teenager takes a philosophy exam at the end of high school. Show me another country that does that.
+
+19.8 What I like about all that is that it's about this life, here, now. You take your time at the table, you open a good bottle, and nobody feels guilty. And a person counts more than a rule.
+
+19.9 Mind you, I don't agree with the French on everything. On Israel, a lot of them only see one side. And on Islam, many prefer not to see the problems, so they won't look racist. I'm not saying all Muslims are a problem. I'm just saying that if we don't talk about it, it won't go away.
+
+19.10 So, that's why. And you? Would YOU learn Hebrew?
 
 ## 20 · Les enfants, en ce moment
 
