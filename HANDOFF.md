@@ -10,6 +10,14 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v60 (2026-11-22) — text 6: every variation read against the text
+
+His ask: check the « L'accident géographique » structures fit the text (v58 checked form ↔ sentence; this pass read all 19 frames' variations too).
+- **f25** card label widened to what its variations say: `Si {t'étais né AILLEURS / il avait + PP}, {tu serais / il serait} {X}.` (six of its seven variations are « S'il avait accepté la promotion, il serait… », not « né »).
+- **f37-3**: « Pas avec les ministres en général, avec celui-là. » (was « la politique en général »: the text contrasts like with like, « Pas à Dieu en général, à celui-là »).
+- The rest fit. His facts, confirmed: his wife grew up with a mother who spoke French to her (f25-1 stays). He ran for a year and stopped; no knee problem. So **f02-2** « Un an, c'est déjà bien, je te l'accorde. Mais j'aurais pas dû arrêter. » (was the knee + « la flemme »), **f46-1** « Moi, c'est pas pareil, j'ai couru pendant un an, je sais ce que c'est. » (was « je cours pas pour maigrir »), **f29-5** the marathon is now a friend's (« Ton ami courait bien… »). f06-6 (restarting), f32-6, f40-2 (« tu cours plus ») already fit.
+- Assets `?v=60`, `CACHE_VERSION = 'v60'`.
+
 ## v59 (2026-11-22) — text 19 rewritten from scratch
 
 His ask: rewrite « Pourquoi j'apprends le français », questions first, English reviewed before any French. Three English drafts: the first was « too kitsch » (« קיטשי »): no lyrical lines, no « arguing at the table and still loving each other », no aunts-and-uncles scene, no « dream in it / it clicks ». Show what he likes through examples, not statements.

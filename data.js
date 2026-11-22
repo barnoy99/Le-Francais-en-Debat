@@ -407,7 +407,7 @@ var FRAMES = [
     yield: 5, register: 'parlé courant',
     prompts: [
       { id: 'f02-1', topic: 'cours',     fr: "Un collègue dit que les cours en ligne, c'est plus pratique. Toi, tu trouves que les élèves décrochent.", model: "C'est plus pratique, je te l'accorde. Mais les élèves décrochent.", en: "It's more practical, I'll grant you that. But the students switch off." },
-      { id: 'f02-2', topic: 'sante',     fr: "Ta femme dit que t'as arrêté de courir à cause de ton genou. Toi, tu sais que c'était surtout la flemme.", model: "Mon genou m'a gêné, je te l'accorde. Mais c'était surtout la flemme.", en: "My knee bothered me, I'll grant you that. But mostly I was lazy." },
+      { id: 'f02-2', topic: 'sante',     fr: "Ta femme dit qu'un an de course, c'est déjà bien. Toi, tu regrettes d'avoir arrêté.", model: "Un an, c'est déjà bien, je te l'accorde. Mais j'aurais pas dû arrêter.", en: "A year is already good, I'll grant you that. But I shouldn't have stopped." },
       { id: 'f02-3', topic: 'enfants',   fr: "Ta femme dit que la grande est trop jeune pour un téléphone. Toi, tu penses qu'elle en a besoin pour rentrer seule de l'école.", model: "Elle est jeune, je te l'accorde. Mais elle en a besoin pour rentrer seule de l'école.", en: "She's young, I'll grant you that. But she needs it to come home from school alone." },
       { id: 'f02-4', topic: 'films',     fr: "Un ami dit que la série est trop lente. Toi, tu trouves que la fin vaut le coup.", model: "Elle est lente, je te l'accorde. Mais la fin vaut le coup.", en: "It's slow, I'll grant you that. But the ending is worth it." },
       { id: 'f02-5', topic: 'argent',    fr: "Ta femme dit que la nouvelle voiture coûte trop cher. Toi, tu penses qu'elle va durer dix ans.", model: "Elle coûte cher, je te l'accorde. Mais elle va durer dix ans.", en: "It's expensive, I'll grant you that. But it'll last ten years." },
@@ -855,8 +855,8 @@ var FRAMES = [
     ] },
 
   { id: 'f25', textId: 6, sources: [6, 28],
-    form: "Si t'étais né {AILLEURS}, tu serais {X}.",
-    gloss: "If you'd been born ___, you'd be ___",
+    form: "Si {t'étais né AILLEURS / il avait + PP}, {tu serais / il serait} {X}.",
+    gloss: "If you'd been born ___ / if he had ___, you'd / he'd be ___",
     gist: "Change one fact of their past, and show how different they'd be today.",
     exemplarFr: "Si t'étais né en Arabie saoudite, tu serais musulman.",
     exemplarEn: "If you'd been born in Saudi Arabia, you'd be Muslim.",
@@ -946,7 +946,7 @@ var FRAMES = [
       { id: 'f29-2', topic: 'cours',     fr: "Ton élève suivait bien, jusqu'aux fractions.", model: "C'est là que j'ai perdu mon élève.", en: "That's where I lost my student." },
       { id: 'f29-3', topic: 'collegues', fr: "T'étais d'accord avec ton chef sur tout, jusqu'à ce qu'il parle de travailler le dimanche.", model: "C'est là que je lui ai dit non.", en: "That's when I said no to him." },
       { id: 'f29-4', topic: 'films',     fr: "Le film était génial, jusqu'à la dernière demi-heure.", model: "C'est là que le film a tout gâché.", en: "That's where the film ruined everything." },
-      { id: 'f29-5', topic: 'sante',     fr: "Tu courais bien, jusqu'au jour où t'as voulu faire un marathon.", model: "C'est là que ça s'est gâté.", en: "That's when things went wrong." },
+      { id: 'f29-5', topic: 'sante',     fr: "Ton ami courait bien, jusqu'au jour où il a voulu faire un marathon.", model: "C'est là que ça s'est gâté.", en: "That's when things went wrong." },
       { id: 'f29-6', topic: 'politique', fr: "T'étais d'accord avec le candidat, jusqu'à ce qu'il promette de tout régler en cent jours.", model: "C'est là que j'ai décroché.", en: "That's where I switched off." },
       { id: 'f29-7', topic: 'dieu',      fr: "Ton ami croyant dit que Dieu est bon. Tu le suis, jusqu'à ce qu'il dise que la souffrance fait partie du plan.", model: "C'est là que j'arrête de te suivre.", en: "That's where I stop following you." }
     ] },
@@ -1095,7 +1095,7 @@ var FRAMES = [
     prompts: [
       { id: 'f37-1', topic: 'enfants', model: "J'en veux au prof de la petite. Pas aux profs en général, à celui-là.", en: "I'm angry at my little one's teacher. Not at teachers in general, at this one." },
       { id: 'f37-2', topic: 'voisins', model: "Je parle plus à ce voisin. Pas aux voisins en général, à celui-là.", en: "I don't talk to that neighbour any more. Not to the neighbours in general, to that one." },
-      { id: 'f37-3', topic: 'politique', model: "J'ai un problème avec ce ministre. Pas avec la politique en général, avec celui-là.", en: "I've got a problem with this minister. Not with politics in general, with this one." }
+      { id: 'f37-3', topic: 'politique', model: "J'ai un problème avec ce ministre. Pas avec les ministres en général, avec celui-là.", en: "I've got a problem with this minister. Not with ministers in general, with this one." }
     ] },
 
   { id: 'f38', textId: 6, sources: [6], light: true,
@@ -1175,7 +1175,7 @@ var FRAMES = [
     form: "Moi, c'est pas pareil, {la raison}.",
     gloss: "It's different for me, ___",
     prompts: [
-      { id: 'f46-1', topic: 'sante', model: "Moi, c'est pas pareil, je cours pas pour maigrir.", en: "It's different for me, I don't run to lose weight." },
+      { id: 'f46-1', topic: 'sante', model: "Moi, c'est pas pareil, j'ai couru pendant un an, je sais ce que c'est.", en: "It's different for me, I ran for a year, I know what it's like." },
       { id: 'f46-2', topic: 'enfants', model: "Moi, c'est pas pareil, j'ai des enfants.", en: "It's different for me, I've got kids." },
       { id: 'f46-3', topic: 'cours', model: "Moi, c'est pas pareil, j'ai cours à huit heures.", en: "It's different for me, I teach at eight." }
     ] },
