@@ -10,10 +10,16 @@ Also read the sibling's `HANDOFF.md` and `CORPUS.md` before writing code or cont
 English code comments, Chrome on Android only, Firebase for sync (own path, never write
 to Quotidien's `progress/user1`).
 
+## v62 (2026-11-22) — text 6: survival without the Shoah
+
+His ask: the Shoah part is out of context; just say the Hindus, the Chinese and the Zoroastrians survived too, they're not special, it's toughness. Tight. `l: 7`, after « Ensuite, la survie. »: « Il fallait bien que quelqu'un tienne jusqu'au bout… », « Alors les hindous, ils sont spéciaux ? Les Chinois ? Les Arméniens ? », « Et si Dieu nous protégeait, la Shoah, alors ? », « Six millions de Juifs assassinés. Drôle de protection. » are gone, replaced by « Les hindous, les Chinois, les zoroastriens, eux aussi, ils sont toujours là. Ils sont spéciaux, alors ? » (« toujours là » echoes « on est toujours là »); « Survivre, ça prouve qu'on est solide, pas qu'on a raison. » stays as the answer.
+- 78 → 76 sentences. CHUNKS 6: bouchées 58–63 (2, 2, 2) → 58–60 + 61 (3, 1); passages 56–58 / 59–62 / 63–65 → 56–61 (Sinaï + survie, 46 words) + 62–65 (« tout le monde le dit » → « Chacun a sa preuve »); joins unchanged. No frames on any of these lines; tagged sentences untouched. Saved `pos` / `done` past sentence 59 now point 2 late (harmless). `texts-english.md` §6.8 updated in place.
+- Assets `?v=62`, `CACHE_VERSION = 'v62'`.
+
 ## v61 (2026-11-22) — text 6: « tout le monde la ressent »
 
 His ask: after Hindou / Romain, don't stop at « elle prouve rien »: everyone feels that certainty, billions as sure as you, and you say they're all wrong except you; so the feeling almost always lies, don't rely on it even a little. Kept tight: the abstract « Quand un sentiment est aussi fort pour le faux que pour le vrai, il te dit rien sur ce qui est vrai. » is gone, replaced (`l: 6`) by « Ce que tu ressens, là, cette certitude, tout le monde la ressent. Des milliards de gens, aussi sûrs que toi. Et d'après toi, ils se trompent tous. Tous, sauf toi. Donc ce sentiment, il ment presque à chaque fois. Et un sentiment qui ment presque à chaque fois, tu peux pas t'y fier. Même pas un peu. » « T'as pas choisi, t'as hérité. Et les raisons… » still close the paragraph (and lead into « la première raison »); « je me fie pas à ce que je ressens » in « Et toi, alors ? » now applies this rule to himself.
-- 74 → 78 sentences. CHUNKS 6: the old line's bouchée → 2, 1, 2; its passage (44–46) → 44–48 + 49–50; joins unchanged. No frames on the new lines; all 15 tagged sentences untouched (checked). Saved `pos` / `done` past sentence 45 now point 4 early (harmless). `texts-english.md` §6 still behind (as since v54).
+- 74 → 78 sentences. CHUNKS 6: the old line's bouchée → 2, 1, 2; its passage (44–46) → 44–48 + 49–50; joins unchanged. No frames on the new lines; all 15 tagged sentences untouched (checked). Saved `pos` / `done` past sentence 45 now point 4 early (harmless). `texts-english.md` §6 then rebuilt from `SENTENCES[6].en` (10 paragraphs, in sync again; Pew source note kept), no asset change.
 - Assets `?v=61`, `CACHE_VERSION = 'v61'`.
 
 ## v60 (2026-11-22) — text 6: every variation read against the text
